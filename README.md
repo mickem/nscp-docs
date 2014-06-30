@@ -1,0 +1,4 @@
+nscp-docs
+=========
+
+NSClient++ documentation
