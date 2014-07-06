@@ -132,9 +132,8 @@ Advanced keys:
 
     **Sample**::
 
-        # ALLOWED HOSTS
-        # A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges.
         [/settings/default]
+        # ALLOWED HOSTS
         allowed hosts=127.0.0.1
 
 
@@ -155,9 +154,8 @@ Advanced keys:
 
     **Sample**::
 
-        # BIND TO ADDRESS
-        # Allows you to bind server to a specific local address. This has to be a dotted ip address not a host name. Leaving this blank will bind to all available IP addresses.
         [/settings/default]
+        # BIND TO ADDRESS
         bind to=
 
 
@@ -178,9 +176,8 @@ Advanced keys:
 
     **Sample**::
 
-        # CACHE ALLOWED HOSTS
-        # If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server.
         [/settings/default]
+        # CACHE ALLOWED HOSTS
         cache allowed hosts=1
 
 
@@ -203,9 +200,8 @@ Advanced keys:
 
     **Sample**::
 
-        # NRPE PAYLOAD ENCODING
-        # 
         [/settings/default]
+        # NRPE PAYLOAD ENCODING
         encoding=
 
 
@@ -226,9 +222,8 @@ Advanced keys:
 
     **Sample**::
 
-        # INBOX
-        # The default channel to post incoming messages on
         [/settings/default]
+        # INBOX
         inbox=inbox
 
 
@@ -251,9 +246,8 @@ Advanced keys:
 
     **Sample**::
 
-        # Register modern aliases for built-in commands
-        # Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++
         [/settings/default]
+        # Register modern aliases for built-in commands
         modern commands=1
 
 
@@ -274,9 +268,8 @@ Advanced keys:
 
     **Sample**::
 
-        # PASSWORD
-        # Password to use
         [/settings/default]
+        # PASSWORD
         password=
 
 
@@ -299,9 +292,8 @@ Advanced keys:
 
     **Sample**::
 
-        # LISTEN QUEUE
-        # Number of sockets to queue before starting to refuse new incoming connections. This can be used to tweak the amount of simultaneous sockets that the server accepts.
         [/settings/default]
+        # LISTEN QUEUE
         socket queue size=0
 
 
@@ -324,9 +316,8 @@ Advanced keys:
 
     **Sample**::
 
-        # THREAD POOL
-        # 
         [/settings/default]
+        # THREAD POOL
         thread pool=10
 
 
@@ -347,9 +338,8 @@ Advanced keys:
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out.
         [/settings/default]
+        # TIMEOUT
         timeout=30
 
 
@@ -438,9 +428,8 @@ Advanced keys:
 
     **Sample**::
 
-        # ALLOWED CIPHERS
-        # 
         [/settings/NSCA/server]
+        # ALLOWED CIPHERS
         allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
 
@@ -463,9 +452,8 @@ Advanced keys:
 
     **Sample**::
 
-        # ALLOWED HOSTS
-        # A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/NSCA/server]
+        # ALLOWED HOSTS
         allowed hosts=127.0.0.1
 
 
@@ -488,9 +476,8 @@ Advanced keys:
 
     **Sample**::
 
-        # BIND TO ADDRESS
-        # Allows you to bind server to a specific local address. This has to be a dotted ip address not a host name. Leaving this blank will bind to all available IP addresses. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/NSCA/server]
+        # BIND TO ADDRESS
         bind to=
 
 
@@ -513,9 +500,8 @@ Advanced keys:
 
     **Sample**::
 
-        # CA
-        # 
         [/settings/NSCA/server]
+        # CA
         ca=${certificate-path}/ca.pem
 
 
@@ -538,9 +524,8 @@ Advanced keys:
 
     **Sample**::
 
-        # CACHE ALLOWED HOSTS
-        # If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/NSCA/server]
+        # CACHE ALLOWED HOSTS
         cache allowed hosts=1
 
 
@@ -563,9 +548,8 @@ Advanced keys:
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/NSCA/server]
+        # SSL CERTIFICATE
         certificate=${certificate-path}/certificate.pem
 
 
@@ -588,9 +572,8 @@ Advanced keys:
 
     **Sample**::
 
-        # CERTIFICATE FORMAT
-        # 
         [/settings/NSCA/server]
+        # CERTIFICATE FORMAT
         certificate format=PEM
 
 
@@ -613,9 +596,8 @@ Advanced keys:
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/NSCA/server]
+        # SSL CERTIFICATE
         certificate key=${certificate-path}/certificate_key.pem
 
 
@@ -638,9 +620,8 @@ Advanced keys:
 
     **Sample**::
 
-        # DH KEY
-        # 
         [/settings/NSCA/server]
+        # DH KEY
         dh=${certificate-path}/nrpe_dh_512.pem
 
 
@@ -677,9 +658,8 @@ Advanced keys:
 
     **Sample**::
 
-        # ENCRYPTION
-        # Name of encryption algorithm to use.
         [/settings/NSCA/server]
+        # ENCRYPTION
         encryption=aes
 
 
@@ -702,9 +682,8 @@ Advanced keys:
 
     **Sample**::
 
-        # INBOX
-        # The default channel to post incoming messages on parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/NSCA/server]
+        # INBOX
         inbox=inbox
 
 
@@ -727,9 +706,8 @@ Advanced keys:
 
     **Sample**::
 
-        # PASSWORD
-        # Password to use parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/NSCA/server]
+        # PASSWORD
         password=
 
 
@@ -750,9 +728,8 @@ Advanced keys:
 
     **Sample**::
 
-        # PAYLOAD LENGTH
-        # Length of payload to/from the NSCA agent. This is a hard specific value so you have to "configure" (read recompile) your NSCA agent to use the same value for it to work.
         [/settings/NSCA/server]
+        # PAYLOAD LENGTH
         payload length=512
 
 
@@ -773,9 +750,8 @@ Advanced keys:
 
     **Sample**::
 
-        # PERFORMANCE DATA
-        # Send performance data back to nagios (set this to false to remove all performance data).
         [/settings/NSCA/server]
+        # PERFORMANCE DATA
         performance data=1
 
 
@@ -796,9 +772,8 @@ Advanced keys:
 
     **Sample**::
 
-        # PORT NUMBER
-        # Port to use for NSCA.
         [/settings/NSCA/server]
+        # PORT NUMBER
         port=5667
 
 
@@ -821,9 +796,8 @@ Advanced keys:
 
     **Sample**::
 
-        # LISTEN QUEUE
-        # Number of sockets to queue before starting to refuse new incoming connections. This can be used to tweak the amount of simultaneous sockets that the server accepts. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/NSCA/server]
+        # LISTEN QUEUE
         socket queue size=0
 
 
@@ -846,9 +820,8 @@ Advanced keys:
 
     **Sample**::
 
-        # THREAD POOL
-        # parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/NSCA/server]
+        # THREAD POOL
         thread pool=10
 
 
@@ -871,9 +844,8 @@ Advanced keys:
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/NSCA/server]
+        # TIMEOUT
         timeout=30
 
 
@@ -894,9 +866,8 @@ Advanced keys:
 
     **Sample**::
 
-        # ENABLE SSL ENCRYPTION
-        # This option controls if SSL should be enabled.
         [/settings/NSCA/server]
+        # ENABLE SSL ENCRYPTION
         use ssl=0
 
 
@@ -919,9 +890,8 @@ Advanced keys:
 
     **Sample**::
 
-        # VERIFY MODE
-        # 
         [/settings/NSCA/server]
+        # VERIFY MODE
         verify mode=none
 
 

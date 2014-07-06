@@ -145,9 +145,8 @@ Arguments
 
     **Sample**::
 
-        # ARCHIVE CRASHREPORTS
-        # Archive crash reports in the archive folder
         [/settings/crash]
+        # ARCHIVE CRASHREPORTS
         archive=1
 
 
@@ -168,9 +167,8 @@ Arguments
 
     **Sample**::
 
-        # CRASH ARCHIVE LOCATION
-        # The folder to archive crash dumps in
         [/settings/crash]
+        # CRASH ARCHIVE LOCATION
         archive folder=${shared-path}crash-dumps
 
 
@@ -191,9 +189,8 @@ Arguments
 
     **Sample**::
 
-        # RESTART
-        # Submit crash reports to nsclient.org (or your configured submission server)
         [/settings/crash]
+        # RESTART
         restart=1
 
 
@@ -214,9 +211,8 @@ Arguments
 
     **Sample**::
 
-        # RESTART SERVICE NAME
-        # The url to submit crash reports to
         [/settings/crash]
+        # RESTART SERVICE NAME
         restart target=NSCP
 
 
@@ -237,9 +233,8 @@ Arguments
 
     **Sample**::
 
-        # SUBMIT CRASHREPORTS
-        # Submit crash reports to nsclient.org (or your configured submission server)
         [/settings/crash]
+        # SUBMIT CRASHREPORTS
         submit=0
 
 
@@ -260,9 +255,8 @@ Arguments
 
     **Sample**::
 
-        # SUBMISSION URL
-        # The url to submit crash reports to
         [/settings/crash]
+        # SUBMISSION URL
         submit url=http://crash.nsclient.org/submit
 
 

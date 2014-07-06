@@ -3419,9 +3419,8 @@ Arguments
 
     **Sample**::
 
-        # ALLOWED HOSTS
-        # A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges.
         [/settings/default]
+        # ALLOWED HOSTS
         allowed hosts=127.0.0.1
 
 
@@ -3442,9 +3441,8 @@ Arguments
 
     **Sample**::
 
-        # BIND TO ADDRESS
-        # Allows you to bind server to a specific local address. This has to be a dotted ip address not a host name. Leaving this blank will bind to all available IP addresses.
         [/settings/default]
+        # BIND TO ADDRESS
         bind to=
 
 
@@ -3465,9 +3463,8 @@ Arguments
 
     **Sample**::
 
-        # CACHE ALLOWED HOSTS
-        # If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server.
         [/settings/default]
+        # CACHE ALLOWED HOSTS
         cache allowed hosts=1
 
 
@@ -3490,9 +3487,8 @@ Arguments
 
     **Sample**::
 
-        # NRPE PAYLOAD ENCODING
-        # 
         [/settings/default]
+        # NRPE PAYLOAD ENCODING
         encoding=
 
 
@@ -3513,9 +3509,8 @@ Arguments
 
     **Sample**::
 
-        # INBOX
-        # The default channel to post incoming messages on
         [/settings/default]
+        # INBOX
         inbox=inbox
 
 
@@ -3538,9 +3533,8 @@ Arguments
 
     **Sample**::
 
-        # Register modern aliases for built-in commands
-        # Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++
         [/settings/default]
+        # Register modern aliases for built-in commands
         modern commands=1
 
 
@@ -3561,9 +3555,8 @@ Arguments
 
     **Sample**::
 
-        # PASSWORD
-        # Password to use
         [/settings/default]
+        # PASSWORD
         password=
 
 
@@ -3586,9 +3579,8 @@ Arguments
 
     **Sample**::
 
-        # LISTEN QUEUE
-        # Number of sockets to queue before starting to refuse new incoming connections. This can be used to tweak the amount of simultaneous sockets that the server accepts.
         [/settings/default]
+        # LISTEN QUEUE
         socket queue size=0
 
 
@@ -3611,9 +3603,8 @@ Arguments
 
     **Sample**::
 
-        # THREAD POOL
-        # 
         [/settings/default]
+        # THREAD POOL
         thread pool=10
 
 
@@ -3634,9 +3625,8 @@ Arguments
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out.
         [/settings/default]
+        # TIMEOUT
         timeout=30
 
 
@@ -3689,9 +3679,8 @@ Arguments
 
     **Sample**::
 
-        # DEFAULT LENGTH
-        # Used to define the default interval for range buffer checks (ie. CPU).
         [/settings/system/windows]
+        # DEFAULT LENGTH
         default buffer length=1h
 
 
@@ -3714,9 +3703,8 @@ Arguments
 
     **Sample**::
 
-        # Register modern aliases for built-in commands
-        # Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++ parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/system/windows]
+        # Register modern aliases for built-in commands
         modern commands=1
 
 
@@ -3739,9 +3727,8 @@ Arguments
 
     **Sample**::
 
-        # PDH SUBSYSTEM
-        # Set which pdh subsystem to use.
         [/settings/system/windows]
+        # PDH SUBSYSTEM
         subsystem=default
 
 
@@ -3895,9 +3882,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/system/windows/real-time/checks/sample]
+        # ALIAS
         alias=
 
 
@@ -3920,9 +3906,8 @@ Arguments
 
     **Sample**::
 
-        # TYPE OF CHECK
-        # The type of check cpu or memory
         [/settings/system/windows/real-time/checks/sample]
+        # TYPE OF CHECK
         check=cpu
 
 
@@ -3947,9 +3932,8 @@ Arguments
 
     **Sample**::
 
-        # COMMAND NAME
-        # The name of the command (think nagios service name) to report up stream (defaults to alias if not set)
         [/settings/system/windows/real-time/checks/sample]
+        # COMMAND NAME
         command=
 
 
@@ -3972,9 +3956,8 @@ Arguments
 
     **Sample**::
 
-        # CRITCAL FILTER
-        # If any rows match this filter severity will escalated to CRITCAL
         [/settings/system/windows/real-time/checks/sample]
+        # CRITCAL FILTER
         critical=
 
 
@@ -3999,9 +3982,8 @@ Arguments
 
     **Sample**::
 
-        # DEBUG
-        # Enable this to display debug information for this match filter
         [/settings/system/windows/real-time/checks/sample]
+        # DEBUG
         debug=0
 
 
@@ -4026,9 +4008,8 @@ Arguments
 
     **Sample**::
 
-        # DESTINATION
-        # The destination for intercepted messages
         [/settings/system/windows/real-time/checks/sample]
+        # DESTINATION
         destination=
 
 
@@ -4053,9 +4034,8 @@ Arguments
 
     **Sample**::
 
-        # SYNTAX
-        # Format string for dates
         [/settings/system/windows/real-time/checks/sample]
+        # SYNTAX
         detail syntax=
 
 
@@ -4080,9 +4060,8 @@ Arguments
 
     **Sample**::
 
-        # EMPTY MESSAGE
-        # The message to display if nothing matches the filter (generally considered the ok state).
         [/settings/system/windows/real-time/checks/sample]
+        # EMPTY MESSAGE
         empty message=eventlog found no records
 
 
@@ -4105,9 +4084,8 @@ Arguments
 
     **Sample**::
 
-        # FILTER
-        # Scan files for matching rows for each matching rows an OK message will be submitted
         [/settings/system/windows/real-time/checks/sample]
+        # FILTER
         filter=
 
 
@@ -4132,9 +4110,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/system/windows/real-time/checks/sample]
+        # IS TEMPLATE
         is template=0
 
 
@@ -4158,9 +4135,8 @@ Arguments
 
     **Sample**::
 
-        # MAGIMUM AGE
-        # How long before reporting "ok".
         [/settings/system/windows/real-time/checks/sample]
+        # MAGIMUM AGE
         maximum age=5m
 
 
@@ -4183,9 +4159,8 @@ Arguments
 
     **Sample**::
 
-        # OK FILTER
-        # If any rows match this filter severity will escalated down to OK
         [/settings/system/windows/real-time/checks/sample]
+        # OK FILTER
         ok=
 
 
@@ -4210,9 +4185,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/system/windows/real-time/checks/sample]
+        # PARENT
         parent=default
 
 
@@ -4237,9 +4211,8 @@ Arguments
 
     **Sample**::
 
-        # PERF CONFIG
-        # Performance data configuration
         [/settings/system/windows/real-time/checks/sample]
+        # PERF CONFIG
         perf config=
 
 
@@ -4264,9 +4237,8 @@ Arguments
 
     **Sample**::
 
-        # SEVERITY
-        # THe severity of this message (OK, WARNING, CRITICAL, UNKNOWN)
         [/settings/system/windows/real-time/checks/sample]
+        # SEVERITY
         severity=
 
 
@@ -4289,9 +4261,8 @@ Arguments
 
     **Sample**::
 
-        # DESTINATION
-        # Same as destination
         [/settings/system/windows/real-time/checks/sample]
+        # DESTINATION
         target=
 
 
@@ -4314,9 +4285,8 @@ Arguments
 
     **Sample**::
 
-        # TIME
-        # The time to check
         [/settings/system/windows/real-time/checks/sample]
+        # TIME
         time=
 
 
@@ -4341,9 +4311,8 @@ Arguments
 
     **Sample**::
 
-        # FILES
-        # A list of times to check (soma separated)
         [/settings/system/windows/real-time/checks/sample]
+        # FILES
         times=
 
 
@@ -4368,9 +4337,8 @@ Arguments
 
     **Sample**::
 
-        # SYNTAX
-        # Format string for dates
         [/settings/system/windows/real-time/checks/sample]
+        # SYNTAX
         top syntax=
 
 
@@ -4393,9 +4361,8 @@ Arguments
 
     **Sample**::
 
-        # WARNING FILTER
-        # If any rows match this filter severity will escalated to WARNING
         [/settings/system/windows/real-time/checks/sample]
+        # WARNING FILTER
         warning=
 
 

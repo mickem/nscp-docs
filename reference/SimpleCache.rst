@@ -187,9 +187,8 @@ Arguments
 
     **Sample**::
 
-        # CHANNEL
-        # The channel to listen to.
         [/settings/cache]
+        # CHANNEL
         channel=CACHE
 
 
@@ -211,9 +210,8 @@ Arguments
 
     **Sample**::
 
-        # PRIMARY CACHE INDEX
-        # Set this to the value you want to use as unique key for the cache.
         [/settings/cache]
+        # PRIMARY CACHE INDEX
         primary index=${alias-or-command}
 
 

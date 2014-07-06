@@ -283,9 +283,8 @@ Arguments
 
     **Sample**::
 
-        # CHANNEL
-        # The channel to listen to.
         [/settings/syslog/client]
+        # CHANNEL
         channel=syslog
 
 
@@ -306,9 +305,8 @@ Arguments
 
     **Sample**::
 
-        # HOSTNAME
-        # The host name of this host if set to blank (default) the windows name of the computer will be used.
         [/settings/syslog/client]
+        # HOSTNAME
         hostname=
 
 
@@ -425,9 +423,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/syslog/client/targets/default]
+        # TARGET ADDRESS
         address=
 
 
@@ -450,9 +447,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/syslog/client/targets/default]
+        # ALIAS
         alias=
 
 
@@ -473,9 +469,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/default]
+        # TODO
         critical severity=critical
 
 
@@ -496,9 +491,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/default]
+        # TODO
         facility=kernel
 
 
@@ -521,9 +515,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/syslog/client/targets/default]
+        # TARGET HOST
         host=
 
 
@@ -546,9 +539,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/syslog/client/targets/default]
+        # IS TEMPLATE
         is template=0
 
 
@@ -569,9 +561,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/default]
+        # TODO
         message_syntax=%message%
 
 
@@ -592,9 +583,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/default]
+        # TODO
         ok severity=informational
 
 
@@ -617,9 +607,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/syslog/client/targets/default]
+        # PARENT
         parent=default
 
 
@@ -642,9 +631,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/syslog/client/targets/default]
+        # TARGET PORT
         port=0
 
 
@@ -665,9 +653,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/default]
+        # TODO
         severity=error
 
 
@@ -688,9 +675,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/default]
+        # TODO
         tag_syntax=NSCA
 
 
@@ -711,9 +697,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/default]
+        # TODO
         unknown severity=emergency
 
 
@@ -734,9 +719,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/default]
+        # TODO
         warning severity=warning
 
 
@@ -813,9 +797,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/syslog/client/targets/sample]
+        # TARGET ADDRESS
         address=
 
 
@@ -840,9 +823,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/syslog/client/targets/sample]
+        # ALIAS
         alias=
 
 
@@ -865,9 +847,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/sample]
+        # TODO
         critical severity=critical
 
 
@@ -890,9 +871,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/sample]
+        # TODO
         facility=kernel
 
 
@@ -917,9 +897,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/syslog/client/targets/sample]
+        # TARGET HOST
         host=
 
 
@@ -944,9 +923,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/syslog/client/targets/sample]
+        # IS TEMPLATE
         is template=0
 
 
@@ -969,9 +947,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/sample]
+        # TODO
         message_syntax=%message%
 
 
@@ -994,9 +971,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/sample]
+        # TODO
         ok severity=informational
 
 
@@ -1021,9 +997,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/syslog/client/targets/sample]
+        # PARENT
         parent=default
 
 
@@ -1048,9 +1023,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/syslog/client/targets/sample]
+        # TARGET PORT
         port=0
 
 
@@ -1073,9 +1047,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/sample]
+        # TODO
         severity=error
 
 
@@ -1098,9 +1071,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/sample]
+        # TODO
         tag_syntax=NSCA
 
 
@@ -1123,9 +1095,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/sample]
+        # TODO
         unknown severity=emergency
 
 
@@ -1148,9 +1119,8 @@ Arguments
 
     **Sample**::
 
-        # TODO
-        # 
         [/settings/syslog/client/targets/sample]
+        # TODO
         warning severity=warning
 
 

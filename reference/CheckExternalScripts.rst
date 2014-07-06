@@ -490,9 +490,8 @@ Arguments
 
     **Sample**::
 
-        # COMMAND ARGUMENT PROCESSING
-        # This option determines whether or not the we will allow clients to specify arguments to commands that are executed.
         [/settings/external scripts]
+        # COMMAND ARGUMENT PROCESSING
         allow arguments=0
 
 
@@ -513,9 +512,8 @@ Arguments
 
     **Sample**::
 
-        # COMMAND ALLOW NASTY META CHARS
-        # This option determines whether or not the we will allow clients to specify nasty (as in |`&><'"\[]{}) characters in arguments.
         [/settings/external scripts]
+        # COMMAND ALLOW NASTY META CHARS
         allow nasty characters=0
 
 
@@ -536,9 +534,8 @@ Arguments
 
     **Sample**::
 
-        # SCRIPT DIRECTORY
-        # Load all scripts in a directory and use them as commands. Probably dangerous but useful if you have loads of scripts :)
         [/settings/external scripts]
+        # SCRIPT DIRECTORY
         script path=
 
 
@@ -559,9 +556,8 @@ Arguments
 
     **Sample**::
 
-        # COMMAND TIMEOUT
-        # The maximum time in seconds that a command can execute. (if more then this execution will be aborted). NOTICE this only affects external commands not internal ones.
         [/settings/external scripts]
+        # COMMAND TIMEOUT
         timeout=60
 
 
@@ -651,9 +647,8 @@ Arguments
 
     **Sample**::
 
-        # alias_cpu
-        # Alias for alias_cpu. To configure this item add a section called: /settings/external scripts/alias/alias_cpu
         [/settings/external scripts/alias]
+        # alias_cpu
         alias_cpu=
 
 
@@ -674,9 +669,8 @@ Arguments
 
     **Sample**::
 
-        # alias_cpu_ex
-        # Alias for alias_cpu_ex. To configure this item add a section called: /settings/external scripts/alias/alias_cpu_ex
         [/settings/external scripts/alias]
+        # alias_cpu_ex
         alias_cpu_ex=
 
 
@@ -697,9 +691,8 @@ Arguments
 
     **Sample**::
 
-        # alias_disk
-        # Alias for alias_disk. To configure this item add a section called: /settings/external scripts/alias/alias_disk
         [/settings/external scripts/alias]
+        # alias_disk
         alias_disk=
 
 
@@ -720,9 +713,8 @@ Arguments
 
     **Sample**::
 
-        # alias_disk_loose
-        # Alias for alias_disk_loose. To configure this item add a section called: /settings/external scripts/alias/alias_disk_loose
         [/settings/external scripts/alias]
+        # alias_disk_loose
         alias_disk_loose=
 
 
@@ -743,9 +735,8 @@ Arguments
 
     **Sample**::
 
-        # alias_event_log
-        # Alias for alias_event_log. To configure this item add a section called: /settings/external scripts/alias/alias_event_log
         [/settings/external scripts/alias]
+        # alias_event_log
         alias_event_log=
 
 
@@ -766,9 +757,8 @@ Arguments
 
     **Sample**::
 
-        # alias_file_age
-        # Alias for alias_file_age. To configure this item add a section called: /settings/external scripts/alias/alias_file_age
         [/settings/external scripts/alias]
+        # alias_file_age
         alias_file_age=
 
 
@@ -789,9 +779,8 @@ Arguments
 
     **Sample**::
 
-        # alias_file_size
-        # Alias for alias_file_size. To configure this item add a section called: /settings/external scripts/alias/alias_file_size
         [/settings/external scripts/alias]
+        # alias_file_size
         alias_file_size=
 
 
@@ -812,9 +801,8 @@ Arguments
 
     **Sample**::
 
-        # alias_mem
-        # Alias for alias_mem. To configure this item add a section called: /settings/external scripts/alias/alias_mem
         [/settings/external scripts/alias]
+        # alias_mem
         alias_mem=
 
 
@@ -835,9 +823,8 @@ Arguments
 
     **Sample**::
 
-        # alias_process
-        # Alias for alias_process. To configure this item add a section called: /settings/external scripts/alias/alias_process
         [/settings/external scripts/alias]
+        # alias_process
         alias_process=
 
 
@@ -858,9 +845,8 @@ Arguments
 
     **Sample**::
 
-        # alias_process_count
-        # Alias for alias_process_count. To configure this item add a section called: /settings/external scripts/alias/alias_process_count
         [/settings/external scripts/alias]
+        # alias_process_count
         alias_process_count=
 
 
@@ -881,9 +867,8 @@ Arguments
 
     **Sample**::
 
-        # alias_process_hung
-        # Alias for alias_process_hung. To configure this item add a section called: /settings/external scripts/alias/alias_process_hung
         [/settings/external scripts/alias]
+        # alias_process_hung
         alias_process_hung=
 
 
@@ -904,9 +889,8 @@ Arguments
 
     **Sample**::
 
-        # alias_process_stopped
-        # Alias for alias_process_stopped. To configure this item add a section called: /settings/external scripts/alias/alias_process_stopped
         [/settings/external scripts/alias]
+        # alias_process_stopped
         alias_process_stopped=
 
 
@@ -927,9 +911,8 @@ Arguments
 
     **Sample**::
 
-        # alias_sched_all
-        # Alias for alias_sched_all. To configure this item add a section called: /settings/external scripts/alias/alias_sched_all
         [/settings/external scripts/alias]
+        # alias_sched_all
         alias_sched_all=
 
 
@@ -950,9 +933,8 @@ Arguments
 
     **Sample**::
 
-        # alias_sched_long
-        # Alias for alias_sched_long. To configure this item add a section called: /settings/external scripts/alias/alias_sched_long
         [/settings/external scripts/alias]
+        # alias_sched_long
         alias_sched_long=
 
 
@@ -973,9 +955,8 @@ Arguments
 
     **Sample**::
 
-        # alias_sched_task
-        # Alias for alias_sched_task. To configure this item add a section called: /settings/external scripts/alias/alias_sched_task
         [/settings/external scripts/alias]
+        # alias_sched_task
         alias_sched_task=
 
 
@@ -996,9 +977,8 @@ Arguments
 
     **Sample**::
 
-        # alias_service
-        # Alias for alias_service. To configure this item add a section called: /settings/external scripts/alias/alias_service
         [/settings/external scripts/alias]
+        # alias_service
         alias_service=
 
 
@@ -1019,9 +999,8 @@ Arguments
 
     **Sample**::
 
-        # alias_service_ex
-        # Alias for alias_service_ex. To configure this item add a section called: /settings/external scripts/alias/alias_service_ex
         [/settings/external scripts/alias]
+        # alias_service_ex
         alias_service_ex=
 
 
@@ -1042,9 +1021,8 @@ Arguments
 
     **Sample**::
 
-        # alias_up
-        # Alias for alias_up. To configure this item add a section called: /settings/external scripts/alias/alias_up
         [/settings/external scripts/alias]
+        # alias_up
         alias_up=
 
 
@@ -1065,9 +1043,8 @@ Arguments
 
     **Sample**::
 
-        # alias_volumes
-        # Alias for alias_volumes. To configure this item add a section called: /settings/external scripts/alias/alias_volumes
         [/settings/external scripts/alias]
+        # alias_volumes
         alias_volumes=
 
 
@@ -1088,9 +1065,8 @@ Arguments
 
     **Sample**::
 
-        # alias_volumes_loose
-        # Alias for alias_volumes_loose. To configure this item add a section called: /settings/external scripts/alias/alias_volumes_loose
         [/settings/external scripts/alias]
+        # alias_volumes_loose
         alias_volumes_loose=
 
 
@@ -1111,9 +1087,8 @@ Arguments
 
     **Sample**::
 
-        # default
-        # Alias for default. To configure this item add a section called: /settings/external scripts/alias/default
         [/settings/external scripts/alias]
+        # default
         default=
 
 
@@ -1208,9 +1183,8 @@ Arguments
 
     **Sample**::
 
-        # BATCH FILE WRAPPING
-        # 
         [/settings/external scripts/wrappings]
+        # BATCH FILE WRAPPING
         bat=scripts\\%SCRIPT% %ARGS%
 
 
@@ -1231,9 +1205,8 @@ Arguments
 
     **Sample**::
 
-        # POWERSHELL WRAPPING
-        # 
         [/settings/external scripts/wrappings]
+        # POWERSHELL WRAPPING
         ps1=cmd /c echo scripts\\%SCRIPT% %ARGS%; exit($lastexitcode) | powershell.exe -command -
 
 
@@ -1254,9 +1227,8 @@ Arguments
 
     **Sample**::
 
-        # VISUAL BASIC WRAPPING
-        # 
         [/settings/external scripts/wrappings]
+        # VISUAL BASIC WRAPPING
         vbs=cscript.exe //T:30 //NoLogo scripts\\lib\\wrapper.vbs %SCRIPT% %ARGS%
 
 

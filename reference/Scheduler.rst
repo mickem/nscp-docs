@@ -78,9 +78,8 @@ Common Keys:
 
     **Sample**::
 
-        # THREAD COUNT
-        # Number of threads to use.
         [/settings/scheduler]
+        # THREAD COUNT
         threads=5
 
 

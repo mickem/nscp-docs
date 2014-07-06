@@ -655,9 +655,8 @@ Arguments
 
     **Sample**::
 
-        # CHANNEL
-        # The channel to listen to.
         [/settings/NRPE/client]
+        # CHANNEL
         channel=NRPE
 
 
@@ -780,9 +779,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/NRPE/client/targets/default]
+        # TARGET ADDRESS
         address=
 
 
@@ -805,9 +803,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/NRPE/client/targets/default]
+        # ALIAS
         alias=
 
 
@@ -830,9 +827,8 @@ Arguments
 
     **Sample**::
 
-        # ALLOWED CIPHERS
-        # The allowed list of ciphers (setting insecure wil override this to only support ADH
         [/settings/NRPE/client/targets/default]
+        # ALLOWED CIPHERS
         allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
 
@@ -855,9 +851,8 @@ Arguments
 
     **Sample**::
 
-        # CA
-        # The certificate authority to use to authenticate remote certificate
         [/settings/NRPE/client/targets/default]
+        # CA
         ca=
 
 
@@ -878,9 +873,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # The ssl certificate to use to encrypt the communication
         [/settings/NRPE/client/targets/default]
+        # SSL CERTIFICATE
         certificate=
 
 
@@ -903,9 +897,8 @@ Arguments
 
     **Sample**::
 
-        # CERTIFICATE FORMAT
-        # Format of SSL certificate
         [/settings/NRPE/client/targets/default]
+        # CERTIFICATE FORMAT
         certificate format=PEM
 
 
@@ -926,9 +919,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE KEY
-        # Key for the SSL certificate
         [/settings/NRPE/client/targets/default]
+        # SSL CERTIFICATE KEY
         certificate key=
 
 
@@ -951,9 +943,8 @@ Arguments
 
     **Sample**::
 
-        # DH KEY
-        # The diffi-hellman perfect forwarded secret to use setting --insecure will override this
         [/settings/NRPE/client/targets/default]
+        # DH KEY
         dh=
 
 
@@ -976,9 +967,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/NRPE/client/targets/default]
+        # TARGET HOST
         host=
 
 
@@ -999,9 +989,8 @@ Arguments
 
     **Sample**::
 
-        # Insecure legacy mode
-        # Use insecure legacy mode to connect to old NRPE server
         [/settings/NRPE/client/targets/default]
+        # Insecure legacy mode
         insecure=
 
 
@@ -1024,9 +1013,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/NRPE/client/targets/default]
+        # IS TEMPLATE
         is template=0
 
 
@@ -1049,9 +1037,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/NRPE/client/targets/default]
+        # PARENT
         parent=default
 
 
@@ -1072,9 +1059,8 @@ Arguments
 
     **Sample**::
 
-        # PAYLOAD LENGTH
-        # Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
         [/settings/NRPE/client/targets/default]
+        # PAYLOAD LENGTH
         payload length=1024
 
 
@@ -1097,9 +1083,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/NRPE/client/targets/default]
+        # TARGET PORT
         port=0
 
 
@@ -1120,9 +1105,8 @@ Arguments
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading/writing packets to/from sockets.
         [/settings/NRPE/client/targets/default]
+        # TIMEOUT
         timeout=30
 
 
@@ -1143,9 +1127,8 @@ Arguments
 
     **Sample**::
 
-        # ENABLE SSL ENCRYPTION
-        # This option controls if SSL should be enabled.
         [/settings/NRPE/client/targets/default]
+        # ENABLE SSL ENCRYPTION
         use ssl=1
 
 
@@ -1166,9 +1149,8 @@ Arguments
 
     **Sample**::
 
-        # VERIFY MODE
-        # What to verify default is non, to validate remote certificate use remote-peer
         [/settings/NRPE/client/targets/default]
+        # VERIFY MODE
         verify mode=none
 
 
@@ -1251,9 +1233,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/NRPE/client/targets/sample]
+        # TARGET ADDRESS
         address=
 
 
@@ -1278,9 +1259,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/NRPE/client/targets/sample]
+        # ALIAS
         alias=
 
 
@@ -1305,9 +1285,8 @@ Arguments
 
     **Sample**::
 
-        # ALLOWED CIPHERS
-        # The allowed list of ciphers (setting insecure wil override this to only support ADH
         [/settings/NRPE/client/targets/sample]
+        # ALLOWED CIPHERS
         allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
 
@@ -1332,9 +1311,8 @@ Arguments
 
     **Sample**::
 
-        # CA
-        # The certificate authority to use to authenticate remote certificate
         [/settings/NRPE/client/targets/sample]
+        # CA
         ca=
 
 
@@ -1357,9 +1335,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # The ssl certificate to use to encrypt the communication
         [/settings/NRPE/client/targets/sample]
+        # SSL CERTIFICATE
         certificate=
 
 
@@ -1384,9 +1361,8 @@ Arguments
 
     **Sample**::
 
-        # CERTIFICATE FORMAT
-        # Format of SSL certificate
         [/settings/NRPE/client/targets/sample]
+        # CERTIFICATE FORMAT
         certificate format=PEM
 
 
@@ -1409,9 +1385,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE KEY
-        # Key for the SSL certificate
         [/settings/NRPE/client/targets/sample]
+        # SSL CERTIFICATE KEY
         certificate key=
 
 
@@ -1436,9 +1411,8 @@ Arguments
 
     **Sample**::
 
-        # DH KEY
-        # The diffi-hellman perfect forwarded secret to use setting --insecure will override this
         [/settings/NRPE/client/targets/sample]
+        # DH KEY
         dh=
 
 
@@ -1463,9 +1437,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/NRPE/client/targets/sample]
+        # TARGET HOST
         host=
 
 
@@ -1488,9 +1461,8 @@ Arguments
 
     **Sample**::
 
-        # Insecure legacy mode
-        # Use insecure legacy mode to connect to old NRPE server
         [/settings/NRPE/client/targets/sample]
+        # Insecure legacy mode
         insecure=
 
 
@@ -1515,9 +1487,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/NRPE/client/targets/sample]
+        # IS TEMPLATE
         is template=0
 
 
@@ -1542,9 +1513,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/NRPE/client/targets/sample]
+        # PARENT
         parent=default
 
 
@@ -1567,9 +1537,8 @@ Arguments
 
     **Sample**::
 
-        # PAYLOAD LENGTH
-        # Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
         [/settings/NRPE/client/targets/sample]
+        # PAYLOAD LENGTH
         payload length=1024
 
 
@@ -1594,9 +1563,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/NRPE/client/targets/sample]
+        # TARGET PORT
         port=0
 
 
@@ -1619,9 +1587,8 @@ Arguments
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading/writing packets to/from sockets.
         [/settings/NRPE/client/targets/sample]
+        # TIMEOUT
         timeout=30
 
 
@@ -1644,9 +1611,8 @@ Arguments
 
     **Sample**::
 
-        # ENABLE SSL ENCRYPTION
-        # This option controls if SSL should be enabled.
         [/settings/NRPE/client/targets/sample]
+        # ENABLE SSL ENCRYPTION
         use ssl=1
 
 
@@ -1669,9 +1635,8 @@ Arguments
 
     **Sample**::
 
-        # VERIFY MODE
-        # What to verify default is non, to validate remote certificate use remote-peer
         [/settings/NRPE/client/targets/sample]
+        # VERIFY MODE
         verify mode=none
 
 

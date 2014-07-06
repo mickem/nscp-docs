@@ -84,9 +84,8 @@ Common Keys:
 
     **Sample**::
 
-        # CHANNEL
-        # The channel to listen to.
         [/settings/writers/file]
+        # CHANNEL
         channel=FILE
 
 
@@ -107,9 +106,8 @@ Common Keys:
 
     **Sample**::
 
-        # FILE TO WRITE TO
-        # The filename to write output to.
         [/settings/writers/file]
+        # FILE TO WRITE TO
         file=output.txt
 
 
@@ -131,9 +129,8 @@ Common Keys:
 
     **Sample**::
 
-        # MESSAGE SYNTAX
-        # The syntax of the message to write to the line.
         [/settings/writers/file]
+        # MESSAGE SYNTAX
         syntax=${alias-or-command} ${result} ${message}
 
 

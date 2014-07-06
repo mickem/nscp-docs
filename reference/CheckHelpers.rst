@@ -471,15 +471,15 @@ Arguments
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
-    :option:`0` | 3 | 9 2014-06-02
+    :option:`0` | 3 | 10 2014-07-05
 
 
 Arguments
 *********
 .. option:: 0
-    :synopsis: 9 2014-06-02
+    :synopsis: 10 2014-07-05
 
-    | 9 2014-06-02
+    | 10 2014-07-05
 
 
 :query:`check_warning`

@@ -300,9 +300,8 @@ Arguments
 
     **Sample**::
 
-        # CHANNEL
-        # The channel to listen to.
         [/settings/check_mk/client]
+        # CHANNEL
         channel=CheckMK
 
 
@@ -442,9 +441,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/check_mk/client/targets/default]
+        # TARGET ADDRESS
         address=
 
 
@@ -467,9 +465,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/check_mk/client/targets/default]
+        # ALIAS
         alias=
 
 
@@ -490,9 +487,8 @@ Arguments
 
     **Sample**::
 
-        # ALLOWED CIPHERS
-        # A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
         [/settings/check_mk/client/targets/default]
+        # ALLOWED CIPHERS
         allowed ciphers=ADH
 
 
@@ -515,9 +511,8 @@ Arguments
 
     **Sample**::
 
-        # CA
-        # 
         [/settings/check_mk/client/targets/default]
+        # CA
         ca=
 
 
@@ -538,9 +533,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/check_mk/client/targets/default]
+        # SSL CERTIFICATE
         certificate=
 
 
@@ -563,9 +557,8 @@ Arguments
 
     **Sample**::
 
-        # CERTIFICATE FORMAT
-        # 
         [/settings/check_mk/client/targets/default]
+        # CERTIFICATE FORMAT
         certificate format=PEM
 
 
@@ -588,9 +581,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/check_mk/client/targets/default]
+        # SSL CERTIFICATE
         certificate key=
 
 
@@ -613,9 +605,8 @@ Arguments
 
     **Sample**::
 
-        # DH KEY
-        # 
         [/settings/check_mk/client/targets/default]
+        # DH KEY
         dh=${certificate-path}/nrpe_dh_512.pem
 
 
@@ -638,9 +629,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/check_mk/client/targets/default]
+        # TARGET HOST
         host=
 
 
@@ -663,9 +653,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/check_mk/client/targets/default]
+        # IS TEMPLATE
         is template=0
 
 
@@ -688,9 +677,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/check_mk/client/targets/default]
+        # PARENT
         parent=default
 
 
@@ -713,9 +701,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/check_mk/client/targets/default]
+        # TARGET PORT
         port=0
 
 
@@ -736,9 +723,8 @@ Arguments
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading/writing packets to/from sockets.
         [/settings/check_mk/client/targets/default]
+        # TIMEOUT
         timeout=30
 
 
@@ -759,9 +745,8 @@ Arguments
 
     **Sample**::
 
-        # ENABLE SSL ENCRYPTION
-        # This option controls if SSL should be enabled.
         [/settings/check_mk/client/targets/default]
+        # ENABLE SSL ENCRYPTION
         use ssl=1
 
 
@@ -782,9 +767,8 @@ Arguments
 
     **Sample**::
 
-        # VERIFY MODE
-        # 
         [/settings/check_mk/client/targets/default]
+        # VERIFY MODE
         verify mode=none
 
 
@@ -863,9 +847,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/check_mk/client/targets/sample]
+        # TARGET ADDRESS
         address=
 
 
@@ -890,9 +873,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/check_mk/client/targets/sample]
+        # ALIAS
         alias=
 
 
@@ -915,9 +897,8 @@ Arguments
 
     **Sample**::
 
-        # ALLOWED CIPHERS
-        # A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
         [/settings/check_mk/client/targets/sample]
+        # ALLOWED CIPHERS
         allowed ciphers=ADH
 
 
@@ -942,9 +923,8 @@ Arguments
 
     **Sample**::
 
-        # CA
-        # 
         [/settings/check_mk/client/targets/sample]
+        # CA
         ca=
 
 
@@ -967,9 +947,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/check_mk/client/targets/sample]
+        # SSL CERTIFICATE
         certificate=
 
 
@@ -994,9 +973,8 @@ Arguments
 
     **Sample**::
 
-        # CERTIFICATE FORMAT
-        # 
         [/settings/check_mk/client/targets/sample]
+        # CERTIFICATE FORMAT
         certificate format=PEM
 
 
@@ -1021,9 +999,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/check_mk/client/targets/sample]
+        # SSL CERTIFICATE
         certificate key=
 
 
@@ -1048,9 +1025,8 @@ Arguments
 
     **Sample**::
 
-        # DH KEY
-        # 
         [/settings/check_mk/client/targets/sample]
+        # DH KEY
         dh=${certificate-path}/nrpe_dh_512.pem
 
 
@@ -1075,9 +1051,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/check_mk/client/targets/sample]
+        # TARGET HOST
         host=
 
 
@@ -1102,9 +1077,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/check_mk/client/targets/sample]
+        # IS TEMPLATE
         is template=0
 
 
@@ -1129,9 +1103,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/check_mk/client/targets/sample]
+        # PARENT
         parent=default
 
 
@@ -1156,9 +1129,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/check_mk/client/targets/sample]
+        # TARGET PORT
         port=0
 
 
@@ -1181,9 +1153,8 @@ Arguments
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading/writing packets to/from sockets.
         [/settings/check_mk/client/targets/sample]
+        # TIMEOUT
         timeout=30
 
 
@@ -1206,9 +1177,8 @@ Arguments
 
     **Sample**::
 
-        # ENABLE SSL ENCRYPTION
-        # This option controls if SSL should be enabled.
         [/settings/check_mk/client/targets/sample]
+        # ENABLE SSL ENCRYPTION
         use ssl=1
 
 
@@ -1231,9 +1201,8 @@ Arguments
 
     **Sample**::
 
-        # VERIFY MODE
-        # 
         [/settings/check_mk/client/targets/sample]
+        # VERIFY MODE
         verify mode=none
 
 

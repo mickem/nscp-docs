@@ -225,9 +225,8 @@ Arguments
 
     **Sample**::
 
-        # CHANNEL
-        # The channel to listen to.
         [/settings/SMTP/client]
+        # CHANNEL
         channel=SMTP
 
 
@@ -336,9 +335,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/SMTP/client/targets/default]
+        # TARGET ADDRESS
         address=
 
 
@@ -361,9 +359,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/SMTP/client/targets/default]
+        # ALIAS
         alias=
 
 
@@ -386,9 +383,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/SMTP/client/targets/default]
+        # TARGET HOST
         host=
 
 
@@ -411,9 +407,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/SMTP/client/targets/default]
+        # IS TEMPLATE
         is template=0
 
 
@@ -436,9 +431,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/SMTP/client/targets/default]
+        # PARENT
         parent=default
 
 
@@ -461,9 +455,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/SMTP/client/targets/default]
+        # TARGET PORT
         port=0
 
 
@@ -484,9 +477,8 @@ Arguments
 
     **Sample**::
 
-        # RECIPIENT
-        # Recipient of email message
         [/settings/SMTP/client/targets/default]
+        # RECIPIENT
         recipient=nscp@localhost
 
 
@@ -507,9 +499,8 @@ Arguments
 
     **Sample**::
 
-        # SENDER
-        # Sender of email message
         [/settings/SMTP/client/targets/default]
+        # SENDER
         sender=nscp@localhost
 
 
@@ -530,9 +521,8 @@ Arguments
 
     **Sample**::
 
-        # TEMPLATE
-        # Template for message data
         [/settings/SMTP/client/targets/default]
+        # TEMPLATE
         template=Hello, this is %source% reporting %message%!
 
 
@@ -553,9 +543,8 @@ Arguments
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading/writing packets to/from sockets.
         [/settings/SMTP/client/targets/default]
+        # TIMEOUT
         timeout=30
 
 

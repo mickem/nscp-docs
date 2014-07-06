@@ -365,9 +365,8 @@ Arguments
 
     **Sample**::
 
-        # CHANNEL
-        # The channel to listen to.
         [/settings/NSCA/client]
+        # CHANNEL
         channel=NSCA
 
 
@@ -390,9 +389,8 @@ Arguments
 
     **Sample**::
 
-        # DELAY
-        # 
         [/settings/NSCA/client]
+        # DELAY
         delay=0
 
 
@@ -415,9 +413,8 @@ Arguments
 
     **Sample**::
 
-        # NSCA DATA ENCODING
-        # 
         [/settings/NSCA/client]
+        # NSCA DATA ENCODING
         encoding=
 
 
@@ -448,9 +445,8 @@ Arguments
 
     **Sample**::
 
-        # HOSTNAME
-        # The host name of the monitored computer.
         [/settings/NSCA/client]
+        # HOSTNAME
         hostname=auto
 
 
@@ -579,9 +575,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/NSCA/client/targets/default]
+        # TARGET ADDRESS
         address=
 
 
@@ -604,9 +599,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/NSCA/client/targets/default]
+        # ALIAS
         alias=
 
 
@@ -627,9 +621,8 @@ Arguments
 
     **Sample**::
 
-        # ALLOWED CIPHERS
-        # A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
         [/settings/NSCA/client/targets/default]
+        # ALLOWED CIPHERS
         allowed ciphers=ADH
 
 
@@ -652,9 +645,8 @@ Arguments
 
     **Sample**::
 
-        # CA
-        # 
         [/settings/NSCA/client/targets/default]
+        # CA
         ca=
 
 
@@ -675,9 +667,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/NSCA/client/targets/default]
+        # SSL CERTIFICATE
         certificate=
 
 
@@ -700,9 +691,8 @@ Arguments
 
     **Sample**::
 
-        # CERTIFICATE FORMAT
-        # 
         [/settings/NSCA/client/targets/default]
+        # CERTIFICATE FORMAT
         certificate format=PEM
 
 
@@ -725,9 +715,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/NSCA/client/targets/default]
+        # SSL CERTIFICATE
         certificate key=
 
 
@@ -750,9 +739,8 @@ Arguments
 
     **Sample**::
 
-        # DH KEY
-        # 
         [/settings/NSCA/client/targets/default]
+        # DH KEY
         dh=${certificate-path}/nrpe_dh_512.pem
 
 
@@ -775,9 +763,8 @@ Arguments
 
     **Sample**::
 
-        # ENCODING
-        # 
         [/settings/NSCA/client/targets/default]
+        # ENCODING
         encoding=
 
 
@@ -814,9 +801,8 @@ Arguments
 
     **Sample**::
 
-        # ENCRYPTION
-        # Name of encryption algorithm to use.
         [/settings/NSCA/client/targets/default]
+        # ENCRYPTION
         encryption=aes
 
 
@@ -839,9 +825,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/NSCA/client/targets/default]
+        # TARGET HOST
         host=
 
 
@@ -864,9 +849,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/NSCA/client/targets/default]
+        # IS TEMPLATE
         is template=0
 
 
@@ -889,9 +873,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/NSCA/client/targets/default]
+        # PARENT
         parent=default
 
 
@@ -912,9 +895,8 @@ Arguments
 
     **Sample**::
 
-        # PASSWORD
-        # The password to use. Again has to be the same as the server or it wont work at all.
         [/settings/NSCA/client/targets/default]
+        # PASSWORD
         password=
 
 
@@ -937,9 +919,8 @@ Arguments
 
     **Sample**::
 
-        # PAYLOAD LENGTH
-        # Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
         [/settings/NSCA/client/targets/default]
+        # PAYLOAD LENGTH
         payload length=512
 
 
@@ -962,9 +943,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/NSCA/client/targets/default]
+        # TARGET PORT
         port=0
 
 
@@ -987,9 +967,8 @@ Arguments
 
     **Sample**::
 
-        # TIME OFFSET
-        # Time offset.
         [/settings/NSCA/client/targets/default]
+        # TIME OFFSET
         time offset=0
 
 
@@ -1010,9 +989,8 @@ Arguments
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading/writing packets to/from sockets.
         [/settings/NSCA/client/targets/default]
+        # TIMEOUT
         timeout=30
 
 
@@ -1033,9 +1011,8 @@ Arguments
 
     **Sample**::
 
-        # ENABLE SSL ENCRYPTION
-        # This option controls if SSL should be enabled.
         [/settings/NSCA/client/targets/default]
+        # ENABLE SSL ENCRYPTION
         use ssl=0
 
 
@@ -1056,9 +1033,8 @@ Arguments
 
     **Sample**::
 
-        # VERIFY MODE
-        # 
         [/settings/NSCA/client/targets/default]
+        # VERIFY MODE
         verify mode=none
 
 
@@ -1147,9 +1123,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/NSCA/client/targets/sample]
+        # TARGET ADDRESS
         address=
 
 
@@ -1174,9 +1149,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/NSCA/client/targets/sample]
+        # ALIAS
         alias=
 
 
@@ -1199,9 +1173,8 @@ Arguments
 
     **Sample**::
 
-        # ALLOWED CIPHERS
-        # A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
         [/settings/NSCA/client/targets/sample]
+        # ALLOWED CIPHERS
         allowed ciphers=ADH
 
 
@@ -1226,9 +1199,8 @@ Arguments
 
     **Sample**::
 
-        # CA
-        # 
         [/settings/NSCA/client/targets/sample]
+        # CA
         ca=
 
 
@@ -1251,9 +1223,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/NSCA/client/targets/sample]
+        # SSL CERTIFICATE
         certificate=
 
 
@@ -1278,9 +1249,8 @@ Arguments
 
     **Sample**::
 
-        # CERTIFICATE FORMAT
-        # 
         [/settings/NSCA/client/targets/sample]
+        # CERTIFICATE FORMAT
         certificate format=PEM
 
 
@@ -1305,9 +1275,8 @@ Arguments
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/NSCA/client/targets/sample]
+        # SSL CERTIFICATE
         certificate key=
 
 
@@ -1332,9 +1301,8 @@ Arguments
 
     **Sample**::
 
-        # DH KEY
-        # 
         [/settings/NSCA/client/targets/sample]
+        # DH KEY
         dh=${certificate-path}/nrpe_dh_512.pem
 
 
@@ -1359,9 +1327,8 @@ Arguments
 
     **Sample**::
 
-        # ENCODING
-        # 
         [/settings/NSCA/client/targets/sample]
+        # ENCODING
         encoding=
 
 
@@ -1400,9 +1367,8 @@ Arguments
 
     **Sample**::
 
-        # ENCRYPTION
-        # Name of encryption algorithm to use.
         [/settings/NSCA/client/targets/sample]
+        # ENCRYPTION
         encryption=aes
 
 
@@ -1427,9 +1393,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/NSCA/client/targets/sample]
+        # TARGET HOST
         host=
 
 
@@ -1454,9 +1419,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/NSCA/client/targets/sample]
+        # IS TEMPLATE
         is template=0
 
 
@@ -1481,9 +1445,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/NSCA/client/targets/sample]
+        # PARENT
         parent=default
 
 
@@ -1506,9 +1469,8 @@ Arguments
 
     **Sample**::
 
-        # PASSWORD
-        # The password to use. Again has to be the same as the server or it wont work at all.
         [/settings/NSCA/client/targets/sample]
+        # PASSWORD
         password=
 
 
@@ -1533,9 +1495,8 @@ Arguments
 
     **Sample**::
 
-        # PAYLOAD LENGTH
-        # Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
         [/settings/NSCA/client/targets/sample]
+        # PAYLOAD LENGTH
         payload length=512
 
 
@@ -1560,9 +1521,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/NSCA/client/targets/sample]
+        # TARGET PORT
         port=0
 
 
@@ -1587,9 +1547,8 @@ Arguments
 
     **Sample**::
 
-        # TIME OFFSET
-        # Time offset.
         [/settings/NSCA/client/targets/sample]
+        # TIME OFFSET
         time offset=0
 
 
@@ -1612,9 +1571,8 @@ Arguments
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading/writing packets to/from sockets.
         [/settings/NSCA/client/targets/sample]
+        # TIMEOUT
         timeout=30
 
 
@@ -1637,9 +1595,8 @@ Arguments
 
     **Sample**::
 
-        # ENABLE SSL ENCRYPTION
-        # This option controls if SSL should be enabled.
         [/settings/NSCA/client/targets/sample]
+        # ENABLE SSL ENCRYPTION
         use ssl=0
 
 
@@ -1662,9 +1619,8 @@ Arguments
 
     **Sample**::
 
-        # VERIFY MODE
-        # 
         [/settings/NSCA/client/targets/sample]
+        # VERIFY MODE
         verify mode=none
 
 

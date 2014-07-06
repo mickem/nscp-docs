@@ -233,9 +233,8 @@ Arguments
 
     **Sample**::
 
-        # CHANNEL
-        # The channel to listen to.
         [/settings/graphite/client]
+        # CHANNEL
         channel=GRAPHITE
 
 
@@ -256,9 +255,8 @@ Arguments
 
     **Sample**::
 
-        # HOSTNAME
-        # The host name of this host if set to blank (default) the windows name of the computer will be used.
         [/settings/graphite/client]
+        # HOSTNAME
         hostname=auto
 
 
@@ -361,9 +359,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/graphite/client/targets/default]
+        # TARGET ADDRESS
         address=
 
 
@@ -386,9 +383,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/graphite/client/targets/default]
+        # ALIAS
         alias=
 
 
@@ -411,9 +407,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/graphite/client/targets/default]
+        # TARGET HOST
         host=
 
 
@@ -436,9 +431,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/graphite/client/targets/default]
+        # IS TEMPLATE
         is template=0
 
 
@@ -461,9 +455,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/graphite/client/targets/default]
+        # PARENT
         parent=default
 
 
@@ -484,9 +477,8 @@ Arguments
 
     **Sample**::
 
-        # PATH FOR VALUES
-        # Path mapping for metrics
         [/settings/graphite/client/targets/default]
+        # PATH FOR VALUES
         path=system.${hostname}.${check_alias}.${perf_alias}
 
 
@@ -509,9 +501,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/graphite/client/targets/default]
+        # TARGET PORT
         port=0
 
 
@@ -574,9 +565,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/graphite/client/targets/sample]
+        # TARGET ADDRESS
         address=
 
 
@@ -601,9 +591,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/graphite/client/targets/sample]
+        # ALIAS
         alias=
 
 
@@ -628,9 +617,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/graphite/client/targets/sample]
+        # TARGET HOST
         host=
 
 
@@ -655,9 +643,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/graphite/client/targets/sample]
+        # IS TEMPLATE
         is template=0
 
 
@@ -682,9 +669,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/graphite/client/targets/sample]
+        # PARENT
         parent=default
 
 
@@ -707,9 +693,8 @@ Arguments
 
     **Sample**::
 
-        # PATH FOR VALUES
-        # Path mapping for metrics
         [/settings/graphite/client/targets/sample]
+        # PATH FOR VALUES
         path=system.${hostname}.${check_alias}.${perf_alias}
 
 
@@ -734,9 +719,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/graphite/client/targets/sample]
+        # TARGET PORT
         port=0
 
 

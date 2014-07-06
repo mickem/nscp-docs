@@ -670,9 +670,8 @@ Arguments
 
     **Sample**::
 
-        # BUFFER_SIZE
-        # The size of the buffer to use when getting messages this affects the speed and maximum size of messages you can recieve.
         [/settings/eventlog]
+        # BUFFER_SIZE
         buffer size=131072
 
 
@@ -693,9 +692,8 @@ Arguments
 
     **Sample**::
 
-        # DEBUG
-        # Log more information when filtering (useful to detect issues with filters) not useful in production as it is a bit of a resource hog.
         [/settings/eventlog]
+        # DEBUG
         debug=0
 
 
@@ -716,9 +714,8 @@ Arguments
 
     **Sample**::
 
-        # LOOKUP NAMES
-        # Lookup the names of eventlog files
         [/settings/eventlog]
+        # LOOKUP NAMES
         lookup names=1
 
 
@@ -739,9 +736,8 @@ Arguments
 
     **Sample**::
 
-        # SYNTAX
-        # Set this to use a specific syntax string for all commands (that don't specify one).
         [/settings/eventlog]
+        # SYNTAX
         syntax=
 
 
@@ -796,9 +792,8 @@ Arguments
 
     **Sample**::
 
-        # DEBUG
-        # Log missed records (useful to detect issues with filters) not useful in production as it is a bit of a resource hog.
         [/settings/eventlog/real-time]
+        # DEBUG
         debug=0
 
 
@@ -819,9 +814,8 @@ Arguments
 
     **Sample**::
 
-        # REAL TIME CHECKING
-        # Spawns a background thread which detects issues and reports them back instantly.
         [/settings/eventlog/real-time]
+        # REAL TIME CHECKING
         enabled=0
 
 
@@ -842,9 +836,8 @@ Arguments
 
     **Sample**::
 
-        # LOGS TO CHECK
-        # Comma separated list of logs to check
         [/settings/eventlog/real-time]
+        # LOGS TO CHECK
         log=application,system
 
 
@@ -865,9 +858,8 @@ Arguments
 
     **Sample**::
 
-        # STARTUP AGE
-        # The initial age to scan when starting NSClient++
         [/settings/eventlog/real-time]
+        # STARTUP AGE
         startup age=30m
 
 

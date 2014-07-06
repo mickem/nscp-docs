@@ -257,9 +257,8 @@ Arguments
 
     **Sample**::
 
-        # CHANNEL
-        # The channel to listen to.
         [/settings/NRDP/client]
+        # CHANNEL
         channel=NRDP
 
 
@@ -280,9 +279,8 @@ Arguments
 
     **Sample**::
 
-        # HOSTNAME
-        # The host name of this host if set to blank (default) the windows name of the computer will be used.
         [/settings/NRDP/client]
+        # HOSTNAME
         hostname=auto
 
 
@@ -391,9 +389,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/NRDP/client/targets/default]
+        # TARGET ADDRESS
         address=
 
 
@@ -416,9 +413,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/NRDP/client/targets/default]
+        # ALIAS
         alias=
 
 
@@ -441,9 +437,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/NRDP/client/targets/default]
+        # TARGET HOST
         host=
 
 
@@ -466,9 +461,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/NRDP/client/targets/default]
+        # IS TEMPLATE
         is template=0
 
 
@@ -491,9 +485,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/NRDP/client/targets/default]
+        # PARENT
         parent=default
 
 
@@ -516,9 +509,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/NRDP/client/targets/default]
+        # TARGET PORT
         port=0
 
 
@@ -539,9 +531,8 @@ Arguments
 
     **Sample**::
 
-        # RECIPIENT
-        # Recipient of email message
         [/settings/NRDP/client/targets/default]
+        # RECIPIENT
         recipient=nscp@localhost
 
 
@@ -562,9 +553,8 @@ Arguments
 
     **Sample**::
 
-        # SENDER
-        # Sender of email message
         [/settings/NRDP/client/targets/default]
+        # SENDER
         sender=nscp@localhost
 
 
@@ -585,9 +575,8 @@ Arguments
 
     **Sample**::
 
-        # TEMPLATE
-        # Template for message data
         [/settings/NRDP/client/targets/default]
+        # TEMPLATE
         template=Hello, this is %source% reporting %message%!
 
 
@@ -608,9 +597,8 @@ Arguments
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading/writing packets to/from sockets.
         [/settings/NRDP/client/targets/default]
+        # TIMEOUT
         timeout=30
 
 
@@ -679,9 +667,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET ADDRESS
-        # Target host address
         [/settings/NRDP/client/targets/sample]
+        # TARGET ADDRESS
         address=
 
 
@@ -706,9 +693,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/NRDP/client/targets/sample]
+        # ALIAS
         alias=
 
 
@@ -733,9 +719,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET HOST
-        # The target server to report results to.
         [/settings/NRDP/client/targets/sample]
+        # TARGET HOST
         host=
 
 
@@ -760,9 +745,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/NRDP/client/targets/sample]
+        # IS TEMPLATE
         is template=0
 
 
@@ -787,9 +771,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/NRDP/client/targets/sample]
+        # PARENT
         parent=default
 
 
@@ -814,9 +797,8 @@ Arguments
 
     **Sample**::
 
-        # TARGET PORT
-        # The target server port
         [/settings/NRDP/client/targets/sample]
+        # TARGET PORT
         port=0
 
 
@@ -839,9 +821,8 @@ Arguments
 
     **Sample**::
 
-        # RECIPIENT
-        # Recipient of email message
         [/settings/NRDP/client/targets/sample]
+        # RECIPIENT
         recipient=nscp@localhost
 
 
@@ -864,9 +845,8 @@ Arguments
 
     **Sample**::
 
-        # SENDER
-        # Sender of email message
         [/settings/NRDP/client/targets/sample]
+        # SENDER
         sender=nscp@localhost
 
 
@@ -889,9 +869,8 @@ Arguments
 
     **Sample**::
 
-        # TEMPLATE
-        # Template for message data
         [/settings/NRDP/client/targets/sample]
+        # TEMPLATE
         template=Hello, this is %source% reporting %message%!
 
 
@@ -914,9 +893,8 @@ Arguments
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading/writing packets to/from sockets.
         [/settings/NRDP/client/targets/sample]
+        # TIMEOUT
         timeout=30
 
 

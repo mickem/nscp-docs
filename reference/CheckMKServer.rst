@@ -139,9 +139,8 @@ Advanced keys:
 
     **Sample**::
 
-        # ALLOWED CIPHERS
-        # 
         [/settings/check_mk/server]
+        # ALLOWED CIPHERS
         allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
 
@@ -164,9 +163,8 @@ Advanced keys:
 
     **Sample**::
 
-        # ALLOWED HOSTS
-        # A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/check_mk/server]
+        # ALLOWED HOSTS
         allowed hosts=127.0.0.1
 
 
@@ -189,9 +187,8 @@ Advanced keys:
 
     **Sample**::
 
-        # BIND TO ADDRESS
-        # Allows you to bind server to a specific local address. This has to be a dotted ip address not a host name. Leaving this blank will bind to all available IP addresses. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/check_mk/server]
+        # BIND TO ADDRESS
         bind to=
 
 
@@ -214,9 +211,8 @@ Advanced keys:
 
     **Sample**::
 
-        # CA
-        # 
         [/settings/check_mk/server]
+        # CA
         ca=${certificate-path}/ca.pem
 
 
@@ -239,9 +235,8 @@ Advanced keys:
 
     **Sample**::
 
-        # CACHE ALLOWED HOSTS
-        # If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/check_mk/server]
+        # CACHE ALLOWED HOSTS
         cache allowed hosts=1
 
 
@@ -264,9 +259,8 @@ Advanced keys:
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/check_mk/server]
+        # SSL CERTIFICATE
         certificate=${certificate-path}/certificate.pem
 
 
@@ -289,9 +283,8 @@ Advanced keys:
 
     **Sample**::
 
-        # CERTIFICATE FORMAT
-        # 
         [/settings/check_mk/server]
+        # CERTIFICATE FORMAT
         certificate format=PEM
 
 
@@ -314,9 +307,8 @@ Advanced keys:
 
     **Sample**::
 
-        # SSL CERTIFICATE
-        # 
         [/settings/check_mk/server]
+        # SSL CERTIFICATE
         certificate key=${certificate-path}/certificate_key.pem
 
 
@@ -339,9 +331,8 @@ Advanced keys:
 
     **Sample**::
 
-        # DH KEY
-        # 
         [/settings/check_mk/server]
+        # DH KEY
         dh=${certificate-path}/nrpe_dh_512.pem
 
 
@@ -362,9 +353,8 @@ Advanced keys:
 
     **Sample**::
 
-        # PORT NUMBER
-        # Port to use for check_mk.
         [/settings/check_mk/server]
+        # PORT NUMBER
         port=6556
 
 
@@ -387,9 +377,8 @@ Advanced keys:
 
     **Sample**::
 
-        # LISTEN QUEUE
-        # Number of sockets to queue before starting to refuse new incoming connections. This can be used to tweak the amount of simultaneous sockets that the server accepts. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/check_mk/server]
+        # LISTEN QUEUE
         socket queue size=0
 
 
@@ -412,9 +401,8 @@ Advanced keys:
 
     **Sample**::
 
-        # THREAD POOL
-        # parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/check_mk/server]
+        # THREAD POOL
         thread pool=10
 
 
@@ -437,9 +425,8 @@ Advanced keys:
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
         [/settings/check_mk/server]
+        # TIMEOUT
         timeout=30
 
 
@@ -460,9 +447,8 @@ Advanced keys:
 
     **Sample**::
 
-        # ENABLE SSL ENCRYPTION
-        # This option controls if SSL should be enabled.
         [/settings/check_mk/server]
+        # ENABLE SSL ENCRYPTION
         use ssl=0
 
 
@@ -485,9 +471,8 @@ Advanced keys:
 
     **Sample**::
 
-        # VERIFY MODE
-        # 
         [/settings/check_mk/server]
+        # VERIFY MODE
         verify mode=none
 
 
@@ -575,9 +560,8 @@ Advanced keys:
 
     **Sample**::
 
-        # ALLOWED HOSTS
-        # A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges.
         [/settings/default]
+        # ALLOWED HOSTS
         allowed hosts=127.0.0.1
 
 
@@ -598,9 +582,8 @@ Advanced keys:
 
     **Sample**::
 
-        # BIND TO ADDRESS
-        # Allows you to bind server to a specific local address. This has to be a dotted ip address not a host name. Leaving this blank will bind to all available IP addresses.
         [/settings/default]
+        # BIND TO ADDRESS
         bind to=
 
 
@@ -621,9 +604,8 @@ Advanced keys:
 
     **Sample**::
 
-        # CACHE ALLOWED HOSTS
-        # If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server.
         [/settings/default]
+        # CACHE ALLOWED HOSTS
         cache allowed hosts=1
 
 
@@ -646,9 +628,8 @@ Advanced keys:
 
     **Sample**::
 
-        # NRPE PAYLOAD ENCODING
-        # 
         [/settings/default]
+        # NRPE PAYLOAD ENCODING
         encoding=
 
 
@@ -669,9 +650,8 @@ Advanced keys:
 
     **Sample**::
 
-        # INBOX
-        # The default channel to post incoming messages on
         [/settings/default]
+        # INBOX
         inbox=inbox
 
 
@@ -694,9 +674,8 @@ Advanced keys:
 
     **Sample**::
 
-        # Register modern aliases for built-in commands
-        # Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++
         [/settings/default]
+        # Register modern aliases for built-in commands
         modern commands=1
 
 
@@ -717,9 +696,8 @@ Advanced keys:
 
     **Sample**::
 
-        # PASSWORD
-        # Password to use
         [/settings/default]
+        # PASSWORD
         password=
 
 
@@ -742,9 +720,8 @@ Advanced keys:
 
     **Sample**::
 
-        # LISTEN QUEUE
-        # Number of sockets to queue before starting to refuse new incoming connections. This can be used to tweak the amount of simultaneous sockets that the server accepts.
         [/settings/default]
+        # LISTEN QUEUE
         socket queue size=0
 
 
@@ -767,9 +744,8 @@ Advanced keys:
 
     **Sample**::
 
-        # THREAD POOL
-        # 
         [/settings/default]
+        # THREAD POOL
         thread pool=10
 
 
@@ -790,9 +766,8 @@ Advanced keys:
 
     **Sample**::
 
-        # TIMEOUT
-        # Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out.
         [/settings/default]
+        # TIMEOUT
         timeout=30
 
 

@@ -563,9 +563,8 @@ Arguments
 
     **Sample**::
 
-        # REAL TIME CHECKING
-        # Spawns a background thread which waits for file changes.
         [/settings/logfile/real-time]
+        # REAL TIME CHECKING
         enabled=0
 
 
@@ -677,9 +676,8 @@ Arguments
 
     **Sample**::
 
-        # ALIAS
-        # The alias (service name) to report to server
         [/settings/logfile/real-time/checks/sample]
+        # ALIAS
         alias=
 
 
@@ -704,9 +702,8 @@ Arguments
 
     **Sample**::
 
-        # COLUMN SPLIT
-        # THe character(s) to use when splitting on column level
         [/settings/logfile/real-time/checks/sample]
+        # COLUMN SPLIT
         column split=
 
 
@@ -731,9 +728,8 @@ Arguments
 
     **Sample**::
 
-        # COMMAND NAME
-        # The name of the command (think nagios service name) to report up stream (defaults to alias if not set)
         [/settings/logfile/real-time/checks/sample]
+        # COMMAND NAME
         command=
 
 
@@ -756,9 +752,8 @@ Arguments
 
     **Sample**::
 
-        # CRITCAL FILTER
-        # If any rows match this filter severity will escalated to CRITCAL
         [/settings/logfile/real-time/checks/sample]
+        # CRITCAL FILTER
         critical=
 
 
@@ -783,9 +778,8 @@ Arguments
 
     **Sample**::
 
-        # DEBUG
-        # Enable this to display debug information for this match filter
         [/settings/logfile/real-time/checks/sample]
+        # DEBUG
         debug=0
 
 
@@ -810,9 +804,8 @@ Arguments
 
     **Sample**::
 
-        # DESTINATION
-        # The destination for intercepted messages
         [/settings/logfile/real-time/checks/sample]
+        # DESTINATION
         destination=
 
 
@@ -837,9 +830,8 @@ Arguments
 
     **Sample**::
 
-        # SYNTAX
-        # Format string for dates
         [/settings/logfile/real-time/checks/sample]
+        # SYNTAX
         detail syntax=
 
 
@@ -864,9 +856,8 @@ Arguments
 
     **Sample**::
 
-        # EMPTY MESSAGE
-        # The message to display if nothing matches the filter (generally considered the ok state).
         [/settings/logfile/real-time/checks/sample]
+        # EMPTY MESSAGE
         empty message=eventlog found no records
 
 
@@ -889,9 +880,8 @@ Arguments
 
     **Sample**::
 
-        # FILE
-        # The eventlog record to filter on (if set to 'all' means all enabled logs)
         [/settings/logfile/real-time/checks/sample]
+        # FILE
         file=
 
 
@@ -916,9 +906,8 @@ Arguments
 
     **Sample**::
 
-        # FILES
-        # The eventlog record to filter on (if set to 'all' means all enabled logs)
         [/settings/logfile/real-time/checks/sample]
+        # FILES
         files=
 
 
@@ -941,9 +930,8 @@ Arguments
 
     **Sample**::
 
-        # FILTER
-        # Scan files for matching rows for each matching rows an OK message will be submitted
         [/settings/logfile/real-time/checks/sample]
+        # FILTER
         filter=
 
 
@@ -968,9 +956,8 @@ Arguments
 
     **Sample**::
 
-        # IS TEMPLATE
-        # Declare this object as a template (this means it will not be available as a separate object)
         [/settings/logfile/real-time/checks/sample]
+        # IS TEMPLATE
         is template=0
 
 
@@ -994,9 +981,8 @@ Arguments
 
     **Sample**::
 
-        # MAGIMUM AGE
-        # How long before reporting "ok".
         [/settings/logfile/real-time/checks/sample]
+        # MAGIMUM AGE
         maximum age=5m
 
 
@@ -1019,9 +1005,8 @@ Arguments
 
     **Sample**::
 
-        # OK FILTER
-        # If any rows match this filter severity will escalated down to OK
         [/settings/logfile/real-time/checks/sample]
+        # OK FILTER
         ok=
 
 
@@ -1046,9 +1031,8 @@ Arguments
 
     **Sample**::
 
-        # PARENT
-        # The parent the target inherits from
         [/settings/logfile/real-time/checks/sample]
+        # PARENT
         parent=default
 
 
@@ -1073,9 +1057,8 @@ Arguments
 
     **Sample**::
 
-        # PERF CONFIG
-        # Performance data configuration
         [/settings/logfile/real-time/checks/sample]
+        # PERF CONFIG
         perf config=
 
 
@@ -1100,9 +1083,8 @@ Arguments
 
     **Sample**::
 
-        # SEVERITY
-        # THe severity of this message (OK, WARNING, CRITICAL, UNKNOWN)
         [/settings/logfile/real-time/checks/sample]
+        # SEVERITY
         severity=
 
 
@@ -1125,9 +1107,8 @@ Arguments
 
     **Sample**::
 
-        # DESTINATION
-        # Same as destination
         [/settings/logfile/real-time/checks/sample]
+        # DESTINATION
         target=
 
 
@@ -1152,9 +1133,8 @@ Arguments
 
     **Sample**::
 
-        # SYNTAX
-        # Format string for dates
         [/settings/logfile/real-time/checks/sample]
+        # SYNTAX
         top syntax=
 
 
@@ -1177,9 +1157,8 @@ Arguments
 
     **Sample**::
 
-        # WARNING FILTER
-        # If any rows match this filter severity will escalated to WARNING
         [/settings/logfile/real-time/checks/sample]
+        # WARNING FILTER
         warning=
 
 
