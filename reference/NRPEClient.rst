@@ -263,10 +263,21 @@ Arguments
 
 
 
+.. csv-table:: 
+    :class: contentstable 
+    :delim: | 
+    :header: "Option", "Default Value", "Description"
+
+    :option:`NA` | N/A | Command will forward a query as-is to a remote node
 
 
 Arguments
 *********
+.. option:: NA
+    :synopsis: Command will forward a query as-is to a remote node
+
+    | Command will forward a query as-is to a remote node
+
 
 :query:`nrpe_query`
 -------------------
