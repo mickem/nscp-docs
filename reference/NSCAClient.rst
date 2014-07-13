@@ -145,6 +145,7 @@ A quick reference for all avalible queries (check commands) in the NSCAClient mo
     :option:`source-host` | N/A | Source/sender host name (default is auto which means use the name of the actual host)
     :option:`sender-host` | N/A | Source/sender host name (default is auto which means use the name of the actual host)
     :option:`time-offset` | N/A | 
+    :option:`retries` | N/A | Number of times to retry a failed connection attempt
 
 
 Arguments
@@ -310,6 +311,11 @@ Arguments
     :synopsis: 
 
 
+
+.. option:: retries
+    :synopsis: Number of times to retry a failed connection attempt
+
+    | Number of times to retry a failed connection attempt
 
 
 
