@@ -68,26 +68,26 @@ A quick reference for all avalible queries (check commands) in the CheckEventLog
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` | level in ('error', 'warning') | Filter which marks interesting items.
+    :option:`warning` | count > 0 | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | count > 5 | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | No matches | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
-    :option:`unique-index` | N/A | Unique syntax.
+    :option:`perf-config` |  | Performance data generation configuration
+    :option:`unique-index` |  | Unique syntax.
     :option:`top-syntax` | ${status}: ${problem_count}/${count} ${problem_list} | Top level syntax.
     :option:`detail-syntax` | ${file} ${source} (${message}) | Detail level syntax.
     :option:`perf-syntax` | ${file}_${source} | Performance alias syntax.
-    :option:`file` | N/A | File to read (can be specified multiple times to check multiple files.
-    :option:`scan-range` | N/A | Date range to scan.
-    :option:`truncate-message` | N/A | Maximum length of message for each event log message text.
+    :option:`file` |  | File to read (can be specified multiple times to check multiple files.
+    :option:`scan-range` |  | Date range to scan.
+    :option:`truncate-message` |  | Maximum length of message for each event log message text.
     :option:`unique` | 1 | Shorthand for setting default unique index: ${log}-${source}-${id}.
 
 
@@ -98,11 +98,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -504,23 +503,23 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`MaxWarn` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCrit` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarn` | N/A | Minimum value before a warning is returned.
-    :option:`MinCrit` | N/A | Minimum value before a critical is returned.
-    :option:`warn` | N/A | Maximum value before a warning is returned.
-    :option:`crit` | N/A | Maximum value before a critical is returned.
-    :option:`filter` | N/A | The filter to use.
-    :option:`file` | N/A | The file to check
+    :option:`MaxWarn` |  | Maximum value before a warning is returned.
+    :option:`MaxCrit` |  | Maximum value before a critical is returned.
+    :option:`MinWarn` |  | Minimum value before a warning is returned.
+    :option:`MinCrit` |  | Minimum value before a critical is returned.
+    :option:`warn` |  | Maximum value before a warning is returned.
+    :option:`crit` |  | Maximum value before a critical is returned.
+    :option:`filter` |  | The filter to use.
+    :option:`file` |  | The file to check
     :option:`debug` | 1 | The file to check
-    :option:`truncate` | N/A | Deprecated and has no meaning
+    :option:`truncate` |  | Deprecated and has no meaning
     :option:`descriptions` | 1 | Deprecated and has no meaning
     :option:`unique` | 1 | 
     :option:`syntax` | %source%, %strings% | The syntax string
     :option:`top-syntax` | ${list} | The top level syntax string
-    :option:`scan-range` | N/A | TODO
+    :option:`scan-range` |  | TODO
 
 
 Arguments
@@ -530,11 +529,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).

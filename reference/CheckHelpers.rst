@@ -78,7 +78,7 @@ A quick reference for all avalible queries (check commands) in the CheckHelpers 
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
 
 
@@ -89,11 +89,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -116,7 +115,7 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
 
 
@@ -127,11 +126,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -154,7 +152,7 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
 
 
@@ -165,11 +163,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -192,7 +189,7 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
 
 
@@ -203,11 +200,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -230,13 +226,13 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`command` | N/A | Commands to run (can be used multiple times)
-    :option:`arguments` | N/A | Deprecated alias for command
+    :option:`command` |  | Commands to run (can be used multiple times)
+    :option:`arguments` |  | Deprecated alias for command
     :option:`separator` | ,  | Separator between messages
-    :option:`prefix` | N/A | Message prefix
-    :option:`suffix` | N/A | Message suffix
+    :option:`prefix` |  | Message prefix
+    :option:`suffix` |  | Message suffix
 
 
 Arguments
@@ -246,11 +242,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -298,14 +293,14 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`ok` | N/A | The state to return instead of OK
-    :option:`warning` | N/A | The state to return instead of WARNING
-    :option:`critical` | N/A | The state to return instead of CRITICAL
-    :option:`unknown` | N/A | The state to return instead of UNKNOWN
-    :option:`command` | N/A | Wrapped command to execute
-    :option:`arguments` | N/A | List of arguments (for wrapped command)
+    :option:`ok` |  | The state to return instead of OK
+    :option:`warning` |  | The state to return instead of WARNING
+    :option:`critical` |  | The state to return instead of CRITICAL
+    :option:`unknown` |  | The state to return instead of UNKNOWN
+    :option:`command` |  | Wrapped command to execute
+    :option:`arguments` |  | List of arguments (for wrapped command)
 
 
 Arguments
@@ -315,11 +310,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -372,7 +366,7 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
 
 
@@ -383,11 +377,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -410,12 +403,12 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`timeout` | N/A | The timeout value
-    :option:`command` | N/A | Wrapped command to execute
-    :option:`arguments` | N/A | List of arguments (for wrapped command)
-    :option:`return` | N/A | The return status
+    :option:`timeout` |  | The timeout value
+    :option:`command` |  | Wrapped command to execute
+    :option:`arguments` |  | List of arguments (for wrapped command)
+    :option:`return` |  | The return status
 
 
 Arguments
@@ -425,11 +418,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -466,21 +458,10 @@ Arguments
 
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Option", "Default Value", "Description"
-
-    :option:`0` | 3 | 10 2014-07-05
 
 
 Arguments
 *********
-.. option:: 0
-    :synopsis: 10 2014-07-05
-
-    | 10 2014-07-05
-
 
 :query:`check_warning`
 ----------------------
@@ -497,7 +478,7 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
 
 
@@ -508,11 +489,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -535,12 +515,12 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`sort` | none | The sort order to use: none, normal or reversed
     :option:`limit` | 0 | The maximum number of items to return (0 returns all items)
-    :option:`command` | N/A | Wrapped command to execute
-    :option:`arguments` | N/A | List of arguments (for wrapped command)
+    :option:`command` |  | Wrapped command to execute
+    :option:`arguments` |  | List of arguments (for wrapped command)
 
 
 Arguments
@@ -550,11 +530,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).

@@ -99,27 +99,27 @@ A quick reference for all avalible queries (check commands) in the CheckLogFile 
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` |  | Filter which marks interesting items.
+    :option:`warning` |  | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` |  | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | No matches | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${count}/${total} (${problem_list}) | Top level syntax.
     :option:`detail-syntax` | ${column1} | Detail level syntax.
     :option:`perf-syntax` | ${column1} | Performance alias syntax.
-    :option:`line-split` | \n | Character string used to split a file into several lines (default 
-    :option:`column-split` | \t | Character string to split a line into several columns (default 	)
-    :option:`split` | N/A | Alias for split-column
-    :option:`file` | N/A | File to read (can be specified multiple times to check multiple files.
-    :option:`files` | N/A | A comma separated list of files to scan (same as file except a list)
+    :option:`line-split` | \n | Character string used to split a file into several lines (default \n)
+    :option:`column-split` | \t | Character string to split a line into several columns (default \t)
+    :option:`split` |  | Alias for split-column
+    :option:`file` |  | File to read (can be specified multiple times to check multiple files.
+    :option:`files` |  | A comma separated list of files to scan (same as file except a list)
 
 
 Arguments
@@ -129,11 +129,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -467,15 +466,14 @@ Arguments
 
 
 .. option:: line-split
-    :synopsis: Character string used to split a file into several lines (default 
+    :synopsis: Character string used to split a file into several lines (default \n)
 
-    | Character string used to split a file into several lines (default 
-    | )
+    | Character string used to split a file into several lines (default \n)
 
 .. option:: column-split
-    :synopsis: Character string to split a line into several columns (default 	)
+    :synopsis: Character string to split a line into several columns (default \t)
 
-    | Character string to split a line into several columns (default 	)
+    | Character string to split a line into several columns (default \t)
 
 .. option:: split
     :synopsis: Alias for split-column

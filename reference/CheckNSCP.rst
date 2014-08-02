@@ -47,7 +47,7 @@ A quick reference for all avalible queries (check commands) in the CheckNSCP mod
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
 
 
@@ -58,11 +58,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).

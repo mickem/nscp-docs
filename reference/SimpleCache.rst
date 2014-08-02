@@ -73,13 +73,13 @@ A quick reference for all avalible queries (check commands) in the SimpleCache m
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`key` | N/A | The key (will not be parsed)
-    :option:`host` | N/A | The host to look for (translates into the key)
-    :option:`command` | N/A | The command to look for (translates into the key)
-    :option:`channel` | N/A | The channel to look for (translates into the key)
-    :option:`alias` | N/A | The alias to look for (translates into the key)
+    :option:`key` |  | The key (will not be parsed)
+    :option:`host` |  | The host to look for (translates into the key)
+    :option:`command` |  | The command to look for (translates into the key)
+    :option:`channel` |  | The channel to look for (translates into the key)
+    :option:`alias` |  | The alias to look for (translates into the key)
     :option:`not-found-msg` | Entry not found | The message to display when a message is not found
     :option:`not-found-code` | unknown | The return status to return when a message is not found
 
@@ -91,11 +91,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).

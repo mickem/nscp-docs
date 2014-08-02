@@ -106,26 +106,26 @@ A quick reference for all avalible queries (check commands) in the NSCPClient mo
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`host` | N/A | The host of the host running the server
-    :option:`port` | N/A | The port of the host running the server
-    :option:`address` | N/A | The address (host:port) of the host running the server
-    :option:`timeout` | N/A | Number of seconds before connection times out (default=10)
-    :option:`target` | N/A | Target to use (lookup connection info from config)
-    :option:`retry` | N/A | Number of times ti retry a failed connection attempt (default=2)
-    :option:`command` | N/A | The name of the command that the remote daemon should run
-    :option:`arguments` | N/A | list of arguments
+    :option:`host` |  | The host of the host running the server
+    :option:`port` |  | The port of the host running the server
+    :option:`address` |  | The address (host:port) of the host running the server
+    :option:`timeout` |  | Number of seconds before connection times out (default=10)
+    :option:`target` |  | Target to use (lookup connection info from config)
+    :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
+    :option:`command` |  | The name of the command that the remote daemon should run
+    :option:`arguments` |  | list of arguments
     :option:`no-ssl` | N/A | Do not initial an ssl handshake with the server, talk in plaintext.
-    :option:`certificate` | N/A | Length of payload (has to be same as on the server)
-    :option:`dh` | N/A | Length of payload (has to be same as on the server)
-    :option:`certificate-key` | N/A | Client certificate to use
-    :option:`certificate-format` | N/A | Client certificate format
-    :option:`ca` | N/A | Certificate authority
-    :option:`verify` | N/A | Client certificate format
-    :option:`allowed-ciphers` | N/A | Client certificate format
+    :option:`certificate` |  | Length of payload (has to be same as on the server)
+    :option:`dh` |  | Length of payload (has to be same as on the server)
+    :option:`certificate-key` |  | Client certificate to use
+    :option:`certificate-format` |  | Client certificate format
+    :option:`ca` |  | Certificate authority
+    :option:`verify` |  | Client certificate format
+    :option:`allowed-ciphers` |  | Client certificate format
     :option:`ssl` | N/A | Initial an ssl handshake with the server.
-    :option:`timeout` | N/A | 
+    :option:`timeout` |  | 
 
 
 Arguments
@@ -135,11 +135,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -252,28 +251,28 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`host` | N/A | The host of the host running the server
-    :option:`port` | N/A | The port of the host running the server
-    :option:`address` | N/A | The address (host:port) of the host running the server
-    :option:`timeout` | N/A | Number of seconds before connection times out (default=10)
-    :option:`target` | N/A | Target to use (lookup connection info from config)
-    :option:`retry` | N/A | Number of times ti retry a failed connection attempt (default=2)
-    :option:`command` | N/A | The name of the query that the remote daemon should run
-    :option:`arguments` | N/A | list of arguments
-    :option:`query-command` | N/A | The name of the query that the remote daemon should run
-    :option:`query-arguments` | N/A | list of arguments
+    :option:`host` |  | The host of the host running the server
+    :option:`port` |  | The port of the host running the server
+    :option:`address` |  | The address (host:port) of the host running the server
+    :option:`timeout` |  | Number of seconds before connection times out (default=10)
+    :option:`target` |  | Target to use (lookup connection info from config)
+    :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
+    :option:`command` |  | The name of the query that the remote daemon should run
+    :option:`arguments` |  | list of arguments
+    :option:`query-command` |  | The name of the query that the remote daemon should run
+    :option:`query-arguments` |  | list of arguments
     :option:`no-ssl` | N/A | Do not initial an ssl handshake with the server, talk in plaintext.
-    :option:`certificate` | N/A | Length of payload (has to be same as on the server)
-    :option:`dh` | N/A | Length of payload (has to be same as on the server)
-    :option:`certificate-key` | N/A | Client certificate to use
-    :option:`certificate-format` | N/A | Client certificate format
-    :option:`ca` | N/A | Certificate authority
-    :option:`verify` | N/A | Client certificate format
-    :option:`allowed-ciphers` | N/A | Client certificate format
+    :option:`certificate` |  | Length of payload (has to be same as on the server)
+    :option:`dh` |  | Length of payload (has to be same as on the server)
+    :option:`certificate-key` |  | Client certificate to use
+    :option:`certificate-format` |  | Client certificate format
+    :option:`ca` |  | Certificate authority
+    :option:`verify` |  | Client certificate format
+    :option:`allowed-ciphers` |  | Client certificate format
     :option:`ssl` | N/A | Initial an ssl handshake with the server.
-    :option:`timeout` | N/A | 
+    :option:`timeout` |  | 
 
 
 Arguments
@@ -283,11 +282,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -410,28 +408,28 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`host` | N/A | The host of the host running the server
-    :option:`port` | N/A | The port of the host running the server
-    :option:`address` | N/A | The address (host:port) of the host running the server
-    :option:`timeout` | N/A | Number of seconds before connection times out (default=10)
-    :option:`target` | N/A | Target to use (lookup connection info from config)
-    :option:`retry` | N/A | Number of times ti retry a failed connection attempt (default=2)
-    :option:`command` | N/A | The name of the command that the remote daemon should run
-    :option:`alias` | N/A | Same as command
-    :option:`message` | N/A | Message
-    :option:`result` | N/A | Result code either a number or OK, WARN, CRIT, UNKNOWN
+    :option:`host` |  | The host of the host running the server
+    :option:`port` |  | The port of the host running the server
+    :option:`address` |  | The address (host:port) of the host running the server
+    :option:`timeout` |  | Number of seconds before connection times out (default=10)
+    :option:`target` |  | Target to use (lookup connection info from config)
+    :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
+    :option:`command` |  | The name of the command that the remote daemon should run
+    :option:`alias` |  | Same as command
+    :option:`message` |  | Message
+    :option:`result` |  | Result code either a number or OK, WARN, CRIT, UNKNOWN
     :option:`no-ssl` | N/A | Do not initial an ssl handshake with the server, talk in plaintext.
-    :option:`certificate` | N/A | Length of payload (has to be same as on the server)
-    :option:`dh` | N/A | Length of payload (has to be same as on the server)
-    :option:`certificate-key` | N/A | Client certificate to use
-    :option:`certificate-format` | N/A | Client certificate format
-    :option:`ca` | N/A | Certificate authority
-    :option:`verify` | N/A | Client certificate format
-    :option:`allowed-ciphers` | N/A | Client certificate format
+    :option:`certificate` |  | Length of payload (has to be same as on the server)
+    :option:`dh` |  | Length of payload (has to be same as on the server)
+    :option:`certificate-key` |  | Client certificate to use
+    :option:`certificate-format` |  | Client certificate format
+    :option:`ca` |  | Certificate authority
+    :option:`verify` |  | Client certificate format
+    :option:`allowed-ciphers` |  | Client certificate format
     :option:`ssl` | N/A | Initial an ssl handshake with the server.
-    :option:`timeout` | N/A | 
+    :option:`timeout` |  | 
 
 
 Arguments
@@ -441,11 +439,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).

@@ -48,28 +48,28 @@ A quick reference for all avalible queries (check commands) in the CheckTaskSche
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` | enabled = 1 | Filter which marks interesting items.
+    :option:`warning` | exit_code != 0 | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | exit_code < 0 | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | All stats ok | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${problem_list} | Top level syntax.
     :option:`detail-syntax` | ${folder}/${title}: ${exit_code} != 0 | Detail level syntax.
     :option:`perf-syntax` | ${title} | Performance alias syntax.
-    :option:`computer` | N/A | The name of the computer that you want to connect to.
-    :option:`user` | N/A | The user name that is used during the connection to the computer.
-    :option:`domain` | N/A | The domain of the user specified in the user parameter.
-    :option:`password` | N/A | The password that is used to connect to the computer. If the user name and password are not specified, then the current token is used.
-    :option:`folder` | N/A | The folder in which the tasks to check reside.
-    :option:`recursive` | N/A | Recurse subfolder (defaults to true).
+    :option:`computer` |  | The name of the computer that you want to connect to.
+    :option:`user` |  | The user name that is used during the connection to the computer.
+    :option:`domain` |  | The domain of the user specified in the user parameter.
+    :option:`password` |  | The password that is used to connect to the computer. If the user name and password are not specified, then the current token is used.
+    :option:`folder` |  | The folder in which the tasks to check reside.
+    :option:`recursive` |  | Recurse subfolder (defaults to true).
 
 
 Arguments
@@ -79,11 +79,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -461,19 +460,19 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`warn` | N/A | Warning bounds.
-    :option:`crit` | N/A | Critical bounds.
-    :option:`MaxWarn` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCrit` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarn` | N/A | Minimum value before a warning is returned.
-    :option:`MinCrit` | N/A | Minimum value before a critical is returned.
-    :option:`Counter` | N/A | The time to check
-    :option:`truncate` | N/A | Deprecated option
-    :option:`syntax` | N/A | Syntax (same as detail-syntax in the check_tasksched check)
-    :option:`master-syntax` | N/A | Master Syntax (same as top-syntax in the check_tasksched check)
-    :option:`filter` | N/A | Filter (same as filter in the check_tasksched check)
+    :option:`warn` |  | Warning bounds.
+    :option:`crit` |  | Critical bounds.
+    :option:`MaxWarn` |  | Maximum value before a warning is returned.
+    :option:`MaxCrit` |  | Maximum value before a critical is returned.
+    :option:`MinWarn` |  | Minimum value before a warning is returned.
+    :option:`MinCrit` |  | Minimum value before a critical is returned.
+    :option:`Counter` |  | The time to check
+    :option:`truncate` |  | Deprecated option
+    :option:`syntax` |  | Syntax (same as detail-syntax in the check_tasksched check)
+    :option:`master-syntax` |  | Master Syntax (same as top-syntax in the check_tasksched check)
+    :option:`filter` |  | Filter (same as filter in the check_tasksched check)
     :option:`debug` | N/A | Filter (same as filter in the check_tasksched check)
 
 
@@ -484,11 +483,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).

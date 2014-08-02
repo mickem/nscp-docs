@@ -50,26 +50,26 @@ A quick reference for all avalible queries (check commands) in the CheckDisk mod
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` |  | Filter which marks interesting items.
+    :option:`warning` | used > 80% | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | used > 90% | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | All drives ok | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status} ${problem_list} | Top level syntax.
     :option:`detail-syntax` | ${drive_or_name}: ${used}/${size} used | Detail level syntax.
     :option:`perf-syntax` | ${drive_or_id} | Performance alias syntax.
-    :option:`drive` | N/A | The drives to check.
+    :option:`drive` |  | The drives to check.
     :option:`ignore-unreadable` | N/A | Ignore drives which are not reachable by the current user.
-    :option:`magic` | N/A | Magic number for use with scaling drive sizes.
-    :option:`exclude` | N/A | A list of drives not to check
+    :option:`magic` |  | Magic number for use with scaling drive sizes.
+    :option:`exclude` |  | A list of drives not to check
     :option:`total` | N/A | Include the total of all matching drives
 
 
@@ -80,11 +80,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -459,27 +458,27 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` |  | Filter which marks interesting items.
+    :option:`warning` |  | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` |  | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | OK: All files ok | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status}: ${problem_count}/${count} files (${problem_list}) | Top level syntax.
     :option:`detail-syntax` | ${name} | Detail level syntax.
     :option:`perf-syntax` | ${name} | Performance alias syntax.
-    :option:`path` | N/A | The path to search for files under.
-    :option:`file` | N/A | Alias for path.
-    :option:`paths` | N/A | A comma separated list of paths to scan
+    :option:`path` |  | The path to search for files under.
+    :option:`file` |  | Alias for path.
+    :option:`paths` |  | A comma separated list of paths to scan
     :option:`pattern` | *.* | The pattern of files to search for (works like a filter but is faster and can be combined with a filter).
-    :option:`max-depth` | N/A | Maximum depth to recurse
+    :option:`max-depth` |  | Maximum depth to recurse
     :option:`total` | N/A | Include the total of all matching files
 
 
@@ -490,11 +489,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -873,26 +871,26 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`CheckAll` | true | Checks all drives.
     :option:`CheckAllOthers` | true | Checks all drives turns the drive option into an exclude option.
-    :option:`Drive` | N/A | The drives to check
-    :option:`FilterType` | N/A | The type of drives to check fixed, remote, cdrom, ramdisk, removable
-    :option:`perf-unit` | N/A | Force performance data to use a given unit prevents scaling which can cause problems over time in some graphing solutions.
+    :option:`Drive` |  | The drives to check
+    :option:`FilterType` |  | The type of drives to check fixed, remote, cdrom, ramdisk, removable
+    :option:`perf-unit` |  | Force performance data to use a given unit prevents scaling which can cause problems over time in some graphing solutions.
     :option:`ShowAll` | short | Configures display format (if set shows all items not only failures, if set to long shows all cores).
-    :option:`MaxWarn` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCrit` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarn` | N/A | Minimum value before a warning is returned.
-    :option:`MinCrit` | N/A | Minimum value before a critical is returned.
-    :option:`MaxWarnFree` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCritFree` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarnFree` | N/A | Minimum value before a warning is returned.
-    :option:`MinCritFree` | N/A | Minimum value before a critical is returned.
-    :option:`MaxWarnUsed` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCritUsed` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarnUsed` | N/A | Minimum value before a warning is returned.
-    :option:`MinCritUsed` | N/A | Minimum value before a critical is returned.
+    :option:`MaxWarn` |  | Maximum value before a warning is returned.
+    :option:`MaxCrit` |  | Maximum value before a critical is returned.
+    :option:`MinWarn` |  | Minimum value before a warning is returned.
+    :option:`MinCrit` |  | Minimum value before a critical is returned.
+    :option:`MaxWarnFree` |  | Maximum value before a warning is returned.
+    :option:`MaxCritFree` |  | Maximum value before a critical is returned.
+    :option:`MinWarnFree` |  | Minimum value before a warning is returned.
+    :option:`MinCritFree` |  | Minimum value before a critical is returned.
+    :option:`MaxWarnUsed` |  | Maximum value before a warning is returned.
+    :option:`MaxCritUsed` |  | Maximum value before a critical is returned.
+    :option:`MinWarnUsed` |  | Minimum value before a warning is returned.
+    :option:`MinCritUsed` |  | Minimum value before a critical is returned.
 
 
 Arguments
@@ -902,11 +900,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -1019,22 +1016,22 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`syntax` | N/A | Syntax for individual items (detail-syntax).
-    :option:`master-syntax` | N/A | Syntax for top syntax (top-syntax).
-    :option:`path` | N/A | The file or path to check
-    :option:`pattern` | N/A | Deprecated and ignored
-    :option:`alias` | N/A | Deprecated and ignored
+    :option:`syntax` |  | Syntax for individual items (detail-syntax).
+    :option:`master-syntax` |  | Syntax for top syntax (top-syntax).
+    :option:`path` |  | The file or path to check
+    :option:`pattern` |  | Deprecated and ignored
+    :option:`alias` |  | Deprecated and ignored
     :option:`debug` | N/A | Debug
-    :option:`max-dir-depth` | N/A | The maximum level to recurse
-    :option:`filter` | N/A | The filter to use when including files in the check
-    :option:`warn` | N/A | Deprecated and ignored
-    :option:`crit` | N/A | Deprecated and ignored
-    :option:`MaxWarn` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCrit` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarn` | N/A | Minimum value before a warning is returned.
-    :option:`MinCrit` | N/A | Minimum value before a critical is returned.
+    :option:`max-dir-depth` |  | The maximum level to recurse
+    :option:`filter` |  | The filter to use when including files in the check
+    :option:`warn` |  | Deprecated and ignored
+    :option:`crit` |  | Deprecated and ignored
+    :option:`MaxWarn` |  | Maximum value before a warning is returned.
+    :option:`MaxCrit` |  | Maximum value before a critical is returned.
+    :option:`MinWarn` |  | Minimum value before a warning is returned.
+    :option:`MinCrit` |  | Minimum value before a critical is returned.
 
 
 Arguments
@@ -1044,11 +1041,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).

@@ -77,21 +77,21 @@ A quick reference for all avalible queries (check commands) in the SMTPClient mo
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`host` | N/A | The host of the host running the server
-    :option:`port` | N/A | The port of the host running the server
-    :option:`address` | N/A | The address (host:port) of the host running the server
-    :option:`timeout` | N/A | Number of seconds before connection times out (default=10)
-    :option:`target` | N/A | Target to use (lookup connection info from config)
-    :option:`retry` | N/A | Number of times ti retry a failed connection attempt (default=2)
-    :option:`command` | N/A | The name of the command that the remote daemon should run
-    :option:`alias` | N/A | Same as command
-    :option:`message` | N/A | Message
-    :option:`result` | N/A | Result code either a number or OK, WARN, CRIT, UNKNOWN
-    :option:`sender` | N/A | Length of payload (has to be same as on the server)
-    :option:`recipient` | N/A | Length of payload (has to be same as on the server)
-    :option:`template` | N/A | Do not initial an ssl handshake with the server, talk in plaintext.
+    :option:`host` |  | The host of the host running the server
+    :option:`port` |  | The port of the host running the server
+    :option:`address` |  | The address (host:port) of the host running the server
+    :option:`timeout` |  | Number of seconds before connection times out (default=10)
+    :option:`target` |  | Target to use (lookup connection info from config)
+    :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
+    :option:`command` |  | The name of the command that the remote daemon should run
+    :option:`alias` |  | Same as command
+    :option:`message` |  | Message
+    :option:`result` |  | Result code either a number or OK, WARN, CRIT, UNKNOWN
+    :option:`sender` |  | Length of payload (has to be same as on the server)
+    :option:`recipient` |  | Length of payload (has to be same as on the server)
+    :option:`template` |  | Do not initial an ssl handshake with the server, talk in plaintext.
 
 
 Arguments
@@ -101,11 +101,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).

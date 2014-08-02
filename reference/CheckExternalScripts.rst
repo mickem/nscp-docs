@@ -8,37 +8,39 @@
 =======================================================
 Execute external scripts
 
-**Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+
+**Aliases (Overview)**:
+
+A list of all short hand aliases for queries (check commands)
+
+
 
 .. csv-table:: 
     :class: contentstable 
     :delim: | 
     :header: "Command", "Description"
 
-    :query:`alias_cpu` | :query:`alias_cpu`
-    :query:`alias_cpu_ex` | :query:`alias_cpu_ex`
-    :query:`alias_disk` | :query:`alias_disk`
-    :query:`alias_disk_loose` | :query:`alias_disk_loose`
-    :query:`alias_event_log` | :query:`alias_event_log`
-    :query:`alias_file_age` | :query:`alias_file_age`
-    :query:`alias_file_size` | :query:`alias_file_size`
-    :query:`alias_mem` | :query:`alias_mem`
-    :query:`alias_process` | :query:`alias_process`
-    :query:`alias_process_count` | :query:`alias_process_count`
-    :query:`alias_process_hung` | :query:`alias_process_hung`
-    :query:`alias_process_stopped` | :query:`alias_process_stopped`
-    :query:`alias_sched_all` | :query:`alias_sched_all`
-    :query:`alias_sched_long` | :query:`alias_sched_long`
-    :query:`alias_sched_task` | :query:`alias_sched_task`
-    :query:`alias_service` | :query:`alias_service`
-    :query:`alias_service_ex` | :query:`alias_service_ex`
-    :query:`alias_up` | :query:`alias_up`
-    :query:`alias_volumes` | :query:`alias_volumes`
-    :query:`alias_volumes_loose` | :query:`alias_volumes_loose`
-
-
+    alias_cpu | :query:`alias_cpu`
+    alias_cpu_ex | :query:`alias_cpu_ex`
+    alias_disk | :query:`alias_disk`
+    alias_disk_loose | :query:`alias_disk_loose`
+    alias_event_log | :query:`alias_event_log`
+    alias_file_age | :query:`alias_file_age`
+    alias_file_size | :query:`alias_file_size`
+    alias_mem | :query:`alias_mem`
+    alias_process | :query:`alias_process`
+    alias_process_count | :query:`alias_process_count`
+    alias_process_hung | :query:`alias_process_hung`
+    alias_process_stopped | :query:`alias_process_stopped`
+    alias_sched_all | :query:`alias_sched_all`
+    alias_sched_long | :query:`alias_sched_long`
+    alias_sched_task | :query:`alias_sched_task`
+    alias_service | :query:`alias_service`
+    alias_service_ex | :query:`alias_service_ex`
+    alias_up | :query:`alias_up`
+    alias_volumes | :query:`alias_volumes`
+    alias_volumes_loose | :query:`alias_volumes_loose`
 
 
 **Commands (Overview)**: 
@@ -86,356 +88,6 @@ Common Keys:
 
 
 
-
-Queries
-=======
-A quick reference for all avalible queries (check commands) in the CheckExternalScripts module.
-
-:query:`alias_cpu`
-------------------
-.. query:: alias_cpu
-    :synopsis: Alias for: alias_cpu
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_cpu_ex`
----------------------
-.. query:: alias_cpu_ex
-    :synopsis: Alias for: alias_cpu_ex
-
-**Usage:**
-
-
-
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Option", "Default Value", "Description"
-
-    :option:`$ARG2$` | N/A | warn=load > $ARG1$
-
-
-Arguments
-*********
-.. option:: $ARG2$
-    :synopsis: warn=load > $ARG1$
-
-    | warn=load > $ARG1$
-
-
-:query:`alias_disk`
--------------------
-.. query:: alias_disk
-    :synopsis: Alias for: alias_disk
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_disk_loose`
--------------------------
-.. query:: alias_disk_loose
-    :synopsis: Alias for: alias_disk_loose
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_event_log`
-------------------------
-.. query:: alias_event_log
-    :synopsis: Alias for: alias_event_log
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_file_age`
------------------------
-.. query:: alias_file_age
-    :synopsis: Alias for: alias_file_age
-
-**Usage:**
-
-
-
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Option", "Default Value", "Description"
-
-    :option:`$ARG2$` | N/A | path=$ARG1$
-
-
-Arguments
-*********
-.. option:: $ARG2$
-    :synopsis: path=$ARG1$
-
-    | path=$ARG1$
-
-
-:query:`alias_file_size`
-------------------------
-.. query:: alias_file_size
-    :synopsis: Alias for: alias_file_size
-
-**Usage:**
-
-
-
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Option", "Default Value", "Description"
-
-    :option:`$ARG2$` | N/A | path=$ARG1$
-
-
-Arguments
-*********
-.. option:: $ARG2$
-    :synopsis: path=$ARG1$
-
-    | path=$ARG1$
-
-
-:query:`alias_mem`
-------------------
-.. query:: alias_mem
-    :synopsis: Alias for: alias_mem
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_process`
-----------------------
-.. query:: alias_process
-    :synopsis: Alias for: alias_process
-
-**Usage:**
-
-
-
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Option", "Default Value", "Description"
-
-    :option:`$ARG2$` | N/A | process=$ARG1$
-
-
-Arguments
-*********
-.. option:: $ARG2$
-    :synopsis: process=$ARG1$
-
-    | process=$ARG1$
-
-
-:query:`alias_process_count`
-----------------------------
-.. query:: alias_process_count
-    :synopsis: Alias for: alias_process_count
-
-**Usage:**
-
-
-
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Option", "Default Value", "Description"
-
-    :option:`$ARG2$` | N/A | process=$ARG1$
-
-
-Arguments
-*********
-.. option:: $ARG2$
-    :synopsis: process=$ARG1$
-
-    | process=$ARG1$
-
-
-:query:`alias_process_hung`
----------------------------
-.. query:: alias_process_hung
-    :synopsis: Alias for: alias_process_hung
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_process_stopped`
-------------------------------
-.. query:: alias_process_stopped
-    :synopsis: Alias for: alias_process_stopped
-
-**Usage:**
-
-
-
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Option", "Default Value", "Description"
-
-    :option:`$ARG2$` | N/A | process=$ARG1$
-
-
-Arguments
-*********
-.. option:: $ARG2$
-    :synopsis: process=$ARG1$
-
-    | process=$ARG1$
-
-
-:query:`alias_sched_all`
-------------------------
-.. query:: alias_sched_all
-    :synopsis: Alias for: alias_sched_all
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_sched_long`
--------------------------
-.. query:: alias_sched_long
-    :synopsis: Alias for: alias_sched_long
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_sched_task`
--------------------------
-.. query:: alias_sched_task
-    :synopsis: Alias for: alias_sched_task
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_service`
-----------------------
-.. query:: alias_service
-    :synopsis: Alias for: alias_service
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_service_ex`
--------------------------
-.. query:: alias_service_ex
-    :synopsis: Alias for: alias_service_ex
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_up`
------------------
-.. query:: alias_up
-    :synopsis: Alias for: alias_up
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_volumes`
-----------------------
-.. query:: alias_volumes
-    :synopsis: Alias for: alias_volumes
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
-
-:query:`alias_volumes_loose`
-----------------------------
-.. query:: alias_volumes_loose
-    :synopsis: Alias for: alias_volumes_loose
-
-**Usage:**
-
-
-
-
-
-Arguments
-*********
 
 
 

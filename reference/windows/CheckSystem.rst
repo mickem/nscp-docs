@@ -131,23 +131,23 @@ A quick reference for all avalible queries (check commands) in the CheckSystem m
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` | core = 'total' | Filter which marks interesting items.
+    :option:`warning` | load > 80 | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | load > 90 | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | CPU Load ok | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status}: ${problem_list} | Top level syntax.
     :option:`detail-syntax` | ${time}: ${load}% | Detail level syntax.
     :option:`perf-syntax` | ${core} ${time} | Performance alias syntax.
-    :option:`time` | N/A | The time to check
+    :option:`time` |  | The time to check
 
 
 Arguments
@@ -157,11 +157,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -465,23 +464,23 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` |  | Filter which marks interesting items.
+    :option:`warning` | used > 80% | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | used > 90% | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | OK memory within bounds. | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status}: ${problem_list} | Top level syntax.
     :option:`detail-syntax` | ${type} = ${used} | Detail level syntax.
     :option:`perf-syntax` | ${type} | Performance alias syntax.
-    :option:`type` | N/A | The type of memory to check (physical = Physical memory (RAM), committed = total memory (RAM+PAGE)
+    :option:`type` |  | The type of memory to check (physical = Physical memory (RAM), committed = total memory (RAM+PAGE)
 
 
 Arguments
@@ -491,11 +490,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -785,19 +783,19 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` |  | Filter which marks interesting items.
+    :option:`warning` | version > 50 | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | version > 50 | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | Version ok | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`detail-syntax` | ${version} (${major}.${minor}.${build}) | Detail level syntax.
     :option:`perf-syntax` | version | Performance alias syntax.
@@ -810,11 +808,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -1099,19 +1096,19 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` |  | Filter which marks interesting items.
+    :option:`warning` | used > 60% | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | used > 80% | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | OK pagefile within bounds. | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status}: ${problem_list} | Top level syntax.
     :option:`detail-syntax` | ${name} ${used} (${size}) | Detail level syntax.
     :option:`perf-syntax` | ${name} | Performance alias syntax.
@@ -1124,11 +1121,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -1413,29 +1409,29 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` |  | Filter which marks interesting items.
+    :option:`warning` |  | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` |  | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | Everything looks good | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status}: ${problem_list} | Top level syntax.
     :option:`detail-syntax` | ${counter} = ${value} | Detail level syntax.
     :option:`perf-syntax` | ${alias} | Performance alias syntax.
-    :option:`counter` | N/A | Performance counter to check
+    :option:`counter` |  | Performance counter to check
     :option:`expand-index` | N/A | Expand indexes in counter strings
     :option:`instances` | N/A | Expand wildcards and fetch all instances
     :option:`reload` | N/A | Reload counters on errors (useful to check counters which are not added at boot)
     :option:`averages` | N/A | Check average values (ie. wait for 1 second to collecting two samples)
-    :option:`time` | N/A | Timeframe to use for named rrd counters
-    :option:`flags` | N/A | Extra flags to configure the counter (nocap100, 1000, noscale)
+    :option:`time` |  | Timeframe to use for named rrd counters
+    :option:`flags` |  | Extra flags to configure the counter (nocap100, 1000, noscale)
     :option:`type` | large | Format of value (double, long, large)
 
 
@@ -1446,11 +1442,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -1768,27 +1763,27 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` | state != 'unreadable' | Filter which marks interesting items.
+    :option:`warning` | state not in ('started') | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | state = 'stopped' | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | OK all processes are ok. | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status}: ${problem_list} | Top level syntax.
     :option:`detail-syntax` | ${exe}=${state} | Detail level syntax.
     :option:`perf-syntax` | ${exe} | Performance alias syntax.
-    :option:`process` | N/A | The service to check, set this to * to check all services
-    :option:`scan-info` | N/A | If all process metrics should be fetched (otherwise only status is fetched)
-    :option:`scan-16bit` | N/A | If 16bit processes should be included
-    :option:`delta` | N/A | Calculate delta over one elapsed second.
-    :option:`scan-unreadable` | N/A | If unreadable processes should be included (will not have information)
+    :option:`process` |  | The service to check, set this to * to check all services
+    :option:`scan-info` |  | If all process metrics should be fetched (otherwise only status is fetched)
+    :option:`scan-16bit` |  | If 16bit processes should be included
+    :option:`delta` |  | Calculate delta over one elapsed second.
+    :option:`scan-unreadable` |  | If unreadable processes should be included (will not have information)
 
 
 Arguments
@@ -1798,11 +1793,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -2246,25 +2240,25 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` |  | Filter which marks interesting items.
+    :option:`warning` | not state_is_perfect() | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | not state_is_ok() | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | OK all services are ok. | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status}: ${crit_list}, delayed (${warn_list}) | Top level syntax.
     :option:`detail-syntax` | ${name}=${state} (${start_type}) | Detail level syntax.
     :option:`perf-syntax` | ${name} | Performance alias syntax.
-    :option:`computer` | N/A | THe name of the remote computer to check
-    :option:`service` | N/A | The service to check, set this to * to check all services
-    :option:`exclude` | N/A | A list of services to ignore (mainly usefull in combination with service=*)
+    :option:`computer` |  | THe name of the remote computer to check
+    :option:`service` |  | The service to check, set this to * to check all services
+    :option:`exclude` |  | A list of services to ignore (mainly usefull in combination with service=*)
     :option:`type` | service | The types of services to enumerate available types are driver, file-system-driver, kernel-driver, service, service-own-process, service-share-process
     :option:`state` | all | The types of services to enumerate available states are active, inactive or all
 
@@ -2276,11 +2270,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -2619,19 +2612,19 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | N/A | Filter which marks interesting items.
-    :option:`warning` | N/A | Filter which marks items which generates a warning state.
-    :option:`warn` | N/A | Short alias for warning
-    :option:`critical` | N/A | Filter which marks items which generates a critical state.
-    :option:`crit` | N/A | Short alias for critical.
-    :option:`ok` | N/A | Filter which marks items which generates an ok state.
+    :option:`filter` |  | Filter which marks interesting items.
+    :option:`warning` | uptime < 2d | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | uptime < 1d | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | Uptime ok | Message to display when nothing matched filter.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` | N/A | Performance data generation configuration
+    :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`detail-syntax` | uptime: ${uptime}h, boot: ${boot} (UTC) | Detail level syntax.
     :option:`perf-syntax` | uptime | Performance alias syntax.
@@ -2644,11 +2637,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -2919,14 +2911,14 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`Counter` | N/A | The time to check
+    :option:`Counter` |  | The time to check
     :option:`ShowAll` | short | Configures display format (if set shows all items not only failures, if set to long shows all cores).
-    :option:`MaxWarn` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCrit` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarn` | N/A | Minimum value before a warning is returned.
-    :option:`MinCrit` | N/A | Minimum value before a critical is returned.
+    :option:`MaxWarn` |  | Maximum value before a warning is returned.
+    :option:`MaxCrit` |  | Maximum value before a critical is returned.
+    :option:`MinWarn` |  | Minimum value before a warning is returned.
+    :option:`MinCrit` |  | Minimum value before a critical is returned.
 
 
 Arguments
@@ -2936,11 +2928,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -2993,16 +2984,16 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`time` | N/A | The time to check
+    :option:`time` |  | The time to check
     :option:`ShowAll` | short | Configures display format (if set shows all items not only failures, if set to long shows all cores).
-    :option:`MaxWarn` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCrit` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarn` | N/A | Minimum value before a warning is returned.
-    :option:`MinCrit` | N/A | Minimum value before a critical is returned.
-    :option:`warn` | N/A | Maximum value before a warning is returned.
-    :option:`crit` | N/A | Maximum value before a critical is returned.
+    :option:`MaxWarn` |  | Maximum value before a warning is returned.
+    :option:`MaxCrit` |  | Maximum value before a critical is returned.
+    :option:`MinWarn` |  | Minimum value before a warning is returned.
+    :option:`MinCrit` |  | Minimum value before a critical is returned.
+    :option:`warn` |  | Maximum value before a warning is returned.
+    :option:`crit` |  | Maximum value before a critical is returned.
 
 
 Arguments
@@ -3012,11 +3003,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -3079,16 +3069,16 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`type` | N/A | The types to check
+    :option:`type` |  | The types to check
     :option:`ShowAll` | short | Configures display format (if set shows all items not only failures, if set to long shows all cores).
-    :option:`MaxWarn` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCrit` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarn` | N/A | Minimum value before a warning is returned.
-    :option:`MinCrit` | N/A | Minimum value before a critical is returned.
-    :option:`warn` | N/A | Maximum value before a warning is returned.
-    :option:`crit` | N/A | Maximum value before a critical is returned.
+    :option:`MaxWarn` |  | Maximum value before a warning is returned.
+    :option:`MaxCrit` |  | Maximum value before a critical is returned.
+    :option:`MinWarn` |  | Minimum value before a warning is returned.
+    :option:`MinCrit` |  | Minimum value before a critical is returned.
+    :option:`warn` |  | Maximum value before a warning is returned.
+    :option:`crit` |  | Maximum value before a critical is returned.
 
 
 Arguments
@@ -3098,11 +3088,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -3165,13 +3154,13 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`ShowAll` | short | Configures display format (if set shows all items not only failures, if set to long shows all cores).
-    :option:`MaxWarnCount` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCritCount` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarnCount` | N/A | Minimum value before a warning is returned.
-    :option:`MinCritCount` | N/A | Minimum value before a critical is returned.
+    :option:`MaxWarnCount` |  | Maximum value before a warning is returned.
+    :option:`MaxCritCount` |  | Maximum value before a critical is returned.
+    :option:`MinWarnCount` |  | Minimum value before a warning is returned.
+    :option:`MinCritCount` |  | Minimum value before a critical is returned.
 
 
 Arguments
@@ -3181,11 +3170,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -3233,10 +3221,10 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`CheckAll` | true | Check all services.
-    :option:`exclude` | N/A | Exclude services
+    :option:`exclude` |  | Exclude services
     :option:`ShowAll` | short | Configures display format (if set shows all items not only failures, if set to long shows all cores).
 
 
@@ -3247,11 +3235,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
@@ -3289,15 +3276,15 @@ Arguments
     :header: "Option", "Default Value", "Description"
 
     :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-csv` | N/A | Show help screen as a comma separated list. 
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`ShowAll` | short | Configures display format (if set shows all items not only failures, if set to long shows all cores).
-    :option:`MaxWarn` | N/A | Maximum value before a warning is returned.
-    :option:`MaxCrit` | N/A | Maximum value before a critical is returned.
-    :option:`MinWarn` | N/A | Minimum value before a warning is returned.
-    :option:`MinCrit` | N/A | Minimum value before a critical is returned.
-    :option:`warn` | N/A | Maximum value before a warning is returned.
-    :option:`crit` | N/A | Maximum value before a critical is returned.
+    :option:`MaxWarn` |  | Maximum value before a warning is returned.
+    :option:`MaxCrit` |  | Maximum value before a critical is returned.
+    :option:`MinWarn` |  | Minimum value before a warning is returned.
+    :option:`MinCrit` |  | Minimum value before a critical is returned.
+    :option:`warn` |  | Maximum value before a warning is returned.
+    :option:`crit` |  | Maximum value before a critical is returned.
 
 
 Arguments
@@ -3307,11 +3294,10 @@ Arguments
 
     | Show help screen (this screen)
 
-.. option:: help-csv
-    :synopsis: Show help screen as a comma separated list. 
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
 
-    | Show help screen as a comma separated list. 
-    | This is useful for parsing the output in scripts and generate documentation etc
+    | Show help screen as a protocol buffer payload
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
