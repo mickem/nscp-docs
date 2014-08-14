@@ -27,8 +27,8 @@ Plugin to load and manage plugins written in dot net.
 
 
 
-… 
---
+ / modules / dotnet
+-------------------
 .. confpath:: /modules/dotnet
     :synopsis: DOT NET MODULES
 
@@ -39,10 +39,10 @@ Plugin to load and manage plugins written in dot net.
 
 
 
-**Sample**::
+    **Sample**::
 
-    # DOT NET MODULES
-    # Modules written in dotnet/CLR
-    [/modules/dotnet]
+        # DOT NET MODULES
+        # Modules written in dotnet/CLR
+        [/modules/dotnet]
 
 

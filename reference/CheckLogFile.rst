@@ -31,7 +31,7 @@ A list of all short hand aliases for queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    checklogfile | :query:`check_logfile`
+    checklogfile | Alias for: :query:`check_logfile`
 
 
 **Commands (Overview)**: 
@@ -497,8 +497,8 @@ Arguments
 
 
 
-… 
---
+ / settings / logfile
+---------------------
 .. confpath:: /settings/logfile
     :synopsis: LOG FILE SECTION
 
@@ -509,11 +509,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # LOG FILE SECTION
-    # Section for log file checker
-    [/settings/logfile]
+        # LOG FILE SECTION
+        # Section for log file checker
+        [/settings/logfile]
 
 
 
@@ -528,42 +528,41 @@ Arguments
     | A set of options to configure the real time checks
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`enabled` | 0 | REAL TIME CHECKING
-
-
-**Sample**::
-
-    # CONFIGURE REALTIME CHECKING
-    # A set of options to configure the real time checks
-    [/settings/logfile/real-time]
-    enabled=0
-
-
-.. confkey:: enabled
-    :synopsis: REAL TIME CHECKING
-
-    **REAL TIME CHECKING**
-
-    | Spawns a background thread which waits for file changes.
-
-    **Path**: /settings/logfile/real-time
-
-    **Key**: enabled
-
-    **Default value**: 0
-
-    **Used by**: :module:`CheckLogFile`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`enabled` | 0 | REAL TIME CHECKING
 
     **Sample**::
 
+        # CONFIGURE REALTIME CHECKING
+        # A set of options to configure the real time checks
         [/settings/logfile/real-time]
-        # REAL TIME CHECKING
         enabled=0
+
+
+    .. confkey:: enabled
+        :synopsis: REAL TIME CHECKING
+
+        **REAL TIME CHECKING**
+
+        | Spawns a background thread which waits for file changes.
+
+        **Path**: /settings/logfile/real-time
+
+        **Key**: enabled
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time]
+            # REAL TIME CHECKING
+            enabled=0
 
 
 
@@ -580,11 +579,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # REALTIME FILTERS
-    # A set of filters to use in real-time mode
-    [/settings/logfile/real-time/checks]
+        # REALTIME FILTERS
+        # A set of filters to use in real-time mode
+        [/settings/logfile/real-time/checks]
 
 
 
@@ -599,564 +598,563 @@ Arguments
     | Definition for real time filter: sample
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`alias` |  | ALIAS
-    :confkey:`column split` |  | COLUMN SPLIT
-    :confkey:`command` |  | COMMAND NAME
-    :confkey:`critical` |  | CRITCAL FILTER
-    :confkey:`debug` | 0 | DEBUG
-    :confkey:`destination` |  | DESTINATION
-    :confkey:`detail syntax` |  | SYNTAX
-    :confkey:`empty message` | eventlog found no records | EMPTY MESSAGE
-    :confkey:`file` |  | FILE
-    :confkey:`files` |  | FILES
-    :confkey:`filter` |  | FILTER
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`maximum age` | 5m | MAGIMUM AGE
-    :confkey:`ok` |  | OK FILTER
-    :confkey:`parent` | default | PARENT
-    :confkey:`perf config` |  | PERF CONFIG
-    :confkey:`severity` |  | SEVERITY
-    :confkey:`target` |  | DESTINATION
-    :confkey:`top syntax` |  | SYNTAX
-    :confkey:`warning` |  | WARNING FILTER
-
-
-**Sample**::
-
-    # REAL TIME FILTER DEFENITION
-    # Definition for real time filter: sample
-    [/settings/logfile/real-time/checks/sample]
-    alias=
-    column split=
-    command=
-    critical=
-    debug=0
-    destination=
-    detail syntax=
-    empty message=eventlog found no records
-    file=
-    files=
-    filter=
-    is template=0
-    maximum age=5m
-    ok=
-    parent=default
-    perf config=
-    severity=
-    target=
-    top syntax=
-    warning=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`alias` |  | ALIAS
+        :confkey:`column split` |  | COLUMN SPLIT
+        :confkey:`command` |  | COMMAND NAME
+        :confkey:`critical` |  | CRITCAL FILTER
+        :confkey:`debug` | 0 | DEBUG
+        :confkey:`destination` |  | DESTINATION
+        :confkey:`detail syntax` |  | SYNTAX
+        :confkey:`empty message` | eventlog found no records | EMPTY MESSAGE
+        :confkey:`file` |  | FILE
+        :confkey:`files` |  | FILES
+        :confkey:`filter` |  | FILTER
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`maximum age` | 5m | MAGIMUM AGE
+        :confkey:`ok` |  | OK FILTER
+        :confkey:`parent` | default | PARENT
+        :confkey:`perf config` |  | PERF CONFIG
+        :confkey:`severity` |  | SEVERITY
+        :confkey:`target` |  | DESTINATION
+        :confkey:`top syntax` |  | SYNTAX
+        :confkey:`warning` |  | WARNING FILTER
 
     **Sample**::
 
+        # REAL TIME FILTER DEFENITION
+        # Definition for real time filter: sample
         [/settings/logfile/real-time/checks/sample]
-        # ALIAS
         alias=
-
-
-.. confkey:: column split
-    :synopsis: COLUMN SPLIT
-
-    **COLUMN SPLIT**
-
-    | THe character(s) to use when splitting on column level
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: column split
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # COLUMN SPLIT
         column split=
-
-
-.. confkey:: command
-    :synopsis: COMMAND NAME
-
-    **COMMAND NAME**
-
-    | The name of the command (think nagios service name) to report up stream (defaults to alias if not set)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: command
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # COMMAND NAME
         command=
-
-
-.. confkey:: critical
-    :synopsis: CRITCAL FILTER
-
-    **CRITCAL FILTER**
-
-    | If any rows match this filter severity will escalated to CRITCAL
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: critical
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # CRITCAL FILTER
         critical=
-
-
-.. confkey:: debug
-    :synopsis: DEBUG
-
-    **DEBUG**
-
-    | Enable this to display debug information for this match filter
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: debug
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # DEBUG
         debug=0
-
-
-.. confkey:: destination
-    :synopsis: DESTINATION
-
-    **DESTINATION**
-
-    | The destination for intercepted messages
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: destination
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # DESTINATION
         destination=
-
-
-.. confkey:: detail syntax
-    :synopsis: SYNTAX
-
-    **SYNTAX**
-
-    | Format string for dates
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: detail syntax
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # SYNTAX
         detail syntax=
-
-
-.. confkey:: empty message
-    :synopsis: EMPTY MESSAGE
-
-    **EMPTY MESSAGE**
-
-    | The message to display if nothing matches the filter (generally considered the ok state).
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: empty message
-
-    **Default value**: eventlog found no records
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # EMPTY MESSAGE
         empty message=eventlog found no records
-
-
-.. confkey:: file
-    :synopsis: FILE
-
-    **FILE**
-
-    | The eventlog record to filter on (if set to 'all' means all enabled logs)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: file
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # FILE
         file=
-
-
-.. confkey:: files
-    :synopsis: FILES
-
-    **FILES**
-
-    | The eventlog record to filter on (if set to 'all' means all enabled logs)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: files
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # FILES
         files=
-
-
-.. confkey:: filter
-    :synopsis: FILTER
-
-    **FILTER**
-
-    | Scan files for matching rows for each matching rows an OK message will be submitted
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: filter
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # FILTER
         filter=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: maximum age
-    :synopsis: MAGIMUM AGE
-
-    **MAGIMUM AGE**
-
-    | How long before reporting "ok".
-    | If this is set to "false" no periodic ok messages will be reported only errors.
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: maximum age
-
-    **Default value**: 5m
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # MAGIMUM AGE
         maximum age=5m
-
-
-.. confkey:: ok
-    :synopsis: OK FILTER
-
-    **OK FILTER**
-
-    | If any rows match this filter severity will escalated down to OK
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: ok
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # OK FILTER
         ok=
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # PARENT
         parent=default
-
-
-.. confkey:: perf config
-    :synopsis: PERF CONFIG
-
-    **PERF CONFIG**
-
-    | Performance data configuration
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: perf config
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # PERF CONFIG
         perf config=
-
-
-.. confkey:: severity
-    :synopsis: SEVERITY
-
-    **SEVERITY**
-
-    | THe severity of this message (OK, WARNING, CRITICAL, UNKNOWN)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: severity
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # SEVERITY
         severity=
-
-
-.. confkey:: target
-    :synopsis: DESTINATION
-
-    **DESTINATION**
-
-    | Same as destination
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: target
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # DESTINATION
         target=
-
-
-.. confkey:: top syntax
-    :synopsis: SYNTAX
-
-    **SYNTAX**
-
-    | Format string for dates
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: top syntax
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # SYNTAX
         top syntax=
-
-
-.. confkey:: warning
-    :synopsis: WARNING FILTER
-
-    **WARNING FILTER**
-
-    | If any rows match this filter severity will escalated to WARNING
-
-    **Path**: /settings/logfile/real-time/checks/sample
-
-    **Key**: warning
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckLogFile`
-
-    **Sample**::
-
-        [/settings/logfile/real-time/checks/sample]
-        # WARNING FILTER
         warning=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: column split
+        :synopsis: COLUMN SPLIT
+
+        **COLUMN SPLIT**
+
+        | THe character(s) to use when splitting on column level
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: column split
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # COLUMN SPLIT
+            column split=
+
+
+    .. confkey:: command
+        :synopsis: COMMAND NAME
+
+        **COMMAND NAME**
+
+        | The name of the command (think nagios service name) to report up stream (defaults to alias if not set)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: command
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # COMMAND NAME
+            command=
+
+
+    .. confkey:: critical
+        :synopsis: CRITCAL FILTER
+
+        **CRITCAL FILTER**
+
+        | If any rows match this filter severity will escalated to CRITCAL
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: critical
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # CRITCAL FILTER
+            critical=
+
+
+    .. confkey:: debug
+        :synopsis: DEBUG
+
+        **DEBUG**
+
+        | Enable this to display debug information for this match filter
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: debug
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # DEBUG
+            debug=0
+
+
+    .. confkey:: destination
+        :synopsis: DESTINATION
+
+        **DESTINATION**
+
+        | The destination for intercepted messages
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: destination
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # DESTINATION
+            destination=
+
+
+    .. confkey:: detail syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: detail syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # SYNTAX
+            detail syntax=
+
+
+    .. confkey:: empty message
+        :synopsis: EMPTY MESSAGE
+
+        **EMPTY MESSAGE**
+
+        | The message to display if nothing matches the filter (generally considered the ok state).
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: empty message
+
+        **Default value**: eventlog found no records
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # EMPTY MESSAGE
+            empty message=eventlog found no records
+
+
+    .. confkey:: file
+        :synopsis: FILE
+
+        **FILE**
+
+        | The eventlog record to filter on (if set to 'all' means all enabled logs)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: file
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # FILE
+            file=
+
+
+    .. confkey:: files
+        :synopsis: FILES
+
+        **FILES**
+
+        | The eventlog record to filter on (if set to 'all' means all enabled logs)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: files
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # FILES
+            files=
+
+
+    .. confkey:: filter
+        :synopsis: FILTER
+
+        **FILTER**
+
+        | Scan files for matching rows for each matching rows an OK message will be submitted
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: filter
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # FILTER
+            filter=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: maximum age
+        :synopsis: MAGIMUM AGE
+
+        **MAGIMUM AGE**
+
+        | How long before reporting "ok".
+        | If this is set to "false" no periodic ok messages will be reported only errors.
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: maximum age
+
+        **Default value**: 5m
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # MAGIMUM AGE
+            maximum age=5m
+
+
+    .. confkey:: ok
+        :synopsis: OK FILTER
+
+        **OK FILTER**
+
+        | If any rows match this filter severity will escalated down to OK
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: ok
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # OK FILTER
+            ok=
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: perf config
+        :synopsis: PERF CONFIG
+
+        **PERF CONFIG**
+
+        | Performance data configuration
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: perf config
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # PERF CONFIG
+            perf config=
+
+
+    .. confkey:: severity
+        :synopsis: SEVERITY
+
+        **SEVERITY**
+
+        | THe severity of this message (OK, WARNING, CRITICAL, UNKNOWN)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: severity
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # SEVERITY
+            severity=
+
+
+    .. confkey:: target
+        :synopsis: DESTINATION
+
+        **DESTINATION**
+
+        | Same as destination
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: target
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # DESTINATION
+            target=
+
+
+    .. confkey:: top syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: top syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # SYNTAX
+            top syntax=
+
+
+    .. confkey:: warning
+        :synopsis: WARNING FILTER
+
+        **WARNING FILTER**
+
+        | If any rows match this filter severity will escalated to WARNING
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: warning
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # WARNING FILTER
+            warning=
 
 

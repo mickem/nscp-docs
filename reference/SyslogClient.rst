@@ -237,8 +237,8 @@ Arguments
 
 
 
-… 
---
+ / settings / syslog / client
+-----------------------------
 .. confpath:: /settings/syslog/client
     :synopsis: SYSLOG CLIENT SECTION
 
@@ -247,66 +247,65 @@ Arguments
     | Section for SYSLOG passive check module.
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`channel` | syslog | CHANNEL
-    :confkey:`hostname` |  | HOSTNAME
-
-
-**Sample**::
-
-    # SYSLOG CLIENT SECTION
-    # Section for SYSLOG passive check module.
-    [/settings/syslog/client]
-    channel=syslog
-    hostname=
-
-
-.. confkey:: channel
-    :synopsis: CHANNEL
-
-    **CHANNEL**
-
-    | The channel to listen to.
-
-    **Path**: /settings/syslog/client
-
-    **Key**: channel
-
-    **Default value**: syslog
-
-    **Used by**: :module:`SyslogClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`channel` | syslog | CHANNEL
+        :confkey:`hostname` |  | HOSTNAME
 
     **Sample**::
 
+        # SYSLOG CLIENT SECTION
+        # Section for SYSLOG passive check module.
         [/settings/syslog/client]
-        # CHANNEL
         channel=syslog
-
-
-.. confkey:: hostname
-    :synopsis: HOSTNAME
-
-    **HOSTNAME**
-
-    | The host name of this host if set to blank (default) the windows name of the computer will be used.
-
-    **Path**: /settings/syslog/client
-
-    **Key**: hostname
-
-    **Default value**: 
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client]
-        # HOSTNAME
         hostname=
+
+
+    .. confkey:: channel
+        :synopsis: CHANNEL
+
+        **CHANNEL**
+
+        | The channel to listen to.
+
+        **Path**: /settings/syslog/client
+
+        **Key**: channel
+
+        **Default value**: syslog
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client]
+            # CHANNEL
+            channel=syslog
+
+
+    .. confkey:: hostname
+        :synopsis: HOSTNAME
+
+        **HOSTNAME**
+
+        | The host name of this host if set to blank (default) the windows name of the computer will be used.
+
+        **Path**: /settings/syslog/client
+
+        **Key**: hostname
+
+        **Default value**: 
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client]
+            # HOSTNAME
+            hostname=
 
 
 
@@ -323,11 +322,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # CLIENT HANDLER SECTION
-    # 
-    [/settings/syslog/client/handlers]
+        # CLIENT HANDLER SECTION
+        # 
+        [/settings/syslog/client/handlers]
 
 
 
@@ -344,11 +343,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # REMOTE TARGET DEFINITIONS
-    # 
-    [/settings/syslog/client/targets]
+        # REMOTE TARGET DEFINITIONS
+        # 
+        [/settings/syslog/client/targets]
 
 
 
@@ -363,364 +362,363 @@ Arguments
     | Target definition for: default
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`address` |  | TARGET ADDRESS
-    :confkey:`alias` |  | ALIAS
-    :confkey:`critical severity` | critical | TODO
-    :confkey:`facility` | kernel | TODO
-    :confkey:`host` |  | TARGET HOST
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`message_syntax` | %message% | TODO
-    :confkey:`ok severity` | informational | TODO
-    :confkey:`parent` | default | PARENT
-    :confkey:`port` | 0 | TARGET PORT
-    :confkey:`severity` | error | TODO
-    :confkey:`tag_syntax` | NSCA | TODO
-    :confkey:`unknown severity` | emergency | TODO
-    :confkey:`warning severity` | warning | TODO
-
-
-**Sample**::
-
-    # TARGET DEFENITION
-    # Target definition for: default
-    [/settings/syslog/client/targets/default]
-    address=
-    alias=
-    critical severity=critical
-    facility=kernel
-    host=
-    is template=0
-    message_syntax=%message%
-    ok severity=informational
-    parent=default
-    port=0
-    severity=error
-    tag_syntax=NSCA
-    unknown severity=emergency
-    warning severity=warning
-
-
-.. confkey:: address
-    :synopsis: TARGET ADDRESS
-
-    **TARGET ADDRESS**
-
-    | Target host address
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: address
-
-    **Default value**: 
-
-    **Used by**: :module:`SyslogClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`critical severity` | critical | TODO
+        :confkey:`facility` | kernel | TODO
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`message_syntax` | %message% | TODO
+        :confkey:`ok severity` | informational | TODO
+        :confkey:`parent` | default | PARENT
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`severity` | error | TODO
+        :confkey:`tag_syntax` | NSCA | TODO
+        :confkey:`unknown severity` | emergency | TODO
+        :confkey:`warning severity` | warning | TODO
 
     **Sample**::
 
+        # TARGET DEFENITION
+        # Target definition for: default
         [/settings/syslog/client/targets/default]
-        # TARGET ADDRESS
         address=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # ALIAS
         alias=
-
-
-.. confkey:: critical severity
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: critical severity
-
-    **Default value**: critical
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # TODO
         critical severity=critical
-
-
-.. confkey:: facility
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: facility
-
-    **Default value**: kernel
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # TODO
         facility=kernel
-
-
-.. confkey:: host
-    :synopsis: TARGET HOST
-
-    **TARGET HOST**
-
-    | The target server to report results to.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: host
-
-    **Default value**: 
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # TARGET HOST
         host=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: message_syntax
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: message_syntax
-
-    **Default value**: %message%
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # TODO
         message_syntax=%message%
-
-
-.. confkey:: ok severity
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: ok severity
-
-    **Default value**: informational
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # TODO
         ok severity=informational
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # PARENT
         parent=default
-
-
-.. confkey:: port
-    :synopsis: TARGET PORT
-
-    **TARGET PORT**
-
-    | The target server port
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: port
-
-    **Default value**: 0
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # TARGET PORT
         port=0
-
-
-.. confkey:: severity
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: severity
-
-    **Default value**: error
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # TODO
         severity=error
-
-
-.. confkey:: tag_syntax
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: tag_syntax
-
-    **Default value**: NSCA
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # TODO
         tag_syntax=NSCA
-
-
-.. confkey:: unknown severity
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: unknown severity
-
-    **Default value**: emergency
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # TODO
         unknown severity=emergency
-
-
-.. confkey:: warning severity
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/default
-
-    **Key**: warning severity
-
-    **Default value**: warning
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/default]
-        # TODO
         warning severity=warning
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: critical severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: critical severity
+
+        **Default value**: critical
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            critical severity=critical
+
+
+    .. confkey:: facility
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: facility
+
+        **Default value**: kernel
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            facility=kernel
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: message_syntax
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: message_syntax
+
+        **Default value**: %message%
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            message_syntax=%message%
+
+
+    .. confkey:: ok severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: ok severity
+
+        **Default value**: informational
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            ok severity=informational
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: severity
+
+        **Default value**: error
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            severity=error
+
+
+    .. confkey:: tag_syntax
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: tag_syntax
+
+        **Default value**: NSCA
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            tag_syntax=NSCA
+
+
+    .. confkey:: unknown severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: unknown severity
+
+        **Default value**: emergency
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            unknown severity=emergency
+
+
+    .. confkey:: warning severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: warning severity
+
+        **Default value**: warning
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            warning severity=warning
 
 
 
@@ -735,391 +733,390 @@ Arguments
     | Target definition for: sample
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`address` |  | TARGET ADDRESS
-    :confkey:`alias` |  | ALIAS
-    :confkey:`critical severity` | critical | TODO
-    :confkey:`facility` | kernel | TODO
-    :confkey:`host` |  | TARGET HOST
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`message_syntax` | %message% | TODO
-    :confkey:`ok severity` | informational | TODO
-    :confkey:`parent` | default | PARENT
-    :confkey:`port` | 0 | TARGET PORT
-    :confkey:`severity` | error | TODO
-    :confkey:`tag_syntax` | NSCA | TODO
-    :confkey:`unknown severity` | emergency | TODO
-    :confkey:`warning severity` | warning | TODO
-
-
-**Sample**::
-
-    # TARGET DEFENITION
-    # Target definition for: sample
-    [/settings/syslog/client/targets/sample]
-    address=
-    alias=
-    critical severity=critical
-    facility=kernel
-    host=
-    is template=0
-    message_syntax=%message%
-    ok severity=informational
-    parent=default
-    port=0
-    severity=error
-    tag_syntax=NSCA
-    unknown severity=emergency
-    warning severity=warning
-
-
-.. confkey:: address
-    :synopsis: TARGET ADDRESS
-
-    **TARGET ADDRESS**
-
-    | Target host address
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: address
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`critical severity` | critical | TODO
+        :confkey:`facility` | kernel | TODO
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`message_syntax` | %message% | TODO
+        :confkey:`ok severity` | informational | TODO
+        :confkey:`parent` | default | PARENT
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`severity` | error | TODO
+        :confkey:`tag_syntax` | NSCA | TODO
+        :confkey:`unknown severity` | emergency | TODO
+        :confkey:`warning severity` | warning | TODO
 
     **Sample**::
 
+        # TARGET DEFENITION
+        # Target definition for: sample
         [/settings/syslog/client/targets/sample]
-        # TARGET ADDRESS
         address=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # ALIAS
         alias=
-
-
-.. confkey:: critical severity
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: critical severity
-
-    **Default value**: critical
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # TODO
         critical severity=critical
-
-
-.. confkey:: facility
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: facility
-
-    **Default value**: kernel
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # TODO
         facility=kernel
-
-
-.. confkey:: host
-    :synopsis: TARGET HOST
-
-    **TARGET HOST**
-
-    | The target server to report results to.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: host
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # TARGET HOST
         host=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: message_syntax
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: message_syntax
-
-    **Default value**: %message%
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # TODO
         message_syntax=%message%
-
-
-.. confkey:: ok severity
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: ok severity
-
-    **Default value**: informational
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # TODO
         ok severity=informational
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # PARENT
         parent=default
-
-
-.. confkey:: port
-    :synopsis: TARGET PORT
-
-    **TARGET PORT**
-
-    | The target server port
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: port
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # TARGET PORT
         port=0
-
-
-.. confkey:: severity
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: severity
-
-    **Default value**: error
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # TODO
         severity=error
-
-
-.. confkey:: tag_syntax
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: tag_syntax
-
-    **Default value**: NSCA
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # TODO
         tag_syntax=NSCA
-
-
-.. confkey:: unknown severity
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: unknown severity
-
-    **Default value**: emergency
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # TODO
         unknown severity=emergency
-
-
-.. confkey:: warning severity
-    :synopsis: TODO
-
-    **TODO**
-
-
-
-    **Path**: /settings/syslog/client/targets/sample
-
-    **Key**: warning severity
-
-    **Default value**: warning
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`SyslogClient`
-
-    **Sample**::
-
-        [/settings/syslog/client/targets/sample]
-        # TODO
         warning severity=warning
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: critical severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: critical severity
+
+        **Default value**: critical
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            critical severity=critical
+
+
+    .. confkey:: facility
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: facility
+
+        **Default value**: kernel
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            facility=kernel
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: message_syntax
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: message_syntax
+
+        **Default value**: %message%
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            message_syntax=%message%
+
+
+    .. confkey:: ok severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: ok severity
+
+        **Default value**: informational
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            ok severity=informational
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: severity
+
+        **Default value**: error
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            severity=error
+
+
+    .. confkey:: tag_syntax
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: tag_syntax
+
+        **Default value**: NSCA
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            tag_syntax=NSCA
+
+
+    .. confkey:: unknown severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: unknown severity
+
+        **Default value**: emergency
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            unknown severity=emergency
+
+
+    .. confkey:: warning severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: warning severity
+
+        **Default value**: warning
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            warning severity=warning
 
 

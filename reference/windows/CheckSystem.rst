@@ -44,7 +44,7 @@ A list of all short hand aliases for queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    check_counter | :query:`check_pdh`
+    check_counter | Alias for: :query:`check_pdh`
 
 
 **Commands (Overview)**: 
@@ -3354,266 +3354,265 @@ Arguments
 
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`allowed hosts` | 127.0.0.1 | ALLOWED HOSTS
-    :confkey:`bind to` |  | BIND TO ADDRESS
-    :confkey:`cache allowed hosts` | 1 | CACHE ALLOWED HOSTS
-    :confkey:`encoding` |  | NRPE PAYLOAD ENCODING
-    :confkey:`inbox` | inbox | INBOX
-    :confkey:`modern commands` | 1 | Register modern aliases for built-in commands
-    :confkey:`password` |  | PASSWORD
-    :confkey:`socket queue size` | 0 | LISTEN QUEUE
-    :confkey:`thread pool` | 10 | THREAD POOL
-    :confkey:`timeout` | 30 | TIMEOUT
-
-
-**Sample**::
-
-    # 
-    # 
-    [/settings/default]
-    allowed hosts=127.0.0.1
-    bind to=
-    cache allowed hosts=1
-    encoding=
-    inbox=inbox
-    modern commands=1
-    password=
-    socket queue size=0
-    thread pool=10
-    timeout=30
-
-
-.. confkey:: allowed hosts
-    :synopsis: ALLOWED HOSTS
-
-    **ALLOWED HOSTS**
-
-    | A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges.
-
-    **Path**: /settings/default
-
-    **Key**: allowed hosts
-
-    **Default value**: 127.0.0.1
-
-    **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`allowed hosts` | 127.0.0.1 | ALLOWED HOSTS
+        :confkey:`bind to` |  | BIND TO ADDRESS
+        :confkey:`cache allowed hosts` | 1 | CACHE ALLOWED HOSTS
+        :confkey:`encoding` |  | NRPE PAYLOAD ENCODING
+        :confkey:`inbox` | inbox | INBOX
+        :confkey:`modern commands` | 1 | Register modern aliases for built-in commands
+        :confkey:`password` |  | PASSWORD
+        :confkey:`socket queue size` | 0 | LISTEN QUEUE
+        :confkey:`thread pool` | 10 | THREAD POOL
+        :confkey:`timeout` | 30 | TIMEOUT
 
     **Sample**::
 
+        # 
+        # 
         [/settings/default]
-        # ALLOWED HOSTS
         allowed hosts=127.0.0.1
-
-
-.. confkey:: bind to
-    :synopsis: BIND TO ADDRESS
-
-    **BIND TO ADDRESS**
-
-    | Allows you to bind server to a specific local address. This has to be a dotted ip address not a host name. Leaving this blank will bind to all available IP addresses.
-
-    **Path**: /settings/default
-
-    **Key**: bind to
-
-    **Default value**: 
-
-    **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
-
-    **Sample**::
-
-        [/settings/default]
-        # BIND TO ADDRESS
         bind to=
-
-
-.. confkey:: cache allowed hosts
-    :synopsis: CACHE ALLOWED HOSTS
-
-    **CACHE ALLOWED HOSTS**
-
-    | If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server.
-
-    **Path**: /settings/default
-
-    **Key**: cache allowed hosts
-
-    **Default value**: 1
-
-    **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
-
-    **Sample**::
-
-        [/settings/default]
-        # CACHE ALLOWED HOSTS
         cache allowed hosts=1
-
-
-.. confkey:: encoding
-    :synopsis: NRPE PAYLOAD ENCODING
-
-    **NRPE PAYLOAD ENCODING**
-
-
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/default
-
-    **Key**: encoding
-
-    **Default value**: 
-
-    **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
-
-    **Sample**::
-
-        [/settings/default]
-        # NRPE PAYLOAD ENCODING
         encoding=
-
-
-.. confkey:: inbox
-    :synopsis: INBOX
-
-    **INBOX**
-
-    | The default channel to post incoming messages on
-
-    **Path**: /settings/default
-
-    **Key**: inbox
-
-    **Default value**: inbox
-
-    **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
-
-    **Sample**::
-
-        [/settings/default]
-        # INBOX
         inbox=inbox
-
-
-.. confkey:: modern commands
-    :synopsis: Register modern aliases for built-in commands
-
-    **Register modern aliases for built-in commands**
-
-    | Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/default
-
-    **Key**: modern commands
-
-    **Default value**: 1
-
-    **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
-
-    **Sample**::
-
-        [/settings/default]
-        # Register modern aliases for built-in commands
         modern commands=1
-
-
-.. confkey:: password
-    :synopsis: PASSWORD
-
-    **PASSWORD**
-
-    | Password to use
-
-    **Path**: /settings/default
-
-    **Key**: password
-
-    **Default value**: 
-
-    **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
-
-    **Sample**::
-
-        [/settings/default]
-        # PASSWORD
         password=
-
-
-.. confkey:: socket queue size
-    :synopsis: LISTEN QUEUE
-
-    **LISTEN QUEUE**
-
-    | Number of sockets to queue before starting to refuse new incoming connections. This can be used to tweak the amount of simultaneous sockets that the server accepts.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/default
-
-    **Key**: socket queue size
-
-    **Default value**: 0
-
-    **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
-
-    **Sample**::
-
-        [/settings/default]
-        # LISTEN QUEUE
         socket queue size=0
-
-
-.. confkey:: thread pool
-    :synopsis: THREAD POOL
-
-    **THREAD POOL**
-
-
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/default
-
-    **Key**: thread pool
-
-    **Default value**: 10
-
-    **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
-
-    **Sample**::
-
-        [/settings/default]
-        # THREAD POOL
         thread pool=10
-
-
-.. confkey:: timeout
-    :synopsis: TIMEOUT
-
-    **TIMEOUT**
-
-    | Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out.
-
-    **Path**: /settings/default
-
-    **Key**: timeout
-
-    **Default value**: 30
-
-    **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
-
-    **Sample**::
-
-        [/settings/default]
-        # TIMEOUT
         timeout=30
+
+
+    .. confkey:: allowed hosts
+        :synopsis: ALLOWED HOSTS
+
+        **ALLOWED HOSTS**
+
+        | A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges.
+
+        **Path**: /settings/default
+
+        **Key**: allowed hosts
+
+        **Default value**: 127.0.0.1
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # ALLOWED HOSTS
+            allowed hosts=127.0.0.1
+
+
+    .. confkey:: bind to
+        :synopsis: BIND TO ADDRESS
+
+        **BIND TO ADDRESS**
+
+        | Allows you to bind server to a specific local address. This has to be a dotted ip address not a host name. Leaving this blank will bind to all available IP addresses.
+
+        **Path**: /settings/default
+
+        **Key**: bind to
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # BIND TO ADDRESS
+            bind to=
+
+
+    .. confkey:: cache allowed hosts
+        :synopsis: CACHE ALLOWED HOSTS
+
+        **CACHE ALLOWED HOSTS**
+
+        | If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server.
+
+        **Path**: /settings/default
+
+        **Key**: cache allowed hosts
+
+        **Default value**: 1
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # CACHE ALLOWED HOSTS
+            cache allowed hosts=1
+
+
+    .. confkey:: encoding
+        :synopsis: NRPE PAYLOAD ENCODING
+
+        **NRPE PAYLOAD ENCODING**
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/default
+
+        **Key**: encoding
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # NRPE PAYLOAD ENCODING
+            encoding=
+
+
+    .. confkey:: inbox
+        :synopsis: INBOX
+
+        **INBOX**
+
+        | The default channel to post incoming messages on
+
+        **Path**: /settings/default
+
+        **Key**: inbox
+
+        **Default value**: inbox
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # INBOX
+            inbox=inbox
+
+
+    .. confkey:: modern commands
+        :synopsis: Register modern aliases for built-in commands
+
+        **Register modern aliases for built-in commands**
+
+        | Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/default
+
+        **Key**: modern commands
+
+        **Default value**: 1
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # Register modern aliases for built-in commands
+            modern commands=1
+
+
+    .. confkey:: password
+        :synopsis: PASSWORD
+
+        **PASSWORD**
+
+        | Password to use
+
+        **Path**: /settings/default
+
+        **Key**: password
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # PASSWORD
+            password=
+
+
+    .. confkey:: socket queue size
+        :synopsis: LISTEN QUEUE
+
+        **LISTEN QUEUE**
+
+        | Number of sockets to queue before starting to refuse new incoming connections. This can be used to tweak the amount of simultaneous sockets that the server accepts.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/default
+
+        **Key**: socket queue size
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # LISTEN QUEUE
+            socket queue size=0
+
+
+    .. confkey:: thread pool
+        :synopsis: THREAD POOL
+
+        **THREAD POOL**
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/default
+
+        **Key**: thread pool
+
+        **Default value**: 10
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # THREAD POOL
+            thread pool=10
+
+
+    .. confkey:: timeout
+        :synopsis: TIMEOUT
+
+        **TIMEOUT**
+
+        | Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out.
+
+        **Path**: /settings/default
+
+        **Key**: timeout
+
+        **Default value**: 30
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # TIMEOUT
+            timeout=30
 
 
 
@@ -3628,94 +3627,93 @@ Arguments
     | Section for system checks and system settings
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`default buffer length` | 1h | DEFAULT LENGTH
-    :confkey:`modern commands` | 1 | Register modern aliases for built-in commands
-    :confkey:`subsystem` | default | PDH SUBSYSTEM
-
-
-**Sample**::
-
-    # WINDOWS CHECK SYSTEM
-    # Section for system checks and system settings
-    [/settings/system/windows]
-    default buffer length=1h
-    modern commands=1
-    subsystem=default
-
-
-.. confkey:: default buffer length
-    :synopsis: DEFAULT LENGTH
-
-    **DEFAULT LENGTH**
-
-    | Used to define the default interval for range buffer checks (ie. CPU).
-
-    **Path**: /settings/system/windows
-
-    **Key**: default buffer length
-
-    **Default value**: 1h
-
-    **Used by**: :module:`CheckSystem`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`default buffer length` | 1h | DEFAULT LENGTH
+        :confkey:`modern commands` | 1 | Register modern aliases for built-in commands
+        :confkey:`subsystem` | default | PDH SUBSYSTEM
 
     **Sample**::
 
+        # WINDOWS CHECK SYSTEM
+        # Section for system checks and system settings
         [/settings/system/windows]
-        # DEFAULT LENGTH
         default buffer length=1h
-
-
-.. confkey:: modern commands
-    :synopsis: Register modern aliases for built-in commands
-
-    **Register modern aliases for built-in commands**
-
-    | Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++ parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows
-
-    **Key**: modern commands
-
-    **Default value**: 1
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows]
-        # Register modern aliases for built-in commands
         modern commands=1
-
-
-.. confkey:: subsystem
-    :synopsis: PDH SUBSYSTEM
-
-    **PDH SUBSYSTEM**
-
-    | Set which pdh subsystem to use.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows
-
-    **Key**: subsystem
-
-    **Default value**: default
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows]
-        # PDH SUBSYSTEM
         subsystem=default
+
+
+    .. confkey:: default buffer length
+        :synopsis: DEFAULT LENGTH
+
+        **DEFAULT LENGTH**
+
+        | Used to define the default interval for range buffer checks (ie. CPU).
+
+        **Path**: /settings/system/windows
+
+        **Key**: default buffer length
+
+        **Default value**: 1h
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows]
+            # DEFAULT LENGTH
+            default buffer length=1h
+
+
+    .. confkey:: modern commands
+        :synopsis: Register modern aliases for built-in commands
+
+        **Register modern aliases for built-in commands**
+
+        | Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++ parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows
+
+        **Key**: modern commands
+
+        **Default value**: 1
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows]
+            # Register modern aliases for built-in commands
+            modern commands=1
+
+
+    .. confkey:: subsystem
+        :synopsis: PDH SUBSYSTEM
+
+        **PDH SUBSYSTEM**
+
+        | Set which pdh subsystem to use.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows
+
+        **Key**: subsystem
+
+        **Default value**: default
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows]
+            # PDH SUBSYSTEM
+            subsystem=default
 
 
 
@@ -3732,11 +3730,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # COUNTERS
-    # Add counters to check
-    [/settings/system/windows/counters]
+        # COUNTERS
+        # Add counters to check
+        [/settings/system/windows/counters]
 
 
 
@@ -3753,11 +3751,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # CONFIGURE REALTIME CHECKING
-    # A set of options to configure the real time checks
-    [/settings/system/windows/real-time]
+        # CONFIGURE REALTIME CHECKING
+        # A set of options to configure the real time checks
+        [/settings/system/windows/real-time]
 
 
 
@@ -3774,11 +3772,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # REALTIME FILTERS
-    # A set of filters to use in real-time mode
-    [/settings/system/windows/real-time/checks]
+        # REALTIME FILTERS
+        # A set of filters to use in real-time mode
+        [/settings/system/windows/real-time/checks]
 
 
 
@@ -3793,563 +3791,562 @@ Arguments
     | Definition for real time filter: sample
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`alias` |  | ALIAS
-    :confkey:`check` | cpu | TYPE OF CHECK
-    :confkey:`command` |  | COMMAND NAME
-    :confkey:`critical` |  | CRITCAL FILTER
-    :confkey:`debug` | 0 | DEBUG
-    :confkey:`destination` |  | DESTINATION
-    :confkey:`detail syntax` |  | SYNTAX
-    :confkey:`empty message` | eventlog found no records | EMPTY MESSAGE
-    :confkey:`filter` |  | FILTER
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`maximum age` | 5m | MAGIMUM AGE
-    :confkey:`ok` |  | OK FILTER
-    :confkey:`parent` | default | PARENT
-    :confkey:`perf config` |  | PERF CONFIG
-    :confkey:`severity` |  | SEVERITY
-    :confkey:`target` |  | DESTINATION
-    :confkey:`time` |  | TIME
-    :confkey:`times` |  | FILES
-    :confkey:`top syntax` |  | SYNTAX
-    :confkey:`warning` |  | WARNING FILTER
-
-
-**Sample**::
-
-    # REAL TIME FILTER DEFENITION
-    # Definition for real time filter: sample
-    [/settings/system/windows/real-time/checks/sample]
-    alias=
-    check=cpu
-    command=
-    critical=
-    debug=0
-    destination=
-    detail syntax=
-    empty message=eventlog found no records
-    filter=
-    is template=0
-    maximum age=5m
-    ok=
-    parent=default
-    perf config=
-    severity=
-    target=
-    time=
-    times=
-    top syntax=
-    warning=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`alias` |  | ALIAS
+        :confkey:`check` | cpu | TYPE OF CHECK
+        :confkey:`command` |  | COMMAND NAME
+        :confkey:`critical` |  | CRITCAL FILTER
+        :confkey:`debug` | 0 | DEBUG
+        :confkey:`destination` |  | DESTINATION
+        :confkey:`detail syntax` |  | SYNTAX
+        :confkey:`empty message` | eventlog found no records | EMPTY MESSAGE
+        :confkey:`filter` |  | FILTER
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`maximum age` | 5m | MAGIMUM AGE
+        :confkey:`ok` |  | OK FILTER
+        :confkey:`parent` | default | PARENT
+        :confkey:`perf config` |  | PERF CONFIG
+        :confkey:`severity` |  | SEVERITY
+        :confkey:`target` |  | DESTINATION
+        :confkey:`time` |  | TIME
+        :confkey:`times` |  | FILES
+        :confkey:`top syntax` |  | SYNTAX
+        :confkey:`warning` |  | WARNING FILTER
 
     **Sample**::
 
+        # REAL TIME FILTER DEFENITION
+        # Definition for real time filter: sample
         [/settings/system/windows/real-time/checks/sample]
-        # ALIAS
         alias=
-
-
-.. confkey:: check
-    :synopsis: TYPE OF CHECK
-
-    **TYPE OF CHECK**
-
-    | The type of check cpu or memory
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: check
-
-    **Default value**: cpu
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # TYPE OF CHECK
         check=cpu
-
-
-.. confkey:: command
-    :synopsis: COMMAND NAME
-
-    **COMMAND NAME**
-
-    | The name of the command (think nagios service name) to report up stream (defaults to alias if not set)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: command
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # COMMAND NAME
         command=
-
-
-.. confkey:: critical
-    :synopsis: CRITCAL FILTER
-
-    **CRITCAL FILTER**
-
-    | If any rows match this filter severity will escalated to CRITCAL
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: critical
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # CRITCAL FILTER
         critical=
-
-
-.. confkey:: debug
-    :synopsis: DEBUG
-
-    **DEBUG**
-
-    | Enable this to display debug information for this match filter
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: debug
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # DEBUG
         debug=0
-
-
-.. confkey:: destination
-    :synopsis: DESTINATION
-
-    **DESTINATION**
-
-    | The destination for intercepted messages
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: destination
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # DESTINATION
         destination=
-
-
-.. confkey:: detail syntax
-    :synopsis: SYNTAX
-
-    **SYNTAX**
-
-    | Format string for dates
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: detail syntax
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # SYNTAX
         detail syntax=
-
-
-.. confkey:: empty message
-    :synopsis: EMPTY MESSAGE
-
-    **EMPTY MESSAGE**
-
-    | The message to display if nothing matches the filter (generally considered the ok state).
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: empty message
-
-    **Default value**: eventlog found no records
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # EMPTY MESSAGE
         empty message=eventlog found no records
-
-
-.. confkey:: filter
-    :synopsis: FILTER
-
-    **FILTER**
-
-    | Scan files for matching rows for each matching rows an OK message will be submitted
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: filter
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # FILTER
         filter=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: maximum age
-    :synopsis: MAGIMUM AGE
-
-    **MAGIMUM AGE**
-
-    | How long before reporting "ok".
-    | If this is set to "false" no periodic ok messages will be reported only errors.
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: maximum age
-
-    **Default value**: 5m
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # MAGIMUM AGE
         maximum age=5m
-
-
-.. confkey:: ok
-    :synopsis: OK FILTER
-
-    **OK FILTER**
-
-    | If any rows match this filter severity will escalated down to OK
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: ok
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # OK FILTER
         ok=
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # PARENT
         parent=default
-
-
-.. confkey:: perf config
-    :synopsis: PERF CONFIG
-
-    **PERF CONFIG**
-
-    | Performance data configuration
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: perf config
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # PERF CONFIG
         perf config=
-
-
-.. confkey:: severity
-    :synopsis: SEVERITY
-
-    **SEVERITY**
-
-    | THe severity of this message (OK, WARNING, CRITICAL, UNKNOWN)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: severity
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # SEVERITY
         severity=
-
-
-.. confkey:: target
-    :synopsis: DESTINATION
-
-    **DESTINATION**
-
-    | Same as destination
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: target
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # DESTINATION
         target=
-
-
-.. confkey:: time
-    :synopsis: TIME
-
-    **TIME**
-
-    | The time to check
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: time
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # TIME
         time=
-
-
-.. confkey:: times
-    :synopsis: FILES
-
-    **FILES**
-
-    | A list of times to check (soma separated)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: times
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # FILES
         times=
-
-
-.. confkey:: top syntax
-    :synopsis: SYNTAX
-
-    **SYNTAX**
-
-    | Format string for dates
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: top syntax
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # SYNTAX
         top syntax=
-
-
-.. confkey:: warning
-    :synopsis: WARNING FILTER
-
-    **WARNING FILTER**
-
-    | If any rows match this filter severity will escalated to WARNING
-
-    **Path**: /settings/system/windows/real-time/checks/sample
-
-    **Key**: warning
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckSystem`
-
-    **Sample**::
-
-        [/settings/system/windows/real-time/checks/sample]
-        # WARNING FILTER
         warning=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: check
+        :synopsis: TYPE OF CHECK
+
+        **TYPE OF CHECK**
+
+        | The type of check cpu or memory
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: check
+
+        **Default value**: cpu
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # TYPE OF CHECK
+            check=cpu
+
+
+    .. confkey:: command
+        :synopsis: COMMAND NAME
+
+        **COMMAND NAME**
+
+        | The name of the command (think nagios service name) to report up stream (defaults to alias if not set)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: command
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # COMMAND NAME
+            command=
+
+
+    .. confkey:: critical
+        :synopsis: CRITCAL FILTER
+
+        **CRITCAL FILTER**
+
+        | If any rows match this filter severity will escalated to CRITCAL
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: critical
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # CRITCAL FILTER
+            critical=
+
+
+    .. confkey:: debug
+        :synopsis: DEBUG
+
+        **DEBUG**
+
+        | Enable this to display debug information for this match filter
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: debug
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # DEBUG
+            debug=0
+
+
+    .. confkey:: destination
+        :synopsis: DESTINATION
+
+        **DESTINATION**
+
+        | The destination for intercepted messages
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: destination
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # DESTINATION
+            destination=
+
+
+    .. confkey:: detail syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: detail syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # SYNTAX
+            detail syntax=
+
+
+    .. confkey:: empty message
+        :synopsis: EMPTY MESSAGE
+
+        **EMPTY MESSAGE**
+
+        | The message to display if nothing matches the filter (generally considered the ok state).
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: empty message
+
+        **Default value**: eventlog found no records
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # EMPTY MESSAGE
+            empty message=eventlog found no records
+
+
+    .. confkey:: filter
+        :synopsis: FILTER
+
+        **FILTER**
+
+        | Scan files for matching rows for each matching rows an OK message will be submitted
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: filter
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # FILTER
+            filter=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: maximum age
+        :synopsis: MAGIMUM AGE
+
+        **MAGIMUM AGE**
+
+        | How long before reporting "ok".
+        | If this is set to "false" no periodic ok messages will be reported only errors.
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: maximum age
+
+        **Default value**: 5m
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # MAGIMUM AGE
+            maximum age=5m
+
+
+    .. confkey:: ok
+        :synopsis: OK FILTER
+
+        **OK FILTER**
+
+        | If any rows match this filter severity will escalated down to OK
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: ok
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # OK FILTER
+            ok=
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: perf config
+        :synopsis: PERF CONFIG
+
+        **PERF CONFIG**
+
+        | Performance data configuration
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: perf config
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # PERF CONFIG
+            perf config=
+
+
+    .. confkey:: severity
+        :synopsis: SEVERITY
+
+        **SEVERITY**
+
+        | THe severity of this message (OK, WARNING, CRITICAL, UNKNOWN)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: severity
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # SEVERITY
+            severity=
+
+
+    .. confkey:: target
+        :synopsis: DESTINATION
+
+        **DESTINATION**
+
+        | Same as destination
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: target
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # DESTINATION
+            target=
+
+
+    .. confkey:: time
+        :synopsis: TIME
+
+        **TIME**
+
+        | The time to check
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: time
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # TIME
+            time=
+
+
+    .. confkey:: times
+        :synopsis: FILES
+
+        **FILES**
+
+        | A list of times to check (soma separated)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: times
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # FILES
+            times=
+
+
+    .. confkey:: top syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: top syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # SYNTAX
+            top syntax=
+
+
+    .. confkey:: warning
+        :synopsis: WARNING FILTER
+
+        **WARNING FILTER**
+
+        | If any rows match this filter severity will escalated to WARNING
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: warning
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # WARNING FILTER
+            warning=
 
 
 
@@ -4366,10 +4363,10 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # SERVICE MAPPING SECTION
-    # Configure which services has to be in which state
-    [/settings/system/windows/service mapping]
+        # SERVICE MAPPING SECTION
+        # Configure which services has to be in which state
+        [/settings/system/windows/service mapping]
 
 

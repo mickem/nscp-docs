@@ -256,8 +256,8 @@ Arguments
 
 
 
-… 
---
+ / settings / check_mk / client
+-------------------------------
 .. confpath:: /settings/check_mk/client
     :synopsis: CHECK MK CLIENT SECTION
 
@@ -266,42 +266,41 @@ Arguments
     | Section for NSCP active/passive check module.
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`channel` | CheckMK | CHANNEL
-
-
-**Sample**::
-
-    # CHECK MK CLIENT SECTION
-    # Section for NSCP active/passive check module.
-    [/settings/check_mk/client]
-    channel=CheckMK
-
-
-.. confkey:: channel
-    :synopsis: CHANNEL
-
-    **CHANNEL**
-
-    | The channel to listen to.
-
-    **Path**: /settings/check_mk/client
-
-    **Key**: channel
-
-    **Default value**: CheckMK
-
-    **Used by**: :module:`CheckMKClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`channel` | CheckMK | CHANNEL
 
     **Sample**::
 
+        # CHECK MK CLIENT SECTION
+        # Section for NSCP active/passive check module.
         [/settings/check_mk/client]
-        # CHANNEL
         channel=CheckMK
+
+
+    .. confkey:: channel
+        :synopsis: CHANNEL
+
+        **CHANNEL**
+
+        | The channel to listen to.
+
+        **Path**: /settings/check_mk/client
+
+        **Key**: channel
+
+        **Default value**: CheckMK
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client]
+            # CHANNEL
+            channel=CheckMK
 
 
 
@@ -318,11 +317,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # CLIENT HANDLER SECTION
-    # 
-    [/settings/check_mk/client/handlers]
+        # CLIENT HANDLER SECTION
+        # 
+        [/settings/check_mk/client/handlers]
 
 
 
@@ -339,11 +338,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # REMOTE TARGET DEFINITIONS
-    # 
-    [/settings/check_mk/client/scripts]
+        # REMOTE TARGET DEFINITIONS
+        # 
+        [/settings/check_mk/client/scripts]
 
 
 
@@ -360,11 +359,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # REMOTE TARGET DEFINITIONS
-    # 
-    [/settings/check_mk/client/targets]
+        # REMOTE TARGET DEFINITIONS
+        # 
+        [/settings/check_mk/client/targets]
 
 
 
@@ -379,396 +378,395 @@ Arguments
     | Target definition for: default
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`address` |  | TARGET ADDRESS
-    :confkey:`alias` |  | ALIAS
-    :confkey:`allowed ciphers` | ADH | ALLOWED CIPHERS
-    :confkey:`ca` |  | CA
-    :confkey:`certificate` |  | SSL CERTIFICATE
-    :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
-    :confkey:`certificate key` |  | SSL CERTIFICATE
-    :confkey:`dh` | ${certificate-path}/nrpe_dh_512.pem | DH KEY
-    :confkey:`host` |  | TARGET HOST
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`parent` | default | PARENT
-    :confkey:`port` | 0 | TARGET PORT
-    :confkey:`timeout` | 30 | TIMEOUT
-    :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
-    :confkey:`verify mode` | none | VERIFY MODE
-
-
-**Sample**::
-
-    # TARGET DEFENITION
-    # Target definition for: default
-    [/settings/check_mk/client/targets/default]
-    address=
-    alias=
-    allowed ciphers=ADH
-    ca=
-    certificate=
-    certificate format=PEM
-    certificate key=
-    dh=${certificate-path}/nrpe_dh_512.pem
-    host=
-    is template=0
-    parent=default
-    port=0
-    timeout=30
-    use ssl=1
-    verify mode=none
-
-
-.. confkey:: address
-    :synopsis: TARGET ADDRESS
-
-    **TARGET ADDRESS**
-
-    | Target host address
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: address
-
-    **Default value**: 
-
-    **Used by**: :module:`CheckMKClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`allowed ciphers` | ADH | ALLOWED CIPHERS
+        :confkey:`ca` |  | CA
+        :confkey:`certificate` |  | SSL CERTIFICATE
+        :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
+        :confkey:`certificate key` |  | SSL CERTIFICATE
+        :confkey:`dh` | ${certificate-path}/nrpe_dh_512.pem | DH KEY
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`timeout` | 30 | TIMEOUT
+        :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
+        :confkey:`verify mode` | none | VERIFY MODE
 
     **Sample**::
 
+        # TARGET DEFENITION
+        # Target definition for: default
         [/settings/check_mk/client/targets/default]
-        # TARGET ADDRESS
         address=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # ALIAS
         alias=
-
-
-.. confkey:: allowed ciphers
-    :synopsis: ALLOWED CIPHERS
-
-    **ALLOWED CIPHERS**
-
-    | A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: allowed ciphers
-
-    **Default value**: ADH
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # ALLOWED CIPHERS
         allowed ciphers=ADH
-
-
-.. confkey:: ca
-    :synopsis: CA
-
-    **CA**
-
-
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: ca
-
-    **Default value**: 
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # CA
         ca=
-
-
-.. confkey:: certificate
-    :synopsis: SSL CERTIFICATE
-
-    **SSL CERTIFICATE**
-
-
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: certificate
-
-    **Default value**: 
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # SSL CERTIFICATE
         certificate=
-
-
-.. confkey:: certificate format
-    :synopsis: CERTIFICATE FORMAT
-
-    **CERTIFICATE FORMAT**
-
-
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: certificate format
-
-    **Default value**: PEM
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # CERTIFICATE FORMAT
         certificate format=PEM
-
-
-.. confkey:: certificate key
-    :synopsis: SSL CERTIFICATE
-
-    **SSL CERTIFICATE**
-
-
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: certificate key
-
-    **Default value**: 
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # SSL CERTIFICATE
         certificate key=
-
-
-.. confkey:: dh
-    :synopsis: DH KEY
-
-    **DH KEY**
-
-
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: dh
-
-    **Default value**: ${certificate-path}/nrpe_dh_512.pem
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # DH KEY
         dh=${certificate-path}/nrpe_dh_512.pem
-
-
-.. confkey:: host
-    :synopsis: TARGET HOST
-
-    **TARGET HOST**
-
-    | The target server to report results to.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: host
-
-    **Default value**: 
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # TARGET HOST
         host=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # PARENT
         parent=default
-
-
-.. confkey:: port
-    :synopsis: TARGET PORT
-
-    **TARGET PORT**
-
-    | The target server port
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: port
-
-    **Default value**: 0
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # TARGET PORT
         port=0
-
-
-.. confkey:: timeout
-    :synopsis: TIMEOUT
-
-    **TIMEOUT**
-
-    | Timeout when reading/writing packets to/from sockets.
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: timeout
-
-    **Default value**: 30
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # TIMEOUT
         timeout=30
-
-
-.. confkey:: use ssl
-    :synopsis: ENABLE SSL ENCRYPTION
-
-    **ENABLE SSL ENCRYPTION**
-
-    | This option controls if SSL should be enabled.
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: use ssl
-
-    **Default value**: 1
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # ENABLE SSL ENCRYPTION
         use ssl=1
-
-
-.. confkey:: verify mode
-    :synopsis: VERIFY MODE
-
-    **VERIFY MODE**
-
-
-
-    **Path**: /settings/check_mk/client/targets/default
-
-    **Key**: verify mode
-
-    **Default value**: none
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/default]
-        # VERIFY MODE
         verify mode=none
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: allowed ciphers
+        :synopsis: ALLOWED CIPHERS
+
+        **ALLOWED CIPHERS**
+
+        | A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: allowed ciphers
+
+        **Default value**: ADH
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # ALLOWED CIPHERS
+            allowed ciphers=ADH
+
+
+    .. confkey:: ca
+        :synopsis: CA
+
+        **CA**
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: ca
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # CA
+            ca=
+
+
+    .. confkey:: certificate
+        :synopsis: SSL CERTIFICATE
+
+        **SSL CERTIFICATE**
+
+
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: certificate
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # SSL CERTIFICATE
+            certificate=
+
+
+    .. confkey:: certificate format
+        :synopsis: CERTIFICATE FORMAT
+
+        **CERTIFICATE FORMAT**
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: certificate format
+
+        **Default value**: PEM
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # CERTIFICATE FORMAT
+            certificate format=PEM
+
+
+    .. confkey:: certificate key
+        :synopsis: SSL CERTIFICATE
+
+        **SSL CERTIFICATE**
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: certificate key
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # SSL CERTIFICATE
+            certificate key=
+
+
+    .. confkey:: dh
+        :synopsis: DH KEY
+
+        **DH KEY**
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: dh
+
+        **Default value**: ${certificate-path}/nrpe_dh_512.pem
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # DH KEY
+            dh=${certificate-path}/nrpe_dh_512.pem
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: timeout
+        :synopsis: TIMEOUT
+
+        **TIMEOUT**
+
+        | Timeout when reading/writing packets to/from sockets.
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: timeout
+
+        **Default value**: 30
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # TIMEOUT
+            timeout=30
+
+
+    .. confkey:: use ssl
+        :synopsis: ENABLE SSL ENCRYPTION
+
+        **ENABLE SSL ENCRYPTION**
+
+        | This option controls if SSL should be enabled.
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: use ssl
+
+        **Default value**: 1
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # ENABLE SSL ENCRYPTION
+            use ssl=1
+
+
+    .. confkey:: verify mode
+        :synopsis: VERIFY MODE
+
+        **VERIFY MODE**
+
+
+
+        **Path**: /settings/check_mk/client/targets/default
+
+        **Key**: verify mode
+
+        **Default value**: none
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/default]
+            # VERIFY MODE
+            verify mode=none
 
 
 
@@ -783,425 +781,424 @@ Arguments
     | Target definition for: sample
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`address` |  | TARGET ADDRESS
-    :confkey:`alias` |  | ALIAS
-    :confkey:`allowed ciphers` | ADH | ALLOWED CIPHERS
-    :confkey:`ca` |  | CA
-    :confkey:`certificate` |  | SSL CERTIFICATE
-    :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
-    :confkey:`certificate key` |  | SSL CERTIFICATE
-    :confkey:`dh` | ${certificate-path}/nrpe_dh_512.pem | DH KEY
-    :confkey:`host` |  | TARGET HOST
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`parent` | default | PARENT
-    :confkey:`port` | 0 | TARGET PORT
-    :confkey:`timeout` | 30 | TIMEOUT
-    :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
-    :confkey:`verify mode` | none | VERIFY MODE
-
-
-**Sample**::
-
-    # TARGET DEFENITION
-    # Target definition for: sample
-    [/settings/check_mk/client/targets/sample]
-    address=
-    alias=
-    allowed ciphers=ADH
-    ca=
-    certificate=
-    certificate format=PEM
-    certificate key=
-    dh=${certificate-path}/nrpe_dh_512.pem
-    host=
-    is template=0
-    parent=default
-    port=0
-    timeout=30
-    use ssl=1
-    verify mode=none
-
-
-.. confkey:: address
-    :synopsis: TARGET ADDRESS
-
-    **TARGET ADDRESS**
-
-    | Target host address
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: address
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`allowed ciphers` | ADH | ALLOWED CIPHERS
+        :confkey:`ca` |  | CA
+        :confkey:`certificate` |  | SSL CERTIFICATE
+        :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
+        :confkey:`certificate key` |  | SSL CERTIFICATE
+        :confkey:`dh` | ${certificate-path}/nrpe_dh_512.pem | DH KEY
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`timeout` | 30 | TIMEOUT
+        :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
+        :confkey:`verify mode` | none | VERIFY MODE
 
     **Sample**::
 
+        # TARGET DEFENITION
+        # Target definition for: sample
         [/settings/check_mk/client/targets/sample]
-        # TARGET ADDRESS
         address=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # ALIAS
         alias=
-
-
-.. confkey:: allowed ciphers
-    :synopsis: ALLOWED CIPHERS
-
-    **ALLOWED CIPHERS**
-
-    | A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: allowed ciphers
-
-    **Default value**: ADH
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # ALLOWED CIPHERS
         allowed ciphers=ADH
-
-
-.. confkey:: ca
-    :synopsis: CA
-
-    **CA**
-
-
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: ca
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # CA
         ca=
-
-
-.. confkey:: certificate
-    :synopsis: SSL CERTIFICATE
-
-    **SSL CERTIFICATE**
-
-
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: certificate
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # SSL CERTIFICATE
         certificate=
-
-
-.. confkey:: certificate format
-    :synopsis: CERTIFICATE FORMAT
-
-    **CERTIFICATE FORMAT**
-
-
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: certificate format
-
-    **Default value**: PEM
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # CERTIFICATE FORMAT
         certificate format=PEM
-
-
-.. confkey:: certificate key
-    :synopsis: SSL CERTIFICATE
-
-    **SSL CERTIFICATE**
-
-
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: certificate key
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # SSL CERTIFICATE
         certificate key=
-
-
-.. confkey:: dh
-    :synopsis: DH KEY
-
-    **DH KEY**
-
-
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: dh
-
-    **Default value**: ${certificate-path}/nrpe_dh_512.pem
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # DH KEY
         dh=${certificate-path}/nrpe_dh_512.pem
-
-
-.. confkey:: host
-    :synopsis: TARGET HOST
-
-    **TARGET HOST**
-
-    | The target server to report results to.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: host
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # TARGET HOST
         host=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # PARENT
         parent=default
-
-
-.. confkey:: port
-    :synopsis: TARGET PORT
-
-    **TARGET PORT**
-
-    | The target server port
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: port
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # TARGET PORT
         port=0
-
-
-.. confkey:: timeout
-    :synopsis: TIMEOUT
-
-    **TIMEOUT**
-
-    | Timeout when reading/writing packets to/from sockets.
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: timeout
-
-    **Default value**: 30
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # TIMEOUT
         timeout=30
-
-
-.. confkey:: use ssl
-    :synopsis: ENABLE SSL ENCRYPTION
-
-    **ENABLE SSL ENCRYPTION**
-
-    | This option controls if SSL should be enabled.
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: use ssl
-
-    **Default value**: 1
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # ENABLE SSL ENCRYPTION
         use ssl=1
-
-
-.. confkey:: verify mode
-    :synopsis: VERIFY MODE
-
-    **VERIFY MODE**
-
-
-
-    **Path**: /settings/check_mk/client/targets/sample
-
-    **Key**: verify mode
-
-    **Default value**: none
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`CheckMKClient`
-
-    **Sample**::
-
-        [/settings/check_mk/client/targets/sample]
-        # VERIFY MODE
         verify mode=none
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: allowed ciphers
+        :synopsis: ALLOWED CIPHERS
+
+        **ALLOWED CIPHERS**
+
+        | A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: allowed ciphers
+
+        **Default value**: ADH
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # ALLOWED CIPHERS
+            allowed ciphers=ADH
+
+
+    .. confkey:: ca
+        :synopsis: CA
+
+        **CA**
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: ca
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # CA
+            ca=
+
+
+    .. confkey:: certificate
+        :synopsis: SSL CERTIFICATE
+
+        **SSL CERTIFICATE**
+
+
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: certificate
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # SSL CERTIFICATE
+            certificate=
+
+
+    .. confkey:: certificate format
+        :synopsis: CERTIFICATE FORMAT
+
+        **CERTIFICATE FORMAT**
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: certificate format
+
+        **Default value**: PEM
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # CERTIFICATE FORMAT
+            certificate format=PEM
+
+
+    .. confkey:: certificate key
+        :synopsis: SSL CERTIFICATE
+
+        **SSL CERTIFICATE**
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: certificate key
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # SSL CERTIFICATE
+            certificate key=
+
+
+    .. confkey:: dh
+        :synopsis: DH KEY
+
+        **DH KEY**
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: dh
+
+        **Default value**: ${certificate-path}/nrpe_dh_512.pem
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # DH KEY
+            dh=${certificate-path}/nrpe_dh_512.pem
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: timeout
+        :synopsis: TIMEOUT
+
+        **TIMEOUT**
+
+        | Timeout when reading/writing packets to/from sockets.
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: timeout
+
+        **Default value**: 30
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # TIMEOUT
+            timeout=30
+
+
+    .. confkey:: use ssl
+        :synopsis: ENABLE SSL ENCRYPTION
+
+        **ENABLE SSL ENCRYPTION**
+
+        | This option controls if SSL should be enabled.
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: use ssl
+
+        **Default value**: 1
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # ENABLE SSL ENCRYPTION
+            use ssl=1
+
+
+    .. confkey:: verify mode
+        :synopsis: VERIFY MODE
+
+        **VERIFY MODE**
+
+
+
+        **Path**: /settings/check_mk/client/targets/sample
+
+        **Key**: verify mode
+
+        **Default value**: none
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`
+
+        **Sample**::
+
+            [/settings/check_mk/client/targets/sample]
+            # VERIFY MODE
+            verify mode=none
 
 

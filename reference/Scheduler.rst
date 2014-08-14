@@ -35,8 +35,8 @@ Common Keys:
 
 
 
-… 
---
+ / settings / scheduler
+-----------------------
 .. confpath:: /settings/scheduler
     :synopsis: SCHEDULER SECTION
 
@@ -45,42 +45,41 @@ Common Keys:
     | Section for the Scheduler module.
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`threads` | 5 | THREAD COUNT
-
-
-**Sample**::
-
-    # SCHEDULER SECTION
-    # Section for the Scheduler module.
-    [/settings/scheduler]
-    threads=5
-
-
-.. confkey:: threads
-    :synopsis: THREAD COUNT
-
-    **THREAD COUNT**
-
-    | Number of threads to use.
-
-    **Path**: /settings/scheduler
-
-    **Key**: threads
-
-    **Default value**: 5
-
-    **Used by**: :module:`Scheduler`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`threads` | 5 | THREAD COUNT
 
     **Sample**::
 
+        # SCHEDULER SECTION
+        # Section for the Scheduler module.
         [/settings/scheduler]
-        # THREAD COUNT
         threads=5
+
+
+    .. confkey:: threads
+        :synopsis: THREAD COUNT
+
+        **THREAD COUNT**
+
+        | Number of threads to use.
+
+        **Path**: /settings/scheduler
+
+        **Key**: threads
+
+        **Default value**: 5
+
+        **Used by**: :module:`Scheduler`
+
+        **Sample**::
+
+            [/settings/scheduler]
+            # THREAD COUNT
+            threads=5
 
 
 
@@ -97,10 +96,10 @@ Common Keys:
 
 
 
-**Sample**::
+    **Sample**::
 
-    # SCHEDULER SECTION
-    # Section for the Scheduler module.
-    [/settings/scheduler/schedules]
+        # SCHEDULER SECTION
+        # Section for the Scheduler module.
+        [/settings/scheduler/schedules]
 
 

@@ -31,7 +31,7 @@ A list of all short hand aliases for queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    checkcache | :query:`check_cache`
+    checkcache | Alias for: :query:`check_cache`
 
 
 **Commands (Overview)**: 
@@ -141,8 +141,8 @@ Arguments
 
 
 
-… 
---
+ / settings / cache
+-------------------
 .. confpath:: /settings/cache
     :synopsis: CACHE
 
@@ -151,66 +151,65 @@ Arguments
     | Section for simple cache module (SimpleCache.dll).
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`channel` | CACHE | CHANNEL
-    :confkey:`primary index` | ${alias-or-command} | PRIMARY CACHE INDEX
-
-
-**Sample**::
-
-    # CACHE
-    # Section for simple cache module (SimpleCache.dll).
-    [/settings/cache]
-    channel=CACHE
-    primary index=${alias-or-command}
-
-
-.. confkey:: channel
-    :synopsis: CHANNEL
-
-    **CHANNEL**
-
-    | The channel to listen to.
-
-    **Path**: /settings/cache
-
-    **Key**: channel
-
-    **Default value**: CACHE
-
-    **Used by**: :module:`SimpleCache`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`channel` | CACHE | CHANNEL
+        :confkey:`primary index` | ${alias-or-command} | PRIMARY CACHE INDEX
 
     **Sample**::
 
+        # CACHE
+        # Section for simple cache module (SimpleCache.dll).
         [/settings/cache]
-        # CHANNEL
         channel=CACHE
-
-
-.. confkey:: primary index
-    :synopsis: PRIMARY CACHE INDEX
-
-    **PRIMARY CACHE INDEX**
-
-    | Set this to the value you want to use as unique key for the cache.
-    | Can be any arbitrary string as well as include any of the following special keywords:${command} = The command name, ${host} the host, ${channel} the recieving channel, ${alias} the alias for the command, ${alias-or-command} = alias if set otherweise command, ${message} = the message data (no escape), ${result} = The result status (number).
-
-    **Path**: /settings/cache
-
-    **Key**: primary index
-
-    **Default value**: ${alias-or-command}
-
-    **Used by**: :module:`SimpleCache`
-
-    **Sample**::
-
-        [/settings/cache]
-        # PRIMARY CACHE INDEX
         primary index=${alias-or-command}
+
+
+    .. confkey:: channel
+        :synopsis: CHANNEL
+
+        **CHANNEL**
+
+        | The channel to listen to.
+
+        **Path**: /settings/cache
+
+        **Key**: channel
+
+        **Default value**: CACHE
+
+        **Used by**: :module:`SimpleCache`
+
+        **Sample**::
+
+            [/settings/cache]
+            # CHANNEL
+            channel=CACHE
+
+
+    .. confkey:: primary index
+        :synopsis: PRIMARY CACHE INDEX
+
+        **PRIMARY CACHE INDEX**
+
+        | Set this to the value you want to use as unique key for the cache.
+        | Can be any arbitrary string as well as include any of the following special keywords:${command} = The command name, ${host} the host, ${channel} the recieving channel, ${alias} the alias for the command, ${alias-or-command} = alias if set otherweise command, ${message} = the message data (no escape), ${result} = The result status (number).
+
+        **Path**: /settings/cache
+
+        **Key**: primary index
+
+        **Default value**: ${alias-or-command}
+
+        **Used by**: :module:`SimpleCache`
+
+        **Sample**::
+
+            [/settings/cache]
+            # PRIMARY CACHE INDEX
+            primary index=${alias-or-command}
 
 

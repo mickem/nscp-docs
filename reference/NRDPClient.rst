@@ -211,8 +211,8 @@ Arguments
 
 
 
-… 
---
+ / settings / NRDP / client
+---------------------------
 .. confpath:: /settings/NRDP/client
     :synopsis: SMTP CLIENT SECTION
 
@@ -221,66 +221,65 @@ Arguments
     | Section for SMTP passive check module.
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`channel` | NRDP | CHANNEL
-    :confkey:`hostname` | auto | HOSTNAME
-
-
-**Sample**::
-
-    # SMTP CLIENT SECTION
-    # Section for SMTP passive check module.
-    [/settings/NRDP/client]
-    channel=NRDP
-    hostname=auto
-
-
-.. confkey:: channel
-    :synopsis: CHANNEL
-
-    **CHANNEL**
-
-    | The channel to listen to.
-
-    **Path**: /settings/NRDP/client
-
-    **Key**: channel
-
-    **Default value**: NRDP
-
-    **Used by**: :module:`NRDPClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`channel` | NRDP | CHANNEL
+        :confkey:`hostname` | auto | HOSTNAME
 
     **Sample**::
 
+        # SMTP CLIENT SECTION
+        # Section for SMTP passive check module.
         [/settings/NRDP/client]
-        # CHANNEL
         channel=NRDP
-
-
-.. confkey:: hostname
-    :synopsis: HOSTNAME
-
-    **HOSTNAME**
-
-    | The host name of this host if set to blank (default) the windows name of the computer will be used.
-
-    **Path**: /settings/NRDP/client
-
-    **Key**: hostname
-
-    **Default value**: auto
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client]
-        # HOSTNAME
         hostname=auto
+
+
+    .. confkey:: channel
+        :synopsis: CHANNEL
+
+        **CHANNEL**
+
+        | The channel to listen to.
+
+        **Path**: /settings/NRDP/client
+
+        **Key**: channel
+
+        **Default value**: NRDP
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client]
+            # CHANNEL
+            channel=NRDP
+
+
+    .. confkey:: hostname
+        :synopsis: HOSTNAME
+
+        **HOSTNAME**
+
+        | The host name of this host if set to blank (default) the windows name of the computer will be used.
+
+        **Path**: /settings/NRDP/client
+
+        **Key**: hostname
+
+        **Default value**: auto
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client]
+            # HOSTNAME
+            hostname=auto
 
 
 
@@ -297,11 +296,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # CLIENT HANDLER SECTION
-    # 
-    [/settings/NRDP/client/handlers]
+        # CLIENT HANDLER SECTION
+        # 
+        [/settings/NRDP/client/handlers]
 
 
 
@@ -318,11 +317,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # REMOTE TARGET DEFINITIONS
-    # 
-    [/settings/NRDP/client/targets]
+        # REMOTE TARGET DEFINITIONS
+        # 
+        [/settings/NRDP/client/targets]
 
 
 
@@ -337,268 +336,267 @@ Arguments
     | Target definition for: default
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`address` |  | TARGET ADDRESS
-    :confkey:`alias` |  | ALIAS
-    :confkey:`host` |  | TARGET HOST
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`parent` | default | PARENT
-    :confkey:`port` | 0 | TARGET PORT
-    :confkey:`recipient` | nscp@localhost | RECIPIENT
-    :confkey:`sender` | nscp@localhost | SENDER
-    :confkey:`template` | Hello, this is %source% reporting %message%! | TEMPLATE
-    :confkey:`timeout` | 30 | TIMEOUT
-
-
-**Sample**::
-
-    # TARGET DEFENITION
-    # Target definition for: default
-    [/settings/NRDP/client/targets/default]
-    address=
-    alias=
-    host=
-    is template=0
-    parent=default
-    port=0
-    recipient=nscp@localhost
-    sender=nscp@localhost
-    template=Hello, this is %source% reporting %message%!
-    timeout=30
-
-
-.. confkey:: address
-    :synopsis: TARGET ADDRESS
-
-    **TARGET ADDRESS**
-
-    | Target host address
-
-    **Path**: /settings/NRDP/client/targets/default
-
-    **Key**: address
-
-    **Default value**: 
-
-    **Used by**: :module:`NRDPClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`recipient` | nscp@localhost | RECIPIENT
+        :confkey:`sender` | nscp@localhost | SENDER
+        :confkey:`template` | Hello, this is %source% reporting %message%! | TEMPLATE
+        :confkey:`timeout` | 30 | TIMEOUT
 
     **Sample**::
 
+        # TARGET DEFENITION
+        # Target definition for: default
         [/settings/NRDP/client/targets/default]
-        # TARGET ADDRESS
         address=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRDP/client/targets/default
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/default]
-        # ALIAS
         alias=
-
-
-.. confkey:: host
-    :synopsis: TARGET HOST
-
-    **TARGET HOST**
-
-    | The target server to report results to.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRDP/client/targets/default
-
-    **Key**: host
-
-    **Default value**: 
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/default]
-        # TARGET HOST
         host=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRDP/client/targets/default
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/default]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRDP/client/targets/default
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/default]
-        # PARENT
         parent=default
-
-
-.. confkey:: port
-    :synopsis: TARGET PORT
-
-    **TARGET PORT**
-
-    | The target server port
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRDP/client/targets/default
-
-    **Key**: port
-
-    **Default value**: 0
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/default]
-        # TARGET PORT
         port=0
-
-
-.. confkey:: recipient
-    :synopsis: RECIPIENT
-
-    **RECIPIENT**
-
-    | Recipient of email message
-
-    **Path**: /settings/NRDP/client/targets/default
-
-    **Key**: recipient
-
-    **Default value**: nscp@localhost
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/default]
-        # RECIPIENT
         recipient=nscp@localhost
-
-
-.. confkey:: sender
-    :synopsis: SENDER
-
-    **SENDER**
-
-    | Sender of email message
-
-    **Path**: /settings/NRDP/client/targets/default
-
-    **Key**: sender
-
-    **Default value**: nscp@localhost
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/default]
-        # SENDER
         sender=nscp@localhost
-
-
-.. confkey:: template
-    :synopsis: TEMPLATE
-
-    **TEMPLATE**
-
-    | Template for message data
-
-    **Path**: /settings/NRDP/client/targets/default
-
-    **Key**: template
-
-    **Default value**: Hello, this is %source% reporting %message%!
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/default]
-        # TEMPLATE
         template=Hello, this is %source% reporting %message%!
-
-
-.. confkey:: timeout
-    :synopsis: TIMEOUT
-
-    **TIMEOUT**
-
-    | Timeout when reading/writing packets to/from sockets.
-
-    **Path**: /settings/NRDP/client/targets/default
-
-    **Key**: timeout
-
-    **Default value**: 30
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/default]
-        # TIMEOUT
         timeout=30
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: recipient
+        :synopsis: RECIPIENT
+
+        **RECIPIENT**
+
+        | Recipient of email message
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: recipient
+
+        **Default value**: nscp@localhost
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # RECIPIENT
+            recipient=nscp@localhost
+
+
+    .. confkey:: sender
+        :synopsis: SENDER
+
+        **SENDER**
+
+        | Sender of email message
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: sender
+
+        **Default value**: nscp@localhost
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # SENDER
+            sender=nscp@localhost
+
+
+    .. confkey:: template
+        :synopsis: TEMPLATE
+
+        **TEMPLATE**
+
+        | Template for message data
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: template
+
+        **Default value**: Hello, this is %source% reporting %message%!
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # TEMPLATE
+            template=Hello, this is %source% reporting %message%!
+
+
+    .. confkey:: timeout
+        :synopsis: TIMEOUT
+
+        **TIMEOUT**
+
+        | Timeout when reading/writing packets to/from sockets.
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: timeout
+
+        **Default value**: 30
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # TIMEOUT
+            timeout=30
 
 
 
@@ -613,287 +611,286 @@ Arguments
     | Target definition for: sample
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`address` |  | TARGET ADDRESS
-    :confkey:`alias` |  | ALIAS
-    :confkey:`host` |  | TARGET HOST
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`parent` | default | PARENT
-    :confkey:`port` | 0 | TARGET PORT
-    :confkey:`recipient` | nscp@localhost | RECIPIENT
-    :confkey:`sender` | nscp@localhost | SENDER
-    :confkey:`template` | Hello, this is %source% reporting %message%! | TEMPLATE
-    :confkey:`timeout` | 30 | TIMEOUT
-
-
-**Sample**::
-
-    # TARGET DEFENITION
-    # Target definition for: sample
-    [/settings/NRDP/client/targets/sample]
-    address=
-    alias=
-    host=
-    is template=0
-    parent=default
-    port=0
-    recipient=nscp@localhost
-    sender=nscp@localhost
-    template=Hello, this is %source% reporting %message%!
-    timeout=30
-
-
-.. confkey:: address
-    :synopsis: TARGET ADDRESS
-
-    **TARGET ADDRESS**
-
-    | Target host address
-
-    **Path**: /settings/NRDP/client/targets/sample
-
-    **Key**: address
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRDPClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`recipient` | nscp@localhost | RECIPIENT
+        :confkey:`sender` | nscp@localhost | SENDER
+        :confkey:`template` | Hello, this is %source% reporting %message%! | TEMPLATE
+        :confkey:`timeout` | 30 | TIMEOUT
 
     **Sample**::
 
+        # TARGET DEFENITION
+        # Target definition for: sample
         [/settings/NRDP/client/targets/sample]
-        # TARGET ADDRESS
         address=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRDP/client/targets/sample
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/sample]
-        # ALIAS
         alias=
-
-
-.. confkey:: host
-    :synopsis: TARGET HOST
-
-    **TARGET HOST**
-
-    | The target server to report results to.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRDP/client/targets/sample
-
-    **Key**: host
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/sample]
-        # TARGET HOST
         host=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRDP/client/targets/sample
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/sample]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRDP/client/targets/sample
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/sample]
-        # PARENT
         parent=default
-
-
-.. confkey:: port
-    :synopsis: TARGET PORT
-
-    **TARGET PORT**
-
-    | The target server port
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRDP/client/targets/sample
-
-    **Key**: port
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/sample]
-        # TARGET PORT
         port=0
-
-
-.. confkey:: recipient
-    :synopsis: RECIPIENT
-
-    **RECIPIENT**
-
-    | Recipient of email message
-
-    **Path**: /settings/NRDP/client/targets/sample
-
-    **Key**: recipient
-
-    **Default value**: nscp@localhost
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/sample]
-        # RECIPIENT
         recipient=nscp@localhost
-
-
-.. confkey:: sender
-    :synopsis: SENDER
-
-    **SENDER**
-
-    | Sender of email message
-
-    **Path**: /settings/NRDP/client/targets/sample
-
-    **Key**: sender
-
-    **Default value**: nscp@localhost
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/sample]
-        # SENDER
         sender=nscp@localhost
-
-
-.. confkey:: template
-    :synopsis: TEMPLATE
-
-    **TEMPLATE**
-
-    | Template for message data
-
-    **Path**: /settings/NRDP/client/targets/sample
-
-    **Key**: template
-
-    **Default value**: Hello, this is %source% reporting %message%!
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/sample]
-        # TEMPLATE
         template=Hello, this is %source% reporting %message%!
-
-
-.. confkey:: timeout
-    :synopsis: TIMEOUT
-
-    **TIMEOUT**
-
-    | Timeout when reading/writing packets to/from sockets.
-
-    **Path**: /settings/NRDP/client/targets/sample
-
-    **Key**: timeout
-
-    **Default value**: 30
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRDPClient`
-
-    **Sample**::
-
-        [/settings/NRDP/client/targets/sample]
-        # TIMEOUT
         timeout=30
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: recipient
+        :synopsis: RECIPIENT
+
+        **RECIPIENT**
+
+        | Recipient of email message
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: recipient
+
+        **Default value**: nscp@localhost
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # RECIPIENT
+            recipient=nscp@localhost
+
+
+    .. confkey:: sender
+        :synopsis: SENDER
+
+        **SENDER**
+
+        | Sender of email message
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: sender
+
+        **Default value**: nscp@localhost
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # SENDER
+            sender=nscp@localhost
+
+
+    .. confkey:: template
+        :synopsis: TEMPLATE
+
+        **TEMPLATE**
+
+        | Template for message data
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: template
+
+        **Default value**: Hello, this is %source% reporting %message%!
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # TEMPLATE
+            template=Hello, this is %source% reporting %message%!
+
+
+    .. confkey:: timeout
+        :synopsis: TIMEOUT
+
+        **TIMEOUT**
+
+        | Timeout when reading/writing packets to/from sockets.
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: timeout
+
+        **Default value**: 30
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # TIMEOUT
+            timeout=30
 
 

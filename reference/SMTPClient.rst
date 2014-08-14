@@ -181,8 +181,8 @@ Arguments
 
 
 
-… 
---
+ / settings / SMTP / client
+---------------------------
 .. confpath:: /settings/SMTP/client
     :synopsis: SMTP CLIENT SECTION
 
@@ -191,42 +191,41 @@ Arguments
     | Section for SMTP passive check module.
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`channel` | SMTP | CHANNEL
-
-
-**Sample**::
-
-    # SMTP CLIENT SECTION
-    # Section for SMTP passive check module.
-    [/settings/SMTP/client]
-    channel=SMTP
-
-
-.. confkey:: channel
-    :synopsis: CHANNEL
-
-    **CHANNEL**
-
-    | The channel to listen to.
-
-    **Path**: /settings/SMTP/client
-
-    **Key**: channel
-
-    **Default value**: SMTP
-
-    **Used by**: :module:`SMTPClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`channel` | SMTP | CHANNEL
 
     **Sample**::
 
+        # SMTP CLIENT SECTION
+        # Section for SMTP passive check module.
         [/settings/SMTP/client]
-        # CHANNEL
         channel=SMTP
+
+
+    .. confkey:: channel
+        :synopsis: CHANNEL
+
+        **CHANNEL**
+
+        | The channel to listen to.
+
+        **Path**: /settings/SMTP/client
+
+        **Key**: channel
+
+        **Default value**: SMTP
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client]
+            # CHANNEL
+            channel=SMTP
 
 
 
@@ -243,11 +242,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # CLIENT HANDLER SECTION
-    # 
-    [/settings/SMTP/client/handlers]
+        # CLIENT HANDLER SECTION
+        # 
+        [/settings/SMTP/client/handlers]
 
 
 
@@ -264,11 +263,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # REMOTE TARGET DEFINITIONS
-    # 
-    [/settings/SMTP/client/targets]
+        # REMOTE TARGET DEFINITIONS
+        # 
+        [/settings/SMTP/client/targets]
 
 
 
@@ -283,267 +282,266 @@ Arguments
     | Target definition for: default
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`address` |  | TARGET ADDRESS
-    :confkey:`alias` |  | ALIAS
-    :confkey:`host` |  | TARGET HOST
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`parent` | default | PARENT
-    :confkey:`port` | 0 | TARGET PORT
-    :confkey:`recipient` | nscp@localhost | RECIPIENT
-    :confkey:`sender` | nscp@localhost | SENDER
-    :confkey:`template` | Hello, this is %source% reporting %message%! | TEMPLATE
-    :confkey:`timeout` | 30 | TIMEOUT
-
-
-**Sample**::
-
-    # TARGET DEFENITION
-    # Target definition for: default
-    [/settings/SMTP/client/targets/default]
-    address=
-    alias=
-    host=
-    is template=0
-    parent=default
-    port=0
-    recipient=nscp@localhost
-    sender=nscp@localhost
-    template=Hello, this is %source% reporting %message%!
-    timeout=30
-
-
-.. confkey:: address
-    :synopsis: TARGET ADDRESS
-
-    **TARGET ADDRESS**
-
-    | Target host address
-
-    **Path**: /settings/SMTP/client/targets/default
-
-    **Key**: address
-
-    **Default value**: 
-
-    **Used by**: :module:`SMTPClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`recipient` | nscp@localhost | RECIPIENT
+        :confkey:`sender` | nscp@localhost | SENDER
+        :confkey:`template` | Hello, this is %source% reporting %message%! | TEMPLATE
+        :confkey:`timeout` | 30 | TIMEOUT
 
     **Sample**::
 
+        # TARGET DEFENITION
+        # Target definition for: default
         [/settings/SMTP/client/targets/default]
-        # TARGET ADDRESS
         address=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/SMTP/client/targets/default
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Used by**: :module:`SMTPClient`
-
-    **Sample**::
-
-        [/settings/SMTP/client/targets/default]
-        # ALIAS
         alias=
-
-
-.. confkey:: host
-    :synopsis: TARGET HOST
-
-    **TARGET HOST**
-
-    | The target server to report results to.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/SMTP/client/targets/default
-
-    **Key**: host
-
-    **Default value**: 
-
-    **Used by**: :module:`SMTPClient`
-
-    **Sample**::
-
-        [/settings/SMTP/client/targets/default]
-        # TARGET HOST
         host=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/SMTP/client/targets/default
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Used by**: :module:`SMTPClient`
-
-    **Sample**::
-
-        [/settings/SMTP/client/targets/default]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/SMTP/client/targets/default
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Used by**: :module:`SMTPClient`
-
-    **Sample**::
-
-        [/settings/SMTP/client/targets/default]
-        # PARENT
         parent=default
-
-
-.. confkey:: port
-    :synopsis: TARGET PORT
-
-    **TARGET PORT**
-
-    | The target server port
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/SMTP/client/targets/default
-
-    **Key**: port
-
-    **Default value**: 0
-
-    **Used by**: :module:`SMTPClient`
-
-    **Sample**::
-
-        [/settings/SMTP/client/targets/default]
-        # TARGET PORT
         port=0
-
-
-.. confkey:: recipient
-    :synopsis: RECIPIENT
-
-    **RECIPIENT**
-
-    | Recipient of email message
-
-    **Path**: /settings/SMTP/client/targets/default
-
-    **Key**: recipient
-
-    **Default value**: nscp@localhost
-
-    **Used by**: :module:`SMTPClient`
-
-    **Sample**::
-
-        [/settings/SMTP/client/targets/default]
-        # RECIPIENT
         recipient=nscp@localhost
-
-
-.. confkey:: sender
-    :synopsis: SENDER
-
-    **SENDER**
-
-    | Sender of email message
-
-    **Path**: /settings/SMTP/client/targets/default
-
-    **Key**: sender
-
-    **Default value**: nscp@localhost
-
-    **Used by**: :module:`SMTPClient`
-
-    **Sample**::
-
-        [/settings/SMTP/client/targets/default]
-        # SENDER
         sender=nscp@localhost
-
-
-.. confkey:: template
-    :synopsis: TEMPLATE
-
-    **TEMPLATE**
-
-    | Template for message data
-
-    **Path**: /settings/SMTP/client/targets/default
-
-    **Key**: template
-
-    **Default value**: Hello, this is %source% reporting %message%!
-
-    **Used by**: :module:`SMTPClient`
-
-    **Sample**::
-
-        [/settings/SMTP/client/targets/default]
-        # TEMPLATE
         template=Hello, this is %source% reporting %message%!
-
-
-.. confkey:: timeout
-    :synopsis: TIMEOUT
-
-    **TIMEOUT**
-
-    | Timeout when reading/writing packets to/from sockets.
-
-    **Path**: /settings/SMTP/client/targets/default
-
-    **Key**: timeout
-
-    **Default value**: 30
-
-    **Used by**: :module:`SMTPClient`
-
-    **Sample**::
-
-        [/settings/SMTP/client/targets/default]
-        # TIMEOUT
         timeout=30
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/SMTP/client/targets/default
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client/targets/default]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/SMTP/client/targets/default
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client/targets/default]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/SMTP/client/targets/default
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client/targets/default]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/SMTP/client/targets/default
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client/targets/default]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/SMTP/client/targets/default
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client/targets/default]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/SMTP/client/targets/default
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client/targets/default]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: recipient
+        :synopsis: RECIPIENT
+
+        **RECIPIENT**
+
+        | Recipient of email message
+
+        **Path**: /settings/SMTP/client/targets/default
+
+        **Key**: recipient
+
+        **Default value**: nscp@localhost
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client/targets/default]
+            # RECIPIENT
+            recipient=nscp@localhost
+
+
+    .. confkey:: sender
+        :synopsis: SENDER
+
+        **SENDER**
+
+        | Sender of email message
+
+        **Path**: /settings/SMTP/client/targets/default
+
+        **Key**: sender
+
+        **Default value**: nscp@localhost
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client/targets/default]
+            # SENDER
+            sender=nscp@localhost
+
+
+    .. confkey:: template
+        :synopsis: TEMPLATE
+
+        **TEMPLATE**
+
+        | Template for message data
+
+        **Path**: /settings/SMTP/client/targets/default
+
+        **Key**: template
+
+        **Default value**: Hello, this is %source% reporting %message%!
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client/targets/default]
+            # TEMPLATE
+            template=Hello, this is %source% reporting %message%!
+
+
+    .. confkey:: timeout
+        :synopsis: TIMEOUT
+
+        **TIMEOUT**
+
+        | Timeout when reading/writing packets to/from sockets.
+
+        **Path**: /settings/SMTP/client/targets/default
+
+        **Key**: timeout
+
+        **Default value**: 30
+
+        **Used by**: :module:`SMTPClient`
+
+        **Sample**::
+
+            [/settings/SMTP/client/targets/default]
+            # TIMEOUT
+            timeout=30
 
 

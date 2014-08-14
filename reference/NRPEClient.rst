@@ -609,8 +609,8 @@ Arguments
 
 
 
-… 
---
+ / settings / NRPE / client
+---------------------------
 .. confpath:: /settings/NRPE/client
     :synopsis: NRPE CLIENT SECTION
 
@@ -619,42 +619,41 @@ Arguments
     | Section for NRPE active/passive check module.
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`channel` | NRPE | CHANNEL
-
-
-**Sample**::
-
-    # NRPE CLIENT SECTION
-    # Section for NRPE active/passive check module.
-    [/settings/NRPE/client]
-    channel=NRPE
-
-
-.. confkey:: channel
-    :synopsis: CHANNEL
-
-    **CHANNEL**
-
-    | The channel to listen to.
-
-    **Path**: /settings/NRPE/client
-
-    **Key**: channel
-
-    **Default value**: NRPE
-
-    **Used by**: :module:`NRPEClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`channel` | NRPE | CHANNEL
 
     **Sample**::
 
+        # NRPE CLIENT SECTION
+        # Section for NRPE active/passive check module.
         [/settings/NRPE/client]
-        # CHANNEL
         channel=NRPE
+
+
+    .. confkey:: channel
+        :synopsis: CHANNEL
+
+        **CHANNEL**
+
+        | The channel to listen to.
+
+        **Path**: /settings/NRPE/client
+
+        **Key**: channel
+
+        **Default value**: NRPE
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client]
+            # CHANNEL
+            channel=NRPE
 
 
 
@@ -671,11 +670,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # CLIENT HANDLER SECTION
-    # 
-    [/settings/NRPE/client/handlers]
+        # CLIENT HANDLER SECTION
+        # 
+        [/settings/NRPE/client/handlers]
 
 
 
@@ -692,11 +691,11 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # REMOTE TARGET DEFINITIONS
-    # 
-    [/settings/NRPE/client/targets]
+        # REMOTE TARGET DEFINITIONS
+        # 
+        [/settings/NRPE/client/targets]
 
 
 
@@ -711,444 +710,443 @@ Arguments
     | Target definition for: default
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`address` |  | TARGET ADDRESS
-    :confkey:`alias` |  | ALIAS
-    :confkey:`allowed ciphers` | ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH | ALLOWED CIPHERS
-    :confkey:`ca` |  | CA
-    :confkey:`certificate` |  | SSL CERTIFICATE
-    :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
-    :confkey:`certificate key` |  | SSL CERTIFICATE KEY
-    :confkey:`dh` |  | DH KEY
-    :confkey:`host` |  | TARGET HOST
-    :confkey:`insecure` |  | Insecure legacy mode
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`parent` | default | PARENT
-    :confkey:`payload length` | 1024 | PAYLOAD LENGTH
-    :confkey:`port` | 0 | TARGET PORT
-    :confkey:`timeout` | 30 | TIMEOUT
-    :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
-    :confkey:`verify mode` | none | VERIFY MODE
-
-
-**Sample**::
-
-    # TARGET DEFENITION
-    # Target definition for: default
-    [/settings/NRPE/client/targets/default]
-    address=
-    alias=
-    allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-    ca=
-    certificate=
-    certificate format=PEM
-    certificate key=
-    dh=
-    host=
-    insecure=
-    is template=0
-    parent=default
-    payload length=1024
-    port=0
-    timeout=30
-    use ssl=1
-    verify mode=none
-
-
-.. confkey:: address
-    :synopsis: TARGET ADDRESS
-
-    **TARGET ADDRESS**
-
-    | Target host address
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: address
-
-    **Default value**: 
-
-    **Used by**: :module:`NRPEClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`allowed ciphers` | ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH | ALLOWED CIPHERS
+        :confkey:`ca` |  | CA
+        :confkey:`certificate` |  | SSL CERTIFICATE
+        :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
+        :confkey:`certificate key` |  | SSL CERTIFICATE KEY
+        :confkey:`dh` |  | DH KEY
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`insecure` |  | Insecure legacy mode
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`payload length` | 1024 | PAYLOAD LENGTH
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`timeout` | 30 | TIMEOUT
+        :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
+        :confkey:`verify mode` | none | VERIFY MODE
 
     **Sample**::
 
+        # TARGET DEFENITION
+        # Target definition for: default
         [/settings/NRPE/client/targets/default]
-        # TARGET ADDRESS
         address=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # ALIAS
         alias=
-
-
-.. confkey:: allowed ciphers
-    :synopsis: ALLOWED CIPHERS
-
-    **ALLOWED CIPHERS**
-
-    | The allowed list of ciphers (setting insecure wil override this to only support ADH
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: allowed ciphers
-
-    **Default value**: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # ALLOWED CIPHERS
         allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-
-
-.. confkey:: ca
-    :synopsis: CA
-
-    **CA**
-
-    | The certificate authority to use to authenticate remote certificate
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: ca
-
-    **Default value**: 
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # CA
         ca=
-
-
-.. confkey:: certificate
-    :synopsis: SSL CERTIFICATE
-
-    **SSL CERTIFICATE**
-
-    | The ssl certificate to use to encrypt the communication
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: certificate
-
-    **Default value**: 
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # SSL CERTIFICATE
         certificate=
-
-
-.. confkey:: certificate format
-    :synopsis: CERTIFICATE FORMAT
-
-    **CERTIFICATE FORMAT**
-
-    | Format of SSL certificate
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: certificate format
-
-    **Default value**: PEM
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # CERTIFICATE FORMAT
         certificate format=PEM
-
-
-.. confkey:: certificate key
-    :synopsis: SSL CERTIFICATE KEY
-
-    **SSL CERTIFICATE KEY**
-
-    | Key for the SSL certificate
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: certificate key
-
-    **Default value**: 
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # SSL CERTIFICATE KEY
         certificate key=
-
-
-.. confkey:: dh
-    :synopsis: DH KEY
-
-    **DH KEY**
-
-    | The diffi-hellman perfect forwarded secret to use setting --insecure will override this
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: dh
-
-    **Default value**: 
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # DH KEY
         dh=
-
-
-.. confkey:: host
-    :synopsis: TARGET HOST
-
-    **TARGET HOST**
-
-    | The target server to report results to.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: host
-
-    **Default value**: 
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # TARGET HOST
         host=
-
-
-.. confkey:: insecure
-    :synopsis: Insecure legacy mode
-
-    **Insecure legacy mode**
-
-    | Use insecure legacy mode to connect to old NRPE server
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: insecure
-
-    **Default value**: 
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # Insecure legacy mode
         insecure=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # PARENT
         parent=default
-
-
-.. confkey:: payload length
-    :synopsis: PAYLOAD LENGTH
-
-    **PAYLOAD LENGTH**
-
-    | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: payload length
-
-    **Default value**: 1024
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # PAYLOAD LENGTH
         payload length=1024
-
-
-.. confkey:: port
-    :synopsis: TARGET PORT
-
-    **TARGET PORT**
-
-    | The target server port
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: port
-
-    **Default value**: 0
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # TARGET PORT
         port=0
-
-
-.. confkey:: timeout
-    :synopsis: TIMEOUT
-
-    **TIMEOUT**
-
-    | Timeout when reading/writing packets to/from sockets.
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: timeout
-
-    **Default value**: 30
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # TIMEOUT
         timeout=30
-
-
-.. confkey:: use ssl
-    :synopsis: ENABLE SSL ENCRYPTION
-
-    **ENABLE SSL ENCRYPTION**
-
-    | This option controls if SSL should be enabled.
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: use ssl
-
-    **Default value**: 1
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # ENABLE SSL ENCRYPTION
         use ssl=1
-
-
-.. confkey:: verify mode
-    :synopsis: VERIFY MODE
-
-    **VERIFY MODE**
-
-    | What to verify default is non, to validate remote certificate use remote-peer
-
-    **Path**: /settings/NRPE/client/targets/default
-
-    **Key**: verify mode
-
-    **Default value**: none
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/default]
-        # VERIFY MODE
         verify mode=none
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: allowed ciphers
+        :synopsis: ALLOWED CIPHERS
+
+        **ALLOWED CIPHERS**
+
+        | The allowed list of ciphers (setting insecure wil override this to only support ADH
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: allowed ciphers
+
+        **Default value**: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # ALLOWED CIPHERS
+            allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+
+
+    .. confkey:: ca
+        :synopsis: CA
+
+        **CA**
+
+        | The certificate authority to use to authenticate remote certificate
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: ca
+
+        **Default value**: 
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # CA
+            ca=
+
+
+    .. confkey:: certificate
+        :synopsis: SSL CERTIFICATE
+
+        **SSL CERTIFICATE**
+
+        | The ssl certificate to use to encrypt the communication
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: certificate
+
+        **Default value**: 
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # SSL CERTIFICATE
+            certificate=
+
+
+    .. confkey:: certificate format
+        :synopsis: CERTIFICATE FORMAT
+
+        **CERTIFICATE FORMAT**
+
+        | Format of SSL certificate
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: certificate format
+
+        **Default value**: PEM
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # CERTIFICATE FORMAT
+            certificate format=PEM
+
+
+    .. confkey:: certificate key
+        :synopsis: SSL CERTIFICATE KEY
+
+        **SSL CERTIFICATE KEY**
+
+        | Key for the SSL certificate
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: certificate key
+
+        **Default value**: 
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # SSL CERTIFICATE KEY
+            certificate key=
+
+
+    .. confkey:: dh
+        :synopsis: DH KEY
+
+        **DH KEY**
+
+        | The diffi-hellman perfect forwarded secret to use setting --insecure will override this
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: dh
+
+        **Default value**: 
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # DH KEY
+            dh=
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: insecure
+        :synopsis: Insecure legacy mode
+
+        **Insecure legacy mode**
+
+        | Use insecure legacy mode to connect to old NRPE server
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: insecure
+
+        **Default value**: 
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # Insecure legacy mode
+            insecure=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: payload length
+        :synopsis: PAYLOAD LENGTH
+
+        **PAYLOAD LENGTH**
+
+        | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: payload length
+
+        **Default value**: 1024
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # PAYLOAD LENGTH
+            payload length=1024
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: timeout
+        :synopsis: TIMEOUT
+
+        **TIMEOUT**
+
+        | Timeout when reading/writing packets to/from sockets.
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: timeout
+
+        **Default value**: 30
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # TIMEOUT
+            timeout=30
+
+
+    .. confkey:: use ssl
+        :synopsis: ENABLE SSL ENCRYPTION
+
+        **ENABLE SSL ENCRYPTION**
+
+        | This option controls if SSL should be enabled.
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: use ssl
+
+        **Default value**: 1
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # ENABLE SSL ENCRYPTION
+            use ssl=1
+
+
+    .. confkey:: verify mode
+        :synopsis: VERIFY MODE
+
+        **VERIFY MODE**
+
+        | What to verify default is non, to validate remote certificate use remote-peer
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: verify mode
+
+        **Default value**: none
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # VERIFY MODE
+            verify mode=none
 
 
 
@@ -1163,477 +1161,476 @@ Arguments
     | Target definition for: sample
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`address` |  | TARGET ADDRESS
-    :confkey:`alias` |  | ALIAS
-    :confkey:`allowed ciphers` | ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH | ALLOWED CIPHERS
-    :confkey:`ca` |  | CA
-    :confkey:`certificate` |  | SSL CERTIFICATE
-    :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
-    :confkey:`certificate key` |  | SSL CERTIFICATE KEY
-    :confkey:`dh` |  | DH KEY
-    :confkey:`host` |  | TARGET HOST
-    :confkey:`insecure` |  | Insecure legacy mode
-    :confkey:`is template` | 0 | IS TEMPLATE
-    :confkey:`parent` | default | PARENT
-    :confkey:`payload length` | 1024 | PAYLOAD LENGTH
-    :confkey:`port` | 0 | TARGET PORT
-    :confkey:`timeout` | 30 | TIMEOUT
-    :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
-    :confkey:`verify mode` | none | VERIFY MODE
-
-
-**Sample**::
-
-    # TARGET DEFENITION
-    # Target definition for: sample
-    [/settings/NRPE/client/targets/sample]
-    address=
-    alias=
-    allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-    ca=
-    certificate=
-    certificate format=PEM
-    certificate key=
-    dh=
-    host=
-    insecure=
-    is template=0
-    parent=default
-    payload length=1024
-    port=0
-    timeout=30
-    use ssl=1
-    verify mode=none
-
-
-.. confkey:: address
-    :synopsis: TARGET ADDRESS
-
-    **TARGET ADDRESS**
-
-    | Target host address
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: address
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`allowed ciphers` | ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH | ALLOWED CIPHERS
+        :confkey:`ca` |  | CA
+        :confkey:`certificate` |  | SSL CERTIFICATE
+        :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
+        :confkey:`certificate key` |  | SSL CERTIFICATE KEY
+        :confkey:`dh` |  | DH KEY
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`insecure` |  | Insecure legacy mode
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`payload length` | 1024 | PAYLOAD LENGTH
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`timeout` | 30 | TIMEOUT
+        :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
+        :confkey:`verify mode` | none | VERIFY MODE
 
     **Sample**::
 
+        # TARGET DEFENITION
+        # Target definition for: sample
         [/settings/NRPE/client/targets/sample]
-        # TARGET ADDRESS
         address=
-
-
-.. confkey:: alias
-    :synopsis: ALIAS
-
-    **ALIAS**
-
-    | The alias (service name) to report to server
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: alias
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # ALIAS
         alias=
-
-
-.. confkey:: allowed ciphers
-    :synopsis: ALLOWED CIPHERS
-
-    **ALLOWED CIPHERS**
-
-    | The allowed list of ciphers (setting insecure wil override this to only support ADH
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: allowed ciphers
-
-    **Default value**: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # ALLOWED CIPHERS
         allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-
-
-.. confkey:: ca
-    :synopsis: CA
-
-    **CA**
-
-    | The certificate authority to use to authenticate remote certificate
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: ca
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # CA
         ca=
-
-
-.. confkey:: certificate
-    :synopsis: SSL CERTIFICATE
-
-    **SSL CERTIFICATE**
-
-    | The ssl certificate to use to encrypt the communication
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: certificate
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # SSL CERTIFICATE
         certificate=
-
-
-.. confkey:: certificate format
-    :synopsis: CERTIFICATE FORMAT
-
-    **CERTIFICATE FORMAT**
-
-    | Format of SSL certificate
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: certificate format
-
-    **Default value**: PEM
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # CERTIFICATE FORMAT
         certificate format=PEM
-
-
-.. confkey:: certificate key
-    :synopsis: SSL CERTIFICATE KEY
-
-    **SSL CERTIFICATE KEY**
-
-    | Key for the SSL certificate
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: certificate key
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # SSL CERTIFICATE KEY
         certificate key=
-
-
-.. confkey:: dh
-    :synopsis: DH KEY
-
-    **DH KEY**
-
-    | The diffi-hellman perfect forwarded secret to use setting --insecure will override this
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: dh
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # DH KEY
         dh=
-
-
-.. confkey:: host
-    :synopsis: TARGET HOST
-
-    **TARGET HOST**
-
-    | The target server to report results to.
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: host
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # TARGET HOST
         host=
-
-
-.. confkey:: insecure
-    :synopsis: Insecure legacy mode
-
-    **Insecure legacy mode**
-
-    | Use insecure legacy mode to connect to old NRPE server
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: insecure
-
-    **Default value**: 
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # Insecure legacy mode
         insecure=
-
-
-.. confkey:: is template
-    :synopsis: IS TEMPLATE
-
-    **IS TEMPLATE**
-
-    | Declare this object as a template (this means it will not be available as a separate object)
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: is template
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # IS TEMPLATE
         is template=0
-
-
-.. confkey:: parent
-    :synopsis: PARENT
-
-    **PARENT**
-
-    | The parent the target inherits from
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: parent
-
-    **Default value**: default
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # PARENT
         parent=default
-
-
-.. confkey:: payload length
-    :synopsis: PAYLOAD LENGTH
-
-    **PAYLOAD LENGTH**
-
-    | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: payload length
-
-    **Default value**: 1024
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # PAYLOAD LENGTH
         payload length=1024
-
-
-.. confkey:: port
-    :synopsis: TARGET PORT
-
-    **TARGET PORT**
-
-    | The target server port
-
-    **Advanced** (means it is not commonly used)
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: port
-
-    **Default value**: 0
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # TARGET PORT
         port=0
-
-
-.. confkey:: timeout
-    :synopsis: TIMEOUT
-
-    **TIMEOUT**
-
-    | Timeout when reading/writing packets to/from sockets.
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: timeout
-
-    **Default value**: 30
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # TIMEOUT
         timeout=30
-
-
-.. confkey:: use ssl
-    :synopsis: ENABLE SSL ENCRYPTION
-
-    **ENABLE SSL ENCRYPTION**
-
-    | This option controls if SSL should be enabled.
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: use ssl
-
-    **Default value**: 1
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # ENABLE SSL ENCRYPTION
         use ssl=1
-
-
-.. confkey:: verify mode
-    :synopsis: VERIFY MODE
-
-    **VERIFY MODE**
-
-    | What to verify default is non, to validate remote certificate use remote-peer
-
-    **Path**: /settings/NRPE/client/targets/sample
-
-    **Key**: verify mode
-
-    **Default value**: none
-
-    **Sample key**: This key is provided as a sample to show how to configure objects
-
-    **Used by**: :module:`NRPEClient`
-
-    **Sample**::
-
-        [/settings/NRPE/client/targets/sample]
-        # VERIFY MODE
         verify mode=none
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: allowed ciphers
+        :synopsis: ALLOWED CIPHERS
+
+        **ALLOWED CIPHERS**
+
+        | The allowed list of ciphers (setting insecure wil override this to only support ADH
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: allowed ciphers
+
+        **Default value**: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # ALLOWED CIPHERS
+            allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+
+
+    .. confkey:: ca
+        :synopsis: CA
+
+        **CA**
+
+        | The certificate authority to use to authenticate remote certificate
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: ca
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # CA
+            ca=
+
+
+    .. confkey:: certificate
+        :synopsis: SSL CERTIFICATE
+
+        **SSL CERTIFICATE**
+
+        | The ssl certificate to use to encrypt the communication
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: certificate
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # SSL CERTIFICATE
+            certificate=
+
+
+    .. confkey:: certificate format
+        :synopsis: CERTIFICATE FORMAT
+
+        **CERTIFICATE FORMAT**
+
+        | Format of SSL certificate
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: certificate format
+
+        **Default value**: PEM
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # CERTIFICATE FORMAT
+            certificate format=PEM
+
+
+    .. confkey:: certificate key
+        :synopsis: SSL CERTIFICATE KEY
+
+        **SSL CERTIFICATE KEY**
+
+        | Key for the SSL certificate
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: certificate key
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # SSL CERTIFICATE KEY
+            certificate key=
+
+
+    .. confkey:: dh
+        :synopsis: DH KEY
+
+        **DH KEY**
+
+        | The diffi-hellman perfect forwarded secret to use setting --insecure will override this
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: dh
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # DH KEY
+            dh=
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: insecure
+        :synopsis: Insecure legacy mode
+
+        **Insecure legacy mode**
+
+        | Use insecure legacy mode to connect to old NRPE server
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: insecure
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # Insecure legacy mode
+            insecure=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: payload length
+        :synopsis: PAYLOAD LENGTH
+
+        **PAYLOAD LENGTH**
+
+        | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: payload length
+
+        **Default value**: 1024
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # PAYLOAD LENGTH
+            payload length=1024
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: timeout
+        :synopsis: TIMEOUT
+
+        **TIMEOUT**
+
+        | Timeout when reading/writing packets to/from sockets.
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: timeout
+
+        **Default value**: 30
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # TIMEOUT
+            timeout=30
+
+
+    .. confkey:: use ssl
+        :synopsis: ENABLE SSL ENCRYPTION
+
+        **ENABLE SSL ENCRYPTION**
+
+        | This option controls if SSL should be enabled.
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: use ssl
+
+        **Default value**: 1
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # ENABLE SSL ENCRYPTION
+            use ssl=1
+
+
+    .. confkey:: verify mode
+        :synopsis: VERIFY MODE
+
+        **VERIFY MODE**
+
+        | What to verify default is non, to validate remote certificate use remote-peer
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: verify mode
+
+        **Default value**: none
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # VERIFY MODE
+            verify mode=none
 
 

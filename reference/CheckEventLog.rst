@@ -619,8 +619,8 @@ Arguments
 
 
 
-… 
---
+ / settings / eventlog
+----------------------
 .. confpath:: /settings/eventlog
     :synopsis: EVENT LOG SECTION
 
@@ -629,114 +629,113 @@ Arguments
     | Section for the EventLog Checker (CheckEventLog.dll).
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`buffer size` | 131072 | BUFFER_SIZE
-    :confkey:`debug` | 0 | DEBUG
-    :confkey:`lookup names` | 1 | LOOKUP NAMES
-    :confkey:`syntax` |  | SYNTAX
-
-
-**Sample**::
-
-    # EVENT LOG SECTION
-    # Section for the EventLog Checker (CheckEventLog.dll).
-    [/settings/eventlog]
-    buffer size=131072
-    debug=0
-    lookup names=1
-    syntax=
-
-
-.. confkey:: buffer size
-    :synopsis: BUFFER_SIZE
-
-    **BUFFER_SIZE**
-
-    | The size of the buffer to use when getting messages this affects the speed and maximum size of messages you can recieve.
-
-    **Path**: /settings/eventlog
-
-    **Key**: buffer size
-
-    **Default value**: 131072
-
-    **Used by**: :module:`CheckEventLog`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`buffer size` | 131072 | BUFFER_SIZE
+        :confkey:`debug` | 0 | DEBUG
+        :confkey:`lookup names` | 1 | LOOKUP NAMES
+        :confkey:`syntax` |  | SYNTAX
 
     **Sample**::
 
+        # EVENT LOG SECTION
+        # Section for the EventLog Checker (CheckEventLog.dll).
         [/settings/eventlog]
-        # BUFFER_SIZE
         buffer size=131072
-
-
-.. confkey:: debug
-    :synopsis: DEBUG
-
-    **DEBUG**
-
-    | Log more information when filtering (useful to detect issues with filters) not useful in production as it is a bit of a resource hog.
-
-    **Path**: /settings/eventlog
-
-    **Key**: debug
-
-    **Default value**: 0
-
-    **Used by**: :module:`CheckEventLog`
-
-    **Sample**::
-
-        [/settings/eventlog]
-        # DEBUG
         debug=0
-
-
-.. confkey:: lookup names
-    :synopsis: LOOKUP NAMES
-
-    **LOOKUP NAMES**
-
-    | Lookup the names of eventlog files
-
-    **Path**: /settings/eventlog
-
-    **Key**: lookup names
-
-    **Default value**: 1
-
-    **Used by**: :module:`CheckEventLog`
-
-    **Sample**::
-
-        [/settings/eventlog]
-        # LOOKUP NAMES
         lookup names=1
-
-
-.. confkey:: syntax
-    :synopsis: SYNTAX
-
-    **SYNTAX**
-
-    | Set this to use a specific syntax string for all commands (that don't specify one).
-
-    **Path**: /settings/eventlog
-
-    **Key**: syntax
-
-    **Default value**: 
-
-    **Used by**: :module:`CheckEventLog`
-
-    **Sample**::
-
-        [/settings/eventlog]
-        # SYNTAX
         syntax=
+
+
+    .. confkey:: buffer size
+        :synopsis: BUFFER_SIZE
+
+        **BUFFER_SIZE**
+
+        | The size of the buffer to use when getting messages this affects the speed and maximum size of messages you can recieve.
+
+        **Path**: /settings/eventlog
+
+        **Key**: buffer size
+
+        **Default value**: 131072
+
+        **Used by**: :module:`CheckEventLog`
+
+        **Sample**::
+
+            [/settings/eventlog]
+            # BUFFER_SIZE
+            buffer size=131072
+
+
+    .. confkey:: debug
+        :synopsis: DEBUG
+
+        **DEBUG**
+
+        | Log more information when filtering (useful to detect issues with filters) not useful in production as it is a bit of a resource hog.
+
+        **Path**: /settings/eventlog
+
+        **Key**: debug
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckEventLog`
+
+        **Sample**::
+
+            [/settings/eventlog]
+            # DEBUG
+            debug=0
+
+
+    .. confkey:: lookup names
+        :synopsis: LOOKUP NAMES
+
+        **LOOKUP NAMES**
+
+        | Lookup the names of eventlog files
+
+        **Path**: /settings/eventlog
+
+        **Key**: lookup names
+
+        **Default value**: 1
+
+        **Used by**: :module:`CheckEventLog`
+
+        **Sample**::
+
+            [/settings/eventlog]
+            # LOOKUP NAMES
+            lookup names=1
+
+
+    .. confkey:: syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Set this to use a specific syntax string for all commands (that don't specify one).
+
+        **Path**: /settings/eventlog
+
+        **Key**: syntax
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckEventLog`
+
+        **Sample**::
+
+            [/settings/eventlog]
+            # SYNTAX
+            syntax=
 
 
 
@@ -751,114 +750,113 @@ Arguments
     | A set of options to configure the real time checks
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Key", "Default Value", "Description"
-
-    :confkey:`debug` | 0 | DEBUG
-    :confkey:`enabled` | 0 | REAL TIME CHECKING
-    :confkey:`log` | application,system | LOGS TO CHECK
-    :confkey:`startup age` | 30m | STARTUP AGE
-
-
-**Sample**::
-
-    # CONFIGURE REALTIME CHECKING
-    # A set of options to configure the real time checks
-    [/settings/eventlog/real-time]
-    debug=0
-    enabled=0
-    log=application,system
-    startup age=30m
-
-
-.. confkey:: debug
-    :synopsis: DEBUG
-
-    **DEBUG**
-
-    | Log missed records (useful to detect issues with filters) not useful in production as it is a bit of a resource hog.
-
-    **Path**: /settings/eventlog/real-time
-
-    **Key**: debug
-
-    **Default value**: 0
-
-    **Used by**: :module:`CheckEventLog`
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`debug` | 0 | DEBUG
+        :confkey:`enabled` | 0 | REAL TIME CHECKING
+        :confkey:`log` | application,system | LOGS TO CHECK
+        :confkey:`startup age` | 30m | STARTUP AGE
 
     **Sample**::
 
+        # CONFIGURE REALTIME CHECKING
+        # A set of options to configure the real time checks
         [/settings/eventlog/real-time]
-        # DEBUG
         debug=0
-
-
-.. confkey:: enabled
-    :synopsis: REAL TIME CHECKING
-
-    **REAL TIME CHECKING**
-
-    | Spawns a background thread which detects issues and reports them back instantly.
-
-    **Path**: /settings/eventlog/real-time
-
-    **Key**: enabled
-
-    **Default value**: 0
-
-    **Used by**: :module:`CheckEventLog`
-
-    **Sample**::
-
-        [/settings/eventlog/real-time]
-        # REAL TIME CHECKING
         enabled=0
-
-
-.. confkey:: log
-    :synopsis: LOGS TO CHECK
-
-    **LOGS TO CHECK**
-
-    | Comma separated list of logs to check
-
-    **Path**: /settings/eventlog/real-time
-
-    **Key**: log
-
-    **Default value**: application,system
-
-    **Used by**: :module:`CheckEventLog`
-
-    **Sample**::
-
-        [/settings/eventlog/real-time]
-        # LOGS TO CHECK
         log=application,system
-
-
-.. confkey:: startup age
-    :synopsis: STARTUP AGE
-
-    **STARTUP AGE**
-
-    | The initial age to scan when starting NSClient++
-
-    **Path**: /settings/eventlog/real-time
-
-    **Key**: startup age
-
-    **Default value**: 30m
-
-    **Used by**: :module:`CheckEventLog`
-
-    **Sample**::
-
-        [/settings/eventlog/real-time]
-        # STARTUP AGE
         startup age=30m
+
+
+    .. confkey:: debug
+        :synopsis: DEBUG
+
+        **DEBUG**
+
+        | Log missed records (useful to detect issues with filters) not useful in production as it is a bit of a resource hog.
+
+        **Path**: /settings/eventlog/real-time
+
+        **Key**: debug
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckEventLog`
+
+        **Sample**::
+
+            [/settings/eventlog/real-time]
+            # DEBUG
+            debug=0
+
+
+    .. confkey:: enabled
+        :synopsis: REAL TIME CHECKING
+
+        **REAL TIME CHECKING**
+
+        | Spawns a background thread which detects issues and reports them back instantly.
+
+        **Path**: /settings/eventlog/real-time
+
+        **Key**: enabled
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckEventLog`
+
+        **Sample**::
+
+            [/settings/eventlog/real-time]
+            # REAL TIME CHECKING
+            enabled=0
+
+
+    .. confkey:: log
+        :synopsis: LOGS TO CHECK
+
+        **LOGS TO CHECK**
+
+        | Comma separated list of logs to check
+
+        **Path**: /settings/eventlog/real-time
+
+        **Key**: log
+
+        **Default value**: application,system
+
+        **Used by**: :module:`CheckEventLog`
+
+        **Sample**::
+
+            [/settings/eventlog/real-time]
+            # LOGS TO CHECK
+            log=application,system
+
+
+    .. confkey:: startup age
+        :synopsis: STARTUP AGE
+
+        **STARTUP AGE**
+
+        | The initial age to scan when starting NSClient++
+
+        **Path**: /settings/eventlog/real-time
+
+        **Key**: startup age
+
+        **Default value**: 30m
+
+        **Used by**: :module:`CheckEventLog`
+
+        **Sample**::
+
+            [/settings/eventlog/real-time]
+            # STARTUP AGE
+            startup age=30m
 
 
 
@@ -875,10 +873,10 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # REALTIME FILTERS
-    # A set of filters to use in real-time mode
-    [/settings/eventlog/real-time/filters]
+        # REALTIME FILTERS
+        # A set of filters to use in real-time mode
+        [/settings/eventlog/real-time/filters]
 
 

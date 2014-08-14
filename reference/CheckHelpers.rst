@@ -41,16 +41,16 @@ A list of all short hand aliases for queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    checkalwayscritical | :query:`check_always_critical`
-    checkalwaysok | :query:`check_always_ok`
-    checkalwayswarning | :query:`check_always_warning`
-    checkcritical | :query:`check_critical`
-    checkmultiple | :query:`check_multi`
-    checkok | :query:`check_ok`
-    checkversion | :query:`check_version`
-    checkwarning | :query:`check_warning`
-    negate | :query:`check_negate`
-    timeout | :query:`check_timeout`
+    checkalwayscritical | Alias for: :query:`check_always_critical`
+    checkalwaysok | Alias for: :query:`check_always_ok`
+    checkalwayswarning | Alias for: :query:`check_always_warning`
+    checkcritical | Alias for: :query:`check_critical`
+    checkmultiple | Alias for: :query:`check_multi`
+    checkok | Alias for: :query:`check_ok`
+    checkversion | Alias for: :query:`check_version`
+    checkwarning | Alias for: :query:`check_warning`
+    negate | Alias for: :query:`check_negate`
+    timeout | Alias for: :query:`check_timeout`
 
 
 **Commands (Overview)**: 

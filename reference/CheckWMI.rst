@@ -31,7 +31,7 @@ A list of all short hand aliases for queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    checkwmi | :query:`check_wmi`
+    checkwmi | Alias for: :query:`check_wmi`
 
 
 **Commands (Overview)**: 
@@ -368,8 +368,8 @@ Arguments
 
 
 
-… 
---
+ / settings / targets
+---------------------
 .. confpath:: /settings/targets
     :synopsis: TARGET LIST SECTION
 
@@ -380,10 +380,10 @@ Arguments
 
 
 
-**Sample**::
+    **Sample**::
 
-    # TARGET LIST SECTION
-    # A list of available remote target systems
-    [/settings/targets]
+        # TARGET LIST SECTION
+        # A list of available remote target systems
+        [/settings/targets]
 
 

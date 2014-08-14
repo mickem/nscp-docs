@@ -31,7 +31,7 @@ A list of all short hand aliases for queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    crashclient | :query:`crash_client`
+    crashclient | Alias for: :query:`crash_client`
 
 
 **Commands (Overview)**: 
