@@ -619,8 +619,9 @@ Arguments
 
 
 
- / settings / eventlog
-----------------------
+/ settings/ eventlog
+--------------------
+
 .. confpath:: /settings/eventlog
     :synopsis: EVENT LOG SECTION
 
@@ -742,6 +743,7 @@ Arguments
 
 …  / real-time
 --------------
+
 .. confpath:: /settings/eventlog/real-time
     :synopsis: CONFIGURE REALTIME CHECKING
 
@@ -863,6 +865,7 @@ Arguments
 
 …  / real-time / filters
 ------------------------
+
 .. confpath:: /settings/eventlog/real-time/filters
     :synopsis: REALTIME FILTERS
 

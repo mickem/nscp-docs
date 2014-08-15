@@ -70,6 +70,7 @@ Advanced keys:
 
 … default
 ---------
+
 .. confpath:: /settings/default
     :synopsis: 
 
@@ -343,6 +344,7 @@ Advanced keys:
 
 … NSClient / server
 -------------------
+
 .. confpath:: /settings/NSClient/server
     :synopsis: NSCLIENT SERVER SECTION
 

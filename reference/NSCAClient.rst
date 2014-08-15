@@ -321,8 +321,9 @@ Arguments
 
 
 
- / settings / NSCA / client
----------------------------
+/ settings/ NSCA/ client
+------------------------
+
 .. confpath:: /settings/NSCA/client
     :synopsis: NSCA CLIENT SECTION
 
@@ -458,6 +459,7 @@ Arguments
 
 …  / handlers
 -------------
+
 .. confpath:: /settings/NSCA/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
@@ -479,6 +481,7 @@ Arguments
 
 …  / targets
 ------------
+
 .. confpath:: /settings/NSCA/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
@@ -500,6 +503,7 @@ Arguments
 
 …  / targets / default
 ----------------------
+
 .. confpath:: /settings/NSCA/client/targets/default
     :synopsis: TARGET DEFENITION
 
@@ -1045,6 +1049,7 @@ Arguments
 
 …  / targets / sample
 ---------------------
+
 .. confpath:: /settings/NSCA/client/targets/sample
     :synopsis: TARGET DEFENITION
 

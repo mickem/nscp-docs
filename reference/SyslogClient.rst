@@ -237,8 +237,9 @@ Arguments
 
 
 
- / settings / syslog / client
------------------------------
+/ settings/ syslog/ client
+--------------------------
+
 .. confpath:: /settings/syslog/client
     :synopsis: SYSLOG CLIENT SECTION
 
@@ -312,6 +313,7 @@ Arguments
 
 …  / handlers
 -------------
+
 .. confpath:: /settings/syslog/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
@@ -333,6 +335,7 @@ Arguments
 
 …  / targets
 ------------
+
 .. confpath:: /settings/syslog/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
@@ -354,6 +357,7 @@ Arguments
 
 …  / targets / default
 ----------------------
+
 .. confpath:: /settings/syslog/client/targets/default
     :synopsis: TARGET DEFENITION
 
@@ -725,6 +729,7 @@ Arguments
 
 …  / targets / sample
 ---------------------
+
 .. confpath:: /settings/syslog/client/targets/sample
     :synopsis: TARGET DEFENITION
 

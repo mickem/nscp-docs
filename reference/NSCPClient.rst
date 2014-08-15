@@ -554,8 +554,9 @@ Arguments
 
 
 
- / settings / nscp / client
----------------------------
+/ settings/ nscp/ client
+------------------------
+
 .. confpath:: /settings/nscp/client
     :synopsis: NSCP CLIENT SECTION
 
@@ -605,6 +606,7 @@ Arguments
 
 …  / handlers
 -------------
+
 .. confpath:: /settings/nscp/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
@@ -626,6 +628,7 @@ Arguments
 
 …  / targets
 ------------
+
 .. confpath:: /settings/nscp/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
@@ -647,6 +650,7 @@ Arguments
 
 …  / targets / default
 ----------------------
+
 .. confpath:: /settings/nscp/client/targets/default
     :synopsis: TARGET DEFENITION
 
@@ -1050,6 +1054,7 @@ Arguments
 
 …  / targets / sample
 ---------------------
+
 .. confpath:: /settings/nscp/client/targets/sample
     :synopsis: TARGET DEFENITION
 

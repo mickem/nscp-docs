@@ -73,6 +73,7 @@ Advanced keys:
 
 … default
 ---------
+
 .. confpath:: /settings/default
     :synopsis: 
 
@@ -346,6 +347,7 @@ Advanced keys:
 
 … NSCA / server
 ---------------
+
 .. confpath:: /settings/NSCA/server
     :synopsis: NSCA SERVER SECTION
 

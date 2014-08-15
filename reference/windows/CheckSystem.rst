@@ -3346,6 +3346,7 @@ Arguments
 
 … default
 ---------
+
 .. confpath:: /settings/default
     :synopsis: 
 
@@ -3619,6 +3620,7 @@ Arguments
 
 … system / windows
 ------------------
+
 .. confpath:: /settings/system/windows
     :synopsis: WINDOWS CHECK SYSTEM
 
@@ -3720,6 +3722,7 @@ Arguments
 
 … system / windows / counters
 -----------------------------
+
 .. confpath:: /settings/system/windows/counters
     :synopsis: COUNTERS
 
@@ -3741,6 +3744,7 @@ Arguments
 
 … system / windows / real-time
 ------------------------------
+
 .. confpath:: /settings/system/windows/real-time
     :synopsis: CONFIGURE REALTIME CHECKING
 
@@ -3762,6 +3766,7 @@ Arguments
 
 … system / windows / real-time / checks
 ---------------------------------------
+
 .. confpath:: /settings/system/windows/real-time/checks
     :synopsis: REALTIME FILTERS
 
@@ -3783,6 +3788,7 @@ Arguments
 
 … system / windows / real-time / checks / sample
 ------------------------------------------------
+
 .. confpath:: /settings/system/windows/real-time/checks/sample
     :synopsis: REAL TIME FILTER DEFENITION
 
@@ -4353,6 +4359,7 @@ Arguments
 
 … system / windows / service mapping
 ------------------------------------
+
 .. confpath:: /settings/system/windows/service mapping
     :synopsis: SERVICE MAPPING SECTION
 

@@ -187,8 +187,9 @@ Arguments
 
 
 
- / settings / graphite / client
--------------------------------
+/ settings/ graphite/ client
+----------------------------
+
 .. confpath:: /settings/graphite/client
     :synopsis: GRAPHITE CLIENT SECTION
 
@@ -262,6 +263,7 @@ Arguments
 
 …  / handlers
 -------------
+
 .. confpath:: /settings/graphite/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
@@ -283,6 +285,7 @@ Arguments
 
 …  / targets
 ------------
+
 .. confpath:: /settings/graphite/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
@@ -304,6 +307,7 @@ Arguments
 
 …  / targets / default
 ----------------------
+
 .. confpath:: /settings/graphite/client/targets/default
     :synopsis: TARGET DEFENITION
 
@@ -507,6 +511,7 @@ Arguments
 
 …  / targets / sample
 ---------------------
+
 .. confpath:: /settings/graphite/client/targets/sample
     :synopsis: TARGET DEFENITION
 

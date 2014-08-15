@@ -75,6 +75,7 @@ Advanced keys:
 
 … default
 ---------
+
 .. confpath:: /settings/default
     :synopsis: 
 
@@ -348,6 +349,7 @@ Advanced keys:
 
 … NRPE / server
 ---------------
+
 .. confpath:: /settings/NRPE/server
     :synopsis: NRPE SERVER SECTION
 

@@ -69,6 +69,7 @@ Advanced keys:
 
 … default
 ---------
+
 .. confpath:: /settings/default
     :synopsis: 
 
@@ -342,6 +343,7 @@ Advanced keys:
 
 … nscp / server
 ---------------
+
 .. confpath:: /settings/nscp/server
     :synopsis: NSCP SERVER SECTION
 

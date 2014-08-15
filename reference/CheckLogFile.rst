@@ -497,8 +497,9 @@ Arguments
 
 
 
- / settings / logfile
----------------------
+/ settings/ logfile
+-------------------
+
 .. confpath:: /settings/logfile
     :synopsis: LOG FILE SECTION
 
@@ -520,6 +521,7 @@ Arguments
 
 …  / real-time
 --------------
+
 .. confpath:: /settings/logfile/real-time
     :synopsis: CONFIGURE REALTIME CHECKING
 
@@ -569,6 +571,7 @@ Arguments
 
 …  / real-time / checks
 -----------------------
+
 .. confpath:: /settings/logfile/real-time/checks
     :synopsis: REALTIME FILTERS
 
@@ -590,6 +593,7 @@ Arguments
 
 …  / real-time / checks / sample
 --------------------------------
+
 .. confpath:: /settings/logfile/real-time/checks/sample
     :synopsis: REAL TIME FILTER DEFENITION
 

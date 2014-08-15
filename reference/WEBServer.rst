@@ -55,6 +55,7 @@ Advanced keys:
 
 … default
 ---------
+
 .. confpath:: /settings/default
     :synopsis: 
 
@@ -328,6 +329,7 @@ Advanced keys:
 
 … WEB / server
 --------------
+
 .. confpath:: /settings/WEB/server
     :synopsis: WEB SERVER SECTION
 

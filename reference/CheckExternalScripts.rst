@@ -93,8 +93,9 @@ Common Keys:
 
 
 
- / settings / external scripts
-------------------------------
+/ settings/ external scripts
+----------------------------
+
 .. confpath:: /settings/external scripts
     :synopsis: EXTERNAL SCRIPT SECTION
 
@@ -216,6 +217,7 @@ Common Keys:
 
 …  / alias
 ----------
+
 .. confpath:: /settings/external scripts/alias
     :synopsis: ALIAS SECTION
 
@@ -746,6 +748,7 @@ Common Keys:
 
 …  / scripts
 ------------
+
 .. confpath:: /settings/external scripts/scripts
     :synopsis: SCRIPT SECTION
 
@@ -767,6 +770,7 @@ Common Keys:
 
 …  / wrapped scripts
 --------------------
+
 .. confpath:: /settings/external scripts/wrapped scripts
     :synopsis: WRAPPED SCRIPTS SECTION
 
@@ -788,6 +792,7 @@ Common Keys:
 
 …  / wrappings
 --------------
+
 .. confpath:: /settings/external scripts/wrappings
     :synopsis: EXTERNAL SCRIPT WRAPPINGS SECTION
 

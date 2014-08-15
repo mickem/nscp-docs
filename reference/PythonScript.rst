@@ -27,8 +27,9 @@ Loads and processes internal Python scripts
 
 
 
- / settings / python
---------------------
+/ settings/ python
+------------------
+
 .. confpath:: /settings/python
     :synopsis: LUA SCRIPT SECTION
 
@@ -50,6 +51,7 @@ Loads and processes internal Python scripts
 
 …  / scripts
 ------------
+
 .. confpath:: /settings/python/scripts
     :synopsis: PYTHON SCRIPTS SECTION
 

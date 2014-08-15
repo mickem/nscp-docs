@@ -368,8 +368,9 @@ Arguments
 
 
 
- / settings / targets
----------------------
+/ settings/ targets
+-------------------
+
 .. confpath:: /settings/targets
     :synopsis: TARGET LIST SECTION
 

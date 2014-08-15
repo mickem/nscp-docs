@@ -68,6 +68,7 @@ Advanced keys:
 
 … check_mk / server
 -------------------
+
 .. confpath:: /settings/check_mk/server
     :synopsis: CHECK MK SERVER SECTION
 
@@ -479,6 +480,7 @@ Advanced keys:
 
 … check_mk / server / scripts
 -----------------------------
+
 .. confpath:: /settings/check_mk/server/scripts
     :synopsis: REMOTE TARGET DEFINITIONS
 
@@ -500,6 +502,7 @@ Advanced keys:
 
 … default
 ---------
+
 .. confpath:: /settings/default
     :synopsis: 
 

@@ -27,8 +27,9 @@ Loads and processes internal Lua scripts
 
 
 
- / settings / lua
------------------
+/ settings/ lua
+---------------
+
 .. confpath:: /settings/lua
     :synopsis: LUA SCRIPT SECTION
 
@@ -50,6 +51,7 @@ Loads and processes internal Lua scripts
 
 …  / scripts
 ------------
+
 .. confpath:: /settings/lua/scripts
     :synopsis: LUA SCRIPTS SECTION
 

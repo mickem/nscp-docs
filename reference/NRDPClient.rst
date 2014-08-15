@@ -211,8 +211,9 @@ Arguments
 
 
 
- / settings / NRDP / client
----------------------------
+/ settings/ NRDP/ client
+------------------------
+
 .. confpath:: /settings/NRDP/client
     :synopsis: SMTP CLIENT SECTION
 
@@ -286,6 +287,7 @@ Arguments
 
 …  / handlers
 -------------
+
 .. confpath:: /settings/NRDP/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
@@ -307,6 +309,7 @@ Arguments
 
 …  / targets
 ------------
+
 .. confpath:: /settings/NRDP/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
@@ -328,6 +331,7 @@ Arguments
 
 …  / targets / default
 ----------------------
+
 .. confpath:: /settings/NRDP/client/targets/default
     :synopsis: TARGET DEFENITION
 
@@ -603,6 +607,7 @@ Arguments
 
 …  / targets / sample
 ---------------------
+
 .. confpath:: /settings/NRDP/client/targets/sample
     :synopsis: TARGET DEFENITION
 

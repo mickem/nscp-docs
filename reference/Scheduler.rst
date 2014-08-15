@@ -35,8 +35,9 @@ Common Keys:
 
 
 
- / settings / scheduler
------------------------
+/ settings/ scheduler
+---------------------
+
 .. confpath:: /settings/scheduler
     :synopsis: SCHEDULER SECTION
 
@@ -86,6 +87,7 @@ Common Keys:
 
 …  / schedules
 --------------
+
 .. confpath:: /settings/scheduler/schedules
     :synopsis: SCHEDULER SECTION
 

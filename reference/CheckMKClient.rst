@@ -256,8 +256,9 @@ Arguments
 
 
 
- / settings / check_mk / client
--------------------------------
+/ settings/ check_mk/ client
+----------------------------
+
 .. confpath:: /settings/check_mk/client
     :synopsis: CHECK MK CLIENT SECTION
 
@@ -307,6 +308,7 @@ Arguments
 
 …  / handlers
 -------------
+
 .. confpath:: /settings/check_mk/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
@@ -328,6 +330,7 @@ Arguments
 
 …  / scripts
 ------------
+
 .. confpath:: /settings/check_mk/client/scripts
     :synopsis: REMOTE TARGET DEFINITIONS
 
@@ -349,6 +352,7 @@ Arguments
 
 …  / targets
 ------------
+
 .. confpath:: /settings/check_mk/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
@@ -370,6 +374,7 @@ Arguments
 
 …  / targets / default
 ----------------------
+
 .. confpath:: /settings/check_mk/client/targets/default
     :synopsis: TARGET DEFENITION
 
@@ -773,6 +778,7 @@ Arguments
 
 …  / targets / sample
 ---------------------
+
 .. confpath:: /settings/check_mk/client/targets/sample
     :synopsis: TARGET DEFENITION
 

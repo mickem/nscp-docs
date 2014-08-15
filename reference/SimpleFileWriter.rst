@@ -37,8 +37,9 @@ Common Keys:
 
 
 
- / settings / writers / file
-----------------------------
+/ settings/ writers/ file
+-------------------------
+
 .. confpath:: /settings/writers/file
     :synopsis: FILE WRITER
 

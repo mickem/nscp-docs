@@ -181,8 +181,9 @@ Arguments
 
 
 
- / settings / SMTP / client
----------------------------
+/ settings/ SMTP/ client
+------------------------
+
 .. confpath:: /settings/SMTP/client
     :synopsis: SMTP CLIENT SECTION
 
@@ -232,6 +233,7 @@ Arguments
 
 …  / handlers
 -------------
+
 .. confpath:: /settings/SMTP/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
@@ -253,6 +255,7 @@ Arguments
 
 …  / targets
 ------------
+
 .. confpath:: /settings/SMTP/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
@@ -274,6 +277,7 @@ Arguments
 
 …  / targets / default
 ----------------------
+
 .. confpath:: /settings/SMTP/client/targets/default
     :synopsis: TARGET DEFENITION
 

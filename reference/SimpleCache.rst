@@ -141,8 +141,9 @@ Arguments
 
 
 
- / settings / cache
--------------------
+/ settings/ cache
+-----------------
+
 .. confpath:: /settings/cache
     :synopsis: CACHE
 

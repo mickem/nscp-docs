@@ -609,8 +609,9 @@ Arguments
 
 
 
- / settings / NRPE / client
----------------------------
+/ settings/ NRPE/ client
+------------------------
+
 .. confpath:: /settings/NRPE/client
     :synopsis: NRPE CLIENT SECTION
 
@@ -660,6 +661,7 @@ Arguments
 
 …  / handlers
 -------------
+
 .. confpath:: /settings/NRPE/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
@@ -681,6 +683,7 @@ Arguments
 
 …  / targets
 ------------
+
 .. confpath:: /settings/NRPE/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
@@ -702,6 +705,7 @@ Arguments
 
 …  / targets / default
 ----------------------
+
 .. confpath:: /settings/NRPE/client/targets/default
     :synopsis: TARGET DEFENITION
 
@@ -1153,6 +1157,7 @@ Arguments
 
 …  / targets / sample
 ---------------------
+
 .. confpath:: /settings/NRPE/client/targets/sample
     :synopsis: TARGET DEFENITION
 
