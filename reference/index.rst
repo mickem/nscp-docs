@@ -44,3 +44,14 @@ Modules which is used to interface with various protocols and monitoring systems
    :glob:
 
    client/*
+
+Misc Modules
+------------
+
+Various modules not commonly used.
+
+.. toctree::
+   :maxdepth: 3
+   :glob:
+
+   misc/*

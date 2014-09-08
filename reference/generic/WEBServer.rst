@@ -32,6 +32,7 @@ Common Keys:
     :confpath:`/settings/default` | :confkey:`~/settings/default.inbox` | INBOX
     :confpath:`/settings/default` | :confkey:`~/settings/default.password` | PASSWORD
     :confpath:`/settings/default` | :confkey:`~/settings/default.timeout` | TIMEOUT
+    :confpath:`/settings/WEB/server` | :confkey:`~/settings/WEB/server.certificate` | CERTIFICATE
     :confpath:`/settings/WEB/server` | :confkey:`~/settings/WEB/server.port` | PORT NUMBER
 
 Advanced keys:
@@ -343,16 +344,40 @@ Advanced keys:
         :delim: | 
         :header: "Key", "Default Value", "Description"
     
+        :confkey:`certificate` | ${certificate-path}/certificate.pem | CERTIFICATE
         :confkey:`password` |  | PASSWORD
-        :confkey:`port` | 8080 | PORT NUMBER
+        :confkey:`port` | 8443s | PORT NUMBER
 
     **Sample**::
 
         # WEB SERVER SECTION
         # Section for WEB (WEBServer.dll) (check_WEB) protocol options.
         [/settings/WEB/server]
+        certificate=${certificate-path}/certificate.pem
         password=
-        port=8080
+        port=8443s
+
+
+    .. confkey:: certificate
+        :synopsis: CERTIFICATE
+
+        **CERTIFICATE**
+
+        | Ssl certificate to use for the ssl server
+
+        **Path**: /settings/WEB/server
+
+        **Key**: certificate
+
+        **Default value**: ${certificate-path}/certificate.pem
+
+        **Used by**: :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/WEB/server]
+            # CERTIFICATE
+            certificate=${certificate-path}/certificate.pem
 
 
     .. confkey:: password
@@ -384,13 +409,13 @@ Advanced keys:
 
         **PORT NUMBER**
 
-        | Port to use for WEB.
+        | Port to use for WEB server.
 
         **Path**: /settings/WEB/server
 
         **Key**: port
 
-        **Default value**: 8080
+        **Default value**: 8443s
 
         **Used by**: :module:`WEBServer`
 
@@ -398,6 +423,6 @@ Advanced keys:
 
             [/settings/WEB/server]
             # PORT NUMBER
-            port=8080
+            port=8443s
 
 

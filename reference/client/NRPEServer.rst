@@ -372,7 +372,7 @@ Advanced keys:
         :confkey:`cache allowed hosts` | 1 | CACHE ALLOWED HOSTS
         :confkey:`certificate` | ${certificate-path}/certificate.pem | SSL CERTIFICATE
         :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
-        :confkey:`certificate key` | ${certificate-path}/certificate_key.pem | SSL CERTIFICATE
+        :confkey:`certificate key` |  | SSL CERTIFICATE
         :confkey:`dh` | ${certificate-path}/nrpe_dh_512.pem | DH KEY
         :confkey:`encoding` |  | NRPE PAYLOAD ENCODING
         :confkey:`extended response` | 1 | EXTENDED RESPONSE
@@ -400,7 +400,7 @@ Advanced keys:
         cache allowed hosts=1
         certificate=${certificate-path}/certificate.pem
         certificate format=PEM
-        certificate key=${certificate-path}/certificate_key.pem
+        certificate key=
         dh=${certificate-path}/nrpe_dh_512.pem
         encoding=
         extended response=1
@@ -640,7 +640,7 @@ Advanced keys:
 
         **Key**: certificate key
 
-        **Default value**: ${certificate-path}/certificate_key.pem
+        **Default value**: 
 
         **Used by**: :module:`NRPEServer`
 
@@ -648,7 +648,7 @@ Advanced keys:
 
             [/settings/NRPE/server]
             # SSL CERTIFICATE
-            certificate key=${certificate-path}/certificate_key.pem
+            certificate key=
 
 
     .. confkey:: dh

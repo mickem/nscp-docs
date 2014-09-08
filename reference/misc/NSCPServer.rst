@@ -1,12 +1,12 @@
 .. default-domain:: nscp
 
-.. module:: NSClientServer
-    :synopsis: A server that listens for incoming check_nt connection and processes incoming requests.
+.. module:: NSCPServer
+    :synopsis: A server that listens for incoming NSCP connection and processes incoming requests.
 
-===========================================
-:module:`NSClientServer` --- NSClientServer
-===========================================
-A server that listens for incoming check_nt connection and processes incoming requests.
+===================================
+:module:`NSCPServer` --- NSCPServer
+===================================
+A server that listens for incoming NSCP connection and processes incoming requests.
 
 
 
@@ -32,9 +32,9 @@ Common Keys:
     :confpath:`/settings/default` | :confkey:`~/settings/default.inbox` | INBOX
     :confpath:`/settings/default` | :confkey:`~/settings/default.password` | PASSWORD
     :confpath:`/settings/default` | :confkey:`~/settings/default.timeout` | TIMEOUT
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.performance data` | PERFORMANCE DATA
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.port` | PORT NUMBER
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.use ssl` | ENABLE SSL ENCRYPTION
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.allow arguments` | COMMAND ARGUMENT PROCESSING
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.port` | PORT NUMBER
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.use ssl` | ENABLE SSL ENCRYPTION
 
 Advanced keys:
 
@@ -47,20 +47,19 @@ Advanced keys:
     :confpath:`/settings/default` | :confkey:`~/settings/default.modern commands` | Register modern aliases for built-in commands
     :confpath:`/settings/default` | :confkey:`~/settings/default.socket queue size` | LISTEN QUEUE
     :confpath:`/settings/default` | :confkey:`~/settings/default.thread pool` | THREAD POOL
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.allowed ciphers` | ALLOWED CIPHERS
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.allowed hosts` | ALLOWED HOSTS
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.bind to` | BIND TO ADDRESS
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.ca` | CA
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.cache allowed hosts` | CACHE ALLOWED HOSTS
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.certificate` | SSL CERTIFICATE
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.certificate format` | CERTIFICATE FORMAT
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.certificate key` | SSL CERTIFICATE
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.dh` | DH KEY
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.password` | PASSWORD
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.socket queue size` | LISTEN QUEUE
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.thread pool` | THREAD POOL
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.timeout` | TIMEOUT
-    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.verify mode` | VERIFY MODE
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.allowed ciphers` | ALLOWED CIPHERS
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.allowed hosts` | ALLOWED HOSTS
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.bind to` | BIND TO ADDRESS
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.ca` | CA
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.cache allowed hosts` | CACHE ALLOWED HOSTS
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.certificate` | SSL CERTIFICATE
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.certificate format` | CERTIFICATE FORMAT
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.certificate key` | SSL CERTIFICATE
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.dh` | DH KEY
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.socket queue size` | LISTEN QUEUE
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.thread pool` | THREAD POOL
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.timeout` | TIMEOUT
+    :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.verify mode` | VERIFY MODE
 
 
 
@@ -342,15 +341,15 @@ Advanced keys:
 
 
 
-… NSClient / server
--------------------
+… nscp / server
+---------------
 
-.. confpath:: /settings/NSClient/server
-    :synopsis: NSCLIENT SERVER SECTION
+.. confpath:: /settings/nscp/server
+    :synopsis: NSCP SERVER SECTION
 
-    **NSCLIENT SERVER SECTION**
+    **NSCP SERVER SECTION**
 
-    | Section for NSClient (NSClientServer.dll) (check_nt) protocol options.
+    | Section for NSCP (NSCPListener.dll) (check_nscp) protocol options.
 
 
     .. csv-table:: 
@@ -358,6 +357,7 @@ Advanced keys:
         :delim: | 
         :header: "Key", "Default Value", "Description"
     
+        :confkey:`allow arguments` | 0 | COMMAND ARGUMENT PROCESSING
         :confkey:`allowed ciphers` | ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH | ALLOWED CIPHERS
         :confkey:`allowed hosts` | 127.0.0.1 | ALLOWED HOSTS
         :confkey:`bind to` |  | BIND TO ADDRESS
@@ -367,20 +367,19 @@ Advanced keys:
         :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
         :confkey:`certificate key` |  | SSL CERTIFICATE
         :confkey:`dh` | ${certificate-path}/nrpe_dh_512.pem | DH KEY
-        :confkey:`password` |  | PASSWORD
-        :confkey:`performance data` | 1 | PERFORMANCE DATA
-        :confkey:`port` | 12489 | PORT NUMBER
+        :confkey:`port` | 5668 | PORT NUMBER
         :confkey:`socket queue size` | 0 | LISTEN QUEUE
         :confkey:`thread pool` | 10 | THREAD POOL
         :confkey:`timeout` | 30 | TIMEOUT
-        :confkey:`use ssl` | 0 | ENABLE SSL ENCRYPTION
+        :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
         :confkey:`verify mode` | none | VERIFY MODE
 
     **Sample**::
 
-        # NSCLIENT SERVER SECTION
-        # Section for NSClient (NSClientServer.dll) (check_nt) protocol options.
-        [/settings/NSClient/server]
+        # NSCP SERVER SECTION
+        # Section for NSCP (NSCPListener.dll) (check_nscp) protocol options.
+        [/settings/nscp/server]
+        allow arguments=0
         allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
         allowed hosts=127.0.0.1
         bind to=
@@ -390,14 +389,34 @@ Advanced keys:
         certificate format=PEM
         certificate key=
         dh=${certificate-path}/nrpe_dh_512.pem
-        password=
-        performance data=1
-        port=12489
+        port=5668
         socket queue size=0
         thread pool=10
         timeout=30
-        use ssl=0
+        use ssl=1
         verify mode=none
+
+
+    .. confkey:: allow arguments
+        :synopsis: COMMAND ARGUMENT PROCESSING
+
+        **COMMAND ARGUMENT PROCESSING**
+
+        | This option determines whether or not the we will allow clients to specify arguments to commands that are executed.
+
+        **Path**: /settings/nscp/server
+
+        **Key**: allow arguments
+
+        **Default value**: 0
+
+        **Used by**: :module:`NSCPServer`
+
+        **Sample**::
+
+            [/settings/nscp/server]
+            # COMMAND ARGUMENT PROCESSING
+            allow arguments=0
 
 
     .. confkey:: allowed ciphers
@@ -409,17 +428,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: allowed ciphers
 
         **Default value**: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # ALLOWED CIPHERS
             allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
@@ -433,17 +452,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: allowed hosts
 
         **Default value**: 127.0.0.1
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # ALLOWED HOSTS
             allowed hosts=127.0.0.1
 
@@ -457,17 +476,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: bind to
 
         **Default value**: 
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # BIND TO ADDRESS
             bind to=
 
@@ -481,17 +500,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: ca
 
         **Default value**: ${certificate-path}/ca.pem
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # CA
             ca=${certificate-path}/ca.pem
 
@@ -505,17 +524,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: cache allowed hosts
 
         **Default value**: 1
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # CACHE ALLOWED HOSTS
             cache allowed hosts=1
 
@@ -529,17 +548,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: certificate
 
         **Default value**: ${certificate-path}/certificate.pem
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # SSL CERTIFICATE
             certificate=${certificate-path}/certificate.pem
 
@@ -553,17 +572,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: certificate format
 
         **Default value**: PEM
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # CERTIFICATE FORMAT
             certificate format=PEM
 
@@ -577,17 +596,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: certificate key
 
         **Default value**: 
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # SSL CERTIFICATE
             certificate key=
 
@@ -601,65 +620,19 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: dh
 
         **Default value**: ${certificate-path}/nrpe_dh_512.pem
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # DH KEY
             dh=${certificate-path}/nrpe_dh_512.pem
-
-
-    .. confkey:: password
-        :synopsis: PASSWORD
-
-        **PASSWORD**
-
-        | Password used to authenticate against server parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/NSClient/server
-
-        **Key**: password
-
-        **Default value**: 
-
-        **Used by**: :module:`NSClientServer`
-
-        **Sample**::
-
-            [/settings/NSClient/server]
-            # PASSWORD
-            password=
-
-
-    .. confkey:: performance data
-        :synopsis: PERFORMANCE DATA
-
-        **PERFORMANCE DATA**
-
-        | Send performance data back to Nagios (set this to 0 to remove all performance data).
-
-        **Path**: /settings/NSClient/server
-
-        **Key**: performance data
-
-        **Default value**: 1
-
-        **Used by**: :module:`NSClientServer`
-
-        **Sample**::
-
-            [/settings/NSClient/server]
-            # PERFORMANCE DATA
-            performance data=1
 
 
     .. confkey:: port
@@ -667,21 +640,21 @@ Advanced keys:
 
         **PORT NUMBER**
 
-        | Port to use for check_nt.
+        | Port to use for NSCP.
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: port
 
-        **Default value**: 12489
+        **Default value**: 5668
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # PORT NUMBER
-            port=12489
+            port=5668
 
 
     .. confkey:: socket queue size
@@ -693,17 +666,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: socket queue size
 
         **Default value**: 0
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # LISTEN QUEUE
             socket queue size=0
 
@@ -717,17 +690,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: thread pool
 
         **Default value**: 10
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # THREAD POOL
             thread pool=10
 
@@ -741,17 +714,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: timeout
 
         **Default value**: 30
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # TIMEOUT
             timeout=30
 
@@ -763,19 +736,19 @@ Advanced keys:
 
         | This option controls if SSL should be enabled.
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: use ssl
 
-        **Default value**: 0
+        **Default value**: 1
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # ENABLE SSL ENCRYPTION
-            use ssl=0
+            use ssl=1
 
 
     .. confkey:: verify mode
@@ -802,17 +775,17 @@ Advanced keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSClient/server
+        **Path**: /settings/nscp/server
 
         **Key**: verify mode
 
         **Default value**: none
 
-        **Used by**: :module:`NSClientServer`
+        **Used by**: :module:`NSCPServer`
 
         **Sample**::
 
-            [/settings/NSClient/server]
+            [/settings/nscp/server]
             # VERIFY MODE
             verify mode=none
 

@@ -89,7 +89,7 @@ Advanced keys:
         :confkey:`cache allowed hosts` | 1 | CACHE ALLOWED HOSTS
         :confkey:`certificate` | ${certificate-path}/certificate.pem | SSL CERTIFICATE
         :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
-        :confkey:`certificate key` | ${certificate-path}/certificate_key.pem | SSL CERTIFICATE
+        :confkey:`certificate key` |  | SSL CERTIFICATE
         :confkey:`dh` | ${certificate-path}/nrpe_dh_512.pem | DH KEY
         :confkey:`port` | 6556 | PORT NUMBER
         :confkey:`socket queue size` | 0 | LISTEN QUEUE
@@ -110,7 +110,7 @@ Advanced keys:
         cache allowed hosts=1
         certificate=${certificate-path}/certificate.pem
         certificate format=PEM
-        certificate key=${certificate-path}/certificate_key.pem
+        certificate key=
         dh=${certificate-path}/nrpe_dh_512.pem
         port=6556
         socket queue size=0
@@ -301,7 +301,7 @@ Advanced keys:
 
         **Key**: certificate key
 
-        **Default value**: ${certificate-path}/certificate_key.pem
+        **Default value**: 
 
         **Used by**: :module:`CheckMKServer`
 
@@ -309,7 +309,7 @@ Advanced keys:
 
             [/settings/check_mk/server]
             # SSL CERTIFICATE
-            certificate key=${certificate-path}/certificate_key.pem
+            certificate key=
 
 
     .. confkey:: dh
