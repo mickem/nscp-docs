@@ -68,7 +68,7 @@ The first thing you need to do to get things working is add the NRPEServer modul
   ...
 
 If you have not already done so (above) you also need to set which computers are allowed to query the agent.
-This is set either under the `/settings7default </settings7default>`_ section (globally) or under the `/settings/NRPE/server </settings/NRPE/server>`_ section (locally). If you when you configured NSClient above set this globally you are already set to go. If not the key you need to change is the allowed_hosts. There is no password for NRPE.
+This is set either under the `/settings/default </settings/default>`_ section (globally) or under the `/settings/NRPE/server </settings/NRPE/server>`_ section (locally). If you when you configured NSClient above set this globally you are already set to go. If not the key you need to change is the allowed_hosts. There is no password for NRPE.
 
 - allowed hosts = A list of addresses that is allowed to ask questions (i.e. your nagios ip).
   The result should look like this (assuming your nagios server ip address is 10.0.0.2):
