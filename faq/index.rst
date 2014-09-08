@@ -21,9 +21,15 @@ What this does is two things.
 2. it enables debug logging and logs to the console.
 This makes it quite easy to see what is going on and why things go wrong.
 
-1.2 Failed to open performance counters
+1.2 MSI or ZIP installation?
+****************************
+
+In general never use the ZIP installation unless you have a strong reason for doing so.
+The MSI is the preferred way to install NSCLient++ and will work much better then trying to manually install it.
+
+1.3 Failed to open performance counters
 ***************************************
- * The first thing to check is the version. If you are using an old version (pre 0.3.x) upgrade!
+ * The first thing to check is the version. If you are using an old version (pre 0.4.2) upgrade!
  * Second thing to check is whether the servers' performance counters working?
    Sometimes the performance counters end up broken and need to be rebuilt there is a command to validate performance counters:
 
@@ -33,13 +39,13 @@ This makes it quite easy to see what is going on and why things go wrong.
 
 For details: Microsoft KB: http://support.microsoft.com/kb/300956 essentially you need to use the "lodctr /R" command.
 
-1.3 Bind failed
+1.4 Bind failed
 ****************
  Usually this is due to running more then once instance of NSClient++ or possibly running another program that uses the same port.
   - Make sure you don't have any other instance NSCLient++ started.
   - Check if the port is in use (netstat -a look for LISTENING)
 
-1.4 EventlogBuffer is too small
+1.5 EventlogBuffer is too small
 **********************************
 This is because you have one or more entries in your eventlog which are larger then the "default buffer size of 64k". The best way to fix this is to increase the buffer used.
 
@@ -48,12 +54,12 @@ This is because you have one or more entries in your eventlog which are larger t
   [/settings/eventlog]
   buffer_size=128000
 
-1.5 System Tray does not work
+1.6 System Tray does not work
 ******************************
  **NOTICE**
  System tray is currently disabled and will be added back at some point
 
-1.6 I get <insert random error from nagios here>
+1.7 I get <insert random error from nagios here>
 *************************************************
 
 This information is usually useless to me since the error in nagios is not related to the problem.
@@ -80,7 +86,7 @@ To get the debug log do the following:
 
 Please check and include this information before you submit questions and/or bug reports.
 
-1.7 High CPU load and check_eventlog
+1.8 High CPU load and check_eventlog
 *************************************
 
 Som people experience high CPU load when checking the event log this can usualy be resolved using the new command line option scan-range setting it to the time region you want to check
@@ -89,7 +95,7 @@ Som people experience high CPU load when checking the event log this can usualy 
 
    CheckEventLog ... scan-range=12h ...
 
-1.8 Return code of 139 is out of bounds
+1.9 Return code of 139 is out of bounds
 ***************************************
 
 This means something is wrong. To find out what is wrong you need to check the NSClient++ log file.
@@ -111,7 +117,7 @@ One simple way to show the log is to run in test mode like so:
 .. note::
   But it is impossible to tell what is wrong without the NSClient++ log.
 
-1.9 Enable debug log
+1.10 Enable debug log
 ********************
 
 By default the log level is info which means to see debug messages you need to enable debug log::
