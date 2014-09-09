@@ -30,6 +30,7 @@ The MSI is the preferred way to install NSCLient++ and will work much better the
 1.3 Failed to open performance counters
 ***************************************
  * The first thing to check is the version. If you are using an old version (pre 0.4.2) upgrade!
+   In 0.4.2 PDH was greatly improved and all core checks stopped using PDH which means that for "normal" checks you no longer need PDH.
  * Second thing to check is whether the servers' performance counters working?
    Sometimes the performance counters end up broken and need to be rebuilt there is a command to validate performance counters:
 
