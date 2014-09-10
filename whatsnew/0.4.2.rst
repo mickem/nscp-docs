@@ -11,7 +11,7 @@ Introduction
 
 The main goal of the 0.4.2 update is to create a new modern check subsystem.
 This means all checks will get:
- * help command line options to get help
+ * help command linte options to get help
  * proper documentation
  * the same or similar syntax
  * "real-time" options in many instances

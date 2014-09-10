@@ -17,7 +17,6 @@ Contents:
    extending/index.rst
    api/index.rst
    faq/index.rst
-   samples/index.rst
    howto/index.rst
    glossary.rst
 

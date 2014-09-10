@@ -48,7 +48,7 @@ There is a brand new plugin/script API which has been extended to allow extensio
  * Python
  * Lua
  * .Net
- * plugins (C/C++/\*)
+ * plugins (C/C++/*)
 
 Settings
 ========

@@ -8,7 +8,6 @@
 import re
 import string
 import unicodedata
-import traceback
 
 from docutils import nodes
 from docutils.parsers.rst import directives
@@ -98,18 +97,13 @@ class AdaObject(ObjectDescription):
 		elif self.objtype == 'exec':
 			return _('%s (%s)') % (name[1], self.env.temp_data['nscp:module'])
 		elif self.objtype == 'confkey':
-			if 'nscp:module' not in self.env.temp_data:
-				print 'ERROR: nscp:module key not found for confkey:%s'%name[0]
-			elif 'nscp:confpath' not in self.env.temp_data:
-				print 'ERROR: nscp:confpath key not found for confkey:%s'%name[0]
-			else:
-				return _('%s (%s, %s)') % (name[1], self.env.temp_data['nscp:module'], self.env.temp_data['nscp:confpath'])
+			return _('%s (%s, %s)') % (name[1], self.env.temp_data['nscp:module'], self.env.temp_data['nscp:confpath'])
 		elif self.objtype == 'confpath':
 			return _('%s (%s)') % (name[1], self.env.temp_data['nscp:module'])
 		elif self.objtype == 'option':
 			return _('%s (%s, %s)') % (name[1], self.env.temp_data['nscp:module'], self.env.temp_data['nscp:command'])
-		traceback.print_exc()
-		return ''
+		else:
+			return ''
 
 
 	def add_target_and_index(self, name, sig, signode):
@@ -336,11 +330,7 @@ class NSClientDomain(Domain):
 			if tname in self.data['objects']:
 				docname, objtype = self.data['objects'][tname]
 				return tname, docname
-			for k in self.data['objects'].keys():
-				if k.endswith('.%s'%name):
-					docname, objtype = self.data['objects'][k]
-					return k, docname
-			print "_find_obj: ERROR: Query not found: %s, %s" % (modname, name)
+			print "_find_obj: ERROR: QUERY: modname: %s, commandname: %s, name: %s, objtype: %s => %s" % (modname, commandname, name, objtype, self.data['objects'].keys())
 			return None, None
 
 		elif objtype == 'confpath':

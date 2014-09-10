@@ -169,7 +169,7 @@ Next up is altering our filter a bit. Lets instead of getting core 2 get any cor
    L     client OK: core 0>17%, core 2>12%, core 4>20%, core 6>13%, total>8%
    L     client  Performance data: 'core 0 5s'=17%;80;90 'core 2 5s'=12%;80;90 'core 4 5s'=20%;80;90 'core 6 5s'=13%;80;90 'total 5s'=8%;80;90
 
-The best thing about filters is they they are expressions which means you can combine any number of expression together by using *and* or *or* between them.
+The best thing about filters is they they are expressions which means you can combine any number of expression together by using *and* or *or between them.
 For instance lets get all cores which are working and the total. This would be all cores where load is either above 5 or name is total::
 
    check_cpu "filter=load > 5 or core = 'total'" "top-syntax=${list}"

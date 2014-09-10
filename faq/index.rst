@@ -21,16 +21,9 @@ What this does is two things.
 2. it enables debug logging and logs to the console.
 This makes it quite easy to see what is going on and why things go wrong.
 
-1.2 MSI or ZIP installation?
-****************************
-
-In general never use the ZIP installation unless you have a strong reason for doing so.
-The MSI is the preferred way to install NSCLient++ and will work much better then trying to manually install it.
-
-1.3 Failed to open performance counters
+1.2 Failed to open performance counters
 ***************************************
- * The first thing to check is the version. If you are using an old version (pre 0.4.2) upgrade!
-   In 0.4.2 PDH was greatly improved and all core checks stopped using PDH which means that for "normal" checks you no longer need PDH.
+ * The first thing to check is the version. If you are using an old version (pre 0.3.x) upgrade!
  * Second thing to check is whether the servers' performance counters working?
    Sometimes the performance counters end up broken and need to be rebuilt there is a command to validate performance counters:
 
@@ -40,13 +33,13 @@ The MSI is the preferred way to install NSCLient++ and will work much better the
 
 For details: Microsoft KB: http://support.microsoft.com/kb/300956 essentially you need to use the "lodctr /R" command.
 
-1.4 Bind failed
+1.3 Bind failed
 ****************
  Usually this is due to running more then once instance of NSClient++ or possibly running another program that uses the same port.
   - Make sure you don't have any other instance NSCLient++ started.
   - Check if the port is in use (netstat -a look for LISTENING)
 
-1.5 EventlogBuffer is too small
+1.4 EventlogBuffer is too small
 **********************************
 This is because you have one or more entries in your eventlog which are larger then the "default buffer size of 64k". The best way to fix this is to increase the buffer used.
 
@@ -55,12 +48,12 @@ This is because you have one or more entries in your eventlog which are larger t
   [/settings/eventlog]
   buffer_size=128000
 
-1.6 System Tray does not work
+1.5 System Tray does not work
 ******************************
  **NOTICE**
  System tray is currently disabled and will be added back at some point
 
-1.7 I get <insert random error from nagios here>
+1.6 I get <insert random error from nagios here>
 *************************************************
 
 This information is usually useless to me since the error in nagios is not related to the problem.
@@ -87,7 +80,7 @@ To get the debug log do the following:
 
 Please check and include this information before you submit questions and/or bug reports.
 
-1.8 High CPU load and check_eventlog
+1.7 High CPU load and check_eventlog
 *************************************
 
 Som people experience high CPU load when checking the event log this can usualy be resolved using the new command line option scan-range setting it to the time region you want to check
@@ -96,7 +89,7 @@ Som people experience high CPU load when checking the event log this can usualy 
 
    CheckEventLog ... scan-range=12h ...
 
-1.9 Return code of 139 is out of bounds
+1.8 Return code of 139 is out of bounds
 ***************************************
 
 This means something is wrong. To find out what is wrong you need to check the NSClient++ log file.
@@ -118,7 +111,7 @@ One simple way to show the log is to run in test mode like so:
 .. note::
   But it is impossible to tell what is wrong without the NSClient++ log.
 
-1.10 Enable debug log
+1.9 Enable debug log
 ********************
 
 By default the log level is info which means to see debug messages you need to enable debug log::
@@ -170,7 +163,7 @@ For details see :ref:`how_to_external_scripts`
 If you get illegal metachars or similar errors you are sending characters which are considered harmful through NRPE.
 This is a security measure inherited from the regular NRPE client.
 
-The following characters are considered harmful: |``&><'\"\\[]{}
+The following characters are considered harmful: |`&><'\"\\[]{}
 To work around this you have two options.
 
 1. You can enable it
@@ -197,24 +190,13 @@ Expression Replacement
 ${..}      %(..)
 ========== ===========
 
-3. Versions
-===========
+3. General
+==========
    
 3.1 I use version 0.3.9 or 0.2.7
 ********************************
-please upgrade to 0.4.2 and see if the error still persist before you ask questions and/or report bugs.
-I generally do NOT fix issues in several years old versions.
 
-3.2 I use version 0.4.0 or 0.4.1
-********************************
-A good idea to upgrade to 0.4.2 and see if the issue has been resolved but please report this anyway so I can (if possible) fir it for 0.4.1
-
-3. General
-==========
-
-3.1 My question is not here?
-*****************************
-Please ask in the forums or the questions site.
+please upgrade to 0.4.1 and see if the error still persist before you ask questions and/or report bugs
 
 3.2 Rejected connection from: <ip address here>
 ************************************************
@@ -290,34 +272,3 @@ Rotating logfile can be done when size reaches a certain level (in this case 204
 	level = info
 	[/settings/log/file]
 	max size = 2048000
-
-4. check_nt
-============
-
-4.1 I use check_nt and...
-**************************
-
-Check_nt is NOT a good protocl and is considerd abandoneware. NSClient++ supports it only for legacy reasons.
-There is generally no reason to use check_nt
-
-4.2 MEMUSE reports the wrong value
-***********************************
-
-No it does not :)
-MEMUSE reports physical+page (normally called commited bytes). This is the amount of memory the system has promised to various applications.
-Thus it will be "more" than your RAM if you want to check physical memory please use check_nrpe and check_memory instead.
-
-5. Eventlog
-============
-
-5.1 Can I check "modern" eventlogs from Windows 2008 and above?
-****************************************************************
-
-Yes, but it requires NSClient++ 0.4.2 and later.
-
-5.2 I use severity but still dont get errors (or get non error messages).
-**************************************************************************
-
-This is a "feature" of the Windows Eventlog API. They have something called severity which most programs do not use as severity.
-instead please try using level which is more accurate.
-

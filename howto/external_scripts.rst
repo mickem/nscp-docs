@@ -133,7 +133,7 @@ Running your script
 
 The first thing to try when you want to run a script is **ALWAYS** to execute it from the interactive NSClient++ test prompt like so:
 
-.. code-block:: none
+.. code-block:: generic
 
   nscp test
   ...
