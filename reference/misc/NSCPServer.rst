@@ -44,6 +44,7 @@ Advanced keys:
     :header: "Path / Section", "Key", "Default Value", "Description"
 
     :confpath:`/settings/default` | :confkey:`~/settings/default.encoding` | NRPE PAYLOAD ENCODING
+    :confpath:`/settings/default` | :confkey:`~/settings/default.modern commands` | Register modern aliases for built-in commands
     :confpath:`/settings/default` | :confkey:`~/settings/default.socket queue size` | LISTEN QUEUE
     :confpath:`/settings/default` | :confkey:`~/settings/default.thread pool` | THREAD POOL
     :confpath:`/settings/nscp/server` | :confkey:`~/settings/nscp/server.allowed ciphers` | ALLOWED CIPHERS
@@ -87,6 +88,7 @@ Advanced keys:
         :confkey:`cache allowed hosts` | 1 | CACHE ALLOWED HOSTS
         :confkey:`encoding` |  | NRPE PAYLOAD ENCODING
         :confkey:`inbox` | inbox | INBOX
+        :confkey:`modern commands` | 1 | Register modern aliases for built-in commands
         :confkey:`password` |  | PASSWORD
         :confkey:`socket queue size` | 0 | LISTEN QUEUE
         :confkey:`thread pool` | 10 | THREAD POOL
@@ -102,6 +104,7 @@ Advanced keys:
         cache allowed hosts=1
         encoding=
         inbox=inbox
+        modern commands=1
         password=
         socket queue size=0
         thread pool=10
@@ -121,7 +124,7 @@ Advanced keys:
 
         **Default value**: 127.0.0.1
 
-        **Used by**: :module:`WEBServer`,  :module:`CheckMKServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`NSCAServer`,  :module:`NRPEServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -143,7 +146,7 @@ Advanced keys:
 
         **Default value**: 
 
-        **Used by**: :module:`WEBServer`,  :module:`CheckMKServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`NSCAServer`,  :module:`NRPEServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -165,7 +168,7 @@ Advanced keys:
 
         **Default value**: 1
 
-        **Used by**: :module:`WEBServer`,  :module:`CheckMKServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`NSCAServer`,  :module:`NRPEServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -189,7 +192,7 @@ Advanced keys:
 
         **Default value**: 
 
-        **Used by**: :module:`WEBServer`,  :module:`CheckMKServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`NSCAServer`,  :module:`NRPEServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -211,7 +214,7 @@ Advanced keys:
 
         **Default value**: inbox
 
-        **Used by**: :module:`WEBServer`,  :module:`CheckMKServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`NSCAServer`,  :module:`NRPEServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -220,12 +223,36 @@ Advanced keys:
             inbox=inbox
 
 
+    .. confkey:: modern commands
+        :synopsis: Register modern aliases for built-in commands
+
+        **Register modern aliases for built-in commands**
+
+        | Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/default
+
+        **Key**: modern commands
+
+        **Default value**: 1
+
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/default]
+            # Register modern aliases for built-in commands
+            modern commands=1
+
+
     .. confkey:: password
         :synopsis: PASSWORD
 
         **PASSWORD**
 
-        | Password used to authenticate against server
+        | Password to use
 
         **Path**: /settings/default
 
@@ -233,7 +260,7 @@ Advanced keys:
 
         **Default value**: 
 
-        **Used by**: :module:`WEBServer`,  :module:`CheckMKServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`NSCAServer`,  :module:`NRPEServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -257,7 +284,7 @@ Advanced keys:
 
         **Default value**: 0
 
-        **Used by**: :module:`WEBServer`,  :module:`CheckMKServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`NSCAServer`,  :module:`NRPEServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -281,7 +308,7 @@ Advanced keys:
 
         **Default value**: 10
 
-        **Used by**: :module:`WEBServer`,  :module:`CheckMKServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`NSCAServer`,  :module:`NRPEServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -303,7 +330,7 @@ Advanced keys:
 
         **Default value**: 30
 
-        **Used by**: :module:`WEBServer`,  :module:`CheckMKServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`NSCAServer`,  :module:`NRPEServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
 
         **Sample**::
 
