@@ -10,7 +10,7 @@ Check for errors and warnings in the event log.
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -51,7 +51,7 @@ Common Keys:
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the CheckEventLog module.
+A quick reference for all available queries (check commands) in the CheckEventLog module.
 
 :query:`check_eventlog`
 -----------------------
@@ -124,7 +124,7 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
