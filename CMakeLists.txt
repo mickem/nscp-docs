@@ -31,5 +31,6 @@ IF(SPHINX_FOUND)
 
 	SET_TARGET_PROPERTIES(build_docs_html PROPERTIES FOLDER "docs")
 	SET_TARGET_PROPERTIES(build_docs_pdf PROPERTIES FOLDER "docs")
-
+ELSE(SPHINX_FOUND)
+	MESSAGE(STATUS "Sphinx not foun: No documentation will be built")
 ENDIF(SPHINX_FOUND)

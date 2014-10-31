@@ -3,8 +3,18 @@
         <li><img src="{{ pathto('_static/nsclient.png', 1) }}" alt=""
                  style="vertical-align: middle; margin-top: -1px"/></li>
         <li><a href="http://www.nsclient.org/">NSClient++</a>{{ reldelim1 }}</li>
+        <li>
+          <span class="version_switcher_placeholder">{{ release }}</span>
+          <a href="{{ pathto('index') }}">Documentation</a>{{ reldelim1 }}
+        </li>
         <li><a href="{{ pathto('index') }}">Documentation</a>{{ reldelim1 }}</li>
 {% endblock %}
+{% block extrahead %}
+    <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/py.png', 1) }}" />
+    <script type="text/javascript" src="{{ pathto('_static/version_switch.js', 1) }}"></script>
+{{ super() }}
+{% endblock %}
+
 {% block footer %}
     <div class="footer">
     &copy; <a href="{{ pathto('copyright') }}">Copyright</a> {{ copyright|e }}.
