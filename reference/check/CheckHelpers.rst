@@ -10,7 +10,7 @@ Various helper function to extend other checks.
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -61,7 +61,7 @@ A list of all short hand aliases for queries (check commands)
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the CheckHelpers module.
+A quick reference for all available queries (check commands) in the CheckHelpers module.
 
 :query:`check_always_critical`
 ------------------------------

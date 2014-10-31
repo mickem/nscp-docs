@@ -10,7 +10,7 @@ This is a sample plugin used to demonstrate how to make plugins
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -31,7 +31,7 @@ A list of all avalible queries (check commands)
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the SamplePluginSimple module.
+A quick reference for all available queries (check commands) in the SamplePluginSimple module.
 
 :query:`sample_nagios_command`
 ------------------------------

@@ -10,7 +10,7 @@ Use this module to check the healt and status of NSClient++ it self
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -30,7 +30,7 @@ A list of all avalible queries (check commands)
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the CheckNSCP module.
+A quick reference for all available queries (check commands) in the CheckNSCP module.
 
 :query:`check_nscp`
 -------------------

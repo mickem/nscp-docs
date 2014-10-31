@@ -10,7 +10,7 @@
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -42,7 +42,7 @@ A list of all short hand aliases for queries (check commands)
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the CauseCrashes module.
+A quick reference for all available queries (check commands) in the CauseCrashes module.
 
 :query:`crash_client`
 ---------------------

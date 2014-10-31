@@ -164,7 +164,7 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -209,7 +209,7 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -254,7 +254,7 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           

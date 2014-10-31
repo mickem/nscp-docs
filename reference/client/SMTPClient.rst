@@ -10,7 +10,7 @@ SMTP client can be used both from command line and from queries to check remote 
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -60,7 +60,7 @@ Advanced keys:
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the SMTPClient module.
+A quick reference for all available queries (check commands) in the SMTPClient module.
 
 :query:`smtp_submit`
 --------------------

@@ -10,7 +10,7 @@ Stores status updates and allows for active checks to retrieve them
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -56,7 +56,7 @@ Common Keys:
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the SimpleCache module.
+A quick reference for all available queries (check commands) in the SimpleCache module.
 
 :query:`check_cache`
 --------------------

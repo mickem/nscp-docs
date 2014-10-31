@@ -10,7 +10,7 @@ check_mk client can be used both from command line and from queries to check rem
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -87,7 +87,7 @@ Sample keys:
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the CheckMKClient module.
+A quick reference for all available queries (check commands) in the CheckMKClient module.
 
 :query:`check_mk_query`
 -----------------------

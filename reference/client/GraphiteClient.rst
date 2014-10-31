@@ -10,7 +10,7 @@ Graphite client can be used to submit graph data to a graphite graphing system
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -72,7 +72,7 @@ Sample keys:
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the GraphiteClient module.
+A quick reference for all available queries (check commands) in the GraphiteClient module.
 
 :query:`graphite_submit`
 ------------------------

@@ -10,7 +10,7 @@ File for checking log files and various other forms of updating text files
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -82,7 +82,7 @@ Sample keys:
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the CheckLogFile module.
+A quick reference for all available queries (check commands) in the CheckLogFile module.
 
 :query:`check_logfile`
 ----------------------
@@ -155,7 +155,7 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Avalible options:
+    | Available options:
 
       ================================ 
       Key                              
@@ -197,7 +197,7 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Avalible options:
+    | Available options:
 
       ================================ 
       Key                              
@@ -244,7 +244,7 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Avalible options:
+    | Available options:
 
       ================================ 
       Key                              
@@ -291,7 +291,7 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Avalible options:
+    | Available options:
 
       ================================ 
       Key                              

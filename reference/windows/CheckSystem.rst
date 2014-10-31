@@ -10,7 +10,7 @@ Various system related checks, such as CPU load, process state, service state me
 
 **Queries (Overview)**:
 
-A list of all avalible queries (check commands)
+A list of all available queries (check commands)
 
 .. csv-table:: 
     :class: contentstable 
@@ -114,7 +114,7 @@ Sample keys:
 
 Queries
 =======
-A quick reference for all avalible queries (check commands) in the CheckSystem module.
+A quick reference for all available queries (check commands) in the CheckSystem module.
 
 :query:`check_cpu`
 ------------------
@@ -183,7 +183,7 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -217,7 +217,7 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -256,7 +256,7 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -295,7 +295,7 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -516,7 +516,7 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -548,7 +548,7 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -585,7 +585,7 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -622,7 +622,7 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -834,7 +834,7 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -866,7 +866,7 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -903,7 +903,7 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -940,7 +940,7 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -1147,7 +1147,7 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -1179,7 +1179,7 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -1216,7 +1216,7 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -1253,7 +1253,7 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -1468,7 +1468,7 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -1499,7 +1499,7 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -1535,7 +1535,7 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -1571,7 +1571,7 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -1819,7 +1819,7 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Avalible options:
+    | Available options:
 
       ================= =============================================================================== 
       Key               Value                                                                           
@@ -1870,7 +1870,7 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Avalible options:
+    | Available options:
 
       ================= =============================================================================== 
       Key               Value                                                                           
@@ -1926,7 +1926,7 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Avalible options:
+    | Available options:
 
       ================= =============================================================================== 
       Key               Value                                                                           
@@ -1982,7 +1982,7 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Avalible options:
+    | Available options:
 
       ================= =============================================================================== 
       Key               Value                                                                           
@@ -2296,7 +2296,7 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Avalible options:
+    | Available options:
 
       =================== ========================================================================================================== 
       Key                 Value                                                                                                      
@@ -2333,7 +2333,7 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Avalible options:
+    | Available options:
 
       =================== ========================================================================================================== 
       Key                 Value                                                                                                      
@@ -2375,7 +2375,7 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Avalible options:
+    | Available options:
 
       =================== ========================================================================================================== 
       Key                 Value                                                                                                      
@@ -2417,7 +2417,7 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Avalible options:
+    | Available options:
 
       =================== ========================================================================================================== 
       Key                 Value                                                                                                      
@@ -2663,7 +2663,7 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -2693,7 +2693,7 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -2728,7 +2728,7 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -2763,7 +2763,7 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Avalible options:
+    | Available options:
 
       ============== =============================================================================== 
       Key            Value                                                                           
@@ -3401,7 +3401,7 @@ Arguments
 
         **Default value**: 127.0.0.1
 
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -3423,7 +3423,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -3445,7 +3445,7 @@ Arguments
 
         **Default value**: 1
 
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -3469,7 +3469,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -3491,7 +3491,7 @@ Arguments
 
         **Default value**: inbox
 
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -3515,7 +3515,7 @@ Arguments
 
         **Default value**: 1
 
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -3537,7 +3537,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -3561,7 +3561,7 @@ Arguments
 
         **Default value**: 0
 
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -3585,7 +3585,7 @@ Arguments
 
         **Default value**: 10
 
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
         **Sample**::
 
@@ -3607,7 +3607,7 @@ Arguments
 
         **Default value**: 30
 
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`NSCPServer`,  :module:`WEBServer`
+        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
         **Sample**::
 
