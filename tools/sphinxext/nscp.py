@@ -370,7 +370,7 @@ class NSClientDomain(Domain):
 
 		elif objtype == 'option':
 			if name in self.data['objects']:
-				return name, self.data['objects'][name]
+				return name, self.data['objects'][name][0]
 			tname = '%s.%s.%s'%(modname, commandname, name)
 			if tname in self.data['objects']:
 				docname, objtype = self.data['objects'][tname]
