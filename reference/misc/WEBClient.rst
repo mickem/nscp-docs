@@ -1,12 +1,12 @@
 .. default-domain:: nscp
 
-.. module:: NRPEClient
-    :synopsis: NRPE client can be used both from command line and from queries to check remote systes via NRPE
+.. module:: WEBClient
+    :synopsis: WEB client can be used both from command line and from queries to check remote systes via WEB(REST)
 
-===================================
-:module:`NRPEClient` --- NRPEClient
-===================================
-NRPE client can be used both from command line and from queries to check remote systes via NRPE
+=================================
+:module:`WEBClient` --- WEBClient
+=================================
+WEB client can be used both from command line and from queries to check remote systes via WEB(REST)
 
 **Queries (Overview)**:
 
@@ -17,10 +17,10 @@ A list of all available queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    :query:`nrpe_exec` | Execute remote script via NRPE. (Most likely you want nrpe_query).
-    :query:`nrpe_forward` | Forward the request as-is to remote host via NRPE.
-    :query:`nrpe_query` | Request remote information via NRPE.
-    :query:`nrpe_submit` | Submit information to remote host via NRPE. (Most likely you want nrpe_query).
+    :query:`web_exec` | Execute remote script via WEB.
+    :query:`web_forward` | Forward the request as-is to remote host via WEB.
+    :query:`web_query` | Request remote information via WEB.
+    :query:`web_submit` | Submit information to remote host via WEB.
 
 
 
@@ -94,12 +94,12 @@ Sample keys:
 
 Queries
 =======
-A quick reference for all available queries (check commands) in the NRPEClient module.
+A quick reference for all available queries (check commands) in the WEBClient module.
 
-:query:`nrpe_exec`
-------------------
-.. query:: nrpe_exec
-    :synopsis: Execute remote script via NRPE. (Most likely you want nrpe_query).
+:query:`web_exec`
+-----------------
+.. query:: web_exec
+    :synopsis: Execute remote script via WEB.
 
 **Usage:**
 
@@ -253,10 +253,10 @@ Arguments
     | Initial an ssl handshake with the server.
 
 
-:query:`nrpe_forward`
----------------------
-.. query:: nrpe_forward
-    :synopsis: Forward the request as-is to remote host via NRPE.
+:query:`web_forward`
+--------------------
+.. query:: web_forward
+    :synopsis: Forward the request as-is to remote host via WEB.
 
 **Usage:**
 
@@ -267,10 +267,10 @@ Arguments
 Arguments
 *********
 
-:query:`nrpe_query`
--------------------
-.. query:: nrpe_query
-    :synopsis: Request remote information via NRPE.
+:query:`web_query`
+------------------
+.. query:: web_query
+    :synopsis: Request remote information via WEB.
 
 **Usage:**
 
@@ -436,10 +436,10 @@ Arguments
     | Initial an ssl handshake with the server.
 
 
-:query:`nrpe_submit`
---------------------
-.. query:: nrpe_submit
-    :synopsis: Submit information to remote host via NRPE. (Most likely you want nrpe_query).
+:query:`web_submit`
+-------------------
+.. query:: web_submit
+    :synopsis: Submit information to remote host via WEB.
 
 **Usage:**
 

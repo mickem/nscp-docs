@@ -98,8 +98,10 @@ This tool can do:
 
 The first thing to do when you run into issues is to validate the default counters:
 
-Examples
-========
+Examples Command line
+=====================
+
+Some examples of using the command line client to diagnose and investigate counters.
 
 List configured counters
 ------------------------
@@ -150,7 +152,7 @@ Since listing all counters is time consuming a quicker option is to flirter the 
 Validate all disk counters
 --------------------------
 
-If you have issues listing counters is not that usefull you probably want to validate them instead.
+If you have issues listing counters is not that useful you probably want to validate them instead.
 
 .. code-block:: bat
 
@@ -165,4 +167,42 @@ If you have issues listing counters is not that usefull you probably want to val
   \PhysicalDisk(_Total)\Split IO/Sec: ok-rate(0)
   ---------------------------
   Listed 159 of 36352 counters.
+
+Predefined counters
+===================
+
+Thus far we have only worked with counters on a need to use bases but there are many other ways to use counters.
+One core feature of NSClient++ since the first version was to check CPU load over time. In other words to check CPU load every x seconds and calculate averages.
+The way that works in NSClient++ is by predefining a counter.
+
+Predefining counters are don using the configuration file:
+
+.. code-block:: ini
+
+   [/settings/system/windows/counters/foo]
+   counter=counter=\PhysicalDisk(_Total)\Avg. Disk Write Queue Length
+
+Here we define a counter called foo which will periodically check the \PhysicalDisk(_Total)\Avg. Disk Write Queue Length counter.
+
+When we check this counter it works just as a regular counter except the name will be foo.
+
+.. code-block:: text
+
+   check_pdh counter=foo
+
+This in it self is not a massive step forward except we can get around any character issues as the configuration file can be saved as UTF8.
+But if we extend this counter definition with a collection strategy we get a lot of added new features.
+
+.. code-block:: ini
+
+   [/settings/system/windows/counters/foo]
+   collection strategy=rrd
+   counter=\PhysicalDisk(_Total)\Avg. Disk Write Queue Length
+
+What now happens is that the values of the counter is pushed to a stack and averages can be calculated.
+To utilize this we add the :option:`CheckSystem.check_pdh.time` option to our check to fetch averages over the last x seconds or minutes.
+
+.. code-block:: text
+
+   check_pdh counter=foo time=30s
 

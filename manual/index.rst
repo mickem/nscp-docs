@@ -15,3 +15,4 @@ Contents:
    installing.rst
    nscp_usage.rst
    build.rst
+   windows_installer.rst
