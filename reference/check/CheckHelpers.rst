@@ -191,6 +191,7 @@ Arguments
     :option:`help` | N/A | Show help screen (this screen)
     :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
+    :option:`message` | No message | Message to return
 
 
 Arguments
@@ -209,6 +210,11 @@ Arguments
     :synopsis: Show help screen (short format).
 
     | Show help screen (short format).
+
+.. option:: message
+    :synopsis: Message to return
+
+    | Message to return
 
 
 :query:`check_multi`
@@ -368,6 +374,7 @@ Arguments
     :option:`help` | N/A | Show help screen (this screen)
     :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
+    :option:`message` | No message | Message to return
 
 
 Arguments
@@ -386,6 +393,11 @@ Arguments
     :synopsis: Show help screen (short format).
 
     | Show help screen (short format).
+
+.. option:: message
+    :synopsis: Message to return
+
+    | Message to return
 
 
 :query:`check_timeout`
@@ -458,20 +470,6 @@ Arguments
 
 
 
-
-
-Arguments
-*********
-
-:query:`check_warning`
-----------------------
-.. query:: check_warning
-    :synopsis: Just return WARNING (anything passed along will be used as a message).
-
-**Usage:**
-
-
-
 .. csv-table:: 
     :class: contentstable 
     :delim: | 
@@ -498,6 +496,49 @@ Arguments
     :synopsis: Show help screen (short format).
 
     | Show help screen (short format).
+
+
+:query:`check_warning`
+----------------------
+.. query:: check_warning
+    :synopsis: Just return WARNING (anything passed along will be used as a message).
+
+**Usage:**
+
+
+
+.. csv-table:: 
+    :class: contentstable 
+    :delim: | 
+    :header: "Option", "Default Value", "Description"
+
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`help-short` | N/A | Show help screen (short format).
+    :option:`message` | No message | Message to return
+
+
+Arguments
+*********
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
+
+.. option:: message
+    :synopsis: Message to return
+
+    | Message to return
 
 
 :query:`filter_perf`

@@ -224,7 +224,7 @@ Common Keys:
     **ALIAS SECTION**
 
     | A list of aliases available.
-    | An alias is an internal command that has been "wrapped" (to add arguments). Be careful so you don't create loops (ie check_loop=check_a, check_a=check_loop)
+    | An alias is an internal command that has been predefined to provide a single command without arguments. Be careful so you don't create loops (ie check_loop=check_a, check_a=check_loop)
 
 
     .. csv-table:: 
@@ -776,7 +776,7 @@ Common Keys:
 
     **WRAPPED SCRIPTS SECTION**
 
-    | A list of wrapped scripts (ie. using the template mechanism)
+    | A list of wrapped scripts (ie. scruts using a template mechanism). The template used will be defined by the extension of the script.
 
 
 
@@ -784,7 +784,7 @@ Common Keys:
     **Sample**::
 
         # WRAPPED SCRIPTS SECTION
-        # A list of wrapped scripts (ie. using the template mechanism)
+        # A list of wrapped scripts (ie. scruts using a template mechanism). The template used will be defined by the extension of the script.
         [/settings/external scripts/wrapped scripts]
 
 
@@ -798,7 +798,8 @@ Common Keys:
 
     **EXTERNAL SCRIPT WRAPPINGS SECTION**
 
-    | A list of templates for wrapped scripts
+    | A list of templates for wrapped scripts.
+    | %SCRIPT% will be replaced by the actual script an %ARGS% will be replaced by any given arguments.
 
 
     .. csv-table:: 
@@ -806,18 +807,18 @@ Common Keys:
         :delim: | 
         :header: "Key", "Default Value", "Description"
     
-        :confkey:`bat` | scripts\\%SCRIPT% %ARGS% | BATCH FILE WRAPPING
-        :confkey:`ps1` | cmd /c echo scripts\\%SCRIPT% %ARGS%; exit($lastexitcode) | powershell.exe -command - | POWERSHELL WRAPPING
-        :confkey:`vbs` | cscript.exe //T:30 //NoLogo scripts\\lib\\wrapper.vbs %SCRIPT% %ARGS% | VISUAL BASIC WRAPPING
+        :confkey:`bat` |  | BATCH FILE WRAPPING
+        :confkey:`ps1` |  | POWERSHELL WRAPPING
+        :confkey:`vbs` |  | VISUAL BASIC WRAPPING
 
     **Sample**::
 
         # EXTERNAL SCRIPT WRAPPINGS SECTION
-        # A list of templates for wrapped scripts
+        # A list of templates for wrapped scripts.
         [/settings/external scripts/wrappings]
-        bat=scripts\\%SCRIPT% %ARGS%
-        ps1=cmd /c echo scripts\\%SCRIPT% %ARGS%; exit($lastexitcode) | powershell.exe -command -
-        vbs=cscript.exe //T:30 //NoLogo scripts\\lib\\wrapper.vbs %SCRIPT% %ARGS%
+        bat=
+        ps1=
+        vbs=
 
 
     .. confkey:: bat
@@ -831,7 +832,7 @@ Common Keys:
 
         **Key**: bat
 
-        **Default value**: scripts\\%SCRIPT% %ARGS%
+        **Default value**: 
 
         **Used by**: :module:`CheckExternalScripts`
 
@@ -839,7 +840,7 @@ Common Keys:
 
             [/settings/external scripts/wrappings]
             # BATCH FILE WRAPPING
-            bat=scripts\\%SCRIPT% %ARGS%
+            bat=
 
 
     .. confkey:: ps1
@@ -853,7 +854,7 @@ Common Keys:
 
         **Key**: ps1
 
-        **Default value**: cmd /c echo scripts\\%SCRIPT% %ARGS%; exit($lastexitcode) | powershell.exe -command -
+        **Default value**: 
 
         **Used by**: :module:`CheckExternalScripts`
 
@@ -861,7 +862,7 @@ Common Keys:
 
             [/settings/external scripts/wrappings]
             # POWERSHELL WRAPPING
-            ps1=cmd /c echo scripts\\%SCRIPT% %ARGS%; exit($lastexitcode) | powershell.exe -command -
+            ps1=
 
 
     .. confkey:: vbs
@@ -875,7 +876,7 @@ Common Keys:
 
         **Key**: vbs
 
-        **Default value**: cscript.exe //T:30 //NoLogo scripts\\lib\\wrapper.vbs %SCRIPT% %ARGS%
+        **Default value**: 
 
         **Used by**: :module:`CheckExternalScripts`
 
@@ -883,6 +884,6 @@ Common Keys:
 
             [/settings/external scripts/wrappings]
             # VISUAL BASIC WRAPPING
-            vbs=cscript.exe //T:30 //NoLogo scripts\\lib\\wrapper.vbs %SCRIPT% %ARGS%
+            vbs=
 
 

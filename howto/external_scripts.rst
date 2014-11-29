@@ -300,8 +300,6 @@ There are also some things to remember when writing script:
 Advanced topics
 ===============
 
-**TODO**
-
 Wrapped scripts
 ---------------
 
@@ -349,7 +347,23 @@ And when you define the scripts you simply add:
     test_ps1_2=test2.ps1 $ARG1$ $ARG2$
     test_ps1_3=test3.ps1
 
-Other options
--------------
+Ignoring performance data
+-------------------------
 
-**TODO**
+With 0.4.0 NSClient++ started to parse Nagios performance data. There are some snags with this and also sometimes nothing you want.
+This can be disabled both on a per command basis and a global basis:
+
+To disable it for all external commands add the following to your config:
+
+.. code-block:: ini
+
+    [/settings/external scripts/scripts/default]
+    ignore perfdata = true
+
+To disable it only for a specifi command (check_foo) add the following:
+
+.. code-block:: ini
+
+    [/settings/external scripts/scripts/check_foo]
+    ignore perfdata = true
+

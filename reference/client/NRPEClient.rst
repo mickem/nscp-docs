@@ -1,12 +1,12 @@
 .. default-domain:: nscp
 
 .. module:: NRPEClient
-    :synopsis: NRPE client can be used both from command line and from queries to check remote systes via NRPE
+    :synopsis: NRPE client can be used both from command line and from queries to check remote systes via NRPE as well as configure the NRPE server
 
 ===================================
 :module:`NRPEClient` --- NRPEClient
 ===================================
-NRPE client can be used both from command line and from queries to check remote systes via NRPE
+NRPE client can be used both from command line and from queries to check remote systes via NRPE as well as configure the NRPE server
 
 **Queries (Overview)**:
 
