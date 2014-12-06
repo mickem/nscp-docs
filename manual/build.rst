@@ -22,7 +22,6 @@ First we need to install a set of packages::
 	sudo apt-get install -y libssl-dev 
 	sudo apt-get install -y libboost-all-dev
 	sudo apt-get install -y protobuf-compiler python-protobuf libprotobuf-dev
-	sudo apt-get install -y rst2pdf  
 	sudo apt-get install -y python-sphinx
 	sudo apt-get install -y libcrypto++-dev libcrypto++
 	sudo apt-get install -y liblua5.1-0-dev
