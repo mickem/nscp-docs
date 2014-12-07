@@ -126,34 +126,34 @@ Arguments
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      category       TODO                                                                            
-      computer       Which computer generated the message                                            
-      customer       TODO                                                                            
-      file           The logfile name                                                                
-      id             Eventlog id                                                                     
-      level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
-      log            alias for file                                                                  
-      message        The message rendered as a string.                                               
-      rawid          Raw message id (contains many other fields all baked into a single number)      
-      source         Source system.                                                                  
-      type           alias for level (old, deprecated)                                               
-      written        When the message was written to file                                            
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | category       TODO                                                                            
+    | computer       Which computer generated the message                                            
+    | customer       TODO                                                                            
+    | file           The logfile name                                                                
+    | id             Eventlog id                                                                     
+    | level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
+    | log            alias for file                                                                  
+    | message        The message rendered as a string.                                               
+    | rawid          Raw message id (contains many other fields all baked into a single number)      
+    | source         Source system.                                                                  
+    | type           alias for level (old, deprecated)                                               
+    | written        When the message was written to file                                            
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -166,34 +166,34 @@ Arguments
     | If anything matches this filter the return status will be escalated to warning.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      category       TODO                                                                            
-      computer       Which computer generated the message                                            
-      customer       TODO                                                                            
-      file           The logfile name                                                                
-      id             Eventlog id                                                                     
-      level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
-      log            alias for file                                                                  
-      message        The message rendered as a string.                                               
-      rawid          Raw message id (contains many other fields all baked into a single number)      
-      source         Source system.                                                                  
-      type           alias for level (old, deprecated)                                               
-      written        When the message was written to file                                            
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | category       TODO                                                                            
+    | computer       Which computer generated the message                                            
+    | customer       TODO                                                                            
+    | file           The logfile name                                                                
+    | id             Eventlog id                                                                     
+    | level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
+    | log            alias for file                                                                  
+    | message        The message rendered as a string.                                               
+    | rawid          Raw message id (contains many other fields all baked into a single number)      
+    | source         Source system.                                                                  
+    | type           alias for level (old, deprecated)                                               
+    | written        When the message was written to file                                            
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -211,34 +211,34 @@ Arguments
     | If anything matches this filter the return status will be escalated to critical.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      category       TODO                                                                            
-      computer       Which computer generated the message                                            
-      customer       TODO                                                                            
-      file           The logfile name                                                                
-      id             Eventlog id                                                                     
-      level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
-      log            alias for file                                                                  
-      message        The message rendered as a string.                                               
-      rawid          Raw message id (contains many other fields all baked into a single number)      
-      source         Source system.                                                                  
-      type           alias for level (old, deprecated)                                               
-      written        When the message was written to file                                            
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | category       TODO                                                                            
+    | computer       Which computer generated the message                                            
+    | customer       TODO                                                                            
+    | file           The logfile name                                                                
+    | id             Eventlog id                                                                     
+    | level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
+    | log            alias for file                                                                  
+    | message        The message rendered as a string.                                               
+    | rawid          Raw message id (contains many other fields all baked into a single number)      
+    | source         Source system.                                                                  
+    | type           alias for level (old, deprecated)                                               
+    | written        When the message was written to file                                            
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -256,34 +256,34 @@ Arguments
     | If anything matches this any previous state for this item will be reset to ok.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      category       TODO                                                                            
-      computer       Which computer generated the message                                            
-      customer       TODO                                                                            
-      file           The logfile name                                                                
-      id             Eventlog id                                                                     
-      level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
-      log            alias for file                                                                  
-      message        The message rendered as a string.                                               
-      rawid          Raw message id (contains many other fields all baked into a single number)      
-      source         Source system.                                                                  
-      type           alias for level (old, deprecated)                                               
-      written        When the message was written to file                                            
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | category       TODO                                                                            
+    | computer       Which computer generated the message                                            
+    | customer       TODO                                                                            
+    | file           The logfile name                                                                
+    | id             Eventlog id                                                                     
+    | level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
+    | log            alias for file                                                                  
+    | message        The message rendered as a string.                                               
+    | rawid          Raw message id (contains many other fields all baked into a single number)      
+    | source         Source system.                                                                  
+    | type           alias for level (old, deprecated)                                               
+    | written        When the message was written to file                                            
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -313,34 +313,34 @@ Arguments
     | Unique syntax.
     | Used to filter unique items (counted will still increase but messages will not repeaters:
 
-      ================= =============================================================================== 
-      Key               Value                                                                           
-      ================= =============================================================================== 
-      %(category)       TODO                                                                            
-      %(computer)       Which computer generated the message                                            
-      %(customer)       TODO                                                                            
-      %(file)           The logfile name                                                                
-      %(id)             Eventlog id                                                                     
-      %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
-      %(log)            alias for file                                                                  
-      %(message)        The message rendered as a string.                                               
-      %(rawid)          Raw message id (contains many other fields all baked into a single number)      
-      %(source)         Source system.                                                                  
-      %(type)           alias for level (old, deprecated)                                               
-      %(written)        When the message was written to file                                            
-      ${count}          Number of items matching the filter                                             
-      ${total}           Total number of items                                                          
-      ${ok_count}        Number of items matched the ok criteria                                        
-      ${warn_count}      Number of items matched the warning criteria                                   
-      ${crit_count}      Number of items matched the critical criteria                                  
-      ${problem_count}   Number of items matched either warning or critical criteria                    
-      ${list}            A list of all items which matched the filter                                   
-      ${ok_list}         A list of all items which matched the ok criteria                              
-      ${warn_list}       A list of all items which matched the warning criteria                         
-      ${crit_list}       A list of all items which matched the critical criteria                        
-      ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-      ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================= ===============================================================================
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(category)       TODO                                                                            
+    | %(computer)       Which computer generated the message                                            
+    | %(customer)       TODO                                                                            
+    | %(file)           The logfile name                                                                
+    | %(id)             Eventlog id                                                                     
+    | %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
+    | %(log)            alias for file                                                                  
+    | %(message)        The message rendered as a string.                                               
+    | %(rawid)          Raw message id (contains many other fields all baked into a single number)      
+    | %(source)         Source system.                                                                  
+    | %(type)           alias for level (old, deprecated)                                               
+    | %(written)        When the message was written to file                                            
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
 
 
 
@@ -352,34 +352,34 @@ Arguments
     | Top level syntax.
     | Used to format the message to return can include strings as well as special keywords such as:
 
-      ================= =============================================================================== 
-      Key               Value                                                                           
-      ================= =============================================================================== 
-      %(category)       TODO                                                                            
-      %(computer)       Which computer generated the message                                            
-      %(customer)       TODO                                                                            
-      %(file)           The logfile name                                                                
-      %(id)             Eventlog id                                                                     
-      %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
-      %(log)            alias for file                                                                  
-      %(message)        The message rendered as a string.                                               
-      %(rawid)          Raw message id (contains many other fields all baked into a single number)      
-      %(source)         Source system.                                                                  
-      %(type)           alias for level (old, deprecated)                                               
-      %(written)        When the message was written to file                                            
-      ${count}          Number of items matching the filter                                             
-      ${total}           Total number of items                                                          
-      ${ok_count}        Number of items matched the ok criteria                                        
-      ${warn_count}      Number of items matched the warning criteria                                   
-      ${crit_count}      Number of items matched the critical criteria                                  
-      ${problem_count}   Number of items matched either warning or critical criteria                    
-      ${list}            A list of all items which matched the filter                                   
-      ${ok_list}         A list of all items which matched the ok criteria                              
-      ${warn_list}       A list of all items which matched the warning criteria                         
-      ${crit_list}       A list of all items which matched the critical criteria                        
-      ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-      ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================= ===============================================================================
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(category)       TODO                                                                            
+    | %(computer)       Which computer generated the message                                            
+    | %(customer)       TODO                                                                            
+    | %(file)           The logfile name                                                                
+    | %(id)             Eventlog id                                                                     
+    | %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
+    | %(log)            alias for file                                                                  
+    | %(message)        The message rendered as a string.                                               
+    | %(rawid)          Raw message id (contains many other fields all baked into a single number)      
+    | %(source)         Source system.                                                                  
+    | %(type)           alias for level (old, deprecated)                                               
+    | %(written)        When the message was written to file                                            
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
 
 
 
@@ -392,34 +392,34 @@ Arguments
     | This is the syntax of each item in the list of top-syntax (see above).
     | Possible values are:
 
-      ================= =============================================================================== 
-      Key               Value                                                                           
-      ================= =============================================================================== 
-      %(category)       TODO                                                                            
-      %(computer)       Which computer generated the message                                            
-      %(customer)       TODO                                                                            
-      %(file)           The logfile name                                                                
-      %(id)             Eventlog id                                                                     
-      %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
-      %(log)            alias for file                                                                  
-      %(message)        The message rendered as a string.                                               
-      %(rawid)          Raw message id (contains many other fields all baked into a single number)      
-      %(source)         Source system.                                                                  
-      %(type)           alias for level (old, deprecated)                                               
-      %(written)        When the message was written to file                                            
-      ${count}          Number of items matching the filter                                             
-      ${total}           Total number of items                                                          
-      ${ok_count}        Number of items matched the ok criteria                                        
-      ${warn_count}      Number of items matched the warning criteria                                   
-      ${crit_count}      Number of items matched the critical criteria                                  
-      ${problem_count}   Number of items matched either warning or critical criteria                    
-      ${list}            A list of all items which matched the filter                                   
-      ${ok_list}         A list of all items which matched the ok criteria                              
-      ${warn_list}       A list of all items which matched the warning criteria                         
-      ${crit_list}       A list of all items which matched the critical criteria                        
-      ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-      ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================= ===============================================================================
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(category)       TODO                                                                            
+    | %(computer)       Which computer generated the message                                            
+    | %(customer)       TODO                                                                            
+    | %(file)           The logfile name                                                                
+    | %(id)             Eventlog id                                                                     
+    | %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
+    | %(log)            alias for file                                                                  
+    | %(message)        The message rendered as a string.                                               
+    | %(rawid)          Raw message id (contains many other fields all baked into a single number)      
+    | %(source)         Source system.                                                                  
+    | %(type)           alias for level (old, deprecated)                                               
+    | %(written)        When the message was written to file                                            
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
 
 
 
@@ -432,34 +432,34 @@ Arguments
     | This is the syntax for the base names of the performance data.
     | Possible values are:
 
-      ================= =============================================================================== 
-      Key               Value                                                                           
-      ================= =============================================================================== 
-      %(category)       TODO                                                                            
-      %(computer)       Which computer generated the message                                            
-      %(customer)       TODO                                                                            
-      %(file)           The logfile name                                                                
-      %(id)             Eventlog id                                                                     
-      %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
-      %(log)            alias for file                                                                  
-      %(message)        The message rendered as a string.                                               
-      %(rawid)          Raw message id (contains many other fields all baked into a single number)      
-      %(source)         Source system.                                                                  
-      %(type)           alias for level (old, deprecated)                                               
-      %(written)        When the message was written to file                                            
-      ${count}          Number of items matching the filter                                             
-      ${total}           Total number of items                                                          
-      ${ok_count}        Number of items matched the ok criteria                                        
-      ${warn_count}      Number of items matched the warning criteria                                   
-      ${crit_count}      Number of items matched the critical criteria                                  
-      ${problem_count}   Number of items matched either warning or critical criteria                    
-      ${list}            A list of all items which matched the filter                                   
-      ${ok_list}         A list of all items which matched the ok criteria                              
-      ${warn_list}       A list of all items which matched the warning criteria                         
-      ${crit_list}       A list of all items which matched the critical criteria                        
-      ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-      ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================= ===============================================================================
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(category)       TODO                                                                            
+    | %(computer)       Which computer generated the message                                            
+    | %(customer)       TODO                                                                            
+    | %(file)           The logfile name                                                                
+    | %(id)             Eventlog id                                                                     
+    | %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
+    | %(log)            alias for file                                                                  
+    | %(message)        The message rendered as a string.                                               
+    | %(rawid)          Raw message id (contains many other fields all baked into a single number)      
+    | %(source)         Source system.                                                                  
+    | %(type)           alias for level (old, deprecated)                                               
+    | %(written)        When the message was written to file                                            
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
 
 
 
@@ -625,7 +625,7 @@ Arguments
 .. confpath:: /settings/eventlog
     :synopsis: EVENT LOG SECTION
 
-    **EVENT LOG SECTION**
+**EVENT LOG SECTION**
 
     | Section for the EventLog Checker (CheckEventLog.dll).
 
@@ -635,10 +635,10 @@ Arguments
         :delim: | 
         :header: "Key", "Default Value", "Description"
     
-        :confkey:`buffer size` | 131072 | BUFFER_SIZE
-        :confkey:`debug` | 0 | DEBUG
-        :confkey:`lookup names` | 1 | LOOKUP NAMES
-        :confkey:`syntax` |  | SYNTAX
+        :confkey:\`buffer size\` | 131072 | BUFFER_SIZE
+        :confkey:\`debug\` | 0 | DEBUG
+        :confkey:\`lookup names\` | 1 | LOOKUP NAMES
+        :confkey:\`syntax\` |  | SYNTAX
 
     **Sample**::
 
@@ -747,7 +747,7 @@ Arguments
 .. confpath:: /settings/eventlog/real-time
     :synopsis: CONFIGURE REALTIME CHECKING
 
-    **CONFIGURE REALTIME CHECKING**
+**CONFIGURE REALTIME CHECKING**
 
     | A set of options to configure the real time checks
 
@@ -757,10 +757,10 @@ Arguments
         :delim: | 
         :header: "Key", "Default Value", "Description"
     
-        :confkey:`debug` | 0 | DEBUG
-        :confkey:`enabled` | 0 | REAL TIME CHECKING
-        :confkey:`log` | application,system | LOGS TO CHECK
-        :confkey:`startup age` | 30m | STARTUP AGE
+        :confkey:\`debug\` | 0 | DEBUG
+        :confkey:\`enabled\` | 0 | REAL TIME CHECKING
+        :confkey:\`log\` | application,system | LOGS TO CHECK
+        :confkey:\`startup age\` | 30m | STARTUP AGE
 
     **Sample**::
 
@@ -869,7 +869,7 @@ Arguments
 .. confpath:: /settings/eventlog/real-time/filters
     :synopsis: REALTIME FILTERS
 
-    **REALTIME FILTERS**
+**REALTIME FILTERS**
 
     | A set of filters to use in real-time mode
 

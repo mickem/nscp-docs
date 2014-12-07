@@ -99,7 +99,7 @@ Common Keys:
 .. confpath:: /settings/external scripts
     :synopsis: EXTERNAL SCRIPT SECTION
 
-    **EXTERNAL SCRIPT SECTION**
+**EXTERNAL SCRIPT SECTION**
 
     | Section for external scripts configuration options (CheckExternalScripts).
 
@@ -152,7 +152,7 @@ Common Keys:
 
         **COMMAND ALLOW NASTY META CHARS**
 
-        | This option determines whether or not the we will allow clients to specify nasty (as in |`&><'"\[]{}) characters in arguments.
+        | This option determines whether or not the we will allow clients to specify nasty (as in \|\`&><'"\\[]{}) characters in arguments.
 
         **Path**: /settings/external scripts
 
@@ -221,7 +221,7 @@ Common Keys:
 .. confpath:: /settings/external scripts/alias
     :synopsis: ALIAS SECTION
 
-    **ALIAS SECTION**
+**ALIAS SECTION**
 
     | A list of aliases available.
     | An alias is an internal command that has been predefined to provide a single command without arguments. Be careful so you don't create loops (ie check_loop=check_a, check_a=check_loop)
@@ -752,7 +752,7 @@ Common Keys:
 .. confpath:: /settings/external scripts/scripts
     :synopsis: SCRIPT SECTION
 
-    **SCRIPT SECTION**
+**SCRIPT SECTION**
 
     | A list of scripts available to run from the CheckExternalScripts module. Syntax is: <command>=<script> <arguments>
 
@@ -774,7 +774,7 @@ Common Keys:
 .. confpath:: /settings/external scripts/wrapped scripts
     :synopsis: WRAPPED SCRIPTS SECTION
 
-    **WRAPPED SCRIPTS SECTION**
+**WRAPPED SCRIPTS SECTION**
 
     | A list of wrapped scripts (ie. scruts using a template mechanism). The template used will be defined by the extension of the script.
 
@@ -796,7 +796,7 @@ Common Keys:
 .. confpath:: /settings/external scripts/wrappings
     :synopsis: EXTERNAL SCRIPT WRAPPINGS SECTION
 
-    **EXTERNAL SCRIPT WRAPPINGS SECTION**
+**EXTERNAL SCRIPT WRAPPINGS SECTION**
 
     | A list of templates for wrapped scripts.
     | %SCRIPT% will be replaced by the actual script an %ARGS% will be replaced by any given arguments.

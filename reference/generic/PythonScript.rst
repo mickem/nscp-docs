@@ -33,7 +33,7 @@ Loads and processes internal Python scripts
 .. confpath:: /settings/python
     :synopsis: LUA SCRIPT SECTION
 
-    **LUA SCRIPT SECTION**
+**LUA SCRIPT SECTION**
 
     | Section for the PythonScripts module.
 
@@ -55,7 +55,7 @@ Loads and processes internal Python scripts
 .. confpath:: /settings/python/scripts
     :synopsis: PYTHON SCRIPTS SECTION
 
-    **PYTHON SCRIPTS SECTION**
+**PYTHON SCRIPTS SECTION**
 
     | A list of scripts available to run from the PythonScript module.
 

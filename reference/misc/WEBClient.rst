@@ -615,7 +615,7 @@ Arguments
 .. confpath:: /settings/NRPE/client
     :synopsis: WEB CLIENT SECTION
 
-    **WEB CLIENT SECTION**
+**WEB CLIENT SECTION**
 
     | Section for WEB active/passive check module.
 
@@ -665,7 +665,7 @@ Arguments
 .. confpath:: /settings/NRPE/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
-    **CLIENT HANDLER SECTION**
+**CLIENT HANDLER SECTION**
 
 
 
@@ -687,7 +687,7 @@ Arguments
 .. confpath:: /settings/NRPE/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
-    **REMOTE TARGET DEFINITIONS**
+**REMOTE TARGET DEFINITIONS**
 
 
 
@@ -709,7 +709,7 @@ Arguments
 .. confpath:: /settings/NRPE/client/targets/default
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: default
 
@@ -1161,7 +1161,7 @@ Arguments
 .. confpath:: /settings/NRPE/client/targets/sample
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: sample
 

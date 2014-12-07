@@ -103,26 +103,26 @@ Arguments
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      free           Free memory in bytes (g,m,k,b) or percentages %                                 
-      size           Total size of memory                                                            
-      type           The type of memory to check                                                     
-      used           Used memory in bytes (g,m,k,b) or percentages %                                 
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | free           Free memory in bytes (g,m,k,b) or percentages %                                 
+    | size           Total size of memory                                                            
+    | type           The type of memory to check                                                     
+    | used           Used memory in bytes (g,m,k,b) or percentages %                                 
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -135,26 +135,26 @@ Arguments
     | If anything matches this filter the return status will be escalated to warning.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      free           Free memory in bytes (g,m,k,b) or percentages %                                 
-      size           Total size of memory                                                            
-      type           The type of memory to check                                                     
-      used           Used memory in bytes (g,m,k,b) or percentages %                                 
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | free           Free memory in bytes (g,m,k,b) or percentages %                                 
+    | size           Total size of memory                                                            
+    | type           The type of memory to check                                                     
+    | used           Used memory in bytes (g,m,k,b) or percentages %                                 
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -172,26 +172,26 @@ Arguments
     | If anything matches this filter the return status will be escalated to critical.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      free           Free memory in bytes (g,m,k,b) or percentages %                                 
-      size           Total size of memory                                                            
-      type           The type of memory to check                                                     
-      used           Used memory in bytes (g,m,k,b) or percentages %                                 
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | free           Free memory in bytes (g,m,k,b) or percentages %                                 
+    | size           Total size of memory                                                            
+    | type           The type of memory to check                                                     
+    | used           Used memory in bytes (g,m,k,b) or percentages %                                 
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -209,26 +209,26 @@ Arguments
     | If anything matches this any previous state for this item will be reset to ok.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      free           Free memory in bytes (g,m,k,b) or percentages %                                 
-      size           Total size of memory                                                            
-      type           The type of memory to check                                                     
-      used           Used memory in bytes (g,m,k,b) or percentages %                                 
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | free           Free memory in bytes (g,m,k,b) or percentages %                                 
+    | size           Total size of memory                                                            
+    | type           The type of memory to check                                                     
+    | used           Used memory in bytes (g,m,k,b) or percentages %                                 
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -258,26 +258,26 @@ Arguments
     | Top level syntax.
     | Used to format the message to return can include strings as well as special keywords such as:
 
-      ================= =============================================================================== 
-      Key               Value                                                                           
-      ================= =============================================================================== 
-      %(free)           Free memory in bytes (g,m,k,b) or percentages %                                 
-      %(size)           Total size of memory                                                            
-      %(type)           The type of memory to check                                                     
-      %(used)           Used memory in bytes (g,m,k,b) or percentages %                                 
-      ${count}          Number of items matching the filter                                             
-      ${total}           Total number of items                                                          
-      ${ok_count}        Number of items matched the ok criteria                                        
-      ${warn_count}      Number of items matched the warning criteria                                   
-      ${crit_count}      Number of items matched the critical criteria                                  
-      ${problem_count}   Number of items matched either warning or critical criteria                    
-      ${list}            A list of all items which matched the filter                                   
-      ${ok_list}         A list of all items which matched the ok criteria                              
-      ${warn_list}       A list of all items which matched the warning criteria                         
-      ${crit_list}       A list of all items which matched the critical criteria                        
-      ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-      ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================= ===============================================================================
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(free)           Free memory in bytes (g,m,k,b) or percentages %                                 
+    | %(size)           Total size of memory                                                            
+    | %(type)           The type of memory to check                                                     
+    | %(used)           Used memory in bytes (g,m,k,b) or percentages %                                 
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
 
 
 
@@ -290,26 +290,26 @@ Arguments
     | This is the syntax of each item in the list of top-syntax (see above).
     | Possible values are:
 
-      ================= =============================================================================== 
-      Key               Value                                                                           
-      ================= =============================================================================== 
-      %(free)           Free memory in bytes (g,m,k,b) or percentages %                                 
-      %(size)           Total size of memory                                                            
-      %(type)           The type of memory to check                                                     
-      %(used)           Used memory in bytes (g,m,k,b) or percentages %                                 
-      ${count}          Number of items matching the filter                                             
-      ${total}           Total number of items                                                          
-      ${ok_count}        Number of items matched the ok criteria                                        
-      ${warn_count}      Number of items matched the warning criteria                                   
-      ${crit_count}      Number of items matched the critical criteria                                  
-      ${problem_count}   Number of items matched either warning or critical criteria                    
-      ${list}            A list of all items which matched the filter                                   
-      ${ok_list}         A list of all items which matched the ok criteria                              
-      ${warn_list}       A list of all items which matched the warning criteria                         
-      ${crit_list}       A list of all items which matched the critical criteria                        
-      ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-      ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================= ===============================================================================
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(free)           Free memory in bytes (g,m,k,b) or percentages %                                 
+    | %(size)           Total size of memory                                                            
+    | %(type)           The type of memory to check                                                     
+    | %(used)           Used memory in bytes (g,m,k,b) or percentages %                                 
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
 
 
 
@@ -322,26 +322,26 @@ Arguments
     | This is the syntax for the base names of the performance data.
     | Possible values are:
 
-      ================= =============================================================================== 
-      Key               Value                                                                           
-      ================= =============================================================================== 
-      %(free)           Free memory in bytes (g,m,k,b) or percentages %                                 
-      %(size)           Total size of memory                                                            
-      %(type)           The type of memory to check                                                     
-      %(used)           Used memory in bytes (g,m,k,b) or percentages %                                 
-      ${count}          Number of items matching the filter                                             
-      ${total}           Total number of items                                                          
-      ${ok_count}        Number of items matched the ok criteria                                        
-      ${warn_count}      Number of items matched the warning criteria                                   
-      ${crit_count}      Number of items matched the critical criteria                                  
-      ${problem_count}   Number of items matched either warning or critical criteria                    
-      ${list}            A list of all items which matched the filter                                   
-      ${ok_list}         A list of all items which matched the ok criteria                              
-      ${warn_list}       A list of all items which matched the warning criteria                         
-      ${crit_list}       A list of all items which matched the critical criteria                        
-      ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-      ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================= ===============================================================================
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(free)           Free memory in bytes (g,m,k,b) or percentages %                                 
+    | %(size)           Total size of memory                                                            
+    | %(type)           The type of memory to check                                                     
+    | %(used)           Used memory in bytes (g,m,k,b) or percentages %                                 
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
 
 
 
@@ -421,29 +421,29 @@ Arguments
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
     | Available options:
 
-      =============== =============================================================================== 
-      Key             Value                                                                           
-      =============== =============================================================================== 
-      kernel_name     Kernel name                                                                     
-      kernel_release  Kernel release                                                                  
-      kernel_version  Kernel version                                                                  
-      machine         Machine hardware name                                                           
-      nodename        Network node hostname                                                           
-      os              Operating system                                                                
-      processor       Processor type or unknown                                                       
-      count           Number of items matching the filter                                             
-      total            Total number of items                                                          
-      ok_count         Number of items matched the ok criteria                                        
-      warn_count       Number of items matched the warning criteria                                   
-      crit_count       Number of items matched the critical criteria                                  
-      problem_count    Number of items matched either warning or critical criteria                    
-      list             A list of all items which matched the filter                                   
-      ok_list          A list of all items which matched the ok criteria                              
-      warn_list        A list of all items which matched the warning criteria                         
-      crit_list        A list of all items which matched the critical criteria                        
-      problem_list     A list of all items which matched either the critical or the warning criteria  
-      status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      =============== ===============================================================================
+    | =============== =============================================================================== 
+    | Key             Value                                                                           
+    | --------------- ------------------------------------------------------------------------------- 
+    | kernel_name     Kernel name                                                                     
+    | kernel_release  Kernel release                                                                  
+    | kernel_version  Kernel version                                                                  
+    | machine         Machine hardware name                                                           
+    | nodename        Network node hostname                                                           
+    | os              Operating system                                                                
+    | processor       Processor type or unknown                                                       
+    | count           Number of items matching the filter                                             
+    | total            Total number of items                                                          
+    | ok_count         Number of items matched the ok criteria                                        
+    | warn_count       Number of items matched the warning criteria                                   
+    | crit_count       Number of items matched the critical criteria                                  
+    | problem_count    Number of items matched either warning or critical criteria                    
+    | list             A list of all items which matched the filter                                   
+    | ok_list          A list of all items which matched the ok criteria                              
+    | warn_list        A list of all items which matched the warning criteria                         
+    | crit_list        A list of all items which matched the critical criteria                        
+    | problem_list     A list of all items which matched either the critical or the warning criteria  
+    | status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | =============== ===============================================================================
 
 
 
@@ -456,29 +456,29 @@ Arguments
     | If anything matches this filter the return status will be escalated to warning.
     | Available options:
 
-      =============== =============================================================================== 
-      Key             Value                                                                           
-      =============== =============================================================================== 
-      kernel_name     Kernel name                                                                     
-      kernel_release  Kernel release                                                                  
-      kernel_version  Kernel version                                                                  
-      machine         Machine hardware name                                                           
-      nodename        Network node hostname                                                           
-      os              Operating system                                                                
-      processor       Processor type or unknown                                                       
-      count           Number of items matching the filter                                             
-      total            Total number of items                                                          
-      ok_count         Number of items matched the ok criteria                                        
-      warn_count       Number of items matched the warning criteria                                   
-      crit_count       Number of items matched the critical criteria                                  
-      problem_count    Number of items matched either warning or critical criteria                    
-      list             A list of all items which matched the filter                                   
-      ok_list          A list of all items which matched the ok criteria                              
-      warn_list        A list of all items which matched the warning criteria                         
-      crit_list        A list of all items which matched the critical criteria                        
-      problem_list     A list of all items which matched either the critical or the warning criteria  
-      status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      =============== ===============================================================================
+    | =============== =============================================================================== 
+    | Key             Value                                                                           
+    | --------------- ------------------------------------------------------------------------------- 
+    | kernel_name     Kernel name                                                                     
+    | kernel_release  Kernel release                                                                  
+    | kernel_version  Kernel version                                                                  
+    | machine         Machine hardware name                                                           
+    | nodename        Network node hostname                                                           
+    | os              Operating system                                                                
+    | processor       Processor type or unknown                                                       
+    | count           Number of items matching the filter                                             
+    | total            Total number of items                                                          
+    | ok_count         Number of items matched the ok criteria                                        
+    | warn_count       Number of items matched the warning criteria                                   
+    | crit_count       Number of items matched the critical criteria                                  
+    | problem_count    Number of items matched either warning or critical criteria                    
+    | list             A list of all items which matched the filter                                   
+    | ok_list          A list of all items which matched the ok criteria                              
+    | warn_list        A list of all items which matched the warning criteria                         
+    | crit_list        A list of all items which matched the critical criteria                        
+    | problem_list     A list of all items which matched either the critical or the warning criteria  
+    | status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | =============== ===============================================================================
 
 
 
@@ -496,29 +496,29 @@ Arguments
     | If anything matches this filter the return status will be escalated to critical.
     | Available options:
 
-      =============== =============================================================================== 
-      Key             Value                                                                           
-      =============== =============================================================================== 
-      kernel_name     Kernel name                                                                     
-      kernel_release  Kernel release                                                                  
-      kernel_version  Kernel version                                                                  
-      machine         Machine hardware name                                                           
-      nodename        Network node hostname                                                           
-      os              Operating system                                                                
-      processor       Processor type or unknown                                                       
-      count           Number of items matching the filter                                             
-      total            Total number of items                                                          
-      ok_count         Number of items matched the ok criteria                                        
-      warn_count       Number of items matched the warning criteria                                   
-      crit_count       Number of items matched the critical criteria                                  
-      problem_count    Number of items matched either warning or critical criteria                    
-      list             A list of all items which matched the filter                                   
-      ok_list          A list of all items which matched the ok criteria                              
-      warn_list        A list of all items which matched the warning criteria                         
-      crit_list        A list of all items which matched the critical criteria                        
-      problem_list     A list of all items which matched either the critical or the warning criteria  
-      status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      =============== ===============================================================================
+    | =============== =============================================================================== 
+    | Key             Value                                                                           
+    | --------------- ------------------------------------------------------------------------------- 
+    | kernel_name     Kernel name                                                                     
+    | kernel_release  Kernel release                                                                  
+    | kernel_version  Kernel version                                                                  
+    | machine         Machine hardware name                                                           
+    | nodename        Network node hostname                                                           
+    | os              Operating system                                                                
+    | processor       Processor type or unknown                                                       
+    | count           Number of items matching the filter                                             
+    | total            Total number of items                                                          
+    | ok_count         Number of items matched the ok criteria                                        
+    | warn_count       Number of items matched the warning criteria                                   
+    | crit_count       Number of items matched the critical criteria                                  
+    | problem_count    Number of items matched either warning or critical criteria                    
+    | list             A list of all items which matched the filter                                   
+    | ok_list          A list of all items which matched the ok criteria                              
+    | warn_list        A list of all items which matched the warning criteria                         
+    | crit_list        A list of all items which matched the critical criteria                        
+    | problem_list     A list of all items which matched either the critical or the warning criteria  
+    | status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | =============== ===============================================================================
 
 
 
@@ -536,29 +536,29 @@ Arguments
     | If anything matches this any previous state for this item will be reset to ok.
     | Available options:
 
-      =============== =============================================================================== 
-      Key             Value                                                                           
-      =============== =============================================================================== 
-      kernel_name     Kernel name                                                                     
-      kernel_release  Kernel release                                                                  
-      kernel_version  Kernel version                                                                  
-      machine         Machine hardware name                                                           
-      nodename        Network node hostname                                                           
-      os              Operating system                                                                
-      processor       Processor type or unknown                                                       
-      count           Number of items matching the filter                                             
-      total            Total number of items                                                          
-      ok_count         Number of items matched the ok criteria                                        
-      warn_count       Number of items matched the warning criteria                                   
-      crit_count       Number of items matched the critical criteria                                  
-      problem_count    Number of items matched either warning or critical criteria                    
-      list             A list of all items which matched the filter                                   
-      ok_list          A list of all items which matched the ok criteria                              
-      warn_list        A list of all items which matched the warning criteria                         
-      crit_list        A list of all items which matched the critical criteria                        
-      problem_list     A list of all items which matched either the critical or the warning criteria  
-      status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      =============== ===============================================================================
+    | =============== =============================================================================== 
+    | Key             Value                                                                           
+    | --------------- ------------------------------------------------------------------------------- 
+    | kernel_name     Kernel name                                                                     
+    | kernel_release  Kernel release                                                                  
+    | kernel_version  Kernel version                                                                  
+    | machine         Machine hardware name                                                           
+    | nodename        Network node hostname                                                           
+    | os              Operating system                                                                
+    | processor       Processor type or unknown                                                       
+    | count           Number of items matching the filter                                             
+    | total            Total number of items                                                          
+    | ok_count         Number of items matched the ok criteria                                        
+    | warn_count       Number of items matched the warning criteria                                   
+    | crit_count       Number of items matched the critical criteria                                  
+    | problem_count    Number of items matched either warning or critical criteria                    
+    | list             A list of all items which matched the filter                                   
+    | ok_list          A list of all items which matched the ok criteria                              
+    | warn_list        A list of all items which matched the warning criteria                         
+    | crit_list        A list of all items which matched the critical criteria                        
+    | problem_list     A list of all items which matched either the critical or the warning criteria  
+    | status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | =============== ===============================================================================
 
 
 
@@ -588,29 +588,29 @@ Arguments
     | Top level syntax.
     | Used to format the message to return can include strings as well as special keywords such as:
 
-      ================== =============================================================================== 
-      Key                Value                                                                           
-      ================== =============================================================================== 
-      %(kernel_name)     Kernel name                                                                     
-      %(kernel_release)  Kernel release                                                                  
-      %(kernel_version)  Kernel version                                                                  
-      %(machine)         Machine hardware name                                                           
-      %(nodename)        Network node hostname                                                           
-      %(os)              Operating system                                                                
-      %(processor)       Processor type or unknown                                                       
-      ${count}           Number of items matching the filter                                             
-      ${total}            Total number of items                                                          
-      ${ok_count}         Number of items matched the ok criteria                                        
-      ${warn_count}       Number of items matched the warning criteria                                   
-      ${crit_count}       Number of items matched the critical criteria                                  
-      ${problem_count}    Number of items matched either warning or critical criteria                    
-      ${list}             A list of all items which matched the filter                                   
-      ${ok_list}          A list of all items which matched the ok criteria                              
-      ${warn_list}        A list of all items which matched the warning criteria                         
-      ${crit_list}        A list of all items which matched the critical criteria                        
-      ${problem_list}     A list of all items which matched either the critical or the warning criteria  
-      ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================== ===============================================================================
+    | ================== =============================================================================== 
+    | Key                Value                                                                           
+    | ------------------ ------------------------------------------------------------------------------- 
+    | %(kernel_name)     Kernel name                                                                     
+    | %(kernel_release)  Kernel release                                                                  
+    | %(kernel_version)  Kernel version                                                                  
+    | %(machine)         Machine hardware name                                                           
+    | %(nodename)        Network node hostname                                                           
+    | %(os)              Operating system                                                                
+    | %(processor)       Processor type or unknown                                                       
+    | ${count}           Number of items matching the filter                                             
+    | ${total}            Total number of items                                                          
+    | ${ok_count}         Number of items matched the ok criteria                                        
+    | ${warn_count}       Number of items matched the warning criteria                                   
+    | ${crit_count}       Number of items matched the critical criteria                                  
+    | ${problem_count}    Number of items matched either warning or critical criteria                    
+    | ${list}             A list of all items which matched the filter                                   
+    | ${ok_list}          A list of all items which matched the ok criteria                              
+    | ${warn_list}        A list of all items which matched the warning criteria                         
+    | ${crit_list}        A list of all items which matched the critical criteria                        
+    | ${problem_list}     A list of all items which matched either the critical or the warning criteria  
+    | ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================== ===============================================================================
 
 
 
@@ -623,29 +623,29 @@ Arguments
     | This is the syntax of each item in the list of top-syntax (see above).
     | Possible values are:
 
-      ================== =============================================================================== 
-      Key                Value                                                                           
-      ================== =============================================================================== 
-      %(kernel_name)     Kernel name                                                                     
-      %(kernel_release)  Kernel release                                                                  
-      %(kernel_version)  Kernel version                                                                  
-      %(machine)         Machine hardware name                                                           
-      %(nodename)        Network node hostname                                                           
-      %(os)              Operating system                                                                
-      %(processor)       Processor type or unknown                                                       
-      ${count}           Number of items matching the filter                                             
-      ${total}            Total number of items                                                          
-      ${ok_count}         Number of items matched the ok criteria                                        
-      ${warn_count}       Number of items matched the warning criteria                                   
-      ${crit_count}       Number of items matched the critical criteria                                  
-      ${problem_count}    Number of items matched either warning or critical criteria                    
-      ${list}             A list of all items which matched the filter                                   
-      ${ok_list}          A list of all items which matched the ok criteria                              
-      ${warn_list}        A list of all items which matched the warning criteria                         
-      ${crit_list}        A list of all items which matched the critical criteria                        
-      ${problem_list}     A list of all items which matched either the critical or the warning criteria  
-      ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================== ===============================================================================
+    | ================== =============================================================================== 
+    | Key                Value                                                                           
+    | ------------------ ------------------------------------------------------------------------------- 
+    | %(kernel_name)     Kernel name                                                                     
+    | %(kernel_release)  Kernel release                                                                  
+    | %(kernel_version)  Kernel version                                                                  
+    | %(machine)         Machine hardware name                                                           
+    | %(nodename)        Network node hostname                                                           
+    | %(os)              Operating system                                                                
+    | %(processor)       Processor type or unknown                                                       
+    | ${count}           Number of items matching the filter                                             
+    | ${total}            Total number of items                                                          
+    | ${ok_count}         Number of items matched the ok criteria                                        
+    | ${warn_count}       Number of items matched the warning criteria                                   
+    | ${crit_count}       Number of items matched the critical criteria                                  
+    | ${problem_count}    Number of items matched either warning or critical criteria                    
+    | ${list}             A list of all items which matched the filter                                   
+    | ${ok_list}          A list of all items which matched the ok criteria                              
+    | ${warn_list}        A list of all items which matched the warning criteria                         
+    | ${crit_list}        A list of all items which matched the critical criteria                        
+    | ${problem_list}     A list of all items which matched either the critical or the warning criteria  
+    | ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================== ===============================================================================
 
 
 
@@ -658,29 +658,29 @@ Arguments
     | This is the syntax for the base names of the performance data.
     | Possible values are:
 
-      ================== =============================================================================== 
-      Key                Value                                                                           
-      ================== =============================================================================== 
-      %(kernel_name)     Kernel name                                                                     
-      %(kernel_release)  Kernel release                                                                  
-      %(kernel_version)  Kernel version                                                                  
-      %(machine)         Machine hardware name                                                           
-      %(nodename)        Network node hostname                                                           
-      %(os)              Operating system                                                                
-      %(processor)       Processor type or unknown                                                       
-      ${count}           Number of items matching the filter                                             
-      ${total}            Total number of items                                                          
-      ${ok_count}         Number of items matched the ok criteria                                        
-      ${warn_count}       Number of items matched the warning criteria                                   
-      ${crit_count}       Number of items matched the critical criteria                                  
-      ${problem_count}    Number of items matched either warning or critical criteria                    
-      ${list}             A list of all items which matched the filter                                   
-      ${ok_list}          A list of all items which matched the ok criteria                              
-      ${warn_list}        A list of all items which matched the warning criteria                         
-      ${crit_list}        A list of all items which matched the critical criteria                        
-      ${problem_list}     A list of all items which matched either the critical or the warning criteria  
-      ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================== ===============================================================================
+    | ================== =============================================================================== 
+    | Key                Value                                                                           
+    | ------------------ ------------------------------------------------------------------------------- 
+    | %(kernel_name)     Kernel name                                                                     
+    | %(kernel_release)  Kernel release                                                                  
+    | %(kernel_version)  Kernel version                                                                  
+    | %(machine)         Machine hardware name                                                           
+    | %(nodename)        Network node hostname                                                           
+    | %(os)              Operating system                                                                
+    | %(processor)       Processor type or unknown                                                       
+    | ${count}           Number of items matching the filter                                             
+    | ${total}            Total number of items                                                          
+    | ${ok_count}         Number of items matched the ok criteria                                        
+    | ${warn_count}       Number of items matched the warning criteria                                   
+    | ${crit_count}       Number of items matched the critical criteria                                  
+    | ${problem_count}    Number of items matched either warning or critical criteria                    
+    | ${list}             A list of all items which matched the filter                                   
+    | ${ok_list}          A list of all items which matched the ok criteria                              
+    | ${warn_list}        A list of all items which matched the warning criteria                         
+    | ${crit_list}        A list of all items which matched the critical criteria                        
+    | ${problem_list}     A list of all items which matched either the critical or the warning criteria  
+    | ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================== ===============================================================================
 
 
 
@@ -755,24 +755,24 @@ Arguments
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      boot           System boot time                                                                
-      uptime         Time since last boot                                                            
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | boot           System boot time                                                                
+    | uptime         Time since last boot                                                            
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -785,24 +785,24 @@ Arguments
     | If anything matches this filter the return status will be escalated to warning.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      boot           System boot time                                                                
-      uptime         Time since last boot                                                            
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | boot           System boot time                                                                
+    | uptime         Time since last boot                                                            
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -820,24 +820,24 @@ Arguments
     | If anything matches this filter the return status will be escalated to critical.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      boot           System boot time                                                                
-      uptime         Time since last boot                                                            
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | boot           System boot time                                                                
+    | uptime         Time since last boot                                                            
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -855,24 +855,24 @@ Arguments
     | If anything matches this any previous state for this item will be reset to ok.
     | Available options:
 
-      ============== =============================================================================== 
-      Key            Value                                                                           
-      ============== =============================================================================== 
-      boot           System boot time                                                                
-      uptime         Time since last boot                                                            
-      count          Number of items matching the filter                                             
-      total           Total number of items                                                          
-      ok_count        Number of items matched the ok criteria                                        
-      warn_count      Number of items matched the warning criteria                                   
-      crit_count      Number of items matched the critical criteria                                  
-      problem_count   Number of items matched either warning or critical criteria                    
-      list            A list of all items which matched the filter                                   
-      ok_list         A list of all items which matched the ok criteria                              
-      warn_list       A list of all items which matched the warning criteria                         
-      crit_list       A list of all items which matched the critical criteria                        
-      problem_list    A list of all items which matched either the critical or the warning criteria  
-      status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ============== ===============================================================================
+    | ============== =============================================================================== 
+    | Key            Value                                                                           
+    | -------------- ------------------------------------------------------------------------------- 
+    | boot           System boot time                                                                
+    | uptime         Time since last boot                                                            
+    | count          Number of items matching the filter                                             
+    | total           Total number of items                                                          
+    | ok_count        Number of items matched the ok criteria                                        
+    | warn_count      Number of items matched the warning criteria                                   
+    | crit_count      Number of items matched the critical criteria                                  
+    | problem_count   Number of items matched either warning or critical criteria                    
+    | list            A list of all items which matched the filter                                   
+    | ok_list         A list of all items which matched the ok criteria                              
+    | warn_list       A list of all items which matched the warning criteria                         
+    | crit_list       A list of all items which matched the critical criteria                        
+    | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ============== ===============================================================================
 
 
 
@@ -902,24 +902,24 @@ Arguments
     | Top level syntax.
     | Used to format the message to return can include strings as well as special keywords such as:
 
-      ================= =============================================================================== 
-      Key               Value                                                                           
-      ================= =============================================================================== 
-      %(boot)           System boot time                                                                
-      %(uptime)         Time since last boot                                                            
-      ${count}          Number of items matching the filter                                             
-      ${total}           Total number of items                                                          
-      ${ok_count}        Number of items matched the ok criteria                                        
-      ${warn_count}      Number of items matched the warning criteria                                   
-      ${crit_count}      Number of items matched the critical criteria                                  
-      ${problem_count}   Number of items matched either warning or critical criteria                    
-      ${list}            A list of all items which matched the filter                                   
-      ${ok_list}         A list of all items which matched the ok criteria                              
-      ${warn_list}       A list of all items which matched the warning criteria                         
-      ${crit_list}       A list of all items which matched the critical criteria                        
-      ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-      ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================= ===============================================================================
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(boot)           System boot time                                                                
+    | %(uptime)         Time since last boot                                                            
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
 
 
 
@@ -932,24 +932,24 @@ Arguments
     | This is the syntax of each item in the list of top-syntax (see above).
     | Possible values are:
 
-      ================= =============================================================================== 
-      Key               Value                                                                           
-      ================= =============================================================================== 
-      %(boot)           System boot time                                                                
-      %(uptime)         Time since last boot                                                            
-      ${count}          Number of items matching the filter                                             
-      ${total}           Total number of items                                                          
-      ${ok_count}        Number of items matched the ok criteria                                        
-      ${warn_count}      Number of items matched the warning criteria                                   
-      ${crit_count}      Number of items matched the critical criteria                                  
-      ${problem_count}   Number of items matched either warning or critical criteria                    
-      ${list}            A list of all items which matched the filter                                   
-      ${ok_list}         A list of all items which matched the ok criteria                              
-      ${warn_list}       A list of all items which matched the warning criteria                         
-      ${crit_list}       A list of all items which matched the critical criteria                        
-      ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-      ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================= ===============================================================================
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(boot)           System boot time                                                                
+    | %(uptime)         Time since last boot                                                            
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
 
 
 
@@ -962,24 +962,24 @@ Arguments
     | This is the syntax for the base names of the performance data.
     | Possible values are:
 
-      ================= =============================================================================== 
-      Key               Value                                                                           
-      ================= =============================================================================== 
-      %(boot)           System boot time                                                                
-      %(uptime)         Time since last boot                                                            
-      ${count}          Number of items matching the filter                                             
-      ${total}           Total number of items                                                          
-      ${ok_count}        Number of items matched the ok criteria                                        
-      ${warn_count}      Number of items matched the warning criteria                                   
-      ${crit_count}      Number of items matched the critical criteria                                  
-      ${problem_count}   Number of items matched either warning or critical criteria                    
-      ${list}            A list of all items which matched the filter                                   
-      ${ok_list}         A list of all items which matched the ok criteria                              
-      ${warn_list}       A list of all items which matched the warning criteria                         
-      ${crit_list}       A list of all items which matched the critical criteria                        
-      ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-      ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-      ================= ===============================================================================
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(boot)           System boot time                                                                
+    | %(uptime)         Time since last boot                                                            
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
 
 
 

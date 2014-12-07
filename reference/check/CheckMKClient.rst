@@ -262,7 +262,7 @@ Arguments
 .. confpath:: /settings/check_mk/client
     :synopsis: CHECK MK CLIENT SECTION
 
-    **CHECK MK CLIENT SECTION**
+**CHECK MK CLIENT SECTION**
 
     | Section for NSCP active/passive check module.
 
@@ -312,7 +312,7 @@ Arguments
 .. confpath:: /settings/check_mk/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
-    **CLIENT HANDLER SECTION**
+**CLIENT HANDLER SECTION**
 
 
 
@@ -334,7 +334,7 @@ Arguments
 .. confpath:: /settings/check_mk/client/scripts
     :synopsis: REMOTE TARGET DEFINITIONS
 
-    **REMOTE TARGET DEFINITIONS**
+**REMOTE TARGET DEFINITIONS**
 
 
 
@@ -356,7 +356,7 @@ Arguments
 .. confpath:: /settings/check_mk/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
-    **REMOTE TARGET DEFINITIONS**
+**REMOTE TARGET DEFINITIONS**
 
 
 
@@ -378,7 +378,7 @@ Arguments
 .. confpath:: /settings/check_mk/client/targets/default
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: default
 
@@ -782,7 +782,7 @@ Arguments
 .. confpath:: /settings/check_mk/client/targets/sample
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: sample
 

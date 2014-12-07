@@ -243,7 +243,7 @@ Arguments
 .. confpath:: /settings/syslog/client
     :synopsis: SYSLOG CLIENT SECTION
 
-    **SYSLOG CLIENT SECTION**
+**SYSLOG CLIENT SECTION**
 
     | Section for SYSLOG passive check module.
 
@@ -317,7 +317,7 @@ Arguments
 .. confpath:: /settings/syslog/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
-    **CLIENT HANDLER SECTION**
+**CLIENT HANDLER SECTION**
 
 
 
@@ -339,7 +339,7 @@ Arguments
 .. confpath:: /settings/syslog/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
-    **REMOTE TARGET DEFINITIONS**
+**REMOTE TARGET DEFINITIONS**
 
 
 
@@ -361,7 +361,7 @@ Arguments
 .. confpath:: /settings/syslog/client/targets/default
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: default
 
@@ -733,7 +733,7 @@ Arguments
 .. confpath:: /settings/syslog/client/targets/sample
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: sample
 

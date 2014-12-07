@@ -217,7 +217,7 @@ Arguments
 .. confpath:: /settings/NRDP/client
     :synopsis: SMTP CLIENT SECTION
 
-    **SMTP CLIENT SECTION**
+**SMTP CLIENT SECTION**
 
     | Section for SMTP passive check module.
 
@@ -291,7 +291,7 @@ Arguments
 .. confpath:: /settings/NRDP/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
-    **CLIENT HANDLER SECTION**
+**CLIENT HANDLER SECTION**
 
 
 
@@ -313,7 +313,7 @@ Arguments
 .. confpath:: /settings/NRDP/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
-    **REMOTE TARGET DEFINITIONS**
+**REMOTE TARGET DEFINITIONS**
 
 
 
@@ -335,7 +335,7 @@ Arguments
 .. confpath:: /settings/NRDP/client/targets/default
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: default
 
@@ -611,7 +611,7 @@ Arguments
 .. confpath:: /settings/NRDP/client/targets/sample
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: sample
 

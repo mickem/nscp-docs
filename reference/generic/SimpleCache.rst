@@ -147,7 +147,7 @@ Arguments
 .. confpath:: /settings/cache
     :synopsis: CACHE
 
-    **CACHE**
+**CACHE**
 
     | Section for simple cache module (SimpleCache.dll).
 

@@ -327,7 +327,7 @@ Arguments
 .. confpath:: /settings/NSCA/client
     :synopsis: NSCA CLIENT SECTION
 
-    **NSCA CLIENT SECTION**
+**NSCA CLIENT SECTION**
 
     | Section for NSCA passive check module.
 
@@ -463,7 +463,7 @@ Arguments
 .. confpath:: /settings/NSCA/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
-    **CLIENT HANDLER SECTION**
+**CLIENT HANDLER SECTION**
 
 
 
@@ -485,7 +485,7 @@ Arguments
 .. confpath:: /settings/NSCA/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
-    **REMOTE TARGET DEFINITIONS**
+**REMOTE TARGET DEFINITIONS**
 
 
 
@@ -507,7 +507,7 @@ Arguments
 .. confpath:: /settings/NSCA/client/targets/default
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: default
 
@@ -1053,7 +1053,7 @@ Arguments
 .. confpath:: /settings/NSCA/client/targets/sample
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: sample
 

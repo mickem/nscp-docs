@@ -41,7 +41,7 @@ Common Keys:
 .. confpath:: /settings/scheduler
     :synopsis: SCHEDULER SECTION
 
-    **SCHEDULER SECTION**
+**SCHEDULER SECTION**
 
     | Section for the Scheduler module.
 
@@ -91,7 +91,7 @@ Common Keys:
 .. confpath:: /settings/scheduler/schedules
     :synopsis: SCHEDULER SECTION
 
-    **SCHEDULER SECTION**
+**SCHEDULER SECTION**
 
     | Section for the Scheduler module.
 

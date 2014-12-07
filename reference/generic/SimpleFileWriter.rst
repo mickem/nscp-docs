@@ -43,7 +43,7 @@ Common Keys:
 .. confpath:: /settings/writers/file
     :synopsis: FILE WRITER
 
-    **FILE WRITER**
+**FILE WRITER**
 
     | Section for simple file writer module (SimpleFileWriter.dll).
 

@@ -193,7 +193,7 @@ Arguments
 .. confpath:: /settings/graphite/client
     :synopsis: GRAPHITE CLIENT SECTION
 
-    **GRAPHITE CLIENT SECTION**
+**GRAPHITE CLIENT SECTION**
 
     | Section for graphite passive check module.
 
@@ -267,7 +267,7 @@ Arguments
 .. confpath:: /settings/graphite/client/handlers
     :synopsis: CLIENT HANDLER SECTION
 
-    **CLIENT HANDLER SECTION**
+**CLIENT HANDLER SECTION**
 
 
 
@@ -289,7 +289,7 @@ Arguments
 .. confpath:: /settings/graphite/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
 
-    **REMOTE TARGET DEFINITIONS**
+**REMOTE TARGET DEFINITIONS**
 
 
 
@@ -311,7 +311,7 @@ Arguments
 .. confpath:: /settings/graphite/client/targets/default
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: default
 
@@ -515,7 +515,7 @@ Arguments
 .. confpath:: /settings/graphite/client/targets/sample
     :synopsis: TARGET DEFENITION
 
-    **TARGET DEFENITION**
+**TARGET DEFENITION**
 
     | Target definition for: sample
 
