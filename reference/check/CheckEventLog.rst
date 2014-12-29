@@ -83,6 +83,7 @@ A quick reference for all available queries (check commands) in the CheckEventLo
     :option:`perf-config` |  | Performance data generation configuration
     :option:`unique-index` |  | Unique syntax.
     :option:`top-syntax` | ${status}: ${problem_count}/${count} ${problem_list} | Top level syntax.
+    :option:`op-syntax` |  | Top level syntax.
     :option:`detail-syntax` | ${file} ${source} (${message}) | Detail level syntax.
     :option:`perf-syntax` | ${file}_${source} | Performance alias syntax.
     :option:`file` |  | File to read (can be specified multiple times to check multiple files.
@@ -152,6 +153,7 @@ Arguments
     | warn_list       A list of all items which matched the warning criteria                         
     | crit_list       A list of all items which matched the critical criteria                        
     | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | detail_list     A special list with critical, then warning and fainally ok                     
     | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ============== ===============================================================================
 
@@ -192,6 +194,7 @@ Arguments
     | warn_list       A list of all items which matched the warning criteria                         
     | crit_list       A list of all items which matched the critical criteria                        
     | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | detail_list     A special list with critical, then warning and fainally ok                     
     | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ============== ===============================================================================
 
@@ -237,6 +240,7 @@ Arguments
     | warn_list       A list of all items which matched the warning criteria                         
     | crit_list       A list of all items which matched the critical criteria                        
     | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | detail_list     A special list with critical, then warning and fainally ok                     
     | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ============== ===============================================================================
 
@@ -282,6 +286,7 @@ Arguments
     | warn_list       A list of all items which matched the warning criteria                         
     | crit_list       A list of all items which matched the critical criteria                        
     | problem_list    A list of all items which matched either the critical or the warning criteria  
+    | detail_list     A special list with critical, then warning and fainally ok                     
     | status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ============== ===============================================================================
 
@@ -339,6 +344,7 @@ Arguments
     | ${warn_list}       A list of all items which matched the warning criteria                         
     | ${crit_list}       A list of all items which matched the critical criteria                        
     | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${detail_list}     A special list with critical, then warning and fainally ok                     
     | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ================= ===============================================================================
 
@@ -378,6 +384,47 @@ Arguments
     | ${warn_list}       A list of all items which matched the warning criteria                         
     | ${crit_list}       A list of all items which matched the critical criteria                        
     | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${detail_list}     A special list with critical, then warning and fainally ok                     
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
+
+
+
+
+
+.. option:: op-syntax
+    :synopsis: Top level syntax.
+
+    | Top level syntax.
+    | Used to format the message to return can include strings as well as special keywords such as:
+
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(category)       TODO                                                                            
+    | %(computer)       Which computer generated the message                                            
+    | %(customer)       TODO                                                                            
+    | %(file)           The logfile name                                                                
+    | %(id)             Eventlog id                                                                     
+    | %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
+    | %(log)            alias for file                                                                  
+    | %(message)        The message rendered as a string.                                               
+    | %(rawid)          Raw message id (contains many other fields all baked into a single number)      
+    | %(source)         Source system.                                                                  
+    | %(type)           alias for level (old, deprecated)                                               
+    | %(written)        When the message was written to file                                            
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${detail_list}     A special list with critical, then warning and fainally ok                     
     | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ================= ===============================================================================
 
@@ -418,6 +465,7 @@ Arguments
     | ${warn_list}       A list of all items which matched the warning criteria                         
     | ${crit_list}       A list of all items which matched the critical criteria                        
     | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${detail_list}     A special list with critical, then warning and fainally ok                     
     | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ================= ===============================================================================
 
@@ -458,6 +506,7 @@ Arguments
     | ${warn_list}       A list of all items which matched the warning criteria                         
     | ${crit_list}       A list of all items which matched the critical criteria                        
     | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${detail_list}     A special list with critical, then warning and fainally ok                     
     | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ================= ===============================================================================
 
@@ -635,10 +684,10 @@ Arguments
         :delim: | 
         :header: "Key", "Default Value", "Description"
     
-        :confkey:\`buffer size\` | 131072 | BUFFER_SIZE
-        :confkey:\`debug\` | 0 | DEBUG
-        :confkey:\`lookup names\` | 1 | LOOKUP NAMES
-        :confkey:\`syntax\` |  | SYNTAX
+        :confkey:`buffer size` | 131072 | BUFFER_SIZE
+        :confkey:`debug` | 0 | DEBUG
+        :confkey:`lookup names` | 1 | LOOKUP NAMES
+        :confkey:`syntax` |  | SYNTAX
 
     **Sample**::
 
@@ -757,10 +806,10 @@ Arguments
         :delim: | 
         :header: "Key", "Default Value", "Description"
     
-        :confkey:\`debug\` | 0 | DEBUG
-        :confkey:\`enabled\` | 0 | REAL TIME CHECKING
-        :confkey:\`log\` | application,system | LOGS TO CHECK
-        :confkey:\`startup age\` | 30m | STARTUP AGE
+        :confkey:`debug` | 0 | DEBUG
+        :confkey:`enabled` | 0 | REAL TIME CHECKING
+        :confkey:`log` | application,system | LOGS TO CHECK
+        :confkey:`startup age` | 30m | STARTUP AGE
 
     **Sample**::
 

@@ -72,6 +72,7 @@ Sample keys:
     :confpath:`/settings/logfile/real-time/checks/sample` | :confkey:`~/settings/logfile/real-time/checks/sample.is template` | IS TEMPLATE
     :confpath:`/settings/logfile/real-time/checks/sample` | :confkey:`~/settings/logfile/real-time/checks/sample.maximum age` | MAGIMUM AGE
     :confpath:`/settings/logfile/real-time/checks/sample` | :confkey:`~/settings/logfile/real-time/checks/sample.ok` | OK FILTER
+    :confpath:`/settings/logfile/real-time/checks/sample` | :confkey:`~/settings/logfile/real-time/checks/sample.ok syntax` | SYNTAX
     :confpath:`/settings/logfile/real-time/checks/sample` | :confkey:`~/settings/logfile/real-time/checks/sample.parent` | PARENT
     :confpath:`/settings/logfile/real-time/checks/sample` | :confkey:`~/settings/logfile/real-time/checks/sample.perf config` | PERF CONFIG
     :confpath:`/settings/logfile/real-time/checks/sample` | :confkey:`~/settings/logfile/real-time/checks/sample.severity` | SEVERITY
@@ -113,6 +114,7 @@ A quick reference for all available queries (check commands) in the CheckLogFile
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${count}/${total} (${problem_list}) | Top level syntax.
+    :option:`op-syntax` |  | Top level syntax.
     :option:`detail-syntax` | ${column1} | Detail level syntax.
     :option:`perf-syntax` | ${column1} | Performance alias syntax.
     :option:`line-split` | \n | Character string used to split a file into several lines (default \n)
@@ -185,6 +187,7 @@ Arguments
     | warn_list                        
     | crit_list                        
     | problem_list                     
+    | detail_list                      
     | status                           
     | ================================
 
@@ -227,6 +230,7 @@ Arguments
     | warn_list                        
     | crit_list                        
     | problem_list                     
+    | detail_list                      
     | status                           
     | ================================
 
@@ -274,6 +278,7 @@ Arguments
     | warn_list                        
     | crit_list                        
     | problem_list                     
+    | detail_list                      
     | status                           
     | ================================
 
@@ -321,6 +326,7 @@ Arguments
     | warn_list                        
     | crit_list                        
     | problem_list                     
+    | detail_list                      
     | status                           
     | ================================
 
@@ -378,6 +384,47 @@ Arguments
     | ${warn_list}       A list of all items which matched the warning criteria                         
     | ${crit_list}       A list of all items which matched the critical criteria                        
     | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${detail_list}     A special list with critical, then warning and fainally ok                     
+    | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    | ================= ===============================================================================
+
+
+
+
+
+.. option:: op-syntax
+    :synopsis: Top level syntax.
+
+    | Top level syntax.
+    | Used to format the message to return can include strings as well as special keywords such as:
+
+    | ================= =============================================================================== 
+    | Key               Value                                                                           
+    | ----------------- ------------------------------------------------------------------------------- 
+    | %(column1)        The value in the first column                                                   
+    | %(column2)        The value in the second column                                                  
+    | %(column3)        The value in the third column                                                   
+    | %(column4)        The value in the 4:th column                                                    
+    | %(column5)        The value in the 5:th column                                                    
+    | %(column6)        The value in the 6:th column                                                    
+    | %(column7)        The value in the 7:th column                                                    
+    | %(column8)        The value in the 8:th column                                                    
+    | %(column9)        The value in the 9:th column                                                    
+    | %(file)           The name of the file                                                            
+    | %(filename)       The name of the file                                                            
+    | %(line)           Match the content of an entire line                                             
+    | ${count}          Number of items matching the filter                                             
+    | ${total}           Total number of items                                                          
+    | ${ok_count}        Number of items matched the ok criteria                                        
+    | ${warn_count}      Number of items matched the warning criteria                                   
+    | ${crit_count}      Number of items matched the critical criteria                                  
+    | ${problem_count}   Number of items matched either warning or critical criteria                    
+    | ${list}            A list of all items which matched the filter                                   
+    | ${ok_list}         A list of all items which matched the ok criteria                              
+    | ${warn_list}       A list of all items which matched the warning criteria                         
+    | ${crit_list}       A list of all items which matched the critical criteria                        
+    | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${detail_list}     A special list with critical, then warning and fainally ok                     
     | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ================= ===============================================================================
 
@@ -418,6 +465,7 @@ Arguments
     | ${warn_list}       A list of all items which matched the warning criteria                         
     | ${crit_list}       A list of all items which matched the critical criteria                        
     | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${detail_list}     A special list with critical, then warning and fainally ok                     
     | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ================= ===============================================================================
 
@@ -458,6 +506,7 @@ Arguments
     | ${warn_list}       A list of all items which matched the warning criteria                         
     | ${crit_list}       A list of all items which matched the critical criteria                        
     | ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    | ${detail_list}     A special list with critical, then warning and fainally ok                     
     | ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
     | ================= ===============================================================================
 
@@ -621,6 +670,7 @@ Arguments
         :confkey:`is template` | 0 | IS TEMPLATE
         :confkey:`maximum age` | 5m | MAGIMUM AGE
         :confkey:`ok` |  | OK FILTER
+        :confkey:`ok syntax` |  | SYNTAX
         :confkey:`parent` | default | PARENT
         :confkey:`perf config` |  | PERF CONFIG
         :confkey:`severity` |  | SEVERITY
@@ -647,6 +697,7 @@ Arguments
         is template=0
         maximum age=5m
         ok=
+        ok syntax=
         parent=default
         perf config=
         severity=
@@ -1008,6 +1059,32 @@ Arguments
             [/settings/logfile/real-time/checks/sample]
             # OK FILTER
             ok=
+
+
+    .. confkey:: ok syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/logfile/real-time/checks/sample
+
+        **Key**: ok syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckLogFile`
+
+        **Sample**::
+
+            [/settings/logfile/real-time/checks/sample]
+            # SYNTAX
+            ok syntax=
 
 
     .. confkey:: parent
