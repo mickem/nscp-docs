@@ -14,6 +14,7 @@ after a new release.
    0.4.0.rst
    0.4.1.rst
    0.4.2.rst
+   0.4.3.rst
 
 The "Changelog" contains *all* nontrivial changes to NSClient++ for the current version.
 

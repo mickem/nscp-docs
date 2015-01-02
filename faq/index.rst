@@ -119,7 +119,7 @@ One simple way to show the log is to run in test mode like so:
   But it is impossible to tell what is wrong without the NSClient++ log.
 
 1.10 Enable debug log
-********************
+*********************
 
 By default the log level is info which means to see debug messages you need to enable debug log::
 
@@ -170,7 +170,7 @@ For details see :ref:`how_to_external_scripts`
 If you get illegal metachars or similar errors you are sending characters which are considered harmful through NRPE.
 This is a security measure inherited from the regular NRPE client.
 
-The following characters are considered harmful: |``&><'\"\\[]{}
+The following characters are considered harmful: \|\`&><'\"\\[]{}
 To work around this you have two options.
 
 1. You can enable it
