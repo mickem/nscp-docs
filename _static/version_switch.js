@@ -2,17 +2,18 @@
   'use strict';
 
   var all_versions = {
-    '0.4.3': 'dev (0.4.3)',
-    '0.4.2': '0.4.2',
+    '0.4.4': 'dev (0.4.4)',
+    '0.4.3': 'stable (0.4.3)',
+    '0.4.2': 'legacy (0.4.2)',
   };
 
-  function build_select(current_version, current_release) {
+  function build_select(current_version) {
     var buf = ['<select>'];
 
     $.each(all_versions, function(version, title) {
       buf.push('<option value="' + version + '"');
       if (version == current_version)
-        buf.push(' selected="selected">' + current_release + '</option>');
+        buf.push(' selected="selected">' + title + '</option>');
       else
         buf.push('>' + title + '</option>');
     });
@@ -24,9 +25,7 @@
   function patch_url(url, new_version) {
     var url_re = /\.org\/(\d|dev|((release\/)?\d\.\d[\w\d\.]*))\//,
         new_url = url.replace(url_re, '.org/' + new_version + '/');
-
     if (new_url == url && !new_url.match(url_re)) {
-      // python 2 url without version?
       new_url = url.replace(/\.org\//, '.org/' + new_version + '/');
     }
     return new_url;
@@ -53,9 +52,7 @@
   }
 
   $(document).ready(function() {
-    var release = DOCUMENTATION_OPTIONS.VERSION;
-    var version = release.substr(0, 3);
-    var select = build_select(version, release);
+    var select = build_select(DOCUMENTATION_OPTIONS.VERSION);
 
     $('.version_switcher_placeholder').html(select);
     $('.version_switcher_placeholder select').bind('change', on_switch);
