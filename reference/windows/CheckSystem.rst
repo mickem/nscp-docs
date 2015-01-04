@@ -61,12 +61,6 @@ Common Keys:
     :delim: | 
     :header: "Path / Section", "Key", "Description"
 
-    :confpath:`/settings/default` | :confkey:`~/settings/default.allowed hosts` | ALLOWED HOSTS
-    :confpath:`/settings/default` | :confkey:`~/settings/default.bind to` | BIND TO ADDRESS
-    :confpath:`/settings/default` | :confkey:`~/settings/default.cache allowed hosts` | CACHE ALLOWED HOSTS
-    :confpath:`/settings/default` | :confkey:`~/settings/default.inbox` | INBOX
-    :confpath:`/settings/default` | :confkey:`~/settings/default.password` | PASSWORD
-    :confpath:`/settings/default` | :confkey:`~/settings/default.timeout` | TIMEOUT
     :confpath:`/settings/system/windows` | :confkey:`~/settings/system/windows.default buffer length` | DEFAULT LENGTH
 
 Advanced keys:
@@ -76,11 +70,6 @@ Advanced keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/default` | :confkey:`~/settings/default.encoding` | NRPE PAYLOAD ENCODING
-    :confpath:`/settings/default` | :confkey:`~/settings/default.modern commands` | Register modern aliases for built-in commands
-    :confpath:`/settings/default` | :confkey:`~/settings/default.socket queue size` | LISTEN QUEUE
-    :confpath:`/settings/default` | :confkey:`~/settings/default.thread pool` | THREAD POOL
-    :confpath:`/settings/system/windows` | :confkey:`~/settings/system/windows.modern commands` | Register modern aliases for built-in commands
     :confpath:`/settings/system/windows` | :confkey:`~/settings/system/windows.subsystem` | PDH SUBSYSTEM
 
 Sample keys:
@@ -3710,282 +3699,8 @@ Arguments
 
 
 
-… default
----------
-
-.. confpath:: /settings/default
-    :synopsis: 
-
-
-
-
-
-
-    .. csv-table:: 
-        :class: contentstable 
-        :delim: | 
-        :header: "Key", "Default Value", "Description"
-    
-        :confkey:`allowed hosts` | 127.0.0.1 | ALLOWED HOSTS
-        :confkey:`bind to` |  | BIND TO ADDRESS
-        :confkey:`cache allowed hosts` | 1 | CACHE ALLOWED HOSTS
-        :confkey:`encoding` |  | NRPE PAYLOAD ENCODING
-        :confkey:`inbox` | inbox | INBOX
-        :confkey:`modern commands` | 1 | Register modern aliases for built-in commands
-        :confkey:`password` |  | PASSWORD
-        :confkey:`socket queue size` | 0 | LISTEN QUEUE
-        :confkey:`thread pool` | 10 | THREAD POOL
-        :confkey:`timeout` | 30 | TIMEOUT
-
-    **Sample**::
-
-        # 
-        # 
-        [/settings/default]
-        allowed hosts=127.0.0.1
-        bind to=
-        cache allowed hosts=1
-        encoding=
-        inbox=inbox
-        modern commands=1
-        password=
-        socket queue size=0
-        thread pool=10
-        timeout=30
-
-
-    .. confkey:: allowed hosts
-        :synopsis: ALLOWED HOSTS
-
-        **ALLOWED HOSTS**
-
-        | A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges.
-
-        **Path**: /settings/default
-
-        **Key**: allowed hosts
-
-        **Default value**: 127.0.0.1
-
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
-
-        **Sample**::
-
-            [/settings/default]
-            # ALLOWED HOSTS
-            allowed hosts=127.0.0.1
-
-
-    .. confkey:: bind to
-        :synopsis: BIND TO ADDRESS
-
-        **BIND TO ADDRESS**
-
-        | Allows you to bind server to a specific local address. This has to be a dotted ip address not a host name. Leaving this blank will bind to all available IP addresses.
-
-        **Path**: /settings/default
-
-        **Key**: bind to
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
-
-        **Sample**::
-
-            [/settings/default]
-            # BIND TO ADDRESS
-            bind to=
-
-
-    .. confkey:: cache allowed hosts
-        :synopsis: CACHE ALLOWED HOSTS
-
-        **CACHE ALLOWED HOSTS**
-
-        | If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server.
-
-        **Path**: /settings/default
-
-        **Key**: cache allowed hosts
-
-        **Default value**: 1
-
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
-
-        **Sample**::
-
-            [/settings/default]
-            # CACHE ALLOWED HOSTS
-            cache allowed hosts=1
-
-
-    .. confkey:: encoding
-        :synopsis: NRPE PAYLOAD ENCODING
-
-        **NRPE PAYLOAD ENCODING**
-
-
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/default
-
-        **Key**: encoding
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
-
-        **Sample**::
-
-            [/settings/default]
-            # NRPE PAYLOAD ENCODING
-            encoding=
-
-
-    .. confkey:: inbox
-        :synopsis: INBOX
-
-        **INBOX**
-
-        | The default channel to post incoming messages on
-
-        **Path**: /settings/default
-
-        **Key**: inbox
-
-        **Default value**: inbox
-
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
-
-        **Sample**::
-
-            [/settings/default]
-            # INBOX
-            inbox=inbox
-
-
-    .. confkey:: modern commands
-        :synopsis: Register modern aliases for built-in commands
-
-        **Register modern aliases for built-in commands**
-
-        | Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/default
-
-        **Key**: modern commands
-
-        **Default value**: 1
-
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
-
-        **Sample**::
-
-            [/settings/default]
-            # Register modern aliases for built-in commands
-            modern commands=1
-
-
-    .. confkey:: password
-        :synopsis: PASSWORD
-
-        **PASSWORD**
-
-        | Password to use
-
-        **Path**: /settings/default
-
-        **Key**: password
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
-
-        **Sample**::
-
-            [/settings/default]
-            # PASSWORD
-            password=
-
-
-    .. confkey:: socket queue size
-        :synopsis: LISTEN QUEUE
-
-        **LISTEN QUEUE**
-
-        | Number of sockets to queue before starting to refuse new incoming connections. This can be used to tweak the amount of simultaneous sockets that the server accepts.
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/default
-
-        **Key**: socket queue size
-
-        **Default value**: 0
-
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
-
-        **Sample**::
-
-            [/settings/default]
-            # LISTEN QUEUE
-            socket queue size=0
-
-
-    .. confkey:: thread pool
-        :synopsis: THREAD POOL
-
-        **THREAD POOL**
-
-
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/default
-
-        **Key**: thread pool
-
-        **Default value**: 10
-
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
-
-        **Sample**::
-
-            [/settings/default]
-            # THREAD POOL
-            thread pool=10
-
-
-    .. confkey:: timeout
-        :synopsis: TIMEOUT
-
-        **TIMEOUT**
-
-        | Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out.
-
-        **Path**: /settings/default
-
-        **Key**: timeout
-
-        **Default value**: 30
-
-        **Used by**: :module:`CheckMKServer`,  :module:`CheckSystem`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
-
-        **Sample**::
-
-            [/settings/default]
-            # TIMEOUT
-            timeout=30
-
-
-
-
-… system / windows
-------------------
+/ settings/ system/ windows
+---------------------------
 
 .. confpath:: /settings/system/windows
     :synopsis: WINDOWS CHECK SYSTEM
@@ -4001,7 +3716,6 @@ Arguments
         :header: "Key", "Default Value", "Description"
     
         :confkey:`default buffer length` | 1h | DEFAULT LENGTH
-        :confkey:`modern commands` | 1 | Register modern aliases for built-in commands
         :confkey:`subsystem` | default | PDH SUBSYSTEM
 
     **Sample**::
@@ -4010,7 +3724,6 @@ Arguments
         # Section for system checks and system settings
         [/settings/system/windows]
         default buffer length=1h
-        modern commands=1
         subsystem=default
 
 
@@ -4034,30 +3747,6 @@ Arguments
             [/settings/system/windows]
             # DEFAULT LENGTH
             default buffer length=1h
-
-
-    .. confkey:: modern commands
-        :synopsis: Register modern aliases for built-in commands
-
-        **Register modern aliases for built-in commands**
-
-        | Register modern alias for commands (ccheck_xxx as opposed of CheckXXX) these are the names which will be used in future version of NSClient++ parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/system/windows
-
-        **Key**: modern commands
-
-        **Default value**: 1
-
-        **Used by**: :module:`CheckSystem`
-
-        **Sample**::
-
-            [/settings/system/windows]
-            # Register modern aliases for built-in commands
-            modern commands=1
 
 
     .. confkey:: subsystem
@@ -4086,8 +3775,8 @@ Arguments
 
 
 
-… system / windows / counters
------------------------------
+…  / counters
+-------------
 
 .. confpath:: /settings/system/windows/counters
     :synopsis: COUNTERS
@@ -4108,8 +3797,8 @@ Arguments
 
 
 
-… system / windows / real-time
-------------------------------
+…  / real-time
+--------------
 
 .. confpath:: /settings/system/windows/real-time
     :synopsis: CONFIGURE REALTIME CHECKING
@@ -4130,8 +3819,8 @@ Arguments
 
 
 
-… system / windows / real-time / checks
----------------------------------------
+…  / real-time / checks
+-----------------------
 
 .. confpath:: /settings/system/windows/real-time/checks
     :synopsis: REALTIME FILTERS
@@ -4152,8 +3841,8 @@ Arguments
 
 
 
-… system / windows / real-time / checks / sample
-------------------------------------------------
+…  / real-time / checks / sample
+--------------------------------
 
 .. confpath:: /settings/system/windows/real-time/checks/sample
     :synopsis: REAL TIME FILTER DEFENITION
@@ -4751,8 +4440,8 @@ Arguments
 
 
 
-… system / windows / service mapping
-------------------------------------
+…  / service mapping
+--------------------
 
 .. confpath:: /settings/system/windows/service mapping
     :synopsis: SERVICE MAPPING SECTION
