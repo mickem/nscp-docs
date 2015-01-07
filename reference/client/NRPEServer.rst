@@ -231,7 +231,7 @@ Advanced keys:
 
         **PASSWORD**
 
-        | Password to use
+        | Password used to authenticate against server
 
         **Path**: /settings/default
 

@@ -84,6 +84,8 @@ A quick reference for all available queries (check commands) in the SimpleCache 
     :option:`not-found-code` | unknown | The return status to return when a message is not found
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -135,7 +137,6 @@ Arguments
     :synopsis: The return status to return when a message is not found
 
     | The return status to return when a message is not found
-
 
 
 

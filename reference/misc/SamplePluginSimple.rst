@@ -44,9 +44,10 @@ A quick reference for all available queries (check commands) in the SamplePlugin
 
 
 
+
+
 Arguments
 *********
-
 :query:`sample_raw_command`
 ---------------------------
 .. query:: sample_raw_command
@@ -58,8 +59,9 @@ Arguments
 
 
 
+
+
 Arguments
 *********
-
 
 

@@ -135,6 +135,8 @@ A quick reference for all available queries (check commands) in the NRPEClient m
     :option:`ssl` | N/A | Initial an ssl handshake with the server.
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -252,7 +254,6 @@ Arguments
 
     | Initial an ssl handshake with the server.
 
-
 :query:`nrpe_forward`
 ---------------------
 .. query:: nrpe_forward
@@ -264,9 +265,10 @@ Arguments
 
 
 
+
+
 Arguments
 *********
-
 :query:`nrpe_query`
 -------------------
 .. query:: nrpe_query
@@ -306,6 +308,8 @@ Arguments
     :option:`payload-length` |  | Length of payload (has to be same as on the server)
     :option:`buffer-length` |  | Same as payload-length (used for legacy reasons)
     :option:`ssl` | N/A | Initial an ssl handshake with the server.
+
+
 
 
 Arguments
@@ -435,7 +439,6 @@ Arguments
 
     | Initial an ssl handshake with the server.
 
-
 :query:`nrpe_submit`
 --------------------
 .. query:: nrpe_submit
@@ -475,6 +478,8 @@ Arguments
     :option:`payload-length` |  | Length of payload (has to be same as on the server)
     :option:`buffer-length` |  | Same as payload-length (used for legacy reasons)
     :option:`ssl` | N/A | Initial an ssl handshake with the server.
+
+
 
 
 Arguments
@@ -603,7 +608,6 @@ Arguments
     :synopsis: Initial an ssl handshake with the server.
 
     | Initial an ssl handshake with the server.
-
 
 
 

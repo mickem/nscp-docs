@@ -114,6 +114,8 @@ A quick reference for all available queries (check commands) in the NRDPClient m
     :option:`token` |  | The security token
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -205,7 +207,6 @@ Arguments
     :synopsis: The security token
 
     | The security token
-
 
 
 

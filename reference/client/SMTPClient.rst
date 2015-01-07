@@ -94,6 +94,8 @@ A quick reference for all available queries (check commands) in the SMTPClient m
     :option:`template` |  | Do not initial an ssl handshake with the server, talk in plaintext.
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -175,7 +177,6 @@ Arguments
     :synopsis: Do not initial an ssl handshake with the server, talk in plaintext.
 
     | Do not initial an ssl handshake with the server, talk in plaintext.
-
 
 
 

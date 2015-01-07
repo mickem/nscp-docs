@@ -105,6 +105,8 @@ A quick reference for all available queries (check commands) in the GraphiteClie
     :option:`timeout` |  | 
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -179,7 +181,6 @@ Arguments
 
 .. option:: timeout
     :synopsis: 
-
 
 
 

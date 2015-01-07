@@ -125,6 +125,8 @@ A quick reference for all available queries (check commands) in the SyslogClient
     :option:`message template` |  | Message template (TODO)
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -231,7 +233,6 @@ Arguments
     :synopsis: Message template (TODO)
 
     | Message template (TODO)
-
 
 
 

@@ -229,7 +229,7 @@ Advanced keys:
 
         **PASSWORD**
 
-        | Password to use
+        | Password used to authenticate against server
 
         **Path**: /settings/default
 
@@ -665,7 +665,7 @@ Advanced keys:
 
         **PASSWORD**
 
-        | Password to use parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
+        | Password used to authenticate against server parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
 
         **Advanced** (means it is not commonly used)
 

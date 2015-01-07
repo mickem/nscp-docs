@@ -51,6 +51,8 @@ A quick reference for all available queries (check commands) in the CheckNSCP mo
     :option:`help-short` | N/A | Show help screen (short format).
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -67,7 +69,6 @@ Arguments
     :synopsis: Show help screen (short format).
 
     | Show help screen (short format).
-
 
 
 

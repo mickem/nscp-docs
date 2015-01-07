@@ -148,6 +148,8 @@ A quick reference for all available queries (check commands) in the NSCAClient m
     :option:`retries` |  | Number of times to retry a failed connection attempt
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -315,7 +317,6 @@ Arguments
     :synopsis: Number of times to retry a failed connection attempt
 
     | Number of times to retry a failed connection attempt
-
 
 
 

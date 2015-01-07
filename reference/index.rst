@@ -23,6 +23,17 @@ Module which is used to check a Windows systems health.
 
    windows/*
 
+Linux Modules
+---------------
+
+Module which is used to check a Linux systems health.
+
+.. toctree::
+   :maxdepth: 3
+   :glob:
+
+   unix/*
+
 Generic Modules
 ---------------
 

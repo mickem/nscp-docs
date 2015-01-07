@@ -82,6 +82,8 @@ A quick reference for all available queries (check commands) in the CheckHelpers
     :option:`help-short` | N/A | Show help screen (short format).
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -98,7 +100,6 @@ Arguments
     :synopsis: Show help screen (short format).
 
     | Show help screen (short format).
-
 
 :query:`check_always_ok`
 ------------------------
@@ -119,6 +120,8 @@ Arguments
     :option:`help-short` | N/A | Show help screen (short format).
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -135,7 +138,6 @@ Arguments
     :synopsis: Show help screen (short format).
 
     | Show help screen (short format).
-
 
 :query:`check_always_warning`
 -----------------------------
@@ -156,6 +158,8 @@ Arguments
     :option:`help-short` | N/A | Show help screen (short format).
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -172,7 +176,6 @@ Arguments
     :synopsis: Show help screen (short format).
 
     | Show help screen (short format).
-
 
 :query:`check_critical`
 -----------------------
@@ -192,6 +195,8 @@ Arguments
     :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`message` | No message | Message to return
+
+
 
 
 Arguments
@@ -216,7 +221,6 @@ Arguments
 
     | Message to return
 
-
 :query:`check_multi`
 --------------------
 .. query:: check_multi
@@ -239,6 +243,8 @@ Arguments
     :option:`separator` | ,  | Separator between messages
     :option:`prefix` |  | Message prefix
     :option:`suffix` |  | Message suffix
+
+
 
 
 Arguments
@@ -283,7 +289,6 @@ Arguments
 
     | Message suffix
 
-
 :query:`check_negate`
 ---------------------
 .. query:: check_negate
@@ -307,6 +312,8 @@ Arguments
     :option:`unknown` |  | The state to return instead of UNKNOWN
     :option:`command` |  | Wrapped command to execute
     :option:`arguments` |  | List of arguments (for wrapped command)
+
+
 
 
 Arguments
@@ -356,7 +363,6 @@ Arguments
 
     | List of arguments (for wrapped command)
 
-
 :query:`check_ok`
 -----------------
 .. query:: check_ok
@@ -375,6 +381,8 @@ Arguments
     :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`message` | No message | Message to return
+
+
 
 
 Arguments
@@ -399,7 +407,6 @@ Arguments
 
     | Message to return
 
-
 :query:`check_timeout`
 ----------------------
 .. query:: check_timeout
@@ -421,6 +428,8 @@ Arguments
     :option:`command` |  | Wrapped command to execute
     :option:`arguments` |  | List of arguments (for wrapped command)
     :option:`return` |  | The return status
+
+
 
 
 Arguments
@@ -460,7 +469,6 @@ Arguments
 
     | The return status
 
-
 :query:`check_version`
 ----------------------
 .. query:: check_version
@@ -480,6 +488,8 @@ Arguments
     :option:`help-short` | N/A | Show help screen (short format).
 
 
+
+
 Arguments
 *********
 .. option:: help
@@ -496,7 +506,6 @@ Arguments
     :synopsis: Show help screen (short format).
 
     | Show help screen (short format).
-
 
 :query:`check_warning`
 ----------------------
@@ -516,6 +525,8 @@ Arguments
     :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`message` | No message | Message to return
+
+
 
 
 Arguments
@@ -540,7 +551,6 @@ Arguments
 
     | Message to return
 
-
 :query:`filter_perf`
 --------------------
 .. query:: filter_perf
@@ -562,6 +572,8 @@ Arguments
     :option:`limit` | 0 | The maximum number of items to return (0 returns all items)
     :option:`command` |  | Wrapped command to execute
     :option:`arguments` |  | List of arguments (for wrapped command)
+
+
 
 
 Arguments
@@ -600,7 +612,6 @@ Arguments
     :synopsis: List of arguments (for wrapped command)
 
     | List of arguments (for wrapped command)
-
 
 
 

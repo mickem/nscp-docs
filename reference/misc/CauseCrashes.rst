@@ -63,6 +63,14 @@ A quick reference for all available queries (check commands) in the CauseCrashes
     :option:`help-short` | N/A | Show help screen (short format).
 
 
+
+Samples
+*******
+
+.. include:: ../../samples/CauseCrashes_crash_client_samples.inc
+
+
+
 Arguments
 *********
 .. option:: help
@@ -79,7 +87,6 @@ Arguments
     :synopsis: Show help screen (short format).
 
     | Show help screen (short format).
-
 
 
 
