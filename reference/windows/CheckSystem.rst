@@ -2012,7 +2012,7 @@ Arguments
     :option:`filter` | state != 'unreadable' | Filter which marks interesting items.
     :option:`warning` | state not in ('started') | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
-    :option:`critical` | state = 'stopped' | Filter which marks items which generates a critical state.
+    :option:`critical` | state = 'stopped' or count = 0 | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-syntax` | OK all processes are ok. | Message to display when nothing matched filter.
