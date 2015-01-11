@@ -60,6 +60,7 @@ Advanced keys:
     :confpath:`/settings/NSCA/server` | :confkey:`~/settings/NSCA/server.inbox` | INBOX
     :confpath:`/settings/NSCA/server` | :confkey:`~/settings/NSCA/server.password` | PASSWORD
     :confpath:`/settings/NSCA/server` | :confkey:`~/settings/NSCA/server.socket queue size` | LISTEN QUEUE
+    :confpath:`/settings/NSCA/server` | :confkey:`~/settings/NSCA/server.ssl options` | VERIFY MODE
     :confpath:`/settings/NSCA/server` | :confkey:`~/settings/NSCA/server.thread pool` | THREAD POOL
     :confpath:`/settings/NSCA/server` | :confkey:`~/settings/NSCA/server.timeout` | TIMEOUT
     :confpath:`/settings/NSCA/server` | :confkey:`~/settings/NSCA/server.verify mode` | VERIFY MODE
@@ -350,6 +351,7 @@ Advanced keys:
         :confkey:`performance data` | 1 | PERFORMANCE DATA
         :confkey:`port` | 5667 | PORT NUMBER
         :confkey:`socket queue size` | 0 | LISTEN QUEUE
+        :confkey:`ssl options` |  | VERIFY MODE
         :confkey:`thread pool` | 10 | THREAD POOL
         :confkey:`timeout` | 30 | TIMEOUT
         :confkey:`use ssl` | 0 | ENABLE SSL ENCRYPTION
@@ -376,6 +378,7 @@ Advanced keys:
         performance data=1
         port=5667
         socket queue size=0
+        ssl options=
         thread pool=10
         timeout=30
         use ssl=0
@@ -772,6 +775,43 @@ Advanced keys:
             [/settings/NSCA/server]
             # LISTEN QUEUE
             socket queue size=0
+
+
+    .. confkey:: ssl options
+        :synopsis: VERIFY MODE
+
+        **VERIFY MODE**
+
+        | Comma separated list of verification flags to set on the SSL socket.
+
+          ==================== ==================================================================================================================================================================================================================================== 
+          default-workarounds  Various workarounds for what I understand to be broken ssl implementations                                                                                                                                                           
+          -------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+          no-sslv2             Do not use the SSLv2 protocol.                                                                                                                                                                                                       
+          no-sslv3             Do not use the SSLv3 protocol.                                                                                                                                                                                                       
+          no-tlsv1             Do not use the TLSv1 protocol.                                                                                                                                                                                                       
+          single-dh-use        Always create a new key when using temporary/ephemeral DH parameters. This option must be used to prevent small subgroup attacks, when the DH parameters were not generated using "strong" primes (e.g. when using DSA-parameters).  
+          ==================== ====================================================================================================================================================================================================================================
+
+
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NSCA/server
+
+        **Key**: ssl options
+
+        **Default value**: 
+
+        **Used by**: :module:`NSCAServer`
+
+        **Sample**::
+
+            [/settings/NSCA/server]
+            # VERIFY MODE
+            ssl options=
 
 
     .. confkey:: thread pool

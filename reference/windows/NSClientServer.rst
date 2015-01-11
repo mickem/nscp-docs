@@ -57,6 +57,7 @@ Advanced keys:
     :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.dh` | DH KEY
     :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.password` | PASSWORD
     :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.socket queue size` | LISTEN QUEUE
+    :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.ssl options` | VERIFY MODE
     :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.thread pool` | THREAD POOL
     :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.timeout` | TIMEOUT
     :confpath:`/settings/NSClient/server` | :confkey:`~/settings/NSClient/server.verify mode` | VERIFY MODE
@@ -344,6 +345,7 @@ Advanced keys:
         :confkey:`performance data` | 1 | PERFORMANCE DATA
         :confkey:`port` | 12489 | PORT NUMBER
         :confkey:`socket queue size` | 0 | LISTEN QUEUE
+        :confkey:`ssl options` |  | VERIFY MODE
         :confkey:`thread pool` | 10 | THREAD POOL
         :confkey:`timeout` | 30 | TIMEOUT
         :confkey:`use ssl` | 0 | ENABLE SSL ENCRYPTION
@@ -367,6 +369,7 @@ Advanced keys:
         performance data=1
         port=12489
         socket queue size=0
+        ssl options=
         thread pool=10
         timeout=30
         use ssl=0
@@ -679,6 +682,43 @@ Advanced keys:
             [/settings/NSClient/server]
             # LISTEN QUEUE
             socket queue size=0
+
+
+    .. confkey:: ssl options
+        :synopsis: VERIFY MODE
+
+        **VERIFY MODE**
+
+        | Comma separated list of verification flags to set on the SSL socket.
+
+          ==================== ==================================================================================================================================================================================================================================== 
+          default-workarounds  Various workarounds for what I understand to be broken ssl implementations                                                                                                                                                           
+          -------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+          no-sslv2             Do not use the SSLv2 protocol.                                                                                                                                                                                                       
+          no-sslv3             Do not use the SSLv3 protocol.                                                                                                                                                                                                       
+          no-tlsv1             Do not use the TLSv1 protocol.                                                                                                                                                                                                       
+          single-dh-use        Always create a new key when using temporary/ephemeral DH parameters. This option must be used to prevent small subgroup attacks, when the DH parameters were not generated using "strong" primes (e.g. when using DSA-parameters).  
+          ==================== ====================================================================================================================================================================================================================================
+
+
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NSClient/server
+
+        **Key**: ssl options
+
+        **Default value**: 
+
+        **Used by**: :module:`NSClientServer`
+
+        **Sample**::
+
+            [/settings/NSClient/server]
+            # VERIFY MODE
+            ssl options=
 
 
     .. confkey:: thread pool

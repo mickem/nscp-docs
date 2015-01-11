@@ -52,6 +52,7 @@ Advanced keys:
     :confpath:`/settings/check_mk/server` | :confkey:`~/settings/check_mk/server.certificate key` | SSL CERTIFICATE
     :confpath:`/settings/check_mk/server` | :confkey:`~/settings/check_mk/server.dh` | DH KEY
     :confpath:`/settings/check_mk/server` | :confkey:`~/settings/check_mk/server.socket queue size` | LISTEN QUEUE
+    :confpath:`/settings/check_mk/server` | :confkey:`~/settings/check_mk/server.ssl options` | VERIFY MODE
     :confpath:`/settings/check_mk/server` | :confkey:`~/settings/check_mk/server.thread pool` | THREAD POOL
     :confpath:`/settings/check_mk/server` | :confkey:`~/settings/check_mk/server.timeout` | TIMEOUT
     :confpath:`/settings/check_mk/server` | :confkey:`~/settings/check_mk/server.verify mode` | VERIFY MODE
@@ -92,6 +93,7 @@ Advanced keys:
         :confkey:`dh` | ${certificate-path}/nrpe_dh_512.pem | DH KEY
         :confkey:`port` | 6556 | PORT NUMBER
         :confkey:`socket queue size` | 0 | LISTEN QUEUE
+        :confkey:`ssl options` |  | VERIFY MODE
         :confkey:`thread pool` | 10 | THREAD POOL
         :confkey:`timeout` | 30 | TIMEOUT
         :confkey:`use ssl` | 0 | ENABLE SSL ENCRYPTION
@@ -113,6 +115,7 @@ Advanced keys:
         dh=${certificate-path}/nrpe_dh_512.pem
         port=6556
         socket queue size=0
+        ssl options=
         thread pool=10
         timeout=30
         use ssl=0
@@ -379,6 +382,43 @@ Advanced keys:
             [/settings/check_mk/server]
             # LISTEN QUEUE
             socket queue size=0
+
+
+    .. confkey:: ssl options
+        :synopsis: VERIFY MODE
+
+        **VERIFY MODE**
+
+        | Comma separated list of verification flags to set on the SSL socket.
+
+          ==================== ==================================================================================================================================================================================================================================== 
+          default-workarounds  Various workarounds for what I understand to be broken ssl implementations                                                                                                                                                           
+          -------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+          no-sslv2             Do not use the SSLv2 protocol.                                                                                                                                                                                                       
+          no-sslv3             Do not use the SSLv3 protocol.                                                                                                                                                                                                       
+          no-tlsv1             Do not use the TLSv1 protocol.                                                                                                                                                                                                       
+          single-dh-use        Always create a new key when using temporary/ephemeral DH parameters. This option must be used to prevent small subgroup attacks, when the DH parameters were not generated using "strong" primes (e.g. when using DSA-parameters).  
+          ==================== ====================================================================================================================================================================================================================================
+
+
+
+
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/check_mk/server
+
+        **Key**: ssl options
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKServer`
+
+        **Sample**::
+
+            [/settings/check_mk/server]
+            # VERIFY MODE
+            ssl options=
 
 
     .. confkey:: thread pool
