@@ -74,11 +74,11 @@ A quick reference for all available queries (check commands) in the CheckWMI mod
     :option:`critical` |  | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
-    :option:`empty-syntax` | CPU Load ok | Message to display when nothing matched filter.
-    :option:`empty-state` | unknown | Return status to use when nothing matched filter.
+    :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${list} | Top level syntax.
-    :option:`op-syntax` |  | Top level syntax.
+    :option:`ok-syntax` |  | ok syntax.
+    :option:`empty-syntax` |  | Empty syntax.
     :option:`detail-syntax` | CHANGE ME | Detail level syntax.
     :option:`perf-syntax` |  | Performance alias syntax.
     :option:`target` |  | The target to check (for checking remote machines).
@@ -244,12 +244,6 @@ Arguments
 
 
 
-.. option:: empty-syntax
-    :synopsis: Message to display when nothing matched filter.
-
-    | Message to display when nothing matched filter.
-    | If no filter is specified this will never happen unless the file is empty.
-
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -290,11 +284,41 @@ Arguments
 
 
 
-.. option:: op-syntax
-    :synopsis: Top level syntax.
+.. option:: ok-syntax
+    :synopsis: ok syntax.
 
-    | Top level syntax.
-    | Used to format the message to return can include strings as well as special keywords such as:
+    | ok syntax.
+    | DEPRECATED! This is the syntax for when an ok result is returned.
+    | Possible values are:
+
+    ================= =============================================================================== 
+    Key               Value                                                                           
+    ----------------- ------------------------------------------------------------------------------- 
+    ${count}          Number of items matching the filter                                             
+    ${total}           Total number of items                                                          
+    ${ok_count}        Number of items matched the ok criteria                                        
+    ${warn_count}      Number of items matched the warning criteria                                   
+    ${crit_count}      Number of items matched the critical criteria                                  
+    ${problem_count}   Number of items matched either warning or critical criteria                    
+    ${list}            A list of all items which matched the filter                                   
+    ${ok_list}         A list of all items which matched the ok criteria                              
+    ${warn_list}       A list of all items which matched the warning criteria                         
+    ${crit_list}       A list of all items which matched the critical criteria                        
+    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    ${detail_list}     A special list with critical, then warning and fainally ok                     
+    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    ================= ===============================================================================
+
+
+
+
+
+.. option:: empty-syntax
+    :synopsis: Empty syntax.
+
+    | Empty syntax.
+    | DEPRECATED! This is the syntax for when nothing matches the filter.
+    | Possible values are:
 
     ================= =============================================================================== 
     Key               Value                                                                           

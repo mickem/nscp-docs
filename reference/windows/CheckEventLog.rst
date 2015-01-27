@@ -78,12 +78,12 @@ A quick reference for all available queries (check commands) in the CheckEventLo
     :option:`critical` | count > 5 | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
-    :option:`empty-syntax` | No matches | Message to display when nothing matched filter.
-    :option:`empty-state` | unknown | Return status to use when nothing matched filter.
+    :option:`empty-state` | ok | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`unique-index` |  | Unique syntax.
     :option:`top-syntax` | ${status}: ${problem_count}/${count} ${problem_list} | Top level syntax.
-    :option:`op-syntax` |  | Top level syntax.
+    :option:`ok-syntax` | %(status): Event log seems fine | ok syntax.
+    :option:`empty-syntax` | %(status): No entries found | Empty syntax.
     :option:`detail-syntax` | ${file} ${source} (${message}) | Detail level syntax.
     :option:`perf-syntax` | ${file}_${source} | Performance alias syntax.
     :option:`file` |  | File to read (can be specified multiple times to check multiple files.
@@ -296,12 +296,6 @@ Arguments
 
 
 
-.. option:: empty-syntax
-    :synopsis: Message to display when nothing matched filter.
-
-    | Message to display when nothing matched filter.
-    | If no filter is specified this will never happen unless the file is empty.
-
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -394,11 +388,53 @@ Arguments
 
 
 
-.. option:: op-syntax
-    :synopsis: Top level syntax.
+.. option:: ok-syntax
+    :synopsis: ok syntax.
 
-    | Top level syntax.
-    | Used to format the message to return can include strings as well as special keywords such as:
+    | ok syntax.
+    | DEPRECATED! This is the syntax for when an ok result is returned.
+    | Possible values are:
+
+    ================= =============================================================================== 
+    Key               Value                                                                           
+    ----------------- ------------------------------------------------------------------------------- 
+    %(category)       TODO                                                                            
+    %(computer)       Which computer generated the message                                            
+    %(customer)       TODO                                                                            
+    %(file)           The logfile name                                                                
+    %(id)             Eventlog id                                                                     
+    %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
+    %(log)            alias for file                                                                  
+    %(message)        The message rendered as a string.                                               
+    %(rawid)          Raw message id (contains many other fields all baked into a single number)      
+    %(source)         Source system.                                                                  
+    %(type)           alias for level (old, deprecated)                                               
+    %(written)        When the message was written to file                                            
+    ${count}          Number of items matching the filter                                             
+    ${total}           Total number of items                                                          
+    ${ok_count}        Number of items matched the ok criteria                                        
+    ${warn_count}      Number of items matched the warning criteria                                   
+    ${crit_count}      Number of items matched the critical criteria                                  
+    ${problem_count}   Number of items matched either warning or critical criteria                    
+    ${list}            A list of all items which matched the filter                                   
+    ${ok_list}         A list of all items which matched the ok criteria                              
+    ${warn_list}       A list of all items which matched the warning criteria                         
+    ${crit_list}       A list of all items which matched the critical criteria                        
+    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
+    ${detail_list}     A special list with critical, then warning and fainally ok                     
+    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    ================= ===============================================================================
+
+
+
+
+
+.. option:: empty-syntax
+    :synopsis: Empty syntax.
+
+    | Empty syntax.
+    | DEPRECATED! This is the syntax for when nothing matches the filter.
+    | Possible values are:
 
     ================= =============================================================================== 
     Key               Value                                                                           

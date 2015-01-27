@@ -16,6 +16,12 @@ To check the size of all the drives and **display all values, not just problems*
    L     client CRITICAL: c:: 205GB/223GB used
    L     client  Performance data: 'c: free'=18GB;0;22;0;223 'c: free %'=8%;0;9;0;100
 
+To check the size of all the drives and **return the value in gigabytes**. By default units on performance data will be scaled to "something apropriate"::
+
+   check_drivesize "perf-config=*(unit:g)"
+   L        cli CRITICAL: CRITICAL C:\: 208.147GB/223.471GB used, D:\: 399.607GB/465.759GB used
+   L        cli  Performance data: 'C:\ used'=0.00019g;0.00017;0.00019;0;0.00021 'C:\ used %'=93%;79;89;0;100 'D:\ used'=0.00038g;0.00035;0.00039;0;0.00044 'D:\ used %'=85%;79;89;0;100 'E:\ used'=0g;0;0;0;0 '\\?\Volume{d458535f-27c7-11e4-be66-806e6f6e6963}\ used'=0g;0;0;0;0 '\\?\Volume{d458535f-27c7-11e4-be66-806e6f6e6963}\ used %'=33%;79;89;0;100
+
 
 To check the size of **a mounted volume** (c:\volumne_test) and **make sure it has 1M free** space **warn if free space is less then 10M**::
 
