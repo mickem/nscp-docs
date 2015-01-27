@@ -105,6 +105,7 @@ A quick reference for all available queries (check commands) in the CheckMKClien
 
     :option:`help` | N/A | Show help screen (this screen)
     :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`host` |  | The host of the host running the server
     :option:`port` |  | The port of the host running the server
@@ -142,6 +143,11 @@ Arguments
     :synopsis: Show help screen as a protocol buffer payload
 
     | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
 
 .. option:: help-short
     :synopsis: Show help screen (short format).
