@@ -680,7 +680,7 @@ Advanced keys:
 
         **EXTENDED RESPONSE**
 
-        | Send more then 1 return packet to allow response to go beyond payload size (requires modified client).
+        | Send more then 1 return packet to allow response to go beyond payload size (requires modified client if legacy is true this defaults to false).
 
         **Path**: /settings/NRPE/server
 
