@@ -351,42 +351,7 @@ Arguments
 
     | ok syntax.
     | DEPRECATED! This is the syntax for when an ok result is returned.
-    | Possible values are:
-
-    ======================== =============================================================================== 
-    Key                      Value                                                                           
-    ------------------------ ------------------------------------------------------------------------------- 
-    %(application)           Retrieves the name of the application that the task is associated with.         
-    %(comment)               Retrieves the comment or description for the work item.                         
-    %(creator)               Retrieves the creator of the work item.                                         
-    %(enabled)               TODO.                                                                           
-    %(exit_code)             Retrieves the work item's last exit code.                                       
-    %(folder)                The task folder                                                                 
-    %(max_run_time)          Retrieves the maximum length of time the task can run.                          
-    %(most_recent_run_time)  Retrieves the most recent time the work item began running.                     
-    %(parameters)            Retrieves the command-line parameters of a task.                                
-    %(priority)              Retrieves the priority for the task.                                            
-    %(status)                Retrieves the status of the work item.                                          
-    %(title)                 The task title                                                                  
-    %(working_directory)     Retrieves the working directory of the task.                                    
-    ${count}                 Number of items matching the filter                                             
-    ${total}                  Total number of items                                                          
-    ${ok_count}               Number of items matched the ok criteria                                        
-    ${warn_count}             Number of items matched the warning criteria                                   
-    ${crit_count}             Number of items matched the critical criteria                                  
-    ${problem_count}          Number of items matched either warning or critical criteria                    
-    ${list}                   A list of all items which matched the filter                                   
-    ${ok_list}                A list of all items which matched the ok criteria                              
-    ${warn_list}              A list of all items which matched the warning criteria                         
-    ${crit_list}              A list of all items which matched the critical criteria                        
-    ${problem_list}           A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}            A special list with critical, then warning and fainally ok                     
-    ${status}                 The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ======================== ===============================================================================
-
-
-
-
+    | This value will not be used if your syntax contains %(list) or %(count).
 
 .. option:: empty-syntax
     :synopsis: Empty syntax.

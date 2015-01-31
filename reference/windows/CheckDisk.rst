@@ -382,48 +382,7 @@ Arguments
 
     | ok syntax.
     | DEPRECATED! This is the syntax for when an ok result is returned.
-    | Possible values are:
-
-    ================== =============================================================================== 
-    Key                Value                                                                           
-    ------------------ ------------------------------------------------------------------------------- 
-    %(drive)           Technical name of drive                                                         
-    %(drive_or_id)     Drive letter if present if not use id                                           
-    %(drive_or_name)   Drive letter if present if not use name                                         
-    %(free)            Shorthand for total_free (Number of free bytes)                                 
-    %(free_pct)        Shorthand for total_free_pct (% free space)                                     
-    %(id)              Drive or id of drive                                                            
-    %(name)            Descriptive name of drive                                                       
-    %(size)            Total size of drive                                                             
-    %(total_free)      Number of free bytes                                                            
-    %(total_free_pct)  % free space                                                                    
-    %(total_used)      Number of used bytes                                                            
-    %(total_used_pct)  % used space                                                                    
-    %(type)            Type of drive                                                                   
-    %(used)            Number of used bytes                                                            
-    %(used_pct)        Shorthand for total_used_pct (% used space)                                     
-    %(user_free)       Free space available to user (which runs NSClient++)                            
-    %(user_free_pct)   % free space available to user                                                  
-    %(user_used)       Number of used bytes (related to user)                                          
-    %(user_used_pct)   % used space available to user                                                  
-    ${count}           Number of items matching the filter                                             
-    ${total}            Total number of items                                                          
-    ${ok_count}         Number of items matched the ok criteria                                        
-    ${warn_count}       Number of items matched the warning criteria                                   
-    ${crit_count}       Number of items matched the critical criteria                                  
-    ${problem_count}    Number of items matched either warning or critical criteria                    
-    ${list}             A list of all items which matched the filter                                   
-    ${ok_list}          A list of all items which matched the ok criteria                              
-    ${warn_list}        A list of all items which matched the warning criteria                         
-    ${crit_list}        A list of all items which matched the critical criteria                        
-    ${problem_list}     A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}      A special list with critical, then warning and fainally ok                     
-    ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================== ===============================================================================
-
-
-
-
+    | This value will not be used if your syntax contains %(list) or %(count).
 
 .. option:: empty-syntax
     :synopsis: Empty syntax.
@@ -914,42 +873,7 @@ Arguments
 
     | ok syntax.
     | DEPRECATED! This is the syntax for when an ok result is returned.
-    | Possible values are:
-
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(access)         Last access time                                                                
-    %(age)            Seconds since file was last written                                             
-    %(creation)       When file was created                                                           
-    %(file)           The name of the file                                                            
-    %(filename)       The name of the file                                                            
-    %(line_count)     Number of lines in the file (text files)                                        
-    %(name)           The name of the file                                                            
-    %(path)           Path of file                                                                    
-    %(size)           File size                                                                       
-    %(total)          True if this is the total object                                                
-    %(version)        Windows exe/dll file version                                                    
-    %(write)          Alias for written                                                               
-    %(written)        When file was last written to                                                   
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
-
-
-
-
+    | This value will not be used if your syntax contains %(list) or %(count).
 
 .. option:: empty-syntax
     :synopsis: Empty syntax.

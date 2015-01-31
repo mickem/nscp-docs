@@ -399,41 +399,7 @@ Arguments
 
     | ok syntax.
     | DEPRECATED! This is the syntax for when an ok result is returned.
-    | Possible values are:
-
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(column1)        The value in the first column                                                   
-    %(column2)        The value in the second column                                                  
-    %(column3)        The value in the third column                                                   
-    %(column4)        The value in the 4:th column                                                    
-    %(column5)        The value in the 5:th column                                                    
-    %(column6)        The value in the 6:th column                                                    
-    %(column7)        The value in the 7:th column                                                    
-    %(column8)        The value in the 8:th column                                                    
-    %(column9)        The value in the 9:th column                                                    
-    %(file)           The name of the file                                                            
-    %(filename)       The name of the file                                                            
-    %(line)           Match the content of an entire line                                             
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
-
-
-
-
+    | This value will not be used if your syntax contains %(list) or %(count).
 
 .. option:: empty-syntax
     :synopsis: Empty syntax.

@@ -80,7 +80,7 @@ A quick reference for all available queries (check commands) in the CheckWMI mod
     :option:`top-syntax` | ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
-    :option:`detail-syntax` | CHANGE ME | Detail level syntax.
+    :option:`detail-syntax` | %(line) | Detail level syntax.
     :option:`perf-syntax` |  | Performance alias syntax.
     :option:`target` |  | The target to check (for checking remote machines).
     :option:`user` |  | Remote username when checking remote machines.
@@ -88,6 +88,12 @@ A quick reference for all available queries (check commands) in the CheckWMI mod
     :option:`namespace` | root\cimv2 | The WMI root namespace to bind to.
     :option:`query` |  | The WMI query to execute.
 
+
+
+Samples
+*******
+
+.. include:: ../../samples/CheckWMI_check_wmi_samples.inc
 
 
 
@@ -295,29 +301,7 @@ Arguments
 
     | ok syntax.
     | DEPRECATED! This is the syntax for when an ok result is returned.
-    | Possible values are:
-
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
-
-
-
-
+    | This value will not be used if your syntax contains %(list) or %(count).
 
 .. option:: empty-syntax
     :synopsis: Empty syntax.
