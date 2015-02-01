@@ -390,7 +390,8 @@ Advanced keys:
 
         **ALLOWED CIPHERS**
 
-
+        | The chipers which are allowed to be used.
+        | The default here will differ is used in "insecure" mode or not. check_nrpe uses a very old chipers and should preferably not be used. For details of chipers please see the OPEN ssl documentation: https://www.openssl.org/docs/apps/ciphers.html
 
         **Advanced** (means it is not commonly used)
 

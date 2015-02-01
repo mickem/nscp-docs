@@ -12,6 +12,7 @@ Contents:
    about.rst
    getting_started.rst
    theory.rst
+   settings.rst
    installing.rst
    nscp_usage.rst
    nscp_checks.rst
