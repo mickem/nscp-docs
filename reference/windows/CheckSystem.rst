@@ -907,9 +907,9 @@ Arguments
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
     :option:`filter` |  | Filter which marks interesting items.
-    :option:`warning` | version > 50 | Filter which marks items which generates a warning state.
+    :option:`warning` | version <= 50 | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
-    :option:`critical` | version > 50 | Filter which marks items which generates a critical state.
+    :option:`critical` | version <= 50 | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
