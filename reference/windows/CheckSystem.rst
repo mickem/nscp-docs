@@ -1341,9 +1341,11 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     free           Free memory in bytes (g,m,k,b) or percentages %                                 
+    free_pct       % free memory                                                                   
     name           The name of the page file (location)                                            
     size           Total size of pagefile                                                          
     used           Used memory in bytes (g,m,k,b) or percentages %                                 
+    used_pct       % used memory                                                                   
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -1374,9 +1376,11 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     free           Free memory in bytes (g,m,k,b) or percentages %                                 
+    free_pct       % free memory                                                                   
     name           The name of the page file (location)                                            
     size           Total size of pagefile                                                          
     used           Used memory in bytes (g,m,k,b) or percentages %                                 
+    used_pct       % used memory                                                                   
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -1412,9 +1416,11 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     free           Free memory in bytes (g,m,k,b) or percentages %                                 
+    free_pct       % free memory                                                                   
     name           The name of the page file (location)                                            
     size           Total size of pagefile                                                          
     used           Used memory in bytes (g,m,k,b) or percentages %                                 
+    used_pct       % used memory                                                                   
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -1450,9 +1456,11 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     free           Free memory in bytes (g,m,k,b) or percentages %                                 
+    free_pct       % free memory                                                                   
     name           The name of the page file (location)                                            
     size           Total size of pagefile                                                          
     used           Used memory in bytes (g,m,k,b) or percentages %                                 
+    used_pct       % used memory                                                                   
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -1494,9 +1502,11 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(free)           Free memory in bytes (g,m,k,b) or percentages %                                 
+    %(free_pct)       % free memory                                                                   
     %(name)           The name of the page file (location)                                            
     %(size)           Total size of pagefile                                                          
     %(used)           Used memory in bytes (g,m,k,b) or percentages %                                 
+    %(used_pct)       % used memory                                                                   
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
@@ -1534,9 +1544,11 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(free)           Free memory in bytes (g,m,k,b) or percentages %                                 
+    %(free_pct)       % free memory                                                                   
     %(name)           The name of the page file (location)                                            
     %(size)           Total size of pagefile                                                          
     %(used)           Used memory in bytes (g,m,k,b) or percentages %                                 
+    %(used_pct)       % used memory                                                                   
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
@@ -1567,9 +1579,11 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(free)           Free memory in bytes (g,m,k,b) or percentages %                                 
+    %(free_pct)       % free memory                                                                   
     %(name)           The name of the page file (location)                                            
     %(size)           Total size of pagefile                                                          
     %(used)           Used memory in bytes (g,m,k,b) or percentages %                                 
+    %(used_pct)       % used memory                                                                   
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
@@ -1600,9 +1614,11 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(free)           Free memory in bytes (g,m,k,b) or percentages %                                 
+    %(free_pct)       % free memory                                                                   
     %(name)           The name of the page file (location)                                            
     %(size)           Total size of pagefile                                                          
     %(used)           Used memory in bytes (g,m,k,b) or percentages %                                 
+    %(used_pct)       % used memory                                                                   
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
