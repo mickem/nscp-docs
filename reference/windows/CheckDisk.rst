@@ -585,7 +585,7 @@ Arguments
     :option:`perf-config` |  | Performance data generation configuration
     :option:`top-syntax` | ${status}: ${problem_count}/${count} files (${problem_list}) | Top level syntax.
     :option:`ok-syntax` | %(status): All %(count) files are ok | ok syntax.
-    :option:`empty-syntax` | No drives found | Empty syntax.
+    :option:`empty-syntax` | No files found | Empty syntax.
     :option:`detail-syntax` | ${name} | Detail level syntax.
     :option:`perf-syntax` | ${name} | Performance alias syntax.
     :option:`path` |  | The path to search for files under.
