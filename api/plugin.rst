@@ -335,8 +335,9 @@ Attachment
 
 .. py:class:: Plugin.Common.Attachment
 
-    Optional attachment sent along with a request.
-    This has no defined meaning and can be used at whim by implementers.
+    Attachment is used to attach information to another request.
+    This is usually used to send along additional information not directly relatedt to the request.
+    Or send unstructured data which is not supported by the original request.
 
 
     .. py:attribute:: id
@@ -663,7 +664,7 @@ QueryRequestMessage
 
 .. py:class:: Plugin.QueryRequestMessage
 
-    Query request/response
+    Query request
     Used for querying the client this is the "normal" check_nrpe message request.
     Associated response is :py:class:`Plugin.QueryResponseMessage`
 
@@ -686,6 +687,7 @@ QueryRequestMessage
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -742,6 +744,7 @@ Request
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -757,7 +760,9 @@ QueryResponseMessage
 
 .. py:class:: Plugin.QueryResponseMessage
 
-
+    Query response
+    Used for querying the client this is the "normal" check_nrpe message request.
+    Associated request is :py:class:`Plugin.QueryRequestMessage`
 
 
     .. py:attribute:: header
@@ -778,6 +783,7 @@ QueryResponseMessage
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -862,6 +868,7 @@ Response
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -900,6 +907,7 @@ ExecuteRequestMessage
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -942,6 +950,7 @@ Request
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -978,6 +987,7 @@ ExecuteResponseMessage
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -1041,6 +1051,7 @@ Response
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -1056,7 +1067,7 @@ SubmitRequestMessage
 
 .. py:class:: Plugin.SubmitRequestMessage
 
-    Submit result.
+    Submit result request message.
     Used for submitting a passive check results.
     The actual payload (Request) is a normal :py:class:`Plugin.QueryResponseMessage.Response`.
     Associated response is :py:class:`Plugin.SubmitResponseMessage`
@@ -1087,6 +1098,7 @@ SubmitRequestMessage
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -1101,7 +1113,9 @@ SubmitResponseMessage
 
 .. py:class:: Plugin.SubmitResponseMessage
 
-
+    Submit result response message.
+    Response from submitting a passive check results.
+    Associated request is :py:class:`Plugin.SubmitRequestMessage`
 
 
     .. py:attribute:: header
@@ -1122,6 +1136,7 @@ SubmitResponseMessage
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -1164,6 +1179,7 @@ Response
     
         A **repeated** value of type **message**
         
+        The attachment is used to attach additional free form information.
 
         
 
@@ -1179,11 +1195,10 @@ Registry
 
 .. py:class:: Plugin.Registry
 
-    // // // // // // // // // // // // // // // // // // // // // // //
-    
-    plugins and registration
-    
-    // // // // // // // // // // // // // // // // // // // // // // //
+    Registration is an internal message.
+    It is not used to submit checks or query status instead it is used so register modules, plug-ins, command.
+    As well as query for them.
+    The registry is a central component inside NSClient++ and this is the way to interact with the registry.
 
     .. py:attribute:: ItemType
     
@@ -1943,12 +1958,9 @@ Settings
 
 .. py:class:: Plugin.Settings
 
-    // // // // // // // // // // // // // // // // // // // // // // //
-    
-    Settings commands
-    Used for accessing the settings store
-    
-    // // // // // // // // // // // // // // // // // // // // // // //
+    Settings is an internal message.
+    It is not used to submit checks or query status instead it is used to interact with the settings store.
+    The settings is a central component inside NSClient++ and this is the way to interact with it.
 
     .. py:attribute:: Command
     
@@ -2645,7 +2657,7 @@ LogEntry
 
 .. py:class:: Plugin.LogEntry
 
-
+    LogEntry is used to log status information.
 
 
     .. py:attribute:: entry
