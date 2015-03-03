@@ -105,29 +105,6 @@ Check time since last server re-boot.
 .. include:: ../samples/CheckSystem_check_uptime_samples.inc
 
 
-CheckTaskSched
-==============
-
-check_tasksched
----------------
-
-Check status of scheduled jobs.
-
-.. include:: ../samples/CheckTaskSched_check_tasksched_samples.inc
-
-
-CheckWMI
-========
-
-check_wmi
----------
-
-Check a set of WMI values and return rows which are matching criteria.
-
-.. include:: ../samples/CheckWMI_check_wmi_samples.inc
-
-
-
 
 
 
