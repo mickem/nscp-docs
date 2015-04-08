@@ -321,3 +321,29 @@ Yes, but it requires NSClient++ 0.4.2 and later.
 This is a "feature" of the Windows Eventlog API. They have something called severity which most programs do not use as severity.
 instead please try using level which is more accurate.
 
+6. NRPE
+========
+
+6.1 What is insecure mode
+**************************
+
+The NRPE protocol is broken it is using some strange encryption protocols which are (to our knowledge) rather insecure.
+To work around this in 0.4.x we introduced real SSL support as well as certificate based authentication. This became the default in 0.4.3.
+
+To allow old "legacy" check_nrpe connect to NSClient++ you need to enable *insecure mode* which can be done in multiple ways.
+
+# In the MSI installer there is an option to select insecure mode
+# From command line you can run the "nscp nrpe install --insecure"
+# You can manually set the option in your config file
+
+All these options will result in the following configuration::
+
+    [/settings/NRPE/server]
+    certificate key = 
+    certificate = ${certificate-path}/certificate.pem
+    ssl options = 
+    allowed ciphers = ADH
+    ssl = true
+    insecure = true
+
+If you instead opt to use the more secure standard SSL aproach used in NSClient++ you can easily install NSClient++ on a linux system as well.
