@@ -635,11 +635,11 @@ Arguments
 ------------------------
 
 .. confpath:: /settings/NRPE/client
-    :synopsis: NRPE CLIENT SECTION
+    :synopsis: WEB CLIENT SECTION
 
-**NRPE CLIENT SECTION**
+**WEB CLIENT SECTION**
 
-    | Section for NRPE active/passive check module.
+    | Section for WEB active/passive check module.
 
 
     .. csv-table:: 
@@ -651,8 +651,8 @@ Arguments
 
     **Sample**::
 
-        # NRPE CLIENT SECTION
-        # Section for NRPE active/passive check module.
+        # WEB CLIENT SECTION
+        # Section for WEB active/passive check module.
         [/settings/NRPE/client]
         channel=NRPE
 
@@ -670,7 +670,7 @@ Arguments
 
         **Default value**: NRPE
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -796,7 +796,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -820,7 +820,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -844,7 +844,7 @@ Arguments
 
         **Default value**: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -868,7 +868,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -890,7 +890,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -914,7 +914,7 @@ Arguments
 
         **Default value**: PEM
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -936,7 +936,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -960,7 +960,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -984,7 +984,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1006,7 +1006,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1030,7 +1030,7 @@ Arguments
 
         **Default value**: 0
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1054,7 +1054,7 @@ Arguments
 
         **Default value**: default
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1076,7 +1076,7 @@ Arguments
 
         **Default value**: 1024
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1100,7 +1100,7 @@ Arguments
 
         **Default value**: 0
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1122,7 +1122,7 @@ Arguments
 
         **Default value**: 30
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1144,7 +1144,7 @@ Arguments
 
         **Default value**: 1
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1166,7 +1166,7 @@ Arguments
 
         **Default value**: none
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1250,7 +1250,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1276,7 +1276,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1302,7 +1302,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1328,7 +1328,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1352,7 +1352,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1378,7 +1378,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1402,7 +1402,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1428,7 +1428,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1454,7 +1454,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1478,7 +1478,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1504,7 +1504,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1530,7 +1530,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1554,7 +1554,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1580,7 +1580,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1604,7 +1604,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1628,7 +1628,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
@@ -1652,7 +1652,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`NRPEClient`
+        **Used by**: :module:`NRPEClient`,  :module:`WEBClient`
 
         **Sample**::
 
