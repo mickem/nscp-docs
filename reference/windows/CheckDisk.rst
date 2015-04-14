@@ -648,8 +648,12 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     access         Last access time                                                                
+    access_l       Last access time (local time)                                                   
+    access_u       Last access time (UTC)                                                          
     age            Seconds since file was last written                                             
     creation       When file was created                                                           
+    creation_l     When file was created (local time)                                              
+    creation_u     When file was created (UTC)                                                     
     file           The name of the file                                                            
     filename       The name of the file                                                            
     line_count     Number of lines in the file (text files)                                        
@@ -660,6 +664,8 @@ Arguments
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
+    written_l      When file was last written  to (local time)                                     
+    written_u      When file was last written  to (UTC)                                            
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -690,8 +696,12 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     access         Last access time                                                                
+    access_l       Last access time (local time)                                                   
+    access_u       Last access time (UTC)                                                          
     age            Seconds since file was last written                                             
     creation       When file was created                                                           
+    creation_l     When file was created (local time)                                              
+    creation_u     When file was created (UTC)                                                     
     file           The name of the file                                                            
     filename       The name of the file                                                            
     line_count     Number of lines in the file (text files)                                        
@@ -702,6 +712,8 @@ Arguments
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
+    written_l      When file was last written  to (local time)                                     
+    written_u      When file was last written  to (UTC)                                            
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -737,8 +749,12 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     access         Last access time                                                                
+    access_l       Last access time (local time)                                                   
+    access_u       Last access time (UTC)                                                          
     age            Seconds since file was last written                                             
     creation       When file was created                                                           
+    creation_l     When file was created (local time)                                              
+    creation_u     When file was created (UTC)                                                     
     file           The name of the file                                                            
     filename       The name of the file                                                            
     line_count     Number of lines in the file (text files)                                        
@@ -749,6 +765,8 @@ Arguments
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
+    written_l      When file was last written  to (local time)                                     
+    written_u      When file was last written  to (UTC)                                            
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -784,8 +802,12 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     access         Last access time                                                                
+    access_l       Last access time (local time)                                                   
+    access_u       Last access time (UTC)                                                          
     age            Seconds since file was last written                                             
     creation       When file was created                                                           
+    creation_l     When file was created (local time)                                              
+    creation_u     When file was created (UTC)                                                     
     file           The name of the file                                                            
     filename       The name of the file                                                            
     line_count     Number of lines in the file (text files)                                        
@@ -796,6 +818,8 @@ Arguments
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
+    written_l      When file was last written  to (local time)                                     
+    written_u      When file was last written  to (UTC)                                            
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -837,8 +861,12 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(access)         Last access time                                                                
+    %(access_l)       Last access time (local time)                                                   
+    %(access_u)       Last access time (UTC)                                                          
     %(age)            Seconds since file was last written                                             
     %(creation)       When file was created                                                           
+    %(creation_l)     When file was created (local time)                                              
+    %(creation_u)     When file was created (UTC)                                                     
     %(file)           The name of the file                                                            
     %(filename)       The name of the file                                                            
     %(line_count)     Number of lines in the file (text files)                                        
@@ -849,6 +877,8 @@ Arguments
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
+    %(written_l)      When file was last written  to (local time)                                     
+    %(written_u)      When file was last written  to (UTC)                                            
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
@@ -886,8 +916,12 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(access)         Last access time                                                                
+    %(access_l)       Last access time (local time)                                                   
+    %(access_u)       Last access time (UTC)                                                          
     %(age)            Seconds since file was last written                                             
     %(creation)       When file was created                                                           
+    %(creation_l)     When file was created (local time)                                              
+    %(creation_u)     When file was created (UTC)                                                     
     %(file)           The name of the file                                                            
     %(filename)       The name of the file                                                            
     %(line_count)     Number of lines in the file (text files)                                        
@@ -898,6 +932,8 @@ Arguments
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
+    %(written_l)      When file was last written  to (local time)                                     
+    %(written_u)      When file was last written  to (UTC)                                            
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
@@ -928,8 +964,12 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(access)         Last access time                                                                
+    %(access_l)       Last access time (local time)                                                   
+    %(access_u)       Last access time (UTC)                                                          
     %(age)            Seconds since file was last written                                             
     %(creation)       When file was created                                                           
+    %(creation_l)     When file was created (local time)                                              
+    %(creation_u)     When file was created (UTC)                                                     
     %(file)           The name of the file                                                            
     %(filename)       The name of the file                                                            
     %(line_count)     Number of lines in the file (text files)                                        
@@ -940,6 +980,8 @@ Arguments
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
+    %(written_l)      When file was last written  to (local time)                                     
+    %(written_u)      When file was last written  to (UTC)                                            
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
@@ -970,8 +1012,12 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(access)         Last access time                                                                
+    %(access_l)       Last access time (local time)                                                   
+    %(access_u)       Last access time (UTC)                                                          
     %(age)            Seconds since file was last written                                             
     %(creation)       When file was created                                                           
+    %(creation_l)     When file was created (local time)                                              
+    %(creation_u)     When file was created (UTC)                                                     
     %(file)           The name of the file                                                            
     %(filename)       The name of the file                                                            
     %(line_count)     Number of lines in the file (text files)                                        
@@ -982,6 +1028,8 @@ Arguments
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
+    %(written_l)      When file was last written  to (local time)                                     
+    %(written_u)      When file was last written  to (UTC)                                            
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
