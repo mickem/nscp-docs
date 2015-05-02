@@ -14,6 +14,36 @@
 {{ super() }}
 {% endblock %}
 
+{% block header %}
+<header class="banner-top">
+	<div class="container">
+		<nav class="nav-utility" role="navigation">
+			<ul class="nav">
+				<li>
+					<a href="https://nsclient.org/">NSClient++</a>
+				</li>
+				<li>
+					<a href="https://www.nsclient.org/category/news">News</a>
+				</li>
+				<li>
+					<a href="https://nsclient.org/download">Download</a>
+				</li>
+				<li>
+					<a href="https://docs.nsclient.org/">Documentation</a>
+				</li>
+				<li>
+					<a href="https://www.nsclient.org/support/">Support</a>
+				</li>
+				<li>
+					<a href="https://forums.nsclient.org/">Forums</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+{% endblock %}
+
+
 {% block footer %}
     <div class="footer">
     &copy; <a href="{{ pathto('copyright') }}">Copyright</a> {{ copyright|e }}.

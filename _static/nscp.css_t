@@ -9,3 +9,55 @@ div.adsense {
   width: 120px;
   float: right;
 }
+
+.banner-top {
+    background: #333333;
+    position: relative;
+    overflow: hidden
+}
+.banner-top nav a {
+    display: block
+}
+.container {
+    float: right;
+}
+.nav-utility {
+    margin: 0 -15px 0;
+    border-top: 1px solid #000;
+    padding-top: 5px;
+    display: none
+}
+.nav-utility ul {
+    margin: 0;
+    padding: 0
+}
+.nav-utility .nav>li>a {
+    padding: 7px 14px;
+    padding: 0.5rem 1rem;
+    color: #f4f4f4;
+    text-transform: uppercase;
+    font-weight: 300
+}
+@media (min-width: 768px) {
+    .banner-top i {
+        vertical-align: -0.6rem
+    }
+    .banner-top .nav-utility {
+        float: right;
+        display: block;
+        visibility: visible;
+        margin: 0;
+        padding: 0;
+        border: none
+    }
+    .nav-utility .nav>li {
+        display: inline-block
+    }
+    .nav-utility .nav>li>a {
+        padding: 1rem 0.6rem
+    }
+}
+.banner-top {
+    margin-bottom: 0
+}
+
