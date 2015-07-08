@@ -17,7 +17,7 @@ A list of all available queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    :query:`smtp_submit` | Submit information to remote host via SMTP.
+    :query:`submit_smtp` | Submit information to the remote SMTP server.
 
 
 
@@ -36,12 +36,10 @@ Common Keys:
     :delim: | 
     :header: "Path / Section", "Key", "Description"
 
+    :confpath:`/default` | :confkey:`~/default.address` | TARGET ADDRESS
+    :confpath:`/default` | :confkey:`~/default.retries` | RETRIES
+    :confpath:`/default` | :confkey:`~/default.timeout` | TIMEOUT
     :confpath:`/settings/SMTP/client` | :confkey:`~/settings/SMTP/client.channel` | CHANNEL
-    :confpath:`/settings/SMTP/client/targets/default` | :confkey:`~/settings/SMTP/client/targets/default.address` | TARGET ADDRESS
-    :confpath:`/settings/SMTP/client/targets/default` | :confkey:`~/settings/SMTP/client/targets/default.recipient` | RECIPIENT
-    :confpath:`/settings/SMTP/client/targets/default` | :confkey:`~/settings/SMTP/client/targets/default.sender` | SENDER
-    :confpath:`/settings/SMTP/client/targets/default` | :confkey:`~/settings/SMTP/client/targets/default.template` | TEMPLATE
-    :confpath:`/settings/SMTP/client/targets/default` | :confkey:`~/settings/SMTP/client/targets/default.timeout` | TIMEOUT
 
 Advanced keys:
 
@@ -50,22 +48,31 @@ Advanced keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/SMTP/client/targets/default` | :confkey:`~/settings/SMTP/client/targets/default.alias` | ALIAS
-    :confpath:`/settings/SMTP/client/targets/default` | :confkey:`~/settings/SMTP/client/targets/default.host` | TARGET HOST
-    :confpath:`/settings/SMTP/client/targets/default` | :confkey:`~/settings/SMTP/client/targets/default.is template` | IS TEMPLATE
-    :confpath:`/settings/SMTP/client/targets/default` | :confkey:`~/settings/SMTP/client/targets/default.parent` | PARENT
-    :confpath:`/settings/SMTP/client/targets/default` | :confkey:`~/settings/SMTP/client/targets/default.port` | TARGET PORT
+    :confpath:`/default` | :confkey:`~/default.host` | TARGET HOST
+    :confpath:`/default` | :confkey:`~/default.port` | TARGET PORT
 
+Sample keys:
+
+.. csv-table:: 
+    :class: contentstable 
+    :delim: | 
+    :header: "Path / Section", "Key", "Default Value", "Description"
+
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.address` | TARGET ADDRESS
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.host` | TARGET HOST
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.port` | TARGET PORT
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.retries` | RETRIES
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.timeout` | TIMEOUT
 
 
 Queries
 =======
 A quick reference for all available queries (check commands) in the SMTPClient module.
 
-:query:`smtp_submit`
+:query:`submit_smtp`
 --------------------
-.. query:: smtp_submit
-    :synopsis: Submit information to remote host via SMTP.
+.. query:: submit_smtp
+    :synopsis: Submit information to the remote SMTP server.
 
 **Usage:**
 
@@ -86,13 +93,20 @@ A quick reference for all available queries (check commands) in the SMTPClient m
     :option:`timeout` |  | Number of seconds before connection times out (default=10)
     :option:`target` |  | Target to use (lookup connection info from config)
     :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
+    :option:`retries` |  | legacy version of retry
+    :option:`source-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
+    :option:`sender-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
     :option:`command` |  | The name of the command that the remote daemon should run
     :option:`alias` |  | Same as command
     :option:`message` |  | Message
     :option:`result` |  | Result code either a number or OK, WARN, CRIT, UNKNOWN
+    :option:`separator` |  | Separator to use for the batch command (default is |)
+    :option:`batch` |  | Add multiple records using the separator format is: command|result|message
     :option:`sender` |  | Length of payload (has to be same as on the server)
     :option:`recipient` |  | Length of payload (has to be same as on the server)
-    :option:`template` |  | Do not initial an ssl handshake with the server, talk in plaintext.
+    :option:`template` |  | Do not initial an ssl handshake with the server, talk in plain text.
+    :option:`source-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
+    :option:`sender-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
 
 
 
@@ -149,6 +163,21 @@ Arguments
 
     | Number of times ti retry a failed connection attempt (default=2)
 
+.. option:: retries
+    :synopsis: legacy version of retry
+
+    | legacy version of retry
+
+.. option:: source-host
+    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
+
+    | Source/sender host name (default is auto which means use the name of the actual host)
+
+.. option:: sender-host
+    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
+
+    | Source/sender host name (default is auto which means use the name of the actual host)
+
 .. option:: command
     :synopsis: The name of the command that the remote daemon should run
 
@@ -169,6 +198,16 @@ Arguments
 
     | Result code either a number or OK, WARN, CRIT, UNKNOWN
 
+.. option:: separator
+    :synopsis: Separator to use for the batch command (default is |)
+
+    | Separator to use for the batch command (default is |)
+
+.. option:: batch
+    :synopsis: Add multiple records using the separator format is: command|result|message
+
+    | Add multiple records using the separator format is: command|result|message
+
 .. option:: sender
     :synopsis: Length of payload (has to be same as on the server)
 
@@ -180,16 +219,336 @@ Arguments
     | Length of payload (has to be same as on the server)
 
 .. option:: template
-    :synopsis: Do not initial an ssl handshake with the server, talk in plaintext.
+    :synopsis: Do not initial an ssl handshake with the server, talk in plain text.
 
-    | Do not initial an ssl handshake with the server, talk in plaintext.
+    | Do not initial an ssl handshake with the server, talk in plain text.
+
+.. option:: source-host
+    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
+
+    | Source/sender host name (default is auto which means use the name of the actual host)
+
+.. option:: sender-host
+    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
+
+    | Source/sender host name (default is auto which means use the name of the actual host)
 
 
 
 
 
-/ settings/ SMTP/ client
-------------------------
+… default
+---------
+
+.. confpath:: /default
+    :synopsis: TARGET
+
+**TARGET**
+
+    | Target definition for: default
+
+
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`port` |  | TARGET PORT
+        :confkey:`retries` | 3 | RETRIES
+        :confkey:`timeout` | 30 | TIMEOUT
+
+    **Sample**::
+
+        # TARGET
+        # Target definition for: default
+        [/default]
+        address=
+        host=
+        port=
+        retries=3
+        timeout=30
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /default
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/default]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /default
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/default]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /default
+
+        **Key**: port
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/default]
+            # TARGET PORT
+            port=
+
+
+    .. confkey:: retries
+        :synopsis: RETRIES
+
+        **RETRIES**
+
+        | Number of times to retry sending.
+
+        **Path**: /default
+
+        **Key**: retries
+
+        **Default value**: 3
+
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/default]
+            # RETRIES
+            retries=3
+
+
+    .. confkey:: timeout
+        :synopsis: TIMEOUT
+
+        **TIMEOUT**
+
+        | Timeout when reading/writing packets to/from sockets.
+
+        **Path**: /default
+
+        **Key**: timeout
+
+        **Default value**: 30
+
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/default]
+            # TIMEOUT
+            timeout=30
+
+
+
+
+… sample / sample
+-----------------
+
+.. confpath:: /sample/sample
+    :synopsis: TARGET
+
+**TARGET**
+
+    | Target definition for: sample
+
+
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`port` |  | TARGET PORT
+        :confkey:`retries` | 3 | RETRIES
+        :confkey:`timeout` | 30 | TIMEOUT
+
+    **Sample**::
+
+        # TARGET
+        # Target definition for: sample
+        [/sample/sample]
+        address=
+        host=
+        port=
+        retries=3
+        timeout=30
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /sample/sample
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: port
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # TARGET PORT
+            port=
+
+
+    .. confkey:: retries
+        :synopsis: RETRIES
+
+        **RETRIES**
+
+        | Number of times to retry sending.
+
+        **Path**: /sample/sample
+
+        **Key**: retries
+
+        **Default value**: 3
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # RETRIES
+            retries=3
+
+
+    .. confkey:: timeout
+        :synopsis: TIMEOUT
+
+        **TIMEOUT**
+
+        | Timeout when reading/writing packets to/from sockets.
+
+        **Path**: /sample/sample
+
+        **Key**: timeout
+
+        **Default value**: 30
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # TIMEOUT
+            timeout=30
+
+
+
+
+… settings / SMTP / client
+--------------------------
 
 .. confpath:: /settings/SMTP/client
     :synopsis: SMTP CLIENT SECTION
@@ -238,8 +597,8 @@ Arguments
 
 
 
-…  / handlers
--------------
+… settings / SMTP / client / handlers
+-------------------------------------
 
 .. confpath:: /settings/SMTP/client/handlers
     :synopsis: CLIENT HANDLER SECTION
@@ -260,8 +619,8 @@ Arguments
 
 
 
-…  / targets
-------------
+… settings / SMTP / client / targets
+------------------------------------
 
 .. confpath:: /settings/SMTP/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
@@ -278,281 +637,5 @@ Arguments
         # REMOTE TARGET DEFINITIONS
         # 
         [/settings/SMTP/client/targets]
-
-
-
-
-…  / targets / default
-----------------------
-
-.. confpath:: /settings/SMTP/client/targets/default
-    :synopsis: TARGET DEFENITION
-
-**TARGET DEFENITION**
-
-    | Target definition for: default
-
-
-    .. csv-table:: 
-        :class: contentstable 
-        :delim: | 
-        :header: "Key", "Default Value", "Description"
-    
-        :confkey:`address` |  | TARGET ADDRESS
-        :confkey:`alias` |  | ALIAS
-        :confkey:`host` |  | TARGET HOST
-        :confkey:`is template` | 0 | IS TEMPLATE
-        :confkey:`parent` | default | PARENT
-        :confkey:`port` | 0 | TARGET PORT
-        :confkey:`recipient` | nscp@localhost | RECIPIENT
-        :confkey:`sender` | nscp@localhost | SENDER
-        :confkey:`template` | Hello, this is %source% reporting %message%! | TEMPLATE
-        :confkey:`timeout` | 30 | TIMEOUT
-
-    **Sample**::
-
-        # TARGET DEFENITION
-        # Target definition for: default
-        [/settings/SMTP/client/targets/default]
-        address=
-        alias=
-        host=
-        is template=0
-        parent=default
-        port=0
-        recipient=nscp@localhost
-        sender=nscp@localhost
-        template=Hello, this is %source% reporting %message%!
-        timeout=30
-
-
-    .. confkey:: address
-        :synopsis: TARGET ADDRESS
-
-        **TARGET ADDRESS**
-
-        | Target host address
-
-        **Path**: /settings/SMTP/client/targets/default
-
-        **Key**: address
-
-        **Default value**: 
-
-        **Used by**: :module:`SMTPClient`
-
-        **Sample**::
-
-            [/settings/SMTP/client/targets/default]
-            # TARGET ADDRESS
-            address=
-
-
-    .. confkey:: alias
-        :synopsis: ALIAS
-
-        **ALIAS**
-
-        | The alias (service name) to report to server
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/SMTP/client/targets/default
-
-        **Key**: alias
-
-        **Default value**: 
-
-        **Used by**: :module:`SMTPClient`
-
-        **Sample**::
-
-            [/settings/SMTP/client/targets/default]
-            # ALIAS
-            alias=
-
-
-    .. confkey:: host
-        :synopsis: TARGET HOST
-
-        **TARGET HOST**
-
-        | The target server to report results to.
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/SMTP/client/targets/default
-
-        **Key**: host
-
-        **Default value**: 
-
-        **Used by**: :module:`SMTPClient`
-
-        **Sample**::
-
-            [/settings/SMTP/client/targets/default]
-            # TARGET HOST
-            host=
-
-
-    .. confkey:: is template
-        :synopsis: IS TEMPLATE
-
-        **IS TEMPLATE**
-
-        | Declare this object as a template (this means it will not be available as a separate object)
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/SMTP/client/targets/default
-
-        **Key**: is template
-
-        **Default value**: 0
-
-        **Used by**: :module:`SMTPClient`
-
-        **Sample**::
-
-            [/settings/SMTP/client/targets/default]
-            # IS TEMPLATE
-            is template=0
-
-
-    .. confkey:: parent
-        :synopsis: PARENT
-
-        **PARENT**
-
-        | The parent the target inherits from
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/SMTP/client/targets/default
-
-        **Key**: parent
-
-        **Default value**: default
-
-        **Used by**: :module:`SMTPClient`
-
-        **Sample**::
-
-            [/settings/SMTP/client/targets/default]
-            # PARENT
-            parent=default
-
-
-    .. confkey:: port
-        :synopsis: TARGET PORT
-
-        **TARGET PORT**
-
-        | The target server port
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/SMTP/client/targets/default
-
-        **Key**: port
-
-        **Default value**: 0
-
-        **Used by**: :module:`SMTPClient`
-
-        **Sample**::
-
-            [/settings/SMTP/client/targets/default]
-            # TARGET PORT
-            port=0
-
-
-    .. confkey:: recipient
-        :synopsis: RECIPIENT
-
-        **RECIPIENT**
-
-        | Recipient of email message
-
-        **Path**: /settings/SMTP/client/targets/default
-
-        **Key**: recipient
-
-        **Default value**: nscp@localhost
-
-        **Used by**: :module:`SMTPClient`
-
-        **Sample**::
-
-            [/settings/SMTP/client/targets/default]
-            # RECIPIENT
-            recipient=nscp@localhost
-
-
-    .. confkey:: sender
-        :synopsis: SENDER
-
-        **SENDER**
-
-        | Sender of email message
-
-        **Path**: /settings/SMTP/client/targets/default
-
-        **Key**: sender
-
-        **Default value**: nscp@localhost
-
-        **Used by**: :module:`SMTPClient`
-
-        **Sample**::
-
-            [/settings/SMTP/client/targets/default]
-            # SENDER
-            sender=nscp@localhost
-
-
-    .. confkey:: template
-        :synopsis: TEMPLATE
-
-        **TEMPLATE**
-
-        | Template for message data
-
-        **Path**: /settings/SMTP/client/targets/default
-
-        **Key**: template
-
-        **Default value**: Hello, this is %source% reporting %message%!
-
-        **Used by**: :module:`SMTPClient`
-
-        **Sample**::
-
-            [/settings/SMTP/client/targets/default]
-            # TEMPLATE
-            template=Hello, this is %source% reporting %message%!
-
-
-    .. confkey:: timeout
-        :synopsis: TIMEOUT
-
-        **TIMEOUT**
-
-        | Timeout when reading/writing packets to/from sockets.
-
-        **Path**: /settings/SMTP/client/targets/default
-
-        **Key**: timeout
-
-        **Default value**: 30
-
-        **Used by**: :module:`SMTPClient`
-
-        **Sample**::
-
-            [/settings/SMTP/client/targets/default]
-            # TIMEOUT
-            timeout=30
 
 

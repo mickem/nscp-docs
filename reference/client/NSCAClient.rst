@@ -17,7 +17,7 @@ A list of all available queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    :query:`nsca_submit` | Submit information to remote host via NSCA.
+    :query:`submit_nsca` | Submit information to the remote NSCA server.
 
 
 
@@ -43,6 +43,7 @@ Common Keys:
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.certificate` | SSL CERTIFICATE
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.encryption` | ENCRYPTION
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.password` | PASSWORD
+    :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.retries` | RETRIES
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.timeout` | TIMEOUT
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.use ssl` | ENABLE SSL ENCRYPTION
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.verify mode` | VERIFY MODE
@@ -54,17 +55,13 @@ Advanced keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/NSCA/client` | :confkey:`~/settings/NSCA/client.delay` | DELAY
     :confpath:`/settings/NSCA/client` | :confkey:`~/settings/NSCA/client.encoding` | NSCA DATA ENCODING
-    :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.alias` | ALIAS
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.ca` | CA
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.certificate format` | CERTIFICATE FORMAT
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.certificate key` | SSL CERTIFICATE
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.dh` | DH KEY
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.encoding` | ENCODING
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.host` | TARGET HOST
-    :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.is template` | IS TEMPLATE
-    :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.parent` | PARENT
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.payload length` | PAYLOAD LENGTH
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.port` | TARGET PORT
     :confpath:`/settings/NSCA/client/targets/default` | :confkey:`~/settings/NSCA/client/targets/default.time offset` | TIME OFFSET
@@ -76,36 +73,34 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.address` | TARGET ADDRESS
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.alias` | ALIAS
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.allowed ciphers` | ALLOWED CIPHERS
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.ca` | CA
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.certificate` | SSL CERTIFICATE
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.certificate format` | CERTIFICATE FORMAT
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.certificate key` | SSL CERTIFICATE
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.dh` | DH KEY
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.encoding` | ENCODING
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.encryption` | ENCRYPTION
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.host` | TARGET HOST
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.is template` | IS TEMPLATE
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.parent` | PARENT
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.password` | PASSWORD
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.payload length` | PAYLOAD LENGTH
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.port` | TARGET PORT
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.time offset` | TIME OFFSET
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.timeout` | TIMEOUT
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.use ssl` | ENABLE SSL ENCRYPTION
-    :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.verify mode` | VERIFY MODE
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.address` | TARGET ADDRESS
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.allowed ciphers` | ALLOWED CIPHERS
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.ca` | CA
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.certificate` | SSL CERTIFICATE
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.certificate format` | CERTIFICATE FORMAT
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.certificate key` | SSL CERTIFICATE
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.dh` | DH KEY
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.encoding` | ENCODING
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.encryption` | ENCRYPTION
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.host` | TARGET HOST
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.password` | PASSWORD
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.payload length` | PAYLOAD LENGTH
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.port` | TARGET PORT
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.retries` | RETRIES
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.time offset` | TIME OFFSET
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.timeout` | TIMEOUT
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.use ssl` | ENABLE SSL ENCRYPTION
+    :confpath:`/settings/NSCA/client/targets/sample/sample` | :confkey:`~/settings/NSCA/client/targets/sample/sample.verify mode` | VERIFY MODE
 
 
 Queries
 =======
 A quick reference for all available queries (check commands) in the NSCAClient module.
 
-:query:`nsca_submit`
+:query:`submit_nsca`
 --------------------
-.. query:: nsca_submit
-    :synopsis: Submit information to remote host via NSCA.
+.. query:: submit_nsca
+    :synopsis: Submit information to the remote NSCA server.
 
 **Usage:**
 
@@ -126,11 +121,15 @@ A quick reference for all available queries (check commands) in the NSCAClient m
     :option:`timeout` |  | Number of seconds before connection times out (default=10)
     :option:`target` |  | Target to use (lookup connection info from config)
     :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
+    :option:`retries` |  | legacy version of retry
+    :option:`source-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
+    :option:`sender-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
     :option:`command` |  | The name of the command that the remote daemon should run
     :option:`alias` |  | Same as command
     :option:`message` |  | Message
     :option:`result` |  | Result code either a number or OK, WARN, CRIT, UNKNOWN
-    :option:`encryption` |  | Name of encryption algorithm to use.
+    :option:`separator` |  | Separator to use for the batch command (default is |)
+    :option:`batch` |  | Add multiple records using the separator format is: command|result|message
     :option:`certificate` |  | Length of payload (has to be same as on the server)
     :option:`dh` |  | Length of payload (has to be same as on the server)
     :option:`certificate-key` |  | Client certificate to use
@@ -138,15 +137,12 @@ A quick reference for all available queries (check commands) in the NSCAClient m
     :option:`ca` |  | Certificate authority
     :option:`verify` |  | Client certificate format
     :option:`allowed-ciphers` |  | Client certificate format
+    :option:`ssl` | N/A | Initial an ssl handshake with the server.
+    :option:`encryption` |  | Name of encryption algorithm to use.
     :option:`payload-length` |  | Length of payload (has to be same as on the server)
     :option:`buffer-length` |  | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
-    :option:`ssl` | N/A | Initial an ssl handshake with the server.
-    :option:`timeout` |  | 
     :option:`password` |  | Password
-    :option:`source-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
-    :option:`sender-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
     :option:`time-offset` |  | 
-    :option:`retries` |  | Number of times to retry a failed connection attempt
 
 
 
@@ -203,6 +199,21 @@ Arguments
 
     | Number of times ti retry a failed connection attempt (default=2)
 
+.. option:: retries
+    :synopsis: legacy version of retry
+
+    | legacy version of retry
+
+.. option:: source-host
+    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
+
+    | Source/sender host name (default is auto which means use the name of the actual host)
+
+.. option:: sender-host
+    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
+
+    | Source/sender host name (default is auto which means use the name of the actual host)
+
 .. option:: command
     :synopsis: The name of the command that the remote daemon should run
 
@@ -223,26 +234,15 @@ Arguments
 
     | Result code either a number or OK, WARN, CRIT, UNKNOWN
 
-.. option:: encryption
-    :synopsis: Name of encryption algorithm to use.
+.. option:: separator
+    :synopsis: Separator to use for the batch command (default is |)
 
-    | Name of encryption algorithm to use.
-    | Has to be the same as your server i using or it wont work at all.This is also independent of SSL and generally used instead of SSL.
-    | Available encryption algorithms are:
-    | none = No Encryption (not safe)
-    | xor = XOR
-    | des = DES
-    | 3des = DES-EDE3
-    | cast128 = CAST-128
-    | xtea = XTEA
-    | blowfish = Blowfish
-    | twofish = Twofish
-    | rc2 = RC2
-    | aes128 = AES
-    | aes192 = AES
-    | aes = AES
-    | serpent = Serpent
-    | gost = GOST
+    | Separator to use for the batch command (default is |)
+
+.. option:: batch
+    :synopsis: Add multiple records using the separator format is: command|result|message
+
+    | Add multiple records using the separator format is: command|result|message
 
 .. option:: certificate
     :synopsis: Length of payload (has to be same as on the server)
@@ -279,6 +279,32 @@ Arguments
 
     | Client certificate format
 
+.. option:: ssl
+    :synopsis: Initial an ssl handshake with the server.
+
+    | Initial an ssl handshake with the server.
+
+.. option:: encryption
+    :synopsis: Name of encryption algorithm to use.
+
+    | Name of encryption algorithm to use.
+    | Has to be the same as your server i using or it wont work at all.This is also independent of SSL and generally used instead of SSL.
+    | Available encryption algorithms are:
+    | none = No Encryption (not safe)
+    | xor = XOR
+    | des = DES
+    | 3des = DES-EDE3
+    | cast128 = CAST-128
+    | xtea = XTEA
+    | blowfish = Blowfish
+    | twofish = Twofish
+    | rc2 = RC2
+    | aes128 = AES
+    | aes192 = AES
+    | aes = AES
+    | serpent = Serpent
+    | gost = GOST
+
 .. option:: payload-length
     :synopsis: Length of payload (has to be same as on the server)
 
@@ -289,40 +315,15 @@ Arguments
 
     | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
 
-.. option:: ssl
-    :synopsis: Initial an ssl handshake with the server.
-
-    | Initial an ssl handshake with the server.
-
-.. option:: timeout
-    :synopsis: 
-
-
-
 .. option:: password
     :synopsis: Password
 
     | Password
 
-.. option:: source-host
-    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
-
-    | Source/sender host name (default is auto which means use the name of the actual host)
-
-.. option:: sender-host
-    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
-
-    | Source/sender host name (default is auto which means use the name of the actual host)
-
 .. option:: time-offset
     :synopsis: 
 
 
-
-.. option:: retries
-    :synopsis: Number of times to retry a failed connection attempt
-
-    | Number of times to retry a failed connection attempt
 
 
 
@@ -345,7 +346,6 @@ Arguments
         :header: "Key", "Default Value", "Description"
     
         :confkey:`channel` | NSCA | CHANNEL
-        :confkey:`delay` | 0 | DELAY
         :confkey:`encoding` |  | NSCA DATA ENCODING
         :confkey:`hostname` | auto | HOSTNAME
 
@@ -355,7 +355,6 @@ Arguments
         # Section for NSCA passive check module.
         [/settings/NSCA/client]
         channel=NSCA
-        delay=0
         encoding=
         hostname=auto
 
@@ -380,30 +379,6 @@ Arguments
             [/settings/NSCA/client]
             # CHANNEL
             channel=NSCA
-
-
-    .. confkey:: delay
-        :synopsis: DELAY
-
-        **DELAY**
-
-
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/NSCA/client
-
-        **Key**: delay
-
-        **Default value**: 0
-
-        **Used by**: :module:`NSCAClient`
-
-        **Sample**::
-
-            [/settings/NSCA/client]
-            # DELAY
-            delay=0
 
 
     .. confkey:: encoding
@@ -512,9 +487,9 @@ Arguments
 ----------------------
 
 .. confpath:: /settings/NSCA/client/targets/default
-    :synopsis: TARGET DEFENITION
+    :synopsis: TARGET
 
-**TARGET DEFENITION**
+**TARGET**
 
     | Target definition for: default
 
@@ -525,51 +500,47 @@ Arguments
         :header: "Key", "Default Value", "Description"
     
         :confkey:`address` |  | TARGET ADDRESS
-        :confkey:`alias` |  | ALIAS
-        :confkey:`allowed ciphers` | ADH | ALLOWED CIPHERS
+        :confkey:`allowed ciphers` |  | ALLOWED CIPHERS
         :confkey:`ca` |  | CA
         :confkey:`certificate` |  | SSL CERTIFICATE
-        :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
+        :confkey:`certificate format` |  | CERTIFICATE FORMAT
         :confkey:`certificate key` |  | SSL CERTIFICATE
-        :confkey:`dh` | ${certificate-path}/nrpe_dh_512.pem | DH KEY
+        :confkey:`dh` |  | DH KEY
         :confkey:`encoding` |  | ENCODING
         :confkey:`encryption` | aes | ENCRYPTION
         :confkey:`host` |  | TARGET HOST
-        :confkey:`is template` | 0 | IS TEMPLATE
-        :confkey:`parent` | default | PARENT
         :confkey:`password` |  | PASSWORD
         :confkey:`payload length` | 512 | PAYLOAD LENGTH
-        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`port` |  | TARGET PORT
+        :confkey:`retries` | 3 | RETRIES
         :confkey:`time offset` | 0 | TIME OFFSET
         :confkey:`timeout` | 30 | TIMEOUT
         :confkey:`use ssl` | 0 | ENABLE SSL ENCRYPTION
-        :confkey:`verify mode` | none | VERIFY MODE
+        :confkey:`verify mode` |  | VERIFY MODE
 
     **Sample**::
 
-        # TARGET DEFENITION
+        # TARGET
         # Target definition for: default
         [/settings/NSCA/client/targets/default]
         address=
-        alias=
-        allowed ciphers=ADH
+        allowed ciphers=
         ca=
         certificate=
-        certificate format=PEM
+        certificate format=
         certificate key=
-        dh=${certificate-path}/nrpe_dh_512.pem
+        dh=
         encoding=
         encryption=aes
         host=
-        is template=0
-        parent=default
         password=
         payload length=512
-        port=0
+        port=
+        retries=3
         time offset=0
         timeout=30
         use ssl=0
-        verify mode=none
+        verify mode=
 
 
     .. confkey:: address
@@ -594,30 +565,6 @@ Arguments
             address=
 
 
-    .. confkey:: alias
-        :synopsis: ALIAS
-
-        **ALIAS**
-
-        | The alias (service name) to report to server
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/NSCA/client/targets/default
-
-        **Key**: alias
-
-        **Default value**: 
-
-        **Used by**: :module:`NSCAClient`
-
-        **Sample**::
-
-            [/settings/NSCA/client/targets/default]
-            # ALIAS
-            alias=
-
-
     .. confkey:: allowed ciphers
         :synopsis: ALLOWED CIPHERS
 
@@ -629,7 +576,7 @@ Arguments
 
         **Key**: allowed ciphers
 
-        **Default value**: ADH
+        **Default value**: 
 
         **Used by**: :module:`NSCAClient`
 
@@ -637,7 +584,7 @@ Arguments
 
             [/settings/NSCA/client/targets/default]
             # ALLOWED CIPHERS
-            allowed ciphers=ADH
+            allowed ciphers=
 
 
     .. confkey:: ca
@@ -699,7 +646,7 @@ Arguments
 
         **Key**: certificate format
 
-        **Default value**: PEM
+        **Default value**: 
 
         **Used by**: :module:`NSCAClient`
 
@@ -707,7 +654,7 @@ Arguments
 
             [/settings/NSCA/client/targets/default]
             # CERTIFICATE FORMAT
-            certificate format=PEM
+            certificate format=
 
 
     .. confkey:: certificate key
@@ -747,7 +694,7 @@ Arguments
 
         **Key**: dh
 
-        **Default value**: ${certificate-path}/nrpe_dh_512.pem
+        **Default value**: 
 
         **Used by**: :module:`NSCAClient`
 
@@ -755,7 +702,7 @@ Arguments
 
             [/settings/NSCA/client/targets/default]
             # DH KEY
-            dh=${certificate-path}/nrpe_dh_512.pem
+            dh=
 
 
     .. confkey:: encoding
@@ -844,54 +791,6 @@ Arguments
             host=
 
 
-    .. confkey:: is template
-        :synopsis: IS TEMPLATE
-
-        **IS TEMPLATE**
-
-        | Declare this object as a template (this means it will not be available as a separate object)
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/NSCA/client/targets/default
-
-        **Key**: is template
-
-        **Default value**: 0
-
-        **Used by**: :module:`NSCAClient`
-
-        **Sample**::
-
-            [/settings/NSCA/client/targets/default]
-            # IS TEMPLATE
-            is template=0
-
-
-    .. confkey:: parent
-        :synopsis: PARENT
-
-        **PARENT**
-
-        | The parent the target inherits from
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/NSCA/client/targets/default
-
-        **Key**: parent
-
-        **Default value**: default
-
-        **Used by**: :module:`NSCAClient`
-
-        **Sample**::
-
-            [/settings/NSCA/client/targets/default]
-            # PARENT
-            parent=default
-
-
     .. confkey:: password
         :synopsis: PASSWORD
 
@@ -951,7 +850,7 @@ Arguments
 
         **Key**: port
 
-        **Default value**: 0
+        **Default value**: 
 
         **Used by**: :module:`NSCAClient`
 
@@ -959,7 +858,29 @@ Arguments
 
             [/settings/NSCA/client/targets/default]
             # TARGET PORT
-            port=0
+            port=
+
+
+    .. confkey:: retries
+        :synopsis: RETRIES
+
+        **RETRIES**
+
+        | Number of times to retry sending.
+
+        **Path**: /settings/NSCA/client/targets/default
+
+        **Key**: retries
+
+        **Default value**: 3
+
+        **Used by**: :module:`NSCAClient`
+
+        **Sample**::
+
+            [/settings/NSCA/client/targets/default]
+            # RETRIES
+            retries=3
 
 
     .. confkey:: time offset
@@ -1041,7 +962,7 @@ Arguments
 
         **Key**: verify mode
 
-        **Default value**: none
+        **Default value**: 
 
         **Used by**: :module:`NSCAClient`
 
@@ -1049,18 +970,18 @@ Arguments
 
             [/settings/NSCA/client/targets/default]
             # VERIFY MODE
-            verify mode=none
+            verify mode=
 
 
 
 
-…  / targets / sample
----------------------
+…  / targets / sample / sample
+------------------------------
 
-.. confpath:: /settings/NSCA/client/targets/sample
-    :synopsis: TARGET DEFENITION
+.. confpath:: /settings/NSCA/client/targets/sample/sample
+    :synopsis: TARGET
 
-**TARGET DEFENITION**
+**TARGET**
 
     | Target definition for: sample
 
@@ -1071,51 +992,47 @@ Arguments
         :header: "Key", "Default Value", "Description"
     
         :confkey:`address` |  | TARGET ADDRESS
-        :confkey:`alias` |  | ALIAS
-        :confkey:`allowed ciphers` | ADH | ALLOWED CIPHERS
+        :confkey:`allowed ciphers` |  | ALLOWED CIPHERS
         :confkey:`ca` |  | CA
         :confkey:`certificate` |  | SSL CERTIFICATE
-        :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
+        :confkey:`certificate format` |  | CERTIFICATE FORMAT
         :confkey:`certificate key` |  | SSL CERTIFICATE
-        :confkey:`dh` | ${certificate-path}/nrpe_dh_512.pem | DH KEY
+        :confkey:`dh` |  | DH KEY
         :confkey:`encoding` |  | ENCODING
         :confkey:`encryption` | aes | ENCRYPTION
         :confkey:`host` |  | TARGET HOST
-        :confkey:`is template` | 0 | IS TEMPLATE
-        :confkey:`parent` | default | PARENT
         :confkey:`password` |  | PASSWORD
         :confkey:`payload length` | 512 | PAYLOAD LENGTH
-        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`port` |  | TARGET PORT
+        :confkey:`retries` | 3 | RETRIES
         :confkey:`time offset` | 0 | TIME OFFSET
         :confkey:`timeout` | 30 | TIMEOUT
         :confkey:`use ssl` | 0 | ENABLE SSL ENCRYPTION
-        :confkey:`verify mode` | none | VERIFY MODE
+        :confkey:`verify mode` |  | VERIFY MODE
 
     **Sample**::
 
-        # TARGET DEFENITION
+        # TARGET
         # Target definition for: sample
-        [/settings/NSCA/client/targets/sample]
+        [/settings/NSCA/client/targets/sample/sample]
         address=
-        alias=
-        allowed ciphers=ADH
+        allowed ciphers=
         ca=
         certificate=
-        certificate format=PEM
+        certificate format=
         certificate key=
-        dh=${certificate-path}/nrpe_dh_512.pem
+        dh=
         encoding=
         encryption=aes
         host=
-        is template=0
-        parent=default
         password=
         payload length=512
-        port=0
+        port=
+        retries=3
         time offset=0
         timeout=30
         use ssl=0
-        verify mode=none
+        verify mode=
 
 
     .. confkey:: address
@@ -1125,7 +1042,7 @@ Arguments
 
         | Target host address
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: address
 
@@ -1137,35 +1054,9 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # TARGET ADDRESS
             address=
-
-
-    .. confkey:: alias
-        :synopsis: ALIAS
-
-        **ALIAS**
-
-        | The alias (service name) to report to server
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/NSCA/client/targets/sample
-
-        **Key**: alias
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`NSCAClient`
-
-        **Sample**::
-
-            [/settings/NSCA/client/targets/sample]
-            # ALIAS
-            alias=
 
 
     .. confkey:: allowed ciphers
@@ -1175,11 +1066,11 @@ Arguments
 
         | A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: allowed ciphers
 
-        **Default value**: ADH
+        **Default value**: 
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
@@ -1187,9 +1078,9 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # ALLOWED CIPHERS
-            allowed ciphers=ADH
+            allowed ciphers=
 
 
     .. confkey:: ca
@@ -1201,7 +1092,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: ca
 
@@ -1213,7 +1104,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # CA
             ca=
 
@@ -1225,7 +1116,7 @@ Arguments
 
 
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: certificate
 
@@ -1237,7 +1128,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # SSL CERTIFICATE
             certificate=
 
@@ -1251,11 +1142,11 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: certificate format
 
-        **Default value**: PEM
+        **Default value**: 
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
@@ -1263,9 +1154,9 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # CERTIFICATE FORMAT
-            certificate format=PEM
+            certificate format=
 
 
     .. confkey:: certificate key
@@ -1277,7 +1168,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: certificate key
 
@@ -1289,7 +1180,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # SSL CERTIFICATE
             certificate key=
 
@@ -1303,11 +1194,11 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: dh
 
-        **Default value**: ${certificate-path}/nrpe_dh_512.pem
+        **Default value**: 
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
@@ -1315,9 +1206,9 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # DH KEY
-            dh=${certificate-path}/nrpe_dh_512.pem
+            dh=
 
 
     .. confkey:: encoding
@@ -1329,7 +1220,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: encoding
 
@@ -1341,7 +1232,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # ENCODING
             encoding=
 
@@ -1369,7 +1260,7 @@ Arguments
         | serpent = Serpent
         | gost = GOST
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: encryption
 
@@ -1381,7 +1272,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # ENCRYPTION
             encryption=aes
 
@@ -1395,7 +1286,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: host
 
@@ -1407,61 +1298,9 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # TARGET HOST
             host=
-
-
-    .. confkey:: is template
-        :synopsis: IS TEMPLATE
-
-        **IS TEMPLATE**
-
-        | Declare this object as a template (this means it will not be available as a separate object)
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/NSCA/client/targets/sample
-
-        **Key**: is template
-
-        **Default value**: 0
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`NSCAClient`
-
-        **Sample**::
-
-            [/settings/NSCA/client/targets/sample]
-            # IS TEMPLATE
-            is template=0
-
-
-    .. confkey:: parent
-        :synopsis: PARENT
-
-        **PARENT**
-
-        | The parent the target inherits from
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/NSCA/client/targets/sample
-
-        **Key**: parent
-
-        **Default value**: default
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`NSCAClient`
-
-        **Sample**::
-
-            [/settings/NSCA/client/targets/sample]
-            # PARENT
-            parent=default
 
 
     .. confkey:: password
@@ -1471,7 +1310,7 @@ Arguments
 
         | The password to use. Again has to be the same as the server or it wont work at all.
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: password
 
@@ -1483,7 +1322,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # PASSWORD
             password=
 
@@ -1497,7 +1336,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: payload length
 
@@ -1509,7 +1348,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # PAYLOAD LENGTH
             payload length=512
 
@@ -1523,11 +1362,11 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: port
 
-        **Default value**: 0
+        **Default value**: 
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
@@ -1535,9 +1374,33 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # TARGET PORT
-            port=0
+            port=
+
+
+    .. confkey:: retries
+        :synopsis: RETRIES
+
+        **RETRIES**
+
+        | Number of times to retry sending.
+
+        **Path**: /settings/NSCA/client/targets/sample/sample
+
+        **Key**: retries
+
+        **Default value**: 3
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NSCAClient`
+
+        **Sample**::
+
+            [/settings/NSCA/client/targets/sample/sample]
+            # RETRIES
+            retries=3
 
 
     .. confkey:: time offset
@@ -1549,7 +1412,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: time offset
 
@@ -1561,7 +1424,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # TIME OFFSET
             time offset=0
 
@@ -1573,7 +1436,7 @@ Arguments
 
         | Timeout when reading/writing packets to/from sockets.
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: timeout
 
@@ -1585,7 +1448,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # TIMEOUT
             timeout=30
 
@@ -1597,7 +1460,7 @@ Arguments
 
         | This option controls if SSL should be enabled.
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: use ssl
 
@@ -1609,7 +1472,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # ENABLE SSL ENCRYPTION
             use ssl=0
 
@@ -1621,11 +1484,11 @@ Arguments
 
 
 
-        **Path**: /settings/NSCA/client/targets/sample
+        **Path**: /settings/NSCA/client/targets/sample/sample
 
         **Key**: verify mode
 
-        **Default value**: none
+        **Default value**: 
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
@@ -1633,8 +1496,8 @@ Arguments
 
         **Sample**::
 
-            [/settings/NSCA/client/targets/sample]
+            [/settings/NSCA/client/targets/sample/sample]
             # VERIFY MODE
-            verify mode=none
+            verify mode=
 
 

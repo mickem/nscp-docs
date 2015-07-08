@@ -17,7 +17,6 @@ A list of all available queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    :query:`sample_nagios_command` | This is simpler to implement and looks like nagios commads (but slightly less powerfull).
     :query:`sample_raw_command` | This is a sample hello world command.
 
 
@@ -33,21 +32,6 @@ Queries
 =======
 A quick reference for all available queries (check commands) in the SamplePluginSimple module.
 
-:query:`sample_nagios_command`
-------------------------------
-.. query:: sample_nagios_command
-    :synopsis: This is simpler to implement and looks like nagios commads (but slightly less powerfull).
-
-**Usage:**
-
-
-
-
-
-
-
-Arguments
-*********
 :query:`sample_raw_command`
 ---------------------------
 .. query:: sample_raw_command
