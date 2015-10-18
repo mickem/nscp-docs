@@ -477,12 +477,23 @@ Arguments
 
 
 
+.. csv-table:: 
+    :class: contentstable 
+    :delim: | 
+    :header: "Option", "Default Value", "Description"
+
+    :option:`*` |  | 
 
 
 
 
 Arguments
 *********
+.. option:: *
+    :synopsis: 
+
+
+
 :query:`submit_nrpe`
 --------------------
 .. query:: submit_nrpe

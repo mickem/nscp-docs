@@ -70,6 +70,7 @@ A quick reference for all available queries (check commands) in the CheckDisk mo
     :option:`perf-syntax` | ${drive_or_id} | Performance alias syntax.
     :option:`drive` |  | The drives to check.
     :option:`ignore-unreadable` | N/A | Ignore drives which are not reachable by the current user.
+    :option:`mounted` | N/A | Show only mounted rives i.e. drives which have a mount point.
     :option:`magic` |  | Magic number for use with scaling drive sizes.
     :option:`exclude` |  | A list of drives not to check
     :option:`total` | N/A | Include the total of all matching drives
@@ -132,6 +133,7 @@ Arguments
     free            Shorthand for total_free (Number of free bytes)                                 
     free_pct        Shorthand for total_free_pct (% free space)                                     
     id              Drive or id of drive                                                            
+    mounted         Check if a drive is mounted                                                     
     name            Descriptive name of drive                                                       
     size            Total size of drive                                                             
     total_free      Number of free bytes                                                            
@@ -180,6 +182,7 @@ Arguments
     free            Shorthand for total_free (Number of free bytes)                                 
     free_pct        Shorthand for total_free_pct (% free space)                                     
     id              Drive or id of drive                                                            
+    mounted         Check if a drive is mounted                                                     
     name            Descriptive name of drive                                                       
     size            Total size of drive                                                             
     total_free      Number of free bytes                                                            
@@ -233,6 +236,7 @@ Arguments
     free            Shorthand for total_free (Number of free bytes)                                 
     free_pct        Shorthand for total_free_pct (% free space)                                     
     id              Drive or id of drive                                                            
+    mounted         Check if a drive is mounted                                                     
     name            Descriptive name of drive                                                       
     size            Total size of drive                                                             
     total_free      Number of free bytes                                                            
@@ -286,6 +290,7 @@ Arguments
     free            Shorthand for total_free (Number of free bytes)                                 
     free_pct        Shorthand for total_free_pct (% free space)                                     
     id              Drive or id of drive                                                            
+    mounted         Check if a drive is mounted                                                     
     name            Descriptive name of drive                                                       
     size            Total size of drive                                                             
     total_free      Number of free bytes                                                            
@@ -345,6 +350,7 @@ Arguments
     %(free)            Shorthand for total_free (Number of free bytes)                                 
     %(free_pct)        Shorthand for total_free_pct (% free space)                                     
     %(id)              Drive or id of drive                                                            
+    %(mounted)         Check if a drive is mounted                                                     
     %(name)            Descriptive name of drive                                                       
     %(size)            Total size of drive                                                             
     %(total_free)      Number of free bytes                                                            
@@ -400,6 +406,7 @@ Arguments
     %(free)            Shorthand for total_free (Number of free bytes)                                 
     %(free_pct)        Shorthand for total_free_pct (% free space)                                     
     %(id)              Drive or id of drive                                                            
+    %(mounted)         Check if a drive is mounted                                                     
     %(name)            Descriptive name of drive                                                       
     %(size)            Total size of drive                                                             
     %(total_free)      Number of free bytes                                                            
@@ -448,6 +455,7 @@ Arguments
     %(free)            Shorthand for total_free (Number of free bytes)                                 
     %(free_pct)        Shorthand for total_free_pct (% free space)                                     
     %(id)              Drive or id of drive                                                            
+    %(mounted)         Check if a drive is mounted                                                     
     %(name)            Descriptive name of drive                                                       
     %(size)            Total size of drive                                                             
     %(total_free)      Number of free bytes                                                            
@@ -496,6 +504,7 @@ Arguments
     %(free)            Shorthand for total_free (Number of free bytes)                                 
     %(free_pct)        Shorthand for total_free_pct (% free space)                                     
     %(id)              Drive or id of drive                                                            
+    %(mounted)         Check if a drive is mounted                                                     
     %(name)            Descriptive name of drive                                                       
     %(size)            Total size of drive                                                             
     %(total_free)      Number of free bytes                                                            
@@ -539,6 +548,11 @@ Arguments
 
     | Ignore drives which are not reachable by the current user.
     | For instance Microsoft Office creates a drive which cannot be read by normal users.
+
+.. option:: mounted
+    :synopsis: Show only mounted rives i.e. drives which have a mount point.
+
+    | Show only mounted rives i.e. drives which have a mount point.
 
 .. option:: magic
     :synopsis: Magic number for use with scaling drive sizes.
@@ -648,8 +662,12 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     access         Last access time                                                                
+    access_l       Last access time (local time)                                                   
+    access_u       Last access time (UTC)                                                          
     age            Seconds since file was last written                                             
     creation       When file was created                                                           
+    creation_l     When file was created (local time)                                              
+    creation_u     When file was created (UTC)                                                     
     file           The name of the file                                                            
     filename       The name of the file                                                            
     line_count     Number of lines in the file (text files)                                        
@@ -660,6 +678,8 @@ Arguments
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
+    written_l      When file was last written  to (local time)                                     
+    written_u      When file was last written  to (UTC)                                            
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -690,8 +710,12 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     access         Last access time                                                                
+    access_l       Last access time (local time)                                                   
+    access_u       Last access time (UTC)                                                          
     age            Seconds since file was last written                                             
     creation       When file was created                                                           
+    creation_l     When file was created (local time)                                              
+    creation_u     When file was created (UTC)                                                     
     file           The name of the file                                                            
     filename       The name of the file                                                            
     line_count     Number of lines in the file (text files)                                        
@@ -702,6 +726,8 @@ Arguments
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
+    written_l      When file was last written  to (local time)                                     
+    written_u      When file was last written  to (UTC)                                            
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -737,8 +763,12 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     access         Last access time                                                                
+    access_l       Last access time (local time)                                                   
+    access_u       Last access time (UTC)                                                          
     age            Seconds since file was last written                                             
     creation       When file was created                                                           
+    creation_l     When file was created (local time)                                              
+    creation_u     When file was created (UTC)                                                     
     file           The name of the file                                                            
     filename       The name of the file                                                            
     line_count     Number of lines in the file (text files)                                        
@@ -749,6 +779,8 @@ Arguments
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
+    written_l      When file was last written  to (local time)                                     
+    written_u      When file was last written  to (UTC)                                            
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -784,8 +816,12 @@ Arguments
     Key            Value                                                                           
     -------------- ------------------------------------------------------------------------------- 
     access         Last access time                                                                
+    access_l       Last access time (local time)                                                   
+    access_u       Last access time (UTC)                                                          
     age            Seconds since file was last written                                             
     creation       When file was created                                                           
+    creation_l     When file was created (local time)                                              
+    creation_u     When file was created (UTC)                                                     
     file           The name of the file                                                            
     filename       The name of the file                                                            
     line_count     Number of lines in the file (text files)                                        
@@ -796,6 +832,8 @@ Arguments
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
+    written_l      When file was last written  to (local time)                                     
+    written_u      When file was last written  to (UTC)                                            
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
     ok_count        Number of items matched the ok criteria                                        
@@ -837,8 +875,12 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(access)         Last access time                                                                
+    %(access_l)       Last access time (local time)                                                   
+    %(access_u)       Last access time (UTC)                                                          
     %(age)            Seconds since file was last written                                             
     %(creation)       When file was created                                                           
+    %(creation_l)     When file was created (local time)                                              
+    %(creation_u)     When file was created (UTC)                                                     
     %(file)           The name of the file                                                            
     %(filename)       The name of the file                                                            
     %(line_count)     Number of lines in the file (text files)                                        
@@ -849,6 +891,8 @@ Arguments
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
+    %(written_l)      When file was last written  to (local time)                                     
+    %(written_u)      When file was last written  to (UTC)                                            
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
@@ -886,8 +930,12 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(access)         Last access time                                                                
+    %(access_l)       Last access time (local time)                                                   
+    %(access_u)       Last access time (UTC)                                                          
     %(age)            Seconds since file was last written                                             
     %(creation)       When file was created                                                           
+    %(creation_l)     When file was created (local time)                                              
+    %(creation_u)     When file was created (UTC)                                                     
     %(file)           The name of the file                                                            
     %(filename)       The name of the file                                                            
     %(line_count)     Number of lines in the file (text files)                                        
@@ -898,6 +946,8 @@ Arguments
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
+    %(written_l)      When file was last written  to (local time)                                     
+    %(written_u)      When file was last written  to (UTC)                                            
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
@@ -928,8 +978,12 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(access)         Last access time                                                                
+    %(access_l)       Last access time (local time)                                                   
+    %(access_u)       Last access time (UTC)                                                          
     %(age)            Seconds since file was last written                                             
     %(creation)       When file was created                                                           
+    %(creation_l)     When file was created (local time)                                              
+    %(creation_u)     When file was created (UTC)                                                     
     %(file)           The name of the file                                                            
     %(filename)       The name of the file                                                            
     %(line_count)     Number of lines in the file (text files)                                        
@@ -940,6 +994,8 @@ Arguments
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
+    %(written_l)      When file was last written  to (local time)                                     
+    %(written_u)      When file was last written  to (UTC)                                            
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        
@@ -970,8 +1026,12 @@ Arguments
     Key               Value                                                                           
     ----------------- ------------------------------------------------------------------------------- 
     %(access)         Last access time                                                                
+    %(access_l)       Last access time (local time)                                                   
+    %(access_u)       Last access time (UTC)                                                          
     %(age)            Seconds since file was last written                                             
     %(creation)       When file was created                                                           
+    %(creation_l)     When file was created (local time)                                              
+    %(creation_u)     When file was created (UTC)                                                     
     %(file)           The name of the file                                                            
     %(filename)       The name of the file                                                            
     %(line_count)     Number of lines in the file (text files)                                        
@@ -982,6 +1042,8 @@ Arguments
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
+    %(written_l)      When file was last written  to (local time)                                     
+    %(written_u)      When file was last written  to (UTC)                                            
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
     ${ok_count}        Number of items matched the ok criteria                                        

@@ -37,6 +37,7 @@ Common Keys:
     :header: "Path / Section", "Key", "Description"
 
     :confpath:`/default` | :confkey:`~/default.address` | TARGET ADDRESS
+    :confpath:`/default` | :confkey:`~/default.default` | 
     :confpath:`/default` | :confkey:`~/default.retries` | RETRIES
     :confpath:`/default` | :confkey:`~/default.timeout` | TIMEOUT
     :confpath:`/settings/syslog/client` | :confkey:`~/settings/syslog/client.channel` | CHANNEL
@@ -60,10 +61,29 @@ Sample keys:
     :header: "Path / Section", "Key", "Default Value", "Description"
 
     :confpath:`/sample/sample` | :confkey:`~/sample/sample.address` | TARGET ADDRESS
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.command` | COMMAND NAME
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.critical` | CRITICAL FILTER
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.debug` | DEBUG
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.destination` | DESTINATION
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.detail syntax` | SYNTAX
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.empty message` | EMPTY MESSAGE
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.filter` | FILTER
     :confpath:`/sample/sample` | :confkey:`~/sample/sample.host` | TARGET HOST
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.log` | FILE
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.logs` | FILES
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.maximum age` | MAGIMUM AGE
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.ok` | OK FILTER
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.ok syntax` | SYNTAX
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.perf config` | PERF CONFIG
     :confpath:`/sample/sample` | :confkey:`~/sample/sample.port` | TARGET PORT
     :confpath:`/sample/sample` | :confkey:`~/sample/sample.retries` | RETRIES
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.severity` | SEVERITY
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.source id` | SOURCE ID
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.target` | DESTINATION
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.target id` | TARGET ID
     :confpath:`/sample/sample` | :confkey:`~/sample/sample.timeout` | TIMEOUT
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.top syntax` | SYNTAX
+    :confpath:`/sample/sample` | :confkey:`~/sample/sample.warning` | WARNING FILTER
 
 
 Queries
@@ -279,6 +299,7 @@ Arguments
         :header: "Key", "Default Value", "Description"
     
         :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`default` |  | 
         :confkey:`host` |  | TARGET HOST
         :confkey:`port` |  | TARGET PORT
         :confkey:`retries` | 3 | RETRIES
@@ -290,6 +311,7 @@ Arguments
         # Target definition for: default
         [/default]
         address=
+        default=
         host=
         port=
         retries=3
@@ -309,13 +331,35 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
             [/default]
             # TARGET ADDRESS
             address=
+
+
+    .. confkey:: default
+        :synopsis: 
+
+        ****
+
+        | Filter for . To configure this item add a section called: /default
+
+        **Path**: /default
+
+        **Key**: default
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/default]
+            # 
+            default=
 
 
     .. confkey:: host
@@ -333,7 +377,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
@@ -357,7 +401,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
@@ -379,7 +423,7 @@ Arguments
 
         **Default value**: 3
 
-        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
@@ -401,7 +445,7 @@ Arguments
 
         **Default value**: 30
 
-        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
@@ -429,10 +473,29 @@ Arguments
         :header: "Key", "Default Value", "Description"
     
         :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`command` |  | COMMAND NAME
+        :confkey:`critical` |  | CRITICAL FILTER
+        :confkey:`debug` | 0 | DEBUG
+        :confkey:`destination` |  | DESTINATION
+        :confkey:`detail syntax` |  | SYNTAX
+        :confkey:`empty message` | eventlog found no records | EMPTY MESSAGE
+        :confkey:`filter` |  | FILTER
         :confkey:`host` |  | TARGET HOST
+        :confkey:`log` |  | FILE
+        :confkey:`logs` |  | FILES
+        :confkey:`maximum age` | 5m | MAGIMUM AGE
+        :confkey:`ok` |  | OK FILTER
+        :confkey:`ok syntax` |  | SYNTAX
+        :confkey:`perf config` |  | PERF CONFIG
         :confkey:`port` |  | TARGET PORT
         :confkey:`retries` | 3 | RETRIES
+        :confkey:`severity` |  | SEVERITY
+        :confkey:`source id` |  | SOURCE ID
+        :confkey:`target` |  | DESTINATION
+        :confkey:`target id` |  | TARGET ID
         :confkey:`timeout` | 30 | TIMEOUT
+        :confkey:`top syntax` |  | SYNTAX
+        :confkey:`warning` |  | WARNING FILTER
 
     **Sample**::
 
@@ -440,10 +503,29 @@ Arguments
         # Target definition for: sample
         [/sample/sample]
         address=
+        command=
+        critical=
+        debug=0
+        destination=
+        detail syntax=
+        empty message=eventlog found no records
+        filter=
         host=
+        log=
+        logs=
+        maximum age=5m
+        ok=
+        ok syntax=
+        perf config=
         port=
         retries=3
+        severity=
+        source id=
+        target=
+        target id=
         timeout=30
+        top syntax=
+        warning=
 
 
     .. confkey:: address
@@ -461,13 +543,191 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
             [/sample/sample]
             # TARGET ADDRESS
             address=
+
+
+    .. confkey:: command
+        :synopsis: COMMAND NAME
+
+        **COMMAND NAME**
+
+        | The name of the command (think nagios service name) to report up stream (defaults to alias if not set)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: command
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # COMMAND NAME
+            command=
+
+
+    .. confkey:: critical
+        :synopsis: CRITICAL FILTER
+
+        **CRITICAL FILTER**
+
+        | If any rows match this filter severity will escalated to CRITICAL
+
+        **Path**: /sample/sample
+
+        **Key**: critical
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # CRITICAL FILTER
+            critical=
+
+
+    .. confkey:: debug
+        :synopsis: DEBUG
+
+        **DEBUG**
+
+        | Enable this to display debug information for this match filter
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: debug
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # DEBUG
+            debug=0
+
+
+    .. confkey:: destination
+        :synopsis: DESTINATION
+
+        **DESTINATION**
+
+        | The destination for intercepted messages
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: destination
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # DESTINATION
+            destination=
+
+
+    .. confkey:: detail syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: detail syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # SYNTAX
+            detail syntax=
+
+
+    .. confkey:: empty message
+        :synopsis: EMPTY MESSAGE
+
+        **EMPTY MESSAGE**
+
+        | The message to display if nothing matches the filter (generally considered the ok state).
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: empty message
+
+        **Default value**: eventlog found no records
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # EMPTY MESSAGE
+            empty message=eventlog found no records
+
+
+    .. confkey:: filter
+        :synopsis: FILTER
+
+        **FILTER**
+
+        | Scan files for matching rows for each matching rows an OK message will be submitted
+
+        **Path**: /sample/sample
+
+        **Key**: filter
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # FILTER
+            filter=
 
 
     .. confkey:: host
@@ -487,13 +747,164 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
             [/sample/sample]
             # TARGET HOST
             host=
+
+
+    .. confkey:: log
+        :synopsis: FILE
+
+        **FILE**
+
+        | The eventlog record to filter on (if set to 'all' means all enabled logs)
+
+        **Path**: /sample/sample
+
+        **Key**: log
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # FILE
+            log=
+
+
+    .. confkey:: logs
+        :synopsis: FILES
+
+        **FILES**
+
+        | The eventlog record to filter on (if set to 'all' means all enabled logs)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: logs
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # FILES
+            logs=
+
+
+    .. confkey:: maximum age
+        :synopsis: MAGIMUM AGE
+
+        **MAGIMUM AGE**
+
+        | How long before reporting "ok".
+        | If this is set to "false" no periodic ok messages will be reported only errors.
+
+        **Path**: /sample/sample
+
+        **Key**: maximum age
+
+        **Default value**: 5m
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # MAGIMUM AGE
+            maximum age=5m
+
+
+    .. confkey:: ok
+        :synopsis: OK FILTER
+
+        **OK FILTER**
+
+        | If any rows match this filter severity will escalated down to OK
+
+        **Path**: /sample/sample
+
+        **Key**: ok
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # OK FILTER
+            ok=
+
+
+    .. confkey:: ok syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: ok syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # SYNTAX
+            ok syntax=
+
+
+    .. confkey:: perf config
+        :synopsis: PERF CONFIG
+
+        **PERF CONFIG**
+
+        | Performance data configuration
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: perf config
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # PERF CONFIG
+            perf config=
 
 
     .. confkey:: port
@@ -513,7 +924,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
@@ -537,13 +948,115 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
             [/sample/sample]
             # RETRIES
             retries=3
+
+
+    .. confkey:: severity
+        :synopsis: SEVERITY
+
+        **SEVERITY**
+
+        | THe severity of this message (OK, WARNING, CRITICAL, UNKNOWN)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: severity
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # SEVERITY
+            severity=
+
+
+    .. confkey:: source id
+        :synopsis: SOURCE ID
+
+        **SOURCE ID**
+
+        | The name of the source system, will automatically use the remote system if a remote system is called. Almost most sending systems will replace this with current systems hostname if not present. So use this only if you need specific source systems for specific schedules and not calling remote systems.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: source id
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # SOURCE ID
+            source id=
+
+
+    .. confkey:: target
+        :synopsis: DESTINATION
+
+        **DESTINATION**
+
+        | Same as destination
+
+        **Path**: /sample/sample
+
+        **Key**: target
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # DESTINATION
+            target=
+
+
+    .. confkey:: target id
+        :synopsis: TARGET ID
+
+        **TARGET ID**
+
+        | The target to send the message to (will be resolved by the consumer)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: target id
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # TARGET ID
+            target id=
 
 
     .. confkey:: timeout
@@ -561,13 +1074,63 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
             [/sample/sample]
             # TIMEOUT
             timeout=30
+
+
+    .. confkey:: top syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /sample/sample
+
+        **Key**: top syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # SYNTAX
+            top syntax=
+
+
+    .. confkey:: warning
+        :synopsis: WARNING FILTER
+
+        **WARNING FILTER**
+
+        | If any rows match this filter severity will escalated to WARNING
+
+        **Path**: /sample/sample
+
+        **Key**: warning
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+
+        **Sample**::
+
+            [/sample/sample]
+            # WARNING FILTER
+            warning=
 
 
 

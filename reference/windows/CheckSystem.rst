@@ -70,10 +70,10 @@ Advanced keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.alias` | ALIAS
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.is template` | IS TEMPLATE
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.parent` | PARENT
     :confpath:`/settings/system/windows` | :confkey:`~/settings/system/windows.subsystem` | PDH SUBSYSTEM
+    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.alias` | ALIAS
+    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.is template` | IS TEMPLATE
+    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.parent` | PARENT
 
 Sample keys:
 
@@ -82,17 +82,12 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.address` | TARGET ADDRESS
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.buffer size` | BUFFER SIZE
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.collection strategy` | COLLECTION STRATEGY
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.counter` | COUNTER
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.flags` | FLAGS
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.host` | TARGET HOST
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.instances` | TODO
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.port` | TARGET PORT
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.retries` | RETRIES
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.timeout` | TIMEOUT
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.type` | COUNTER TYPE
+    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.buffer size` | BUFFER SIZE
+    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.collection strategy` | COLLECTION STRATEGY
+    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.counter` | COUNTER
+    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.flags` | FLAGS
+    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.instances` | TODO
+    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.type` | COUNTER TYPE
 
 
 Queries
@@ -3886,402 +3881,8 @@ Arguments
 
 
 
-… ample / sample
-----------------
-
-.. confpath:: /sample/sample
-    :synopsis: TARGET
-
-**TARGET**
-
-    | Target definition for: sample
-
-
-    .. csv-table:: 
-        :class: contentstable 
-        :delim: | 
-        :header: "Key", "Default Value", "Description"
-    
-        :confkey:`address` |  | TARGET ADDRESS
-        :confkey:`alias` |  | ALIAS
-        :confkey:`buffer size` |  | BUFFER SIZE
-        :confkey:`collection strategy` |  | COLLECTION STRATEGY
-        :confkey:`counter` |  | COUNTER
-        :confkey:`flags` |  | FLAGS
-        :confkey:`host` |  | TARGET HOST
-        :confkey:`instances` |  | TODO
-        :confkey:`is template` | 0 | IS TEMPLATE
-        :confkey:`parent` | default | PARENT
-        :confkey:`port` |  | TARGET PORT
-        :confkey:`retries` | 3 | RETRIES
-        :confkey:`timeout` | 30 | TIMEOUT
-        :confkey:`type` |  | COUNTER TYPE
-
-    **Sample**::
-
-        # TARGET
-        # Target definition for: sample
-        [/sample/sample]
-        address=
-        alias=
-        buffer size=
-        collection strategy=
-        counter=
-        flags=
-        host=
-        instances=
-        is template=0
-        parent=default
-        port=
-        retries=3
-        timeout=30
-        type=
-
-
-    .. confkey:: address
-        :synopsis: TARGET ADDRESS
-
-        **TARGET ADDRESS**
-
-        | Target host address
-
-        **Path**: /sample/sample
-
-        **Key**: address
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # TARGET ADDRESS
-            address=
-
-
-    .. confkey:: alias
-        :synopsis: ALIAS
-
-        **ALIAS**
-
-        | The alias (service name) to report to server
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: alias
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # ALIAS
-            alias=
-
-
-    .. confkey:: buffer size
-        :synopsis: BUFFER SIZE
-
-        **BUFFER SIZE**
-
-        | Size of buffer (in seconds) larger buffer use more memory
-
-        **Path**: /sample/sample
-
-        **Key**: buffer size
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # BUFFER SIZE
-            buffer size=
-
-
-    .. confkey:: collection strategy
-        :synopsis: COLLECTION STRATEGY
-
-        **COLLECTION STRATEGY**
-
-        | The way to handled values when collecting them: static means we keep the last known value, rrd means we store values in a buffer from which you can retrieve the average
-
-        **Path**: /sample/sample
-
-        **Key**: collection strategy
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # COLLECTION STRATEGY
-            collection strategy=
-
-
-    .. confkey:: counter
-        :synopsis: COUNTER
-
-        **COUNTER**
-
-        | The counter to check
-
-        **Path**: /sample/sample
-
-        **Key**: counter
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # COUNTER
-            counter=
-
-
-    .. confkey:: flags
-        :synopsis: FLAGS
-
-        **FLAGS**
-
-        | Extra flags to configure the counter (nocap100, 1000, noscale)
-
-        **Path**: /sample/sample
-
-        **Key**: flags
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # FLAGS
-            flags=
-
-
-    .. confkey:: host
-        :synopsis: TARGET HOST
-
-        **TARGET HOST**
-
-        | The target server to report results to.
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: host
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # TARGET HOST
-            host=
-
-
-    .. confkey:: instances
-        :synopsis: TODO
-
-        **TODO**
-
-        | TODO
-
-        **Path**: /sample/sample
-
-        **Key**: instances
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # TODO
-            instances=
-
-
-    .. confkey:: is template
-        :synopsis: IS TEMPLATE
-
-        **IS TEMPLATE**
-
-        | Declare this object as a template (this means it will not be available as a separate object)
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: is template
-
-        **Default value**: 0
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # IS TEMPLATE
-            is template=0
-
-
-    .. confkey:: parent
-        :synopsis: PARENT
-
-        **PARENT**
-
-        | The parent the target inherits from
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: parent
-
-        **Default value**: default
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # PARENT
-            parent=default
-
-
-    .. confkey:: port
-        :synopsis: TARGET PORT
-
-        **TARGET PORT**
-
-        | The target server port
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: port
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # TARGET PORT
-            port=
-
-
-    .. confkey:: retries
-        :synopsis: RETRIES
-
-        **RETRIES**
-
-        | Number of times to retry sending.
-
-        **Path**: /sample/sample
-
-        **Key**: retries
-
-        **Default value**: 3
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # RETRIES
-            retries=3
-
-
-    .. confkey:: timeout
-        :synopsis: TIMEOUT
-
-        **TIMEOUT**
-
-        | Timeout when reading/writing packets to/from sockets.
-
-        **Path**: /sample/sample
-
-        **Key**: timeout
-
-        **Default value**: 30
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # TIMEOUT
-            timeout=30
-
-
-    .. confkey:: type
-        :synopsis: COUNTER TYPE
-
-        **COUNTER TYPE**
-
-        | The type of counter to use long, large and double
-
-        **Path**: /sample/sample
-
-        **Key**: type
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckMKClient`,  :module:`CheckSystem`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # COUNTER TYPE
-            type=
-
-
-
-
-… ettings / system / windows
-----------------------------
+/ settings/ system/ windows
+---------------------------
 
 .. confpath:: /settings/system/windows
     :synopsis: WINDOWS CHECK SYSTEM
@@ -4356,8 +3957,8 @@ Arguments
 
 
 
-… ettings / system / windows / counters
----------------------------------------
+…  / counters
+-------------
 
 .. confpath:: /settings/system/windows/counters
     :synopsis: COUNTERS
@@ -4378,8 +3979,268 @@ Arguments
 
 
 
-… ettings / system / windows / real-time
-----------------------------------------
+…  / counters / sample / sample
+-------------------------------
+
+.. confpath:: /settings/system/windows/counters/sample/sample
+    :synopsis: COUNTER
+
+**COUNTER**
+
+    | Definition for counter: sample
+
+
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`alias` |  | ALIAS
+        :confkey:`buffer size` |  | BUFFER SIZE
+        :confkey:`collection strategy` |  | COLLECTION STRATEGY
+        :confkey:`counter` |  | COUNTER
+        :confkey:`flags` |  | FLAGS
+        :confkey:`instances` |  | TODO
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`type` |  | COUNTER TYPE
+
+    **Sample**::
+
+        # COUNTER
+        # Definition for counter: sample
+        [/settings/system/windows/counters/sample/sample]
+        alias=
+        buffer size=
+        collection strategy=
+        counter=
+        flags=
+        instances=
+        is template=0
+        parent=default
+        type=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/counters/sample/sample
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/sample/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: buffer size
+        :synopsis: BUFFER SIZE
+
+        **BUFFER SIZE**
+
+        | Size of buffer (in seconds) larger buffer use more memory
+
+        **Path**: /settings/system/windows/counters/sample/sample
+
+        **Key**: buffer size
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/sample/sample]
+            # BUFFER SIZE
+            buffer size=
+
+
+    .. confkey:: collection strategy
+        :synopsis: COLLECTION STRATEGY
+
+        **COLLECTION STRATEGY**
+
+        | The way to handled values when collecting them: static means we keep the last known value, rrd means we store values in a buffer from which you can retrieve the average
+
+        **Path**: /settings/system/windows/counters/sample/sample
+
+        **Key**: collection strategy
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/sample/sample]
+            # COLLECTION STRATEGY
+            collection strategy=
+
+
+    .. confkey:: counter
+        :synopsis: COUNTER
+
+        **COUNTER**
+
+        | The counter to check
+
+        **Path**: /settings/system/windows/counters/sample/sample
+
+        **Key**: counter
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/sample/sample]
+            # COUNTER
+            counter=
+
+
+    .. confkey:: flags
+        :synopsis: FLAGS
+
+        **FLAGS**
+
+        | Extra flags to configure the counter (nocap100, 1000, noscale)
+
+        **Path**: /settings/system/windows/counters/sample/sample
+
+        **Key**: flags
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/sample/sample]
+            # FLAGS
+            flags=
+
+
+    .. confkey:: instances
+        :synopsis: TODO
+
+        **TODO**
+
+        | TODO
+
+        **Path**: /settings/system/windows/counters/sample/sample
+
+        **Key**: instances
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/sample/sample]
+            # TODO
+            instances=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/counters/sample/sample
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/sample/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/counters/sample/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/sample/sample]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: type
+        :synopsis: COUNTER TYPE
+
+        **COUNTER TYPE**
+
+        | The type of counter to use long, large and double
+
+        **Path**: /settings/system/windows/counters/sample/sample
+
+        **Key**: type
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/sample/sample]
+            # COUNTER TYPE
+            type=
+
+
+
+
+…  / real-time
+--------------
 
 .. confpath:: /settings/system/windows/real-time
     :synopsis: CONFIGURE REALTIME CHECKING
@@ -4400,8 +4261,8 @@ Arguments
 
 
 
-… ettings / system / windows / real-time / checks
--------------------------------------------------
+…  / real-time / checks
+-----------------------
 
 .. confpath:: /settings/system/windows/real-time/checks
     :synopsis: REALTIME FILTERS
@@ -4422,8 +4283,8 @@ Arguments
 
 
 
-… ettings / system / windows / service mapping
-----------------------------------------------
+…  / service mapping
+--------------------
 
 .. confpath:: /settings/system/windows/service mapping
     :synopsis: SERVICE MAPPING SECTION

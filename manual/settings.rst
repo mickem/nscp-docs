@@ -19,9 +19,47 @@ Include
 Another really useful feature of the settings in NSClient++ is the ability to include various other settings.
 This is very flexible and you can include ini file from the registry and vice versa.
 
-The way this is handled is by adding keys under the /include paths.
+The way to include a file (if you are using in ifles) is to add a key under the /include section.
 
 including file::
 
     [/include]
     foo=foo.ini
+
+You can include any number of files registry or other stores. and they will be instansiated in a tree strcutre with a parent child relationship.
+Important to note here is that the first found key will be used. So parents will override children.
+
+And example of this:
+
+nsclient.ini::
+
+    [/include]
+    client=client.ini
+    
+    [/test]
+    key1=This values comes from nsclient.ini
+
+client.ini::
+
+    [/include]
+    baseline=baseline.ini
+    
+    [/test]
+    key1=This values comes from client.ini
+    key2=This values comes from client.ini
+
+baseline.ini::
+
+    [/test]
+    key1=This values comes from baseline.ini
+    key2=This values comes from baseline.ini
+    key3=This values comes from baseline.ini
+
+in the above example the values of /test keyx will be:
+
+ * key1=This values comes from nsclient.ini
+ * key2=This values comes from client.ini
+ * key3=This values comes from baseline.ini
+
+ This can be very usefull to distribute a baseline configurtion for a caompny or monitoring product.
+ Then all "machine specific customization" would go into the nsclient.ini config where as client.ini would be reserved for the clients global config. ANd finally baseline.ini wiould be monitoring tool specific configuration.
