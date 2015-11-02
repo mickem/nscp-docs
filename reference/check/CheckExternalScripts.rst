@@ -81,25 +81,12 @@ Common Keys:
     :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_up` | alias_up
     :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_volumes` | alias_volumes
     :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_volumes_loose` | alias_volumes_loose
-    :confpath:`/settings/external scripts/alias/default` | :confkey:`~/settings/external scripts/alias/default.default` | default
+    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.default` | default
     :confpath:`/settings/external scripts/scripts` | :confkey:`~/settings/external scripts/scripts.default` | default
     :confpath:`/settings/external scripts/wrappings` | :confkey:`~/settings/external scripts/wrappings.bat` | BATCH FILE WRAPPING
     :confpath:`/settings/external scripts/wrappings` | :confkey:`~/settings/external scripts/wrappings.ps1` | POWERSHELL WRAPPING
     :confpath:`/settings/external scripts/wrappings` | :confkey:`~/settings/external scripts/wrappings.vbs` | VISUAL BASIC WRAPPING
 
-Advanced keys:
-
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Path / Section", "Key", "Default Value", "Description"
-
-    :confpath:`/settings/external scripts/alias/sample/sample` | :confkey:`~/settings/external scripts/alias/sample/sample.alias` | ALIAS
-    :confpath:`/settings/external scripts/alias/sample/sample` | :confkey:`~/settings/external scripts/alias/sample/sample.is template` | IS TEMPLATE
-    :confpath:`/settings/external scripts/alias/sample/sample` | :confkey:`~/settings/external scripts/alias/sample/sample.parent` | PARENT
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.alias` | ALIAS
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.is template` | IS TEMPLATE
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.parent` | PARENT
 
 Sample keys:
 
@@ -108,13 +95,19 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/external scripts/alias/sample/sample` | :confkey:`~/settings/external scripts/alias/sample/sample.command` | COMMAND
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.command` | COMMAND
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.domain` | DOMAIN
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.encoding` | ENCODING
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.ignore perfdata` | IGNORE PERF DATA
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.password` | PASSWORD
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.user` | USER
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.alias` | ALIAS
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.command` | COMMAND
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.is template` | IS TEMPLATE
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.parent` | PARENT
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.alias` | ALIAS
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.command` | COMMAND
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.domain` | DOMAIN
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.encoding` | ENCODING
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.ignore perfdata` | IGNORE PERF DATA
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.is template` | IS TEMPLATE
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.parent` | PARENT
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.password` | PASSWORD
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.user` | USER
 
 
 
@@ -280,6 +273,7 @@ Sample keys:
         :confkey:`alias_up` |  | alias_up
         :confkey:`alias_volumes` |  | alias_volumes
         :confkey:`alias_volumes_loose` |  | alias_volumes_loose
+        :confkey:`default` |  | default
 
     **Sample**::
 
@@ -306,6 +300,7 @@ Sample keys:
         alias_up=
         alias_volumes=
         alias_volumes_loose=
+        default=
 
 
     .. confkey:: alias_cpu
@@ -748,42 +743,14 @@ Sample keys:
             alias_volumes_loose=
 
 
-
-
-…  / alias / default
---------------------
-
-.. confpath:: /settings/external scripts/alias/default
-    :synopsis: 
-
-
-
-
-
-
-    .. csv-table:: 
-        :class: contentstable 
-        :delim: | 
-        :header: "Key", "Default Value", "Description"
-    
-        :confkey:`default` |  | default
-
-    **Sample**::
-
-        # 
-        # 
-        [/settings/external scripts/alias/default]
-        default=
-
-
     .. confkey:: default
         :synopsis: default
 
         **default**
 
-        | Alias for default. To configure this item add a section called: /settings/external scripts/alias/default/default
+        | Alias for default. To configure this item add a section called: /settings/external scripts/alias/default
 
-        **Path**: /settings/external scripts/alias/default
+        **Path**: /settings/external scripts/alias
 
         **Key**: default
 
@@ -793,17 +760,17 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/alias/default]
+            [/settings/external scripts/alias]
             # default
             default=
 
 
 
 
-…  / alias / sample / sample
-----------------------------
+…  / alias / sample
+-------------------
 
-.. confpath:: /settings/external scripts/alias/sample/sample
+.. confpath:: /settings/external scripts/alias/sample
     :synopsis: ALIAS DEFENITION
 
 **ALIAS DEFENITION**
@@ -825,7 +792,7 @@ Sample keys:
 
         # ALIAS DEFENITION
         # Alias definition for: sample
-        [/settings/external scripts/alias/sample/sample]
+        [/settings/external scripts/alias/sample]
         alias=
         command=
         is template=0
@@ -841,17 +808,19 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/alias/sample/sample
+        **Path**: /settings/external scripts/alias/sample
 
         **Key**: alias
 
         **Default value**: 
 
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
         **Used by**: :module:`CheckExternalScripts`
 
         **Sample**::
 
-            [/settings/external scripts/alias/sample/sample]
+            [/settings/external scripts/alias/sample]
             # ALIAS
             alias=
 
@@ -863,7 +832,7 @@ Sample keys:
 
         | Command to execute
 
-        **Path**: /settings/external scripts/alias/sample/sample
+        **Path**: /settings/external scripts/alias/sample
 
         **Key**: command
 
@@ -875,7 +844,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/alias/sample/sample]
+            [/settings/external scripts/alias/sample]
             # COMMAND
             command=
 
@@ -889,17 +858,19 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/alias/sample/sample
+        **Path**: /settings/external scripts/alias/sample
 
         **Key**: is template
 
         **Default value**: 0
 
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
         **Used by**: :module:`CheckExternalScripts`
 
         **Sample**::
 
-            [/settings/external scripts/alias/sample/sample]
+            [/settings/external scripts/alias/sample]
             # IS TEMPLATE
             is template=0
 
@@ -913,17 +884,19 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/alias/sample/sample
+        **Path**: /settings/external scripts/alias/sample
 
         **Key**: parent
 
         **Default value**: default
 
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
         **Used by**: :module:`CheckExternalScripts`
 
         **Sample**::
 
-            [/settings/external scripts/alias/sample/sample]
+            [/settings/external scripts/alias/sample]
             # PARENT
             parent=default
 
@@ -961,7 +934,7 @@ Sample keys:
 
         **default**
 
-        | To configure this create a section under: /settings/external scripts/scripts/default
+        | Alias for default. To configure this item add a section called: /settings/external scripts/scripts/default
 
         **Path**: /settings/external scripts/scripts
 
@@ -980,10 +953,10 @@ Sample keys:
 
 
 
-…  / scripts / sample / sample
-------------------------------
+…  / scripts / sample
+---------------------
 
-.. confpath:: /settings/external scripts/scripts/sample/sample
+.. confpath:: /settings/external scripts/scripts/sample
     :synopsis: COMMAND DEFENITION
 
 **COMMAND DEFENITION**
@@ -1010,7 +983,7 @@ Sample keys:
 
         # COMMAND DEFENITION
         # Command definition for: sample
-        [/settings/external scripts/scripts/sample/sample]
+        [/settings/external scripts/scripts/sample]
         alias=
         command=
         domain=
@@ -1031,17 +1004,19 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: alias
 
         **Default value**: 
 
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
         **Used by**: :module:`CheckExternalScripts`
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # ALIAS
             alias=
 
@@ -1053,7 +1028,7 @@ Sample keys:
 
         | Command to execute
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: command
 
@@ -1065,7 +1040,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # COMMAND
             command=
 
@@ -1079,7 +1054,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: domain
 
@@ -1091,7 +1066,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # DOMAIN
             domain=
 
@@ -1105,7 +1080,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: encoding
 
@@ -1117,7 +1092,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # ENCODING
             encoding=
 
@@ -1129,7 +1104,7 @@ Sample keys:
 
         | Do not parse performance data from the output
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: ignore perfdata
 
@@ -1141,7 +1116,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # IGNORE PERF DATA
             ignore perfdata=0
 
@@ -1155,17 +1130,19 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: is template
 
         **Default value**: 0
 
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
         **Used by**: :module:`CheckExternalScripts`
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # IS TEMPLATE
             is template=0
 
@@ -1179,17 +1156,19 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: parent
 
         **Default value**: default
 
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
         **Used by**: :module:`CheckExternalScripts`
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # PARENT
             parent=default
 
@@ -1203,7 +1182,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: password
 
@@ -1215,7 +1194,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # PASSWORD
             password=
 
@@ -1229,7 +1208,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: user
 
@@ -1241,7 +1220,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # USER
             user=
 

@@ -17,10 +17,10 @@ A list of all available queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    :query:`check_nrpe` | Request remote information via NRPE.
-    :query:`exec_nrpe` | Execute remote script via NRPE. (Most likely you want nrpe_query).
+    :query:`nrpe_exec` | Execute remote script via NRPE. (Most likely you want nrpe_query).
     :query:`nrpe_forward` | Forward the request as-is to remote host via NRPE.
-    :query:`submit_nrpe` | Submit information to remote host via NRPE. (Most likely you want nrpe_query).
+    :query:`nrpe_query` | Request remote information via NRPE.
+    :query:`nrpe_submit` | Submit information to remote host via NRPE. (Most likely you want nrpe_query).
 
 
 
@@ -41,11 +41,10 @@ Common Keys:
 
     :confpath:`/settings/NRPE/client` | :confkey:`~/settings/NRPE/client.channel` | CHANNEL
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.address` | TARGET ADDRESS
-    :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.allowed ciphers` | ALLOWED CIPHERS
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.certificate` | SSL CERTIFICATE
+    :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.certificate key` | SSL CERTIFICATE KEY
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.insecure` | Insecure legacy mode
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.payload length` | PAYLOAD LENGTH
-    :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.retries` | RETRIES
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.timeout` | TIMEOUT
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.use ssl` | ENABLE SSL ENCRYPTION
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.verify mode` | VERIFY MODE
@@ -57,11 +56,14 @@ Advanced keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
+    :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.alias` | ALIAS
+    :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.allowed ciphers` | ALLOWED CIPHERS
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.ca` | CA
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.certificate format` | CERTIFICATE FORMAT
-    :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.certificate key` | SSL CERTIFICATE
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.dh` | DH KEY
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.host` | TARGET HOST
+    :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.is template` | IS TEMPLATE
+    :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.parent` | PARENT
     :confpath:`/settings/NRPE/client/targets/default` | :confkey:`~/settings/NRPE/client/targets/default.port` | TARGET PORT
 
 Sample keys:
@@ -71,218 +73,32 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.address` | TARGET ADDRESS
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.allowed ciphers` | ALLOWED CIPHERS
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.ca` | CA
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.certificate` | SSL CERTIFICATE
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.certificate format` | CERTIFICATE FORMAT
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.certificate key` | SSL CERTIFICATE
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.dh` | DH KEY
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.host` | TARGET HOST
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.insecure` | Insecure legacy mode
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.payload length` | PAYLOAD LENGTH
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.port` | TARGET PORT
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.retries` | RETRIES
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.timeout` | TIMEOUT
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.use ssl` | ENABLE SSL ENCRYPTION
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.verify mode` | VERIFY MODE
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.address` | TARGET ADDRESS
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.alias` | ALIAS
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.allowed ciphers` | ALLOWED CIPHERS
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.ca` | CA
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.certificate` | SSL CERTIFICATE
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.certificate format` | CERTIFICATE FORMAT
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.certificate key` | SSL CERTIFICATE KEY
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.dh` | DH KEY
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.host` | TARGET HOST
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.insecure` | Insecure legacy mode
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.is template` | IS TEMPLATE
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.parent` | PARENT
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.payload length` | PAYLOAD LENGTH
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.port` | TARGET PORT
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.timeout` | TIMEOUT
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.use ssl` | ENABLE SSL ENCRYPTION
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.verify mode` | VERIFY MODE
 
 
 Queries
 =======
 A quick reference for all available queries (check commands) in the NRPEClient module.
 
-:query:`check_nrpe`
--------------------
-.. query:: check_nrpe
-    :synopsis: Request remote information via NRPE.
-
-**Usage:**
-
-
-
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Option", "Default Value", "Description"
-
-    :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
-    :option:`show-default` | N/A | Show default values for a given command
-    :option:`help-short` | N/A | Show help screen (short format).
-    :option:`host` |  | The host of the host running the server
-    :option:`port` |  | The port of the host running the server
-    :option:`address` |  | The address (host:port) of the host running the server
-    :option:`timeout` |  | Number of seconds before connection times out (default=10)
-    :option:`target` |  | Target to use (lookup connection info from config)
-    :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
-    :option:`retries` |  | legacy version of retry
-    :option:`source-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
-    :option:`sender-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
-    :option:`command` |  | The name of the command that the remote daemon should run
-    :option:`argument` |  | Set command line arguments
-    :option:`separator` |  | Separator to use for the batch command (default is |)
-    :option:`batch` |  | Add multiple records using the separator format is: command|argument|argument
-    :option:`certificate` |  | Length of payload (has to be same as on the server)
-    :option:`dh` |  | Length of payload (has to be same as on the server)
-    :option:`certificate-key` |  | Client certificate to use
-    :option:`certificate-format` |  | Client certificate format
-    :option:`ca` |  | Certificate authority
-    :option:`verify` |  | Client certificate format
-    :option:`allowed-ciphers` |  | Client certificate format
-    :option:`ssl` | N/A | Initial an ssl handshake with the server.
-    :option:`insecure` | N/A | Use insecure legacy mode
-    :option:`payload-length` |  | Length of payload (has to be same as on the server)
-    :option:`buffer-length` |  | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
-
-
-
-
-Arguments
-*********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: host
-    :synopsis: The host of the host running the server
-
-    | The host of the host running the server
-
-.. option:: port
-    :synopsis: The port of the host running the server
-
-    | The port of the host running the server
-
-.. option:: address
-    :synopsis: The address (host:port) of the host running the server
-
-    | The address (host:port) of the host running the server
-
-.. option:: timeout
-    :synopsis: Number of seconds before connection times out (default=10)
-
-    | Number of seconds before connection times out (default=10)
-
-.. option:: target
-    :synopsis: Target to use (lookup connection info from config)
-
-    | Target to use (lookup connection info from config)
-
-.. option:: retry
-    :synopsis: Number of times ti retry a failed connection attempt (default=2)
-
-    | Number of times ti retry a failed connection attempt (default=2)
-
-.. option:: retries
-    :synopsis: legacy version of retry
-
-    | legacy version of retry
-
-.. option:: source-host
-    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
-
-    | Source/sender host name (default is auto which means use the name of the actual host)
-
-.. option:: sender-host
-    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
-
-    | Source/sender host name (default is auto which means use the name of the actual host)
-
-.. option:: command
-    :synopsis: The name of the command that the remote daemon should run
-
-    | The name of the command that the remote daemon should run
-
-.. option:: argument
-    :synopsis: Set command line arguments
-
-    | Set command line arguments
-
-.. option:: separator
-    :synopsis: Separator to use for the batch command (default is |)
-
-    | Separator to use for the batch command (default is |)
-
-.. option:: batch
-    :synopsis: Add multiple records using the separator format is: command|argument|argument
-
-    | Add multiple records using the separator format is: command|argument|argument
-
-.. option:: certificate
-    :synopsis: Length of payload (has to be same as on the server)
-
-    | Length of payload (has to be same as on the server)
-
-.. option:: dh
-    :synopsis: Length of payload (has to be same as on the server)
-
-    | Length of payload (has to be same as on the server)
-
-.. option:: certificate-key
-    :synopsis: Client certificate to use
-
-    | Client certificate to use
-
-.. option:: certificate-format
-    :synopsis: Client certificate format
-
-    | Client certificate format
-
-.. option:: ca
-    :synopsis: Certificate authority
-
-    | Certificate authority
-
-.. option:: verify
-    :synopsis: Client certificate format
-
-    | Client certificate format
-
-.. option:: allowed-ciphers
-    :synopsis: Client certificate format
-
-    | Client certificate format
-
-.. option:: ssl
-    :synopsis: Initial an ssl handshake with the server.
-
-    | Initial an ssl handshake with the server.
-
-.. option:: insecure
-    :synopsis: Use insecure legacy mode
-
-    | Use insecure legacy mode
-
-.. option:: payload-length
-    :synopsis: Length of payload (has to be same as on the server)
-
-    | Length of payload (has to be same as on the server)
-
-.. option:: buffer-length
-    :synopsis: Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
-
-    | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
-
-:query:`exec_nrpe`
+:query:`nrpe_exec`
 ------------------
-.. query:: exec_nrpe
+.. query:: nrpe_exec
     :synopsis: Execute remote script via NRPE. (Most likely you want nrpe_query).
 
 **Usage:**
@@ -304,24 +120,20 @@ Arguments
     :option:`timeout` |  | Number of seconds before connection times out (default=10)
     :option:`target` |  | Target to use (lookup connection info from config)
     :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
-    :option:`retries` |  | legacy version of retry
-    :option:`source-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
-    :option:`sender-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
     :option:`command` |  | The name of the command that the remote daemon should run
-    :option:`argument` |  | Set command line arguments
-    :option:`separator` |  | Separator to use for the batch command (default is |)
-    :option:`batch` |  | Add multiple records using the separator format is: command|argument|argument
+    :option:`arguments` |  | list of arguments
+    :option:`no-ssl` | N/A | Do not initial an ssl handshake with the server, talk in plain-text.
     :option:`certificate` |  | Length of payload (has to be same as on the server)
-    :option:`dh` |  | Length of payload (has to be same as on the server)
+    :option:`dh` |  | The pre-generated DH key (if ADH is used this will be your 'key' though it is not a secret key)
     :option:`certificate-key` |  | Client certificate to use
-    :option:`certificate-format` |  | Client certificate format
-    :option:`ca` |  | Certificate authority
-    :option:`verify` |  | Client certificate format
-    :option:`allowed-ciphers` |  | Client certificate format
-    :option:`ssl` | N/A | Initial an ssl handshake with the server.
+    :option:`certificate-format` |  | Client certificate format (default is PEM)
     :option:`insecure` | N/A | Use insecure legacy mode
+    :option:`ca` |  | A file representing the Certificate authority used to validate peer certificates
+    :option:`verify` |  | Which verification mode to use: none: no verification, peer: that peer has a certificate, peer-cert: that peer has a valid certificate, ...
+    :option:`allowed-ciphers` |  | Which ciphers are allowed for legacy reasons this defaults to ADH which is not secure preferably set this to DEFAULT which is better or a an even stronger cipher
     :option:`payload-length` |  | Length of payload (has to be same as on the server)
-    :option:`buffer-length` |  | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+    :option:`buffer-length` |  | Same as payload-length (used for legacy reasons)
+    :option:`ssl` | N/A | Initial an ssl handshake with the server.
 
 
 
@@ -378,40 +190,20 @@ Arguments
 
     | Number of times ti retry a failed connection attempt (default=2)
 
-.. option:: retries
-    :synopsis: legacy version of retry
-
-    | legacy version of retry
-
-.. option:: source-host
-    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
-
-    | Source/sender host name (default is auto which means use the name of the actual host)
-
-.. option:: sender-host
-    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
-
-    | Source/sender host name (default is auto which means use the name of the actual host)
-
 .. option:: command
     :synopsis: The name of the command that the remote daemon should run
 
     | The name of the command that the remote daemon should run
 
-.. option:: argument
-    :synopsis: Set command line arguments
+.. option:: arguments
+    :synopsis: list of arguments
 
-    | Set command line arguments
+    | list of arguments
 
-.. option:: separator
-    :synopsis: Separator to use for the batch command (default is |)
+.. option:: no-ssl
+    :synopsis: Do not initial an ssl handshake with the server, talk in plain-text.
 
-    | Separator to use for the batch command (default is |)
-
-.. option:: batch
-    :synopsis: Add multiple records using the separator format is: command|argument|argument
-
-    | Add multiple records using the separator format is: command|argument|argument
+    | Do not initial an ssl handshake with the server, talk in plain-text.
 
 .. option:: certificate
     :synopsis: Length of payload (has to be same as on the server)
@@ -419,9 +211,9 @@ Arguments
     | Length of payload (has to be same as on the server)
 
 .. option:: dh
-    :synopsis: Length of payload (has to be same as on the server)
+    :synopsis: The pre-generated DH key (if ADH is used this will be your 'key' though it is not a secret key)
 
-    | Length of payload (has to be same as on the server)
+    | The pre-generated DH key (if ADH is used this will be your 'key' though it is not a secret key)
 
 .. option:: certificate-key
     :synopsis: Client certificate to use
@@ -429,34 +221,29 @@ Arguments
     | Client certificate to use
 
 .. option:: certificate-format
-    :synopsis: Client certificate format
+    :synopsis: Client certificate format (default is PEM)
 
-    | Client certificate format
-
-.. option:: ca
-    :synopsis: Certificate authority
-
-    | Certificate authority
-
-.. option:: verify
-    :synopsis: Client certificate format
-
-    | Client certificate format
-
-.. option:: allowed-ciphers
-    :synopsis: Client certificate format
-
-    | Client certificate format
-
-.. option:: ssl
-    :synopsis: Initial an ssl handshake with the server.
-
-    | Initial an ssl handshake with the server.
+    | Client certificate format (default is PEM)
 
 .. option:: insecure
     :synopsis: Use insecure legacy mode
 
     | Use insecure legacy mode
+
+.. option:: ca
+    :synopsis: A file representing the Certificate authority used to validate peer certificates
+
+    | A file representing the Certificate authority used to validate peer certificates
+
+.. option:: verify
+    :synopsis: Which verification mode to use: none: no verification, peer: that peer has a certificate, peer-cert: that peer has a valid certificate, ...
+
+    | Which verification mode to use: none: no verification, peer: that peer has a certificate, peer-cert: that peer has a valid certificate, ...
+
+.. option:: allowed-ciphers
+    :synopsis: Which ciphers are allowed for legacy reasons this defaults to ADH which is not secure preferably set this to DEFAULT which is better or a an even stronger cipher
+
+    | Which ciphers are allowed for legacy reasons this defaults to ADH which is not secure preferably set this to DEFAULT which is better or a an even stronger cipher
 
 .. option:: payload-length
     :synopsis: Length of payload (has to be same as on the server)
@@ -464,9 +251,14 @@ Arguments
     | Length of payload (has to be same as on the server)
 
 .. option:: buffer-length
-    :synopsis: Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+    :synopsis: Same as payload-length (used for legacy reasons)
 
-    | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+    | Same as payload-length (used for legacy reasons)
+
+.. option:: ssl
+    :synopsis: Initial an ssl handshake with the server.
+
+    | Initial an ssl handshake with the server.
 
 :query:`nrpe_forward`
 ---------------------
@@ -477,26 +269,191 @@ Arguments
 
 
 
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Option", "Default Value", "Description"
-
-    :option:`*` |  | 
 
 
 
 
 Arguments
 *********
-.. option:: *
-    :synopsis: 
+:query:`nrpe_query`
+-------------------
+.. query:: nrpe_query
+    :synopsis: Request remote information via NRPE.
+
+**Usage:**
 
 
 
-:query:`submit_nrpe`
+.. csv-table:: 
+    :class: contentstable 
+    :delim: | 
+    :header: "Option", "Default Value", "Description"
+
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
+    :option:`host` |  | The host of the host running the server
+    :option:`port` |  | The port of the host running the server
+    :option:`address` |  | The address (host:port) of the host running the server
+    :option:`timeout` |  | Number of seconds before connection times out (default=10)
+    :option:`target` |  | Target to use (lookup connection info from config)
+    :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
+    :option:`command` |  | The name of the query that the remote daemon should run
+    :option:`arguments` |  | list of arguments
+    :option:`query-command` |  | The name of the query that the remote daemon should run
+    :option:`query-arguments` |  | list of arguments
+    :option:`no-ssl` | N/A | Do not initial an ssl handshake with the server, talk in plain-text.
+    :option:`certificate` |  | Length of payload (has to be same as on the server)
+    :option:`dh` |  | The pre-generated DH key (if ADH is used this will be your 'key' though it is not a secret key)
+    :option:`certificate-key` |  | Client certificate to use
+    :option:`certificate-format` |  | Client certificate format (default is PEM)
+    :option:`insecure` | N/A | Use insecure legacy mode
+    :option:`ca` |  | A file representing the Certificate authority used to validate peer certificates
+    :option:`verify` |  | Which verification mode to use: none: no verification, peer: that peer has a certificate, peer-cert: that peer has a valid certificate, ...
+    :option:`allowed-ciphers` |  | Which ciphers are allowed for legacy reasons this defaults to ADH which is not secure preferably set this to DEFAULT which is better or a an even stronger cipher
+    :option:`payload-length` |  | Length of payload (has to be same as on the server)
+    :option:`buffer-length` |  | Same as payload-length (used for legacy reasons)
+    :option:`ssl` | N/A | Initial an ssl handshake with the server.
+
+
+
+
+Arguments
+*********
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
+
+.. option:: host
+    :synopsis: The host of the host running the server
+
+    | The host of the host running the server
+
+.. option:: port
+    :synopsis: The port of the host running the server
+
+    | The port of the host running the server
+
+.. option:: address
+    :synopsis: The address (host:port) of the host running the server
+
+    | The address (host:port) of the host running the server
+
+.. option:: timeout
+    :synopsis: Number of seconds before connection times out (default=10)
+
+    | Number of seconds before connection times out (default=10)
+
+.. option:: target
+    :synopsis: Target to use (lookup connection info from config)
+
+    | Target to use (lookup connection info from config)
+
+.. option:: retry
+    :synopsis: Number of times ti retry a failed connection attempt (default=2)
+
+    | Number of times ti retry a failed connection attempt (default=2)
+
+.. option:: command
+    :synopsis: The name of the query that the remote daemon should run
+
+    | The name of the query that the remote daemon should run
+
+.. option:: arguments
+    :synopsis: list of arguments
+
+    | list of arguments
+
+.. option:: query-command
+    :synopsis: The name of the query that the remote daemon should run
+
+    | The name of the query that the remote daemon should run
+
+.. option:: query-arguments
+    :synopsis: list of arguments
+
+    | list of arguments
+
+.. option:: no-ssl
+    :synopsis: Do not initial an ssl handshake with the server, talk in plain-text.
+
+    | Do not initial an ssl handshake with the server, talk in plain-text.
+
+.. option:: certificate
+    :synopsis: Length of payload (has to be same as on the server)
+
+    | Length of payload (has to be same as on the server)
+
+.. option:: dh
+    :synopsis: The pre-generated DH key (if ADH is used this will be your 'key' though it is not a secret key)
+
+    | The pre-generated DH key (if ADH is used this will be your 'key' though it is not a secret key)
+
+.. option:: certificate-key
+    :synopsis: Client certificate to use
+
+    | Client certificate to use
+
+.. option:: certificate-format
+    :synopsis: Client certificate format (default is PEM)
+
+    | Client certificate format (default is PEM)
+
+.. option:: insecure
+    :synopsis: Use insecure legacy mode
+
+    | Use insecure legacy mode
+
+.. option:: ca
+    :synopsis: A file representing the Certificate authority used to validate peer certificates
+
+    | A file representing the Certificate authority used to validate peer certificates
+
+.. option:: verify
+    :synopsis: Which verification mode to use: none: no verification, peer: that peer has a certificate, peer-cert: that peer has a valid certificate, ...
+
+    | Which verification mode to use: none: no verification, peer: that peer has a certificate, peer-cert: that peer has a valid certificate, ...
+
+.. option:: allowed-ciphers
+    :synopsis: Which ciphers are allowed for legacy reasons this defaults to ADH which is not secure preferably set this to DEFAULT which is better or a an even stronger cipher
+
+    | Which ciphers are allowed for legacy reasons this defaults to ADH which is not secure preferably set this to DEFAULT which is better or a an even stronger cipher
+
+.. option:: payload-length
+    :synopsis: Length of payload (has to be same as on the server)
+
+    | Length of payload (has to be same as on the server)
+
+.. option:: buffer-length
+    :synopsis: Same as payload-length (used for legacy reasons)
+
+    | Same as payload-length (used for legacy reasons)
+
+.. option:: ssl
+    :synopsis: Initial an ssl handshake with the server.
+
+    | Initial an ssl handshake with the server.
+
+:query:`nrpe_submit`
 --------------------
-.. query:: submit_nrpe
+.. query:: nrpe_submit
     :synopsis: Submit information to remote host via NRPE. (Most likely you want nrpe_query).
 
 **Usage:**
@@ -518,26 +475,22 @@ Arguments
     :option:`timeout` |  | Number of seconds before connection times out (default=10)
     :option:`target` |  | Target to use (lookup connection info from config)
     :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
-    :option:`retries` |  | legacy version of retry
-    :option:`source-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
-    :option:`sender-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
     :option:`command` |  | The name of the command that the remote daemon should run
     :option:`alias` |  | Same as command
     :option:`message` |  | Message
     :option:`result` |  | Result code either a number or OK, WARN, CRIT, UNKNOWN
-    :option:`separator` |  | Separator to use for the batch command (default is |)
-    :option:`batch` |  | Add multiple records using the separator format is: command|result|message
+    :option:`no-ssl` | N/A | Do not initial an ssl handshake with the server, talk in plain-text.
     :option:`certificate` |  | Length of payload (has to be same as on the server)
-    :option:`dh` |  | Length of payload (has to be same as on the server)
+    :option:`dh` |  | The pre-generated DH key (if ADH is used this will be your 'key' though it is not a secret key)
     :option:`certificate-key` |  | Client certificate to use
-    :option:`certificate-format` |  | Client certificate format
-    :option:`ca` |  | Certificate authority
-    :option:`verify` |  | Client certificate format
-    :option:`allowed-ciphers` |  | Client certificate format
-    :option:`ssl` | N/A | Initial an ssl handshake with the server.
+    :option:`certificate-format` |  | Client certificate format (default is PEM)
     :option:`insecure` | N/A | Use insecure legacy mode
+    :option:`ca` |  | A file representing the Certificate authority used to validate peer certificates
+    :option:`verify` |  | Which verification mode to use: none: no verification, peer: that peer has a certificate, peer-cert: that peer has a valid certificate, ...
+    :option:`allowed-ciphers` |  | Which ciphers are allowed for legacy reasons this defaults to ADH which is not secure preferably set this to DEFAULT which is better or a an even stronger cipher
     :option:`payload-length` |  | Length of payload (has to be same as on the server)
-    :option:`buffer-length` |  | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+    :option:`buffer-length` |  | Same as payload-length (used for legacy reasons)
+    :option:`ssl` | N/A | Initial an ssl handshake with the server.
 
 
 
@@ -594,21 +547,6 @@ Arguments
 
     | Number of times ti retry a failed connection attempt (default=2)
 
-.. option:: retries
-    :synopsis: legacy version of retry
-
-    | legacy version of retry
-
-.. option:: source-host
-    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
-
-    | Source/sender host name (default is auto which means use the name of the actual host)
-
-.. option:: sender-host
-    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
-
-    | Source/sender host name (default is auto which means use the name of the actual host)
-
 .. option:: command
     :synopsis: The name of the command that the remote daemon should run
 
@@ -629,15 +567,10 @@ Arguments
 
     | Result code either a number or OK, WARN, CRIT, UNKNOWN
 
-.. option:: separator
-    :synopsis: Separator to use for the batch command (default is |)
+.. option:: no-ssl
+    :synopsis: Do not initial an ssl handshake with the server, talk in plain-text.
 
-    | Separator to use for the batch command (default is |)
-
-.. option:: batch
-    :synopsis: Add multiple records using the separator format is: command|result|message
-
-    | Add multiple records using the separator format is: command|result|message
+    | Do not initial an ssl handshake with the server, talk in plain-text.
 
 .. option:: certificate
     :synopsis: Length of payload (has to be same as on the server)
@@ -645,9 +578,9 @@ Arguments
     | Length of payload (has to be same as on the server)
 
 .. option:: dh
-    :synopsis: Length of payload (has to be same as on the server)
+    :synopsis: The pre-generated DH key (if ADH is used this will be your 'key' though it is not a secret key)
 
-    | Length of payload (has to be same as on the server)
+    | The pre-generated DH key (if ADH is used this will be your 'key' though it is not a secret key)
 
 .. option:: certificate-key
     :synopsis: Client certificate to use
@@ -655,34 +588,29 @@ Arguments
     | Client certificate to use
 
 .. option:: certificate-format
-    :synopsis: Client certificate format
+    :synopsis: Client certificate format (default is PEM)
 
-    | Client certificate format
-
-.. option:: ca
-    :synopsis: Certificate authority
-
-    | Certificate authority
-
-.. option:: verify
-    :synopsis: Client certificate format
-
-    | Client certificate format
-
-.. option:: allowed-ciphers
-    :synopsis: Client certificate format
-
-    | Client certificate format
-
-.. option:: ssl
-    :synopsis: Initial an ssl handshake with the server.
-
-    | Initial an ssl handshake with the server.
+    | Client certificate format (default is PEM)
 
 .. option:: insecure
     :synopsis: Use insecure legacy mode
 
     | Use insecure legacy mode
+
+.. option:: ca
+    :synopsis: A file representing the Certificate authority used to validate peer certificates
+
+    | A file representing the Certificate authority used to validate peer certificates
+
+.. option:: verify
+    :synopsis: Which verification mode to use: none: no verification, peer: that peer has a certificate, peer-cert: that peer has a valid certificate, ...
+
+    | Which verification mode to use: none: no verification, peer: that peer has a certificate, peer-cert: that peer has a valid certificate, ...
+
+.. option:: allowed-ciphers
+    :synopsis: Which ciphers are allowed for legacy reasons this defaults to ADH which is not secure preferably set this to DEFAULT which is better or a an even stronger cipher
+
+    | Which ciphers are allowed for legacy reasons this defaults to ADH which is not secure preferably set this to DEFAULT which is better or a an even stronger cipher
 
 .. option:: payload-length
     :synopsis: Length of payload (has to be same as on the server)
@@ -690,9 +618,14 @@ Arguments
     | Length of payload (has to be same as on the server)
 
 .. option:: buffer-length
-    :synopsis: Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+    :synopsis: Same as payload-length (used for legacy reasons)
 
-    | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+    | Same as payload-length (used for legacy reasons)
+
+.. option:: ssl
+    :synopsis: Initial an ssl handshake with the server.
+
+    | Initial an ssl handshake with the server.
 
 
 
@@ -796,9 +729,9 @@ Arguments
 ----------------------
 
 .. confpath:: /settings/NRPE/client/targets/default
-    :synopsis: TARGET
+    :synopsis: TARGET DEFENITION
 
-**TARGET**
+**TARGET DEFENITION**
 
     | Target definition for: default
 
@@ -809,41 +742,45 @@ Arguments
         :header: "Key", "Default Value", "Description"
     
         :confkey:`address` |  | TARGET ADDRESS
-        :confkey:`allowed ciphers` |  | ALLOWED CIPHERS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`allowed ciphers` | ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH | ALLOWED CIPHERS
         :confkey:`ca` |  | CA
         :confkey:`certificate` |  | SSL CERTIFICATE
-        :confkey:`certificate format` |  | CERTIFICATE FORMAT
-        :confkey:`certificate key` |  | SSL CERTIFICATE
+        :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
+        :confkey:`certificate key` |  | SSL CERTIFICATE KEY
         :confkey:`dh` |  | DH KEY
         :confkey:`host` |  | TARGET HOST
         :confkey:`insecure` |  | Insecure legacy mode
-        :confkey:`payload length` | 0 | PAYLOAD LENGTH
-        :confkey:`port` |  | TARGET PORT
-        :confkey:`retries` | 3 | RETRIES
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`payload length` | 1024 | PAYLOAD LENGTH
+        :confkey:`port` | 0 | TARGET PORT
         :confkey:`timeout` | 30 | TIMEOUT
-        :confkey:`use ssl` | 0 | ENABLE SSL ENCRYPTION
-        :confkey:`verify mode` |  | VERIFY MODE
+        :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
+        :confkey:`verify mode` | none | VERIFY MODE
 
     **Sample**::
 
-        # TARGET
+        # TARGET DEFENITION
         # Target definition for: default
         [/settings/NRPE/client/targets/default]
         address=
-        allowed ciphers=
+        alias=
+        allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
         ca=
         certificate=
-        certificate format=
+        certificate format=PEM
         certificate key=
         dh=
         host=
         insecure=
-        payload length=0
-        port=
-        retries=3
+        is template=0
+        parent=default
+        payload length=1024
+        port=0
         timeout=30
-        use ssl=0
-        verify mode=
+        use ssl=1
+        verify mode=none
 
 
     .. confkey:: address
@@ -868,16 +805,18 @@ Arguments
             address=
 
 
-    .. confkey:: allowed ciphers
-        :synopsis: ALLOWED CIPHERS
+    .. confkey:: alias
+        :synopsis: ALIAS
 
-        **ALLOWED CIPHERS**
+        **ALIAS**
 
-        | A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
 
         **Path**: /settings/NRPE/client/targets/default
 
-        **Key**: allowed ciphers
+        **Key**: alias
 
         **Default value**: 
 
@@ -886,8 +825,32 @@ Arguments
         **Sample**::
 
             [/settings/NRPE/client/targets/default]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: allowed ciphers
+        :synopsis: ALLOWED CIPHERS
+
+        **ALLOWED CIPHERS**
+
+        | The allowed list of ciphers (setting insecure wil override this to only support ADH
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: allowed ciphers
+
+        **Default value**: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
             # ALLOWED CIPHERS
-            allowed ciphers=
+            allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
 
     .. confkey:: ca
@@ -895,7 +858,7 @@ Arguments
 
         **CA**
 
-
+        | The certificate authority to use to authenticate remote certificate
 
         **Advanced** (means it is not commonly used)
 
@@ -919,7 +882,7 @@ Arguments
 
         **SSL CERTIFICATE**
 
-
+        | The ssl certificate to use to encrypt the communication
 
         **Path**: /settings/NRPE/client/targets/default
 
@@ -941,7 +904,7 @@ Arguments
 
         **CERTIFICATE FORMAT**
 
-
+        | Format of SSL certificate
 
         **Advanced** (means it is not commonly used)
 
@@ -949,7 +912,7 @@ Arguments
 
         **Key**: certificate format
 
-        **Default value**: 
+        **Default value**: PEM
 
         **Used by**: :module:`NRPEClient`
 
@@ -957,17 +920,15 @@ Arguments
 
             [/settings/NRPE/client/targets/default]
             # CERTIFICATE FORMAT
-            certificate format=
+            certificate format=PEM
 
 
     .. confkey:: certificate key
-        :synopsis: SSL CERTIFICATE
+        :synopsis: SSL CERTIFICATE KEY
 
-        **SSL CERTIFICATE**
+        **SSL CERTIFICATE KEY**
 
-
-
-        **Advanced** (means it is not commonly used)
+        | Key for the SSL certificate
 
         **Path**: /settings/NRPE/client/targets/default
 
@@ -980,7 +941,7 @@ Arguments
         **Sample**::
 
             [/settings/NRPE/client/targets/default]
-            # SSL CERTIFICATE
+            # SSL CERTIFICATE KEY
             certificate key=
 
 
@@ -989,7 +950,7 @@ Arguments
 
         **DH KEY**
 
-
+        | The diffi-hellman perfect forwarded secret to use setting --insecure will override this
 
         **Advanced** (means it is not commonly used)
 
@@ -1054,6 +1015,54 @@ Arguments
             insecure=
 
 
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/default
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/default]
+            # PARENT
+            parent=default
+
+
     .. confkey:: payload length
         :synopsis: PAYLOAD LENGTH
 
@@ -1065,7 +1074,7 @@ Arguments
 
         **Key**: payload length
 
-        **Default value**: 0
+        **Default value**: 1024
 
         **Used by**: :module:`NRPEClient`
 
@@ -1073,7 +1082,7 @@ Arguments
 
             [/settings/NRPE/client/targets/default]
             # PAYLOAD LENGTH
-            payload length=0
+            payload length=1024
 
 
     .. confkey:: port
@@ -1089,7 +1098,7 @@ Arguments
 
         **Key**: port
 
-        **Default value**: 
+        **Default value**: 0
 
         **Used by**: :module:`NRPEClient`
 
@@ -1097,29 +1106,7 @@ Arguments
 
             [/settings/NRPE/client/targets/default]
             # TARGET PORT
-            port=
-
-
-    .. confkey:: retries
-        :synopsis: RETRIES
-
-        **RETRIES**
-
-        | Number of times to retry sending.
-
-        **Path**: /settings/NRPE/client/targets/default
-
-        **Key**: retries
-
-        **Default value**: 3
-
-        **Used by**: :module:`NRPEClient`
-
-        **Sample**::
-
-            [/settings/NRPE/client/targets/default]
-            # RETRIES
-            retries=3
+            port=0
 
 
     .. confkey:: timeout
@@ -1155,7 +1142,7 @@ Arguments
 
         **Key**: use ssl
 
-        **Default value**: 0
+        **Default value**: 1
 
         **Used by**: :module:`NRPEClient`
 
@@ -1163,7 +1150,7 @@ Arguments
 
             [/settings/NRPE/client/targets/default]
             # ENABLE SSL ENCRYPTION
-            use ssl=0
+            use ssl=1
 
 
     .. confkey:: verify mode
@@ -1171,13 +1158,13 @@ Arguments
 
         **VERIFY MODE**
 
-
+        | What to verify default is non, to validate remote certificate use remote-peer
 
         **Path**: /settings/NRPE/client/targets/default
 
         **Key**: verify mode
 
-        **Default value**: 
+        **Default value**: none
 
         **Used by**: :module:`NRPEClient`
 
@@ -1185,18 +1172,18 @@ Arguments
 
             [/settings/NRPE/client/targets/default]
             # VERIFY MODE
-            verify mode=
+            verify mode=none
 
 
 
 
-…  / targets / sample / sample
-------------------------------
+…  / targets / sample
+---------------------
 
-.. confpath:: /settings/NRPE/client/targets/sample/sample
-    :synopsis: TARGET
+.. confpath:: /settings/NRPE/client/targets/sample
+    :synopsis: TARGET DEFENITION
 
-**TARGET**
+**TARGET DEFENITION**
 
     | Target definition for: sample
 
@@ -1207,41 +1194,45 @@ Arguments
         :header: "Key", "Default Value", "Description"
     
         :confkey:`address` |  | TARGET ADDRESS
-        :confkey:`allowed ciphers` |  | ALLOWED CIPHERS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`allowed ciphers` | ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH | ALLOWED CIPHERS
         :confkey:`ca` |  | CA
         :confkey:`certificate` |  | SSL CERTIFICATE
-        :confkey:`certificate format` |  | CERTIFICATE FORMAT
-        :confkey:`certificate key` |  | SSL CERTIFICATE
+        :confkey:`certificate format` | PEM | CERTIFICATE FORMAT
+        :confkey:`certificate key` |  | SSL CERTIFICATE KEY
         :confkey:`dh` |  | DH KEY
         :confkey:`host` |  | TARGET HOST
         :confkey:`insecure` |  | Insecure legacy mode
-        :confkey:`payload length` | 0 | PAYLOAD LENGTH
-        :confkey:`port` |  | TARGET PORT
-        :confkey:`retries` | 3 | RETRIES
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`payload length` | 1024 | PAYLOAD LENGTH
+        :confkey:`port` | 0 | TARGET PORT
         :confkey:`timeout` | 30 | TIMEOUT
-        :confkey:`use ssl` | 0 | ENABLE SSL ENCRYPTION
-        :confkey:`verify mode` |  | VERIFY MODE
+        :confkey:`use ssl` | 1 | ENABLE SSL ENCRYPTION
+        :confkey:`verify mode` | none | VERIFY MODE
 
     **Sample**::
 
-        # TARGET
+        # TARGET DEFENITION
         # Target definition for: sample
-        [/settings/NRPE/client/targets/sample/sample]
+        [/settings/NRPE/client/targets/sample]
         address=
-        allowed ciphers=
+        alias=
+        allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
         ca=
         certificate=
-        certificate format=
+        certificate format=PEM
         certificate key=
         dh=
         host=
         insecure=
-        payload length=0
-        port=
-        retries=3
+        is template=0
+        parent=default
+        payload length=1024
+        port=0
         timeout=30
-        use ssl=0
-        verify mode=
+        use ssl=1
+        verify mode=none
 
 
     .. confkey:: address
@@ -1251,7 +1242,7 @@ Arguments
 
         | Target host address
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: address
 
@@ -1263,21 +1254,23 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # TARGET ADDRESS
             address=
 
 
-    .. confkey:: allowed ciphers
-        :synopsis: ALLOWED CIPHERS
+    .. confkey:: alias
+        :synopsis: ALIAS
 
-        **ALLOWED CIPHERS**
+        **ALIAS**
 
-        | A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+        | The alias (service name) to report to server
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Advanced** (means it is not commonly used)
 
-        **Key**: allowed ciphers
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: alias
 
         **Default value**: 
 
@@ -1287,9 +1280,35 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: allowed ciphers
+        :synopsis: ALLOWED CIPHERS
+
+        **ALLOWED CIPHERS**
+
+        | The allowed list of ciphers (setting insecure wil override this to only support ADH
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: allowed ciphers
+
+        **Default value**: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
             # ALLOWED CIPHERS
-            allowed ciphers=
+            allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
 
     .. confkey:: ca
@@ -1297,11 +1316,11 @@ Arguments
 
         **CA**
 
-
+        | The certificate authority to use to authenticate remote certificate
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: ca
 
@@ -1313,7 +1332,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # CA
             ca=
 
@@ -1323,9 +1342,9 @@ Arguments
 
         **SSL CERTIFICATE**
 
+        | The ssl certificate to use to encrypt the communication
 
-
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: certificate
 
@@ -1337,7 +1356,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # SSL CERTIFICATE
             certificate=
 
@@ -1347,15 +1366,15 @@ Arguments
 
         **CERTIFICATE FORMAT**
 
-
+        | Format of SSL certificate
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: certificate format
 
-        **Default value**: 
+        **Default value**: PEM
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
@@ -1363,21 +1382,19 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # CERTIFICATE FORMAT
-            certificate format=
+            certificate format=PEM
 
 
     .. confkey:: certificate key
-        :synopsis: SSL CERTIFICATE
+        :synopsis: SSL CERTIFICATE KEY
 
-        **SSL CERTIFICATE**
+        **SSL CERTIFICATE KEY**
 
+        | Key for the SSL certificate
 
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: certificate key
 
@@ -1389,8 +1406,8 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
-            # SSL CERTIFICATE
+            [/settings/NRPE/client/targets/sample]
+            # SSL CERTIFICATE KEY
             certificate key=
 
 
@@ -1399,11 +1416,11 @@ Arguments
 
         **DH KEY**
 
-
+        | The diffi-hellman perfect forwarded secret to use setting --insecure will override this
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: dh
 
@@ -1415,7 +1432,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # DH KEY
             dh=
 
@@ -1429,7 +1446,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: host
 
@@ -1441,7 +1458,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # TARGET HOST
             host=
 
@@ -1453,7 +1470,7 @@ Arguments
 
         | Use insecure legacy mode to connect to old NRPE server
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: insecure
 
@@ -1465,21 +1482,23 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # Insecure legacy mode
             insecure=
 
 
-    .. confkey:: payload length
-        :synopsis: PAYLOAD LENGTH
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
 
-        **PAYLOAD LENGTH**
+        **IS TEMPLATE**
 
-        | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+        | Declare this object as a template (this means it will not be available as a separate object)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Advanced** (means it is not commonly used)
 
-        **Key**: payload length
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: is template
 
         **Default value**: 0
 
@@ -1489,9 +1508,59 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: payload length
+        :synopsis: PAYLOAD LENGTH
+
+        **PAYLOAD LENGTH**
+
+        | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+
+        **Path**: /settings/NRPE/client/targets/sample
+
+        **Key**: payload length
+
+        **Default value**: 1024
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRPEClient`
+
+        **Sample**::
+
+            [/settings/NRPE/client/targets/sample]
             # PAYLOAD LENGTH
-            payload length=0
+            payload length=1024
 
 
     .. confkey:: port
@@ -1503,11 +1572,11 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: port
 
-        **Default value**: 
+        **Default value**: 0
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
@@ -1515,33 +1584,9 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # TARGET PORT
-            port=
-
-
-    .. confkey:: retries
-        :synopsis: RETRIES
-
-        **RETRIES**
-
-        | Number of times to retry sending.
-
-        **Path**: /settings/NRPE/client/targets/sample/sample
-
-        **Key**: retries
-
-        **Default value**: 3
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`NRPEClient`
-
-        **Sample**::
-
-            [/settings/NRPE/client/targets/sample/sample]
-            # RETRIES
-            retries=3
+            port=0
 
 
     .. confkey:: timeout
@@ -1551,7 +1596,7 @@ Arguments
 
         | Timeout when reading/writing packets to/from sockets.
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: timeout
 
@@ -1563,7 +1608,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # TIMEOUT
             timeout=30
 
@@ -1575,11 +1620,11 @@ Arguments
 
         | This option controls if SSL should be enabled.
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: use ssl
 
-        **Default value**: 0
+        **Default value**: 1
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
@@ -1587,9 +1632,9 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # ENABLE SSL ENCRYPTION
-            use ssl=0
+            use ssl=1
 
 
     .. confkey:: verify mode
@@ -1597,13 +1642,13 @@ Arguments
 
         **VERIFY MODE**
 
+        | What to verify default is non, to validate remote certificate use remote-peer
 
-
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: verify mode
 
-        **Default value**: 
+        **Default value**: none
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
@@ -1611,8 +1656,8 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # VERIFY MODE
-            verify mode=
+            verify mode=none
 
 

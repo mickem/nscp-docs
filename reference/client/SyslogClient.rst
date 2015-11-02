@@ -17,7 +17,7 @@ A list of all available queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    :query:`submit_syslog` | Submit information to the remote syslog server.
+    :query:`syslog_submit` | Submit information to remote syslog server.
 
 
 
@@ -36,12 +36,17 @@ Common Keys:
     :delim: | 
     :header: "Path / Section", "Key", "Description"
 
-    :confpath:`/default` | :confkey:`~/default.address` | TARGET ADDRESS
-    :confpath:`/default` | :confkey:`~/default.default` | 
-    :confpath:`/default` | :confkey:`~/default.retries` | RETRIES
-    :confpath:`/default` | :confkey:`~/default.timeout` | TIMEOUT
     :confpath:`/settings/syslog/client` | :confkey:`~/settings/syslog/client.channel` | CHANNEL
     :confpath:`/settings/syslog/client` | :confkey:`~/settings/syslog/client.hostname` | HOSTNAME
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.address` | TARGET ADDRESS
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.critical severity` | TODO
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.facility` | TODO
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.message_syntax` | TODO
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.ok severity` | TODO
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.severity` | TODO
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.tag_syntax` | TODO
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.unknown severity` | TODO
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.warning severity` | TODO
 
 Advanced keys:
 
@@ -50,8 +55,11 @@ Advanced keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/default` | :confkey:`~/default.host` | TARGET HOST
-    :confpath:`/default` | :confkey:`~/default.port` | TARGET PORT
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.alias` | ALIAS
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.host` | TARGET HOST
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.is template` | IS TEMPLATE
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.parent` | PARENT
+    :confpath:`/settings/syslog/client/targets/default` | :confkey:`~/settings/syslog/client/targets/default.port` | TARGET PORT
 
 Sample keys:
 
@@ -60,40 +68,30 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.address` | TARGET ADDRESS
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.command` | COMMAND NAME
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.critical` | CRITICAL FILTER
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.debug` | DEBUG
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.destination` | DESTINATION
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.detail syntax` | SYNTAX
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.empty message` | EMPTY MESSAGE
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.filter` | FILTER
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.host` | TARGET HOST
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.log` | FILE
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.logs` | FILES
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.maximum age` | MAGIMUM AGE
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.ok` | OK FILTER
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.ok syntax` | SYNTAX
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.perf config` | PERF CONFIG
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.port` | TARGET PORT
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.retries` | RETRIES
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.severity` | SEVERITY
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.source id` | SOURCE ID
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.target` | DESTINATION
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.target id` | TARGET ID
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.timeout` | TIMEOUT
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.top syntax` | SYNTAX
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.warning` | WARNING FILTER
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.address` | TARGET ADDRESS
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.alias` | ALIAS
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.critical severity` | TODO
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.facility` | TODO
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.host` | TARGET HOST
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.is template` | IS TEMPLATE
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.message_syntax` | TODO
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.ok severity` | TODO
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.parent` | PARENT
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.port` | TARGET PORT
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.severity` | TODO
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.tag_syntax` | TODO
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.unknown severity` | TODO
+    :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.warning severity` | TODO
 
 
 Queries
 =======
 A quick reference for all available queries (check commands) in the SyslogClient module.
 
-:query:`submit_syslog`
+:query:`syslog_submit`
 ----------------------
-.. query:: submit_syslog
-    :synopsis: Submit information to the remote syslog server.
+.. query:: syslog_submit
+    :synopsis: Submit information to remote syslog server.
 
 **Usage:**
 
@@ -114,16 +112,10 @@ A quick reference for all available queries (check commands) in the SyslogClient
     :option:`timeout` |  | Number of seconds before connection times out (default=10)
     :option:`target` |  | Target to use (lookup connection info from config)
     :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
-    :option:`retries` |  | legacy version of retry
-    :option:`source-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
-    :option:`sender-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
     :option:`command` |  | The name of the command that the remote daemon should run
     :option:`alias` |  | Same as command
     :option:`message` |  | Message
     :option:`result` |  | Result code either a number or OK, WARN, CRIT, UNKNOWN
-    :option:`separator` |  | Separator to use for the batch command (default is |)
-    :option:`batch` |  | Add multiple records using the separator format is: command|result|message
-    :option:`path` |  | 
     :option:`severity` |  | Severity of error message
     :option:`unknown-severity` |  | Severity of error message
     :option:`ok-severity` |  | Severity of error message
@@ -188,21 +180,6 @@ Arguments
 
     | Number of times ti retry a failed connection attempt (default=2)
 
-.. option:: retries
-    :synopsis: legacy version of retry
-
-    | legacy version of retry
-
-.. option:: source-host
-    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
-
-    | Source/sender host name (default is auto which means use the name of the actual host)
-
-.. option:: sender-host
-    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
-
-    | Source/sender host name (default is auto which means use the name of the actual host)
-
 .. option:: command
     :synopsis: The name of the command that the remote daemon should run
 
@@ -222,21 +199,6 @@ Arguments
     :synopsis: Result code either a number or OK, WARN, CRIT, UNKNOWN
 
     | Result code either a number or OK, WARN, CRIT, UNKNOWN
-
-.. option:: separator
-    :synopsis: Separator to use for the batch command (default is |)
-
-    | Separator to use for the batch command (default is |)
-
-.. option:: batch
-    :synopsis: Add multiple records using the separator format is: command|result|message
-
-    | Add multiple records using the separator format is: command|result|message
-
-.. option:: path
-    :synopsis: 
-
-
 
 .. option:: severity
     :synopsis: Severity of error message
@@ -282,861 +244,8 @@ Arguments
 
 
 
-… default
----------
-
-.. confpath:: /default
-    :synopsis: TARGET
-
-**TARGET**
-
-    | Target definition for: default
-
-
-    .. csv-table:: 
-        :class: contentstable 
-        :delim: | 
-        :header: "Key", "Default Value", "Description"
-    
-        :confkey:`address` |  | TARGET ADDRESS
-        :confkey:`default` |  | 
-        :confkey:`host` |  | TARGET HOST
-        :confkey:`port` |  | TARGET PORT
-        :confkey:`retries` | 3 | RETRIES
-        :confkey:`timeout` | 30 | TIMEOUT
-
-    **Sample**::
-
-        # TARGET
-        # Target definition for: default
-        [/default]
-        address=
-        default=
-        host=
-        port=
-        retries=3
-        timeout=30
-
-
-    .. confkey:: address
-        :synopsis: TARGET ADDRESS
-
-        **TARGET ADDRESS**
-
-        | Target host address
-
-        **Path**: /default
-
-        **Key**: address
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/default]
-            # TARGET ADDRESS
-            address=
-
-
-    .. confkey:: default
-        :synopsis: 
-
-        ****
-
-        | Filter for . To configure this item add a section called: /default
-
-        **Path**: /default
-
-        **Key**: default
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/default]
-            # 
-            default=
-
-
-    .. confkey:: host
-        :synopsis: TARGET HOST
-
-        **TARGET HOST**
-
-        | The target server to report results to.
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /default
-
-        **Key**: host
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/default]
-            # TARGET HOST
-            host=
-
-
-    .. confkey:: port
-        :synopsis: TARGET PORT
-
-        **TARGET PORT**
-
-        | The target server port
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /default
-
-        **Key**: port
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/default]
-            # TARGET PORT
-            port=
-
-
-    .. confkey:: retries
-        :synopsis: RETRIES
-
-        **RETRIES**
-
-        | Number of times to retry sending.
-
-        **Path**: /default
-
-        **Key**: retries
-
-        **Default value**: 3
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/default]
-            # RETRIES
-            retries=3
-
-
-    .. confkey:: timeout
-        :synopsis: TIMEOUT
-
-        **TIMEOUT**
-
-        | Timeout when reading/writing packets to/from sockets.
-
-        **Path**: /default
-
-        **Key**: timeout
-
-        **Default value**: 30
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/default]
-            # TIMEOUT
-            timeout=30
-
-
-
-
-… sample / sample
------------------
-
-.. confpath:: /sample/sample
-    :synopsis: TARGET
-
-**TARGET**
-
-    | Target definition for: sample
-
-
-    .. csv-table:: 
-        :class: contentstable 
-        :delim: | 
-        :header: "Key", "Default Value", "Description"
-    
-        :confkey:`address` |  | TARGET ADDRESS
-        :confkey:`command` |  | COMMAND NAME
-        :confkey:`critical` |  | CRITICAL FILTER
-        :confkey:`debug` | 0 | DEBUG
-        :confkey:`destination` |  | DESTINATION
-        :confkey:`detail syntax` |  | SYNTAX
-        :confkey:`empty message` | eventlog found no records | EMPTY MESSAGE
-        :confkey:`filter` |  | FILTER
-        :confkey:`host` |  | TARGET HOST
-        :confkey:`log` |  | FILE
-        :confkey:`logs` |  | FILES
-        :confkey:`maximum age` | 5m | MAGIMUM AGE
-        :confkey:`ok` |  | OK FILTER
-        :confkey:`ok syntax` |  | SYNTAX
-        :confkey:`perf config` |  | PERF CONFIG
-        :confkey:`port` |  | TARGET PORT
-        :confkey:`retries` | 3 | RETRIES
-        :confkey:`severity` |  | SEVERITY
-        :confkey:`source id` |  | SOURCE ID
-        :confkey:`target` |  | DESTINATION
-        :confkey:`target id` |  | TARGET ID
-        :confkey:`timeout` | 30 | TIMEOUT
-        :confkey:`top syntax` |  | SYNTAX
-        :confkey:`warning` |  | WARNING FILTER
-
-    **Sample**::
-
-        # TARGET
-        # Target definition for: sample
-        [/sample/sample]
-        address=
-        command=
-        critical=
-        debug=0
-        destination=
-        detail syntax=
-        empty message=eventlog found no records
-        filter=
-        host=
-        log=
-        logs=
-        maximum age=5m
-        ok=
-        ok syntax=
-        perf config=
-        port=
-        retries=3
-        severity=
-        source id=
-        target=
-        target id=
-        timeout=30
-        top syntax=
-        warning=
-
-
-    .. confkey:: address
-        :synopsis: TARGET ADDRESS
-
-        **TARGET ADDRESS**
-
-        | Target host address
-
-        **Path**: /sample/sample
-
-        **Key**: address
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # TARGET ADDRESS
-            address=
-
-
-    .. confkey:: command
-        :synopsis: COMMAND NAME
-
-        **COMMAND NAME**
-
-        | The name of the command (think nagios service name) to report up stream (defaults to alias if not set)
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: command
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # COMMAND NAME
-            command=
-
-
-    .. confkey:: critical
-        :synopsis: CRITICAL FILTER
-
-        **CRITICAL FILTER**
-
-        | If any rows match this filter severity will escalated to CRITICAL
-
-        **Path**: /sample/sample
-
-        **Key**: critical
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # CRITICAL FILTER
-            critical=
-
-
-    .. confkey:: debug
-        :synopsis: DEBUG
-
-        **DEBUG**
-
-        | Enable this to display debug information for this match filter
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: debug
-
-        **Default value**: 0
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # DEBUG
-            debug=0
-
-
-    .. confkey:: destination
-        :synopsis: DESTINATION
-
-        **DESTINATION**
-
-        | The destination for intercepted messages
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: destination
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # DESTINATION
-            destination=
-
-
-    .. confkey:: detail syntax
-        :synopsis: SYNTAX
-
-        **SYNTAX**
-
-        | Format string for dates
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: detail syntax
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # SYNTAX
-            detail syntax=
-
-
-    .. confkey:: empty message
-        :synopsis: EMPTY MESSAGE
-
-        **EMPTY MESSAGE**
-
-        | The message to display if nothing matches the filter (generally considered the ok state).
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: empty message
-
-        **Default value**: eventlog found no records
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # EMPTY MESSAGE
-            empty message=eventlog found no records
-
-
-    .. confkey:: filter
-        :synopsis: FILTER
-
-        **FILTER**
-
-        | Scan files for matching rows for each matching rows an OK message will be submitted
-
-        **Path**: /sample/sample
-
-        **Key**: filter
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # FILTER
-            filter=
-
-
-    .. confkey:: host
-        :synopsis: TARGET HOST
-
-        **TARGET HOST**
-
-        | The target server to report results to.
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: host
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # TARGET HOST
-            host=
-
-
-    .. confkey:: log
-        :synopsis: FILE
-
-        **FILE**
-
-        | The eventlog record to filter on (if set to 'all' means all enabled logs)
-
-        **Path**: /sample/sample
-
-        **Key**: log
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # FILE
-            log=
-
-
-    .. confkey:: logs
-        :synopsis: FILES
-
-        **FILES**
-
-        | The eventlog record to filter on (if set to 'all' means all enabled logs)
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: logs
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # FILES
-            logs=
-
-
-    .. confkey:: maximum age
-        :synopsis: MAGIMUM AGE
-
-        **MAGIMUM AGE**
-
-        | How long before reporting "ok".
-        | If this is set to "false" no periodic ok messages will be reported only errors.
-
-        **Path**: /sample/sample
-
-        **Key**: maximum age
-
-        **Default value**: 5m
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # MAGIMUM AGE
-            maximum age=5m
-
-
-    .. confkey:: ok
-        :synopsis: OK FILTER
-
-        **OK FILTER**
-
-        | If any rows match this filter severity will escalated down to OK
-
-        **Path**: /sample/sample
-
-        **Key**: ok
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # OK FILTER
-            ok=
-
-
-    .. confkey:: ok syntax
-        :synopsis: SYNTAX
-
-        **SYNTAX**
-
-        | Format string for dates
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: ok syntax
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # SYNTAX
-            ok syntax=
-
-
-    .. confkey:: perf config
-        :synopsis: PERF CONFIG
-
-        **PERF CONFIG**
-
-        | Performance data configuration
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: perf config
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # PERF CONFIG
-            perf config=
-
-
-    .. confkey:: port
-        :synopsis: TARGET PORT
-
-        **TARGET PORT**
-
-        | The target server port
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: port
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # TARGET PORT
-            port=
-
-
-    .. confkey:: retries
-        :synopsis: RETRIES
-
-        **RETRIES**
-
-        | Number of times to retry sending.
-
-        **Path**: /sample/sample
-
-        **Key**: retries
-
-        **Default value**: 3
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # RETRIES
-            retries=3
-
-
-    .. confkey:: severity
-        :synopsis: SEVERITY
-
-        **SEVERITY**
-
-        | THe severity of this message (OK, WARNING, CRITICAL, UNKNOWN)
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: severity
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # SEVERITY
-            severity=
-
-
-    .. confkey:: source id
-        :synopsis: SOURCE ID
-
-        **SOURCE ID**
-
-        | The name of the source system, will automatically use the remote system if a remote system is called. Almost most sending systems will replace this with current systems hostname if not present. So use this only if you need specific source systems for specific schedules and not calling remote systems.
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: source id
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # SOURCE ID
-            source id=
-
-
-    .. confkey:: target
-        :synopsis: DESTINATION
-
-        **DESTINATION**
-
-        | Same as destination
-
-        **Path**: /sample/sample
-
-        **Key**: target
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # DESTINATION
-            target=
-
-
-    .. confkey:: target id
-        :synopsis: TARGET ID
-
-        **TARGET ID**
-
-        | The target to send the message to (will be resolved by the consumer)
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: target id
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # TARGET ID
-            target id=
-
-
-    .. confkey:: timeout
-        :synopsis: TIMEOUT
-
-        **TIMEOUT**
-
-        | Timeout when reading/writing packets to/from sockets.
-
-        **Path**: /sample/sample
-
-        **Key**: timeout
-
-        **Default value**: 30
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # TIMEOUT
-            timeout=30
-
-
-    .. confkey:: top syntax
-        :synopsis: SYNTAX
-
-        **SYNTAX**
-
-        | Format string for dates
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /sample/sample
-
-        **Key**: top syntax
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # SYNTAX
-            top syntax=
-
-
-    .. confkey:: warning
-        :synopsis: WARNING FILTER
-
-        **WARNING FILTER**
-
-        | If any rows match this filter severity will escalated to WARNING
-
-        **Path**: /sample/sample
-
-        **Key**: warning
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/sample/sample]
-            # WARNING FILTER
-            warning=
-
-
-
-
-… settings / syslog / client
-----------------------------
+/ settings/ syslog/ client
+--------------------------
 
 .. confpath:: /settings/syslog/client
     :synopsis: SYSLOG CLIENT SECTION
@@ -1152,7 +261,7 @@ Arguments
         :header: "Key", "Default Value", "Description"
     
         :confkey:`channel` | syslog | CHANNEL
-        :confkey:`hostname` | auto | HOSTNAME
+        :confkey:`hostname` |  | HOSTNAME
 
     **Sample**::
 
@@ -1160,7 +269,7 @@ Arguments
         # Section for SYSLOG passive check module.
         [/settings/syslog/client]
         channel=syslog
-        hostname=auto
+        hostname=
 
 
     .. confkey:: channel
@@ -1190,23 +299,13 @@ Arguments
 
         **HOSTNAME**
 
-        | The host name of the monitored computer.
-        | Set this to auto (default) to use the windows name of the computer.
-        | 
-        | auto	Hostname
-        | ${host}	Hostname
-        | ${host_lc}
-        | Hostname in lowercase
-        | ${host_uc}	Hostname in uppercase
-        | ${domain}	Domainname
-        | ${domain_lc}	Domainname in lowercase
-        | ${domain_uc}	Domainname in uppercase
+        | The host name of this host if set to blank (default) the windows name of the computer will be used.
 
         **Path**: /settings/syslog/client
 
         **Key**: hostname
 
-        **Default value**: auto
+        **Default value**: 
 
         **Used by**: :module:`SyslogClient`
 
@@ -1214,13 +313,13 @@ Arguments
 
             [/settings/syslog/client]
             # HOSTNAME
-            hostname=auto
+            hostname=
 
 
 
 
-… settings / syslog / client / handlers
----------------------------------------
+…  / handlers
+-------------
 
 .. confpath:: /settings/syslog/client/handlers
     :synopsis: CLIENT HANDLER SECTION
@@ -1241,8 +340,8 @@ Arguments
 
 
 
-… settings / syslog / client / targets
---------------------------------------
+…  / targets
+------------
 
 .. confpath:: /settings/syslog/client/targets
     :synopsis: REMOTE TARGET DEFINITIONS
@@ -1259,5 +358,777 @@ Arguments
         # REMOTE TARGET DEFINITIONS
         # 
         [/settings/syslog/client/targets]
+
+
+
+
+…  / targets / default
+----------------------
+
+.. confpath:: /settings/syslog/client/targets/default
+    :synopsis: TARGET DEFENITION
+
+**TARGET DEFENITION**
+
+    | Target definition for: default
+
+
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`critical severity` | critical | TODO
+        :confkey:`facility` | kernel | TODO
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`message_syntax` | %message% | TODO
+        :confkey:`ok severity` | informational | TODO
+        :confkey:`parent` | default | PARENT
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`severity` | error | TODO
+        :confkey:`tag_syntax` | NSCA | TODO
+        :confkey:`unknown severity` | emergency | TODO
+        :confkey:`warning severity` | warning | TODO
+
+    **Sample**::
+
+        # TARGET DEFENITION
+        # Target definition for: default
+        [/settings/syslog/client/targets/default]
+        address=
+        alias=
+        critical severity=critical
+        facility=kernel
+        host=
+        is template=0
+        message_syntax=%message%
+        ok severity=informational
+        parent=default
+        port=0
+        severity=error
+        tag_syntax=NSCA
+        unknown severity=emergency
+        warning severity=warning
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: critical severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: critical severity
+
+        **Default value**: critical
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            critical severity=critical
+
+
+    .. confkey:: facility
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: facility
+
+        **Default value**: kernel
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            facility=kernel
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: message_syntax
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: message_syntax
+
+        **Default value**: %message%
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            message_syntax=%message%
+
+
+    .. confkey:: ok severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: ok severity
+
+        **Default value**: informational
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            ok severity=informational
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: severity
+
+        **Default value**: error
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            severity=error
+
+
+    .. confkey:: tag_syntax
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: tag_syntax
+
+        **Default value**: NSCA
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            tag_syntax=NSCA
+
+
+    .. confkey:: unknown severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: unknown severity
+
+        **Default value**: emergency
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            unknown severity=emergency
+
+
+    .. confkey:: warning severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/default
+
+        **Key**: warning severity
+
+        **Default value**: warning
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/default]
+            # TODO
+            warning severity=warning
+
+
+
+
+…  / targets / sample
+---------------------
+
+.. confpath:: /settings/syslog/client/targets/sample
+    :synopsis: TARGET DEFENITION
+
+**TARGET DEFENITION**
+
+    | Target definition for: sample
+
+
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`address` |  | TARGET ADDRESS
+        :confkey:`alias` |  | ALIAS
+        :confkey:`critical severity` | critical | TODO
+        :confkey:`facility` | kernel | TODO
+        :confkey:`host` |  | TARGET HOST
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`message_syntax` | %message% | TODO
+        :confkey:`ok severity` | informational | TODO
+        :confkey:`parent` | default | PARENT
+        :confkey:`port` | 0 | TARGET PORT
+        :confkey:`severity` | error | TODO
+        :confkey:`tag_syntax` | NSCA | TODO
+        :confkey:`unknown severity` | emergency | TODO
+        :confkey:`warning severity` | warning | TODO
+
+    **Sample**::
+
+        # TARGET DEFENITION
+        # Target definition for: sample
+        [/settings/syslog/client/targets/sample]
+        address=
+        alias=
+        critical severity=critical
+        facility=kernel
+        host=
+        is template=0
+        message_syntax=%message%
+        ok severity=informational
+        parent=default
+        port=0
+        severity=error
+        tag_syntax=NSCA
+        unknown severity=emergency
+        warning severity=warning
+
+
+    .. confkey:: address
+        :synopsis: TARGET ADDRESS
+
+        **TARGET ADDRESS**
+
+        | Target host address
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: address
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TARGET ADDRESS
+            address=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: critical severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: critical severity
+
+        **Default value**: critical
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            critical severity=critical
+
+
+    .. confkey:: facility
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: facility
+
+        **Default value**: kernel
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            facility=kernel
+
+
+    .. confkey:: host
+        :synopsis: TARGET HOST
+
+        **TARGET HOST**
+
+        | The target server to report results to.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: host
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TARGET HOST
+            host=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: message_syntax
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: message_syntax
+
+        **Default value**: %message%
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            message_syntax=%message%
+
+
+    .. confkey:: ok severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: ok severity
+
+        **Default value**: informational
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            ok severity=informational
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: port
+        :synopsis: TARGET PORT
+
+        **TARGET PORT**
+
+        | The target server port
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: port
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TARGET PORT
+            port=0
+
+
+    .. confkey:: severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: severity
+
+        **Default value**: error
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            severity=error
+
+
+    .. confkey:: tag_syntax
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: tag_syntax
+
+        **Default value**: NSCA
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            tag_syntax=NSCA
+
+
+    .. confkey:: unknown severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: unknown severity
+
+        **Default value**: emergency
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            unknown severity=emergency
+
+
+    .. confkey:: warning severity
+        :synopsis: TODO
+
+        **TODO**
+
+
+
+        **Path**: /settings/syslog/client/targets/sample
+
+        **Key**: warning severity
+
+        **Default value**: warning
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`SyslogClient`
+
+        **Sample**::
+
+            [/settings/syslog/client/targets/sample]
+            # TODO
+            warning severity=warning
 
 

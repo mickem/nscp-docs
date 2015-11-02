@@ -71,9 +71,6 @@ Advanced keys:
     :header: "Path / Section", "Key", "Default Value", "Description"
 
     :confpath:`/settings/system/windows` | :confkey:`~/settings/system/windows.subsystem` | PDH SUBSYSTEM
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.alias` | ALIAS
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.is template` | IS TEMPLATE
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.parent` | PARENT
 
 Sample keys:
 
@@ -82,12 +79,27 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.buffer size` | BUFFER SIZE
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.collection strategy` | COLLECTION STRATEGY
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.counter` | COUNTER
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.flags` | FLAGS
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.instances` | TODO
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.type` | COUNTER TYPE
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.alias` | ALIAS
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.check` | TYPE OF CHECK
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.command` | COMMAND NAME
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.critical` | CRITICAL FILTER
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.debug` | DEBUG
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.destination` | DESTINATION
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.detail syntax` | SYNTAX
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.empty message` | EMPTY MESSAGE
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.filter` | FILTER
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.is template` | IS TEMPLATE
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.maximum age` | MAGIMUM AGE
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.ok` | OK FILTER
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.ok syntax` | SYNTAX
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.parent` | PARENT
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.perf config` | PERF CONFIG
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.severity` | SEVERITY
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.target` | DESTINATION
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.time` | TIME
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.times` | FILES
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.top syntax` | SYNTAX
+    :confpath:`/settings/system/windows/real-time/checks/sample` | :confkey:`~/settings/system/windows/real-time/checks/sample.warning` | WARNING FILTER
 
 
 Queries
@@ -3979,266 +3991,6 @@ Arguments
 
 
 
-…  / counters / sample / sample
--------------------------------
-
-.. confpath:: /settings/system/windows/counters/sample/sample
-    :synopsis: COUNTER
-
-**COUNTER**
-
-    | Definition for counter: sample
-
-
-    .. csv-table:: 
-        :class: contentstable 
-        :delim: | 
-        :header: "Key", "Default Value", "Description"
-    
-        :confkey:`alias` |  | ALIAS
-        :confkey:`buffer size` |  | BUFFER SIZE
-        :confkey:`collection strategy` |  | COLLECTION STRATEGY
-        :confkey:`counter` |  | COUNTER
-        :confkey:`flags` |  | FLAGS
-        :confkey:`instances` |  | TODO
-        :confkey:`is template` | 0 | IS TEMPLATE
-        :confkey:`parent` | default | PARENT
-        :confkey:`type` |  | COUNTER TYPE
-
-    **Sample**::
-
-        # COUNTER
-        # Definition for counter: sample
-        [/settings/system/windows/counters/sample/sample]
-        alias=
-        buffer size=
-        collection strategy=
-        counter=
-        flags=
-        instances=
-        is template=0
-        parent=default
-        type=
-
-
-    .. confkey:: alias
-        :synopsis: ALIAS
-
-        **ALIAS**
-
-        | The alias (service name) to report to server
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/system/windows/counters/sample/sample
-
-        **Key**: alias
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckSystem`
-
-        **Sample**::
-
-            [/settings/system/windows/counters/sample/sample]
-            # ALIAS
-            alias=
-
-
-    .. confkey:: buffer size
-        :synopsis: BUFFER SIZE
-
-        **BUFFER SIZE**
-
-        | Size of buffer (in seconds) larger buffer use more memory
-
-        **Path**: /settings/system/windows/counters/sample/sample
-
-        **Key**: buffer size
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckSystem`
-
-        **Sample**::
-
-            [/settings/system/windows/counters/sample/sample]
-            # BUFFER SIZE
-            buffer size=
-
-
-    .. confkey:: collection strategy
-        :synopsis: COLLECTION STRATEGY
-
-        **COLLECTION STRATEGY**
-
-        | The way to handled values when collecting them: static means we keep the last known value, rrd means we store values in a buffer from which you can retrieve the average
-
-        **Path**: /settings/system/windows/counters/sample/sample
-
-        **Key**: collection strategy
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckSystem`
-
-        **Sample**::
-
-            [/settings/system/windows/counters/sample/sample]
-            # COLLECTION STRATEGY
-            collection strategy=
-
-
-    .. confkey:: counter
-        :synopsis: COUNTER
-
-        **COUNTER**
-
-        | The counter to check
-
-        **Path**: /settings/system/windows/counters/sample/sample
-
-        **Key**: counter
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckSystem`
-
-        **Sample**::
-
-            [/settings/system/windows/counters/sample/sample]
-            # COUNTER
-            counter=
-
-
-    .. confkey:: flags
-        :synopsis: FLAGS
-
-        **FLAGS**
-
-        | Extra flags to configure the counter (nocap100, 1000, noscale)
-
-        **Path**: /settings/system/windows/counters/sample/sample
-
-        **Key**: flags
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckSystem`
-
-        **Sample**::
-
-            [/settings/system/windows/counters/sample/sample]
-            # FLAGS
-            flags=
-
-
-    .. confkey:: instances
-        :synopsis: TODO
-
-        **TODO**
-
-        | TODO
-
-        **Path**: /settings/system/windows/counters/sample/sample
-
-        **Key**: instances
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckSystem`
-
-        **Sample**::
-
-            [/settings/system/windows/counters/sample/sample]
-            # TODO
-            instances=
-
-
-    .. confkey:: is template
-        :synopsis: IS TEMPLATE
-
-        **IS TEMPLATE**
-
-        | Declare this object as a template (this means it will not be available as a separate object)
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/system/windows/counters/sample/sample
-
-        **Key**: is template
-
-        **Default value**: 0
-
-        **Used by**: :module:`CheckSystem`
-
-        **Sample**::
-
-            [/settings/system/windows/counters/sample/sample]
-            # IS TEMPLATE
-            is template=0
-
-
-    .. confkey:: parent
-        :synopsis: PARENT
-
-        **PARENT**
-
-        | The parent the target inherits from
-
-        **Advanced** (means it is not commonly used)
-
-        **Path**: /settings/system/windows/counters/sample/sample
-
-        **Key**: parent
-
-        **Default value**: default
-
-        **Used by**: :module:`CheckSystem`
-
-        **Sample**::
-
-            [/settings/system/windows/counters/sample/sample]
-            # PARENT
-            parent=default
-
-
-    .. confkey:: type
-        :synopsis: COUNTER TYPE
-
-        **COUNTER TYPE**
-
-        | The type of counter to use long, large and double
-
-        **Path**: /settings/system/windows/counters/sample/sample
-
-        **Key**: type
-
-        **Default value**: 
-
-        **Sample key**: This key is provided as a sample to show how to configure objects
-
-        **Used by**: :module:`CheckSystem`
-
-        **Sample**::
-
-            [/settings/system/windows/counters/sample/sample]
-            # COUNTER TYPE
-            type=
-
-
-
-
 …  / real-time
 --------------
 
@@ -4279,6 +4031,605 @@ Arguments
         # REALTIME FILTERS
         # A set of filters to use in real-time mode
         [/settings/system/windows/real-time/checks]
+
+
+
+
+…  / real-time / checks / sample
+--------------------------------
+
+.. confpath:: /settings/system/windows/real-time/checks/sample
+    :synopsis: REAL TIME FILTER DEFENITION
+
+**REAL TIME FILTER DEFENITION**
+
+    | Definition for real time filter: sample
+
+
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`alias` |  | ALIAS
+        :confkey:`check` | cpu | TYPE OF CHECK
+        :confkey:`command` |  | COMMAND NAME
+        :confkey:`critical` |  | CRITICAL FILTER
+        :confkey:`debug` | 0 | DEBUG
+        :confkey:`destination` |  | DESTINATION
+        :confkey:`detail syntax` |  | SYNTAX
+        :confkey:`empty message` | eventlog found no records | EMPTY MESSAGE
+        :confkey:`filter` |  | FILTER
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`maximum age` | 5m | MAGIMUM AGE
+        :confkey:`ok` |  | OK FILTER
+        :confkey:`ok syntax` |  | SYNTAX
+        :confkey:`parent` | default | PARENT
+        :confkey:`perf config` |  | PERF CONFIG
+        :confkey:`severity` |  | SEVERITY
+        :confkey:`target` |  | DESTINATION
+        :confkey:`time` |  | TIME
+        :confkey:`times` |  | FILES
+        :confkey:`top syntax` |  | SYNTAX
+        :confkey:`warning` |  | WARNING FILTER
+
+    **Sample**::
+
+        # REAL TIME FILTER DEFENITION
+        # Definition for real time filter: sample
+        [/settings/system/windows/real-time/checks/sample]
+        alias=
+        check=cpu
+        command=
+        critical=
+        debug=0
+        destination=
+        detail syntax=
+        empty message=eventlog found no records
+        filter=
+        is template=0
+        maximum age=5m
+        ok=
+        ok syntax=
+        parent=default
+        perf config=
+        severity=
+        target=
+        time=
+        times=
+        top syntax=
+        warning=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: check
+        :synopsis: TYPE OF CHECK
+
+        **TYPE OF CHECK**
+
+        | The type of check cpu or memory
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: check
+
+        **Default value**: cpu
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # TYPE OF CHECK
+            check=cpu
+
+
+    .. confkey:: command
+        :synopsis: COMMAND NAME
+
+        **COMMAND NAME**
+
+        | The name of the command (think nagios service name) to report up stream (defaults to alias if not set)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: command
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # COMMAND NAME
+            command=
+
+
+    .. confkey:: critical
+        :synopsis: CRITICAL FILTER
+
+        **CRITICAL FILTER**
+
+        | If any rows match this filter severity will escalated to CRITICAL
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: critical
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # CRITICAL FILTER
+            critical=
+
+
+    .. confkey:: debug
+        :synopsis: DEBUG
+
+        **DEBUG**
+
+        | Enable this to display debug information for this match filter
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: debug
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # DEBUG
+            debug=0
+
+
+    .. confkey:: destination
+        :synopsis: DESTINATION
+
+        **DESTINATION**
+
+        | The destination for intercepted messages
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: destination
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # DESTINATION
+            destination=
+
+
+    .. confkey:: detail syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: detail syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # SYNTAX
+            detail syntax=
+
+
+    .. confkey:: empty message
+        :synopsis: EMPTY MESSAGE
+
+        **EMPTY MESSAGE**
+
+        | The message to display if nothing matches the filter (generally considered the ok state).
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: empty message
+
+        **Default value**: eventlog found no records
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # EMPTY MESSAGE
+            empty message=eventlog found no records
+
+
+    .. confkey:: filter
+        :synopsis: FILTER
+
+        **FILTER**
+
+        | Scan files for matching rows for each matching rows an OK message will be submitted
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: filter
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # FILTER
+            filter=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: maximum age
+        :synopsis: MAGIMUM AGE
+
+        **MAGIMUM AGE**
+
+        | How long before reporting "ok".
+        | If this is set to "false" no periodic ok messages will be reported only errors.
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: maximum age
+
+        **Default value**: 5m
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # MAGIMUM AGE
+            maximum age=5m
+
+
+    .. confkey:: ok
+        :synopsis: OK FILTER
+
+        **OK FILTER**
+
+        | If any rows match this filter severity will escalated down to OK
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: ok
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # OK FILTER
+            ok=
+
+
+    .. confkey:: ok syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: ok syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # SYNTAX
+            ok syntax=
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: perf config
+        :synopsis: PERF CONFIG
+
+        **PERF CONFIG**
+
+        | Performance data configuration
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: perf config
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # PERF CONFIG
+            perf config=
+
+
+    .. confkey:: severity
+        :synopsis: SEVERITY
+
+        **SEVERITY**
+
+        | THe severity of this message (OK, WARNING, CRITICAL, UNKNOWN)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: severity
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # SEVERITY
+            severity=
+
+
+    .. confkey:: target
+        :synopsis: DESTINATION
+
+        **DESTINATION**
+
+        | Same as destination
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: target
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # DESTINATION
+            target=
+
+
+    .. confkey:: time
+        :synopsis: TIME
+
+        **TIME**
+
+        | The time to check
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: time
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # TIME
+            time=
+
+
+    .. confkey:: times
+        :synopsis: FILES
+
+        **FILES**
+
+        | A list of times to check (soma separated)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: times
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # FILES
+            times=
+
+
+    .. confkey:: top syntax
+        :synopsis: SYNTAX
+
+        **SYNTAX**
+
+        | Format string for dates
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: top syntax
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # SYNTAX
+            top syntax=
+
+
+    .. confkey:: warning
+        :synopsis: WARNING FILTER
+
+        **WARNING FILTER**
+
+        | If any rows match this filter severity will escalated to WARNING
+
+        **Path**: /settings/system/windows/real-time/checks/sample
+
+        **Key**: warning
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/real-time/checks/sample]
+            # WARNING FILTER
+            warning=
 
 
 
