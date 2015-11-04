@@ -71,21 +71,21 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.address` | TARGET ADDRESS
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.allowed ciphers` | ALLOWED CIPHERS
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.ca` | CA
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.certificate` | SSL CERTIFICATE
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.certificate format` | CERTIFICATE FORMAT
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.certificate key` | SSL CERTIFICATE
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.dh` | DH KEY
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.host` | TARGET HOST
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.insecure` | Insecure legacy mode
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.payload length` | PAYLOAD LENGTH
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.port` | TARGET PORT
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.retries` | RETRIES
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.timeout` | TIMEOUT
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.use ssl` | ENABLE SSL ENCRYPTION
-    :confpath:`/settings/NRPE/client/targets/sample/sample` | :confkey:`~/settings/NRPE/client/targets/sample/sample.verify mode` | VERIFY MODE
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.address` | TARGET ADDRESS
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.allowed ciphers` | ALLOWED CIPHERS
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.ca` | CA
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.certificate` | SSL CERTIFICATE
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.certificate format` | CERTIFICATE FORMAT
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.certificate key` | SSL CERTIFICATE
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.dh` | DH KEY
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.host` | TARGET HOST
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.insecure` | Insecure legacy mode
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.payload length` | PAYLOAD LENGTH
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.port` | TARGET PORT
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.retries` | RETRIES
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.timeout` | TIMEOUT
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.use ssl` | ENABLE SSL ENCRYPTION
+    :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.verify mode` | VERIFY MODE
 
 
 Queries
@@ -1190,10 +1190,10 @@ Arguments
 
 
 
-…  / targets / sample / sample
-------------------------------
+…  / targets / sample
+---------------------
 
-.. confpath:: /settings/NRPE/client/targets/sample/sample
+.. confpath:: /settings/NRPE/client/targets/sample
     :synopsis: TARGET
 
 **TARGET**
@@ -1226,7 +1226,7 @@ Arguments
 
         # TARGET
         # Target definition for: sample
-        [/settings/NRPE/client/targets/sample/sample]
+        [/settings/NRPE/client/targets/sample]
         address=
         allowed ciphers=
         ca=
@@ -1251,7 +1251,7 @@ Arguments
 
         | Target host address
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: address
 
@@ -1263,7 +1263,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # TARGET ADDRESS
             address=
 
@@ -1275,7 +1275,7 @@ Arguments
 
         | A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: allowed ciphers
 
@@ -1287,7 +1287,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # ALLOWED CIPHERS
             allowed ciphers=
 
@@ -1301,7 +1301,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: ca
 
@@ -1313,7 +1313,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # CA
             ca=
 
@@ -1325,7 +1325,7 @@ Arguments
 
 
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: certificate
 
@@ -1337,7 +1337,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # SSL CERTIFICATE
             certificate=
 
@@ -1351,7 +1351,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: certificate format
 
@@ -1363,7 +1363,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # CERTIFICATE FORMAT
             certificate format=
 
@@ -1377,7 +1377,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: certificate key
 
@@ -1389,7 +1389,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # SSL CERTIFICATE
             certificate key=
 
@@ -1403,7 +1403,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: dh
 
@@ -1415,7 +1415,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # DH KEY
             dh=
 
@@ -1429,7 +1429,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: host
 
@@ -1441,7 +1441,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # TARGET HOST
             host=
 
@@ -1453,7 +1453,7 @@ Arguments
 
         | Use insecure legacy mode to connect to old NRPE server
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: insecure
 
@@ -1465,7 +1465,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # Insecure legacy mode
             insecure=
 
@@ -1477,7 +1477,7 @@ Arguments
 
         | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: payload length
 
@@ -1489,7 +1489,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # PAYLOAD LENGTH
             payload length=0
 
@@ -1503,7 +1503,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: port
 
@@ -1515,7 +1515,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # TARGET PORT
             port=
 
@@ -1527,7 +1527,7 @@ Arguments
 
         | Number of times to retry sending.
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: retries
 
@@ -1539,7 +1539,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # RETRIES
             retries=3
 
@@ -1551,7 +1551,7 @@ Arguments
 
         | Timeout when reading/writing packets to/from sockets.
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: timeout
 
@@ -1563,7 +1563,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # TIMEOUT
             timeout=30
 
@@ -1575,7 +1575,7 @@ Arguments
 
         | This option controls if SSL should be enabled.
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: use ssl
 
@@ -1587,7 +1587,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # ENABLE SSL ENCRYPTION
             use ssl=0
 
@@ -1599,7 +1599,7 @@ Arguments
 
 
 
-        **Path**: /settings/NRPE/client/targets/sample/sample
+        **Path**: /settings/NRPE/client/targets/sample
 
         **Key**: verify mode
 
@@ -1611,7 +1611,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/NRPE/client/targets/sample/sample]
+            [/settings/NRPE/client/targets/sample]
             # VERIFY MODE
             verify mode=
 

@@ -37,7 +37,6 @@ Common Keys:
     :header: "Path / Section", "Key", "Description"
 
     :confpath:`/default` | :confkey:`~/default.address` | TARGET ADDRESS
-    :confpath:`/default` | :confkey:`~/default.default` | 
     :confpath:`/default` | :confkey:`~/default.retries` | RETRIES
     :confpath:`/default` | :confkey:`~/default.timeout` | TIMEOUT
     :confpath:`/settings/check_mk/client` | :confkey:`~/settings/check_mk/client.channel` | CHANNEL
@@ -59,30 +58,30 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.address` | TARGET ADDRESS
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.command` | COMMAND NAME
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.critical` | CRITICAL FILTER
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.debug` | DEBUG
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.destination` | DESTINATION
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.detail syntax` | SYNTAX
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.empty message` | EMPTY MESSAGE
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.filter` | FILTER
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.host` | TARGET HOST
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.log` | FILE
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.logs` | FILES
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.maximum age` | MAGIMUM AGE
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.ok` | OK FILTER
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.ok syntax` | SYNTAX
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.perf config` | PERF CONFIG
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.port` | TARGET PORT
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.retries` | RETRIES
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.severity` | SEVERITY
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.source id` | SOURCE ID
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.target` | DESTINATION
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.target id` | TARGET ID
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.timeout` | TIMEOUT
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.top syntax` | SYNTAX
-    :confpath:`/sample/sample` | :confkey:`~/sample/sample.warning` | WARNING FILTER
+    :confpath:`/sample` | :confkey:`~/sample.address` | TARGET ADDRESS
+    :confpath:`/sample` | :confkey:`~/sample.command` | COMMAND NAME
+    :confpath:`/sample` | :confkey:`~/sample.critical` | CRITICAL FILTER
+    :confpath:`/sample` | :confkey:`~/sample.debug` | DEBUG
+    :confpath:`/sample` | :confkey:`~/sample.destination` | DESTINATION
+    :confpath:`/sample` | :confkey:`~/sample.detail syntax` | SYNTAX
+    :confpath:`/sample` | :confkey:`~/sample.empty message` | EMPTY MESSAGE
+    :confpath:`/sample` | :confkey:`~/sample.filter` | FILTER
+    :confpath:`/sample` | :confkey:`~/sample.host` | TARGET HOST
+    :confpath:`/sample` | :confkey:`~/sample.log` | FILE
+    :confpath:`/sample` | :confkey:`~/sample.logs` | FILES
+    :confpath:`/sample` | :confkey:`~/sample.maximum age` | MAGIMUM AGE
+    :confpath:`/sample` | :confkey:`~/sample.ok` | OK FILTER
+    :confpath:`/sample` | :confkey:`~/sample.ok syntax` | SYNTAX
+    :confpath:`/sample` | :confkey:`~/sample.perf config` | PERF CONFIG
+    :confpath:`/sample` | :confkey:`~/sample.port` | TARGET PORT
+    :confpath:`/sample` | :confkey:`~/sample.retries` | RETRIES
+    :confpath:`/sample` | :confkey:`~/sample.severity` | SEVERITY
+    :confpath:`/sample` | :confkey:`~/sample.source id` | SOURCE ID
+    :confpath:`/sample` | :confkey:`~/sample.target` | DESTINATION
+    :confpath:`/sample` | :confkey:`~/sample.target id` | TARGET ID
+    :confpath:`/sample` | :confkey:`~/sample.timeout` | TIMEOUT
+    :confpath:`/sample` | :confkey:`~/sample.top syntax` | SYNTAX
+    :confpath:`/sample` | :confkey:`~/sample.warning` | WARNING FILTER
 
 
 Queries
@@ -280,7 +279,6 @@ Arguments
         :header: "Key", "Default Value", "Description"
     
         :confkey:`address` |  | TARGET ADDRESS
-        :confkey:`default` |  | 
         :confkey:`host` |  | TARGET HOST
         :confkey:`port` |  | TARGET PORT
         :confkey:`retries` | 3 | RETRIES
@@ -292,7 +290,6 @@ Arguments
         # Target definition for: default
         [/default]
         address=
-        default=
         host=
         port=
         retries=3
@@ -312,35 +309,13 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
             [/default]
             # TARGET ADDRESS
             address=
-
-
-    .. confkey:: default
-        :synopsis: 
-
-        ****
-
-        | Filter for . To configure this item add a section called: /default
-
-        **Path**: /default
-
-        **Key**: default
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
-
-        **Sample**::
-
-            [/default]
-            # 
-            default=
 
 
     .. confkey:: host
@@ -358,7 +333,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
@@ -382,7 +357,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
@@ -404,7 +379,7 @@ Arguments
 
         **Default value**: 3
 
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
@@ -426,7 +401,7 @@ Arguments
 
         **Default value**: 30
 
-        **Used by**: :module:`CheckEventLog`,  :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
+        **Used by**: :module:`CheckMKClient`,  :module:`GraphiteClient`,  :module:`NRDPClient`,  :module:`SMTPClient`,  :module:`SyslogClient`
 
         **Sample**::
 
@@ -437,10 +412,10 @@ Arguments
 
 
 
-… sample / sample
------------------
+… sample
+--------
 
-.. confpath:: /sample/sample
+.. confpath:: /sample
     :synopsis: TARGET
 
 **TARGET**
@@ -482,7 +457,7 @@ Arguments
 
         # TARGET
         # Target definition for: sample
-        [/sample/sample]
+        [/sample]
         address=
         command=
         critical=
@@ -516,7 +491,7 @@ Arguments
 
         | Target host address
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: address
 
@@ -528,7 +503,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # TARGET ADDRESS
             address=
 
@@ -542,7 +517,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: command
 
@@ -554,7 +529,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # COMMAND NAME
             command=
 
@@ -566,7 +541,7 @@ Arguments
 
         | If any rows match this filter severity will escalated to CRITICAL
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: critical
 
@@ -578,7 +553,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # CRITICAL FILTER
             critical=
 
@@ -592,7 +567,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: debug
 
@@ -604,7 +579,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # DEBUG
             debug=0
 
@@ -618,7 +593,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: destination
 
@@ -630,7 +605,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # DESTINATION
             destination=
 
@@ -644,7 +619,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: detail syntax
 
@@ -656,7 +631,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # SYNTAX
             detail syntax=
 
@@ -670,7 +645,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: empty message
 
@@ -682,7 +657,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # EMPTY MESSAGE
             empty message=eventlog found no records
 
@@ -694,7 +669,7 @@ Arguments
 
         | Scan files for matching rows for each matching rows an OK message will be submitted
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: filter
 
@@ -706,7 +681,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # FILTER
             filter=
 
@@ -720,7 +695,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: host
 
@@ -732,7 +707,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # TARGET HOST
             host=
 
@@ -744,7 +719,7 @@ Arguments
 
         | The eventlog record to filter on (if set to 'all' means all enabled logs)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: log
 
@@ -756,7 +731,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # FILE
             log=
 
@@ -770,7 +745,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: logs
 
@@ -782,7 +757,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # FILES
             logs=
 
@@ -795,7 +770,7 @@ Arguments
         | How long before reporting "ok".
         | If this is set to "false" no periodic ok messages will be reported only errors.
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: maximum age
 
@@ -807,7 +782,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # MAGIMUM AGE
             maximum age=5m
 
@@ -819,7 +794,7 @@ Arguments
 
         | If any rows match this filter severity will escalated down to OK
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: ok
 
@@ -831,7 +806,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # OK FILTER
             ok=
 
@@ -845,7 +820,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: ok syntax
 
@@ -857,7 +832,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # SYNTAX
             ok syntax=
 
@@ -871,7 +846,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: perf config
 
@@ -883,7 +858,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # PERF CONFIG
             perf config=
 
@@ -897,7 +872,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: port
 
@@ -909,7 +884,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # TARGET PORT
             port=
 
@@ -921,7 +896,7 @@ Arguments
 
         | Number of times to retry sending.
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: retries
 
@@ -933,7 +908,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # RETRIES
             retries=3
 
@@ -947,7 +922,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: severity
 
@@ -959,7 +934,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # SEVERITY
             severity=
 
@@ -973,7 +948,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: source id
 
@@ -985,7 +960,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # SOURCE ID
             source id=
 
@@ -997,7 +972,7 @@ Arguments
 
         | Same as destination
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: target
 
@@ -1009,7 +984,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # DESTINATION
             target=
 
@@ -1023,7 +998,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: target id
 
@@ -1035,7 +1010,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # TARGET ID
             target id=
 
@@ -1047,7 +1022,7 @@ Arguments
 
         | Timeout when reading/writing packets to/from sockets.
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: timeout
 
@@ -1059,7 +1034,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # TIMEOUT
             timeout=30
 
@@ -1073,7 +1048,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: top syntax
 
@@ -1085,7 +1060,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # SYNTAX
             top syntax=
 
@@ -1097,7 +1072,7 @@ Arguments
 
         | If any rows match this filter severity will escalated to WARNING
 
-        **Path**: /sample/sample
+        **Path**: /sample
 
         **Key**: warning
 
@@ -1109,7 +1084,7 @@ Arguments
 
         **Sample**::
 
-            [/sample/sample]
+            [/sample]
             # WARNING FILTER
             warning=
 

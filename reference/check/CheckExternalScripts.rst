@@ -61,27 +61,6 @@ Common Keys:
     :confpath:`/settings/external scripts` | :confkey:`~/settings/external scripts.allow nasty characters` | COMMAND ALLOW NASTY META CHARS
     :confpath:`/settings/external scripts` | :confkey:`~/settings/external scripts.script path` | SCRIPT DIRECTORY
     :confpath:`/settings/external scripts` | :confkey:`~/settings/external scripts.timeout` | COMMAND TIMEOUT
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_cpu` | alias_cpu
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_cpu_ex` | alias_cpu_ex
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_disk` | alias_disk
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_disk_loose` | alias_disk_loose
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_event_log` | alias_event_log
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_file_age` | alias_file_age
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_file_size` | alias_file_size
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_mem` | alias_mem
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_process` | alias_process
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_process_count` | alias_process_count
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_process_hung` | alias_process_hung
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_process_stopped` | alias_process_stopped
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_sched_all` | alias_sched_all
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_sched_long` | alias_sched_long
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_sched_task` | alias_sched_task
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_service` | alias_service
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_service_ex` | alias_service_ex
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_up` | alias_up
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_volumes` | alias_volumes
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_volumes_loose` | alias_volumes_loose
-    :confpath:`/settings/external scripts/alias/default` | :confkey:`~/settings/external scripts/alias/default.default` | default
     :confpath:`/settings/external scripts/scripts` | :confkey:`~/settings/external scripts/scripts.default` | default
     :confpath:`/settings/external scripts/wrappings` | :confkey:`~/settings/external scripts/wrappings.bat` | BATCH FILE WRAPPING
     :confpath:`/settings/external scripts/wrappings` | :confkey:`~/settings/external scripts/wrappings.ps1` | POWERSHELL WRAPPING
@@ -94,12 +73,12 @@ Advanced keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/external scripts/alias/sample/sample` | :confkey:`~/settings/external scripts/alias/sample/sample.alias` | ALIAS
-    :confpath:`/settings/external scripts/alias/sample/sample` | :confkey:`~/settings/external scripts/alias/sample/sample.is template` | IS TEMPLATE
-    :confpath:`/settings/external scripts/alias/sample/sample` | :confkey:`~/settings/external scripts/alias/sample/sample.parent` | PARENT
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.alias` | ALIAS
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.is template` | IS TEMPLATE
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.parent` | PARENT
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.alias` | ALIAS
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.is template` | IS TEMPLATE
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.parent` | PARENT
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.alias` | ALIAS
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.is template` | IS TEMPLATE
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.parent` | PARENT
 
 Sample keys:
 
@@ -108,13 +87,13 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/external scripts/alias/sample/sample` | :confkey:`~/settings/external scripts/alias/sample/sample.command` | COMMAND
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.command` | COMMAND
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.domain` | DOMAIN
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.encoding` | ENCODING
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.ignore perfdata` | IGNORE PERF DATA
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.password` | PASSWORD
-    :confpath:`/settings/external scripts/scripts/sample/sample` | :confkey:`~/settings/external scripts/scripts/sample/sample.user` | USER
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.command` | COMMAND
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.command` | COMMAND
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.domain` | DOMAIN
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.encoding` | ENCODING
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.ignore perfdata` | IGNORE PERF DATA
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.password` | PASSWORD
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.user` | USER
 
 
 
@@ -255,555 +234,21 @@ Sample keys:
     | An alias is an internal command that has been predefined to provide a single command without arguments. Be careful so you don't create loops (ie check_loop=check_a, check_a=check_loop)
 
 
-    .. csv-table:: 
-        :class: contentstable 
-        :delim: | 
-        :header: "Key", "Default Value", "Description"
-    
-        :confkey:`alias_cpu` |  | alias_cpu
-        :confkey:`alias_cpu_ex` |  | alias_cpu_ex
-        :confkey:`alias_disk` |  | alias_disk
-        :confkey:`alias_disk_loose` |  | alias_disk_loose
-        :confkey:`alias_event_log` |  | alias_event_log
-        :confkey:`alias_file_age` |  | alias_file_age
-        :confkey:`alias_file_size` |  | alias_file_size
-        :confkey:`alias_mem` |  | alias_mem
-        :confkey:`alias_process` |  | alias_process
-        :confkey:`alias_process_count` |  | alias_process_count
-        :confkey:`alias_process_hung` |  | alias_process_hung
-        :confkey:`alias_process_stopped` |  | alias_process_stopped
-        :confkey:`alias_sched_all` |  | alias_sched_all
-        :confkey:`alias_sched_long` |  | alias_sched_long
-        :confkey:`alias_sched_task` |  | alias_sched_task
-        :confkey:`alias_service` |  | alias_service
-        :confkey:`alias_service_ex` |  | alias_service_ex
-        :confkey:`alias_up` |  | alias_up
-        :confkey:`alias_volumes` |  | alias_volumes
-        :confkey:`alias_volumes_loose` |  | alias_volumes_loose
+
 
     **Sample**::
 
         # ALIAS SECTION
         # A list of aliases available.
         [/settings/external scripts/alias]
-        alias_cpu=
-        alias_cpu_ex=
-        alias_disk=
-        alias_disk_loose=
-        alias_event_log=
-        alias_file_age=
-        alias_file_size=
-        alias_mem=
-        alias_process=
-        alias_process_count=
-        alias_process_hung=
-        alias_process_stopped=
-        alias_sched_all=
-        alias_sched_long=
-        alias_sched_task=
-        alias_service=
-        alias_service_ex=
-        alias_up=
-        alias_volumes=
-        alias_volumes_loose=
 
 
-    .. confkey:: alias_cpu
-        :synopsis: alias_cpu
 
-        **alias_cpu**
 
-        | Alias for alias_cpu. To configure this item add a section called: /settings/external scripts/alias/alias_cpu
+…  / alias / sample
+-------------------
 
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_cpu
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_cpu
-            alias_cpu=
-
-
-    .. confkey:: alias_cpu_ex
-        :synopsis: alias_cpu_ex
-
-        **alias_cpu_ex**
-
-        | Alias for alias_cpu_ex. To configure this item add a section called: /settings/external scripts/alias/alias_cpu_ex
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_cpu_ex
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_cpu_ex
-            alias_cpu_ex=
-
-
-    .. confkey:: alias_disk
-        :synopsis: alias_disk
-
-        **alias_disk**
-
-        | Alias for alias_disk. To configure this item add a section called: /settings/external scripts/alias/alias_disk
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_disk
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_disk
-            alias_disk=
-
-
-    .. confkey:: alias_disk_loose
-        :synopsis: alias_disk_loose
-
-        **alias_disk_loose**
-
-        | Alias for alias_disk_loose. To configure this item add a section called: /settings/external scripts/alias/alias_disk_loose
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_disk_loose
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_disk_loose
-            alias_disk_loose=
-
-
-    .. confkey:: alias_event_log
-        :synopsis: alias_event_log
-
-        **alias_event_log**
-
-        | Alias for alias_event_log. To configure this item add a section called: /settings/external scripts/alias/alias_event_log
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_event_log
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_event_log
-            alias_event_log=
-
-
-    .. confkey:: alias_file_age
-        :synopsis: alias_file_age
-
-        **alias_file_age**
-
-        | Alias for alias_file_age. To configure this item add a section called: /settings/external scripts/alias/alias_file_age
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_file_age
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_file_age
-            alias_file_age=
-
-
-    .. confkey:: alias_file_size
-        :synopsis: alias_file_size
-
-        **alias_file_size**
-
-        | Alias for alias_file_size. To configure this item add a section called: /settings/external scripts/alias/alias_file_size
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_file_size
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_file_size
-            alias_file_size=
-
-
-    .. confkey:: alias_mem
-        :synopsis: alias_mem
-
-        **alias_mem**
-
-        | Alias for alias_mem. To configure this item add a section called: /settings/external scripts/alias/alias_mem
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_mem
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_mem
-            alias_mem=
-
-
-    .. confkey:: alias_process
-        :synopsis: alias_process
-
-        **alias_process**
-
-        | Alias for alias_process. To configure this item add a section called: /settings/external scripts/alias/alias_process
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_process
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_process
-            alias_process=
-
-
-    .. confkey:: alias_process_count
-        :synopsis: alias_process_count
-
-        **alias_process_count**
-
-        | Alias for alias_process_count. To configure this item add a section called: /settings/external scripts/alias/alias_process_count
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_process_count
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_process_count
-            alias_process_count=
-
-
-    .. confkey:: alias_process_hung
-        :synopsis: alias_process_hung
-
-        **alias_process_hung**
-
-        | Alias for alias_process_hung. To configure this item add a section called: /settings/external scripts/alias/alias_process_hung
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_process_hung
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_process_hung
-            alias_process_hung=
-
-
-    .. confkey:: alias_process_stopped
-        :synopsis: alias_process_stopped
-
-        **alias_process_stopped**
-
-        | Alias for alias_process_stopped. To configure this item add a section called: /settings/external scripts/alias/alias_process_stopped
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_process_stopped
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_process_stopped
-            alias_process_stopped=
-
-
-    .. confkey:: alias_sched_all
-        :synopsis: alias_sched_all
-
-        **alias_sched_all**
-
-        | Alias for alias_sched_all. To configure this item add a section called: /settings/external scripts/alias/alias_sched_all
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_sched_all
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_sched_all
-            alias_sched_all=
-
-
-    .. confkey:: alias_sched_long
-        :synopsis: alias_sched_long
-
-        **alias_sched_long**
-
-        | Alias for alias_sched_long. To configure this item add a section called: /settings/external scripts/alias/alias_sched_long
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_sched_long
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_sched_long
-            alias_sched_long=
-
-
-    .. confkey:: alias_sched_task
-        :synopsis: alias_sched_task
-
-        **alias_sched_task**
-
-        | Alias for alias_sched_task. To configure this item add a section called: /settings/external scripts/alias/alias_sched_task
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_sched_task
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_sched_task
-            alias_sched_task=
-
-
-    .. confkey:: alias_service
-        :synopsis: alias_service
-
-        **alias_service**
-
-        | Alias for alias_service. To configure this item add a section called: /settings/external scripts/alias/alias_service
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_service
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_service
-            alias_service=
-
-
-    .. confkey:: alias_service_ex
-        :synopsis: alias_service_ex
-
-        **alias_service_ex**
-
-        | Alias for alias_service_ex. To configure this item add a section called: /settings/external scripts/alias/alias_service_ex
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_service_ex
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_service_ex
-            alias_service_ex=
-
-
-    .. confkey:: alias_up
-        :synopsis: alias_up
-
-        **alias_up**
-
-        | Alias for alias_up. To configure this item add a section called: /settings/external scripts/alias/alias_up
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_up
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_up
-            alias_up=
-
-
-    .. confkey:: alias_volumes
-        :synopsis: alias_volumes
-
-        **alias_volumes**
-
-        | Alias for alias_volumes. To configure this item add a section called: /settings/external scripts/alias/alias_volumes
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_volumes
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_volumes
-            alias_volumes=
-
-
-    .. confkey:: alias_volumes_loose
-        :synopsis: alias_volumes_loose
-
-        **alias_volumes_loose**
-
-        | Alias for alias_volumes_loose. To configure this item add a section called: /settings/external scripts/alias/alias_volumes_loose
-
-        **Path**: /settings/external scripts/alias
-
-        **Key**: alias_volumes_loose
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias]
-            # alias_volumes_loose
-            alias_volumes_loose=
-
-
-
-
-…  / alias / default
---------------------
-
-.. confpath:: /settings/external scripts/alias/default
-    :synopsis: 
-
-
-
-
-
-
-    .. csv-table:: 
-        :class: contentstable 
-        :delim: | 
-        :header: "Key", "Default Value", "Description"
-    
-        :confkey:`default` |  | default
-
-    **Sample**::
-
-        # 
-        # 
-        [/settings/external scripts/alias/default]
-        default=
-
-
-    .. confkey:: default
-        :synopsis: default
-
-        **default**
-
-        | Alias for default. To configure this item add a section called: /settings/external scripts/alias/default/default
-
-        **Path**: /settings/external scripts/alias/default
-
-        **Key**: default
-
-        **Default value**: 
-
-        **Used by**: :module:`CheckExternalScripts`
-
-        **Sample**::
-
-            [/settings/external scripts/alias/default]
-            # default
-            default=
-
-
-
-
-…  / alias / sample / sample
-----------------------------
-
-.. confpath:: /settings/external scripts/alias/sample/sample
+.. confpath:: /settings/external scripts/alias/sample
     :synopsis: ALIAS DEFENITION
 
 **ALIAS DEFENITION**
@@ -825,7 +270,7 @@ Sample keys:
 
         # ALIAS DEFENITION
         # Alias definition for: sample
-        [/settings/external scripts/alias/sample/sample]
+        [/settings/external scripts/alias/sample]
         alias=
         command=
         is template=0
@@ -841,7 +286,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/alias/sample/sample
+        **Path**: /settings/external scripts/alias/sample
 
         **Key**: alias
 
@@ -851,7 +296,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/alias/sample/sample]
+            [/settings/external scripts/alias/sample]
             # ALIAS
             alias=
 
@@ -863,7 +308,7 @@ Sample keys:
 
         | Command to execute
 
-        **Path**: /settings/external scripts/alias/sample/sample
+        **Path**: /settings/external scripts/alias/sample
 
         **Key**: command
 
@@ -875,7 +320,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/alias/sample/sample]
+            [/settings/external scripts/alias/sample]
             # COMMAND
             command=
 
@@ -889,7 +334,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/alias/sample/sample
+        **Path**: /settings/external scripts/alias/sample
 
         **Key**: is template
 
@@ -899,7 +344,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/alias/sample/sample]
+            [/settings/external scripts/alias/sample]
             # IS TEMPLATE
             is template=0
 
@@ -913,7 +358,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/alias/sample/sample
+        **Path**: /settings/external scripts/alias/sample
 
         **Key**: parent
 
@@ -923,7 +368,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/alias/sample/sample]
+            [/settings/external scripts/alias/sample]
             # PARENT
             parent=default
 
@@ -980,10 +425,10 @@ Sample keys:
 
 
 
-…  / scripts / sample / sample
-------------------------------
+…  / scripts / sample
+---------------------
 
-.. confpath:: /settings/external scripts/scripts/sample/sample
+.. confpath:: /settings/external scripts/scripts/sample
     :synopsis: COMMAND DEFENITION
 
 **COMMAND DEFENITION**
@@ -1010,7 +455,7 @@ Sample keys:
 
         # COMMAND DEFENITION
         # Command definition for: sample
-        [/settings/external scripts/scripts/sample/sample]
+        [/settings/external scripts/scripts/sample]
         alias=
         command=
         domain=
@@ -1031,7 +476,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: alias
 
@@ -1041,7 +486,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # ALIAS
             alias=
 
@@ -1053,7 +498,7 @@ Sample keys:
 
         | Command to execute
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: command
 
@@ -1065,7 +510,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # COMMAND
             command=
 
@@ -1079,7 +524,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: domain
 
@@ -1091,7 +536,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # DOMAIN
             domain=
 
@@ -1105,7 +550,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: encoding
 
@@ -1117,7 +562,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # ENCODING
             encoding=
 
@@ -1129,7 +574,7 @@ Sample keys:
 
         | Do not parse performance data from the output
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: ignore perfdata
 
@@ -1141,7 +586,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # IGNORE PERF DATA
             ignore perfdata=0
 
@@ -1155,7 +600,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: is template
 
@@ -1165,7 +610,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # IS TEMPLATE
             is template=0
 
@@ -1179,7 +624,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: parent
 
@@ -1189,7 +634,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # PARENT
             parent=default
 
@@ -1203,7 +648,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: password
 
@@ -1215,7 +660,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # PASSWORD
             password=
 
@@ -1229,7 +674,7 @@ Sample keys:
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/external scripts/scripts/sample/sample
+        **Path**: /settings/external scripts/scripts/sample
 
         **Key**: user
 
@@ -1241,7 +686,7 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts/sample/sample]
+            [/settings/external scripts/scripts/sample]
             # USER
             user=
 
@@ -1274,12 +719,11 @@ Sample keys:
 --------------
 
 .. confpath:: /settings/external scripts/wrappings
-    :synopsis: EXTERNAL SCRIPT WRAPPINGS SECTION
+    :synopsis: in flight
 
-**EXTERNAL SCRIPT WRAPPINGS SECTION**
+**in flight**
 
-    | A list of templates for wrapped scripts.
-    | %SCRIPT% will be replaced by the actual script an %ARGS% will be replaced by any given arguments.
+    | TODO
 
 
     .. csv-table:: 
@@ -1293,8 +737,8 @@ Sample keys:
 
     **Sample**::
 
-        # EXTERNAL SCRIPT WRAPPINGS SECTION
-        # A list of templates for wrapped scripts.
+        # in flight
+        # TODO
         [/settings/external scripts/wrappings]
         bat=
         ps1=
@@ -1314,7 +758,7 @@ Sample keys:
 
         **Default value**: 
 
-        **Used by**: :module:`CheckExternalScripts`
+        **Used by**: :module:``,  :module:`CheckExternalScripts`
 
         **Sample**::
 
@@ -1336,7 +780,7 @@ Sample keys:
 
         **Default value**: 
 
-        **Used by**: :module:`CheckExternalScripts`
+        **Used by**: :module:``,  :module:`CheckExternalScripts`
 
         **Sample**::
 
@@ -1358,7 +802,7 @@ Sample keys:
 
         **Default value**: 
 
-        **Used by**: :module:`CheckExternalScripts`
+        **Used by**: :module:``,  :module:`CheckExternalScripts`
 
         **Sample**::
 

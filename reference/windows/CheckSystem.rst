@@ -71,9 +71,9 @@ Advanced keys:
     :header: "Path / Section", "Key", "Default Value", "Description"
 
     :confpath:`/settings/system/windows` | :confkey:`~/settings/system/windows.subsystem` | PDH SUBSYSTEM
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.alias` | ALIAS
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.is template` | IS TEMPLATE
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.parent` | PARENT
+    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.alias` | ALIAS
+    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.is template` | IS TEMPLATE
+    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.parent` | PARENT
 
 Sample keys:
 
@@ -82,12 +82,12 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.buffer size` | BUFFER SIZE
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.collection strategy` | COLLECTION STRATEGY
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.counter` | COUNTER
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.flags` | FLAGS
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.instances` | TODO
-    :confpath:`/settings/system/windows/counters/sample/sample` | :confkey:`~/settings/system/windows/counters/sample/sample.type` | COUNTER TYPE
+    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.buffer size` | BUFFER SIZE
+    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.collection strategy` | COLLECTION STRATEGY
+    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.counter` | COUNTER
+    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.flags` | FLAGS
+    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.instances` | TODO
+    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.type` | COUNTER TYPE
 
 
 Queries
@@ -3979,10 +3979,10 @@ Arguments
 
 
 
-…  / counters / sample / sample
--------------------------------
+…  / counters / sample
+----------------------
 
-.. confpath:: /settings/system/windows/counters/sample/sample
+.. confpath:: /settings/system/windows/counters/sample
     :synopsis: COUNTER
 
 **COUNTER**
@@ -4009,7 +4009,7 @@ Arguments
 
         # COUNTER
         # Definition for counter: sample
-        [/settings/system/windows/counters/sample/sample]
+        [/settings/system/windows/counters/sample]
         alias=
         buffer size=
         collection strategy=
@@ -4030,7 +4030,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/system/windows/counters/sample/sample
+        **Path**: /settings/system/windows/counters/sample
 
         **Key**: alias
 
@@ -4040,7 +4040,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/system/windows/counters/sample/sample]
+            [/settings/system/windows/counters/sample]
             # ALIAS
             alias=
 
@@ -4052,7 +4052,7 @@ Arguments
 
         | Size of buffer (in seconds) larger buffer use more memory
 
-        **Path**: /settings/system/windows/counters/sample/sample
+        **Path**: /settings/system/windows/counters/sample
 
         **Key**: buffer size
 
@@ -4064,7 +4064,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/system/windows/counters/sample/sample]
+            [/settings/system/windows/counters/sample]
             # BUFFER SIZE
             buffer size=
 
@@ -4076,7 +4076,7 @@ Arguments
 
         | The way to handled values when collecting them: static means we keep the last known value, rrd means we store values in a buffer from which you can retrieve the average
 
-        **Path**: /settings/system/windows/counters/sample/sample
+        **Path**: /settings/system/windows/counters/sample
 
         **Key**: collection strategy
 
@@ -4088,7 +4088,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/system/windows/counters/sample/sample]
+            [/settings/system/windows/counters/sample]
             # COLLECTION STRATEGY
             collection strategy=
 
@@ -4100,7 +4100,7 @@ Arguments
 
         | The counter to check
 
-        **Path**: /settings/system/windows/counters/sample/sample
+        **Path**: /settings/system/windows/counters/sample
 
         **Key**: counter
 
@@ -4112,7 +4112,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/system/windows/counters/sample/sample]
+            [/settings/system/windows/counters/sample]
             # COUNTER
             counter=
 
@@ -4124,7 +4124,7 @@ Arguments
 
         | Extra flags to configure the counter (nocap100, 1000, noscale)
 
-        **Path**: /settings/system/windows/counters/sample/sample
+        **Path**: /settings/system/windows/counters/sample
 
         **Key**: flags
 
@@ -4136,7 +4136,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/system/windows/counters/sample/sample]
+            [/settings/system/windows/counters/sample]
             # FLAGS
             flags=
 
@@ -4148,7 +4148,7 @@ Arguments
 
         | TODO
 
-        **Path**: /settings/system/windows/counters/sample/sample
+        **Path**: /settings/system/windows/counters/sample
 
         **Key**: instances
 
@@ -4160,7 +4160,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/system/windows/counters/sample/sample]
+            [/settings/system/windows/counters/sample]
             # TODO
             instances=
 
@@ -4174,7 +4174,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/system/windows/counters/sample/sample
+        **Path**: /settings/system/windows/counters/sample
 
         **Key**: is template
 
@@ -4184,7 +4184,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/system/windows/counters/sample/sample]
+            [/settings/system/windows/counters/sample]
             # IS TEMPLATE
             is template=0
 
@@ -4198,7 +4198,7 @@ Arguments
 
         **Advanced** (means it is not commonly used)
 
-        **Path**: /settings/system/windows/counters/sample/sample
+        **Path**: /settings/system/windows/counters/sample
 
         **Key**: parent
 
@@ -4208,7 +4208,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/system/windows/counters/sample/sample]
+            [/settings/system/windows/counters/sample]
             # PARENT
             parent=default
 
@@ -4220,7 +4220,7 @@ Arguments
 
         | The type of counter to use long, large and double
 
-        **Path**: /settings/system/windows/counters/sample/sample
+        **Path**: /settings/system/windows/counters/sample
 
         **Key**: type
 
@@ -4232,7 +4232,7 @@ Arguments
 
         **Sample**::
 
-            [/settings/system/windows/counters/sample/sample]
+            [/settings/system/windows/counters/sample]
             # COUNTER TYPE
             type=
 
