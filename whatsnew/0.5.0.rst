@@ -1,0 +1,43 @@
+*********************************
+  What's New in NSClient++ 0.5.0
+*********************************
+
+:Author: Michael Medin
+
+.. |release| replace:: 0.4.4
+
+Introduction
+============
+
+The main goals of the 0.5.0 is t make NSClient++ easier to use and more future proof.
+
+ * New improved WebUI
+ * Metrics support
+ * Improved clients and beter support for graphite et.al.
+ 
+**PLEASE NOTE** NRPE has been changed (from 0.4.3), for details read below.
+
+New WebUI
+---------
+
+While I really loved the new WebUI in 0.4.3 it is much a proof of concept. I have in 0.5.0 reworked this to be much more feature compelate as well as usable. The WebUI is now I think ready for prime time and will probably make configuring NSClient++ much much simpler.
+A side effect of the new WebUI is the REST support which NSClient++ now has meaning you can now check/configure/* NSClient++ using a REST API.
+
+Metrics
+-------
+
+While metrics might seem like a dumbed down check command (without the checks) it is actually the foundation of ther next generation of NSClient++.
+It will apart from just beein nice and allow much easier handling of Graphite et.al. allow checking compund metrics.
+
+NRPE enhancements (0.4.3)
+-------------------------
+
+**If you are using NRPE you are in for a chock!**
+
+::
+
+  In 0.4.3 we will no longer support the rather insecure regular NRPE! 
+  You can still enable support but you have to do so (in the installer or using the command line mode). 
+  So keep a heads up when you run the installer so you wont miss it.
+
+The idea is that when NSClient++ ships a new check_nrpe will be provided which wont have the limitations of the old one.

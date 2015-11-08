@@ -1,0 +1,35 @@
+*********************************
+  What's New in NSClient++ 0.4.4
+*********************************
+
+:Author: Michael Medin
+
+.. |release| replace:: 0.4.3
+
+Introduction
+============
+
+The main goals of the 0.4.4 was to get the new installer out.
+
+ * New installer
+ 
+**PLEASE NOTE** NRPE has been changed (from 0.4.3), for details read below.
+
+Improved installer
+------------------
+
+A reworked installer with support for monitoring tools have been added. Currently only op5 is supported but the plan is t suppot other tools as well.
+The installer also has a much improved command line itnerface as well as a lt of bug fixes.
+
+NRPE enhancements (0.4.3)
+-------------------------
+
+**If you are using NRPE you are in for a chock!**
+
+::
+
+  In 0.4.3 we will no longer support the rather insecure regular NRPE! 
+  You can still enable support but you have to do so (in the installer or using the command line mode). 
+  So keep a heads up when you run the installer so you wont miss it.
+
+The idea is that when NSClient++ ships a new check_nrpe will be provided which wont have the limitations of the old one.
