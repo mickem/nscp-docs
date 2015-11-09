@@ -95,6 +95,10 @@ Sample keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.alias` | ALIAS
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.command` | COMMAND
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.is template` | IS TEMPLATE
+    :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.parent` | PARENT
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.alias` | ALIAS
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.command` | COMMAND
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.domain` | DOMAIN
@@ -763,6 +767,142 @@ Sample keys:
 
 
 
+…  / alias / sample
+-------------------
+
+.. confpath:: /settings/external scripts/alias/sample
+    :synopsis: ALIAS DEFENITION
+
+**ALIAS DEFENITION**
+
+    | Alias definition for: sample
+
+
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`alias` |  | ALIAS
+        :confkey:`command` |  | COMMAND
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+
+    **Sample**::
+
+        # ALIAS DEFENITION
+        # Alias definition for: sample
+        [/settings/external scripts/alias/sample]
+        alias=
+        command=
+        is template=0
+        parent=default
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/alias/sample
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/alias/sample]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: command
+        :synopsis: COMMAND
+
+        **COMMAND**
+
+        | Command to execute
+
+        **Path**: /settings/external scripts/alias/sample
+
+        **Key**: command
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/alias/sample]
+            # COMMAND
+            command=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/alias/sample
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/alias/sample]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/alias/sample
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/alias/sample]
+            # PARENT
+            parent=default
+
+
+
+
 …  / scripts
 ------------
 
@@ -817,11 +957,11 @@ Sample keys:
 ---------------------
 
 .. confpath:: /settings/external scripts/scripts/sample
-    :synopsis: ALIAS DEFENITION
+    :synopsis: COMMAND DEFENITION
 
-**ALIAS DEFENITION**
+**COMMAND DEFENITION**
 
-    | Alias definition for: sample
+    | Command definition for: sample
 
 
     .. csv-table:: 
@@ -841,8 +981,8 @@ Sample keys:
 
     **Sample**::
 
-        # ALIAS DEFENITION
-        # Alias definition for: sample
+        # COMMAND DEFENITION
+        # Command definition for: sample
         [/settings/external scripts/scripts/sample]
         alias=
         command=
