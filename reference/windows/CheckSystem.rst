@@ -62,6 +62,13 @@ Common Keys:
     :header: "Path / Section", "Key", "Description"
 
     :confpath:`/settings/system/windows` | :confkey:`~/settings/system/windows.default buffer length` | DEFAULT LENGTH
+    :confpath:`/settings/system/windows/counters` | :confkey:`~/settings/system/windows/counters.disk_queue_length` | disk_queue_length
+    :confpath:`/settings/system/windows/counters/default` | :confkey:`~/settings/system/windows/counters/default.buffer size` | BUFFER SIZE
+    :confpath:`/settings/system/windows/counters/default` | :confkey:`~/settings/system/windows/counters/default.collection strategy` | COLLECTION STRATEGY
+    :confpath:`/settings/system/windows/counters/default` | :confkey:`~/settings/system/windows/counters/default.counter` | COUNTER
+    :confpath:`/settings/system/windows/counters/default` | :confkey:`~/settings/system/windows/counters/default.flags` | FLAGS
+    :confpath:`/settings/system/windows/counters/default` | :confkey:`~/settings/system/windows/counters/default.instances` | Interpret instances
+    :confpath:`/settings/system/windows/counters/default` | :confkey:`~/settings/system/windows/counters/default.type` | COUNTER TYPE
 
 Advanced keys:
 
@@ -71,6 +78,9 @@ Advanced keys:
     :header: "Path / Section", "Key", "Default Value", "Description"
 
     :confpath:`/settings/system/windows` | :confkey:`~/settings/system/windows.subsystem` | PDH SUBSYSTEM
+    :confpath:`/settings/system/windows/counters/default` | :confkey:`~/settings/system/windows/counters/default.alias` | ALIAS
+    :confpath:`/settings/system/windows/counters/default` | :confkey:`~/settings/system/windows/counters/default.is template` | IS TEMPLATE
+    :confpath:`/settings/system/windows/counters/default` | :confkey:`~/settings/system/windows/counters/default.parent` | PARENT
     :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.alias` | ALIAS
     :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.is template` | IS TEMPLATE
     :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.parent` | PARENT
@@ -86,7 +96,7 @@ Sample keys:
     :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.collection strategy` | COLLECTION STRATEGY
     :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.counter` | COUNTER
     :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.flags` | FLAGS
-    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.instances` | TODO
+    :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.instances` | Interpret instances
     :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.type` | COUNTER TYPE
 
 
@@ -2072,6 +2082,7 @@ Arguments
     :option:`scan-16bit` |  | If 16bit processes should be included
     :option:`delta` |  | Calculate delta over one elapsed second.
     :option:`scan-unreadable` |  | If unreadable processes should be included (will not have information)
+    :option:`total` | N/A | Include the total of all matching files
 
 
 
@@ -2592,6 +2603,11 @@ Arguments
     :synopsis: If unreadable processes should be included (will not have information)
 
     | If unreadable processes should be included (will not have information)
+
+.. option:: total
+    :synopsis: Include the total of all matching files
+
+    | Include the total of all matching files
 
 :query:`check_service`
 ----------------------
@@ -3968,13 +3984,289 @@ Arguments
     | Add counters to check
 
 
-
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`disk_queue_length` |  | disk_queue_length
 
     **Sample**::
 
         # COUNTERS
         # Add counters to check
         [/settings/system/windows/counters]
+        disk_queue_length=
+
+
+    .. confkey:: disk_queue_length
+        :synopsis: disk_queue_length
+
+        **disk_queue_length**
+
+        | To configure this create a section under: /settings/system/windows/counters/disk_queue_length
+
+        **Path**: /settings/system/windows/counters
+
+        **Key**: disk_queue_length
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters]
+            # disk_queue_length
+            disk_queue_length=
+
+
+
+
+…  / counters / default
+-----------------------
+
+.. confpath:: /settings/system/windows/counters/default
+    :synopsis: COUNTER
+
+**COUNTER**
+
+    | Definition for counter: default
+
+
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`alias` |  | ALIAS
+        :confkey:`buffer size` |  | BUFFER SIZE
+        :confkey:`collection strategy` |  | COLLECTION STRATEGY
+        :confkey:`counter` |  | COUNTER
+        :confkey:`flags` |  | FLAGS
+        :confkey:`instances` |  | Interpret instances
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`type` |  | COUNTER TYPE
+
+    **Sample**::
+
+        # COUNTER
+        # Definition for counter: default
+        [/settings/system/windows/counters/default]
+        alias=
+        buffer size=
+        collection strategy=
+        counter=
+        flags=
+        instances=
+        is template=0
+        parent=default
+        type=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/counters/default
+
+        **Key**: alias
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/default]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: buffer size
+        :synopsis: BUFFER SIZE
+
+        **BUFFER SIZE**
+
+        | Size of buffer (in seconds) larger buffer use more memory
+
+        **Path**: /settings/system/windows/counters/default
+
+        **Key**: buffer size
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/default]
+            # BUFFER SIZE
+            buffer size=
+
+
+    .. confkey:: collection strategy
+        :synopsis: COLLECTION STRATEGY
+
+        **COLLECTION STRATEGY**
+
+        | The way to handled values when collecting them: static means we keep the last known value, rrd means we store values in a buffer from which you can retrieve the average
+
+        **Path**: /settings/system/windows/counters/default
+
+        **Key**: collection strategy
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/default]
+            # COLLECTION STRATEGY
+            collection strategy=
+
+
+    .. confkey:: counter
+        :synopsis: COUNTER
+
+        **COUNTER**
+
+        | The counter to check
+
+        **Path**: /settings/system/windows/counters/default
+
+        **Key**: counter
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/default]
+            # COUNTER
+            counter=
+
+
+    .. confkey:: flags
+        :synopsis: FLAGS
+
+        **FLAGS**
+
+        | Extra flags to configure the counter (nocap100, 1000, noscale)
+
+        **Path**: /settings/system/windows/counters/default
+
+        **Key**: flags
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/default]
+            # FLAGS
+            flags=
+
+
+    .. confkey:: instances
+        :synopsis: Interpret instances
+
+        **Interpret instances**
+
+        | IF we shoul interpret instance (default auto). Values: auto, true, false
+
+        **Path**: /settings/system/windows/counters/default
+
+        **Key**: instances
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/default]
+            # Interpret instances
+            instances=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/counters/default
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/default]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/system/windows/counters/default
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/default]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: type
+        :synopsis: COUNTER TYPE
+
+        **COUNTER TYPE**
+
+        | The type of counter to use long, large and double
+
+        **Path**: /settings/system/windows/counters/default
+
+        **Key**: type
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckSystem`
+
+        **Sample**::
+
+            [/settings/system/windows/counters/default]
+            # COUNTER TYPE
+            type=
 
 
 
@@ -4000,7 +4292,7 @@ Arguments
         :confkey:`collection strategy` |  | COLLECTION STRATEGY
         :confkey:`counter` |  | COUNTER
         :confkey:`flags` |  | FLAGS
-        :confkey:`instances` |  | TODO
+        :confkey:`instances` |  | Interpret instances
         :confkey:`is template` | 0 | IS TEMPLATE
         :confkey:`parent` | default | PARENT
         :confkey:`type` |  | COUNTER TYPE
@@ -4142,11 +4434,11 @@ Arguments
 
 
     .. confkey:: instances
-        :synopsis: TODO
+        :synopsis: Interpret instances
 
-        **TODO**
+        **Interpret instances**
 
-        | TODO
+        | IF we shoul interpret instance (default auto). Values: auto, true, false
 
         **Path**: /settings/system/windows/counters/sample
 
@@ -4161,7 +4453,7 @@ Arguments
         **Sample**::
 
             [/settings/system/windows/counters/sample]
-            # TODO
+            # Interpret instances
             instances=
 
 
