@@ -81,8 +81,9 @@ Common Keys:
     :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_up` | alias_up
     :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_volumes` | alias_volumes
     :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.alias_volumes_loose` | alias_volumes_loose
-    :confpath:`/settings/external scripts/alias` | :confkey:`~/settings/external scripts/alias.default` | default
-    :confpath:`/settings/external scripts/scripts` | :confkey:`~/settings/external scripts/scripts.default` | default
+    :confpath:`/settings/external scripts/alias/default` | :confkey:`~/settings/external scripts/alias/default.command` | COMMAND
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.command` | COMMAND
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.ignore perfdata` | IGNORE PERF DATA
     :confpath:`/settings/external scripts/wrappings` | :confkey:`~/settings/external scripts/wrappings.bat` | BATCH FILE WRAPPING
     :confpath:`/settings/external scripts/wrappings` | :confkey:`~/settings/external scripts/wrappings.ps1` | POWERSHELL WRAPPING
     :confpath:`/settings/external scripts/wrappings` | :confkey:`~/settings/external scripts/wrappings.vbs` | VISUAL BASIC WRAPPING
@@ -94,9 +95,19 @@ Advanced keys:
     :delim: | 
     :header: "Path / Section", "Key", "Default Value", "Description"
 
+    :confpath:`/settings/external scripts/alias/default` | :confkey:`~/settings/external scripts/alias/default.alias` | ALIAS
+    :confpath:`/settings/external scripts/alias/default` | :confkey:`~/settings/external scripts/alias/default.is template` | IS TEMPLATE
+    :confpath:`/settings/external scripts/alias/default` | :confkey:`~/settings/external scripts/alias/default.parent` | PARENT
     :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.alias` | ALIAS
     :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.is template` | IS TEMPLATE
     :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.parent` | PARENT
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.alias` | ALIAS
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.domain` | DOMAIN
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.encoding` | ENCODING
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.is template` | IS TEMPLATE
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.parent` | PARENT
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.password` | PASSWORD
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.user` | USER
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.alias` | ALIAS
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.is template` | IS TEMPLATE
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.parent` | PARENT
@@ -280,7 +291,6 @@ Sample keys:
         :confkey:`alias_up` |  | alias_up
         :confkey:`alias_volumes` |  | alias_volumes
         :confkey:`alias_volumes_loose` |  | alias_volumes_loose
-        :confkey:`default` |  | default
 
     **Sample**::
 
@@ -307,7 +317,6 @@ Sample keys:
         alias_up=
         alias_volumes=
         alias_volumes_loose=
-        default=
 
 
     .. confkey:: alias_cpu
@@ -750,16 +759,52 @@ Sample keys:
             alias_volumes_loose=
 
 
-    .. confkey:: default
-        :synopsis: default
 
-        **default**
 
-        | To configure this create a section under: /settings/external scripts/alias/default
+…  / alias / default
+--------------------
 
-        **Path**: /settings/external scripts/alias
+.. confpath:: /settings/external scripts/alias/default
+    :synopsis: ALIAS DEFENITION
 
-        **Key**: default
+**ALIAS DEFENITION**
+
+    | Alias definition for: default
+
+
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`alias` |  | ALIAS
+        :confkey:`command` |  | COMMAND
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+
+    **Sample**::
+
+        # ALIAS DEFENITION
+        # Alias definition for: default
+        [/settings/external scripts/alias/default]
+        alias=
+        command=
+        is template=0
+        parent=default
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/alias/default
+
+        **Key**: alias
 
         **Default value**: 
 
@@ -767,9 +812,79 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/alias]
-            # default
-            default=
+            [/settings/external scripts/alias/default]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: command
+        :synopsis: COMMAND
+
+        **COMMAND**
+
+        | Command to execute
+
+        **Path**: /settings/external scripts/alias/default
+
+        **Key**: command
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/alias/default]
+            # COMMAND
+            command=
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/alias/default
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/alias/default]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/alias/default
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/alias/default]
+            # PARENT
+            parent=default
 
 
 
@@ -915,31 +1030,71 @@ Sample keys:
     | A list of scripts available to run from the CheckExternalScripts module. Syntax is: <command>=<script> <arguments>
 
 
-    .. csv-table:: 
-        :class: contentstable 
-        :delim: | 
-        :header: "Key", "Default Value", "Description"
-    
-        :confkey:`default` |  | default
+
 
     **Sample**::
 
         # SCRIPT SECTION
         # A list of scripts available to run from the CheckExternalScripts module. Syntax is: <command>=<script> <arguments>
         [/settings/external scripts/scripts]
-        default=
 
 
-    .. confkey:: default
-        :synopsis: default
 
-        **default**
 
-        | To configure this create a section under: /settings/external scripts/scripts/default
+…  / scripts / default
+----------------------
 
-        **Path**: /settings/external scripts/scripts
+.. confpath:: /settings/external scripts/scripts/default
+    :synopsis: COMMAND DEFENITION
 
-        **Key**: default
+**COMMAND DEFENITION**
+
+    | Command definition for: default
+
+
+    .. csv-table:: 
+        :class: contentstable 
+        :delim: | 
+        :header: "Key", "Default Value", "Description"
+    
+        :confkey:`alias` |  | ALIAS
+        :confkey:`command` |  | COMMAND
+        :confkey:`domain` |  | DOMAIN
+        :confkey:`encoding` |  | ENCODING
+        :confkey:`ignore perfdata` | 0 | IGNORE PERF DATA
+        :confkey:`is template` | 0 | IS TEMPLATE
+        :confkey:`parent` | default | PARENT
+        :confkey:`password` |  | PASSWORD
+        :confkey:`user` |  | USER
+
+    **Sample**::
+
+        # COMMAND DEFENITION
+        # Command definition for: default
+        [/settings/external scripts/scripts/default]
+        alias=
+        command=
+        domain=
+        encoding=
+        ignore perfdata=0
+        is template=0
+        parent=default
+        password=
+        user=
+
+
+    .. confkey:: alias
+        :synopsis: ALIAS
+
+        **ALIAS**
+
+        | The alias (service name) to report to server
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: alias
 
         **Default value**: 
 
@@ -947,9 +1102,197 @@ Sample keys:
 
         **Sample**::
 
-            [/settings/external scripts/scripts]
-            # default
-            default=
+            [/settings/external scripts/scripts/default]
+            # ALIAS
+            alias=
+
+
+    .. confkey:: command
+        :synopsis: COMMAND
+
+        **COMMAND**
+
+        | Command to execute
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: command
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # COMMAND
+            command=
+
+
+    .. confkey:: domain
+        :synopsis: DOMAIN
+
+        **DOMAIN**
+
+        | The user to run the command as
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: domain
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # DOMAIN
+            domain=
+
+
+    .. confkey:: encoding
+        :synopsis: ENCODING
+
+        **ENCODING**
+
+        | The encoding to parse the command as
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: encoding
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # ENCODING
+            encoding=
+
+
+    .. confkey:: ignore perfdata
+        :synopsis: IGNORE PERF DATA
+
+        **IGNORE PERF DATA**
+
+        | Do not parse performance data from the output
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: ignore perfdata
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # IGNORE PERF DATA
+            ignore perfdata=0
+
+
+    .. confkey:: is template
+        :synopsis: IS TEMPLATE
+
+        **IS TEMPLATE**
+
+        | Declare this object as a template (this means it will not be available as a separate object)
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: is template
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # IS TEMPLATE
+            is template=0
+
+
+    .. confkey:: parent
+        :synopsis: PARENT
+
+        **PARENT**
+
+        | The parent the target inherits from
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: parent
+
+        **Default value**: default
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # PARENT
+            parent=default
+
+
+    .. confkey:: password
+        :synopsis: PASSWORD
+
+        **PASSWORD**
+
+        | The user to run the command as
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: password
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # PASSWORD
+            password=
+
+
+    .. confkey:: user
+        :synopsis: USER
+
+        **USER**
+
+        | The user to run the command as
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: user
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # USER
+            user=
 
 
 
