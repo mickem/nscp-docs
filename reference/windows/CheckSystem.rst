@@ -1734,6 +1734,7 @@ Arguments
     -------------- ------------------------------------------------------------------------------- 
     alias          The counter alias                                                               
     counter        The counter name                                                                
+    time           The time for rrd checks                                                         
     value          The counter value                                                               
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
@@ -1766,6 +1767,7 @@ Arguments
     -------------- ------------------------------------------------------------------------------- 
     alias          The counter alias                                                               
     counter        The counter name                                                                
+    time           The time for rrd checks                                                         
     value          The counter value                                                               
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
@@ -1803,6 +1805,7 @@ Arguments
     -------------- ------------------------------------------------------------------------------- 
     alias          The counter alias                                                               
     counter        The counter name                                                                
+    time           The time for rrd checks                                                         
     value          The counter value                                                               
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
@@ -1840,6 +1843,7 @@ Arguments
     -------------- ------------------------------------------------------------------------------- 
     alias          The counter alias                                                               
     counter        The counter name                                                                
+    time           The time for rrd checks                                                         
     value          The counter value                                                               
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
@@ -1883,6 +1887,7 @@ Arguments
     ----------------- ------------------------------------------------------------------------------- 
     %(alias)          The counter alias                                                               
     %(counter)        The counter name                                                                
+    %(time)           The time for rrd checks                                                         
     %(value)          The counter value                                                               
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
@@ -1922,6 +1927,7 @@ Arguments
     ----------------- ------------------------------------------------------------------------------- 
     %(alias)          The counter alias                                                               
     %(counter)        The counter name                                                                
+    %(time)           The time for rrd checks                                                         
     %(value)          The counter value                                                               
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
@@ -1954,6 +1960,7 @@ Arguments
     ----------------- ------------------------------------------------------------------------------- 
     %(alias)          The counter alias                                                               
     %(counter)        The counter name                                                                
+    %(time)           The time for rrd checks                                                         
     %(value)          The counter value                                                               
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
@@ -1986,6 +1993,7 @@ Arguments
     ----------------- ------------------------------------------------------------------------------- 
     %(alias)          The counter alias                                                               
     %(counter)        The counter name                                                                
+    %(time)           The time for rrd checks                                                         
     %(value)          The counter value                                                               
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
