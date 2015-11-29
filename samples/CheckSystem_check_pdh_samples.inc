@@ -30,7 +30,7 @@ The configuration from nsclient.ini::
 	[/settings/system/windows/counters/foo]
 	collection strategy=rrd
 	type=large
-	counter=counter=\Processor(_total)\% Processor Time
+	counter=\Processor(_total)\% Processor Time
 
 Then we can check the value (**current snapshot**)::
 
