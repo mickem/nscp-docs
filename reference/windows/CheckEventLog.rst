@@ -68,6 +68,7 @@ Advanced keys:
     :header: "Path / Section", "Key", "Default Value", "Description"
 
     :confpath:`/settings/eventlog/real-time/filters/default` | :confkey:`~/settings/eventlog/real-time/filters/default.debug` | DEBUG
+    :confpath:`/settings/eventlog/real-time/filters/default` | :confkey:`~/settings/eventlog/real-time/filters/default.escape html` | ESCAPE HTML
     :confpath:`/settings/eventlog/real-time/filters/default` | :confkey:`~/settings/eventlog/real-time/filters/default.logs` | FILES
     :confpath:`/settings/eventlog/real-time/filters/default` | :confkey:`~/settings/eventlog/real-time/filters/default.perf config` | PERF CONFIG
     :confpath:`/settings/eventlog/real-time/filters/default` | :confkey:`~/settings/eventlog/real-time/filters/default.source id` | SOURCE ID
@@ -86,6 +87,7 @@ Sample keys:
     :confpath:`/settings/eventlog/real-time/filters/sample` | :confkey:`~/settings/eventlog/real-time/filters/sample.destination` | DESTINATION
     :confpath:`/settings/eventlog/real-time/filters/sample` | :confkey:`~/settings/eventlog/real-time/filters/sample.detail syntax` | SYNTAX
     :confpath:`/settings/eventlog/real-time/filters/sample` | :confkey:`~/settings/eventlog/real-time/filters/sample.empty message` | EMPTY MESSAGE
+    :confpath:`/settings/eventlog/real-time/filters/sample` | :confkey:`~/settings/eventlog/real-time/filters/sample.escape html` | ESCAPE HTML
     :confpath:`/settings/eventlog/real-time/filters/sample` | :confkey:`~/settings/eventlog/real-time/filters/sample.filter` | FILTER
     :confpath:`/settings/eventlog/real-time/filters/sample` | :confkey:`~/settings/eventlog/real-time/filters/sample.log` | FILE
     :confpath:`/settings/eventlog/real-time/filters/sample` | :confkey:`~/settings/eventlog/real-time/filters/sample.logs` | FILES
@@ -125,21 +127,23 @@ A quick reference for all available queries (check commands) in the CheckEventLo
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` | level in ('error', 'warning') | Filter which marks interesting items.
-    :option:`warning` | count > 0 | Filter which marks items which generates a warning state.
+    :option:`filter` | level in ('warning', 'error', 'critical') | Filter which marks interesting items.
+    :option:`warning` | level = 'warning' or problem_count > 0 | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
-    :option:`critical` | count > 5 | Filter which marks items which generates a critical state.
+    :option:`critical` | level in ('error', 'critical') | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | ok | Return status to use when nothing matched filter.
-    :option:`perf-config` |  | Performance data generation configuration
+    :option:`perf-config` | level(ignored:true) | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`unique-index` |  | Unique syntax.
-    :option:`top-syntax` | ${status}: ${problem_count}/${count} ${problem_list} | Top level syntax.
+    :option:`top-syntax` | ${status}: ${count} message(s) ${problem_list} | Top level syntax.
     :option:`ok-syntax` | %(status): Event log seems fine | ok syntax.
     :option:`empty-syntax` | %(status): No entries found | Empty syntax.
     :option:`detail-syntax` | ${file} ${source} (${message}) | Detail level syntax.
     :option:`perf-syntax` | ${file}_${source} | Performance alias syntax.
     :option:`file` |  | File to read (can be specified multiple times to check multiple files.
+    :option:`log` |  | Same as file
     :option:`scan-range` |  | Date range to scan.
     :option:`truncate-message` |  | Maximum length of message for each event log message text.
     :option:`unique` | 1 | Shorthand for setting default unique index: ${log}-${source}-${id}.
@@ -194,12 +198,16 @@ Arguments
     computer       Which computer generated the message                                            
     customer       TODO                                                                            
     file           The logfile name                                                                
+    guid           The logfile name                                                                
     id             Eventlog id                                                                     
+    keyword        The keyword associated with this event                                          
     level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
     log            alias for file                                                                  
     message        The message rendered as a string.                                               
+    provider       Source system.                                                                  
     rawid          Raw message id (contains many other fields all baked into a single number)      
     source         Source system.                                                                  
+    task           The type of event (task)                                                        
     type           alias for level (old, deprecated)                                               
     written        When the message was written to file                                            
     count          Number of items matching the filter                                             
@@ -235,12 +243,16 @@ Arguments
     computer       Which computer generated the message                                            
     customer       TODO                                                                            
     file           The logfile name                                                                
+    guid           The logfile name                                                                
     id             Eventlog id                                                                     
+    keyword        The keyword associated with this event                                          
     level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
     log            alias for file                                                                  
     message        The message rendered as a string.                                               
+    provider       Source system.                                                                  
     rawid          Raw message id (contains many other fields all baked into a single number)      
     source         Source system.                                                                  
+    task           The type of event (task)                                                        
     type           alias for level (old, deprecated)                                               
     written        When the message was written to file                                            
     count          Number of items matching the filter                                             
@@ -281,12 +293,16 @@ Arguments
     computer       Which computer generated the message                                            
     customer       TODO                                                                            
     file           The logfile name                                                                
+    guid           The logfile name                                                                
     id             Eventlog id                                                                     
+    keyword        The keyword associated with this event                                          
     level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
     log            alias for file                                                                  
     message        The message rendered as a string.                                               
+    provider       Source system.                                                                  
     rawid          Raw message id (contains many other fields all baked into a single number)      
     source         Source system.                                                                  
+    task           The type of event (task)                                                        
     type           alias for level (old, deprecated)                                               
     written        When the message was written to file                                            
     count          Number of items matching the filter                                             
@@ -327,12 +343,16 @@ Arguments
     computer       Which computer generated the message                                            
     customer       TODO                                                                            
     file           The logfile name                                                                
+    guid           The logfile name                                                                
     id             Eventlog id                                                                     
+    keyword        The keyword associated with this event                                          
     level          Severity level (error, warning, info, success, auditSucess, auditFailure)       
     log            alias for file                                                                  
     message        The message rendered as a string.                                               
+    provider       Source system.                                                                  
     rawid          Raw message id (contains many other fields all baked into a single number)      
     source         Source system.                                                                  
+    task           The type of event (task)                                                        
     type           alias for level (old, deprecated)                                               
     written        When the message was written to file                                            
     count          Number of items matching the filter                                             
@@ -366,6 +386,11 @@ Arguments
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
 
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
+
 .. option:: unique-index
     :synopsis: Unique syntax.
 
@@ -379,12 +404,16 @@ Arguments
     %(computer)       Which computer generated the message                                            
     %(customer)       TODO                                                                            
     %(file)           The logfile name                                                                
+    %(guid)           The logfile name                                                                
     %(id)             Eventlog id                                                                     
+    %(keyword)        The keyword associated with this event                                          
     %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
     %(log)            alias for file                                                                  
     %(message)        The message rendered as a string.                                               
+    %(provider)       Source system.                                                                  
     %(rawid)          Raw message id (contains many other fields all baked into a single number)      
     %(source)         Source system.                                                                  
+    %(task)           The type of event (task)                                                        
     %(type)           alias for level (old, deprecated)                                               
     %(written)        When the message was written to file                                            
     ${count}          Number of items matching the filter                                             
@@ -419,12 +448,16 @@ Arguments
     %(computer)       Which computer generated the message                                            
     %(customer)       TODO                                                                            
     %(file)           The logfile name                                                                
+    %(guid)           The logfile name                                                                
     %(id)             Eventlog id                                                                     
+    %(keyword)        The keyword associated with this event                                          
     %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
     %(log)            alias for file                                                                  
     %(message)        The message rendered as a string.                                               
+    %(provider)       Source system.                                                                  
     %(rawid)          Raw message id (contains many other fields all baked into a single number)      
     %(source)         Source system.                                                                  
+    %(task)           The type of event (task)                                                        
     %(type)           alias for level (old, deprecated)                                               
     %(written)        When the message was written to file                                            
     ${count}          Number of items matching the filter                                             
@@ -467,12 +500,16 @@ Arguments
     %(computer)       Which computer generated the message                                            
     %(customer)       TODO                                                                            
     %(file)           The logfile name                                                                
+    %(guid)           The logfile name                                                                
     %(id)             Eventlog id                                                                     
+    %(keyword)        The keyword associated with this event                                          
     %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
     %(log)            alias for file                                                                  
     %(message)        The message rendered as a string.                                               
+    %(provider)       Source system.                                                                  
     %(rawid)          Raw message id (contains many other fields all baked into a single number)      
     %(source)         Source system.                                                                  
+    %(task)           The type of event (task)                                                        
     %(type)           alias for level (old, deprecated)                                               
     %(written)        When the message was written to file                                            
     ${count}          Number of items matching the filter                                             
@@ -508,12 +545,16 @@ Arguments
     %(computer)       Which computer generated the message                                            
     %(customer)       TODO                                                                            
     %(file)           The logfile name                                                                
+    %(guid)           The logfile name                                                                
     %(id)             Eventlog id                                                                     
+    %(keyword)        The keyword associated with this event                                          
     %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
     %(log)            alias for file                                                                  
     %(message)        The message rendered as a string.                                               
+    %(provider)       Source system.                                                                  
     %(rawid)          Raw message id (contains many other fields all baked into a single number)      
     %(source)         Source system.                                                                  
+    %(task)           The type of event (task)                                                        
     %(type)           alias for level (old, deprecated)                                               
     %(written)        When the message was written to file                                            
     ${count}          Number of items matching the filter                                             
@@ -549,12 +590,16 @@ Arguments
     %(computer)       Which computer generated the message                                            
     %(customer)       TODO                                                                            
     %(file)           The logfile name                                                                
+    %(guid)           The logfile name                                                                
     %(id)             Eventlog id                                                                     
+    %(keyword)        The keyword associated with this event                                          
     %(level)          Severity level (error, warning, info, success, auditSucess, auditFailure)       
     %(log)            alias for file                                                                  
     %(message)        The message rendered as a string.                                               
+    %(provider)       Source system.                                                                  
     %(rawid)          Raw message id (contains many other fields all baked into a single number)      
     %(source)         Source system.                                                                  
+    %(task)           The type of event (task)                                                        
     %(type)           alias for level (old, deprecated)                                               
     %(written)        When the message was written to file                                            
     ${count}          Number of items matching the filter                                             
@@ -581,6 +626,11 @@ Arguments
 
     | File to read (can be specified multiple times to check multiple files.
     | Notice that specifying multiple files will create an aggregate set you will not check each file individually.In other words if one file contains an error the entire check will result in error.
+
+.. option:: log
+    :synopsis: Same as file
+
+    | Same as file
 
 .. option:: scan-range
     :synopsis: Date range to scan.
@@ -1024,6 +1074,7 @@ Arguments
         :confkey:`destination` |  | DESTINATION
         :confkey:`detail syntax` |  | SYNTAX
         :confkey:`empty message` | eventlog found no records | EMPTY MESSAGE
+        :confkey:`escape html` | 0 | ESCAPE HTML
         :confkey:`filter` |  | FILTER
         :confkey:`log` |  | FILE
         :confkey:`logs` |  | FILES
@@ -1049,6 +1100,7 @@ Arguments
         destination=
         detail syntax=
         empty message=eventlog found no records
+        escape html=0
         filter=
         log=
         logs=
@@ -1196,6 +1248,30 @@ Arguments
             [/settings/eventlog/real-time/filters/default]
             # EMPTY MESSAGE
             empty message=eventlog found no records
+
+
+    .. confkey:: escape html
+        :synopsis: ESCAPE HTML
+
+        **ESCAPE HTML**
+
+        | Escape HTML characters (< and >).
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/eventlog/real-time/filters/default
+
+        **Key**: escape html
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckEventLog`
+
+        **Sample**::
+
+            [/settings/eventlog/real-time/filters/default]
+            # ESCAPE HTML
+            escape html=0
 
 
     .. confkey:: filter
@@ -1517,6 +1593,7 @@ Arguments
         :confkey:`destination` |  | DESTINATION
         :confkey:`detail syntax` |  | SYNTAX
         :confkey:`empty message` | eventlog found no records | EMPTY MESSAGE
+        :confkey:`escape html` | 0 | ESCAPE HTML
         :confkey:`filter` |  | FILTER
         :confkey:`log` |  | FILE
         :confkey:`logs` |  | FILES
@@ -1542,6 +1619,7 @@ Arguments
         destination=
         detail syntax=
         empty message=eventlog found no records
+        escape html=0
         filter=
         log=
         logs=
@@ -1709,6 +1787,32 @@ Arguments
             [/settings/eventlog/real-time/filters/sample]
             # EMPTY MESSAGE
             empty message=eventlog found no records
+
+
+    .. confkey:: escape html
+        :synopsis: ESCAPE HTML
+
+        **ESCAPE HTML**
+
+        | Escape HTML characters (< and >).
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/eventlog/real-time/filters/sample
+
+        **Key**: escape html
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckEventLog`
+
+        **Sample**::
+
+            [/settings/eventlog/real-time/filters/sample]
+            # ESCAPE HTML
+            escape html=0
 
 
     .. confkey:: filter

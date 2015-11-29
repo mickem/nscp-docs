@@ -60,6 +60,7 @@ A quick reference for all available queries (check commands) in the CheckNet mod
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${status}: ${problem_count}/${count} (${problem_list}) | Top level syntax.
     :option:`ok-syntax` | %(status): All %(count) hosts are ok | ok syntax.
     :option:`empty-syntax` | No hosts found | Empty syntax.
@@ -272,6 +273,11 @@ Arguments
 
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
+
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
 
 .. option:: top-syntax
     :synopsis: Top level syntax.

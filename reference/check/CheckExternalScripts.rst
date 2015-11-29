@@ -102,11 +102,13 @@ Advanced keys:
     :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.is template` | IS TEMPLATE
     :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.parent` | PARENT
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.alias` | ALIAS
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.display` | DISPLAY
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.domain` | DOMAIN
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.encoding` | ENCODING
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.is template` | IS TEMPLATE
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.parent` | PARENT
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.password` | PASSWORD
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.session` | SESSION
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.user` | USER
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.alias` | ALIAS
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.is template` | IS TEMPLATE
@@ -121,10 +123,12 @@ Sample keys:
 
     :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.command` | COMMAND
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.command` | COMMAND
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.display` | DISPLAY
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.domain` | DOMAIN
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.encoding` | ENCODING
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.ignore perfdata` | IGNORE PERF DATA
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.password` | PASSWORD
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.session` | SESSION
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.user` | USER
 
 
@@ -1059,12 +1063,14 @@ Sample keys:
     
         :confkey:`alias` |  | ALIAS
         :confkey:`command` |  | COMMAND
+        :confkey:`display` | 0 | DISPLAY
         :confkey:`domain` |  | DOMAIN
         :confkey:`encoding` |  | ENCODING
         :confkey:`ignore perfdata` | 0 | IGNORE PERF DATA
         :confkey:`is template` | 0 | IS TEMPLATE
         :confkey:`parent` | default | PARENT
         :confkey:`password` |  | PASSWORD
+        :confkey:`session` |  | SESSION
         :confkey:`user` |  | USER
 
     **Sample**::
@@ -1074,12 +1080,14 @@ Sample keys:
         [/settings/external scripts/scripts/default]
         alias=
         command=
+        display=0
         domain=
         encoding=
         ignore perfdata=0
         is template=0
         parent=default
         password=
+        session=
         user=
 
 
@@ -1127,6 +1135,30 @@ Sample keys:
             [/settings/external scripts/scripts/default]
             # COMMAND
             command=
+
+
+    .. confkey:: display
+        :synopsis: DISPLAY
+
+        **DISPLAY**
+
+        | Set to true if you want to display the resulting window or not
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: display
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # DISPLAY
+            display=0
 
 
     .. confkey:: domain
@@ -1269,6 +1301,30 @@ Sample keys:
             [/settings/external scripts/scripts/default]
             # PASSWORD
             password=
+
+
+    .. confkey:: session
+        :synopsis: SESSION
+
+        **SESSION**
+
+        | Session you want to invoke the client in either the number of current for the one with a UI
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: session
+
+        **Default value**: 
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # SESSION
+            session=
 
 
     .. confkey:: user
@@ -1315,12 +1371,14 @@ Sample keys:
     
         :confkey:`alias` |  | ALIAS
         :confkey:`command` |  | COMMAND
+        :confkey:`display` | 0 | DISPLAY
         :confkey:`domain` |  | DOMAIN
         :confkey:`encoding` |  | ENCODING
         :confkey:`ignore perfdata` | 0 | IGNORE PERF DATA
         :confkey:`is template` | 0 | IS TEMPLATE
         :confkey:`parent` | default | PARENT
         :confkey:`password` |  | PASSWORD
+        :confkey:`session` |  | SESSION
         :confkey:`user` |  | USER
 
     **Sample**::
@@ -1330,12 +1388,14 @@ Sample keys:
         [/settings/external scripts/scripts/sample]
         alias=
         command=
+        display=0
         domain=
         encoding=
         ignore perfdata=0
         is template=0
         parent=default
         password=
+        session=
         user=
 
 
@@ -1385,6 +1445,32 @@ Sample keys:
             [/settings/external scripts/scripts/sample]
             # COMMAND
             command=
+
+
+    .. confkey:: display
+        :synopsis: DISPLAY
+
+        **DISPLAY**
+
+        | Set to true if you want to display the resulting window or not
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/sample
+
+        **Key**: display
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/sample]
+            # DISPLAY
+            display=0
 
 
     .. confkey:: domain
@@ -1535,6 +1621,32 @@ Sample keys:
             [/settings/external scripts/scripts/sample]
             # PASSWORD
             password=
+
+
+    .. confkey:: session
+        :synopsis: SESSION
+
+        **SESSION**
+
+        | Session you want to invoke the client in either the number of current for the one with a UI
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/sample
+
+        **Key**: session
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/sample]
+            # SESSION
+            session=
 
 
     .. confkey:: user

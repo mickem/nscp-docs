@@ -368,12 +368,12 @@ Arguments
     
         :confkey:`address` |  | TARGET ADDRESS
         :confkey:`host` |  | TARGET HOST
-        :confkey:`path` |  | PATH FOR METRICS
+        :confkey:`path` | system.${hostname}.${check_alias}.${perf_alias} | PATH FOR METRICS
         :confkey:`port` |  | TARGET PORT
         :confkey:`retries` | 3 | RETRIES
-        :confkey:`send perfdata` | 0 | SEND PERF DATA
-        :confkey:`send status` | 0 | SEND STATUS
-        :confkey:`status path` |  | PATH FOR STATUS
+        :confkey:`send perfdata` | 1 | SEND PERF DATA
+        :confkey:`send status` | 1 | SEND STATUS
+        :confkey:`status path` | system.${hostname}.${check_alias}.status | PATH FOR STATUS
         :confkey:`timeout` | 30 | TIMEOUT
 
     **Sample**::
@@ -383,12 +383,12 @@ Arguments
         [/settings/graphite/client/targets/default]
         address=
         host=
-        path=
+        path=system.${hostname}.${check_alias}.${perf_alias}
         port=
         retries=3
-        send perfdata=0
-        send status=0
-        status path=
+        send perfdata=1
+        send status=1
+        status path=system.${hostname}.${check_alias}.status
         timeout=30
 
 
@@ -449,7 +449,7 @@ Arguments
 
         **Key**: path
 
-        **Default value**: 
+        **Default value**: system.${hostname}.${check_alias}.${perf_alias}
 
         **Used by**: :module:`GraphiteClient`
 
@@ -457,7 +457,7 @@ Arguments
 
             [/settings/graphite/client/targets/default]
             # PATH FOR METRICS
-            path=
+            path=system.${hostname}.${check_alias}.${perf_alias}
 
 
     .. confkey:: port
@@ -517,7 +517,7 @@ Arguments
 
         **Key**: send perfdata
 
-        **Default value**: 0
+        **Default value**: 1
 
         **Used by**: :module:`GraphiteClient`
 
@@ -525,7 +525,7 @@ Arguments
 
             [/settings/graphite/client/targets/default]
             # SEND PERF DATA
-            send perfdata=0
+            send perfdata=1
 
 
     .. confkey:: send status
@@ -539,7 +539,7 @@ Arguments
 
         **Key**: send status
 
-        **Default value**: 0
+        **Default value**: 1
 
         **Used by**: :module:`GraphiteClient`
 
@@ -547,7 +547,7 @@ Arguments
 
             [/settings/graphite/client/targets/default]
             # SEND STATUS
-            send status=0
+            send status=1
 
 
     .. confkey:: status path
@@ -561,7 +561,7 @@ Arguments
 
         **Key**: status path
 
-        **Default value**: 
+        **Default value**: system.${hostname}.${check_alias}.status
 
         **Used by**: :module:`GraphiteClient`
 
@@ -569,7 +569,7 @@ Arguments
 
             [/settings/graphite/client/targets/default]
             # PATH FOR STATUS
-            status path=
+            status path=system.${hostname}.${check_alias}.status
 
 
     .. confkey:: timeout

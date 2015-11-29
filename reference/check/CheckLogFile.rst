@@ -85,6 +85,7 @@ A quick reference for all available queries (check commands) in the CheckLogFile
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${count}/${total} (${problem_list}) | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` | %(status): Nothing found | Empty syntax.
@@ -325,6 +326,11 @@ Arguments
 
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
+
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
