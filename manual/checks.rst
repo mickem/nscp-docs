@@ -4,14 +4,13 @@
  Checks
 #######
 
-Using NSClient++ is checks is also pretty straight forward but at the same time not. 
-They have for the most part been designed to "just work".
-Now this might be fine if you just want base-line monitoring for most people though this will not be sufficient.
+Using NSClient++ is checks is also pretty straight forward but at the same time not.
+Most check have what is referd to as sensible defaults this meand without arguments moct checks will do "something" that is "sensible".
+This means that to get you started check_cpu will just work as-is. But when you need to do something slightly different you have to start to use the check expressions.
 
-NSClient++ has been around for a long time and the syntax for the checks has changed over time. 
-With version 0.4.2 an effort was made to harmonize and rewrite this thus in all subsequent version the syntax is new.
-There is a lot of old out dated information about there about the old syntax which is: plain wrong.
-So most likely if you find some other information which talks about MaxWarn and the like: just ignore it.
+It is important to note that NSClient++ has been around for a long time and the syntax for the checks has changed over time.
+With version 0.4.2 an effort was made to harmonize and rewrite this thus in all subsequent version the syntax is new but on the other hand the syntax is  the same in all checks and farily future proof so hopefully the checks you write to day will be around for a long time.
+There is a lot of old out dated information about there about the old syntax which is: plain wrong so if you find something about max-warn, filter+ or such: just forget all about it.
 
 Check basics
 ------------
@@ -26,7 +25,7 @@ But what if you want to change something?
 What if 80% is not the warning value your interested in?
 Where do I start?
 
-The first stop is to check the default values. 
+The first stop is to check the default values.
 The default values are best viewed in the documentation or the built-in help.
 But the simplest option is to use the show-default option for the check.
 
@@ -46,14 +45,30 @@ Modified thresholds::
     L        cli  Performance data: 'total 5m'=0%;30;90 'total 1m'=2%;30;90 'total 5s'=18%;30;90
 
 Now don't go adding *ALL* the default values, they are default for a reason: they are sensible so adding all default values might break things in the future if thing change.
-Just add the ones you need.
+Just add the ones you need. On the other hand if you want to keep using an "old" version you can lock the check by using all the default values.
+
+What about removing default values?
+===================================
+
+Sometimes you want to negate the default value by leaving it empty. This might seem impossible at first glance but you can always specify "none" for a given parameter to override the default value and revert back to an empty string.
+For instance to remove the default filter in check_spu you woul use the following command:
+
+Remove filters::
+
+    check_cpu "filter=none"
+    L        cli OK: OK: CPU load is ok.
+    L        cli  Performance data: 'total 5m'=0%;80;90 'core 0 1m'=0%;80;90 'core 1 1m'=0%;80;90 'core 2 1m'=0%;80;90 'core 3 1m'=0%;80;90 'core 4 1m'=0%;80;90 'core 5 1m'=0%;80;90 'core 6 1m'=0%;80;90 'core 7 1m'=0%;80;90 'total 1m'=0%;80;90 'core 0 5s'=8%;80;90 'core 1 5s'=6%;80;90 'core 2 5s'=7%;80;90 'core 3 5s'=4%;80;90 'core 4 5s'=9%;80;90 'core 5 5s'=3%;80;90 'core 6 5s'=6%;80;90 'core 7 5s'=6%;80;90 'total 5s'=6%;80;90
+
+
+Implicit defaults
+=================
 
 The last thing we shall discuss here is a slight snag.
 Some default values are not "default value" they are "fall back values". Now this is technically a "bug" but one which might not be fixed any time soon.
 So what does this mean?
 Well in the above command line there was *NO* option for the default times. The check returns the values for 5 seconds, 1 minute and 5 minutes.
 But where did they come from?
-Well, they are a "fall back value" if a check does not have a dataset a fall back one will be used. These options are almost always related to the data set used.
+Well, they are a "implicit values" if a check does not have a dataset a fall back one will be used. These options are almost always related to the data set used.
 So for instance check_drivesize will not have a default option for what to check.
 To get around this we need simply check the key in the documentation and add it:
 
@@ -69,7 +84,77 @@ And in the next few chapters we will add some deeper understanding on how the fi
 Expressions
 -----------
 
-TODO
+The core feature of the NSCLient++ filter and check language is an expression-.
+This expression is modeled after SQL Where clauses and in essence you write an expression which is what will be used.
+
+To look at this we will srat with the bascis modifying warn/crit threshold checks.
+We already sis this above when we modified the default thresholds:
+
+Modified thresholds::
+
+    check_cpu "warn=used>30%"
+    L        cli OK: OK: CPU load is ok.
+    L        cli  Performance data: 'total 5m'=0%;30;90 'total 1m'=2%;30;90 'total 5s'=18%;30;90
+
+But we are not limited to such simple expressions. Expressions are written in what I would call natural language form: This means you write the left and on the left hand side then an oerator followed by a right hand side of the operator.
+For instance foo = bar meand "foo is equal to bar".
+All expressions define the outcome in other words warn=1=1 means we always have a warning (as 1=1) thus whenever an expression is tru the state the expression is used for is also true.
+
+The operators avablie are:
+
+====== =============== ====================== ===========================
+Sign   Safe expression Operator               Example
+====== =============== ====================== ===========================
+and    and             and                    1 = 1 and 2 = 2
+or     or              or                     1 = 1 or 1 = 2
+=      eq              equals                 1 = 1
+!=     ne              not equals             1 = 1
+>      gt              grater than            3 > 1
+<      lt              less than              1 < 3
+<=     le              less than or equals    1 <= 1
+>=     ge              grater than or equals  1 >= 1
+like   like            sub string matching    'foo' like 'football'
+regexp regexp          regular expression     '$foo.*' regexp 'football'
+''     str()           constant               'foo'
+not    not             negate operator        1 = 1 and not 2 = 3
+====== =============== ====================== ===========================
+
+The safe version of an operator is only to allow exåpression to be used even when nasty arguments ir not allowed but they can also be usefull to reduce escaping issue on the Nagios side where all arguments are potentially escaped by the shell.
+The are identicall to their unsafe versions apart from the characters used to type them.
+
+The keywords avalible are different for each ehck and you can always check the various documentation to see a list of avalible expression for a given check.
+For instance for check_cpu we have.
+
+Check related keywords:
+
+* core
+* core_id
+* idle
+* kernel
+* load
+* time
+
+Generic keywords:
+
+* count
+* total
+* ok_count
+* warn_count
+* crit_count
+* problem_count
+* list
+* ok_list
+* warn_list
+* crit_list
+* problem_list
+* detail_list
+* status
+
+The check related keywords are always unique where as the generic ones are there for all checks and usualy work on the data set (aggregation).
+One other thing to know about keywords are that they are typed and there is coercion.
+
+For instance some size expression will accept a unit suffix (kmbgt) to which will be expanded by the expression parser.
+Thus writing 5k is equal to writing 5120 but only fir size expressions.
 
 Filters
 -------
@@ -101,14 +186,14 @@ The function format_perf will execute another command and render the performance
 Formatted performance data::
 
     render_perf remove-perf command=check_drivesize
-    OK: OK:  
+    OK: OK:
       C:\ used      213.605 GB      178.777 201.124 223.471 0
     , C:\ used %    95      %       79      89      100     0
     , D:\ used      400.713 GB      372.607 419.183 465.759 0
     , D:\ used %    86      %       79      89      100     0
     , E:\ used      0       B       0       0       0       0
 
-Now we can see we have several types of performance data for each drive. We have "used" and we have "used %". 
+Now we can see we have several types of performance data for each drive. We have "used" and we have "used %".
 Both of these can be configured individually and the way to access them is by their "suffix" which is "used" and "used %".
 
 selecting based on suffix::
@@ -133,7 +218,7 @@ And this is in 0.4.3 a bit hairy as there is no documentation. But generally the
 So lets start by changing the unit for our disk::
 
     # check_drivesize "perf-config=used(unit:G)"
-    
+
     render_perf remove-perf command=check_drivesize arguments "perf-config=used(unit:G)"
     OK: OK:
       C:\ used      213.607 G       178.777 201.124 223.471 0
@@ -145,7 +230,7 @@ So lets start by changing the unit for our disk::
 Next lets remove the percentages::
 
     # check_drivesize "perf-config=used(unit:G) used %(ignored:true)"
-    
+
     render_perf remove-perf command=check_drivesize arguments "perf-config=used(unit:G) used %(ignored:true)"
     OK: OK:
       C:\ used      213.607 G       178.777 201.124 223.471 0
@@ -155,7 +240,7 @@ Next lets remove the percentages::
 The last thing we will do is remove the suffix::
 
     # check_drivesize "perf-config=used(unit:G;suffix:'') used %(ignored:true)"
-    
+
     render_perf remove-perf command=check_drivesize arguments "perf-config=used(unit:G;suffix:'') used %(ignored:true)"
     OK: OK:
       C:\   213.612 G       178.777 201.124 223.471 0
@@ -198,7 +283,7 @@ As we saw above they are tried in various combination so leaving out something s
 Correct selection::
 
     # check_drivesize "perf-config=used.used(unit:G;suffix:'') used %(ignored:true)"
-    
+
     render_perf remove-perf command=check_drivesize arguments "perf-config=used.used(unit:G;suffix:'') used %(ignored:true)"
     OK: OK:
       C:\    213.593 G      178.777 201.124 223.471 0

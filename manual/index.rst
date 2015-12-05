@@ -15,6 +15,6 @@ Contents:
    settings.rst
    installing.rst
    nscp_usage.rst
-   nscp_checks.rst
+   checks.rst
    build.rst
    windows_installer.rst
