@@ -132,6 +132,7 @@ A quick reference for all available queries (check commands) in the CheckSystem 
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${status}: ${problem_list} | Top level syntax.
     :option:`ok-syntax` | %(status): CPU load is ok. | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -343,6 +344,11 @@ Arguments
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
 
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
+
 .. option:: top-syntax
     :synopsis: Top level syntax.
 
@@ -522,6 +528,7 @@ Arguments
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -733,6 +740,11 @@ Arguments
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
 
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
+
 .. option:: top-syntax
     :synopsis: Top level syntax.
 
@@ -912,6 +924,7 @@ Arguments
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -1114,6 +1127,11 @@ Arguments
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
 
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
+
 .. option:: top-syntax
     :synopsis: Top level syntax.
 
@@ -1280,6 +1298,7 @@ Arguments
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -1490,6 +1509,11 @@ Arguments
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
 
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
+
 .. option:: top-syntax
     :synopsis: Top level syntax.
 
@@ -1664,6 +1688,7 @@ Arguments
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -1732,6 +1757,7 @@ Arguments
     -------------- ------------------------------------------------------------------------------- 
     alias          The counter alias                                                               
     counter        The counter name                                                                
+    time           The time for rrd checks                                                         
     value          The counter value                                                               
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
@@ -1764,6 +1790,7 @@ Arguments
     -------------- ------------------------------------------------------------------------------- 
     alias          The counter alias                                                               
     counter        The counter name                                                                
+    time           The time for rrd checks                                                         
     value          The counter value                                                               
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
@@ -1801,6 +1828,7 @@ Arguments
     -------------- ------------------------------------------------------------------------------- 
     alias          The counter alias                                                               
     counter        The counter name                                                                
+    time           The time for rrd checks                                                         
     value          The counter value                                                               
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
@@ -1838,6 +1866,7 @@ Arguments
     -------------- ------------------------------------------------------------------------------- 
     alias          The counter alias                                                               
     counter        The counter name                                                                
+    time           The time for rrd checks                                                         
     value          The counter value                                                               
     count          Number of items matching the filter                                             
     total           Total number of items                                                          
@@ -1870,6 +1899,11 @@ Arguments
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
 
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
+
 .. option:: top-syntax
     :synopsis: Top level syntax.
 
@@ -1881,6 +1915,7 @@ Arguments
     ----------------- ------------------------------------------------------------------------------- 
     %(alias)          The counter alias                                                               
     %(counter)        The counter name                                                                
+    %(time)           The time for rrd checks                                                         
     %(value)          The counter value                                                               
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
@@ -1920,6 +1955,7 @@ Arguments
     ----------------- ------------------------------------------------------------------------------- 
     %(alias)          The counter alias                                                               
     %(counter)        The counter name                                                                
+    %(time)           The time for rrd checks                                                         
     %(value)          The counter value                                                               
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
@@ -1952,6 +1988,7 @@ Arguments
     ----------------- ------------------------------------------------------------------------------- 
     %(alias)          The counter alias                                                               
     %(counter)        The counter name                                                                
+    %(time)           The time for rrd checks                                                         
     %(value)          The counter value                                                               
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
@@ -1984,6 +2021,7 @@ Arguments
     ----------------- ------------------------------------------------------------------------------- 
     %(alias)          The counter alias                                                               
     %(counter)        The counter name                                                                
+    %(time)           The time for rrd checks                                                         
     %(value)          The counter value                                                               
     ${count}          Number of items matching the filter                                             
     ${total}           Total number of items                                                          
@@ -2072,6 +2110,7 @@ Arguments
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${status}: ${problem_list} | Top level syntax.
     :option:`ok-syntax` | %(status): all processes are ok. | ok syntax.
     :option:`empty-syntax` | %(status): No processes found | Empty syntax.
@@ -2360,6 +2399,11 @@ Arguments
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
 
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
+
 .. option:: top-syntax
     :synopsis: Top level syntax.
 
@@ -2637,6 +2681,7 @@ Arguments
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${status}: ${crit_list}, delayed (${warn_list}) | Top level syntax.
     :option:`ok-syntax` | %(status): All %(count) service(s) are ok. | ok syntax.
     :option:`empty-syntax` | %(status): No services found | Empty syntax.
@@ -2647,6 +2692,12 @@ Arguments
     :option:`exclude` |  | A list of services to ignore (mainly usefull in combination with service=*)
     :option:`type` | service | The types of services to enumerate available types are driver, file-system-driver, kernel-driver, service, service-own-process, service-share-process
     :option:`state` | all | The types of services to enumerate available states are active, inactive or all
+    :option:`only-essential` | N/A | Set filter to classification = 'essential'
+    :option:`only-ignored` | N/A | Set filter to classification = 'ignored'
+    :option:`only-role` | N/A | Set filter to classification = 'role'
+    :option:`only-supporting` | N/A | Set filter to classification = 'supporting'
+    :option:`only-system` | N/A | Set filter to classification = 'system'
+    :option:`only-user` | N/A | Set filter to classification = 'user'
 
 
 
@@ -2700,6 +2751,7 @@ Arguments
     =================== ========================================================================================================== 
     Key                 Value                                                                                                      
     ------------------- ---------------------------------------------------------------------------------------------------------- 
+    classification      Get classification                                                                                         
     delayed             If the service is delayed                                                                                  
     desc                Service description                                                                                        
     is_trigger          If the service is has associated triggers                                                                  
@@ -2740,6 +2792,7 @@ Arguments
     =================== ========================================================================================================== 
     Key                 Value                                                                                                      
     ------------------- ---------------------------------------------------------------------------------------------------------- 
+    classification      Get classification                                                                                         
     delayed             If the service is delayed                                                                                  
     desc                Service description                                                                                        
     is_trigger          If the service is has associated triggers                                                                  
@@ -2785,6 +2838,7 @@ Arguments
     =================== ========================================================================================================== 
     Key                 Value                                                                                                      
     ------------------- ---------------------------------------------------------------------------------------------------------- 
+    classification      Get classification                                                                                         
     delayed             If the service is delayed                                                                                  
     desc                Service description                                                                                        
     is_trigger          If the service is has associated triggers                                                                  
@@ -2830,6 +2884,7 @@ Arguments
     =================== ========================================================================================================== 
     Key                 Value                                                                                                      
     ------------------- ---------------------------------------------------------------------------------------------------------- 
+    classification      Get classification                                                                                         
     delayed             If the service is delayed                                                                                  
     desc                Service description                                                                                        
     is_trigger          If the service is has associated triggers                                                                  
@@ -2872,38 +2927,44 @@ Arguments
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
 
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
+
 .. option:: top-syntax
     :synopsis: Top level syntax.
 
     | Top level syntax.
     | Used to format the message to return can include strings as well as special keywords such as:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(delayed)        If the service is delayed                                                       
-    %(desc)           Service description                                                             
-    %(is_trigger)     If the service is has associated triggers                                       
-    %(legacy_state)   Get legacy state (deprecated and only used by check_nt)                         
-    %(name)           Service name                                                                    
-    %(pid)            Process id                                                                      
-    %(start_type)     The configured start type ()                                                    
-    %(state)          The current state ()                                                            
-    %(triggers)       The number of associated triggers for this service                              
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ================== =============================================================================== 
+    Key                Value                                                                           
+    ------------------ ------------------------------------------------------------------------------- 
+    %(classification)  Get classification                                                              
+    %(delayed)         If the service is delayed                                                       
+    %(desc)            Service description                                                             
+    %(is_trigger)      If the service is has associated triggers                                       
+    %(legacy_state)    Get legacy state (deprecated and only used by check_nt)                         
+    %(name)            Service name                                                                    
+    %(pid)             Process id                                                                      
+    %(start_type)      The configured start type ()                                                    
+    %(state)           The current state ()                                                            
+    %(triggers)        The number of associated triggers for this service                              
+    ${count}           Number of items matching the filter                                             
+    ${total}            Total number of items                                                          
+    ${ok_count}         Number of items matched the ok criteria                                        
+    ${warn_count}       Number of items matched the warning criteria                                   
+    ${crit_count}       Number of items matched the critical criteria                                  
+    ${problem_count}    Number of items matched either warning or critical criteria                    
+    ${list}             A list of all items which matched the filter                                   
+    ${ok_list}          A list of all items which matched the ok criteria                              
+    ${warn_list}        A list of all items which matched the warning criteria                         
+    ${crit_list}        A list of all items which matched the critical criteria                        
+    ${problem_list}     A list of all items which matched either the critical or the warning criteria  
+    ${detail_list}      A special list with critical, then warning and fainally ok                     
+    ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    ================== ===============================================================================
 
 
 
@@ -2923,32 +2984,33 @@ Arguments
     | DEPRECATED! This is the syntax for when nothing matches the filter.
     | Possible values are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(delayed)        If the service is delayed                                                       
-    %(desc)           Service description                                                             
-    %(is_trigger)     If the service is has associated triggers                                       
-    %(legacy_state)   Get legacy state (deprecated and only used by check_nt)                         
-    %(name)           Service name                                                                    
-    %(pid)            Process id                                                                      
-    %(start_type)     The configured start type ()                                                    
-    %(state)          The current state ()                                                            
-    %(triggers)       The number of associated triggers for this service                              
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ================== =============================================================================== 
+    Key                Value                                                                           
+    ------------------ ------------------------------------------------------------------------------- 
+    %(classification)  Get classification                                                              
+    %(delayed)         If the service is delayed                                                       
+    %(desc)            Service description                                                             
+    %(is_trigger)      If the service is has associated triggers                                       
+    %(legacy_state)    Get legacy state (deprecated and only used by check_nt)                         
+    %(name)            Service name                                                                    
+    %(pid)             Process id                                                                      
+    %(start_type)      The configured start type ()                                                    
+    %(state)           The current state ()                                                            
+    %(triggers)        The number of associated triggers for this service                              
+    ${count}           Number of items matching the filter                                             
+    ${total}            Total number of items                                                          
+    ${ok_count}         Number of items matched the ok criteria                                        
+    ${warn_count}       Number of items matched the warning criteria                                   
+    ${crit_count}       Number of items matched the critical criteria                                  
+    ${problem_count}    Number of items matched either warning or critical criteria                    
+    ${list}             A list of all items which matched the filter                                   
+    ${ok_list}          A list of all items which matched the ok criteria                              
+    ${warn_list}        A list of all items which matched the warning criteria                         
+    ${crit_list}        A list of all items which matched the critical criteria                        
+    ${problem_list}     A list of all items which matched either the critical or the warning criteria  
+    ${detail_list}      A special list with critical, then warning and fainally ok                     
+    ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    ================== ===============================================================================
 
 
 
@@ -2961,32 +3023,33 @@ Arguments
     | This is the syntax of each item in the list of top-syntax (see above).
     | Possible values are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(delayed)        If the service is delayed                                                       
-    %(desc)           Service description                                                             
-    %(is_trigger)     If the service is has associated triggers                                       
-    %(legacy_state)   Get legacy state (deprecated and only used by check_nt)                         
-    %(name)           Service name                                                                    
-    %(pid)            Process id                                                                      
-    %(start_type)     The configured start type ()                                                    
-    %(state)          The current state ()                                                            
-    %(triggers)       The number of associated triggers for this service                              
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ================== =============================================================================== 
+    Key                Value                                                                           
+    ------------------ ------------------------------------------------------------------------------- 
+    %(classification)  Get classification                                                              
+    %(delayed)         If the service is delayed                                                       
+    %(desc)            Service description                                                             
+    %(is_trigger)      If the service is has associated triggers                                       
+    %(legacy_state)    Get legacy state (deprecated and only used by check_nt)                         
+    %(name)            Service name                                                                    
+    %(pid)             Process id                                                                      
+    %(start_type)      The configured start type ()                                                    
+    %(state)           The current state ()                                                            
+    %(triggers)        The number of associated triggers for this service                              
+    ${count}           Number of items matching the filter                                             
+    ${total}            Total number of items                                                          
+    ${ok_count}         Number of items matched the ok criteria                                        
+    ${warn_count}       Number of items matched the warning criteria                                   
+    ${crit_count}       Number of items matched the critical criteria                                  
+    ${problem_count}    Number of items matched either warning or critical criteria                    
+    ${list}             A list of all items which matched the filter                                   
+    ${ok_list}          A list of all items which matched the ok criteria                              
+    ${warn_list}        A list of all items which matched the warning criteria                         
+    ${crit_list}        A list of all items which matched the critical criteria                        
+    ${problem_list}     A list of all items which matched either the critical or the warning criteria  
+    ${detail_list}      A special list with critical, then warning and fainally ok                     
+    ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    ================== ===============================================================================
 
 
 
@@ -2999,32 +3062,33 @@ Arguments
     | This is the syntax for the base names of the performance data.
     | Possible values are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(delayed)        If the service is delayed                                                       
-    %(desc)           Service description                                                             
-    %(is_trigger)     If the service is has associated triggers                                       
-    %(legacy_state)   Get legacy state (deprecated and only used by check_nt)                         
-    %(name)           Service name                                                                    
-    %(pid)            Process id                                                                      
-    %(start_type)     The configured start type ()                                                    
-    %(state)          The current state ()                                                            
-    %(triggers)       The number of associated triggers for this service                              
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ================== =============================================================================== 
+    Key                Value                                                                           
+    ------------------ ------------------------------------------------------------------------------- 
+    %(classification)  Get classification                                                              
+    %(delayed)         If the service is delayed                                                       
+    %(desc)            Service description                                                             
+    %(is_trigger)      If the service is has associated triggers                                       
+    %(legacy_state)    Get legacy state (deprecated and only used by check_nt)                         
+    %(name)            Service name                                                                    
+    %(pid)             Process id                                                                      
+    %(start_type)      The configured start type ()                                                    
+    %(state)           The current state ()                                                            
+    %(triggers)        The number of associated triggers for this service                              
+    ${count}           Number of items matching the filter                                             
+    ${total}            Total number of items                                                          
+    ${ok_count}         Number of items matched the ok criteria                                        
+    ${warn_count}       Number of items matched the warning criteria                                   
+    ${crit_count}       Number of items matched the critical criteria                                  
+    ${problem_count}    Number of items matched either warning or critical criteria                    
+    ${list}             A list of all items which matched the filter                                   
+    ${ok_list}          A list of all items which matched the ok criteria                              
+    ${warn_list}        A list of all items which matched the warning criteria                         
+    ${crit_list}        A list of all items which matched the critical criteria                        
+    ${problem_list}     A list of all items which matched either the critical or the warning criteria  
+    ${detail_list}      A special list with critical, then warning and fainally ok                     
+    ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
+    ================== ===============================================================================
 
 
 
@@ -3055,6 +3119,36 @@ Arguments
 
     | The types of services to enumerate available states are active, inactive or all
 
+.. option:: only-essential
+    :synopsis: Set filter to classification = 'essential'
+
+    | Set filter to classification = 'essential'
+
+.. option:: only-ignored
+    :synopsis: Set filter to classification = 'ignored'
+
+    | Set filter to classification = 'ignored'
+
+.. option:: only-role
+    :synopsis: Set filter to classification = 'role'
+
+    | Set filter to classification = 'role'
+
+.. option:: only-supporting
+    :synopsis: Set filter to classification = 'supporting'
+
+    | Set filter to classification = 'supporting'
+
+.. option:: only-system
+    :synopsis: Set filter to classification = 'system'
+
+    | Set filter to classification = 'system'
+
+.. option:: only-user
+    :synopsis: Set filter to classification = 'user'
+
+    | Set filter to classification = 'user'
+
 :query:`check_uptime`
 ---------------------
 .. query:: check_uptime
@@ -3083,6 +3177,7 @@ Arguments
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -3276,6 +3371,11 @@ Arguments
 
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
+
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
 
 .. option:: top-syntax
     :synopsis: Top level syntax.

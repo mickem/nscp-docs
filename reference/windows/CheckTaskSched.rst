@@ -61,7 +61,8 @@ A quick reference for all available queries (check commands) in the CheckTaskSch
     :option:`ok` |  | Filter which marks items which generates an ok state.
     :option:`empty-state` | warning | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
-    :option:`top-syntax` | ${problem_list} | Top level syntax.
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`top-syntax` | ${status}: ${problem_list} | Top level syntax.
     :option:`ok-syntax` | %(status): All tasks are ok | ok syntax.
     :option:`empty-syntax` | %(status): No tasks found | Empty syntax.
     :option:`detail-syntax` | ${folder}/${title}: ${exit_code} != 0 | Detail level syntax.
@@ -135,7 +136,7 @@ Arguments
     most_recent_run_time  Retrieves the most recent time the work item began running.                     
     parameters            Retrieves the command-line parameters of a task.                                
     priority              Retrieves the priority for the task.                                            
-    status                Retrieves the status of the work item.                                          
+    task_status           Retrieves the status of the work item.                                          
     title                 The task title                                                                  
     working_directory     Retrieves the working directory of the task.                                    
     count                 Number of items matching the filter                                             
@@ -177,7 +178,7 @@ Arguments
     most_recent_run_time  Retrieves the most recent time the work item began running.                     
     parameters            Retrieves the command-line parameters of a task.                                
     priority              Retrieves the priority for the task.                                            
-    status                Retrieves the status of the work item.                                          
+    task_status           Retrieves the status of the work item.                                          
     title                 The task title                                                                  
     working_directory     Retrieves the working directory of the task.                                    
     count                 Number of items matching the filter                                             
@@ -224,7 +225,7 @@ Arguments
     most_recent_run_time  Retrieves the most recent time the work item began running.                     
     parameters            Retrieves the command-line parameters of a task.                                
     priority              Retrieves the priority for the task.                                            
-    status                Retrieves the status of the work item.                                          
+    task_status           Retrieves the status of the work item.                                          
     title                 The task title                                                                  
     working_directory     Retrieves the working directory of the task.                                    
     count                 Number of items matching the filter                                             
@@ -271,7 +272,7 @@ Arguments
     most_recent_run_time  Retrieves the most recent time the work item began running.                     
     parameters            Retrieves the command-line parameters of a task.                                
     priority              Retrieves the priority for the task.                                            
-    status                Retrieves the status of the work item.                                          
+    task_status           Retrieves the status of the work item.                                          
     title                 The task title                                                                  
     working_directory     Retrieves the working directory of the task.                                    
     count                 Number of items matching the filter                                             
@@ -305,6 +306,11 @@ Arguments
     | Performance data generation configuration
     | TODO: obj ( key: value; key: value) obj (key:valuer;key:value)
 
+.. option:: escape-html
+    :synopsis: Escape any < and > characters to prevent HTML encoding
+
+    | Escape any < and > characters to prevent HTML encoding
+
 .. option:: top-syntax
     :synopsis: Top level syntax.
 
@@ -324,7 +330,7 @@ Arguments
     %(most_recent_run_time)  Retrieves the most recent time the work item began running.                     
     %(parameters)            Retrieves the command-line parameters of a task.                                
     %(priority)              Retrieves the priority for the task.                                            
-    %(status)                Retrieves the status of the work item.                                          
+    %(task_status)           Retrieves the status of the work item.                                          
     %(title)                 The task title                                                                  
     %(working_directory)     Retrieves the working directory of the task.                                    
     ${count}                 Number of items matching the filter                                             
@@ -373,7 +379,7 @@ Arguments
     %(most_recent_run_time)  Retrieves the most recent time the work item began running.                     
     %(parameters)            Retrieves the command-line parameters of a task.                                
     %(priority)              Retrieves the priority for the task.                                            
-    %(status)                Retrieves the status of the work item.                                          
+    %(task_status)           Retrieves the status of the work item.                                          
     %(title)                 The task title                                                                  
     %(working_directory)     Retrieves the working directory of the task.                                    
     ${count}                 Number of items matching the filter                                             
@@ -415,7 +421,7 @@ Arguments
     %(most_recent_run_time)  Retrieves the most recent time the work item began running.                     
     %(parameters)            Retrieves the command-line parameters of a task.                                
     %(priority)              Retrieves the priority for the task.                                            
-    %(status)                Retrieves the status of the work item.                                          
+    %(task_status)           Retrieves the status of the work item.                                          
     %(title)                 The task title                                                                  
     %(working_directory)     Retrieves the working directory of the task.                                    
     ${count}                 Number of items matching the filter                                             
@@ -457,7 +463,7 @@ Arguments
     %(most_recent_run_time)  Retrieves the most recent time the work item began running.                     
     %(parameters)            Retrieves the command-line parameters of a task.                                
     %(priority)              Retrieves the priority for the task.                                            
-    %(status)                Retrieves the status of the work item.                                          
+    %(task_status)           Retrieves the status of the work item.                                          
     %(title)                 The task title                                                                  
     %(working_directory)     Retrieves the working directory of the task.                                    
     ${count}                 Number of items matching the filter                                             
