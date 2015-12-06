@@ -159,7 +159,18 @@ Thus writing 5k is equal to writing 5120 but only fir size expressions.
 Filters
 -------
 
-TODO
+Filtering works much like expression above except that filters define what to include in a check.
+While there are multiple filters the most common one to use is filter which defined the objects you are interested in.
+We already saw a quick example in the check_cpu command above. The default fitler was:
+
+The default check_cpu filter::
+
+    "filter=core = 'total'"
+
+What this does is exclude all information which is not coming from the core "total". In the check_spu command there a re values for each core as well as an aggregated total value.
+This the above only shows ius the total load and the load for each individual core is never used in the check command.
+
+Writing filters work exactly like the warning and critial expression we have seen before so we wont cover htat again here.
 
 Advanced options
 ----------------
