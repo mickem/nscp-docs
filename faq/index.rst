@@ -11,12 +11,12 @@
 ******************************************
 
   NSCP has a built-in "test and debug" mode that you can activate with the following command
-  
+
 ..  code-block:: bat
 
     nscp test
 
-What this does is two things. 
+What this does is two things.
 1. it starts the daemon as "usual" with the same configuration and such.
 2. it enables debug logging and logs to the console.
 This makes it quite easy to see what is going on and why things go wrong.
@@ -182,7 +182,7 @@ To enable this in the NRPE server you can add the following:
 
    [/settings/NRPE/server]
    allow nasty characters=true
-   
+
    [/settings/external scripts]
    allow nasty characters=true
 
@@ -199,7 +199,7 @@ ${..}      %(..)
 
 3. Versions
 ===========
-   
+
 3.1 I use version 0.3.9 or 0.2.7
 ********************************
 please upgrade to 0.4.2 and see if the error still persist before you ask questions and/or report bugs.
@@ -214,7 +214,7 @@ A good idea to upgrade to 0.4.2 and see if the issue has been resolved but pleas
 
 3.1 My question is not here?
 *****************************
-Please ask in the forums or the questions site.
+Please ask in the forums and I will try to answer your question.
 
 3.2 Rejected connection from: <ip address here>
 ************************************************
@@ -231,7 +231,7 @@ To resolve this please update your configuration:
 .. code-block:: ini
 
   [/settings/default]
-  
+
   ; ALLOWED HOSTS - A coma separated list of hosts which are allowed to connect. You can use netmasks (/ syntax) or * to create ranges.
   allowed hosts = <ADD YOUR NAGIOS 1 IP HERE>,<ADD YOUR NAGIOS 2 IP HERE>,10.11.12.0/24
 
@@ -250,28 +250,28 @@ If your command takes 60 seconds you need to set the timeouts like this:
 1. Script timeout: 60s
 
 .. code-block:: ini
-  
+
   [/settings/external scripts/wrappings]
   vbs = cscript.exe //T:120 //NoLogo scripts\\lib\\wrapper.vbs %SCRIPT% %ARGS%
 
 2. External script timeout: 65 seconds
 
 .. code-block:: ini
-  
+
   [/settings/external scripts]
   timeout = 65
 
 3. NRPE/server timeout: 70s
 
 .. code-block:: ini
-  
+
   [settings/NPRE/server]
   timeout = 70
 
 4. check_nrpe timeout: 75s
 
 .. code-block:: sh
-  
+
   check_nrpe -t 75
 
 5. nagios service check timeout: 80s
@@ -281,6 +281,7 @@ If your command takes 60 seconds you need to set the timeouts like this:
   service_check_timeout=80
 
 3.4 Rotate log files
+********************
 
 Rotating logfile can be done when size reaches a certain level (in this case 2048000 bytes)::
 
@@ -290,6 +291,15 @@ Rotating logfile can be done when size reaches a certain level (in this case 204
 	level = info
 	[/settings/log/file]
 	max size = 2048000
+
+********************************************************
+3.5 What's the difference between CheckFoo and check_foo
+
+In older version of NSClient++ (pre 0.4.1) there were only CheckFoo type commands so they where called CheckCPU CheckMem CheckProcess etc etc...
+In 0.4.2 we introduced a new set of commands which were more generic and similar and they are called check_cpu check_memory check_process etc etc..
+The previous ones are only for compatibility and will eventually be removed from NSClient++.
+Currently they are about 90% compatible which means some things will not work as before and some commands are not even present anymore.
+I personally think that the benefit of using the new commands makes the effort required to convert it worth it but if you have a specific command using the old syntax which no longer work please do let me know and I will see about adding support for it.
 
 4. check_nt
 ============
@@ -339,9 +349,9 @@ To allow old "legacy" check_nrpe connect to NSClient++ you need to enable *insec
 All these options will result in the following configuration::
 
     [/settings/NRPE/server]
-    certificate key = 
+    certificate key =
     certificate = ${certificate-path}/certificate.pem
-    ssl options = 
+    ssl options =
     allowed ciphers = ADH
     ssl = true
     insecure = true
