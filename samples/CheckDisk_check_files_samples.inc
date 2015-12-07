@@ -18,20 +18,18 @@ Swapping them would not be noticeable.
 
 Checking file versions::
 
-   check_files path=D:/tmp pattern=*.exe "filter=version != 1.0" "syntax=%filename%: %version%" MaxWarn=1
-   WARNING:explorer.exe: 6.0.2900.5512, explorer.exe: 1 > warning|'explorer.exe'=1;0;0;
-
-Checking file versions using exact bound::
-
-   check_files path=D:/tmp pattern=*.exe "filter=version != 1.0" "syntax=%filename%: %version%" warn=gt:1 crit==1
-   WARNING:explorer.exe: 6.0.2900.5512, explorer.exe: 1 > warning|'explorer.exe'=1;0;0;
+    check_files path=c:/foo/ pattern=*.exe "filter=version != '1.0'" "detail-syntax=%(filename): %(version)" "warn=count > 1" show-all
+    L        cli WARNING: WARNING: 0/11 files (check_nrpe.exe: , nscp.exe: 0.5.0.16, reporter.exe: 0.5.0.16)
+    L        cli  Performance data: 'count'=11;1;0
 
 Using the line count with limited recursion::
 
-   check_files path=D:\windows pattern=*.txt max-dir-depth=1 "filter=line_count gt 100" "syntax=%filename%: %line_count%" MaxWarn=1
-   WARNING:test.txt: 3, test.txt: 1 > warning|'test.txt'=1;0;0;
+     check_files path=c:/windows pattern=*.txt max-depth=1 "filter=line_count gt 100" "detail-syntax=%(filename): %(line_count)" "warn=count>0" show-all
+     L        cli WARNING: WARNING: 0/1 files (AsChkDev.txt: 328)
+     L        cli  Performance data: 'count'=1;0;0
 
 Check file sizes::
 
-   check_files path=D:\tmp pattern=*.txt "filter=size gt 20" "syntax=%filename%: %size%" MaxWarn=1
-   WARNING:test.txt: 26B, found files: 1 > warning|'found files'=1;0;0;
+    check_files path=c:/windows pattern=*.txt "detail-syntax=%(filename): %(size)" "warn=size>20k" max-depth=1
+    L        cli WARNING: WARNING: 1/6 files (AsChkDev.txt: 29738)
+    L        cli  Performance data: 'AsChkDev.txt size'=29.04101KB;20;0 'AsDCDVer.txt size'=0.02246KB;20;0 'AsHDIVer.txt size'=0.02734KB;20;0 'AsPEToolVer.txt size'=0.08789KB;20;0 'AsToolCDVer.txt size'=0.05273KB;20;0 'csup.txt size'=0.00976KB;20;0
