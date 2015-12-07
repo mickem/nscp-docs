@@ -172,6 +172,54 @@ This the above only shows us the total load and the load for each individual cor
 
 Writing filters work exactly like the warning and critical expression we have seen before so we wont cover that again here.
 
+Syntax
+------
+
+The last common topic we will coder is syntax.
+Syntax is responsible for the message which is returned to you. Thus it has no effect at all on the actual check result.
+The syntax configuration is split up into three main keywords:
+
+* top-syntax
+* detail-syntax
+* ok-syntax
+
+The top-syntax defines the overall message whereas the detail-syntax defines how each entry is formatted. The actual values are similar to what we saw before in the filter and warnign/critical thresholds.
+Looking at check_cpu the default syntaxes (as we have already seen) are::
+
+  top-syntax=${status}: ${problem_list}
+  ok-syntax=%(status): CPU load is ok.
+  detail-syntax=${time}: ${load}%
+
+The top syntax will give us the returned message if we have an issue this would include the status followed by the list of problematic cpu loads.
+
+like so::
+
+  check_cpu "warn=load > 0"
+  WARNING: WARNING: 5m: 10%, 1m: 9%, 5s: 5%
+
+There are a few other keywords as well which are useful when you want to configure the syntax.
+The most common one is:
+
+* show-all
+
+Lets use check_cpu again as an example and explore the show-all option.
+
+First check_cpu::
+
+  check_cpu
+  OK: CPU load is ok.
+
+If we add show-all we instead get::
+
+  check_cpu show-all
+  OK: 5m: 0%, 1m: 4%, 5s: 11%
+
+The difference is that with show-all all the values are shown. Normally when we run a check only values which are bad are included in the message.
+For instance if the CPU load had been above the warning threshold we would have seen the value included in the message. show-all changes this.
+The question we now ask our selves is how. And the answer is simple: It changes the top-syntax to use %(list) instead of %(problem_list).
+
+This is something you could have achieved yourself but show-all makes it simpler as well as makes intent much clearer.
+
 Advanced options
 ----------------
 
