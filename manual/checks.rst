@@ -190,6 +190,12 @@ Looking at check_cpu the default syntaxes (as we have already seen) are::
   ok-syntax=%(status): CPU load is ok.
   detail-syntax=${time}: ${load}%
 
+The strings are text strings with keywords surrounded by either ${} or %(). The reason for having two different ways are that ${} can be problematic to escape from a Unix shell.
+So the following are identical from NSClient++ perspective::
+
+  top-syntax=${problem_list}
+  top-syntax=%({problem_list)
+
 The top syntax will give us the returned message if we have an issue this would include the status followed by the list of problematic cpu loads.
 
 like so::
