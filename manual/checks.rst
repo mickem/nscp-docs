@@ -5,11 +5,11 @@
 #######
 
 Using NSClient++ is checks is also pretty straight forward but at the same time not.
-Most check have what is referd to as sensible defaults this meand without arguments moct checks will do "something" that is "sensible".
+Most check have what is refereed to as sensible defaults this means without arguments most checks will do "something" that is "sensible".
 This means that to get you started check_cpu will just work as-is. But when you need to do something slightly different you have to start to use the check expressions.
 
 It is important to note that NSClient++ has been around for a long time and the syntax for the checks has changed over time.
-With version 0.4.2 an effort was made to harmonize and rewrite this thus in all subsequent version the syntax is new but on the other hand the syntax is  the same in all checks and farily future proof so hopefully the checks you write to day will be around for a long time.
+With version 0.4.2 an effort was made to harmonize and rewrite this thus in all subsequent version the syntax is new but on the other hand the syntax is  the same in all checks and fairly future proof so hopefully the checks you write to day will be around for a long time.
 There is a lot of old out dated information about there about the old syntax which is: plain wrong so if you find something about max-warn, filter+ or such: just forget all about it.
 
 Check basics
@@ -51,7 +51,7 @@ What about removing default values?
 ===================================
 
 Sometimes you want to negate the default value by leaving it empty. This might seem impossible at first glance but you can always specify "none" for a given parameter to override the default value and revert back to an empty string.
-For instance to remove the default filter in check_spu you woul use the following command:
+For instance to remove the default filter in check_cpu you would use the following command:
 
 Remove filters::
 
@@ -84,10 +84,10 @@ And in the next few chapters we will add some deeper understanding on how the fi
 Expressions
 -----------
 
-The core feature of the NSCLient++ filter and check language is an expression-.
-This expression is modeled after SQL Where clauses and in essence you write an expression which is what will be used.
+The core feature of the NSCLient++ filter and check language is an expression.
+This expression is modelled after SQL Where clauses and in essence you write an expression which is what will be used.
 
-To look at this we will srat with the bascis modifying warn/crit threshold checks.
+To look at this we will start with the basics modifying warn/crit threshold checks.
 We already sis this above when we modified the default thresholds:
 
 Modified thresholds::
@@ -96,11 +96,11 @@ Modified thresholds::
     L        cli OK: OK: CPU load is ok.
     L        cli  Performance data: 'total 5m'=0%;30;90 'total 1m'=2%;30;90 'total 5s'=18%;30;90
 
-But we are not limited to such simple expressions. Expressions are written in what I would call natural language form: This means you write the left and on the left hand side then an oerator followed by a right hand side of the operator.
-For instance foo = bar meand "foo is equal to bar".
-All expressions define the outcome in other words warn=1=1 means we always have a warning (as 1=1) thus whenever an expression is tru the state the expression is used for is also true.
+But we are not limited to such simple expressions. Expressions are written in what I would call natural language form: This means you write the left and on the left hand side then an operator followed by a right hand side of the operator.
+For instance foo = bar means "foo is equal to bar".
+All expressions define the outcome in other words warn=1=1 means we always have a warning (as 1=1) thus whenever an expression is true the state the expression is used for is also true.
 
-The operators avablie are:
+The operators available are:
 
 ====== =============== ====================== ===========================
 Sign   Safe expression Operator               Example
@@ -119,10 +119,10 @@ regexp regexp          regular expression     '$foo.*' regexp 'football'
 not    not             negate operator        1 = 1 and not 2 = 3
 ====== =============== ====================== ===========================
 
-The safe version of an operator is only to allow exåpression to be used even when nasty arguments ir not allowed but they can also be usefull to reduce escaping issue on the Nagios side where all arguments are potentially escaped by the shell.
-The are identicall to their unsafe versions apart from the characters used to type them.
+The safe version of an operator is only to allow expression to be used even when nasty arguments are not allowed but they can also be useful to reduce escaping issue on the Nagios side where all arguments are potentially escaped by the shell.
+The are identical to their unsafe versions apart from the characters used to type them.
 
-The keywords avalible are different for each ehck and you can always check the various documentation to see a list of avalible expression for a given check.
+The keywords available are different for each check and you can always check the various documentation to see a list of available expression for a given check.
 For instance for check_cpu we have.
 
 Check related keywords:
@@ -150,27 +150,27 @@ Generic keywords:
 * detail_list
 * status
 
-The check related keywords are always unique where as the generic ones are there for all checks and usualy work on the data set (aggregation).
+The check related keywords are always unique where as the generic ones are there for all checks and usually work on the data set (aggregation).
 One other thing to know about keywords are that they are typed and there is coercion.
 
 For instance some size expression will accept a unit suffix (kmbgt) to which will be expanded by the expression parser.
-Thus writing 5k is equal to writing 5120 but only fir size expressions.
+Thus writing 5k is equal to writing 5120 but only for size expressions.
 
 Filters
 -------
 
 Filtering works much like expression above except that filters define what to include in a check.
 While there are multiple filters the most common one to use is filter which defined the objects you are interested in.
-We already saw a quick example in the check_cpu command above. The default fitler was:
+We already saw a quick example in the check_cpu command above. The default filter was:
 
 The default check_cpu filter::
 
     "filter=core = 'total'"
 
-What this does is exclude all information which is not coming from the core "total". In the check_spu command there a re values for each core as well as an aggregated total value.
-This the above only shows ius the total load and the load for each individual core is never used in the check command.
+What this does is exclude all information which is not coming from the core "total". In the check_cpu command there a re values for each core as well as an aggregated total value.
+This the above only shows us the total load and the load for each individual core is never used in the check command.
 
-Writing filters work exactly like the warning and critial expression we have seen before so we wont cover htat again here.
+Writing filters work exactly like the warning and critical expression we have seen before so we wont cover that again here.
 
 Advanced options
 ----------------
