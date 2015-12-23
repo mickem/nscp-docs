@@ -106,7 +106,7 @@ Sections
 --------
 
 Like in all INI, section start with a name between "[]". The first section is [/modules].
-In general NSClient++ has a hierarcical settings structure much like a filesystem. THis means that everything under /settings is related to settings and so on and so forth.
+In general NSClient++ has a hierarcical settings structure much like a filesystem. This means that everything under /settings is related to settings and so on and so forth.
 
 * Sections do not have an explicit end. When a new section start, the previous one end. 
 * Sections can be empty
