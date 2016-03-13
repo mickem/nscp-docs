@@ -20,6 +20,7 @@ A list of all available queries (check commands)
     :query:`check_always_critical` | Run another check and regardless of its return code return CRITICAL.
     :query:`check_always_ok` | Run another check and regardless of its return code return OK.
     :query:`check_always_warning` | Run another check and regardless of its return code return WARNING.
+    :query:`check_and_forward` | Run a check and forward the result as a passive check.
     :query:`check_critical` | Just return CRITICAL (anything passed along will be used as a message).
     :query:`check_multi` | Run more then one check and return the worst state.
     :query:`check_negate` | Run a check and alter the return status codes according to arguments.
@@ -196,6 +197,68 @@ Arguments
     :synopsis: Show help screen (short format).
 
     | Show help screen (short format).
+
+:query:`check_and_forward`
+--------------------------
+.. query:: check_and_forward
+    :synopsis: Run a check and forward the result as a passive check.
+
+**Usage:**
+
+
+
+.. csv-table:: 
+    :class: contentstable 
+    :delim: | 
+    :header: "Option", "Default Value", "Description"
+
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
+    :option:`target` |  | Commands to run (can be used multiple times)
+    :option:`command` |  | Commands to run (can be used multiple times)
+    :option:`arguments` |  | List of arguments (for wrapped command)
+
+
+
+
+Arguments
+*********
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
+
+.. option:: target
+    :synopsis: Commands to run (can be used multiple times)
+
+    | Commands to run (can be used multiple times)
+
+.. option:: command
+    :synopsis: Commands to run (can be used multiple times)
+
+    | Commands to run (can be used multiple times)
+
+.. option:: arguments
+    :synopsis: List of arguments (for wrapped command)
+
+    | List of arguments (for wrapped command)
 
 :query:`check_critical`
 -----------------------

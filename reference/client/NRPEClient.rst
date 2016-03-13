@@ -20,6 +20,7 @@ A list of all available queries (check commands)
     :query:`check_nrpe` | Request remote information via NRPE.
     :query:`exec_nrpe` | Execute remote script via NRPE. (Most likely you want nrpe_query).
     :query:`nrpe_forward` | Forward the request as-is to remote host via NRPE.
+    :query:`nrpe_query` | Request remote information via NRPE.
     :query:`submit_nrpe` | Submit information to remote host via NRPE. (Most likely you want nrpe_query).
 
 
@@ -130,7 +131,7 @@ A quick reference for all available queries (check commands) in the NRPEClient m
     :option:`ca` |  | Certificate authority
     :option:`verify` |  | Client certificate format
     :option:`allowed-ciphers` |  | Client certificate format
-    :option:`ssl` | N/A | Initial an ssl handshake with the server.
+    :option:`ssl` | 1 | Initial an ssl handshake with the server.
     :option:`insecure` | N/A | Use insecure legacy mode
     :option:`payload-length` |  | Length of payload (has to be same as on the server)
     :option:`buffer-length` |  | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
@@ -318,7 +319,7 @@ Arguments
     :option:`ca` |  | Certificate authority
     :option:`verify` |  | Client certificate format
     :option:`allowed-ciphers` |  | Client certificate format
-    :option:`ssl` | N/A | Initial an ssl handshake with the server.
+    :option:`ssl` | 1 | Initial an ssl handshake with the server.
     :option:`insecure` | N/A | Use insecure legacy mode
     :option:`payload-length` |  | Length of payload (has to be same as on the server)
     :option:`buffer-length` |  | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
@@ -494,6 +495,194 @@ Arguments
 
 
 
+:query:`nrpe_query`
+-------------------
+.. query:: nrpe_query
+    :synopsis: Request remote information via NRPE.
+
+**Usage:**
+
+
+
+.. csv-table:: 
+    :class: contentstable 
+    :delim: | 
+    :header: "Option", "Default Value", "Description"
+
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
+    :option:`host` |  | The host of the host running the server
+    :option:`port` |  | The port of the host running the server
+    :option:`address` |  | The address (host:port) of the host running the server
+    :option:`timeout` |  | Number of seconds before connection times out (default=10)
+    :option:`target` |  | Target to use (lookup connection info from config)
+    :option:`retry` |  | Number of times ti retry a failed connection attempt (default=2)
+    :option:`retries` |  | legacy version of retry
+    :option:`source-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
+    :option:`sender-host` |  | Source/sender host name (default is auto which means use the name of the actual host)
+    :option:`command` |  | The name of the command that the remote daemon should run
+    :option:`argument` |  | Set command line arguments
+    :option:`separator` |  | Separator to use for the batch command (default is |)
+    :option:`batch` |  | Add multiple records using the separator format is: command|argument|argument
+    :option:`certificate` |  | Length of payload (has to be same as on the server)
+    :option:`dh` |  | Length of payload (has to be same as on the server)
+    :option:`certificate-key` |  | Client certificate to use
+    :option:`certificate-format` |  | Client certificate format
+    :option:`ca` |  | Certificate authority
+    :option:`verify` |  | Client certificate format
+    :option:`allowed-ciphers` |  | Client certificate format
+    :option:`ssl` | 1 | Initial an ssl handshake with the server.
+    :option:`insecure` | N/A | Use insecure legacy mode
+    :option:`payload-length` |  | Length of payload (has to be same as on the server)
+    :option:`buffer-length` |  | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+
+
+
+
+Arguments
+*********
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
+
+.. option:: host
+    :synopsis: The host of the host running the server
+
+    | The host of the host running the server
+
+.. option:: port
+    :synopsis: The port of the host running the server
+
+    | The port of the host running the server
+
+.. option:: address
+    :synopsis: The address (host:port) of the host running the server
+
+    | The address (host:port) of the host running the server
+
+.. option:: timeout
+    :synopsis: Number of seconds before connection times out (default=10)
+
+    | Number of seconds before connection times out (default=10)
+
+.. option:: target
+    :synopsis: Target to use (lookup connection info from config)
+
+    | Target to use (lookup connection info from config)
+
+.. option:: retry
+    :synopsis: Number of times ti retry a failed connection attempt (default=2)
+
+    | Number of times ti retry a failed connection attempt (default=2)
+
+.. option:: retries
+    :synopsis: legacy version of retry
+
+    | legacy version of retry
+
+.. option:: source-host
+    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
+
+    | Source/sender host name (default is auto which means use the name of the actual host)
+
+.. option:: sender-host
+    :synopsis: Source/sender host name (default is auto which means use the name of the actual host)
+
+    | Source/sender host name (default is auto which means use the name of the actual host)
+
+.. option:: command
+    :synopsis: The name of the command that the remote daemon should run
+
+    | The name of the command that the remote daemon should run
+
+.. option:: argument
+    :synopsis: Set command line arguments
+
+    | Set command line arguments
+
+.. option:: separator
+    :synopsis: Separator to use for the batch command (default is |)
+
+    | Separator to use for the batch command (default is |)
+
+.. option:: batch
+    :synopsis: Add multiple records using the separator format is: command|argument|argument
+
+    | Add multiple records using the separator format is: command|argument|argument
+
+.. option:: certificate
+    :synopsis: Length of payload (has to be same as on the server)
+
+    | Length of payload (has to be same as on the server)
+
+.. option:: dh
+    :synopsis: Length of payload (has to be same as on the server)
+
+    | Length of payload (has to be same as on the server)
+
+.. option:: certificate-key
+    :synopsis: Client certificate to use
+
+    | Client certificate to use
+
+.. option:: certificate-format
+    :synopsis: Client certificate format
+
+    | Client certificate format
+
+.. option:: ca
+    :synopsis: Certificate authority
+
+    | Certificate authority
+
+.. option:: verify
+    :synopsis: Client certificate format
+
+    | Client certificate format
+
+.. option:: allowed-ciphers
+    :synopsis: Client certificate format
+
+    | Client certificate format
+
+.. option:: ssl
+    :synopsis: Initial an ssl handshake with the server.
+
+    | Initial an ssl handshake with the server.
+
+.. option:: insecure
+    :synopsis: Use insecure legacy mode
+
+    | Use insecure legacy mode
+
+.. option:: payload-length
+    :synopsis: Length of payload (has to be same as on the server)
+
+    | Length of payload (has to be same as on the server)
+
+.. option:: buffer-length
+    :synopsis: Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+
+    | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
+
 :query:`submit_nrpe`
 --------------------
 .. query:: submit_nrpe
@@ -534,7 +723,7 @@ Arguments
     :option:`ca` |  | Certificate authority
     :option:`verify` |  | Client certificate format
     :option:`allowed-ciphers` |  | Client certificate format
-    :option:`ssl` | N/A | Initial an ssl handshake with the server.
+    :option:`ssl` | 1 | Initial an ssl handshake with the server.
     :option:`insecure` | N/A | Use insecure legacy mode
     :option:`payload-length` |  | Length of payload (has to be same as on the server)
     :option:`buffer-length` |  | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.

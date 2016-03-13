@@ -137,7 +137,7 @@ A quick reference for all available queries (check commands) in the NSCAClient m
     :option:`ca` |  | Certificate authority
     :option:`verify` |  | Client certificate format
     :option:`allowed-ciphers` |  | Client certificate format
-    :option:`ssl` | N/A | Initial an ssl handshake with the server.
+    :option:`ssl` | 1 | Initial an ssl handshake with the server.
     :option:`encryption` |  | Name of encryption algorithm to use.
     :option:`payload-length` |  | Length of payload (has to be same as on the server)
     :option:`buffer-length` |  | Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
@@ -372,7 +372,7 @@ Arguments
 
         **Default value**: NSCA
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -396,7 +396,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -428,7 +428,7 @@ Arguments
 
         **Default value**: auto
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -556,7 +556,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -578,7 +578,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -602,7 +602,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -624,7 +624,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -648,7 +648,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -672,7 +672,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -696,7 +696,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -720,7 +720,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -758,7 +758,7 @@ Arguments
 
         **Default value**: aes
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -782,7 +782,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -804,7 +804,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -828,7 +828,7 @@ Arguments
 
         **Default value**: 512
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -852,7 +852,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -874,7 +874,7 @@ Arguments
 
         **Default value**: 3
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -898,7 +898,7 @@ Arguments
 
         **Default value**: 0
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -920,7 +920,7 @@ Arguments
 
         **Default value**: 30
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -942,7 +942,7 @@ Arguments
 
         **Default value**: 0
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -964,7 +964,7 @@ Arguments
 
         **Default value**: 
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1050,7 +1050,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1074,7 +1074,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1100,7 +1100,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1124,7 +1124,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1150,7 +1150,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1176,7 +1176,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1202,7 +1202,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1228,7 +1228,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1268,7 +1268,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1294,7 +1294,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1318,7 +1318,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1344,7 +1344,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1370,7 +1370,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1394,7 +1394,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1420,7 +1420,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1444,7 +1444,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1468,7 +1468,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
@@ -1492,7 +1492,7 @@ Arguments
 
         **Sample key**: This key is provided as a sample to show how to configure objects
 
-        **Used by**: :module:`CollectdClient`,  :module:`NSCAClient`
+        **Used by**: :module:`NSCAClient`
 
         **Sample**::
 
