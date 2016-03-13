@@ -107,7 +107,7 @@ A quick reference for all available queries (check commands) in the CheckMKClien
     :option:`ca` |  | Certificate authority
     :option:`verify` |  | Client certificate format
     :option:`allowed-ciphers` |  | Client certificate format
-    :option:`ssl` | N/A | Initial an ssl handshake with the server.
+    :option:`ssl` | 1 | Initial an ssl handshake with the server.
 
 
 

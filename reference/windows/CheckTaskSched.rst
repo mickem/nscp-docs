@@ -67,12 +67,13 @@ A quick reference for all available queries (check commands) in the CheckTaskSch
     :option:`empty-syntax` | %(status): No tasks found | Empty syntax.
     :option:`detail-syntax` | ${folder}/${title}: ${exit_code} != 0 | Detail level syntax.
     :option:`perf-syntax` | ${title} | Performance alias syntax.
+    :option:`force-old` | N/A | The name of the computer that you want to connect to.
     :option:`computer` |  | The name of the computer that you want to connect to.
     :option:`user` |  | The user name that is used during the connection to the computer.
     :option:`domain` |  | The domain of the user specified in the user parameter.
     :option:`password` |  | The password that is used to connect to the computer. If the user name and password are not specified, then the current token is used.
     :option:`folder` |  | The folder in which the tasks to check reside.
-    :option:`recursive` |  | Recurse subfolder (defaults to true).
+    :option:`recursive` |  | Recurse sub folder (defaults to true).
 
 
 
@@ -485,6 +486,11 @@ Arguments
 
 
 
+.. option:: force-old
+    :synopsis: The name of the computer that you want to connect to.
+
+    | The name of the computer that you want to connect to.
+
 .. option:: computer
     :synopsis: The name of the computer that you want to connect to.
 
@@ -511,9 +517,9 @@ Arguments
     | The folder in which the tasks to check reside.
 
 .. option:: recursive
-    :synopsis: Recurse subfolder (defaults to true).
+    :synopsis: Recurse sub folder (defaults to true).
 
-    | Recurse subfolder (defaults to true).
+    | Recurse sub folder (defaults to true).
 
 :query:`checktasksched`
 -----------------------
