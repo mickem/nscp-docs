@@ -17,4 +17,3 @@ Contents:
    nscp_usage.rst
    checks.rst
    build.rst
-   windows_installer.rst

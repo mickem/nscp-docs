@@ -4,7 +4,7 @@
 
 NSclient++ is fairly simple to build and setup. It requires python and cmake for the build process as well as a number of external libraries.
 This document is split between "Linux" and "Windows" since there is a substantial difference in how to build them.
-For people wanting a Apple osx version my guess is that it could be built three as well but I do not have access to any apple hardware and can thus no try it.
+For people wanting a Apple osx version it can be built similrily to the Linux machines on that platform as well.
 
 Linux
 ======
@@ -57,20 +57,20 @@ Lastly we run the built-in test to make sure everything is working::
 Windows
 ========
 
-Dependencies is a bit of a bother to manage on Windows since there is no package mechanism.
+Dependencies is a bit of a bother to manage on Windows since there is no general package mechanism for libraries. 
+To help with the there is a script called fetch-deps.py which will help download and build all dependencies required.
 
 Tools
 *************
 
-All tools have to be installed manually by hand:
+All tools have to be installed manually by hand (fetchdeps only manages libraries):
 
 * CMake 2.6
-* Python 2.7 (OBS has to be the *right* python for your plattform)
-* Visual Studio
-* WiX 3.5
-* Nasm 2.10 (optinal)
+* Python 2.7 (Make sure the right python platform is in your path)
+* Visual Studio (I use 2012 and 2015)
+* WiX 3.9 (or later)
 * Perl 5.12 (required by openssl)
-* msysGit (latest version)
+* A git client (if you want to fetch the git sources)
 
 Validate all tools are in your path::
 
@@ -85,10 +85,11 @@ Get the source code using git::
 	git clone --recursive https://github.com/mickem/nscp.git
 
 Create a build folder::
-  mkdir build
-  cd build
-  mkdir <plattform>
-  cd <plattform>
+
+	mkdir build
+	cd build
+	mkdir <plattform>
+	cd <plattform>
 
 Build all dependencies and required libraries (pick the right platform Win32 or x64)::
 

@@ -4,13 +4,15 @@
  Checks
 #######
 
-Using NSClient++ is checks is also pretty straight forward but at the same time not.
-Most check have what is refereed to as sensible defaults this means without arguments most checks will do "something" that is "sensible".
+Using NSClient++ is checks is also pretty straight forward in modern NSClient++ versions. 
+With version 0.4.3 we switched all old checks for a new check subsystem which is more uniform as well as more powerfull then the old.
+Thanks to a compatiblity layer most old command should still work (but there are some snags so be ware when uppgrading).
+
+Most check have what is refereed to as sensible defaults this means without arguments most checks will do "something sensible".
 This means that to get you started check_cpu will just work as-is. But when you need to do something slightly different you have to start to use the check expressions.
 
 It is important to note that NSClient++ has been around for a long time and the syntax for the checks has changed over time.
-With version 0.4.2 an effort was made to harmonize and rewrite this thus in all subsequent version the syntax is new but on the other hand the syntax is  the same in all checks and fairly future proof so hopefully the checks you write to day will be around for a long time.
-There is a lot of old out dated information about there about the old syntax which is: plain wrong so if you find something about max-warn, filter+ or such: just forget all about it.
+There is a lot of old out dated information about there about the various old syntaxes which is: plain wrong so if you find something about max-warn, filter+ or such: just forget all about it.
 
 Check basics
 ------------
@@ -23,11 +25,11 @@ In it simplest form most checks will just work::
 
 But what if you want to change something?
 What if 80% is not the warning value your interested in?
-Where do I start?
+Where do you start?
 
-The first stop is to check the default values.
-The default values are best viewed in the documentation or the built-in help.
-But the simplest option is to use the show-default option for the check.
+The first stop is to check the default values for the command in question.
+While the default values are showed both in the documentation and the various built-in help commands
+the simplest way is to use the show-default option for the check.
 
 Show default command line::
 
@@ -63,12 +65,12 @@ Remove filters::
 Implicit defaults
 =================
 
-The last thing we shall discuss here is a slight snag.
-Some default values are not "default value" they are "fall back values". Now this is technically a "bug" but one which might not be fixed any time soon.
+The last thing we shall discuss here is a slight snag and this will hopefullt be made better in future version of NSClient++.
+Some default values are not "default value" they are "implicit values". Now this is technically a "bug" but one which might not be fixed any time soon.
 So what does this mean?
 Well in the above command line there was *NO* option for the default times. The check returns the values for 5 seconds, 1 minute and 5 minutes.
 But where did they come from?
-Well, they are a "implicit values" if a check does not have a dataset a fall back one will be used. These options are almost always related to the data set used.
+Well, they are so called "implicit values" if a check does not have a given value might be used. These options are almost always related to the data set used such as time or drives or similar.
 So for instance check_drivesize will not have a default option for what to check.
 To get around this we need simply check the key in the documentation and add it:
 
@@ -85,10 +87,10 @@ Expressions
 -----------
 
 The core feature of the NSCLient++ filter and check language is an expression.
-This expression is modelled after SQL Where clauses and in essence you write an expression which is what will be used.
+This expression is modelled after SQL Where clauses and in essence you write an expression which is what will be used by the checks.
 
 To look at this we will start with the basics modifying warn/crit threshold checks.
-We already sis this above when we modified the default thresholds:
+We already did this above when we modified the default thresholds:
 
 Modified thresholds::
 
@@ -167,7 +169,8 @@ The default check_cpu filter::
 
     "filter=core = 'total'"
 
-What this does is exclude all information which is not coming from the core "total". In the check_cpu command there a re values for each core as well as an aggregated total value.
+What this does is exclude any items which des not evaluate to false. n other words any items which does not have a core value equal to total.
+In the check_cpu command there are values for each core as well as an aggregated total value.
 This the above only shows us the total load and the load for each individual core is never used in the check command.
 
 Writing filters work exactly like the warning and critical expression we have seen before so we wont cover that again here.
@@ -175,26 +178,27 @@ Writing filters work exactly like the warning and critical expression we have se
 Syntax
 ------
 
-The last common topic we will coder is syntax.
-Syntax is responsible for the message which is returned to you. Thus it has no effect at all on the actual check result.
+The last common topic we will discuss is syntax.
+Syntax is responsible for the message which is used in the check result. Thus it has no effect at all on the actual check result but nice messages makes problem easier to understand.
 The syntax configuration is split up into three main keywords:
 
 * top-syntax
 * detail-syntax
 * ok-syntax
 
-The top-syntax defines the overall message whereas the detail-syntax defines how each entry is formatted. The actual values are similar to what we saw before in the filter and warnign/critical thresholds.
+The top-syntax defines the overall message whereas the detail-syntax defines how each entry is formatted. 
+The actual values are similar to what we saw before in the filter and warnign/critical thresholds.
 Looking at check_cpu the default syntaxes (as we have already seen) are::
 
   top-syntax=${status}: ${problem_list}
   ok-syntax=%(status): CPU load is ok.
   detail-syntax=${time}: ${load}%
 
-The strings are text strings with keywords surrounded by either ${} or %(). The reason for having two different ways are that ${} can be problematic to escape from a Unix shell.
+The strings are text strings with keywords surrounded by either ${} or %(). The reason for having two different ways are that ${} can be problematic to escape from a Unix shell (which is how most Nagios command are executed).
 So the following are identical from NSClient++ perspective::
 
   top-syntax=${problem_list}
-  top-syntax=%({problem_list)
+  top-syntax=%(problem_list)
 
 The top syntax will give us the returned message if we have an issue this would include the status followed by the list of problematic cpu loads.
 
@@ -220,10 +224,9 @@ If we add show-all we instead get::
   check_cpu show-all
   OK: 5m: 0%, 1m: 4%, 5s: 11%
 
-The difference is that with show-all all the values are shown. Normally when we run a check only values which are bad are included in the message.
-For instance if the CPU load had been above the warning threshold we would have seen the value included in the message. show-all changes this.
-The question we now ask our selves is how. And the answer is simple: It changes the top-syntax to use %(list) instead of %(problem_list).
-
+The difference is that with show-all all the values are shown. By default when we run a check only values which are bad are included in the message but if we always want to see the values we can specify show-all.
+For instance if the CPU load had been above the warning threshold we would have seen the value included in the message.
+Now show-all is not magical it only modifies the top-syntax replacing %(problem_list) with %(list).
 This is something you could have achieved yourself but show-all makes it simpler as well as makes intent much clearer.
 
 Advanced options
@@ -234,9 +237,9 @@ Performance data configuration
 
 Performance data is something which a lot of people want to tweak and customize.
 And the simplest way to do so is using the perf-config command line options.
-This command line option is complicated to use as it is very free form.
+This command line option is  a bit more complicated then changing filters as it is very free form.
 It works a bit like CSS style sheets where you have selectors and lists of keys and values.
-If you are not familiar with CSS this wont matter I will try to explain the concept.
+If you are not familiar with CSS it does not matter as the similarity is very brief and we will explain how they work.
 But first lets take an example.
 
 A simple performance data check::
