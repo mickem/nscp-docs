@@ -138,3 +138,42 @@ Adding a script::
 
   [/attachments]
   scripts/myscript.bat = http://www.myserver.com/myscript.bat
+
+Using settings stores
+---------------------
+
+NSClient++ has some fesature to help work with settings stores.
+All of this is performed via the settings sub command::
+
+	nscp settings --help
+
+Migrating settings from a ini file to the regstry can be done with the migrate-to command::
+
+	nscp settings --migrate-to registry
+
+This will move all data from the settings file and store it in in the registry and then sertup NSClient++ to use the registry instead of the ini file.
+
+You can also switch settings store (without migrating data)::
+
+	nscp settings --switch registry
+
+The effect is similar in that NSClient++ will start using the registry but you have to add the keys to the registry manually.
+
+To show the current settings store view can run:
+
+	$ nscp settings --show
+	INI settings: (ini://${shared-path}/nsclient.ini, C:\source\build\x64\dev/nsclient.ini)
+
+Overriding settings store
+-------------------------
+
+The default way for NSClient++ to find your settings files is via the boot.ini file.
+If you want to override this, for instance you want to use multiple NSClient++ from the same folder, you can do this via the --settings option::
+
+	nscp test --settings nsclient2.ini
+
+You can do this for the service as well by editing the service start command.
+
+
+
+

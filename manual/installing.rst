@@ -160,4 +160,18 @@ For instance Installing (with log) nsclient++ into c:\foobar using registry as c
 
     msiexec /qn /l* log.txt /i NSCP-0.4.3.50-x64.msi INSTALLLOCATION=c:\FooBar CONFIGURATION_TYPE=registry://HKEY_LOCAL_MACHINE/software/NSClient++ ADDDEFAULT=ALL REMOVE=PythonScript
 
+Multiple NSClient++
+===================
 
+As NSClient++ uninstalls it self if you install there are two options for running multipl NSClient++ on a machine.
+
+ #. You can add multipl services for the same installation
+ #. You can manually install NSClient++
+
+To add multipl service you need to first create the services::
+
+	nscp service --install --name nscp2
+
+And then edit the start command so you can override the configuration. The key to look for in the registry is HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\<NAME OF SERVICE> and there you can modify the ImagePath::
+
+	"C:\Program Files\NSClient++\nscp.exe" service --run --name nscp --settings ini://${shared-path}/nsclient-2.ini

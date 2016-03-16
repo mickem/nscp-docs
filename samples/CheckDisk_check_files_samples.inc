@@ -2,16 +2,16 @@ Order is somewhat important but mainly in the fact that some operations are more
 For instance line_count requires us to read and count the lines in each file so choosing between the following:
 Fast version::
 
-   filter=create < -2d and line_count > 100
+   filter=creation < -2d and line_count > 100
 
 Show version::
 
-   filter=line_count > 100 and create < -2d
+   filter=line_count > 100 and creation < -2d
 
 The first one will be significantly faster if you have a thousand old files and 3 new ones.
 But looking at the following::
 
-   filter=create < -2d and size > 100k
+   filter=creation < -2d and size > 100k
 
 Swapping them would not be noticeable.
 
