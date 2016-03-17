@@ -682,6 +682,7 @@ Arguments
     path           Path of file                                                                    
     size           File size                                                                       
     total          True if this is the total object                                                
+    type           Type of item (file or dir)                                                      
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
@@ -730,6 +731,7 @@ Arguments
     path           Path of file                                                                    
     size           File size                                                                       
     total          True if this is the total object                                                
+    type           Type of item (file or dir)                                                      
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
@@ -783,6 +785,7 @@ Arguments
     path           Path of file                                                                    
     size           File size                                                                       
     total          True if this is the total object                                                
+    type           Type of item (file or dir)                                                      
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
@@ -836,6 +839,7 @@ Arguments
     path           Path of file                                                                    
     size           File size                                                                       
     total          True if this is the total object                                                
+    type           Type of item (file or dir)                                                      
     version        Windows exe/dll file version                                                    
     write          Alias for written                                                               
     written        When file was last written to                                                   
@@ -900,6 +904,7 @@ Arguments
     %(path)           Path of file                                                                    
     %(size)           File size                                                                       
     %(total)          True if this is the total object                                                
+    %(type)           Type of item (file or dir)                                                      
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
@@ -955,6 +960,7 @@ Arguments
     %(path)           Path of file                                                                    
     %(size)           File size                                                                       
     %(total)          True if this is the total object                                                
+    %(type)           Type of item (file or dir)                                                      
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
@@ -1003,6 +1009,7 @@ Arguments
     %(path)           Path of file                                                                    
     %(size)           File size                                                                       
     %(total)          True if this is the total object                                                
+    %(type)           Type of item (file or dir)                                                      
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   
@@ -1051,6 +1058,7 @@ Arguments
     %(path)           Path of file                                                                    
     %(size)           File size                                                                       
     %(total)          True if this is the total object                                                
+    %(type)           Type of item (file or dir)                                                      
     %(version)        Windows exe/dll file version                                                    
     %(write)          Alias for written                                                               
     %(written)        When file was last written to                                                   

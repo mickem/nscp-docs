@@ -22,7 +22,7 @@ A list of all available queries (check commands)
     :query:`check_network` | Check network interface status.
     :query:`check_os_version` | Check the version of the underlaying OS.
     :query:`check_pagefile` | Check the size of the system pagefile(s).
-    :query:`check_pdh` | Check the value of a performance (PDH) counter.
+    :query:`check_pdh` | Check the value of a performance (PDH) counter on the local or remote system.
     :query:`check_process` | Check state/metrics of one or more of the processes running on the computer.
     :query:`check_service` | Check the state of one or more of the computer services.
     :query:`check_uptime` | Check time since last server re-boot.
@@ -2072,7 +2072,7 @@ Arguments
 :query:`check_pdh`
 ------------------
 .. query:: check_pdh
-    :synopsis: Check the value of a performance (PDH) counter.
+    :synopsis: Check the value of a performance (PDH) counter on the local or remote system.
 
 **Usage:**
 
