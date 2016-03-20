@@ -55,7 +55,7 @@ A quick reference for all available queries (check commands) in the CheckDisk mo
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
     :option:`show-all` | N/A | Show debugging information in the log
-    :option:`filter` |  | Filter which marks interesting items.
+    :option:`filter` | mounted = 1 | Filter which marks interesting items.
     :option:`warning` | used > 80% | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
     :option:`critical` | used > 90% | Filter which marks items which generates a critical state.
@@ -70,8 +70,8 @@ A quick reference for all available queries (check commands) in the CheckDisk mo
     :option:`detail-syntax` | ${drive_or_name}: ${used}/${size} used | Detail level syntax.
     :option:`perf-syntax` | ${drive_or_id} | Performance alias syntax.
     :option:`drive` |  | The drives to check.
-    :option:`ignore-unreadable` | N/A | Ignore drives which are not reachable by the current user.
-    :option:`mounted` | N/A | Show only mounted rives i.e. drives which have a mount point.
+    :option:`ignore-unreadable` | N/A | DEPRECATED (manually set filter instead) Ignore drives which are not reachable by the current user.
+    :option:`mounted` | N/A | DEPRECATED (this is now default) Show only mounted rives i.e. drives which have a mount point.
     :option:`magic` |  | Magic number for use with scaling drive sizes.
     :option:`exclude` |  | A list of drives not to check
     :option:`total` | N/A | Include the total of all matching drives
@@ -125,43 +125,49 @@ Arguments
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
     | Available options:
 
-    =============== =============================================================================== 
-    Key             Value                                                                           
-    --------------- ------------------------------------------------------------------------------- 
-    drive           Technical name of drive                                                         
-    drive_or_id     Drive letter if present if not use id                                           
-    drive_or_name   Drive letter if present if not use name                                         
-    free            Shorthand for total_free (Number of free bytes)                                 
-    free_pct        Shorthand for total_free_pct (% free space)                                     
-    id              Drive or id of drive                                                            
-    mounted         Check if a drive is mounted                                                     
-    name            Descriptive name of drive                                                       
-    size            Total size of drive                                                             
-    total_free      Number of free bytes                                                            
-    total_free_pct  % free space                                                                    
-    total_used      Number of used bytes                                                            
-    total_used_pct  % used space                                                                    
-    type            Type of drive                                                                   
-    used            Number of used bytes                                                            
-    used_pct        Shorthand for total_used_pct (% used space)                                     
-    user_free       Free space available to user (which runs NSClient++)                            
-    user_free_pct   % free space available to user                                                  
-    user_used       Number of used bytes (related to user)                                          
-    user_used_pct   % used space available to user                                                  
-    count           Number of items matching the filter                                             
-    total            Total number of items                                                          
-    ok_count         Number of items matched the ok criteria                                        
-    warn_count       Number of items matched the warning criteria                                   
-    crit_count       Number of items matched the critical criteria                                  
-    problem_count    Number of items matched either warning or critical criteria                    
-    list             A list of all items which matched the filter                                   
-    ok_list          A list of all items which matched the ok criteria                              
-    warn_list        A list of all items which matched the warning criteria                         
-    crit_list        A list of all items which matched the critical criteria                        
-    problem_list     A list of all items which matched either the critical or the warning criteria  
-    detail_list      A special list with critical, then warning and fainally ok                     
-    status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    =============== ===============================================================================
+    =============== ============================================================================================================== 
+    Key             Value                                                                                                          
+    --------------- -------------------------------------------------------------------------------------------------------------- 
+    drive           Technical name of drive                                                                                        
+    drive_or_id     Drive letter if present if not use id                                                                          
+    drive_or_name   Drive letter if present if not use name                                                                        
+    erasable        1 (true) if drive is erasable                                                                                  
+    flags           String representation of flags                                                                                 
+    free            Shorthand for total_free (Number of free bytes)                                                                
+    free_pct        Shorthand for total_free_pct (% free space)                                                                    
+    hotplug         1 (true) if drive is hotplugable                                                                               
+    id              Drive or id of drive                                                                                           
+    mounted         Check if a drive is mounted                                                                                    
+    name            Descriptive name of drive                                                                                      
+    readable        1 (true) if drive is readable                                                                                  
+    removable       1 (true) if drive is removable                                                                                 
+    size            Total size of drive                                                                                            
+    total_free      Number of free bytes                                                                                           
+    total_free_pct  % free space                                                                                                   
+    total_used      Number of used bytes                                                                                           
+    total_used_pct  % used space                                                                                                   
+    type            Type of drive                                                                                                  
+    used            Number of used bytes                                                                                           
+    used_pct        Shorthand for total_used_pct (% used space)                                                                    
+    user_free       Free space available to user (which runs NSClient++)                                                           
+    user_free_pct   % free space available to user                                                                                 
+    user_used       Number of used bytes (related to user)                                                                         
+    user_used_pct   % used space available to user                                                                                 
+    writable        1 (true) if drive is writable                                                                                  
+    count           Number of items matching the filter. Common option for all checks.                                             
+    total            Total number of items. Common option for all checks.                                                          
+    ok_count         Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count       Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count       Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count    Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list             A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list          A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list        A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list        A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list     A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list      A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status           The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    =============== ==============================================================================================================
 
 
 
@@ -174,43 +180,49 @@ Arguments
     | If anything matches this filter the return status will be escalated to warning.
     | Available options:
 
-    =============== =============================================================================== 
-    Key             Value                                                                           
-    --------------- ------------------------------------------------------------------------------- 
-    drive           Technical name of drive                                                         
-    drive_or_id     Drive letter if present if not use id                                           
-    drive_or_name   Drive letter if present if not use name                                         
-    free            Shorthand for total_free (Number of free bytes)                                 
-    free_pct        Shorthand for total_free_pct (% free space)                                     
-    id              Drive or id of drive                                                            
-    mounted         Check if a drive is mounted                                                     
-    name            Descriptive name of drive                                                       
-    size            Total size of drive                                                             
-    total_free      Number of free bytes                                                            
-    total_free_pct  % free space                                                                    
-    total_used      Number of used bytes                                                            
-    total_used_pct  % used space                                                                    
-    type            Type of drive                                                                   
-    used            Number of used bytes                                                            
-    used_pct        Shorthand for total_used_pct (% used space)                                     
-    user_free       Free space available to user (which runs NSClient++)                            
-    user_free_pct   % free space available to user                                                  
-    user_used       Number of used bytes (related to user)                                          
-    user_used_pct   % used space available to user                                                  
-    count           Number of items matching the filter                                             
-    total            Total number of items                                                          
-    ok_count         Number of items matched the ok criteria                                        
-    warn_count       Number of items matched the warning criteria                                   
-    crit_count       Number of items matched the critical criteria                                  
-    problem_count    Number of items matched either warning or critical criteria                    
-    list             A list of all items which matched the filter                                   
-    ok_list          A list of all items which matched the ok criteria                              
-    warn_list        A list of all items which matched the warning criteria                         
-    crit_list        A list of all items which matched the critical criteria                        
-    problem_list     A list of all items which matched either the critical or the warning criteria  
-    detail_list      A special list with critical, then warning and fainally ok                     
-    status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    =============== ===============================================================================
+    =============== ============================================================================================================== 
+    Key             Value                                                                                                          
+    --------------- -------------------------------------------------------------------------------------------------------------- 
+    drive           Technical name of drive                                                                                        
+    drive_or_id     Drive letter if present if not use id                                                                          
+    drive_or_name   Drive letter if present if not use name                                                                        
+    erasable        1 (true) if drive is erasable                                                                                  
+    flags           String representation of flags                                                                                 
+    free            Shorthand for total_free (Number of free bytes)                                                                
+    free_pct        Shorthand for total_free_pct (% free space)                                                                    
+    hotplug         1 (true) if drive is hotplugable                                                                               
+    id              Drive or id of drive                                                                                           
+    mounted         Check if a drive is mounted                                                                                    
+    name            Descriptive name of drive                                                                                      
+    readable        1 (true) if drive is readable                                                                                  
+    removable       1 (true) if drive is removable                                                                                 
+    size            Total size of drive                                                                                            
+    total_free      Number of free bytes                                                                                           
+    total_free_pct  % free space                                                                                                   
+    total_used      Number of used bytes                                                                                           
+    total_used_pct  % used space                                                                                                   
+    type            Type of drive                                                                                                  
+    used            Number of used bytes                                                                                           
+    used_pct        Shorthand for total_used_pct (% used space)                                                                    
+    user_free       Free space available to user (which runs NSClient++)                                                           
+    user_free_pct   % free space available to user                                                                                 
+    user_used       Number of used bytes (related to user)                                                                         
+    user_used_pct   % used space available to user                                                                                 
+    writable        1 (true) if drive is writable                                                                                  
+    count           Number of items matching the filter. Common option for all checks.                                             
+    total            Total number of items. Common option for all checks.                                                          
+    ok_count         Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count       Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count       Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count    Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list             A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list          A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list        A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list        A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list     A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list      A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status           The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    =============== ==============================================================================================================
 
 
 
@@ -228,43 +240,49 @@ Arguments
     | If anything matches this filter the return status will be escalated to critical.
     | Available options:
 
-    =============== =============================================================================== 
-    Key             Value                                                                           
-    --------------- ------------------------------------------------------------------------------- 
-    drive           Technical name of drive                                                         
-    drive_or_id     Drive letter if present if not use id                                           
-    drive_or_name   Drive letter if present if not use name                                         
-    free            Shorthand for total_free (Number of free bytes)                                 
-    free_pct        Shorthand for total_free_pct (% free space)                                     
-    id              Drive or id of drive                                                            
-    mounted         Check if a drive is mounted                                                     
-    name            Descriptive name of drive                                                       
-    size            Total size of drive                                                             
-    total_free      Number of free bytes                                                            
-    total_free_pct  % free space                                                                    
-    total_used      Number of used bytes                                                            
-    total_used_pct  % used space                                                                    
-    type            Type of drive                                                                   
-    used            Number of used bytes                                                            
-    used_pct        Shorthand for total_used_pct (% used space)                                     
-    user_free       Free space available to user (which runs NSClient++)                            
-    user_free_pct   % free space available to user                                                  
-    user_used       Number of used bytes (related to user)                                          
-    user_used_pct   % used space available to user                                                  
-    count           Number of items matching the filter                                             
-    total            Total number of items                                                          
-    ok_count         Number of items matched the ok criteria                                        
-    warn_count       Number of items matched the warning criteria                                   
-    crit_count       Number of items matched the critical criteria                                  
-    problem_count    Number of items matched either warning or critical criteria                    
-    list             A list of all items which matched the filter                                   
-    ok_list          A list of all items which matched the ok criteria                              
-    warn_list        A list of all items which matched the warning criteria                         
-    crit_list        A list of all items which matched the critical criteria                        
-    problem_list     A list of all items which matched either the critical or the warning criteria  
-    detail_list      A special list with critical, then warning and fainally ok                     
-    status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    =============== ===============================================================================
+    =============== ============================================================================================================== 
+    Key             Value                                                                                                          
+    --------------- -------------------------------------------------------------------------------------------------------------- 
+    drive           Technical name of drive                                                                                        
+    drive_or_id     Drive letter if present if not use id                                                                          
+    drive_or_name   Drive letter if present if not use name                                                                        
+    erasable        1 (true) if drive is erasable                                                                                  
+    flags           String representation of flags                                                                                 
+    free            Shorthand for total_free (Number of free bytes)                                                                
+    free_pct        Shorthand for total_free_pct (% free space)                                                                    
+    hotplug         1 (true) if drive is hotplugable                                                                               
+    id              Drive or id of drive                                                                                           
+    mounted         Check if a drive is mounted                                                                                    
+    name            Descriptive name of drive                                                                                      
+    readable        1 (true) if drive is readable                                                                                  
+    removable       1 (true) if drive is removable                                                                                 
+    size            Total size of drive                                                                                            
+    total_free      Number of free bytes                                                                                           
+    total_free_pct  % free space                                                                                                   
+    total_used      Number of used bytes                                                                                           
+    total_used_pct  % used space                                                                                                   
+    type            Type of drive                                                                                                  
+    used            Number of used bytes                                                                                           
+    used_pct        Shorthand for total_used_pct (% used space)                                                                    
+    user_free       Free space available to user (which runs NSClient++)                                                           
+    user_free_pct   % free space available to user                                                                                 
+    user_used       Number of used bytes (related to user)                                                                         
+    user_used_pct   % used space available to user                                                                                 
+    writable        1 (true) if drive is writable                                                                                  
+    count           Number of items matching the filter. Common option for all checks.                                             
+    total            Total number of items. Common option for all checks.                                                          
+    ok_count         Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count       Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count       Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count    Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list             A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list          A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list        A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list        A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list     A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list      A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status           The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    =============== ==============================================================================================================
 
 
 
@@ -282,43 +300,49 @@ Arguments
     | If anything matches this any previous state for this item will be reset to ok.
     | Available options:
 
-    =============== =============================================================================== 
-    Key             Value                                                                           
-    --------------- ------------------------------------------------------------------------------- 
-    drive           Technical name of drive                                                         
-    drive_or_id     Drive letter if present if not use id                                           
-    drive_or_name   Drive letter if present if not use name                                         
-    free            Shorthand for total_free (Number of free bytes)                                 
-    free_pct        Shorthand for total_free_pct (% free space)                                     
-    id              Drive or id of drive                                                            
-    mounted         Check if a drive is mounted                                                     
-    name            Descriptive name of drive                                                       
-    size            Total size of drive                                                             
-    total_free      Number of free bytes                                                            
-    total_free_pct  % free space                                                                    
-    total_used      Number of used bytes                                                            
-    total_used_pct  % used space                                                                    
-    type            Type of drive                                                                   
-    used            Number of used bytes                                                            
-    used_pct        Shorthand for total_used_pct (% used space)                                     
-    user_free       Free space available to user (which runs NSClient++)                            
-    user_free_pct   % free space available to user                                                  
-    user_used       Number of used bytes (related to user)                                          
-    user_used_pct   % used space available to user                                                  
-    count           Number of items matching the filter                                             
-    total            Total number of items                                                          
-    ok_count         Number of items matched the ok criteria                                        
-    warn_count       Number of items matched the warning criteria                                   
-    crit_count       Number of items matched the critical criteria                                  
-    problem_count    Number of items matched either warning or critical criteria                    
-    list             A list of all items which matched the filter                                   
-    ok_list          A list of all items which matched the ok criteria                              
-    warn_list        A list of all items which matched the warning criteria                         
-    crit_list        A list of all items which matched the critical criteria                        
-    problem_list     A list of all items which matched either the critical or the warning criteria  
-    detail_list      A special list with critical, then warning and fainally ok                     
-    status           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    =============== ===============================================================================
+    =============== ============================================================================================================== 
+    Key             Value                                                                                                          
+    --------------- -------------------------------------------------------------------------------------------------------------- 
+    drive           Technical name of drive                                                                                        
+    drive_or_id     Drive letter if present if not use id                                                                          
+    drive_or_name   Drive letter if present if not use name                                                                        
+    erasable        1 (true) if drive is erasable                                                                                  
+    flags           String representation of flags                                                                                 
+    free            Shorthand for total_free (Number of free bytes)                                                                
+    free_pct        Shorthand for total_free_pct (% free space)                                                                    
+    hotplug         1 (true) if drive is hotplugable                                                                               
+    id              Drive or id of drive                                                                                           
+    mounted         Check if a drive is mounted                                                                                    
+    name            Descriptive name of drive                                                                                      
+    readable        1 (true) if drive is readable                                                                                  
+    removable       1 (true) if drive is removable                                                                                 
+    size            Total size of drive                                                                                            
+    total_free      Number of free bytes                                                                                           
+    total_free_pct  % free space                                                                                                   
+    total_used      Number of used bytes                                                                                           
+    total_used_pct  % used space                                                                                                   
+    type            Type of drive                                                                                                  
+    used            Number of used bytes                                                                                           
+    used_pct        Shorthand for total_used_pct (% used space)                                                                    
+    user_free       Free space available to user (which runs NSClient++)                                                           
+    user_free_pct   % free space available to user                                                                                 
+    user_used       Number of used bytes (related to user)                                                                         
+    user_used_pct   % used space available to user                                                                                 
+    writable        1 (true) if drive is writable                                                                                  
+    count           Number of items matching the filter. Common option for all checks.                                             
+    total            Total number of items. Common option for all checks.                                                          
+    ok_count         Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count       Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count       Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count    Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list             A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list          A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list        A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list        A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list     A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list      A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status           The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    =============== ==============================================================================================================
 
 
 
@@ -345,45 +369,53 @@ Arguments
     :synopsis: Top level syntax.
 
     | Top level syntax.
-    | Used to format the message to return can include strings as well as special keywords such as:
+    | Used to format the message to return can include text as well as special keywords wich will include information from the checks.
+    | To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
+    | The avalible keywords are:
 
-    ================== =============================================================================== 
-    Key                Value                                                                           
-    ------------------ ------------------------------------------------------------------------------- 
-    %(drive)           Technical name of drive                                                         
-    %(drive_or_id)     Drive letter if present if not use id                                           
-    %(drive_or_name)   Drive letter if present if not use name                                         
-    %(free)            Shorthand for total_free (Number of free bytes)                                 
-    %(free_pct)        Shorthand for total_free_pct (% free space)                                     
-    %(id)              Drive or id of drive                                                            
-    %(mounted)         Check if a drive is mounted                                                     
-    %(name)            Descriptive name of drive                                                       
-    %(size)            Total size of drive                                                             
-    %(total_free)      Number of free bytes                                                            
-    %(total_free_pct)  % free space                                                                    
-    %(total_used)      Number of used bytes                                                            
-    %(total_used_pct)  % used space                                                                    
-    %(type)            Type of drive                                                                   
-    %(used)            Number of used bytes                                                            
-    %(used_pct)        Shorthand for total_used_pct (% used space)                                     
-    %(user_free)       Free space available to user (which runs NSClient++)                            
-    %(user_free_pct)   % free space available to user                                                  
-    %(user_used)       Number of used bytes (related to user)                                          
-    %(user_used_pct)   % used space available to user                                                  
-    ${count}           Number of items matching the filter                                             
-    ${total}            Total number of items                                                          
-    ${ok_count}         Number of items matched the ok criteria                                        
-    ${warn_count}       Number of items matched the warning criteria                                   
-    ${crit_count}       Number of items matched the critical criteria                                  
-    ${problem_count}    Number of items matched either warning or critical criteria                    
-    ${list}             A list of all items which matched the filter                                   
-    ${ok_list}          A list of all items which matched the ok criteria                              
-    ${warn_list}        A list of all items which matched the warning criteria                         
-    ${crit_list}        A list of all items which matched the critical criteria                        
-    ${problem_list}     A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}      A special list with critical, then warning and fainally ok                     
-    ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================== ===============================================================================
+    =============== ============================================================================================================== 
+    Key             Value                                                                                                          
+    --------------- -------------------------------------------------------------------------------------------------------------- 
+    drive           Technical name of drive                                                                                        
+    drive_or_id     Drive letter if present if not use id                                                                          
+    drive_or_name   Drive letter if present if not use name                                                                        
+    erasable        1 (true) if drive is erasable                                                                                  
+    flags           String representation of flags                                                                                 
+    free            Shorthand for total_free (Number of free bytes)                                                                
+    free_pct        Shorthand for total_free_pct (% free space)                                                                    
+    hotplug         1 (true) if drive is hotplugable                                                                               
+    id              Drive or id of drive                                                                                           
+    mounted         Check if a drive is mounted                                                                                    
+    name            Descriptive name of drive                                                                                      
+    readable        1 (true) if drive is readable                                                                                  
+    removable       1 (true) if drive is removable                                                                                 
+    size            Total size of drive                                                                                            
+    total_free      Number of free bytes                                                                                           
+    total_free_pct  % free space                                                                                                   
+    total_used      Number of used bytes                                                                                           
+    total_used_pct  % used space                                                                                                   
+    type            Type of drive                                                                                                  
+    used            Number of used bytes                                                                                           
+    used_pct        Shorthand for total_used_pct (% used space)                                                                    
+    user_free       Free space available to user (which runs NSClient++)                                                           
+    user_free_pct   % free space available to user                                                                                 
+    user_used       Number of used bytes (related to user)                                                                         
+    user_used_pct   % used space available to user                                                                                 
+    writable        1 (true) if drive is writable                                                                                  
+    count           Number of items matching the filter. Common option for all checks.                                             
+    total            Total number of items. Common option for all checks.                                                          
+    ok_count         Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count       Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count       Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count    Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list             A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list          A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list        A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list        A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list     A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list      A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status           The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    =============== ==============================================================================================================
 
 
 
@@ -403,43 +435,49 @@ Arguments
     | DEPRECATED! This is the syntax for when nothing matches the filter.
     | Possible values are:
 
-    ================== =============================================================================== 
-    Key                Value                                                                           
-    ------------------ ------------------------------------------------------------------------------- 
-    %(drive)           Technical name of drive                                                         
-    %(drive_or_id)     Drive letter if present if not use id                                           
-    %(drive_or_name)   Drive letter if present if not use name                                         
-    %(free)            Shorthand for total_free (Number of free bytes)                                 
-    %(free_pct)        Shorthand for total_free_pct (% free space)                                     
-    %(id)              Drive or id of drive                                                            
-    %(mounted)         Check if a drive is mounted                                                     
-    %(name)            Descriptive name of drive                                                       
-    %(size)            Total size of drive                                                             
-    %(total_free)      Number of free bytes                                                            
-    %(total_free_pct)  % free space                                                                    
-    %(total_used)      Number of used bytes                                                            
-    %(total_used_pct)  % used space                                                                    
-    %(type)            Type of drive                                                                   
-    %(used)            Number of used bytes                                                            
-    %(used_pct)        Shorthand for total_used_pct (% used space)                                     
-    %(user_free)       Free space available to user (which runs NSClient++)                            
-    %(user_free_pct)   % free space available to user                                                  
-    %(user_used)       Number of used bytes (related to user)                                          
-    %(user_used_pct)   % used space available to user                                                  
-    ${count}           Number of items matching the filter                                             
-    ${total}            Total number of items                                                          
-    ${ok_count}         Number of items matched the ok criteria                                        
-    ${warn_count}       Number of items matched the warning criteria                                   
-    ${crit_count}       Number of items matched the critical criteria                                  
-    ${problem_count}    Number of items matched either warning or critical criteria                    
-    ${list}             A list of all items which matched the filter                                   
-    ${ok_list}          A list of all items which matched the ok criteria                              
-    ${warn_list}        A list of all items which matched the warning criteria                         
-    ${crit_list}        A list of all items which matched the critical criteria                        
-    ${problem_list}     A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}      A special list with critical, then warning and fainally ok                     
-    ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================== ===============================================================================
+    =============== ============================================================================================================== 
+    Key             Value                                                                                                          
+    --------------- -------------------------------------------------------------------------------------------------------------- 
+    drive           Technical name of drive                                                                                        
+    drive_or_id     Drive letter if present if not use id                                                                          
+    drive_or_name   Drive letter if present if not use name                                                                        
+    erasable        1 (true) if drive is erasable                                                                                  
+    flags           String representation of flags                                                                                 
+    free            Shorthand for total_free (Number of free bytes)                                                                
+    free_pct        Shorthand for total_free_pct (% free space)                                                                    
+    hotplug         1 (true) if drive is hotplugable                                                                               
+    id              Drive or id of drive                                                                                           
+    mounted         Check if a drive is mounted                                                                                    
+    name            Descriptive name of drive                                                                                      
+    readable        1 (true) if drive is readable                                                                                  
+    removable       1 (true) if drive is removable                                                                                 
+    size            Total size of drive                                                                                            
+    total_free      Number of free bytes                                                                                           
+    total_free_pct  % free space                                                                                                   
+    total_used      Number of used bytes                                                                                           
+    total_used_pct  % used space                                                                                                   
+    type            Type of drive                                                                                                  
+    used            Number of used bytes                                                                                           
+    used_pct        Shorthand for total_used_pct (% used space)                                                                    
+    user_free       Free space available to user (which runs NSClient++)                                                           
+    user_free_pct   % free space available to user                                                                                 
+    user_used       Number of used bytes (related to user)                                                                         
+    user_used_pct   % used space available to user                                                                                 
+    writable        1 (true) if drive is writable                                                                                  
+    count           Number of items matching the filter. Common option for all checks.                                             
+    total            Total number of items. Common option for all checks.                                                          
+    ok_count         Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count       Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count       Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count    Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list             A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list          A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list        A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list        A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list     A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list      A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status           The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    =============== ==============================================================================================================
 
 
 
@@ -449,46 +487,54 @@ Arguments
     :synopsis: Detail level syntax.
 
     | Detail level syntax.
-    | This is the syntax of each item in the list of top-syntax (see above).
-    | Possible values are:
+    | Used to format each resulting item in the message.
+    | %(list) will be replaced with all the items formated by this syntax string in the top-syntax.
+    | To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
+    | The avalible keywords are:
 
-    ================== =============================================================================== 
-    Key                Value                                                                           
-    ------------------ ------------------------------------------------------------------------------- 
-    %(drive)           Technical name of drive                                                         
-    %(drive_or_id)     Drive letter if present if not use id                                           
-    %(drive_or_name)   Drive letter if present if not use name                                         
-    %(free)            Shorthand for total_free (Number of free bytes)                                 
-    %(free_pct)        Shorthand for total_free_pct (% free space)                                     
-    %(id)              Drive or id of drive                                                            
-    %(mounted)         Check if a drive is mounted                                                     
-    %(name)            Descriptive name of drive                                                       
-    %(size)            Total size of drive                                                             
-    %(total_free)      Number of free bytes                                                            
-    %(total_free_pct)  % free space                                                                    
-    %(total_used)      Number of used bytes                                                            
-    %(total_used_pct)  % used space                                                                    
-    %(type)            Type of drive                                                                   
-    %(used)            Number of used bytes                                                            
-    %(used_pct)        Shorthand for total_used_pct (% used space)                                     
-    %(user_free)       Free space available to user (which runs NSClient++)                            
-    %(user_free_pct)   % free space available to user                                                  
-    %(user_used)       Number of used bytes (related to user)                                          
-    %(user_used_pct)   % used space available to user                                                  
-    ${count}           Number of items matching the filter                                             
-    ${total}            Total number of items                                                          
-    ${ok_count}         Number of items matched the ok criteria                                        
-    ${warn_count}       Number of items matched the warning criteria                                   
-    ${crit_count}       Number of items matched the critical criteria                                  
-    ${problem_count}    Number of items matched either warning or critical criteria                    
-    ${list}             A list of all items which matched the filter                                   
-    ${ok_list}          A list of all items which matched the ok criteria                              
-    ${warn_list}        A list of all items which matched the warning criteria                         
-    ${crit_list}        A list of all items which matched the critical criteria                        
-    ${problem_list}     A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}      A special list with critical, then warning and fainally ok                     
-    ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================== ===============================================================================
+    =============== ============================================================================================================== 
+    Key             Value                                                                                                          
+    --------------- -------------------------------------------------------------------------------------------------------------- 
+    drive           Technical name of drive                                                                                        
+    drive_or_id     Drive letter if present if not use id                                                                          
+    drive_or_name   Drive letter if present if not use name                                                                        
+    erasable        1 (true) if drive is erasable                                                                                  
+    flags           String representation of flags                                                                                 
+    free            Shorthand for total_free (Number of free bytes)                                                                
+    free_pct        Shorthand for total_free_pct (% free space)                                                                    
+    hotplug         1 (true) if drive is hotplugable                                                                               
+    id              Drive or id of drive                                                                                           
+    mounted         Check if a drive is mounted                                                                                    
+    name            Descriptive name of drive                                                                                      
+    readable        1 (true) if drive is readable                                                                                  
+    removable       1 (true) if drive is removable                                                                                 
+    size            Total size of drive                                                                                            
+    total_free      Number of free bytes                                                                                           
+    total_free_pct  % free space                                                                                                   
+    total_used      Number of used bytes                                                                                           
+    total_used_pct  % used space                                                                                                   
+    type            Type of drive                                                                                                  
+    used            Number of used bytes                                                                                           
+    used_pct        Shorthand for total_used_pct (% used space)                                                                    
+    user_free       Free space available to user (which runs NSClient++)                                                           
+    user_free_pct   % free space available to user                                                                                 
+    user_used       Number of used bytes (related to user)                                                                         
+    user_used_pct   % used space available to user                                                                                 
+    writable        1 (true) if drive is writable                                                                                  
+    count           Number of items matching the filter. Common option for all checks.                                             
+    total            Total number of items. Common option for all checks.                                                          
+    ok_count         Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count       Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count       Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count    Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list             A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list          A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list        A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list        A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list     A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list      A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status           The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    =============== ==============================================================================================================
 
 
 
@@ -501,43 +547,49 @@ Arguments
     | This is the syntax for the base names of the performance data.
     | Possible values are:
 
-    ================== =============================================================================== 
-    Key                Value                                                                           
-    ------------------ ------------------------------------------------------------------------------- 
-    %(drive)           Technical name of drive                                                         
-    %(drive_or_id)     Drive letter if present if not use id                                           
-    %(drive_or_name)   Drive letter if present if not use name                                         
-    %(free)            Shorthand for total_free (Number of free bytes)                                 
-    %(free_pct)        Shorthand for total_free_pct (% free space)                                     
-    %(id)              Drive or id of drive                                                            
-    %(mounted)         Check if a drive is mounted                                                     
-    %(name)            Descriptive name of drive                                                       
-    %(size)            Total size of drive                                                             
-    %(total_free)      Number of free bytes                                                            
-    %(total_free_pct)  % free space                                                                    
-    %(total_used)      Number of used bytes                                                            
-    %(total_used_pct)  % used space                                                                    
-    %(type)            Type of drive                                                                   
-    %(used)            Number of used bytes                                                            
-    %(used_pct)        Shorthand for total_used_pct (% used space)                                     
-    %(user_free)       Free space available to user (which runs NSClient++)                            
-    %(user_free_pct)   % free space available to user                                                  
-    %(user_used)       Number of used bytes (related to user)                                          
-    %(user_used_pct)   % used space available to user                                                  
-    ${count}           Number of items matching the filter                                             
-    ${total}            Total number of items                                                          
-    ${ok_count}         Number of items matched the ok criteria                                        
-    ${warn_count}       Number of items matched the warning criteria                                   
-    ${crit_count}       Number of items matched the critical criteria                                  
-    ${problem_count}    Number of items matched either warning or critical criteria                    
-    ${list}             A list of all items which matched the filter                                   
-    ${ok_list}          A list of all items which matched the ok criteria                              
-    ${warn_list}        A list of all items which matched the warning criteria                         
-    ${crit_list}        A list of all items which matched the critical criteria                        
-    ${problem_list}     A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}      A special list with critical, then warning and fainally ok                     
-    ${status}           The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================== ===============================================================================
+    =============== ============================================================================================================== 
+    Key             Value                                                                                                          
+    --------------- -------------------------------------------------------------------------------------------------------------- 
+    drive           Technical name of drive                                                                                        
+    drive_or_id     Drive letter if present if not use id                                                                          
+    drive_or_name   Drive letter if present if not use name                                                                        
+    erasable        1 (true) if drive is erasable                                                                                  
+    flags           String representation of flags                                                                                 
+    free            Shorthand for total_free (Number of free bytes)                                                                
+    free_pct        Shorthand for total_free_pct (% free space)                                                                    
+    hotplug         1 (true) if drive is hotplugable                                                                               
+    id              Drive or id of drive                                                                                           
+    mounted         Check if a drive is mounted                                                                                    
+    name            Descriptive name of drive                                                                                      
+    readable        1 (true) if drive is readable                                                                                  
+    removable       1 (true) if drive is removable                                                                                 
+    size            Total size of drive                                                                                            
+    total_free      Number of free bytes                                                                                           
+    total_free_pct  % free space                                                                                                   
+    total_used      Number of used bytes                                                                                           
+    total_used_pct  % used space                                                                                                   
+    type            Type of drive                                                                                                  
+    used            Number of used bytes                                                                                           
+    used_pct        Shorthand for total_used_pct (% used space)                                                                    
+    user_free       Free space available to user (which runs NSClient++)                                                           
+    user_free_pct   % free space available to user                                                                                 
+    user_used       Number of used bytes (related to user)                                                                         
+    user_used_pct   % used space available to user                                                                                 
+    writable        1 (true) if drive is writable                                                                                  
+    count           Number of items matching the filter. Common option for all checks.                                             
+    total            Total number of items. Common option for all checks.                                                          
+    ok_count         Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count       Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count       Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count    Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list             A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list          A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list        A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list        A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list     A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list      A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status           The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    =============== ==============================================================================================================
 
 
 
@@ -550,15 +602,15 @@ Arguments
     | Multiple options can be used to check more then one drive or wildcards can be used to indicate multiple drives to check. Examples: drive=c, drive=d:, drive=*, drive=all-volumes, drive=all-drives
 
 .. option:: ignore-unreadable
-    :synopsis: Ignore drives which are not reachable by the current user.
+    :synopsis: DEPRECATED (manually set filter instead) Ignore drives which are not reachable by the current user.
 
-    | Ignore drives which are not reachable by the current user.
+    | DEPRECATED (manually set filter instead) Ignore drives which are not reachable by the current user.
     | For instance Microsoft Office creates a drive which cannot be read by normal users.
 
 .. option:: mounted
-    :synopsis: Show only mounted rives i.e. drives which have a mount point.
+    :synopsis: DEPRECATED (this is now default) Show only mounted rives i.e. drives which have a mount point.
 
-    | Show only mounted rives i.e. drives which have a mount point.
+    | DEPRECATED (this is now default) Show only mounted rives i.e. drives which have a mount point.
 
 .. option:: magic
     :synopsis: Magic number for use with scaling drive sizes.
@@ -665,43 +717,43 @@ Arguments
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
     | Available options:
 
-    ============== =============================================================================== 
-    Key            Value                                                                           
-    -------------- ------------------------------------------------------------------------------- 
-    access         Last access time                                                                
-    access_l       Last access time (local time)                                                   
-    access_u       Last access time (UTC)                                                          
-    age            Seconds since file was last written                                             
-    creation       When file was created                                                           
-    creation_l     When file was created (local time)                                              
-    creation_u     When file was created (UTC)                                                     
-    file           The name of the file                                                            
-    filename       The name of the file                                                            
-    line_count     Number of lines in the file (text files)                                        
-    name           The name of the file                                                            
-    path           Path of file                                                                    
-    size           File size                                                                       
-    total          True if this is the total object                                                
-    type           Type of item (file or dir)                                                      
-    version        Windows exe/dll file version                                                    
-    write          Alias for written                                                               
-    written        When file was last written to                                                   
-    written_l      When file was last written  to (local time)                                     
-    written_u      When file was last written  to (UTC)                                            
-    count          Number of items matching the filter                                             
-    total           Total number of items                                                          
-    ok_count        Number of items matched the ok criteria                                        
-    warn_count      Number of items matched the warning criteria                                   
-    crit_count      Number of items matched the critical criteria                                  
-    problem_count   Number of items matched either warning or critical criteria                    
-    list            A list of all items which matched the filter                                   
-    ok_list         A list of all items which matched the ok criteria                              
-    warn_list       A list of all items which matched the warning criteria                         
-    crit_list       A list of all items which matched the critical criteria                        
-    problem_list    A list of all items which matched either the critical or the warning criteria  
-    detail_list     A special list with critical, then warning and fainally ok                     
-    status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ============== ===============================================================================
+    ============== ============================================================================================================== 
+    Key            Value                                                                                                          
+    -------------- -------------------------------------------------------------------------------------------------------------- 
+    access         Last access time                                                                                               
+    access_l       Last access time (local time)                                                                                  
+    access_u       Last access time (UTC)                                                                                         
+    age            Seconds since file was last written                                                                            
+    creation       When file was created                                                                                          
+    creation_l     When file was created (local time)                                                                             
+    creation_u     When file was created (UTC)                                                                                    
+    file           The name of the file                                                                                           
+    filename       The name of the file                                                                                           
+    line_count     Number of lines in the file (text files)                                                                       
+    name           The name of the file                                                                                           
+    path           Path of file                                                                                                   
+    size           File size                                                                                                      
+    total          True if this is the total object                                                                               
+    type           Type of item (file or dir)                                                                                     
+    version        Windows exe/dll file version                                                                                   
+    write          Alias for written                                                                                              
+    written        When file was last written to                                                                                  
+    written_l      When file was last written  to (local time)                                                                    
+    written_u      When file was last written  to (UTC)                                                                           
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    ============== ==============================================================================================================
 
 
 
@@ -714,43 +766,43 @@ Arguments
     | If anything matches this filter the return status will be escalated to warning.
     | Available options:
 
-    ============== =============================================================================== 
-    Key            Value                                                                           
-    -------------- ------------------------------------------------------------------------------- 
-    access         Last access time                                                                
-    access_l       Last access time (local time)                                                   
-    access_u       Last access time (UTC)                                                          
-    age            Seconds since file was last written                                             
-    creation       When file was created                                                           
-    creation_l     When file was created (local time)                                              
-    creation_u     When file was created (UTC)                                                     
-    file           The name of the file                                                            
-    filename       The name of the file                                                            
-    line_count     Number of lines in the file (text files)                                        
-    name           The name of the file                                                            
-    path           Path of file                                                                    
-    size           File size                                                                       
-    total          True if this is the total object                                                
-    type           Type of item (file or dir)                                                      
-    version        Windows exe/dll file version                                                    
-    write          Alias for written                                                               
-    written        When file was last written to                                                   
-    written_l      When file was last written  to (local time)                                     
-    written_u      When file was last written  to (UTC)                                            
-    count          Number of items matching the filter                                             
-    total           Total number of items                                                          
-    ok_count        Number of items matched the ok criteria                                        
-    warn_count      Number of items matched the warning criteria                                   
-    crit_count      Number of items matched the critical criteria                                  
-    problem_count   Number of items matched either warning or critical criteria                    
-    list            A list of all items which matched the filter                                   
-    ok_list         A list of all items which matched the ok criteria                              
-    warn_list       A list of all items which matched the warning criteria                         
-    crit_list       A list of all items which matched the critical criteria                        
-    problem_list    A list of all items which matched either the critical or the warning criteria  
-    detail_list     A special list with critical, then warning and fainally ok                     
-    status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ============== ===============================================================================
+    ============== ============================================================================================================== 
+    Key            Value                                                                                                          
+    -------------- -------------------------------------------------------------------------------------------------------------- 
+    access         Last access time                                                                                               
+    access_l       Last access time (local time)                                                                                  
+    access_u       Last access time (UTC)                                                                                         
+    age            Seconds since file was last written                                                                            
+    creation       When file was created                                                                                          
+    creation_l     When file was created (local time)                                                                             
+    creation_u     When file was created (UTC)                                                                                    
+    file           The name of the file                                                                                           
+    filename       The name of the file                                                                                           
+    line_count     Number of lines in the file (text files)                                                                       
+    name           The name of the file                                                                                           
+    path           Path of file                                                                                                   
+    size           File size                                                                                                      
+    total          True if this is the total object                                                                               
+    type           Type of item (file or dir)                                                                                     
+    version        Windows exe/dll file version                                                                                   
+    write          Alias for written                                                                                              
+    written        When file was last written to                                                                                  
+    written_l      When file was last written  to (local time)                                                                    
+    written_u      When file was last written  to (UTC)                                                                           
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    ============== ==============================================================================================================
 
 
 
@@ -768,43 +820,43 @@ Arguments
     | If anything matches this filter the return status will be escalated to critical.
     | Available options:
 
-    ============== =============================================================================== 
-    Key            Value                                                                           
-    -------------- ------------------------------------------------------------------------------- 
-    access         Last access time                                                                
-    access_l       Last access time (local time)                                                   
-    access_u       Last access time (UTC)                                                          
-    age            Seconds since file was last written                                             
-    creation       When file was created                                                           
-    creation_l     When file was created (local time)                                              
-    creation_u     When file was created (UTC)                                                     
-    file           The name of the file                                                            
-    filename       The name of the file                                                            
-    line_count     Number of lines in the file (text files)                                        
-    name           The name of the file                                                            
-    path           Path of file                                                                    
-    size           File size                                                                       
-    total          True if this is the total object                                                
-    type           Type of item (file or dir)                                                      
-    version        Windows exe/dll file version                                                    
-    write          Alias for written                                                               
-    written        When file was last written to                                                   
-    written_l      When file was last written  to (local time)                                     
-    written_u      When file was last written  to (UTC)                                            
-    count          Number of items matching the filter                                             
-    total           Total number of items                                                          
-    ok_count        Number of items matched the ok criteria                                        
-    warn_count      Number of items matched the warning criteria                                   
-    crit_count      Number of items matched the critical criteria                                  
-    problem_count   Number of items matched either warning or critical criteria                    
-    list            A list of all items which matched the filter                                   
-    ok_list         A list of all items which matched the ok criteria                              
-    warn_list       A list of all items which matched the warning criteria                         
-    crit_list       A list of all items which matched the critical criteria                        
-    problem_list    A list of all items which matched either the critical or the warning criteria  
-    detail_list     A special list with critical, then warning and fainally ok                     
-    status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ============== ===============================================================================
+    ============== ============================================================================================================== 
+    Key            Value                                                                                                          
+    -------------- -------------------------------------------------------------------------------------------------------------- 
+    access         Last access time                                                                                               
+    access_l       Last access time (local time)                                                                                  
+    access_u       Last access time (UTC)                                                                                         
+    age            Seconds since file was last written                                                                            
+    creation       When file was created                                                                                          
+    creation_l     When file was created (local time)                                                                             
+    creation_u     When file was created (UTC)                                                                                    
+    file           The name of the file                                                                                           
+    filename       The name of the file                                                                                           
+    line_count     Number of lines in the file (text files)                                                                       
+    name           The name of the file                                                                                           
+    path           Path of file                                                                                                   
+    size           File size                                                                                                      
+    total          True if this is the total object                                                                               
+    type           Type of item (file or dir)                                                                                     
+    version        Windows exe/dll file version                                                                                   
+    write          Alias for written                                                                                              
+    written        When file was last written to                                                                                  
+    written_l      When file was last written  to (local time)                                                                    
+    written_u      When file was last written  to (UTC)                                                                           
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    ============== ==============================================================================================================
 
 
 
@@ -822,43 +874,43 @@ Arguments
     | If anything matches this any previous state for this item will be reset to ok.
     | Available options:
 
-    ============== =============================================================================== 
-    Key            Value                                                                           
-    -------------- ------------------------------------------------------------------------------- 
-    access         Last access time                                                                
-    access_l       Last access time (local time)                                                   
-    access_u       Last access time (UTC)                                                          
-    age            Seconds since file was last written                                             
-    creation       When file was created                                                           
-    creation_l     When file was created (local time)                                              
-    creation_u     When file was created (UTC)                                                     
-    file           The name of the file                                                            
-    filename       The name of the file                                                            
-    line_count     Number of lines in the file (text files)                                        
-    name           The name of the file                                                            
-    path           Path of file                                                                    
-    size           File size                                                                       
-    total          True if this is the total object                                                
-    type           Type of item (file or dir)                                                      
-    version        Windows exe/dll file version                                                    
-    write          Alias for written                                                               
-    written        When file was last written to                                                   
-    written_l      When file was last written  to (local time)                                     
-    written_u      When file was last written  to (UTC)                                            
-    count          Number of items matching the filter                                             
-    total           Total number of items                                                          
-    ok_count        Number of items matched the ok criteria                                        
-    warn_count      Number of items matched the warning criteria                                   
-    crit_count      Number of items matched the critical criteria                                  
-    problem_count   Number of items matched either warning or critical criteria                    
-    list            A list of all items which matched the filter                                   
-    ok_list         A list of all items which matched the ok criteria                              
-    warn_list       A list of all items which matched the warning criteria                         
-    crit_list       A list of all items which matched the critical criteria                        
-    problem_list    A list of all items which matched either the critical or the warning criteria  
-    detail_list     A special list with critical, then warning and fainally ok                     
-    status          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ============== ===============================================================================
+    ============== ============================================================================================================== 
+    Key            Value                                                                                                          
+    -------------- -------------------------------------------------------------------------------------------------------------- 
+    access         Last access time                                                                                               
+    access_l       Last access time (local time)                                                                                  
+    access_u       Last access time (UTC)                                                                                         
+    age            Seconds since file was last written                                                                            
+    creation       When file was created                                                                                          
+    creation_l     When file was created (local time)                                                                             
+    creation_u     When file was created (UTC)                                                                                    
+    file           The name of the file                                                                                           
+    filename       The name of the file                                                                                           
+    line_count     Number of lines in the file (text files)                                                                       
+    name           The name of the file                                                                                           
+    path           Path of file                                                                                                   
+    size           File size                                                                                                      
+    total          True if this is the total object                                                                               
+    type           Type of item (file or dir)                                                                                     
+    version        Windows exe/dll file version                                                                                   
+    write          Alias for written                                                                                              
+    written        When file was last written to                                                                                  
+    written_l      When file was last written  to (local time)                                                                    
+    written_u      When file was last written  to (UTC)                                                                           
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    ============== ==============================================================================================================
 
 
 
@@ -885,45 +937,47 @@ Arguments
     :synopsis: Top level syntax.
 
     | Top level syntax.
-    | Used to format the message to return can include strings as well as special keywords such as:
+    | Used to format the message to return can include text as well as special keywords wich will include information from the checks.
+    | To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
+    | The avalible keywords are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(access)         Last access time                                                                
-    %(access_l)       Last access time (local time)                                                   
-    %(access_u)       Last access time (UTC)                                                          
-    %(age)            Seconds since file was last written                                             
-    %(creation)       When file was created                                                           
-    %(creation_l)     When file was created (local time)                                              
-    %(creation_u)     When file was created (UTC)                                                     
-    %(file)           The name of the file                                                            
-    %(filename)       The name of the file                                                            
-    %(line_count)     Number of lines in the file (text files)                                        
-    %(name)           The name of the file                                                            
-    %(path)           Path of file                                                                    
-    %(size)           File size                                                                       
-    %(total)          True if this is the total object                                                
-    %(type)           Type of item (file or dir)                                                      
-    %(version)        Windows exe/dll file version                                                    
-    %(write)          Alias for written                                                               
-    %(written)        When file was last written to                                                   
-    %(written_l)      When file was last written  to (local time)                                     
-    %(written_u)      When file was last written  to (UTC)                                            
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ============== ============================================================================================================== 
+    Key            Value                                                                                                          
+    -------------- -------------------------------------------------------------------------------------------------------------- 
+    access         Last access time                                                                                               
+    access_l       Last access time (local time)                                                                                  
+    access_u       Last access time (UTC)                                                                                         
+    age            Seconds since file was last written                                                                            
+    creation       When file was created                                                                                          
+    creation_l     When file was created (local time)                                                                             
+    creation_u     When file was created (UTC)                                                                                    
+    file           The name of the file                                                                                           
+    filename       The name of the file                                                                                           
+    line_count     Number of lines in the file (text files)                                                                       
+    name           The name of the file                                                                                           
+    path           Path of file                                                                                                   
+    size           File size                                                                                                      
+    total          True if this is the total object                                                                               
+    type           Type of item (file or dir)                                                                                     
+    version        Windows exe/dll file version                                                                                   
+    write          Alias for written                                                                                              
+    written        When file was last written to                                                                                  
+    written_l      When file was last written  to (local time)                                                                    
+    written_u      When file was last written  to (UTC)                                                                           
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    ============== ==============================================================================================================
 
 
 
@@ -943,43 +997,43 @@ Arguments
     | DEPRECATED! This is the syntax for when nothing matches the filter.
     | Possible values are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(access)         Last access time                                                                
-    %(access_l)       Last access time (local time)                                                   
-    %(access_u)       Last access time (UTC)                                                          
-    %(age)            Seconds since file was last written                                             
-    %(creation)       When file was created                                                           
-    %(creation_l)     When file was created (local time)                                              
-    %(creation_u)     When file was created (UTC)                                                     
-    %(file)           The name of the file                                                            
-    %(filename)       The name of the file                                                            
-    %(line_count)     Number of lines in the file (text files)                                        
-    %(name)           The name of the file                                                            
-    %(path)           Path of file                                                                    
-    %(size)           File size                                                                       
-    %(total)          True if this is the total object                                                
-    %(type)           Type of item (file or dir)                                                      
-    %(version)        Windows exe/dll file version                                                    
-    %(write)          Alias for written                                                               
-    %(written)        When file was last written to                                                   
-    %(written_l)      When file was last written  to (local time)                                     
-    %(written_u)      When file was last written  to (UTC)                                            
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ============== ============================================================================================================== 
+    Key            Value                                                                                                          
+    -------------- -------------------------------------------------------------------------------------------------------------- 
+    access         Last access time                                                                                               
+    access_l       Last access time (local time)                                                                                  
+    access_u       Last access time (UTC)                                                                                         
+    age            Seconds since file was last written                                                                            
+    creation       When file was created                                                                                          
+    creation_l     When file was created (local time)                                                                             
+    creation_u     When file was created (UTC)                                                                                    
+    file           The name of the file                                                                                           
+    filename       The name of the file                                                                                           
+    line_count     Number of lines in the file (text files)                                                                       
+    name           The name of the file                                                                                           
+    path           Path of file                                                                                                   
+    size           File size                                                                                                      
+    total          True if this is the total object                                                                               
+    type           Type of item (file or dir)                                                                                     
+    version        Windows exe/dll file version                                                                                   
+    write          Alias for written                                                                                              
+    written        When file was last written to                                                                                  
+    written_l      When file was last written  to (local time)                                                                    
+    written_u      When file was last written  to (UTC)                                                                           
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    ============== ==============================================================================================================
 
 
 
@@ -989,46 +1043,48 @@ Arguments
     :synopsis: Detail level syntax.
 
     | Detail level syntax.
-    | This is the syntax of each item in the list of top-syntax (see above).
-    | Possible values are:
+    | Used to format each resulting item in the message.
+    | %(list) will be replaced with all the items formated by this syntax string in the top-syntax.
+    | To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
+    | The avalible keywords are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(access)         Last access time                                                                
-    %(access_l)       Last access time (local time)                                                   
-    %(access_u)       Last access time (UTC)                                                          
-    %(age)            Seconds since file was last written                                             
-    %(creation)       When file was created                                                           
-    %(creation_l)     When file was created (local time)                                              
-    %(creation_u)     When file was created (UTC)                                                     
-    %(file)           The name of the file                                                            
-    %(filename)       The name of the file                                                            
-    %(line_count)     Number of lines in the file (text files)                                        
-    %(name)           The name of the file                                                            
-    %(path)           Path of file                                                                    
-    %(size)           File size                                                                       
-    %(total)          True if this is the total object                                                
-    %(type)           Type of item (file or dir)                                                      
-    %(version)        Windows exe/dll file version                                                    
-    %(write)          Alias for written                                                               
-    %(written)        When file was last written to                                                   
-    %(written_l)      When file was last written  to (local time)                                     
-    %(written_u)      When file was last written  to (UTC)                                            
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ============== ============================================================================================================== 
+    Key            Value                                                                                                          
+    -------------- -------------------------------------------------------------------------------------------------------------- 
+    access         Last access time                                                                                               
+    access_l       Last access time (local time)                                                                                  
+    access_u       Last access time (UTC)                                                                                         
+    age            Seconds since file was last written                                                                            
+    creation       When file was created                                                                                          
+    creation_l     When file was created (local time)                                                                             
+    creation_u     When file was created (UTC)                                                                                    
+    file           The name of the file                                                                                           
+    filename       The name of the file                                                                                           
+    line_count     Number of lines in the file (text files)                                                                       
+    name           The name of the file                                                                                           
+    path           Path of file                                                                                                   
+    size           File size                                                                                                      
+    total          True if this is the total object                                                                               
+    type           Type of item (file or dir)                                                                                     
+    version        Windows exe/dll file version                                                                                   
+    write          Alias for written                                                                                              
+    written        When file was last written to                                                                                  
+    written_l      When file was last written  to (local time)                                                                    
+    written_u      When file was last written  to (UTC)                                                                           
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    ============== ==============================================================================================================
 
 
 
@@ -1041,43 +1097,43 @@ Arguments
     | This is the syntax for the base names of the performance data.
     | Possible values are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(access)         Last access time                                                                
-    %(access_l)       Last access time (local time)                                                   
-    %(access_u)       Last access time (UTC)                                                          
-    %(age)            Seconds since file was last written                                             
-    %(creation)       When file was created                                                           
-    %(creation_l)     When file was created (local time)                                              
-    %(creation_u)     When file was created (UTC)                                                     
-    %(file)           The name of the file                                                            
-    %(filename)       The name of the file                                                            
-    %(line_count)     Number of lines in the file (text files)                                        
-    %(name)           The name of the file                                                            
-    %(path)           Path of file                                                                    
-    %(size)           File size                                                                       
-    %(total)          True if this is the total object                                                
-    %(type)           Type of item (file or dir)                                                      
-    %(version)        Windows exe/dll file version                                                    
-    %(write)          Alias for written                                                               
-    %(written)        When file was last written to                                                   
-    %(written_l)      When file was last written  to (local time)                                     
-    %(written_u)      When file was last written  to (UTC)                                            
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ============== ============================================================================================================== 
+    Key            Value                                                                                                          
+    -------------- -------------------------------------------------------------------------------------------------------------- 
+    access         Last access time                                                                                               
+    access_l       Last access time (local time)                                                                                  
+    access_u       Last access time (UTC)                                                                                         
+    age            Seconds since file was last written                                                                            
+    creation       When file was created                                                                                          
+    creation_l     When file was created (local time)                                                                             
+    creation_u     When file was created (UTC)                                                                                    
+    file           The name of the file                                                                                           
+    filename       The name of the file                                                                                           
+    line_count     Number of lines in the file (text files)                                                                       
+    name           The name of the file                                                                                           
+    path           Path of file                                                                                                   
+    size           File size                                                                                                      
+    total          True if this is the total object                                                                               
+    type           Type of item (file or dir)                                                                                     
+    version        Windows exe/dll file version                                                                                   
+    write          Alias for written                                                                                              
+    written        When file was last written to                                                                                  
+    written_l      When file was last written  to (local time)                                                                    
+    written_u      When file was last written  to (UTC)                                                                           
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    ============== ==============================================================================================================
 
 
 
