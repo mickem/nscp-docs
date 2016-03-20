@@ -254,12 +254,42 @@ one (as before) for the NRPEServer and once again for the CheckExternalScripts m
 Languages
 =========
 
-**TODO**
+As scripting on Windows is not as easy as it is on Linux where the script it self can dictate how it shuld be run we have a section detaling some common scripting languages and how to run them.
 
 VBS --- Visual Basic Script
 ---------------------------
 
-**TODO**
+The was the most common scripting language for advanced things but powershell has tpretty much taken over.
+Thus if you are starting anew and/or migrating it might be a good idea to consider powershell.
+
+Anyways, VB Script (VBS) is a common language and there are numerous VBS script out there.
+VBScript is somewhat loosely related to Visual Basic (hence the name) but in reality they have little in common.
+
+Writing VB scripts guide can be found on the web so we will not focus on the language here in detail.
+THe normal stuff applies i.e. the "console output" will be returned as a message, anything after a | char is treated as performance data.
+And finally the exit code dictates the status.
+
+A quick sample script::
+
+    Wscript.Echo "Everything is not fine!"
+    Wscript.Quit(2)
+
+Adding scripts is a bit more involved. The core componentis cscript which is the script host which will execute your script.
+It has a few option which can be usefull so a simple command usualy ends up looking like this::
+
+   check_updates=cscript.exe //T:30 //NoLogo "scripts\\check_updates.vbs"
+
+The timeout for the script can be set cia the //T:<time> option and //NoLogo is used to supress the startup banner.
+
+You can alsu use script wrapper to run vbs scripts like so::
+
+    [/settings/external scripts/wrappings]
+    vbs=cscript.exe //T:30 //NoLogo %SCRIPT% %ARGS%
+    
+    [/settings/external scripts/wrapped scripts]
+    check_updates=scripts\check_updates.vbs
+
+This makes for less typing if you plan on adding many vbs scripts.
 
 PY --- Python
 -------------
