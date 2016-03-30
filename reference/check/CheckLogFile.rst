@@ -336,37 +336,41 @@ Arguments
     :synopsis: Top level syntax.
 
     | Top level syntax.
-    | Used to format the message to return can include strings as well as special keywords such as:
+    | Used to format the message to return can include text as well as special keywords wich will include information from the checks.
+    | To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
+    | The avalible keywords are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(column1)        The value in the first column                                                   
-    %(column2)        The value in the second column                                                  
-    %(column3)        The value in the third column                                                   
-    %(column4)        The value in the 4:th column                                                    
-    %(column5)        The value in the 5:th column                                                    
-    %(column6)        The value in the 6:th column                                                    
-    %(column7)        The value in the 7:th column                                                    
-    %(column8)        The value in the 8:th column                                                    
-    %(column9)        The value in the 9:th column                                                    
-    %(file)           The name of the file                                                            
-    %(filename)       The name of the file                                                            
-    %(line)           Match the content of an entire line                                             
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ================================ 
+    Key                              
+    -------------------------------- 
+    column1                          
+    column2                          
+    column3                          
+    column4                          
+    column5                          
+    column6                          
+    column7                          
+    column8                          
+    column9                          
+    file                             
+    filename                         
+    line                             
+    column()                         
+    Syntax: column(<coulmn number>)  
+    count                            
+    total                            
+    ok_count                         
+    warn_count                       
+    crit_count                       
+    problem_count                    
+    list                             
+    ok_list                          
+    warn_list                        
+    crit_list                        
+    problem_list                     
+    detail_list                      
+    status                           
+    ================================
 
 
 
@@ -386,35 +390,37 @@ Arguments
     | DEPRECATED! This is the syntax for when nothing matches the filter.
     | Possible values are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(column1)        The value in the first column                                                   
-    %(column2)        The value in the second column                                                  
-    %(column3)        The value in the third column                                                   
-    %(column4)        The value in the 4:th column                                                    
-    %(column5)        The value in the 5:th column                                                    
-    %(column6)        The value in the 6:th column                                                    
-    %(column7)        The value in the 7:th column                                                    
-    %(column8)        The value in the 8:th column                                                    
-    %(column9)        The value in the 9:th column                                                    
-    %(file)           The name of the file                                                            
-    %(filename)       The name of the file                                                            
-    %(line)           Match the content of an entire line                                             
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ================================ 
+    Key                              
+    -------------------------------- 
+    column1                          
+    column2                          
+    column3                          
+    column4                          
+    column5                          
+    column6                          
+    column7                          
+    column8                          
+    column9                          
+    file                             
+    filename                         
+    line                             
+    column()                         
+    Syntax: column(<coulmn number>)  
+    count                            
+    total                            
+    ok_count                         
+    warn_count                       
+    crit_count                       
+    problem_count                    
+    list                             
+    ok_list                          
+    warn_list                        
+    crit_list                        
+    problem_list                     
+    detail_list                      
+    status                           
+    ================================
 
 
 
@@ -424,38 +430,42 @@ Arguments
     :synopsis: Detail level syntax.
 
     | Detail level syntax.
-    | This is the syntax of each item in the list of top-syntax (see above).
-    | Possible values are:
+    | Used to format each resulting item in the message.
+    | %(list) will be replaced with all the items formated by this syntax string in the top-syntax.
+    | To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
+    | The avalible keywords are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(column1)        The value in the first column                                                   
-    %(column2)        The value in the second column                                                  
-    %(column3)        The value in the third column                                                   
-    %(column4)        The value in the 4:th column                                                    
-    %(column5)        The value in the 5:th column                                                    
-    %(column6)        The value in the 6:th column                                                    
-    %(column7)        The value in the 7:th column                                                    
-    %(column8)        The value in the 8:th column                                                    
-    %(column9)        The value in the 9:th column                                                    
-    %(file)           The name of the file                                                            
-    %(filename)       The name of the file                                                            
-    %(line)           Match the content of an entire line                                             
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ================================ 
+    Key                              
+    -------------------------------- 
+    column1                          
+    column2                          
+    column3                          
+    column4                          
+    column5                          
+    column6                          
+    column7                          
+    column8                          
+    column9                          
+    file                             
+    filename                         
+    line                             
+    column()                         
+    Syntax: column(<coulmn number>)  
+    count                            
+    total                            
+    ok_count                         
+    warn_count                       
+    crit_count                       
+    problem_count                    
+    list                             
+    ok_list                          
+    warn_list                        
+    crit_list                        
+    problem_list                     
+    detail_list                      
+    status                           
+    ================================
 
 
 
@@ -468,35 +478,37 @@ Arguments
     | This is the syntax for the base names of the performance data.
     | Possible values are:
 
-    ================= =============================================================================== 
-    Key               Value                                                                           
-    ----------------- ------------------------------------------------------------------------------- 
-    %(column1)        The value in the first column                                                   
-    %(column2)        The value in the second column                                                  
-    %(column3)        The value in the third column                                                   
-    %(column4)        The value in the 4:th column                                                    
-    %(column5)        The value in the 5:th column                                                    
-    %(column6)        The value in the 6:th column                                                    
-    %(column7)        The value in the 7:th column                                                    
-    %(column8)        The value in the 8:th column                                                    
-    %(column9)        The value in the 9:th column                                                    
-    %(file)           The name of the file                                                            
-    %(filename)       The name of the file                                                            
-    %(line)           Match the content of an entire line                                             
-    ${count}          Number of items matching the filter                                             
-    ${total}           Total number of items                                                          
-    ${ok_count}        Number of items matched the ok criteria                                        
-    ${warn_count}      Number of items matched the warning criteria                                   
-    ${crit_count}      Number of items matched the critical criteria                                  
-    ${problem_count}   Number of items matched either warning or critical criteria                    
-    ${list}            A list of all items which matched the filter                                   
-    ${ok_list}         A list of all items which matched the ok criteria                              
-    ${warn_list}       A list of all items which matched the warning criteria                         
-    ${crit_list}       A list of all items which matched the critical criteria                        
-    ${problem_list}    A list of all items which matched either the critical or the warning criteria  
-    ${detail_list}     A special list with critical, then warning and fainally ok                     
-    ${status}          The returned status (OK/WARN/CRIT/UNKNOWN)                                     
-    ================= ===============================================================================
+    ================================ 
+    Key                              
+    -------------------------------- 
+    column1                          
+    column2                          
+    column3                          
+    column4                          
+    column5                          
+    column6                          
+    column7                          
+    column8                          
+    column9                          
+    file                             
+    filename                         
+    line                             
+    column()                         
+    Syntax: column(<coulmn number>)  
+    count                            
+    total                            
+    ok_count                         
+    warn_count                       
+    crit_count                       
+    problem_count                    
+    list                             
+    ok_list                          
+    warn_list                        
+    crit_list                        
+    problem_list                     
+    detail_list                      
+    status                           
+    ================================
 
 
 
