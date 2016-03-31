@@ -61,7 +61,7 @@ A quick reference for all available queries (check commands) in the CheckNet mod
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
-    :option:`top-syntax` | ${status}: ${problem_count}/${count} (${problem_list}) | Top level syntax.
+    :option:`top-syntax` | ${status}: ${ok_count}/${count} (${problem_list}) | Top level syntax.
     :option:`ok-syntax` | %(status): All %(count) hosts are ok | ok syntax.
     :option:`empty-syntax` | No hosts found | Empty syntax.
     :option:`detail-syntax` | ${ip} Packet loss = ${loss}%, RTA = ${time}ms | Detail level syntax.

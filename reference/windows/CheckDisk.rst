@@ -666,7 +666,7 @@ Arguments
     :option:`paths` |  | A comma separated list of paths to scan
     :option:`pattern` | *.* | The pattern of files to search for (works like a filter but is faster and can be combined with a filter).
     :option:`max-depth` |  | Maximum depth to recurse
-    :option:`total` | N/A | Include the total of all matching files
+    :option:`total` | filter | Include the total of either (filter) all files matching the filter or (all) all files regardless of the filter
 
 
 
@@ -1166,9 +1166,9 @@ Arguments
     | Maximum depth to recurse
 
 .. option:: total
-    :synopsis: Include the total of all matching files
+    :synopsis: Include the total of either (filter) all files matching the filter or (all) all files regardless of the filter
 
-    | Include the total of all matching files
+    | Include the total of either (filter) all files matching the filter or (all) all files regardless of the filter
 
 :query:`checkdrivesize`
 -----------------------
