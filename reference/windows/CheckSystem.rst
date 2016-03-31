@@ -2187,7 +2187,9 @@ Arguments
     alias          The counter alias                                                                                              
     counter        The counter name                                                                                               
     time           The time for rrd checks                                                                                        
-    value          The counter value                                                                                              
+    value          The counter value (either float or int)                                                                        
+    value_f        The counter value (force float value)                                                                          
+    value_i        The counter value (force int value)                                                                            
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -2220,7 +2222,9 @@ Arguments
     alias          The counter alias                                                                                              
     counter        The counter name                                                                                               
     time           The time for rrd checks                                                                                        
-    value          The counter value                                                                                              
+    value          The counter value (either float or int)                                                                        
+    value_f        The counter value (force float value)                                                                          
+    value_i        The counter value (force int value)                                                                            
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -2258,7 +2262,9 @@ Arguments
     alias          The counter alias                                                                                              
     counter        The counter name                                                                                               
     time           The time for rrd checks                                                                                        
-    value          The counter value                                                                                              
+    value          The counter value (either float or int)                                                                        
+    value_f        The counter value (force float value)                                                                          
+    value_i        The counter value (force int value)                                                                            
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -2296,7 +2302,9 @@ Arguments
     alias          The counter alias                                                                                              
     counter        The counter name                                                                                               
     time           The time for rrd checks                                                                                        
-    value          The counter value                                                                                              
+    value          The counter value (either float or int)                                                                        
+    value_f        The counter value (force float value)                                                                          
+    value_i        The counter value (force int value)                                                                            
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -2347,7 +2355,9 @@ Arguments
     alias          The counter alias                                                                                              
     counter        The counter name                                                                                               
     time           The time for rrd checks                                                                                        
-    value          The counter value                                                                                              
+    value          The counter value (either float or int)                                                                        
+    value_f        The counter value (force float value)                                                                          
+    value_i        The counter value (force int value)                                                                            
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -2387,7 +2397,9 @@ Arguments
     alias          The counter alias                                                                                              
     counter        The counter name                                                                                               
     time           The time for rrd checks                                                                                        
-    value          The counter value                                                                                              
+    value          The counter value (either float or int)                                                                        
+    value_f        The counter value (force float value)                                                                          
+    value_i        The counter value (force int value)                                                                            
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -2422,7 +2434,9 @@ Arguments
     alias          The counter alias                                                                                              
     counter        The counter name                                                                                               
     time           The time for rrd checks                                                                                        
-    value          The counter value                                                                                              
+    value          The counter value (either float or int)                                                                        
+    value_f        The counter value (force float value)                                                                          
+    value_i        The counter value (force int value)                                                                            
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -2455,7 +2469,9 @@ Arguments
     alias          The counter alias                                                                                              
     counter        The counter name                                                                                               
     time           The time for rrd checks                                                                                        
-    value          The counter value                                                                                              
+    value          The counter value (either float or int)                                                                        
+    value_f        The counter value (force float value)                                                                          
+    value_i        The counter value (force int value)                                                                            
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -3124,7 +3140,7 @@ Arguments
     :option:`empty-syntax` | %(status): No services found | Empty syntax.
     :option:`detail-syntax` | ${name}=${state} (${start_type}) | Detail level syntax.
     :option:`perf-syntax` | ${name} | Performance alias syntax.
-    :option:`computer` |  | THe name of the remote computer to check
+    :option:`computer` |  | The name of the remote computer to check
     :option:`service` |  | The service to check, set this to * to check all services
     :option:`exclude` |  | A list of services to ignore (mainly usefull in combination with service=*)
     :option:`type` | service | The types of services to enumerate available types are driver, file-system-driver, kernel-driver, service, service-own-process, service-share-process
@@ -3544,9 +3560,9 @@ Arguments
 
 
 .. option:: computer
-    :synopsis: THe name of the remote computer to check
+    :synopsis: The name of the remote computer to check
 
-    | THe name of the remote computer to check
+    | The name of the remote computer to check
 
 .. option:: service
     :synopsis: The service to check, set this to * to check all services

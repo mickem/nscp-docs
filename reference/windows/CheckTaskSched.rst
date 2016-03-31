@@ -133,6 +133,7 @@ Arguments
     enabled               TODO.                                                                                                          
     exit_code             Retrieves the work item's last exit code.                                                                      
     folder                The task folder                                                                                                
+    has_run               True if the task has ever executed.                                                                            
     max_run_time          Retrieves the maximum length of time the task can run.                                                         
     most_recent_run_time  Retrieves the most recent time the work item began running.                                                    
     parameters            Retrieves the command-line parameters of a task.                                                               
@@ -175,6 +176,7 @@ Arguments
     enabled               TODO.                                                                                                          
     exit_code             Retrieves the work item's last exit code.                                                                      
     folder                The task folder                                                                                                
+    has_run               True if the task has ever executed.                                                                            
     max_run_time          Retrieves the maximum length of time the task can run.                                                         
     most_recent_run_time  Retrieves the most recent time the work item began running.                                                    
     parameters            Retrieves the command-line parameters of a task.                                                               
@@ -222,6 +224,7 @@ Arguments
     enabled               TODO.                                                                                                          
     exit_code             Retrieves the work item's last exit code.                                                                      
     folder                The task folder                                                                                                
+    has_run               True if the task has ever executed.                                                                            
     max_run_time          Retrieves the maximum length of time the task can run.                                                         
     most_recent_run_time  Retrieves the most recent time the work item began running.                                                    
     parameters            Retrieves the command-line parameters of a task.                                                               
@@ -269,6 +272,7 @@ Arguments
     enabled               TODO.                                                                                                          
     exit_code             Retrieves the work item's last exit code.                                                                      
     folder                The task folder                                                                                                
+    has_run               True if the task has ever executed.                                                                            
     max_run_time          Retrieves the maximum length of time the task can run.                                                         
     most_recent_run_time  Retrieves the most recent time the work item began running.                                                    
     parameters            Retrieves the command-line parameters of a task.                                                               
@@ -329,6 +333,7 @@ Arguments
     enabled               TODO.                                                                                                          
     exit_code             Retrieves the work item's last exit code.                                                                      
     folder                The task folder                                                                                                
+    has_run               True if the task has ever executed.                                                                            
     max_run_time          Retrieves the maximum length of time the task can run.                                                         
     most_recent_run_time  Retrieves the most recent time the work item began running.                                                    
     parameters            Retrieves the command-line parameters of a task.                                                               
@@ -378,6 +383,7 @@ Arguments
     enabled               TODO.                                                                                                          
     exit_code             Retrieves the work item's last exit code.                                                                      
     folder                The task folder                                                                                                
+    has_run               True if the task has ever executed.                                                                            
     max_run_time          Retrieves the maximum length of time the task can run.                                                         
     most_recent_run_time  Retrieves the most recent time the work item began running.                                                    
     parameters            Retrieves the command-line parameters of a task.                                                               
@@ -422,6 +428,7 @@ Arguments
     enabled               TODO.                                                                                                          
     exit_code             Retrieves the work item's last exit code.                                                                      
     folder                The task folder                                                                                                
+    has_run               True if the task has ever executed.                                                                            
     max_run_time          Retrieves the maximum length of time the task can run.                                                         
     most_recent_run_time  Retrieves the most recent time the work item began running.                                                    
     parameters            Retrieves the command-line parameters of a task.                                                               
@@ -464,6 +471,7 @@ Arguments
     enabled               TODO.                                                                                                          
     exit_code             Retrieves the work item's last exit code.                                                                      
     folder                The task folder                                                                                                
+    has_run               True if the task has ever executed.                                                                            
     max_run_time          Retrieves the maximum length of time the task can run.                                                         
     most_recent_run_time  Retrieves the most recent time the work item began running.                                                    
     parameters            Retrieves the command-line parameters of a task.                                                               
