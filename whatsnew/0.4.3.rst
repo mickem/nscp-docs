@@ -95,3 +95,8 @@ JSON!
 -----
 
 All protobuf messages now map directly to corresponding protobuf messages which means you can now if you like use JSON for everything instead of protobuf if you are writing scripts.
+
+Changes in 0.4.2
+================
+
+For a list of all changes in 0.4.2 see :doc:`What's new in NSClient++ 0.4.2 <0.4.2>`

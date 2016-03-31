@@ -11,33 +11,240 @@ Introduction
 
 The main goals of the 0.5.0 is t make NSClient++ easier to use and more future proof.
 
- * New improved WebUI
+ * New and improved WebUI
  * Metrics support
- * Improved clients and beter support for graphite et.al.
- 
+ * Improved clients and better support for graphite et.al.
+ * Fixed count in filters which was not working before
+ * Added floating point number support to filters
+ * Numerous bugfixes and minor enhancements
+
 **PLEASE NOTE** NRPE has been changed (from 0.4.3), for details read below.
 
-New WebUI
----------
+New and improved WebUI
+======================
 
-While I really loved the new WebUI in 0.4.3 it is much a proof of concept. I have in 0.5.0 reworked this to be much more feature compelate as well as usable. The WebUI is now I think ready for prime time and will probably make configuring NSClient++ much much simpler.
+While I really loved the new WebUI in 0.4.3 it is much a proof of concept. I have in 0.5.0 reworked this to be much more feature complete as well as usable.
+The WebUI is now I think ready for prime time and will probably make configuring NSClient++ much much simpler.
 A side effect of the new WebUI is the REST support which NSClient++ now has meaning you can now check/configure/* NSClient++ using a REST API.
 
 Metrics
--------
+=======
 
-While metrics might seem like a dumbed down check command (without the checks) it is actually the foundation of ther next generation of NSClient++.
-It will apart from just beein nice and allow much easier handling of Graphite et.al. allow checking compund metrics.
+While metrics might seem like a dumbed down check command (without the checks) it is actually the foundation of there next generation of NSClient++.
+It will apart from just being nice and allow much easier handling of Graphite et.al. allow checking compound metrics.
 
-NRPE enhancements (0.4.3)
--------------------------
+Improved clients
+================
 
-**If you are using NRPE you are in for a chock!**
+The client for instance check_nrpe was a bit buggy in 0.4.4 and 0.4.3. They have been rewritten from scratch and work much more smoothly now.
+They also work in many instance where before they did not for instance graphite now works.
 
-::
+Floating point support
+======================
 
-  In 0.4.3 we will no longer support the rather insecure regular NRPE! 
-  You can still enable support but you have to do so (in the installer or using the command line mode). 
-  So keep a heads up when you run the installer so you wont miss it.
+Another small but important change is allowing floating point support in filters the only real benefit of this currently is that you can specify 2.3G as well as check_pdh where you can now check floating point counters.
+But as this required a major overhaul of the filter framework it has been long in the making.
 
-The idea is that when NSClient++ ships a new check_nrpe will be provided which wont have the limitations of the old one.
+Breaking changes
+================
+
+ * check_eventlog: Eventlog rendering failures are now returned as messages instead of nsclient++ log messages
+ * check_eventlog: Change the default eventlog command to set warnings for warning in eventlog and crit for errors (instead of using count)
+ * check_drivesize: default check only checks mounted drives
+ * External Scripts: #238 Added killer so processes are killed when NSClient++ exits
+ * check_tasksched: Renamed status to task_status as it clashes with regular status (Fixed #170)
+
+Bugfixes enhancements
+=====================
+
+The full list of changes (sorted by contex) can be found here:
+
+Additions
+############
+
+ * New command: check_and_forward to run a check forward check results as passive data
+   check_and_forward command=check_cpu target=NSCA
+ * New command check_nscp_version to check the NSClient++ version
+ * New experimental command: check_network
+ * New command check_ping (CheckNet module)
+ * New concept metrics
+
+
+Check commands
+###########################
+
+filters and checks (global)
+ * Added support for both g and G in size filters
+ * Fixed #154 Added escape-html flag to all check commands and escape html option to all real time filters.
+ * Fixed #117 invalid perf syntax when specifying none
+ * Fixed #201 negative perf data in checks
+ * Fixed potential issue with time expressions which are empty
+ * #114 Fixed issue with empty-state which was ignored
+
+check_drivesize:
+ * Added ignore-unreadable which was apparently removed at some point, new behavior as it uses the drive flags to determine status
+ * Possible fix for #265 Added drive flags to filter and distinguish between drive characteristics
+   New flags for filters and syntax are: hotplug, removable, readable, writable and erasable
+ * Added support for check_drivesize exclude=c and exclude=d: to make backwards compatibility better
+ * Added support for parsing floating point numbers in size units (i.e. "warn=free > 2.5G")
+ * #123 fixed CheckAllOthers
+ * #124 Fixed problem count variable
+
+check_pdh:
+ * Fixed #272 Added float support to check_pdh
+ * Fixed indexes expansion for check_pdh
+ * Fixed reload of counters
+ * Fixed some PDH issues and improved error reporting
+
+check_eventlog:
+ * #204 Fixed message rendering for eventlog messages
+ * #204 Added support for modern API to real time eventlogs
+ * #204 Fixed int to string conversion filter issue
+ * Added task, keywords GUID support for eventlog filters
+ * Improved eventlog cli to support listing tasks and keywords
+
+check_log_files:
+ * Fixed #198 CheckLogFIle not working if files does not exist on startup
+ * Added support for space and strings in column split/line split
+ * Fixed CheckLogFIle realtime
+
+check_files:
+ * Fixed #231 added filter on folder and file:
+   check_files path=c:/source/py "filter=type = 'file'" show-all "detail-syntax=%(path)/%(file): %(type)"
+ * #139 Added support for showing file dates in local time (not just UTC)
+ * Fixed check_files empty message to say files not drives.
+
+check_tasksched:
+ * Fixed #274 Added has_run to check_tasksched
+ * Fix for #215 added new option to check_tasksched to force using the old api
+   check_tasksched force-old
+
+check_uptime:
+ * Fixed missing return data in check_uptime
+
+check_service:
+ * Added support for classifying service and filtering services based on classification
+ * #131 Added support for service=<service description> to check_service
+
+check_process:
+ * Added total to check_process
+
+check_wmi:
+ * improved error handling for wmi queries
+
+check_always_ok:
+ * Fixed missing error for check_always_ok when command failed
+
+Scripts
+########
+
+External Scripts:
+ * Fixed #223 broken %ARGS% with the $ARGS$ fix
+ * Added -noprofile to powershell script wrapper (#207)
+ * #207 Added support for %ARGS% as well as $ARGS$
+ * Fixed #207 Return error when powershell script not found
+ * Added ability to run visual processes in the UI session.
+   Two new keywords: display controls if the process is showed and session controls which process the session is run in.
+ * Fixed #196 missing version
+ * Fixed #196 uppercase aliases not working
+ * #142 Improved security when external scripts fails
+   command lines which may contain password are no longer returned
+
+PythonScript:
+ * Fixed sample python script cli
+ * Fixed exec alias in python script cli
+ * Fixed python to string (will log better when it cant convert to string)
+ * Fixed so python script will unregister its commands on reload
+ * Added target_mode flag to exec to diverge between targeted commands and generic ones.
+
+bundled scripts:
+ * Fixed sample timeout script (check_60s.bat)
+
+Protocols
+#########
+
+NRPE:
+ * Fixed #261 Invalid return from check_nrpe
+ * #258 Fixed issue with check_nrpe and ssl=false option
+ * Added support for -a to check_nrpe command (Fixed #158 )
+ * added --port to nscp nrpe install
+
+check_nt:
+ * Fixed #157 CDROM included in check_nt DISKUSAGE
+ * Fixed some potential check_nt issues
+ * Fixed #202 check_nt not working in 0.5.x
+ * Fixed a few potential crashes with check_nt
+
+graphite:
+ * Fixed (back) formatting in graphite
+ * Fixed default values in graphite
+ * Fixed graphite paths for metrics
+ * Added error when there is no data to send in graphite sender
+ * Added (optional) sending status to graphite
+ * Fixed sending graphite data so it works :)
+ * Added flag to disable sending perf data to graphite
+ * Fixed so source host names is set in NSCA and Graphite client
+
+collectd:
+ * Added brand new collectd client
+
+Core
+####
+
+Various/Core:
+ * Fixed #259 parsing extra space on command line
+ * Fixed services showing twice in service list
+ * Fixed pressing ctrl+c on command line
+ * Added restart to nscp service
+ * Fixed missing default section in settings
+ * Improved error handling for channel failures
+ * removed reading one line schedules
+ * Fixed issue with reading invalid config values
+ * Fixed inheritance and path issue with settings objects
+ * Service wont restart if it is not started when crashed (ie. running in test mode for instance)
+ * Fixed locale setting (and error logging for service related errors)
+ * Added exec from clients (i.e. web and test)
+ * Added support for unregistring commands
+ * Fixed erratic segv in clients when socket is closed twice
+ * Improved handling around connection failures
+ * Improved the crash reporter syntax:
+   reporter.exe send b1438ab2-20a3-4b2d-bc30-7c3033c084e1.dmp
+
+Metrics:
+ * Added network metrics
+ * Added metrics submission and fetching to python scripts
+ * Added test client command metrics to display all metrics
+ * Added metrics to internal scheduler
+ * Added thread count to scheduler metrics
+ * Added metrics support to clients and added metrics sending to graphite client
+ * Added metrics to scheduler
+
+WebUI:
+ * Fixed 220: WebPage not loading in IE
+ * Fixed option bug in WEBServer command line
+ * Fixed metrics in WebUI
+ * Fixed collection strategy value in web ui
+ * Added ugly but working filter list for metrics
+ * Added filtering to query and module
+ * Fixed metrics (with new py)
+ * Fixed logout/login issue in webui
+ * Fixed disk graphs in WebUI
+ * Fixed some issues in setting dialog
+ * Added feedback to loading modules as well as proper save
+ * WebUI added help to settings dialog (about tabs)
+ * WEBUI: Changed to save menu is always shown and added auto save support
+ * Fixed password command line for the web client (i.e. nscp web password)
+ * Fixed command lines for password in WEB UI
+
+MSI installer:
+ * (re)added CONF_SET installer key
+ * Added support for setting arbitrary keys on command line
+
+API:
+ * Started to cleanuup "return codes" in the API which has been all over the place before. This will most likely fix all NSCA/Scheduler issues
+ * Removed encrypt from the API has it has not been implemented for some time
+
+Changes in 0.4.4
+================
+
+For a list of all changes in 0.4.4 see :doc:`What's new in NSClient++ 0.4.4 <0.4.4>`

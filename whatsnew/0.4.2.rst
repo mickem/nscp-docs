@@ -63,3 +63,8 @@ For instance check_cpu will work without arguments.
   check_cpu
 
 
+
+Changes in 0.4.1
+================
+
+For a list of all changes in 0.4.1 see :doc:`What's new in NSClient++ 0.4.1 <0.4.1>`
