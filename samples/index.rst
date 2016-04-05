@@ -80,7 +80,7 @@ Check the size of the system pagefile(s).
 check_pdh
 ---------
 
-Check the value of a performance (PDH) counter on the local or remote system.
+Check the value of a performance (PDH) counter.
 
 .. include:: ../samples/CheckSystem_check_pdh_samples.inc
 

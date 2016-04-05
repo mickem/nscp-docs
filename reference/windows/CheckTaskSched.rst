@@ -136,6 +136,7 @@ Arguments
     parameters            Retrieves the command-line parameters of a task.                                
     priority              Retrieves the priority for the task.                                            
     status                Retrieves the status of the work item.                                          
+    task_status           Retrieves the status of the work item.                                          
     title                 The task title                                                                  
     working_directory     Retrieves the working directory of the task.                                    
     count                 Number of items matching the filter                                             
@@ -178,6 +179,7 @@ Arguments
     parameters            Retrieves the command-line parameters of a task.                                
     priority              Retrieves the priority for the task.                                            
     status                Retrieves the status of the work item.                                          
+    task_status           Retrieves the status of the work item.                                          
     title                 The task title                                                                  
     working_directory     Retrieves the working directory of the task.                                    
     count                 Number of items matching the filter                                             
@@ -225,6 +227,7 @@ Arguments
     parameters            Retrieves the command-line parameters of a task.                                
     priority              Retrieves the priority for the task.                                            
     status                Retrieves the status of the work item.                                          
+    task_status           Retrieves the status of the work item.                                          
     title                 The task title                                                                  
     working_directory     Retrieves the working directory of the task.                                    
     count                 Number of items matching the filter                                             
@@ -272,6 +275,7 @@ Arguments
     parameters            Retrieves the command-line parameters of a task.                                
     priority              Retrieves the priority for the task.                                            
     status                Retrieves the status of the work item.                                          
+    task_status           Retrieves the status of the work item.                                          
     title                 The task title                                                                  
     working_directory     Retrieves the working directory of the task.                                    
     count                 Number of items matching the filter                                             
@@ -325,6 +329,7 @@ Arguments
     %(parameters)            Retrieves the command-line parameters of a task.                                
     %(priority)              Retrieves the priority for the task.                                            
     %(status)                Retrieves the status of the work item.                                          
+    %(task_status)           Retrieves the status of the work item.                                          
     %(title)                 The task title                                                                  
     %(working_directory)     Retrieves the working directory of the task.                                    
     ${count}                 Number of items matching the filter                                             
@@ -374,6 +379,7 @@ Arguments
     %(parameters)            Retrieves the command-line parameters of a task.                                
     %(priority)              Retrieves the priority for the task.                                            
     %(status)                Retrieves the status of the work item.                                          
+    %(task_status)           Retrieves the status of the work item.                                          
     %(title)                 The task title                                                                  
     %(working_directory)     Retrieves the working directory of the task.                                    
     ${count}                 Number of items matching the filter                                             
@@ -416,6 +422,7 @@ Arguments
     %(parameters)            Retrieves the command-line parameters of a task.                                
     %(priority)              Retrieves the priority for the task.                                            
     %(status)                Retrieves the status of the work item.                                          
+    %(task_status)           Retrieves the status of the work item.                                          
     %(title)                 The task title                                                                  
     %(working_directory)     Retrieves the working directory of the task.                                    
     ${count}                 Number of items matching the filter                                             
@@ -458,6 +465,7 @@ Arguments
     %(parameters)            Retrieves the command-line parameters of a task.                                
     %(priority)              Retrieves the priority for the task.                                            
     %(status)                Retrieves the status of the work item.                                          
+    %(task_status)           Retrieves the status of the work item.                                          
     %(title)                 The task title                                                                  
     %(working_directory)     Retrieves the working directory of the task.                                    
     ${count}                 Number of items matching the filter                                             
