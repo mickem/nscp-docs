@@ -22,3 +22,7 @@ Default check **via NRPE**::
 
 	check_nrpe --host 192.168.56.103 --command check_service
 	WARNING: DPS=stopped (auto), MSDTC=stopped (auto), sppsvc=stopped (auto), UALSVC=stopped (auto)
+
+**Check that a service is not started**::
+
+	check_service service=nscp "crit=state = 'started'" warn=none

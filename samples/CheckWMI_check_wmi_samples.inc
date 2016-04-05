@@ -21,7 +21,11 @@ A simple integer (number) check::
 
 Using performance options to customize the performance data::
 
-    check_wmi "query=select Name, AvgDiskQueueLength from Win32_PerfFormattedData_PerfDisk_PhysicalDisk" "warn=AvgDiskQueueLength>0" "perf-syntax=%(Name)" "perf-config=*(prefix:'tim
-e')"
+    check_wmi "query=select Name, AvgDiskQueueLength from Win32_PerfFormattedData_PerfDisk_PhysicalDisk" "warn=AvgDiskQueueLength>0" "perf-syntax=%(Name)" "perf-config=*(prefix:'time')"
     L        cli OK: 0, _Total, 0, 0 C:, 0, 1 D:
     L        cli  Performance data: 'time_Total'=0;0;0 'time0 C:'=0;0;0 'time1 D:'=0;0;0
+Adding values to the message::
+
+    check_wmi "query=Select BuildNumber from win32_OperatingSystem" "warn=BuildNumber < 9600" "crit=BuildNumber < 8000" "detail-syntax=You have build %(BuildNumber)" show-all
+    L        cli OK: You have build 10240
+    L        cli  Performance data: 'BuildNumber'=10240;9600;8000
