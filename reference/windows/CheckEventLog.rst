@@ -126,7 +126,7 @@ A quick reference for all available queries (check commands) in the CheckEventLo
     :option:`show-default` | N/A | Show default values for a given command
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` | level in ('warning', 'error', 'critical') | Filter which marks interesting items.
     :option:`warning` | level = 'warning' or problem_count > 0 | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
@@ -179,9 +179,9 @@ Arguments
     | Show debugging information in the log
 
 .. option:: show-all
-    :synopsis: Show debugging information in the log
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
 
-    | Show debugging information in the log
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
 
 .. option:: filter
     :synopsis: Filter which marks interesting items.
@@ -189,11 +189,24 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Available options:
+    | Available options :
 
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
     category       TODO                                                                                                           
     computer       Which computer generated the message                                                                           
     customer       TODO                                                                                                           
@@ -210,19 +223,6 @@ Arguments
     task           The type of event (task)                                                                                       
     type           alias for level (old, deprecated)                                                                              
     written        When the message was written to file                                                                           
-    count          Number of items matching the filter. Common option for all checks.                                             
-    total           Total number of items. Common option for all checks.                                                          
-    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list            A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
     ============== ==============================================================================================================
 
 
@@ -234,11 +234,24 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Available options:
+    | Available options :
 
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
     category       TODO                                                                                                           
     computer       Which computer generated the message                                                                           
     customer       TODO                                                                                                           
@@ -255,19 +268,6 @@ Arguments
     task           The type of event (task)                                                                                       
     type           alias for level (old, deprecated)                                                                              
     written        When the message was written to file                                                                           
-    count          Number of items matching the filter. Common option for all checks.                                             
-    total           Total number of items. Common option for all checks.                                                          
-    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list            A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
     ============== ==============================================================================================================
 
 
@@ -284,11 +284,24 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Available options:
+    | Available options :
 
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
     category       TODO                                                                                                           
     computer       Which computer generated the message                                                                           
     customer       TODO                                                                                                           
@@ -305,19 +318,6 @@ Arguments
     task           The type of event (task)                                                                                       
     type           alias for level (old, deprecated)                                                                              
     written        When the message was written to file                                                                           
-    count          Number of items matching the filter. Common option for all checks.                                             
-    total           Total number of items. Common option for all checks.                                                          
-    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list            A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
     ============== ==============================================================================================================
 
 
@@ -334,11 +334,24 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Available options:
+    | Available options :
 
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
+    count          Number of items matching the filter. Common option for all checks.                                             
+    total           Total number of items. Common option for all checks.                                                          
+    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
+    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
+    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
+    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
+    list            A list of all items which matched the filter. Common option for all checks.                                   
+    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
+    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
+    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
+    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
+    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
+    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
     category       TODO                                                                                                           
     computer       Which computer generated the message                                                                           
     customer       TODO                                                                                                           
@@ -355,19 +368,6 @@ Arguments
     task           The type of event (task)                                                                                       
     type           alias for level (old, deprecated)                                                                              
     written        When the message was written to file                                                                           
-    count          Number of items matching the filter. Common option for all checks.                                             
-    total           Total number of items. Common option for all checks.                                                          
-    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list            A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
     ============== ==============================================================================================================
 
 
@@ -397,39 +397,26 @@ Arguments
     | Unique syntax.
     | Used to filter unique items (counted will still increase but messages will not repeaters:
 
-    ============== ============================================================================================================== 
-    Key            Value                                                                                                          
-    -------------- -------------------------------------------------------------------------------------------------------------- 
-    category       TODO                                                                                                           
-    computer       Which computer generated the message                                                                           
-    customer       TODO                                                                                                           
-    file           The logfile name                                                                                               
-    guid           The logfile name                                                                                               
-    id             Eventlog id                                                                                                    
-    keyword        The keyword associated with this event                                                                         
-    level          Severity level (error, warning, info, success, auditSucess, auditFailure)                                      
-    log            alias for file                                                                                                 
-    message        The message rendered as a string.                                                                              
-    provider       Source system.                                                                                                 
-    rawid          Raw message id (contains many other fields all baked into a single number)                                     
-    source         Source system.                                                                                                 
-    task           The type of event (task)                                                                                       
-    type           alias for level (old, deprecated)                                                                              
-    written        When the message was written to file                                                                           
-    count          Number of items matching the filter. Common option for all checks.                                             
-    total           Total number of items. Common option for all checks.                                                          
-    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list            A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
-    ============== ==============================================================================================================
+    ========= =========================================================================== 
+    Key       Value                                                                       
+    --------- --------------------------------------------------------------------------- 
+    category  TODO                                                                        
+    computer  Which computer generated the message                                        
+    customer  TODO                                                                        
+    file      The logfile name                                                            
+    guid      The logfile name                                                            
+    id        Eventlog id                                                                 
+    keyword   The keyword associated with this event                                      
+    level     Severity level (error, warning, info, success, auditSucess, auditFailure)   
+    log       alias for file                                                              
+    message   The message rendered as a string.                                           
+    provider  Source system.                                                              
+    rawid     Raw message id (contains many other fields all baked into a single number)  
+    source    Source system.                                                              
+    task      The type of event (task)                                                    
+    type      alias for level (old, deprecated)                                           
+    written   When the message was written to file                                        
+    ========= ===========================================================================
 
 
 
@@ -439,29 +426,13 @@ Arguments
     :synopsis: Top level syntax.
 
     | Top level syntax.
-    | Used to format the message to return can include text as well as special keywords wich will include information from the checks.
+    | Used to format the message to return can include text as well as special keywords which will include information from the checks.
     | To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
-    | The avalible keywords are:
+    | The available keywords are:
 
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
-    category       TODO                                                                                                           
-    computer       Which computer generated the message                                                                           
-    customer       TODO                                                                                                           
-    file           The logfile name                                                                                               
-    guid           The logfile name                                                                                               
-    id             Eventlog id                                                                                                    
-    keyword        The keyword associated with this event                                                                         
-    level          Severity level (error, warning, info, success, auditSucess, auditFailure)                                      
-    log            alias for file                                                                                                 
-    message        The message rendered as a string.                                                                              
-    provider       Source system.                                                                                                 
-    rawid          Raw message id (contains many other fields all baked into a single number)                                     
-    source         Source system.                                                                                                 
-    task           The type of event (task)                                                                                       
-    type           alias for level (old, deprecated)                                                                              
-    written        When the message was written to file                                                                           
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -498,22 +469,6 @@ Arguments
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
-    category       TODO                                                                                                           
-    computer       Which computer generated the message                                                                           
-    customer       TODO                                                                                                           
-    file           The logfile name                                                                                               
-    guid           The logfile name                                                                                               
-    id             Eventlog id                                                                                                    
-    keyword        The keyword associated with this event                                                                         
-    level          Severity level (error, warning, info, success, auditSucess, auditFailure)                                      
-    log            alias for file                                                                                                 
-    message        The message rendered as a string.                                                                              
-    provider       Source system.                                                                                                 
-    rawid          Raw message id (contains many other fields all baked into a single number)                                     
-    source         Source system.                                                                                                 
-    task           The type of event (task)                                                                                       
-    type           alias for level (old, deprecated)                                                                              
-    written        When the message was written to file                                                                           
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -540,41 +495,28 @@ Arguments
     | Used to format each resulting item in the message.
     | %(list) will be replaced with all the items formated by this syntax string in the top-syntax.
     | To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
-    | The avalible keywords are:
+    | The available keywords are:
 
-    ============== ============================================================================================================== 
-    Key            Value                                                                                                          
-    -------------- -------------------------------------------------------------------------------------------------------------- 
-    category       TODO                                                                                                           
-    computer       Which computer generated the message                                                                           
-    customer       TODO                                                                                                           
-    file           The logfile name                                                                                               
-    guid           The logfile name                                                                                               
-    id             Eventlog id                                                                                                    
-    keyword        The keyword associated with this event                                                                         
-    level          Severity level (error, warning, info, success, auditSucess, auditFailure)                                      
-    log            alias for file                                                                                                 
-    message        The message rendered as a string.                                                                              
-    provider       Source system.                                                                                                 
-    rawid          Raw message id (contains many other fields all baked into a single number)                                     
-    source         Source system.                                                                                                 
-    task           The type of event (task)                                                                                       
-    type           alias for level (old, deprecated)                                                                              
-    written        When the message was written to file                                                                           
-    count          Number of items matching the filter. Common option for all checks.                                             
-    total           Total number of items. Common option for all checks.                                                          
-    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list            A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
-    ============== ==============================================================================================================
+    ========= =========================================================================== 
+    Key       Value                                                                       
+    --------- --------------------------------------------------------------------------- 
+    category  TODO                                                                        
+    computer  Which computer generated the message                                        
+    customer  TODO                                                                        
+    file      The logfile name                                                            
+    guid      The logfile name                                                            
+    id        Eventlog id                                                                 
+    keyword   The keyword associated with this event                                      
+    level     Severity level (error, warning, info, success, auditSucess, auditFailure)   
+    log       alias for file                                                              
+    message   The message rendered as a string.                                           
+    provider  Source system.                                                              
+    rawid     Raw message id (contains many other fields all baked into a single number)  
+    source    Source system.                                                              
+    task      The type of event (task)                                                    
+    type      alias for level (old, deprecated)                                           
+    written   When the message was written to file                                        
+    ========= ===========================================================================
 
 
 
@@ -587,39 +529,26 @@ Arguments
     | This is the syntax for the base names of the performance data.
     | Possible values are:
 
-    ============== ============================================================================================================== 
-    Key            Value                                                                                                          
-    -------------- -------------------------------------------------------------------------------------------------------------- 
-    category       TODO                                                                                                           
-    computer       Which computer generated the message                                                                           
-    customer       TODO                                                                                                           
-    file           The logfile name                                                                                               
-    guid           The logfile name                                                                                               
-    id             Eventlog id                                                                                                    
-    keyword        The keyword associated with this event                                                                         
-    level          Severity level (error, warning, info, success, auditSucess, auditFailure)                                      
-    log            alias for file                                                                                                 
-    message        The message rendered as a string.                                                                              
-    provider       Source system.                                                                                                 
-    rawid          Raw message id (contains many other fields all baked into a single number)                                     
-    source         Source system.                                                                                                 
-    task           The type of event (task)                                                                                       
-    type           alias for level (old, deprecated)                                                                              
-    written        When the message was written to file                                                                           
-    count          Number of items matching the filter. Common option for all checks.                                             
-    total           Total number of items. Common option for all checks.                                                          
-    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list            A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
-    ============== ==============================================================================================================
+    ========= =========================================================================== 
+    Key       Value                                                                       
+    --------- --------------------------------------------------------------------------- 
+    category  TODO                                                                        
+    computer  Which computer generated the message                                        
+    customer  TODO                                                                        
+    file      The logfile name                                                            
+    guid      The logfile name                                                            
+    id        Eventlog id                                                                 
+    keyword   The keyword associated with this event                                      
+    level     Severity level (error, warning, info, success, auditSucess, auditFailure)   
+    log       alias for file                                                              
+    message   The message rendered as a string.                                           
+    provider  Source system.                                                              
+    rawid     Raw message id (contains many other fields all baked into a single number)  
+    source    Source system.                                                              
+    task      The type of event (task)                                                    
+    type      alias for level (old, deprecated)                                           
+    written   When the message was written to file                                        
+    ========= ===========================================================================
 
 
 

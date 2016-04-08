@@ -763,7 +763,7 @@ Arguments
     :option:`show-default` | N/A | Show default values for a given command
     :option:`help-short` | N/A | Show help screen (short format).
     :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` |  | Filter which marks interesting items.
     :option:`warning` |  | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
@@ -814,9 +814,9 @@ Arguments
     | Show debugging information in the log
 
 .. option:: show-all
-    :synopsis: Show debugging information in the log
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
 
-    | Show debugging information in the log
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
 
 .. option:: filter
     :synopsis: Filter which marks interesting items.
@@ -824,19 +824,11 @@ Arguments
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
     | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Available options:
+    | Available options :
 
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
-    crit           Major version number                                                                                           
-    key            Major version number                                                                                           
-    max            Major version number                                                                                           
-    message        Major version number                                                                                           
-    min            Major version number                                                                                           
-    unit           Major version number                                                                                           
-    value          Major version number                                                                                           
-    warn           Major version number                                                                                           
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -850,6 +842,14 @@ Arguments
     problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
     detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
     status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    crit           Major version number                                                                                           
+    key            Major version number                                                                                           
+    max            Major version number                                                                                           
+    message        Major version number                                                                                           
+    min            Major version number                                                                                           
+    unit           Major version number                                                                                           
+    value          Major version number                                                                                           
+    warn           Major version number                                                                                           
     ============== ==============================================================================================================
 
 
@@ -861,19 +861,11 @@ Arguments
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Available options:
+    | Available options :
 
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
-    crit           Major version number                                                                                           
-    key            Major version number                                                                                           
-    max            Major version number                                                                                           
-    message        Major version number                                                                                           
-    min            Major version number                                                                                           
-    unit           Major version number                                                                                           
-    value          Major version number                                                                                           
-    warn           Major version number                                                                                           
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -887,6 +879,14 @@ Arguments
     problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
     detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
     status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    crit           Major version number                                                                                           
+    key            Major version number                                                                                           
+    max            Major version number                                                                                           
+    message        Major version number                                                                                           
+    min            Major version number                                                                                           
+    unit           Major version number                                                                                           
+    value          Major version number                                                                                           
+    warn           Major version number                                                                                           
     ============== ==============================================================================================================
 
 
@@ -903,19 +903,11 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Available options:
+    | Available options :
 
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
-    crit           Major version number                                                                                           
-    key            Major version number                                                                                           
-    max            Major version number                                                                                           
-    message        Major version number                                                                                           
-    min            Major version number                                                                                           
-    unit           Major version number                                                                                           
-    value          Major version number                                                                                           
-    warn           Major version number                                                                                           
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -929,6 +921,14 @@ Arguments
     problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
     detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
     status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    crit           Major version number                                                                                           
+    key            Major version number                                                                                           
+    max            Major version number                                                                                           
+    message        Major version number                                                                                           
+    min            Major version number                                                                                           
+    unit           Major version number                                                                                           
+    value          Major version number                                                                                           
+    warn           Major version number                                                                                           
     ============== ==============================================================================================================
 
 
@@ -945,19 +945,11 @@ Arguments
 
     | Filter which marks items which generates an ok state.
     | If anything matches this any previous state for this item will be reset to ok.
-    | Available options:
+    | Available options :
 
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
-    crit           Major version number                                                                                           
-    key            Major version number                                                                                           
-    max            Major version number                                                                                           
-    message        Major version number                                                                                           
-    min            Major version number                                                                                           
-    unit           Major version number                                                                                           
-    value          Major version number                                                                                           
-    warn           Major version number                                                                                           
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -971,6 +963,14 @@ Arguments
     problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
     detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
     status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
+    crit           Major version number                                                                                           
+    key            Major version number                                                                                           
+    max            Major version number                                                                                           
+    message        Major version number                                                                                           
+    min            Major version number                                                                                           
+    unit           Major version number                                                                                           
+    value          Major version number                                                                                           
+    warn           Major version number                                                                                           
     ============== ==============================================================================================================
 
 
@@ -998,21 +998,13 @@ Arguments
     :synopsis: Top level syntax.
 
     | Top level syntax.
-    | Used to format the message to return can include text as well as special keywords wich will include information from the checks.
+    | Used to format the message to return can include text as well as special keywords which will include information from the checks.
     | To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
-    | The avalible keywords are:
+    | The available keywords are:
 
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
-    crit           Major version number                                                                                           
-    key            Major version number                                                                                           
-    max            Major version number                                                                                           
-    message        Major version number                                                                                           
-    min            Major version number                                                                                           
-    unit           Major version number                                                                                           
-    value          Major version number                                                                                           
-    warn           Major version number                                                                                           
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -1049,14 +1041,6 @@ Arguments
     ============== ============================================================================================================== 
     Key            Value                                                                                                          
     -------------- -------------------------------------------------------------------------------------------------------------- 
-    crit           Major version number                                                                                           
-    key            Major version number                                                                                           
-    max            Major version number                                                                                           
-    message        Major version number                                                                                           
-    min            Major version number                                                                                           
-    unit           Major version number                                                                                           
-    value          Major version number                                                                                           
-    warn           Major version number                                                                                           
     count          Number of items matching the filter. Common option for all checks.                                             
     total           Total number of items. Common option for all checks.                                                          
     ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
@@ -1083,33 +1067,20 @@ Arguments
     | Used to format each resulting item in the message.
     | %(list) will be replaced with all the items formated by this syntax string in the top-syntax.
     | To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
-    | The avalible keywords are:
+    | The available keywords are:
 
-    ============== ============================================================================================================== 
-    Key            Value                                                                                                          
-    -------------- -------------------------------------------------------------------------------------------------------------- 
-    crit           Major version number                                                                                           
-    key            Major version number                                                                                           
-    max            Major version number                                                                                           
-    message        Major version number                                                                                           
-    min            Major version number                                                                                           
-    unit           Major version number                                                                                           
-    value          Major version number                                                                                           
-    warn           Major version number                                                                                           
-    count          Number of items matching the filter. Common option for all checks.                                             
-    total           Total number of items. Common option for all checks.                                                          
-    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list            A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
-    ============== ==============================================================================================================
+    ======== ===================== 
+    Key      Value                 
+    -------- --------------------- 
+    crit     Major version number  
+    key      Major version number  
+    max      Major version number  
+    message  Major version number  
+    min      Major version number  
+    unit     Major version number  
+    value    Major version number  
+    warn     Major version number  
+    ======== =====================
 
 
 
@@ -1122,31 +1093,18 @@ Arguments
     | This is the syntax for the base names of the performance data.
     | Possible values are:
 
-    ============== ============================================================================================================== 
-    Key            Value                                                                                                          
-    -------------- -------------------------------------------------------------------------------------------------------------- 
-    crit           Major version number                                                                                           
-    key            Major version number                                                                                           
-    max            Major version number                                                                                           
-    message        Major version number                                                                                           
-    min            Major version number                                                                                           
-    unit           Major version number                                                                                           
-    value          Major version number                                                                                           
-    warn           Major version number                                                                                           
-    count          Number of items matching the filter. Common option for all checks.                                             
-    total           Total number of items. Common option for all checks.                                                          
-    ok_count        Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count      Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count      Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count   Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list            A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list         A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list       A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list       A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list    A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list     A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status          The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
-    ============== ==============================================================================================================
+    ======== ===================== 
+    Key      Value                 
+    -------- --------------------- 
+    crit     Major version number  
+    key      Major version number  
+    max      Major version number  
+    message  Major version number  
+    min      Major version number  
+    unit     Major version number  
+    value    Major version number  
+    warn     Major version number  
+    ======== =====================
 
 
 
