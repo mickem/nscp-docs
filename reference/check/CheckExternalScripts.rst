@@ -102,6 +102,7 @@ Advanced keys:
     :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.is template` | IS TEMPLATE
     :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.parent` | PARENT
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.alias` | ALIAS
+    :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.capture output` | CAPTURE OUTPUT
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.display` | DISPLAY
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.domain` | DOMAIN
     :confpath:`/settings/external scripts/scripts/default` | :confkey:`~/settings/external scripts/scripts/default.encoding` | ENCODING
@@ -122,6 +123,7 @@ Sample keys:
     :header: "Path / Section", "Key", "Default Value", "Description"
 
     :confpath:`/settings/external scripts/alias/sample` | :confkey:`~/settings/external scripts/alias/sample.command` | COMMAND
+    :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.capture output` | CAPTURE OUTPUT
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.command` | COMMAND
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.display` | DISPLAY
     :confpath:`/settings/external scripts/scripts/sample` | :confkey:`~/settings/external scripts/scripts/sample.domain` | DOMAIN
@@ -1062,6 +1064,7 @@ Sample keys:
         :header: "Key", "Default Value", "Description"
     
         :confkey:`alias` |  | ALIAS
+        :confkey:`capture output` | 0 | CAPTURE OUTPUT
         :confkey:`command` |  | COMMAND
         :confkey:`display` | 0 | DISPLAY
         :confkey:`domain` |  | DOMAIN
@@ -1079,6 +1082,7 @@ Sample keys:
         # Command definition for: default
         [/settings/external scripts/scripts/default]
         alias=
+        capture output=0
         command=
         display=0
         domain=
@@ -1113,6 +1117,30 @@ Sample keys:
             [/settings/external scripts/scripts/default]
             # ALIAS
             alias=
+
+
+    .. confkey:: capture output
+        :synopsis: CAPTURE OUTPUT
+
+        **CAPTURE OUTPUT**
+
+        | This should be set to false if you want to run commands which never terminates (i.e. relinquish control from NSClient++). The effect of this is that the command output will not be captured. The main use is to protect from socket reuse issues
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/default
+
+        **Key**: capture output
+
+        **Default value**: 0
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/default]
+            # CAPTURE OUTPUT
+            capture output=0
 
 
     .. confkey:: command
@@ -1370,6 +1398,7 @@ Sample keys:
         :header: "Key", "Default Value", "Description"
     
         :confkey:`alias` |  | ALIAS
+        :confkey:`capture output` | 0 | CAPTURE OUTPUT
         :confkey:`command` |  | COMMAND
         :confkey:`display` | 0 | DISPLAY
         :confkey:`domain` |  | DOMAIN
@@ -1387,6 +1416,7 @@ Sample keys:
         # Command definition for: sample
         [/settings/external scripts/scripts/sample]
         alias=
+        capture output=0
         command=
         display=0
         domain=
@@ -1421,6 +1451,32 @@ Sample keys:
             [/settings/external scripts/scripts/sample]
             # ALIAS
             alias=
+
+
+    .. confkey:: capture output
+        :synopsis: CAPTURE OUTPUT
+
+        **CAPTURE OUTPUT**
+
+        | This should be set to false if you want to run commands which never terminates (i.e. relinquish control from NSClient++). The effect of this is that the command output will not be captured. The main use is to protect from socket reuse issues
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/external scripts/scripts/sample
+
+        **Key**: capture output
+
+        **Default value**: 0
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`CheckExternalScripts`
+
+        **Sample**::
+
+            [/settings/external scripts/scripts/sample]
+            # CAPTURE OUTPUT
+            capture output=0
 
 
     .. confkey:: command
