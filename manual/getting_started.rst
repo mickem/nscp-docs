@@ -7,8 +7,6 @@
 This is a hands on guide to getting started with NSClient++.
 We will start with a clean slate and work our way in small easy to follow steps towards a fully functional monitoring solution.
 
-**THIS is a work in progress!**
-
 For the sake of simplicity this will be based on a Windows version.
 If you would like to do this on Linux it "should" work much the same apart from some of the system specific checks will not be available for your plattform.
 
