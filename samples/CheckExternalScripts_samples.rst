@@ -11,7 +11,7 @@ Or the long format::
 
    [/settings/external scripts/scripts/my_ok1]
    command = scripts\check_ok.bat
-   
+
    [/settings/external scripts/scripts/my_ok2]
    command = scripts\check_ok.bat
 
@@ -25,24 +25,28 @@ There are two ways to use arguments.
 # Hardcoded into the command
 # Allowing argument-pass through
 
-THe first option (hard-coding them) is obviously the more secure option as a third party cannot provide his or her own arguments. But it adds to the maintanace burden as whenever you want to change an option you need to update the NSCient++ config (something which can be costly if you have many servers).
+The first option (hard-coding them) is obviously the more secure option as a third party cannot provide his or her own arguments.
+But it adds to the maintenance burden as whenever you want to change an option you need to update the NSClient++ configuration (something which can be costly if you have many servers).
 
-To allow argument passthrough you need to set::
+To allow argument pass-through you need to set::
 
    [/settings/external scripts]
    allow arguments = true
 
+Please note when it comes to arguments they can (and often need to) be configured in two place.
+Once for the NRPE Server and once for CheckExternalScripts.
+
 Running a command as a user
 ---------------------------
 
-Runninga command as a given user (to use elevated privelages for instance) you need to use the long format::
+Running a command as a given user (to use elevated privileges for instance) you need to use the long format::
 
    [/settings/external scripts/scripts/check_as_user]
    command = scripts\check_ok.bat
    user = Administrator
    password = 1qflkasdhf7ejd8/kjhskjhk(/)"#
 
-You can also specify a session and to show the output if yu want to have the program visible::
+You can also specify a session and to show the output if you want to have the program visible::
 
    [/settings/external scripts/scripts/annoy_users]
    command = notepad.exe
@@ -52,13 +56,16 @@ You can also specify a session and to show the output if yu want to have the pro
 Programs "running forever"
 --------------------------
 
-Another usecase of external scripts is to have event handlers which starts programs. This is a bit tricky because if a child program is running when NSClient++ exits it will be terminated thus your "fix" will depend on NSClient++ never restarting.
+Another use case of external scripts is to have event handlers which starts programs.
+This is trickier then it sounds because all commands have a timeout and once that is reach they are killed.
+NSClient++ exits it also terminates all running script thus your "fix" will not be very long.
 To work around this you need to start the program without the control of NSClient++ (fork). To do this you need to set capture output to false like so::
 
    [/settings/external scripts/scripts/fix_problem]
    command = notepad.exe
    capture output = false
 
-The draw back to this is that the sacript cannot return any output neither message or status code.
-A word of warning using "start" or other similar measure to try to star´t a program will cause unexpected issue with NSClient++ due to how handles are inherited in Windows. This will end up blocking the port and forcing a restart of the server.
+The draw back to this is that the script cannot return any output neither message nor status code.
 
+A word of warning using "start" or other similar measure to try to start a program in a regular script will cause unexpected issue with NSClient++ due to how handles are inherited in Windows.
+This will end up blocking the port and forcing a restart of the server. Thus capture output = false method is preferred.

@@ -14,4 +14,5 @@ Contents:
    03x_migration.rst
    external_scripts.rst
    counters.rst
+   run_commands.rst
 
