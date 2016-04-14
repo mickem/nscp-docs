@@ -45,6 +45,8 @@ Advanced keys:
     :confpath:`/settings/default` | :confkey:`~/settings/default.encoding` | NRPE PAYLOAD ENCODING
     :confpath:`/settings/default` | :confkey:`~/settings/default.socket queue size` | LISTEN QUEUE
     :confpath:`/settings/default` | :confkey:`~/settings/default.thread pool` | THREAD POOL
+    :confpath:`/settings/WEB/server` | :confkey:`~/settings/WEB/server.allowed hosts` | ALLOWED HOSTS
+    :confpath:`/settings/WEB/server` | :confkey:`~/settings/WEB/server.cache allowed hosts` | CACHE ALLOWED HOSTS
     :confpath:`/settings/WEB/server` | :confkey:`~/settings/WEB/server.password` | PASSWORD
 
 
@@ -317,6 +319,8 @@ Advanced keys:
         :delim: | 
         :header: "Key", "Default Value", "Description"
     
+        :confkey:`allowed hosts` | 127.0.0.1 | ALLOWED HOSTS
+        :confkey:`cache allowed hosts` | 1 | CACHE ALLOWED HOSTS
         :confkey:`certificate` | ${certificate-path}/certificate.pem | CERTIFICATE
         :confkey:`password` |  | PASSWORD
         :confkey:`port` | 8443s | PORT NUMBER
@@ -326,9 +330,59 @@ Advanced keys:
         # WEB SERVER SECTION
         # Section for WEB (WEBServer.dll) (check_WEB) protocol options.
         [/settings/WEB/server]
+        allowed hosts=127.0.0.1
+        cache allowed hosts=1
         certificate=${certificate-path}/certificate.pem
         password=
         port=8443s
+
+
+    .. confkey:: allowed hosts
+        :synopsis: ALLOWED HOSTS
+
+        **ALLOWED HOSTS**
+
+        | A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/WEB/server
+
+        **Key**: allowed hosts
+
+        **Default value**: 127.0.0.1
+
+        **Used by**: :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/WEB/server]
+            # ALLOWED HOSTS
+            allowed hosts=127.0.0.1
+
+
+    .. confkey:: cache allowed hosts
+        :synopsis: CACHE ALLOWED HOSTS
+
+        **CACHE ALLOWED HOSTS**
+
+        | If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
+
+        **Advanced** (means it is not commonly used)
+
+        **Path**: /settings/WEB/server
+
+        **Key**: cache allowed hosts
+
+        **Default value**: 1
+
+        **Used by**: :module:`WEBServer`
+
+        **Sample**::
+
+            [/settings/WEB/server]
+            # CACHE ALLOWED HOSTS
+            cache allowed hosts=1
 
 
     .. confkey:: certificate
