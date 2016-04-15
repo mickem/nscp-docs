@@ -1,5 +1,5 @@
 Adding a simple script
-----------------------
+**********************
 
 Adding a script we ca use the short hand format::
 
@@ -18,7 +18,7 @@ Or the long format::
 There is no difference between the two formats. Both will add two new commands called my_ok1 and my_ok2 which in turn will execute the scripts\check_ok.bat script. Thus for most cases the short hand is preferd (and most commonly used). The reason for the long format is when you need to customize your command. There are a number of options which can be set to customze the command: for instance which user should run the command. These cannot be set using the short format.
 
 Using arguments
----------------
+***************
 
 There are two ways to use arguments.
 
@@ -37,7 +37,7 @@ Please note when it comes to arguments they can (and often need to) be configure
 Once for the NRPE Server and once for CheckExternalScripts.
 
 Running a command as a user
----------------------------
+***************************
 
 Running a command as a given user (to use elevated privileges for instance) you need to use the long format::
 
@@ -54,7 +54,7 @@ You can also specify a session and to show the output if you want to have the pr
    display = true
 
 Programs "running forever"
---------------------------
+**************************
 
 Another use case of external scripts is to have event handlers which starts programs.
 This is trickier then it sounds because all commands have a timeout and once that is reach they are killed.
