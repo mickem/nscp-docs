@@ -66,6 +66,7 @@ Sample keys:
     :confpath:`/settings/NRDP/client/targets/sample` | :confkey:`~/settings/NRDP/client/targets/sample.timeout` | TIMEOUT
 
 
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the NRDPClient module.

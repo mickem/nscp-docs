@@ -101,6 +101,7 @@ Sample keys:
     :confpath:`/settings/system/windows/counters/sample` | :confkey:`~/settings/system/windows/counters/sample.type` | COUNTER TYPE
 
 
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the CheckSystem module.

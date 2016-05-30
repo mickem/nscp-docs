@@ -17,11 +17,11 @@ A list of all available queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
-    :query:`check_nscp` | Request remote information via NSCP.
-    :query:`exec_nscp` | Execute remote script via NSCP.
-    :query:`nscp_forward` | Forward the request as-is to remote host via NSCP.
-    :query:`nscp_query` | Request remote information via NSCP.
-    :query:`submit_nscp` | Submit information to remote host via NSCP.
+    :query:`check_remote_nscp` | Request remote information via NSCP.
+    :query:`exec_remote_nscp` | Execute remote script via NSCP.
+    :query:`remote_nscp_query` | Request remote information via NSCP.
+    :query:`remote_nscpforward` | Forward the request as-is to remote host via NSCP.
+    :query:`submit_remote_nscp` | Submit information to remote host via NSCP.
 
 
 
@@ -87,13 +87,14 @@ Sample keys:
     :confpath:`/settings/NSCP/client/targets/sample` | :confkey:`~/settings/NSCP/client/targets/sample.verify mode` | VERIFY MODE
 
 
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the NSCPClient module.
 
-:query:`check_nscp`
--------------------
-.. query:: check_nscp
+:query:`check_remote_nscp`
+--------------------------
+.. query:: check_remote_nscp
     :synopsis: Request remote information via NSCP.
 
 **Usage:**
@@ -267,9 +268,9 @@ Arguments
 
     | Password
 
-:query:`exec_nscp`
-------------------
-.. query:: exec_nscp
+:query:`exec_remote_nscp`
+-------------------------
+.. query:: exec_remote_nscp
     :synopsis: Execute remote script via NSCP.
 
 **Usage:**
@@ -443,35 +444,9 @@ Arguments
 
     | Password
 
-:query:`nscp_forward`
----------------------
-.. query:: nscp_forward
-    :synopsis: Forward the request as-is to remote host via NSCP.
-
-**Usage:**
-
-
-
-.. csv-table:: 
-    :class: contentstable 
-    :delim: | 
-    :header: "Option", "Default Value", "Description"
-
-    :option:`*` |  | 
-
-
-
-
-Arguments
-*********
-.. option:: *
-    :synopsis: 
-
-
-
-:query:`nscp_query`
--------------------
-.. query:: nscp_query
+:query:`remote_nscp_query`
+--------------------------
+.. query:: remote_nscp_query
     :synopsis: Request remote information via NSCP.
 
 **Usage:**
@@ -645,9 +620,24 @@ Arguments
 
     | Password
 
-:query:`submit_nscp`
---------------------
-.. query:: submit_nscp
+:query:`remote_nscpforward`
+---------------------------
+.. query:: remote_nscpforward
+    :synopsis: Forward the request as-is to remote host via NSCP.
+
+**Usage:**
+
+
+
+
+
+
+
+Arguments
+*********
+:query:`submit_remote_nscp`
+---------------------------
+.. query:: submit_remote_nscp
     :synopsis: Submit information to remote host via NSCP.
 
 **Usage:**

@@ -62,6 +62,7 @@ A list of all short hand aliases for queries (check commands)
 
 
 
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the CheckHelpers module.

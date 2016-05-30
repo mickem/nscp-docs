@@ -74,6 +74,7 @@ Sample keys:
     :confpath:`/settings/graphite/client/targets/sample` | :confkey:`~/settings/graphite/client/targets/sample.timeout` | TIMEOUT
 
 
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the GraphiteClient module.

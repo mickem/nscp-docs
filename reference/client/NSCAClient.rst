@@ -93,6 +93,7 @@ Sample keys:
     :confpath:`/settings/NSCA/client/targets/sample` | :confkey:`~/settings/NSCA/client/targets/sample.verify mode` | VERIFY MODE
 
 
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the NSCAClient module.

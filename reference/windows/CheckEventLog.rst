@@ -103,6 +103,13 @@ Sample keys:
     :confpath:`/settings/eventlog/real-time/filters/sample` | :confkey:`~/settings/eventlog/real-time/filters/sample.warning` | WARNING FILTER
 
 
+
+Samples
+-------
+
+.. include:: ../../samples/CheckEventLog_samples.rst
+
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the CheckEventLog module.
