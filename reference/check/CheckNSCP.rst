@@ -92,21 +92,21 @@ Arguments
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
-    :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
-    :option:`show-default` | N/A | Show default values for a given command
-    :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` |  | Filter which marks interesting items.
     :option:`warning` |  | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
     :option:`critical` |  | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -118,42 +118,12 @@ Arguments
 
 Arguments
 *********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: debug
-    :synopsis: Show debugging information in the log
-
-    | Show debugging information in the log
-
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
     | Available options :
 
     ============== ============================================================================================================== 
@@ -299,6 +269,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -315,6 +295,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.

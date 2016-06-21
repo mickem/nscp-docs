@@ -120,21 +120,21 @@ A quick reference for all available queries (check commands) in the CheckSystem 
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
-    :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
-    :option:`show-default` | N/A | Show default values for a given command
-    :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` | core = 'total' | Filter which marks interesting items.
     :option:`warning` | load > 80 | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
     :option:`critical` | load > 90 | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
     :option:`top-syntax` | ${status}: ${problem_list} | Top level syntax.
     :option:`ok-syntax` | %(status): CPU load is ok. | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -153,42 +153,12 @@ Samples
 
 Arguments
 *********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: debug
-    :synopsis: Show debugging information in the log
-
-    | Show debugging information in the log
-
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
     | Available options :
 
     ============== ============================================================================================================== 
@@ -334,6 +304,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -350,6 +330,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
@@ -482,21 +482,21 @@ Arguments
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
-    :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
-    :option:`show-default` | N/A | Show default values for a given command
-    :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` |  | Filter which marks interesting items.
     :option:`warning` | used > 80% | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
     :option:`critical` | used > 90% | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -515,42 +515,12 @@ Samples
 
 Arguments
 *********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: debug
-    :synopsis: Show debugging information in the log
-
-    | Show debugging information in the log
-
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
     | Available options :
 
     ============== ============================================================================================================== 
@@ -696,6 +666,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -712,6 +692,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
@@ -844,21 +844,21 @@ Arguments
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
-    :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
-    :option:`show-default` | N/A | Show default values for a given command
-    :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` |  | Filter which marks interesting items.
     :option:`warning` | total > 10000 | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
     :option:`critical` | total > 100000 | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`empty-state` | critical | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` | %(status): Network interfaces seem ok. | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -870,42 +870,12 @@ Arguments
 
 Arguments
 *********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: debug
-    :synopsis: Show debugging information in the log
-
-    | Show debugging information in the log
-
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
     | Available options :
 
     ================== ============================================================================================================== 
@@ -1063,6 +1033,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -1079,6 +1059,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
@@ -1212,21 +1212,21 @@ Arguments
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
-    :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
-    :option:`show-default` | N/A | Show default values for a given command
-    :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` |  | Filter which marks interesting items.
     :option:`warning` | version <= 50 | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
     :option:`critical` | version <= 50 | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -1244,42 +1244,12 @@ Samples
 
 Arguments
 *********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: debug
-    :synopsis: Show debugging information in the log
-
-    | Show debugging information in the log
-
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
     | Available options :
 
     ============== ============================================================================================================== 
@@ -1417,6 +1387,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -1433,6 +1413,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
@@ -1556,21 +1556,21 @@ Arguments
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
-    :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
-    :option:`show-default` | N/A | Show default values for a given command
-    :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` |  | Filter which marks interesting items.
     :option:`warning` | used > 60% | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
     :option:`critical` | used > 80% | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -1588,42 +1588,12 @@ Samples
 
 Arguments
 *********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: debug
-    :synopsis: Show debugging information in the log
-
-    | Show debugging information in the log
-
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
     | Available options :
 
     ============== ============================================================================================================== 
@@ -1769,6 +1739,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -1785,6 +1765,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
@@ -1912,21 +1912,21 @@ Arguments
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
-    :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
-    :option:`show-default` | N/A | Show default values for a given command
-    :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` |  | Filter which marks interesting items.
     :option:`warning` |  | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
     :option:`critical` |  | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -1952,42 +1952,12 @@ Samples
 
 Arguments
 *********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: debug
-    :synopsis: Show debugging information in the log
-
-    | Show debugging information in the log
-
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
     | Available options :
 
     ============== ============================================================================================================== 
@@ -2133,6 +2103,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -2149,6 +2129,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
@@ -2316,21 +2316,21 @@ Arguments
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
+    :option:`filter` | state != 'unreadable' | Filter which marks interesting items.
+    :option:`warning` | state not in ('started') | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` | state = 'stopped', count = 0 | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+    :option:`empty-state` | unknown | Return status to use when nothing matched filter.
+    :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`help` | N/A | Show help screen (this screen)
     :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`show-default` | N/A | Show default values for a given command
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-    :option:`filter` | state != 'unreadable' | Filter which marks interesting items.
-    :option:`warning` | state not in ('started') | Filter which marks items which generates a warning state.
-    :option:`warn` |  | Short alias for warning
-    :option:`critical` | state = 'stopped' or count = 0 | Filter which marks items which generates a critical state.
-    :option:`crit` |  | Short alias for critical.
-    :option:`ok` |  | Filter which marks items which generates an ok state.
-    :option:`empty-state` | unknown | Return status to use when nothing matched filter.
-    :option:`perf-config` |  | Performance data generation configuration
-    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
     :option:`top-syntax` | ${status}: ${problem_list} | Top level syntax.
     :option:`ok-syntax` | %(status): all processes are ok. | ok syntax.
     :option:`empty-syntax` | %(status): No processes found | Empty syntax.
@@ -2354,142 +2354,18 @@ Samples
 
 Arguments
 *********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: debug
-    :synopsis: Show debugging information in the log
-
-    | Show debugging information in the log
-
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
-    | Available options :
-
-    ================= ============================================================================================================== 
-    Key               Value                                                                                                          
-    ----------------- -------------------------------------------------------------------------------------------------------------- 
-    count             Number of items matching the filter. Common option for all checks.                                             
-    total              Total number of items. Common option for all checks.                                                          
-    ok_count           Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count         Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count         Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count      Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list               A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list            A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list          A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list          A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list       A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list        A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status             The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
-    command_line      Command line of process (not always available)                                                                 
-    creation          Creation time                                                                                                  
-    error             Any error messages associated with fetching info                                                               
-    exe               The name of the executable                                                                                     
-    filename          Name of process (with path)                                                                                    
-    gdi_handles       Number of handles                                                                                              
-    handles           Number of handles                                                                                              
-    hung              Process is hung                                                                                                
-    kernel            Kernel time in seconds                                                                                         
-    legacy_state      Get process status (for legacy use via check_nt only)                                                          
-    page_fault        Page fault count                                                                                               
-    pagefile          Peak page file use in bytes                                                                                    
-    peak_pagefile     Page file usage in bytes                                                                                       
-    peak_virtual      Peak virtual size in bytes                                                                                     
-    peak_working_set  Peak working set in bytes                                                                                      
-    pid               Process id                                                                                                     
-    started           Process is started                                                                                             
-    state             The current state (started, stopped hung)                                                                      
-    stopped           Process is stopped                                                                                             
-    time              User-kernel time in seconds                                                                                    
-    user              User time in seconds                                                                                           
-    user_handles      Number of handles                                                                                              
-    virtual           Virtual size in bytes                                                                                          
-    working_set       Working set in bytes                                                                                           
-    ================= ==============================================================================================================
-
-
-
-
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
 
 .. option:: warning
     :synopsis: Filter which marks items which generates a warning state.
 
     | Filter which marks items which generates a warning state.
     | If anything matches this filter the return status will be escalated to warning.
-    | Available options :
-
-    ================= ============================================================================================================== 
-    Key               Value                                                                                                          
-    ----------------- -------------------------------------------------------------------------------------------------------------- 
-    count             Number of items matching the filter. Common option for all checks.                                             
-    total              Total number of items. Common option for all checks.                                                          
-    ok_count           Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count         Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count         Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count      Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list               A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list            A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list          A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list          A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list       A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list        A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status             The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
-    command_line      Command line of process (not always available)                                                                 
-    creation          Creation time                                                                                                  
-    error             Any error messages associated with fetching info                                                               
-    exe               The name of the executable                                                                                     
-    filename          Name of process (with path)                                                                                    
-    gdi_handles       Number of handles                                                                                              
-    handles           Number of handles                                                                                              
-    hung              Process is hung                                                                                                
-    kernel            Kernel time in seconds                                                                                         
-    legacy_state      Get process status (for legacy use via check_nt only)                                                          
-    page_fault        Page fault count                                                                                               
-    pagefile          Peak page file use in bytes                                                                                    
-    peak_pagefile     Page file usage in bytes                                                                                       
-    peak_virtual      Peak virtual size in bytes                                                                                     
-    peak_working_set  Peak working set in bytes                                                                                      
-    pid               Process id                                                                                                     
-    started           Process is started                                                                                             
-    state             The current state (started, stopped hung)                                                                      
-    stopped           Process is stopped                                                                                             
-    time              User-kernel time in seconds                                                                                    
-    user              User time in seconds                                                                                           
-    user_handles      Number of handles                                                                                              
-    virtual           Virtual size in bytes                                                                                          
-    working_set       Working set in bytes                                                                                           
-    ================= ==============================================================================================================
-
-
-
-
 
 .. option:: warn
     :synopsis: Short alias for warning
@@ -2501,53 +2377,6 @@ Arguments
 
     | Filter which marks items which generates a critical state.
     | If anything matches this filter the return status will be escalated to critical.
-    | Available options :
-
-    ================= ============================================================================================================== 
-    Key               Value                                                                                                          
-    ----------------- -------------------------------------------------------------------------------------------------------------- 
-    count             Number of items matching the filter. Common option for all checks.                                             
-    total              Total number of items. Common option for all checks.                                                          
-    ok_count           Number of items matched the ok criteria. Common option for all checks.                                        
-    warn_count         Number of items matched the warning criteria. Common option for all checks.                                   
-    crit_count         Number of items matched the critical criteria. Common option for all checks.                                  
-    problem_count      Number of items matched either warning or critical criteria. Common option for all checks.                    
-    list               A list of all items which matched the filter. Common option for all checks.                                   
-    ok_list            A list of all items which matched the ok criteria. Common option for all checks.                              
-    warn_list          A list of all items which matched the warning criteria. Common option for all checks.                         
-    crit_list          A list of all items which matched the critical criteria. Common option for all checks.                        
-    problem_list       A list of all items which matched either the critical or the warning criteria. Common option for all checks.  
-    detail_list        A special list with critical, then warning and finally ok. Common option for all checks.                      
-    status             The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     
-    command_line      Command line of process (not always available)                                                                 
-    creation          Creation time                                                                                                  
-    error             Any error messages associated with fetching info                                                               
-    exe               The name of the executable                                                                                     
-    filename          Name of process (with path)                                                                                    
-    gdi_handles       Number of handles                                                                                              
-    handles           Number of handles                                                                                              
-    hung              Process is hung                                                                                                
-    kernel            Kernel time in seconds                                                                                         
-    legacy_state      Get process status (for legacy use via check_nt only)                                                          
-    page_fault        Page fault count                                                                                               
-    pagefile          Peak page file use in bytes                                                                                    
-    peak_pagefile     Page file usage in bytes                                                                                       
-    peak_virtual      Peak virtual size in bytes                                                                                     
-    peak_working_set  Peak working set in bytes                                                                                      
-    pid               Process id                                                                                                     
-    started           Process is started                                                                                             
-    state             The current state (started, stopped hung)                                                                      
-    stopped           Process is stopped                                                                                             
-    time              User-kernel time in seconds                                                                                    
-    user              User time in seconds                                                                                           
-    user_handles      Number of handles                                                                                              
-    virtual           Virtual size in bytes                                                                                          
-    working_set       Working set in bytes                                                                                           
-    ================= ==============================================================================================================
-
-
-
-
 
 .. option:: crit
     :synopsis: Short alias for critical.
@@ -2607,6 +2436,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -2623,6 +2462,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
@@ -2817,21 +2676,21 @@ Arguments
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
-    :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
-    :option:`show-default` | N/A | Show default values for a given command
-    :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` |  | Filter which marks interesting items.
     :option:`warning` | not state_is_perfect() | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
     :option:`critical` | not state_is_ok() | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`empty-state` | unknown | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
     :option:`top-syntax` | ${status}: ${crit_list}, delayed (${warn_list}) | Top level syntax.
     :option:`ok-syntax` | %(status): All %(count) service(s) are ok. | ok syntax.
     :option:`empty-syntax` | %(status): No services found | Empty syntax.
@@ -2860,42 +2719,12 @@ Samples
 
 Arguments
 *********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: debug
-    :synopsis: Show debugging information in the log
-
-    | Show debugging information in the log
-
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
     | Available options :
 
     =================== ============================================================================================================== 
@@ -3065,6 +2894,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -3081,6 +2920,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
@@ -3275,21 +3134,21 @@ Arguments
     :delim: | 
     :header: "Option", "Default Value", "Description"
 
-    :option:`help` | N/A | Show help screen (this screen)
-    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
-    :option:`show-default` | N/A | Show default values for a given command
-    :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`filter` |  | Filter which marks interesting items.
     :option:`warning` | uptime < 2d | Filter which marks items which generates a warning state.
     :option:`warn` |  | Short alias for warning
     :option:`critical` | uptime < 1d | Filter which marks items which generates a critical state.
     :option:`crit` |  | Short alias for critical.
     :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
     :option:`empty-state` | ignored | Return status to use when nothing matched filter.
     :option:`perf-config` |  | Performance data generation configuration
     :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
     :option:`top-syntax` | ${status}: ${list} | Top level syntax.
     :option:`ok-syntax` |  | ok syntax.
     :option:`empty-syntax` |  | Empty syntax.
@@ -3307,42 +3166,12 @@ Samples
 
 Arguments
 *********
-.. option:: help
-    :synopsis: Show help screen (this screen)
-
-    | Show help screen (this screen)
-
-.. option:: help-pb
-    :synopsis: Show help screen as a protocol buffer payload
-
-    | Show help screen as a protocol buffer payload
-
-.. option:: show-default
-    :synopsis: Show default values for a given command
-
-    | Show default values for a given command
-
-.. option:: help-short
-    :synopsis: Show help screen (short format).
-
-    | Show help screen (short format).
-
-.. option:: debug
-    :synopsis: Show debugging information in the log
-
-    | Show debugging information in the log
-
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
     | Available options :
 
     ============== ============================================================================================================== 
@@ -3472,6 +3301,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -3488,6 +3327,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
