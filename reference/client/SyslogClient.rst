@@ -66,6 +66,7 @@ Sample keys:
     :confpath:`/settings/syslog/client/targets/sample` | :confkey:`~/settings/syslog/client/targets/sample.timeout` | TIMEOUT
 
 
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the SyslogClient module.

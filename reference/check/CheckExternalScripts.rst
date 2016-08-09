@@ -135,6 +135,13 @@ Sample keys:
 
 
 
+Samples
+-------
+
+.. include:: ../../samples/CheckExternalScripts_samples.rst
+
+
+
 
 
 

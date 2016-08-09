@@ -65,6 +65,7 @@ Sample keys:
     :confpath:`/settings/SMTP/client/targets/sample` | :confkey:`~/settings/SMTP/client/targets/sample.timeout` | TIMEOUT
 
 
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the SMTPClient module.

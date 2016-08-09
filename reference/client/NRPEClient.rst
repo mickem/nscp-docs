@@ -89,6 +89,7 @@ Sample keys:
     :confpath:`/settings/NRPE/client/targets/sample` | :confkey:`~/settings/NRPE/client/targets/sample.verify mode` | VERIFY MODE
 
 
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the NRPEClient module.

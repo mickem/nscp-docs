@@ -17,6 +17,7 @@ A list of all available queries (check commands)
     :delim: | 
     :header: "Command", "Description"
 
+    :query:`check_nscp` | Check the internal healt of NSClient++.
     :query:`check_nscp_version` | Check the version of NSClient++ which is used.
 
 
@@ -28,14 +29,15 @@ A list of all available queries (check commands)
 
 
 
+
 Queries
 =======
 A quick reference for all available queries (check commands) in the CheckNSCP module.
 
-:query:`check_nscp_version`
----------------------------
-.. query:: check_nscp_version
-    :synopsis: Check the version of NSClient++ which is used.
+:query:`check_nscp`
+-------------------
+.. query:: check_nscp
+    :synopsis: Check the internal healt of NSClient++.
 
 **Usage:**
 
@@ -50,22 +52,6 @@ A quick reference for all available queries (check commands) in the CheckNSCP mo
     :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
     :option:`show-default` | N/A | Show default values for a given command
     :option:`help-short` | N/A | Show help screen (short format).
-    :option:`debug` | N/A | Show debugging information in the log
-    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
-    :option:`filter` |  | Filter which marks interesting items.
-    :option:`warning` |  | Filter which marks items which generates a warning state.
-    :option:`warn` |  | Short alias for warning
-    :option:`critical` |  | Filter which marks items which generates a critical state.
-    :option:`crit` |  | Short alias for critical.
-    :option:`ok` |  | Filter which marks items which generates an ok state.
-    :option:`empty-state` | ignored | Return status to use when nothing matched filter.
-    :option:`perf-config` |  | Performance data generation configuration
-    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
-    :option:`top-syntax` | ${status}: ${list} | Top level syntax.
-    :option:`ok-syntax` |  | ok syntax.
-    :option:`empty-syntax` |  | Empty syntax.
-    :option:`detail-syntax` | ${release}.${major}.${minor}.${build} (${date}) | Detail level syntax.
-    :option:`perf-syntax` | version | Performance alias syntax.
 
 
 
@@ -92,22 +78,52 @@ Arguments
 
     | Show help screen (short format).
 
-.. option:: debug
-    :synopsis: Show debugging information in the log
+:query:`check_nscp_version`
+---------------------------
+.. query:: check_nscp_version
+    :synopsis: Check the version of NSClient++ which is used.
 
-    | Show debugging information in the log
+**Usage:**
 
-.. option:: show-all
-    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
 
-    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
 
+.. csv-table:: 
+    :class: contentstable 
+    :delim: | 
+    :header: "Option", "Default Value", "Description"
+
+    :option:`filter` |  | Filter which marks interesting items.
+    :option:`warning` |  | Filter which marks items which generates a warning state.
+    :option:`warn` |  | Short alias for warning
+    :option:`critical` |  | Filter which marks items which generates a critical state.
+    :option:`crit` |  | Short alias for critical.
+    :option:`ok` |  | Filter which marks items which generates an ok state.
+    :option:`debug` | N/A | Show debugging information in the log
+    :option:`show-all` | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+    :option:`empty-state` | ignored | Return status to use when nothing matched filter.
+    :option:`perf-config` |  | Performance data generation configuration
+    :option:`escape-html` | N/A | Escape any < and > characters to prevent HTML encoding
+    :option:`help` | N/A | Show help screen (this screen)
+    :option:`help-pb` | N/A | Show help screen as a protocol buffer payload
+    :option:`show-default` | N/A | Show default values for a given command
+    :option:`help-short` | N/A | Show help screen (short format).
+    :option:`top-syntax` | ${status}: ${list} | Top level syntax.
+    :option:`ok-syntax` |  | ok syntax.
+    :option:`empty-syntax` |  | Empty syntax.
+    :option:`detail-syntax` | ${release}.${major}.${minor}.${build} (${date}) | Detail level syntax.
+    :option:`perf-syntax` | version | Performance alias syntax.
+
+
+
+
+Arguments
+*********
 .. option:: filter
     :synopsis: Filter which marks interesting items.
 
     | Filter which marks interesting items.
     | Interesting items are items which will be included in the check.
-    | They do not denote warning or critical state but they are checked use this to filter out unwanted items.
+    | They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
     | Available options :
 
     ============== ============================================================================================================== 
@@ -253,6 +269,16 @@ Arguments
 
 
 
+.. option:: debug
+    :synopsis: Show debugging information in the log
+
+    | Show debugging information in the log
+
+.. option:: show-all
+    :synopsis: Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
+    | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).
+
 .. option:: empty-state
     :synopsis: Return status to use when nothing matched filter.
 
@@ -269,6 +295,26 @@ Arguments
     :synopsis: Escape any < and > characters to prevent HTML encoding
 
     | Escape any < and > characters to prevent HTML encoding
+
+.. option:: help
+    :synopsis: Show help screen (this screen)
+
+    | Show help screen (this screen)
+
+.. option:: help-pb
+    :synopsis: Show help screen as a protocol buffer payload
+
+    | Show help screen as a protocol buffer payload
+
+.. option:: show-default
+    :synopsis: Show default values for a given command
+
+    | Show default values for a given command
+
+.. option:: help-short
+    :synopsis: Show help screen (short format).
+
+    | Show help screen (short format).
 
 .. option:: top-syntax
     :synopsis: Top level syntax.
