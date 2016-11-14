@@ -39,8 +39,11 @@ Common Keys:
     :confpath:`/settings/NRDP/client` | :confkey:`~/settings/NRDP/client.channel` | CHANNEL
     :confpath:`/settings/NRDP/client` | :confkey:`~/settings/NRDP/client.hostname` | HOSTNAME
     :confpath:`/settings/NRDP/client/targets/default` | :confkey:`~/settings/NRDP/client/targets/default.address` | TARGET ADDRESS
+    :confpath:`/settings/NRDP/client/targets/default` | :confkey:`~/settings/NRDP/client/targets/default.key` | SECURITY TOKEN
+    :confpath:`/settings/NRDP/client/targets/default` | :confkey:`~/settings/NRDP/client/targets/default.password` | SECURITY TOKEN
     :confpath:`/settings/NRDP/client/targets/default` | :confkey:`~/settings/NRDP/client/targets/default.retries` | RETRIES
     :confpath:`/settings/NRDP/client/targets/default` | :confkey:`~/settings/NRDP/client/targets/default.timeout` | TIMEOUT
+    :confpath:`/settings/NRDP/client/targets/default` | :confkey:`~/settings/NRDP/client/targets/default.token` | SECURITY TOKEN
 
 Advanced keys:
 
@@ -61,9 +64,12 @@ Sample keys:
 
     :confpath:`/settings/NRDP/client/targets/sample` | :confkey:`~/settings/NRDP/client/targets/sample.address` | TARGET ADDRESS
     :confpath:`/settings/NRDP/client/targets/sample` | :confkey:`~/settings/NRDP/client/targets/sample.host` | TARGET HOST
+    :confpath:`/settings/NRDP/client/targets/sample` | :confkey:`~/settings/NRDP/client/targets/sample.key` | SECURITY TOKEN
+    :confpath:`/settings/NRDP/client/targets/sample` | :confkey:`~/settings/NRDP/client/targets/sample.password` | SECURITY TOKEN
     :confpath:`/settings/NRDP/client/targets/sample` | :confkey:`~/settings/NRDP/client/targets/sample.port` | TARGET PORT
     :confpath:`/settings/NRDP/client/targets/sample` | :confkey:`~/settings/NRDP/client/targets/sample.retries` | RETRIES
     :confpath:`/settings/NRDP/client/targets/sample` | :confkey:`~/settings/NRDP/client/targets/sample.timeout` | TIMEOUT
+    :confpath:`/settings/NRDP/client/targets/sample` | :confkey:`~/settings/NRDP/client/targets/sample.token` | SECURITY TOKEN
 
 
 
@@ -385,9 +391,12 @@ Arguments
     
         :confkey:`address` |  | TARGET ADDRESS
         :confkey:`host` |  | TARGET HOST
+        :confkey:`key` |  | SECURITY TOKEN
+        :confkey:`password` |  | SECURITY TOKEN
         :confkey:`port` |  | TARGET PORT
         :confkey:`retries` | 3 | RETRIES
         :confkey:`timeout` | 30 | TIMEOUT
+        :confkey:`token` |  | SECURITY TOKEN
 
     **Sample**::
 
@@ -396,9 +405,12 @@ Arguments
         [/settings/NRDP/client/targets/default]
         address=
         host=
+        key=
+        password=
         port=
         retries=3
         timeout=30
+        token=
 
 
     .. confkey:: address
@@ -445,6 +457,50 @@ Arguments
             [/settings/NRDP/client/targets/default]
             # TARGET HOST
             host=
+
+
+    .. confkey:: key
+        :synopsis: SECURITY TOKEN
+
+        **SECURITY TOKEN**
+
+        | The security token
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: key
+
+        **Default value**: 
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # SECURITY TOKEN
+            key=
+
+
+    .. confkey:: password
+        :synopsis: SECURITY TOKEN
+
+        **SECURITY TOKEN**
+
+        | The security token
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: password
+
+        **Default value**: 
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # SECURITY TOKEN
+            password=
 
 
     .. confkey:: port
@@ -513,6 +569,28 @@ Arguments
             [/settings/NRDP/client/targets/default]
             # TIMEOUT
             timeout=30
+
+
+    .. confkey:: token
+        :synopsis: SECURITY TOKEN
+
+        **SECURITY TOKEN**
+
+        | The security token
+
+        **Path**: /settings/NRDP/client/targets/default
+
+        **Key**: token
+
+        **Default value**: 
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/default]
+            # SECURITY TOKEN
+            token=
 
 
 
@@ -535,9 +613,12 @@ Arguments
     
         :confkey:`address` |  | TARGET ADDRESS
         :confkey:`host` |  | TARGET HOST
+        :confkey:`key` |  | SECURITY TOKEN
+        :confkey:`password` |  | SECURITY TOKEN
         :confkey:`port` |  | TARGET PORT
         :confkey:`retries` | 3 | RETRIES
         :confkey:`timeout` | 30 | TIMEOUT
+        :confkey:`token` |  | SECURITY TOKEN
 
     **Sample**::
 
@@ -546,9 +627,12 @@ Arguments
         [/settings/NRDP/client/targets/sample]
         address=
         host=
+        key=
+        password=
         port=
         retries=3
         timeout=30
+        token=
 
 
     .. confkey:: address
@@ -599,6 +683,54 @@ Arguments
             [/settings/NRDP/client/targets/sample]
             # TARGET HOST
             host=
+
+
+    .. confkey:: key
+        :synopsis: SECURITY TOKEN
+
+        **SECURITY TOKEN**
+
+        | The security token
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: key
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # SECURITY TOKEN
+            key=
+
+
+    .. confkey:: password
+        :synopsis: SECURITY TOKEN
+
+        **SECURITY TOKEN**
+
+        | The security token
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: password
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # SECURITY TOKEN
+            password=
 
 
     .. confkey:: port
@@ -673,5 +805,29 @@ Arguments
             [/settings/NRDP/client/targets/sample]
             # TIMEOUT
             timeout=30
+
+
+    .. confkey:: token
+        :synopsis: SECURITY TOKEN
+
+        **SECURITY TOKEN**
+
+        | The security token
+
+        **Path**: /settings/NRDP/client/targets/sample
+
+        **Key**: token
+
+        **Default value**: 
+
+        **Sample key**: This key is provided as a sample to show how to configure objects
+
+        **Used by**: :module:`NRDPClient`
+
+        **Sample**::
+
+            [/settings/NRDP/client/targets/sample]
+            # SECURITY TOKEN
+            token=
 
 

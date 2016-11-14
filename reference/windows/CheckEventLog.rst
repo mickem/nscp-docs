@@ -459,7 +459,7 @@ Arguments
     :synopsis: Date range to scan.
 
     | Date range to scan.
-    | This is the approximate dates to search through this speeds up searching a lot but there is no guarantee messages are ordered.
+    | A negative value scans backward (historical events) and a positive value scans forwards (future events). This is the approximate dates to search through this speeds up searching a lot but there is no guarantee messages are ordered.
 
 .. option:: truncate-message
     :synopsis: Maximum length of message for each event log message text.
