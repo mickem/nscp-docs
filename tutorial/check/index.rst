@@ -62,7 +62,7 @@ Reflect in Silence
 
 So what have learned so far?
 Well, we need to load a module before we can execute its command.
-And is we look at the output we can decern that we get various messages. Meny of them marked D for debug.. These message will only be avalible if log level is set to debug.
+And if we look at the output we can decern that we get various messages. Many of them marked D for debug.. These message will only be avalible if log level is set to debug.
 This can be achived in two ways:
 
 1. the --log debug command line options
@@ -78,7 +78,7 @@ We have also learned that we can specify which settings tore to use and that NSC
 Getting help
 =============
 
-Since you have found your way to this document it is safe ti assume that you are aware that all commands are described here in the help.
+Since you have found your way to this document it is safe to assume that you are aware that all commands are described here in the help.
 In addition to this all comamnds also feature built-in command line help. Since this is extensive it can not really be used remotely via for instance check_nrpe since it has a limited payload (out of the box).
 Thus the "test mode client" which we are using here is a great place to run your commands. To get help you run the command with the help option::
 

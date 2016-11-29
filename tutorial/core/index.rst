@@ -106,7 +106,7 @@ Sections
 --------
 
 Like in all INI, section start with a name between "[]". The first section is [/modules].
-In general NSClient++ has a hierarcical settings structure much like a filesystem. THis means that everything under /settings is related to settings and so on and so forth.
+In general NSClient++ has a hierarcical settings structure much like a filesystem. This means that everything under /settings is related to settings and so on and so forth.
 
 * Sections do not have an explicit end. When a new section start, the previous one end. 
 * Sections can be empty
@@ -227,7 +227,7 @@ NRPE Server
 All you need to configure is who is allowed to connect as well how to handle arguments.
 For security reasons arguments are not allowed the idea is that a "dumb" monitoring agent is less dangerous then one which can be controlled remotely.
 The drawback to not allowing argument is that you need to configure **everything** in nsclient.ini on every single host which can obviously be cumbersome. 
-The other option is to allow arguments but **it is important to conside rhte securoty implications** before doing so.
+The other option is to allow arguments but **it is important to consider the security implications** before doing so.
 
 For a detailed guide on how to setup NRPE with NSClient++ step by step including debugging and testing see :ref:`tutorial_nagios_nrpe`.
 
