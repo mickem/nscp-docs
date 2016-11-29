@@ -1,12 +1,12 @@
 .. default-domain:: nscp
 
-.. module:: PythonScript
-    :synopsis: Loads and processes internal Python scripts
+.. module:: DotnetPlugin
+    :synopsis: Plugin to load and manage plugins written in dot net.
 
 ===========================
-:module:`PythonScript` --- 
+:module:`DotnetPlugin` --- 
 ===========================
-Loads and processes internal Python scripts
+Plugin to load and manage plugins written in dot net.
 
 
 
