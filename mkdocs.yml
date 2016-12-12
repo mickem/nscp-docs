@@ -7,7 +7,6 @@ pages:
     - Checking Things: checks.md
     - Installing NSClient++: installing.md
     - Configuration: settings.md
-    - Command line Usage: usage.md
     - FAQ: faq.md
   - About NSClient++:
     - About: about/index.md
@@ -36,7 +35,7 @@ pages:
     - Nagios with NRPE: tutorial/nagios/nrpe.md
     - Nagios with NSCA: tutorial/nagios/nsca.md
   - Reference:
-    - Module reference: reference/index.md
+    - Reference: reference/index.md
     - Check commands:
       - CheckDisk (Windows): reference/windows/CheckDisk.md
       - CheckExternalScripts: reference/check/CheckExternalScripts.md

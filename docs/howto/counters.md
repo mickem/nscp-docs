@@ -56,73 +56,25 @@ To get help you can run: `nscp sys -- --help`
 
 ## Allowed options:
 
-<table>
-  <tbody>
-    <tr>
-      <td>`-h [ --help ]`</td>
-      <td>Show help screen
-    </tr>
-    <tr>
-      <td>`--porcelain`</td>
-      <td>Computer parsable format
-    <tr>
-      <td>`--computer arg`</td>
-      <td>The computer to fetch values from
-    </tr>
-    <tr>
-      <td>`--user arg`</td>
-      <td>The username to login with (only meaningful if computer is specified)
-    </tr>
-    <tr>
-      <td>`--password arg`</td>
-      <td>The password to login with (only meaningful if computer is specified)
-    </tr>
-    <tr>
-      <td>`--lookup-index arg`</td>
-      <td>Lookup a numeric value in the PDH index table
-    </tr>
-    <tr>
-      <td>`--lookup-name arg`</td>
-      <td>Lookup a string value in the PDH index table
-    </tr>
-    <tr>
-      <td>`--expand-path arg`</td>
-      <td>Expand a counter path contaning wildcards into corresponding objects (for instance --expand-path \System\*)
-    </tr>
-    <tr>
-      <td>`--check`</td>
-      <td>Check that performance counters are working
-    </tr>
-    <tr>
-      <td>`--list arg`</td>
-      <td>List counters and/or instances
-    </tr>
-    <tr>
-      <td>`--validate arg`</td>
-      <td>List counters and/or instances
-    </tr>
-    <tr>
-      <td>`--all`</td>
-      <td>List/check all counters not configured counter
-    </tr>
-    <tr>
-      <td>`--no-counters`</td>
-      <td>Do not recurse and list/validate counters for any matching items
-    </tr>
-    <tr>
-      <td>`--no-instances`</td>
-      <td>Do not recurse and list/validate instances for any matching items
-    </tr>
-    <tr>
-      <td>`--counter arg`</td>
-      <td>Specify which counter to work with
-    </tr>
-    <tr>
-      <td>`--filter arg`</td>
-      <td>Specify a filter to match (substring matching)
-    </tr>
-  </tbody>
-</table>
+| Option | Description |
+|--------|-------------|
+| -h [ --help ] | Show help screen |
+| --porcelain | Computer parsable format |
+| --computer arg | The computer to fetch values from |
+| --user arg | The username to login with (only meaningful if computer is specified) |
+| --password arg | The password to login with (only meaningful if computer is specified) |
+| --lookup-index arg | Lookup a numeric value in the PDH index table |
+| --lookup-name arg | Lookup a string value in the PDH index table |
+| --expand-path arg | Expand a counter path contaning wildcards into corresponding objects (for instance --expand-path \System\*) |
+| --check | Check that performance counters are working |
+| --list arg | List counters and/or instances |
+| --validate arg | List counters and/or instances |
+| --all | List/check all counters not configured counter |
+| --no-counters | Do not recurse and list/validate counters for any matching items |
+| --no-instances | Do not recurse and list/validate instances for any matching items |
+| --counter arg | Specify which counter to work with |
+| --filter arg | Specify a filter to match (substring matching)
+
 
 This tool can do:
 
@@ -143,13 +95,9 @@ Some examples of using the command line client to diagnose and investigate count
 
 ```
 nscp sys -- --list
-
 Listing configured counters
-
 ---------------------------
-
 ---------------------------
-
 Listed 0 of 0 counters.No counters was found (perhaps you wanted the --all option to make this a global query, the default is so only look in configured counters).
 ```
 
@@ -159,45 +107,26 @@ in this case there are no configure counters. You can also give the option --all
 
 ```
 nscp sys -- --list --all
-
 Listing configured counters
-
 ---------------------------
-
 ...
-
 ...
-
 \PhysicalDisk(_Total)\Avg. Disk Bytes/Write
-
 \PhysicalDisk(_Total)\% Idle Time
-
 \PhysicalDisk(_Total)\Split IO/Sec
-
 ---------------------------
-
 Listed 36352 of 36352 counters.
 ```
-
 ### List all counters matching a string
-
 ```
 nscp sys -- --list Disk --all
-
 Listing configured counters
-
 ---------------------------
-
 ...
-
 \PhysicalDisk(_Total)\Avg. Disk Bytes/Write
-
 \PhysicalDisk(_Total)\% Idle Time
-
 \PhysicalDisk(_Total)\Split IO/Sec
-
 ---------------------------
-
 Listed 159 of 36352 counters.
 ```
 
@@ -205,25 +134,15 @@ Listed 159 of 36352 counters.
 
 ```
 nscp sys -- --validate Disk --all
-
 Listing configured counters
-
 ---------------------------
-
 ...
-
 \PhysicalDisk(_Total)\Avg. Disk Bytes/Transfer: ok-rate(0)
-
 \PhysicalDisk(_Total)\Avg. Disk Bytes/Read: ok-rate(0)
-
 \PhysicalDisk(_Total)\Avg. Disk Bytes/Write: ok-rate(0)
-
 \PhysicalDisk(_Total)\% Idle Time: ok-rate(0)
-
 \PhysicalDisk(_Total)\Split IO/Sec: ok-rate(0)
-
 ---------------------------
-
 Listed 159 of 36352 counters.
 ```
 
@@ -237,7 +156,6 @@ Predefining counters are don using the configuration file:
 
 ```
 [/settings/system/windows/counters/foo]
-
 counter=counter=\PhysicalDisk(_Total)\Avg. Disk Write Queue Length
 ```
 
@@ -254,9 +172,7 @@ But if we extend this counter definition with a collection strategy we get a lot
 
 ```
 [/settings/system/windows/counters/foo]
-
 collection strategy=rrd
-
 counter=\PhysicalDisk(_Total)\Avg. Disk Write Queue Length
 ```
 
