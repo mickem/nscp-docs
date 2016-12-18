@@ -1,4 +1,4 @@
-# Settings #
+# Settings
 
 The NSClient++ settings store is a hierarchical tree structure with key value pairs.
 Traditionally this is stored in a flat ini-style file where the "paths" are defined as sections.
@@ -14,7 +14,7 @@ Where it is split by module.
 Another really useful feature of the settings in NSClient++ is the ability to include various other settings.
 This is very flexible and you can include ini file from the registry and vice versa.
 
-The way to include a file (if you are using in ifles) is to add a key under the /include section.
+The way to include a file (if you are using ini-files) is to add a key under the /include section.
 
 including file:
 
@@ -28,7 +28,7 @@ Important to note here is that the first found key will be used. So parents will
 
 And example of this:
 
-* nsclient.ini:
+*   nsclient.ini:
 ```
 [/include]
 client=client.ini
@@ -36,9 +36,7 @@ client=client.ini
 [/test]
 key1=This values comes from nsclient.ini
 ```
-
-* client.ini:
-
+*   client.ini:
 ```
 [/include]
 baseline=baseline.ini
@@ -47,9 +45,7 @@ baseline=baseline.ini
 key1=This values comes from client.ini
 key2=This values comes from client.ini
 ```
-
-* baseline.ini:
-
+*   baseline.ini:
 ```
 [/test]
 key1=This values comes from baseline.ini
@@ -59,30 +55,30 @@ key3=This values comes from baseline.ini
 
 in the above example the values of /test keyx will be:
 
-- key1=This values comes from nsclient.ini
-- key2=This values comes from client.ini
-- key3=This values comes from baseline.ini
-  
+-   key1=This values comes from nsclient.ini
+-   key2=This values comes from client.ini
+-   key3=This values comes from baseline.ini
+
 This can be very useful to distribute a baseline configuration for a company or monitoring product.
 Then all "machine specific customization" would go into the nsclient.ini config where as client.ini would be reserved for the clients global config. And finally baseline.ini would be monitoring tool specific configuration.
-  
+
 
 # Settings stores
 
 Settings are historically stored in an ini file but you can store settings in many other locations as well.
-While the most obvious one to use is the registry there are other olptions as well.
+While the most obvious one to use is the registry there are other options as well.
 
-- ini files
-- old ini files
-- registry
-- dummy
-- http (ini files over http)
-  
+-   ini files
+-   old ini files
+-   registry
+-   dummy
+-   http (ini files over http)
+
 
 ### Ini settings
 
 Ini file are the simplest form of configuration and also the default though on windows registry is probably a better option.
-The files are textfiles following the ini file format where yu have sections in brackets [] and key key = values.
+The files are text-files following the ini file format where you have sections in brackets [] and key key = values.
 
 sample.ini:
 
@@ -91,20 +87,20 @@ sample.ini:
 key=value
 ```
 
-To use an ini file you prefix the settings url with ini:// then you can use various folder strings or specify a relative or absolut path to the file.
+To use an ini file you prefix the settings url with ini:// then you can use various folder strings or specify a relative or absolute path to the file.
 
 examples:
 
-* Use the relative file foo.ini `nscp settings --migrate-to ini://foo.ini`
-* Use the relative file foo.ini in a subfolder called conf `nscp settings --migrate-to ini://conf/foo.ini`
-* Use a file stored in the profile folder (on windows): C:\Documents and Settings\All Users\Application Data\NSClient++ `nscp settings --migrate-to ini://%(common-appdata)/NSClient++/nsclient.ini`
+*   Use the relative file foo.ini `nscp settings --migrate-to ini://foo.ini`
+*   Use the relative file foo.ini in a subfolder called conf `nscp settings --migrate-to ini://conf/foo.ini`
+*   Use a file stored in the profile folder (on windows): C:\Documents and Settings\All Users\Application Data\NSClient++ `nscp settings --migrate-to ini://%(common-appdata)/NSClient++/nsclient.ini`
 
 ### registry settings
 
-Registry is only avalible on windows and using them on windows is recomended as it integrates better with windows and windows managament tools where you can push configuration changes and similar things.
+Registry is only available on windows and using them on windows is recommended as it integrates better with windows and windows management tools where you can push configuration changes and similar things.
 As the registry is naturally a tree structure we use folders as section and keys and values for keys and values.
 
-To use an ini file you prefix the settings url with ini:// then you can use various folder strings or specify a relative or absolut path to the file.
+To use an ini file you prefix the settings url with ini:// then you can use various folder strings or specify a relative or absolute path to the file.
 
 examples:
 
@@ -119,7 +115,7 @@ nscp settings --migrate-to registry://HKEY_LOCAL_MACHINE/software/NSClient++
 
 Http/Https is a regular ini file (see above) except that it is loaded remotely and refreshed periodically.
 The refresh period is configurable and if the file has changed NSClient++ will reload and re-read the new configuration.
-If it is not possible to fetch the latest configuration NSClient++ will keep using the last one it recieved.
+If it is not possible to fetch the latest configuration NSClient++ will keep using the last one it received.
 
 examples:
 ```
@@ -138,13 +134,13 @@ scripts/myscript.bat = http://www.myserver.com/myscript.bat
 
 ## Using settings stores
 
-NSClient++ has some fesature to help work with settings stores.
+NSClient++ has some feature to help work with settings stores.
 
 All of this is performed via the settings sub command: `nscp settings --help`
 
 Migrating settings from a ini file to the regstry can be done with the migrate-to command: `nscp settings --migrate-to registry`
 
-This will move all data from the settings file and store it in in the registry and then sertup NSClient++ to use the registry instead of the ini file.
+This will move all data from the settings file and store it in in the registry and then setup NSClient++ to use the registry instead of the ini file.
 
 You can also switch settings store (without migrating data): `nscp settings --switch registry`
 
@@ -163,4 +159,3 @@ The default way for NSClient++ to find your settings files is via the boot.ini f
 If you want to override this, for instance you want to use multiple NSClient++ from the same folder, you can do this via the `--settings` option: `nscp test --settings nsclient2.ini`
 
 You can do this for the service as well by editing the service start command.
-

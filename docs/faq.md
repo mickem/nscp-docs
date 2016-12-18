@@ -9,12 +9,12 @@ What this does is two things.
 1. it starts the daemon as "usual" with the same configuration and such.
 2. it enables debug logging and logs to the console.
    This makes it quite easy to see what is going on and why things go wrong.
-   
+
 
 ## 1.2 MSI or ZIP installation?
 
 In general never use the ZIP installation unless you have a strong reason for doing so.
-The MSI is the preferred way to install NSCLient++ and will work much better then trying to manually install it.
+The MSI is the preferred way to install NSClient++ and will work much better then trying to manually install it.
 
 ## 1.3 Failed to open performance counters
 
@@ -23,21 +23,21 @@ The MSI is the preferred way to install NSCLient++ and will work much better the
 - Second thing to check is whether the servers' performance counters working?
   Sometimes the performance counters end up broken and need to be rebuilt there is a command to validate performance counters: `nscp sys --validate`
 
-For details: Microsoft KB: http://support.microsoft.com/kb/300956 essentially you need to use the "lodctr /R" command.
+For details: Microsoft KB: http://support.microsoft.com/kb/300956 essentially you need to use the `lodctr /R` command.
 
 ## 1.4 Bind failed
 
 Usually this is due to running more then once instance of NSClient++ or possibly running another program that uses the same port.
 
-- Make sure you don't have any other instance NSCLient++ started.
-- Check if the port is in use (netstat -a look for LISTENING)
+- Make sure you don't have any other instance NSClient++ started.
+- Check if the port is in use (`netstat -a` look for LISTENING)
 
 ## 1.5 EventlogBuffer is too small
 
 !!! note
-    This has been fixed in 0.4.x and is no longer required
+    This has been fixed in 0.4.3 and is no longer required
 
-This is because you have one or more entries in your eventlog which are larger then the "default buffer size of 64k". The best way to fix this is to increase the buffer used.
+This is because you have one or more entries in your event-log which are larger then the "default buffer size of 64k". The best way to fix this is to increase the buffer used.
 
 ```
 [/settings/eventlog]
@@ -49,10 +49,10 @@ buffer_size=128000
 !!! note
     System tray is currently disabled and will be added back at some point
 
-## 1.7 I get <insert random error from nagios here>
+## 1.7 I get <insert random error from Nagios here>
 
-This information is usually useless to me since the error in nagios is not related to the problem.
-This is due to most protocols supported by nagios does not support reporting errors only status.
+This information is usually useless to me since the error in Nagios is not related to the problem.
+This is due to most protocols supported by Nagios does not support reporting errors only status.
 To see the error do the following:
 
 ```
@@ -67,7 +67,7 @@ Please check and include this information before you submit questions and/or bug
 
 ## 1.8 High CPU load and check_eventlog
 
-Som people experience high CPU load when checking the event log this can usualy be resolved using the new command line option scan-range setting it to the time region you want to check
+Some people experience high CPU load when checking the event log this can usually be resolved using the new command line option scan-range setting it to the time region you want to check
 
 `CheckEventLog ... scan-range=12h ...`
 
@@ -101,22 +101,22 @@ level = debug
 
 ## 2.1 How do I properly escape spaces in strings
 
-When you need to put spaces in a string you need to make sure you escape them properly in the nagios confix.
+When you need to put spaces in a string you need to make sure you escape them properly in the Nagios config.
 As usual you can do it anyway you like but I prefer: `check_nrpe ... 'this is a string'`
-    
+
 ## 2.2 How do I properly escape $ in strings
 
-Dollar signs are "strange" in nagios nad has to be escaped using double $$s. Thus in nagios config you need to put `$$`.
+Dollar signs are "strange" in Nagios and has to be escaped using double $$s. Thus in Nagios config you need to put `$$`.
 
 ## 2.3 How do I properly escape \ in strings
 
-Backslashes and som other control characters are handled by the shell in Nagios and thus escaped as such.
+Backslashes and some other control characters are handled by the shell in Nagios and thus escaped as such.
 
 From:
-- nagios:
-  "...\\..."
-- from NSClient++
-  "...\\..."
+-   Nagios:
+    "...\\..."
+-   from NSClient++
+    "...\\..."
 
 ## 2.4 Arguments via NRPE
 
@@ -130,9 +130,9 @@ This is a security measure inherited from the regular NRPE client.
 The following characters are considered harmful: \|\`&><'\"\\[]{}
 To work around this you have two options.
 
-1. You can enable it
-2. You can switch most commands to not use nasty characters
-   
+1.  You can enable it
+2.  You can switch most commands to not use nasty characters
+
 To enable this in the NRPE server you can add the following:
 
 ```
@@ -147,10 +147,10 @@ To not use nasty characters you can replace man y of them in built-in commands:
 
 |Expression|Replacement|
 |----------|-----------|
-|     >    |    gt     |
-|  <       | lt |
-| ' |   str(...)   |
-|  ${..}  |    %(..)|
+|    >     |    gt     |
+|   <      |    lt     |
+|   '      |  str(...) |
+|  ${..}   |    %(..)  |
 
 
 # 3. Versions
@@ -162,7 +162,7 @@ In generally do NOT fix issues in several years old versions.
 
 ## 3.2 I use version 0.4.0 or 0.4.1
 
-1. good idea to upgrade to 0.5.0 and see if the issue has been resolved but please report this anyway so I can (if possible) fir it for 0.4.1
+1.  good idea to upgrade to 0.5.0 and see if the issue has been resolved but please report this anyway so I can (if possible) fir it for 0.4.1
 
 # 4. Network
 
@@ -189,7 +189,7 @@ allowed hosts = 10.11.12.0/24
 Configuring timeouts can some times be a problem and cause strange errors.
 It is important to understand that timeouts are cascading this means if you have all timeouts set to 60 seconds they will all miss fire.
 
-The nagios server timeout will fire after exactly 60 seconds but the script timeouts will be started m,aybe 1 second after the nagios service check timeout this means once we reach 60 seconds the nagios service timeout will fire first and 1 second after the script will timeout. This you always have to set each timeout slightly less to accomodate this drift.
+The Nagios server timeout will fire after exactly 60 seconds but the script timeouts will be started maybe 1 second after the Nagios service check timeout this means once we reach 60 seconds the Nagios service timeout will fire first and 1 second after the script will timeout. This you always have to set each timeout slightly less to accommodate this drift.
 
 If your command takes 60 seconds you need to set the timeouts like this:
 
@@ -201,27 +201,27 @@ vbs = cscript.exe //T:120 //NoLogo scripts\\lib\\wrapper.vbs %SCRIPT% %ARGS%
 ```   
 
 **2. External script timeout: 65 seconds**
-   
+
 ```
 [/settings/external scripts]
 timeout = 65
 ```
 
 **3. NRPE/server timeout: 70s**
-   
+
 ```
 [settings/NPRE/server]
 timeout = 70
 ```
 
 **4. check_nrpe timeout: 75s**
-   
+
 ```
 check_nrpe -t 75
 ```
 
 **5. nagios service check timeout: 80s**
-   
+
 ```
 service_check_timeout=80
 ```
@@ -246,29 +246,29 @@ In 0.4.2 we introduced a new set of commands which were more generic and similar
 The previous ones are only for compatibility and will eventually be removed from NSClient++.
 Currently they are about 90% compatible which means some things will not work as before and some commands are not even present anymore.
 
-1. personally think that the benefit of using the new commands makes the effort required to convert it worth it but if you have a specific command using the old syntax which no longer work please do let me know and I will see about adding support for it.
-2. check_nt
+1.  personally think that the benefit of using the new commands makes the effort required to convert it worth it but if you have a specific command using the old syntax which no longer work please do let me know and I will see about adding support for it.
+2.  `check_nt`
 
 ## 5.3 I use check_nt and...
 
-Check_nt is NOT a good protocol and is considerd abandoneware. NSClient++ supports it only for legacy reasons.
-There is generally no reason to use check_nt
+Check_nt is NOT a good protocol and is considered abandon-ware as noone updates the check_nt command any longer. NSClient++ supports it only for legacy reasons.
+There is generally no reason to use check_nt as check_nrpe and check_nscp can achieve the same thing.
 
 ## 5.4 MEMUSE reports the wrong value
 
 No it does not :)
-MEMUSE reports physical+page (normally called commited bytes). This is the amount of memory the system has promised to various applications.
-Thus it will be "more" than your RAM if you want to check physical memory please use check_nrpe and check_memory instead.
+MEMUSE reports physical+page (normally called committed bytes). This is the amount of memory the system has promised to various applications.
+Thus it will be "more" than your RAM if you want to check physical memory please use `check_nrpe` and `check_memory` instead.
 
-# 6. Eventlog
+# 6. Event-log
 
-## 6.1 Can I check "modern" eventlogs from Windows 2008 and above?
+## 6.1 Can I check "modern" event-logs from Windows 2008 and above?
 
 Yes, but it requires NSClient++ 0.4.2 and later.
 
-## 6.2 I use severity but still dont get errors (or get non error messages).
+## 6.2 I use severity but still don't get errors (or get non error messages).
 
-This is a "feature" of the Windows Eventlog API. They have something called severity which most programs do not use as severity.
+This is a "feature" of the Windows Event-log API. They have something called severity which most programs do not use as severity.
 instead please try using level which is more accurate. This is less relevant in "modern Windows"  where severity has been removed.
 
 # 7. NRPE
@@ -278,11 +278,11 @@ instead please try using level which is more accurate. This is less relevant in 
 The NRPE protocol is broken it is using some strange encryption protocols which are (to our knowledge) rather insecure.
 To work around this in 0.4.x we introduced real SSL support as well as certificate based authentication. This became the default in 0.4.3.
 
-To allow old "legacy" check_nrpe connect to NSClient++ you need to enable *insecure mode* which can be done in multiple ways.
+To allow old "legacy" `check_nrpe` connect to NSClient++ you need to enable *insecure mode* which can be done in multiple ways.
 
-1. In the MSI installer there is an option to select insecure mode
-2. From command line you can run the "nscp nrpe install --insecure"
-3. You can manually set the option in your config file
+1.  In the MSI installer there is an option to select insecure mode
+2.  From command line you can run the `nscp nrpe install --insecure`
+3.  You can manually set the option in your config file
 
 All these options will result in the following configuration:
 
@@ -296,7 +296,7 @@ ssl = true
 insecure = true
 ```
 
-If you instead opt to use the more secure standard SSL aproach used in NSClient++ you can easily install NSClient++ on a linux system as well.
+If you instead opt to use the more secure standard SSL approach used in NSClient++ you can easily install NSClient++ on a linux system as well.
 
 
 # 8. My question is not here?

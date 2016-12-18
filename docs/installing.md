@@ -27,19 +27,19 @@ For details on the configuration options check the [the refernce documentation](
 
 ## Windows Firewall
 
-1. windows firewall exception for NRPE and check_nt is installed (optional) if you have another firewall then the built-in one you might have to manually add exceptions to all incoming traafic if you wich to use check_nrpe and/or check_nt.
-2. External Firewall (optional)
+1.  windows firewall exception for NRPE and check_nt is installed (optional) if you have another firewall then the built-in one you might have to manually add exceptions to all incoming traffic if you which to use check_nrpe and/or check_nt.
+2.  External Firewall (optional)
 
 
 Firewall configuration should be pretty straight forward:
 
-- If you use NRPEServer (check_nrpe, NRPEListener) you need the NRPE port open (usually 5666) from the nagios server towards the client.
-- If you use the NSClientServer (check_nt, NSClientListener) you need the (modified) NSClient port open (usually 12489) from the nagios server towards the client.
-- If you use the NSCA Module (passive checks) you need the NSCA port open from the client towards the nagios server.
-  client:* -> nagios:5667
-- Also be aware that ports are configurable so if you override the defaults you obviously need to update the firewall rules accordingly.
-- There a multitude of other protocol which you can also use with NSCLient++ (including, NRPE, NSCA, Syslog, SMTP, etc etc) so please review what your firewall setup in conjunction with you NSClient++ design.
-  
+-   If you use NRPEServer (check_nrpe, NRPEListener) you need the NRPE port open (usually 5666) from the Nagios server towards the client.
+-   If you use the NSClientServer (check_nt, NSClientListener) you need the (modified) NSClient port open (usually 12489) from the Nagios server towards the client.
+-   If you use the NSCA Module (passive checks) you need the NSCA port open from the client towards the Nagios server.
+    client:* -> nagios:5667
+-   Also be aware that ports are configurable so if you override the defaults you obviously need to update the firewall rules accordingly.
+-   There a multitude of other protocol which you can also use with NSClient++ (including, NRPE, NSCA, Syslog, SMTP, etc etc) so please review what your firewall setup in conjunction with you NSClient++ design.
+
 
 | Protocol   | Source | Source port | Destination   | Destination port | Comment                                                        |
 |------------|--------|-------------|---------------|------------------|----------------------------------------------------------------|
@@ -48,22 +48,21 @@ Firewall configuration should be pretty straight forward:
 | NSCA       | client | <all>       | nagios        | 5667             | The client initiates a call to the nagios server on port 5667  |
 | NRPE-proxy | client | <all>       | remote-client | 5666             | The client initiates a call to the remote client on port 5666  |
 
-- **nagios** is the IP/host of the main monitoring server
+- **Nagios** is the IP/host of the main monitoring server
 - client is the Windows computer where you have installed NSClient++
 - remote-client is the "other" client you want to check from NSClient++ (using NSClient++ as a proxy)
-  
 
 All these ports can be changed so be sure to check your nsclient.ini for your ports.
 
 # Automated installation
 
 The NSClient++ installer for windows is a standard MSI installer which means it can be installed using pretty much all deployment techniques available on the windows platform.
-This means that there is no built-in deploy and configuration mechanism in NSClient++ instead it fully relies on standard tools provided for the Windows plattform.
+This means that there is no built-in deploy and configuration mechanism in NSClient++ instead it fully relies on standard tools provided for the Windows platform.
 MSI files can be tweaked in several ways.
 
 ### Configuration options
 
-There are several options for deploying configuration and copying textfile is probably the worst of them.
+There are several options for deploying configuration and copying text-file is probably the worst of them.
 You can use group policies to push the configuration files but there are several other ways to do the same.
 
 ## MSI Options
@@ -72,7 +71,7 @@ The MSI file can be customized during the installer. The following keys are avai
 
 | Keyword            | Description                                                          |
 |--------------------|----------------------------------------------------------------------|
-| INSTALLLOCATION    | Folder where NSCLient++ is installed.                                |
+| INSTALLLOCATION    | Folder where NSClient++ is installed.                                |
 | CONF_CAN_CHANGE    | Has to be set for all configuration changes to be applied.           |
 | ADD_DEFAULTS       | Add default values to the configuration file.                        |
 | ALLOWED_HOSTS      | Set allowed hosts value                                              |
@@ -80,9 +79,9 @@ The MSI file can be customized during the installer. The following keys are avai
 | CONF_CHECKS        | Enable default check plugins                                         |
 | CONF_NRPE          | Enable NRPE server                                                   |
 | CONF_NSCA          | Enable NSCA Collection /OU probably need scheduler as well)          |
-| CONF_NSCLIENT      | Enable NSCLient Server (check_nt)                                    |
+| CONF_NSCLIENT      | Enable NSClient Server (check_nt)                                    |
 | CONF_SCHEDULER     | Enable Scheduler (required by NSCA)                                  |
-| CONF_WEB           | ENabled WEB Server                                                   |
+| CONF_WEB           | Enabled WEB Server                                                   |
 | NRPEMODE           | NRPE Mode (LEGACY = default old insecure SSL, SAFE = new secure SSL) |
 | NSCLIENT_PWD       | Password to use for check_nt (and web server)                        |
 
@@ -95,25 +94,25 @@ NSClient++ consists of the following features most which can be disable when doi
 | CheckPlugins        | Check Plugins          | Various plugins to check your system. (Includes all check plugins)                        |
 | Documentation       | Documentation (pdf)    | Documentation for NSClient++ and how to use it from Nagios                                |
 | DotNetPluginSupport | .net plugin support    | Support for loading modules written in .dot net (Requires installing .net framework)      |
-| ExtraClientPlugin   | Various client plugins | Plugins to connect to various sytems such as syslog, graphite and smtp                    |
+| ExtraClientPlugin   | Various client plugins | Plugins to connect to various systems such as syslog, graphite and smtp                   |
 | FirewallConfig      | Firewall Exception     | A firewall exception to allow NSClient++ to open ports                                    |
 | LuaScript           | Lua Scripting          | Allows running INTERNAL scripts written in Lua                                            |
-| NRPEPlugins         | NRPE Support           | NRPE Server Plugin. Support for the more vercitile NRPE protocol (check_nrpe)             |
+| NRPEPlugins         | NRPE Support           | NRPE Server Plugin. Support for the more versatile NRPE protocol (check_nrpe)             |
 | NSCAPlugin          | NSCA plugin            | Plugin to submit passive results to an NSCA server                                        |
 | NSCPlugins          | check_nt support       | NSClient Server Plugin. Support for the old NSClient protocol (check_nt)                  |
 | PythonScript        | Python Scripting       | Allows running INTERNAL scripts written in Python                                         |
 | SampleConfig        | Sample config          | Sample config file (with all options)                                                     |
 | SampleScripts       | Scripts                | Scripts for checking and testing various aspects of your computer and NSClient++          |
 | Shortcuts           | Shortcuts              | Main Service shortcuts                                                                    |
-| WEBPlugins          | WEB Server             | NSClient WEB Server. Use this to administrate or check NSCLient via a browser or REST API |
+| WEBPlugins          | WEB Server             | NSClient WEB Server. Use this to administrate or check NSClient via a browser or REST API |
 
 ## Silent install
 
-Now we can put all this together using the normal silent installer which is again part of the standard windows install toolkit. 
+Now we can put all this together using the normal silent installer which is again part of the standard windows install toolkit.
 So if you already have a framework for managing installs use that instead of this command line.
 The gist of it is: `msiexec /quiet /i <MSI FILE> PROPERTY=PropertyValue ...`
 
-For instance Installing (with log) nsclient++ into c:\foobar using registry as configuration and not installing the Python script binaries.
+For instance Installing (with log) NSClient++ into c:\foobar using registry as configuration and not installing the Python script binaries.
 
 ```
 msiexec /qn /l* log.txt /i NSCP-0.4.3.50-x64.msi INSTALLLOCATION=c:\FooBar CONFIGURATION_TYPE=registry://HKEY_LOCAL_MACHINE/software/NSClient++ ADDDEFAULT=ALL REMOVE=PythonScript
@@ -121,14 +120,13 @@ msiexec /qn /l* log.txt /i NSCP-0.4.3.50-x64.msi INSTALLLOCATION=c:\FooBar CONFI
 
 ## Multiple NSClient++
 
-As NSClient++ uninstalls it self if you install there are two options for running multipl NSClient++ on a machine.
+As NSClient++ uninstalls it self if you install there are two options for running multiple NSClient++ on a machine.
 
-1. You can add multipl services for the same installation
-2. You can manually install NSClient++
+1.  You can add multiple services for the same installation
+2.  You can manually install NSClient++
 
-To add multipl service you need to first create the services: `nscp service --install --name nscp2`
+To add multiple service you need to first create the services: `nscp service --install --name nscp2`
 
-And then edit the start command so you can override the configuration. 
+And then edit the start command so you can override the configuration.
 The key to look for in the registry is `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nscp2` and there you can modify the ImagePath:
 `"C:\Program Files\NSClient++\nscp.exe" service --run --name nscp --settings ini://${shared-path}/nsclient-2.ini`
-
