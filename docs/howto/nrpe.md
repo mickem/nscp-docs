@@ -166,7 +166,7 @@ So in this section we shall cover the basics and first off are some of the confi
 * `ssl`
   If this is true we will use SSL encryption on the transport. **Notice** this flag has to be the same on both ends or you will end up with strange errors. The flag is set on check_nrpe with the -n option (if you use -n no SSL will be used).
 * `allow arguments`
-  Since arguments can be potentially dangerous (it allows your users to control the execution) there is a flag (which defaults to off) to enable arguments. So if you plan on configure NSClient++ from the Nagios end you need to enable this. **But be warned this is a security issue you need to think about**. If you do not want to allow arguments you can instead configure all checks in the nsclient.ini file and just execute the aliases from nagios.
+  Since arguments can be potentially dangerous (it allows your users to control the execution) there is a flag (which defaults to off) to enable arguments. So if you plan on configure NSClient++ from the Nagios end you need to enable this. **But be warned this is a security issue you need to think about**. If you do not want to allow arguments you can instead configure all checks in the nsclient.ini file and just execute the aliases from Nagios.
   One important issue with the `allow arguments` is that there are more then one! *Yes, more then one!*
   The reason for this is that you can allow arguments from NRPE and you can allow arguments for external scripts (it is not the same option) which might seem a bit confusing at first.
   But actually quite nice. Using arguments for external scripts can potentially be more dangerous than allowing them from NRPE (internal commands).

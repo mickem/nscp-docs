@@ -228,7 +228,7 @@ Jul 12 19:47:02 localhost nsca: End of connection...
 
 # Configure Nagios
 
-![nagios config](images/nagios-configuration-inheritance.png)
+![Nagios config](images/nagios-configuration-inheritance.png)
 
 Nagios configuration is in itself a whole chapter and this is just a quick peek on how you can do things.
 First off there are a few concepts to understand:

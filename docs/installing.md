@@ -36,16 +36,16 @@ Firewall configuration should be pretty straight forward:
 -   If you use NRPEServer (check_nrpe, NRPEListener) you need the NRPE port open (usually 5666) from the Nagios server towards the client.
 -   If you use the NSClientServer (check_nt, NSClientListener) you need the (modified) NSClient port open (usually 12489) from the Nagios server towards the client.
 -   If you use the NSCA Module (passive checks) you need the NSCA port open from the client towards the Nagios server.
-    client:* -> nagios:5667
+    client:* -> Nagios:5667
 -   Also be aware that ports are configurable so if you override the defaults you obviously need to update the firewall rules accordingly.
 -   There a multitude of other protocol which you can also use with NSClient++ (including, NRPE, NSCA, Syslog, SMTP, etc etc) so please review what your firewall setup in conjunction with you NSClient++ design.
 
 
 | Protocol   | Source | Source port | Destination   | Destination port | Comment                                                        |
 |------------|--------|-------------|---------------|------------------|----------------------------------------------------------------|
-| NRPE       | nagios | <all>       | client        | 5666             | The nagios server initiates a call to the client on port 5666  |
-| NSClient   | nagios | <all>       | client        | 12489            | The nagios server initiates a call to the client on port 12489 |
-| NSCA       | client | <all>       | nagios        | 5667             | The client initiates a call to the nagios server on port 5667  |
+| NRPE       | Nagios | <all>       | client        | 5666             | The nagios server initiates a call to the client on port 5666  |
+| NSClient   | Nagios | <all>       | client        | 12489            | The nagios server initiates a call to the client on port 12489 |
+| NSCA       | client | <all>       | Nagios        | 5667             | The client initiates a call to the Nagios server on port 5667  |
 | NRPE-proxy | client | <all>       | remote-client | 5666             | The client initiates a call to the remote client on port 5666  |
 
 - **Nagios** is the IP/host of the main monitoring server

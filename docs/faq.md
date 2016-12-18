@@ -220,7 +220,7 @@ timeout = 70
 check_nrpe -t 75
 ```
 
-**5. nagios service check timeout: 80s**
+**5. Nagios service check timeout: 80s**
 
 ```
 service_check_timeout=80
