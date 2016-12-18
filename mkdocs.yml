@@ -1,4 +1,20 @@
 site_name: NSClient++
+site_url: https://nsclient.org
+repo_url: https://github.com/mickem/nscp-docs/
+repo_name: GitHub
+edit_uri: /
+theme: mkdocs
+theme_dir: 'custom_theme'
+copyright: "NSClient++ is released under a GPLv2 license"
+extra_css: 
+  - pygments.css
+  - custom.css
+nscp_versions:
+  - 0.5.1
+  - 0.5.0
+  - 0.4.4
+  - 0.4.3
+  - 0.4.2
 pages:
   - Manual:
     - NSClient++: index.md
@@ -21,19 +37,15 @@ pages:
     - Reporting Bugs: about/bugs.md
     - Copyright: about/copyright.md
     - License: about/license.md
+  - NSClient++ Tutorial: tutorial/index.md
   - Howto:
     - Checking things: howto/checks.md
     - Performance Counters: howto/counters.md
     - External scripts: howto/external_scripts.md
     - Running commands: howto/run_commands.md
+    - NRPE: howto/nrpe.md
+    - NSCA: howto/nsca.md
     - Migrate from 0.3: howto/03x_migration.md
-  - Tutorials:
-    - Home: tutorial/index.md
-    - NSClient++: tutorial/nsclient.md
-    - Nagios: tutorial/nagios/index.md
-    - Nagios with check_nt: tutorial/nagios/check_nt.md
-    - Nagios with NRPE: tutorial/nagios/nrpe.md
-    - Nagios with NSCA: tutorial/nagios/nsca.md
   - Reference:
     - Reference: reference/index.md
     - Check commands:
