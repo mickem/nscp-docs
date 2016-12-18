@@ -2,10 +2,10 @@
 
 ![nrpe](images/nagios-active-nrpe.png)
 
-NRPE is the most common way to connect to NSClient. 
-NRPE works much like NRPE for unix (if you are familiar with it) and in short you can say it relays a plugin request to a remote server. 
+NRPE is the most common way to connect to NSClient.
+NRPE works much like NRPE for unix (if you are familiar with it) and in short you can say it relays a plugin request to a remote server.
 NRPE acts like a simple transport layer allowing remote execution. The difference between regular NRPE and NSClient++ is that NSClient++ has built-in checks.
-So with NSClient++ you get a lot of ready-to-use checks that wont require you to have scripts. 
+So with NSClient++ you get a lot of ready-to-use checks that wont require you to have scripts.
 But if you choose you can disable all "modules" and stick with a pure NRPE installation and only external scripts.
 
 ## Overview of NRPE
@@ -28,8 +28,8 @@ So in essence NRPE is merely a transport mechanism to send the result of a check
 
 ![nrpe-2](images/nagios-active-nrpe-002.png)
 
-NRPE require you to install a special plug-in on your nagios server called NRPE. 
-The unix-side of NRPE consists of a server and a client on nagios you only need the client so you can skip any "servers" or what not that it want to start when you install it.
+NRPE require you to install a special plug-in on your Nagios server called NRPE.
+The unix-side of NRPE consists of a server and a client on Nagios you only need the client so you can skip any "servers" or what not that it want to start when you install it.
 
 The client is (generally) called check_nrpe and works like so:
 
@@ -64,12 +64,12 @@ NRPEServer = enabled
 ```
 
 If you have not already done so (above) you also need to set which computers are allowed to query the agent.
-This is set either under the `/settings/default` section (globally) or under the `/settings/NRPE/server` section (locally). 
-If you when you configured NSClient above set this globally you are already set to go. If not the key you need to change is the `allowed hosts`. 
+This is set either under the `/settings/default` section (globally) or under the `/settings/NRPE/server` section (locally).
+If you when you configured NSClient above set this globally you are already set to go. If not the key you need to change is the `allowed hosts`.
 There is no password for NRPE.
 
-- `allowed hosts` = A list of addresses that is allowed to ask questions (i.e. your nagios ip).
-  The result should look like this (assuming your nagios server ip address is 10.0.0.2):
+- `allowed hosts` = A list of addresses that is allowed to ask questions (i.e. your Nagios ip).
+  The result should look like this (assuming your Nagios server ip address is 10.0.0.2):
 
 ```
 [/settings/default]
@@ -87,7 +87,7 @@ net start nscp
 ```
 
 Now feel free to try the command line agent again and hopefully things should work out perfectly.
-Run the following command from your nagios server.
+Run the following command from your Nagios server.
 
 ```
 ./check_nrpe -H 10.0.0.1
@@ -98,7 +98,7 @@ I (0.3.3.19 2008-07-02) seem to be doing fine...
 
 ![nrpe 3](images/nagios-active-nrpe-003.png)
 
-A good way to find and solve problems is to run nsclient++ in "test" mode this is done by stopping the service and starting it in "test" mode.
+A good way to find and solve problems is to run NSClient++ in "test" mode this is done by stopping the service and starting it in "test" mode.
 
 ```
 nscp service --stop
@@ -107,7 +107,7 @@ nscp test
 nscp service --start
 ```
 
-When in test mode you will get a lot of interesting log messages when things are happening so it is fairly simple to figure out what is wrong. 
+When in test mode you will get a lot of interesting log messages when things are happening so it is fairly simple to figure out what is wrong.
 So lets try this now and start NSClient++ in test mode like so:
 
 ```
@@ -129,7 +129,7 @@ l NSClient++.cpp(402) Using settings from: INI-file
 l NSClient++.cpp(403) Enter command to inject or exit to terminate...
 ```
 
-Now you can run the the command again from Nagios like so:
+Now you can run the command again from Nagios like so:
 
 ```
 ./check_nrpe -H 10.0.0.1
@@ -158,7 +158,7 @@ We shall get back a bit to this later on when we have configure NSClient++ more 
 ![nrpe 3](images/nagios-active-nrpe-001.png)
 
 Settin up NSClient++ was previously pretty simple and there is a bit more to it then we have thus far visited.
-This is because we have not configured anything yet all we can do now is talk to NSClient++ but not actually use it. 
+This is because we have not configured anything yet all we can do now is talk to NSClient++ but not actually use it.
 So in this section we shall cover the basics and first off are some of the configuration options available for NRPE.
 
 ### NRPE specific setting in NSClient++
@@ -167,9 +167,9 @@ So in this section we shall cover the basics and first off are some of the confi
   If this is true we will use SSL encryption on the transport. **Notice** this flag has to be the same on both ends or you will end up with strange errors. The flag is set on check_nrpe with the -n option (if you use -n no SSL will be used).
 * `allow arguments`
   Since arguments can be potentially dangerous (it allows your users to control the execution) there is a flag (which defaults to off) to enable arguments. So if you plan on configure NSClient++ from the Nagios end you need to enable this. **But be warned this is a security issue you need to think about**. If you do not want to allow arguments you can instead configure all checks in the nsclient.ini file and just execute the aliases from nagios.
-    One important issue with the `allow arguments` is that there are more then one! *Yes, more then one!* 
-    The reason for this is that you can allow arguments from NRPE and you can allow arguments for external scripts (it is not the same option) which might seem a bit confusing at first. 
-    But actually quite nice. Using arguments for external scripts can potentially be more dangerous than allowing them from NRPE (internal commands).
+  One important issue with the `allow arguments` is that there are more then one! *Yes, more then one!*
+  The reason for this is that you can allow arguments from NRPE and you can allow arguments for external scripts (it is not the same option) which might seem a bit confusing at first.
+  But actually quite nice. Using arguments for external scripts can potentially be more dangerous than allowing them from NRPE (internal commands).
 
 * `allow nasty characters`
   This flag allows arguments to contain "dangerous" characters such as redirection and pipe (<>|) and makes things a tad more dangerous. But if you decide to use arguments you most likely want to use this flag as well. **But again this is a security risk**. Please also note this is also available for both NRPE and external scripts.
@@ -191,18 +191,18 @@ There are a lot of other options as well but these are the most used ones for de
 
 ### Modules
 
-The other thing which you should configure is which modules to use. 
-There is several modules which can be used to check various aspects of your system. 
-So choosing which you need can be a bit of work. 
+The other thing which you should configure is which modules to use.
+There is several modules which can be used to check various aspects of your system.
+So choosing which you need can be a bit of work.
 Here we shall start out with the basic ones and for details on the rest check out the [references section]/../references).
 
-| Module               | Description                                                       | Commands               |
-|----------------------|-------------------------------------------------------------------|------------------------|
+| Module               | Description                                                       | Commands                    |
+|----------------------|-------------------------------------------------------------------|-----------------------------|
 | CheckSystem          | Handles many system checks                                        | check_cpu, check_memory etc |
-| CheckDisk            | Handles Disk related checks                                       | check_drivesize        |
-| CheckExternalScripts | Handles aliases (which is what we will use) and external scripts. | N/A                    |
-| NRPEServer           | Listens and responds to incoming requests from Nagios via NRPE    | N/A                    |
-| ...                  | There are a lot more mododules                                    | ...                    |
+| CheckDisk            | Handles Disk related checks                                       | check_drivesize             |
+| CheckExternalScripts | Handles aliases (which is what we will use) and external scripts. | N/A                         |
+| NRPEServer           | Listens and responds to incoming requests from Nagios via NRPE    | N/A                         |
+| ...                  | There are a lot more modules                                      | ...                         |
 
 The finished modules section from the INI file will look like so:
 
@@ -222,7 +222,7 @@ Now we have done some basic setup of NSClient++ and we can continue to try using
 
 Now that we have the agent up and running (if not probably want to go back over the previous sections to get it up and running before reading on) what can we do with it?. From here on we will assume you have allow arguments and metachars enabled since it makes it simpler to try things out **BEWARE** that there are security implications to this so you might wanna read up before rolling this configuration into production.
 
-As we stated before check_nrpe is a lot more powerful than the legacy check_nt and there is a lot of built in commands as well as a lot of external ones you can use. 
+As we stated before check_nrpe is a lot more powerful than the legacy check_nt and there is a lot of built in commands as well as a lot of external ones you can use.
 Lets start with a simple one CheckCPU and see how to use it.
 
 If we check the docs for it it has an example like so:
@@ -253,7 +253,7 @@ And that is as hard as it gets all you need to do is figure out which arguments 
 
 Nagios configuration is in itself a whole chapter and this is just a quick peek on how you can do things. First off there are a few concepts to understand:
 
-* templates are the same as the corresponding item but they have a flag register = 0 which makes them "unlistable items"
+* templates are the same as the corresponding item but they have a flag register = 0 which prevents them from being listed
 * services are essentially checks (is check CPU)
 * hosts are essentially computers
 * groups are an important concept which I ignore here for simplicity (I recommend you use it)
@@ -280,7 +280,7 @@ define host{
     register              0 ; DONT REGISTER THIS - ITS A TEMPLATE
 }
 ```
-Notice that the tpl-windows-servers template definition is inheriting default values from the generic-host template, which is defined in the sample localhost.cfg file that gets installed when you follow the Nagios quickstart installation guide.
+Notice that the tpl-windows-servers template definition is inheriting default values from the generic-host template, which is defined in the sample localhost.cfg file that gets installed when you follow the Nagios quick-start installation guide.
 
 ### Host definition
 

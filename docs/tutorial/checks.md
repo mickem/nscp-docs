@@ -17,7 +17,7 @@ The simplest way to execute checks with NSClient++ is through the built-in clien
   <dd>L     client Enter command to inject or exit to terminate...</dd>
 </dl>
 Once you see this you can either execute commands or exit the client.
-Lets start out by exiting the client which you do by typoing "exit" and then pressing enter.
+Lets start out by exiting the client which you do by typing "exit" and then pressing enter.
 
 <dl>
   <dt>.. note :  : </dt>

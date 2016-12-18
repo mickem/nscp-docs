@@ -5,7 +5,7 @@ Sometimes you want to do other things like run a command or script without invol
 
 ## Adding custom Scripts ##
 
-Adding script are detailed in the CheckExternalScripts module documentation as well as the howto. 
+Adding script are detailed in the CheckExternalScripts module documentation as well as the howto.
 So here I will only give one example and point out some key points.
 
 To run scripts we need to enable the module:
@@ -22,7 +22,7 @@ Then we also need to add a script (We will use the long format here for simplici
 command = scripts\check_ok.bat
 ```
 
-Lastly we need to decide how the script should run. 
+Lastly we need to decide how the script should run.
 To do that there are a set of options we can set.
 
 * session
@@ -68,7 +68,7 @@ Lastly we need to direct the output somewhere
 Normally when we use the scheduler we use it for passive monitoring i.e. when we run a check at a given interval and submit the result back.
 This means we normally send the result to the NSCA client but here we need to redirect the result elsewhere.
 A few options comes to mind.
-   
+
 
 * noop
   Send the result nowhere (discard it)

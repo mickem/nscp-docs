@@ -17,8 +17,8 @@ issue tracker for documentation bugs as well.
 
 ## Using the NSClient++ issue tracker ##
 
-Bug reports for NSClient++ itself should be submitted via the NSClient++ Bug Tracker
-pon github (https://github.com/mickem/nscp/issues).  The bug tracker offers a Web form 
+Bug reports for NSClient++ itself should be submitted via the NSClient++ Bug Tracker on github (https://github.com/mickem/nscp/issues). 
+The bug tracker offers a Web form
 which allows pertinent information to be entered and submitted to the developers.
 
 The first step in filing a report is to determine whether the problem has
@@ -32,7 +32,7 @@ If the problem you're reporting is not already in the bug tracker, go back to
 the NSClient++ Bug Tracker and log in.  If you don't already have a github account,
 select the "Register" link. It is not possible to submit a bug report anonymously.
 
-Being now logged in, you can submit a bug.  Select the "New Bug" link to open the 
+Being now logged in, you can submit a bug.  Select the "New Bug" link to open the
 bug reporting form.
 
 The submission form has a number of fields.  For the "Title" field, enter a

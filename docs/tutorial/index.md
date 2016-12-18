@@ -2,11 +2,8 @@
 
 ![nsclient](tutorial/images/normal-nrpe.png)
 
-Nsclient++ (nscp) is an agent that must be deployed on servers to be monitored.
+NSClient++ (nscp) is an agent that must be deployed on servers to be monitored.
 It eliminates snmp needs and goes much beyond "so called agentless" schemes like wmi by allowing execution of scripts and programs locally and returning results.
-
-Asdf gfgdsg.
-
 
 !!! note
     This program is not designed to be used stand alone instead it is designed to be used in combination with a monitoring solution like Nagios/Icinga/Neteye/Op5.
@@ -16,19 +13,19 @@ To facilitate NSClient++ support a series of protocols:
 
 | Protocol | Paradigm | Comments                                                                              |
 |----------|----------|---------------------------------------------------------------------------------------|
-| NRPE     | Active   | Protocol used by Nagios to speak with agent like nsclient++                           |
+| NRPE     | Active   | Protocol used by Nagios to speak with agent like NSClient++                           |
 | NSCA     | Passive  | Protocol used with Nagios so agent can speak to Nagios (reverse way of communication) |
-| REST     | Multiple | Nsclient++ own protocol (still under development)                                     |
+| REST     | Multiple | NSClient++ own protocol (still under development)                                     |
 | check_mk | Active   | Protocol utilized by the check_mk monitoring system                                   |
 | Syslog   | Passive  | Protocol primarily designed for submitting log records                                |
 | Graphite | Passive  | Real-time graphing                                                                    |
 | Collectd | Passive  | Real-time graphing                                                                    |
-| SMTP     | Passive  | Communicate with nsclient++ through mails. More of a toy currently                    |
+| SMTP     | Passive  | Communicate with NSClient++ through mails. More of a toy currently                    |
 
 In this document, we will cover NRPE and NSCA, as well as show how it is integrated with Nagios.
 If you have other protocols or monitoring solutions the general concepts can be easily adapted to any of the other supported protocols.
 
-Nsclient++ allows many ways to check your system:
+NSClient++ allows many ways to check your system:
 
 * Get System health (cpu, disks...)
 * Get performances counters
@@ -48,7 +45,7 @@ But you can also extend it with custom scripts:
 To use NSClient++ you need a monitoring system deployed in your network many people use Nagios, Icinga, Neteye or Op5 but stricctly speaking NSClient++ is designed to work with any monitoring tool which can execute external scripts or support any of the standard protocols.
 
 When it comes to Supported OSes NSClient++ was original design to run only on Windows but since 0.4.1 is can be used on Linux as well.
-But currently most modules are Windows only thus the benefit on other operatingsystems are limited.
+But currently most modules are Windows only thus the benefit on other operating systems are limited.
 
 ### Windows:
 
@@ -61,7 +58,7 @@ NSClient++ should run on the following operating systems:
 
 ### Linux:
 
-NSClient++ has officiall packages for:
+NSClient++ has official packages for:
 
 - Debian
 - Centos/Redhat
@@ -76,25 +73,25 @@ Before rushing on the binaries and install them, you must spend 15m in making th
     We do recommend that you do not skip this step, as you will have issues later and get frustrated... What is 15minutes compared to a great monitoring solution?
     If you still can't afford these 15 minutes, take the config example in this doc
 
-One important thing to understand when it comes to NSCLient++ configuration is that while most people use ini-files it is not the only posibility other options include registry and remote files.
+One important thing to understand when it comes to NSClient++ configuration is that while most people use ini-files it is not the only possibility other options include registry and remote files.
 But for the reminder of this tutorial we only consider ini files since it is the normal and simplest way.
 
 ## Editing
 
-Nsclient++ config file is in the well-known INI Format. To edit it you can use any text editor such as notepad. Using advanced editors such as notepad++ you can also achive syntax coloring so that is preferable.
+NSClient++ config file is in the well-known INI Format. To edit it you can use any text editor such as notepad. Using advanced editors such as notepad++ you can also achieve syntax coloring so that is preferable.
 
 ![elevated](tutorial/images/notepad-administrator.png)
 
-Also note that on Windows (after Vista) the ini file is residing in a protected space and thus you need to launch the editor as adminisrator to edit the files.
+Also note that on Windows (after Vista) the ini file is residing in a protected space and thus you need to launch the editor as administrator to edit the files.
 
 Sections
 
 Like in all INI, section start with a name between "[]". The first section is [/modules].
-In general NSClient++ has a hierarcical settings structure much like a filesystem. This means that everything under /settings is related to settings and so on and so forth.
+In general NSClient++ has a hierarchical settings structure much like a file-system. This means that everything under /settings is related to settings and so on and so forth.
 
 - Sections do not have an explicit end. When a new section start, the previous one end.
 - Sections can be empty
-- Sections generally starts with either (if they dont, you probably have an older version): `/modules` or `/settings/`
+- Sections generally starts with either (if they don't, you probably have an older version): `/modules` or `/settings/`
 
 ```
 [/modules]
@@ -104,7 +101,6 @@ In general NSClient++ has a hierarcical settings structure much like a filesyste
 [/settings/...]
 ...
 ```
-
 
 ### Comments
 
@@ -123,12 +119,12 @@ foo = bar ; Give foo the value bar
 ## Configuring
 
 To make you configuration you first need to decide which modules you want then and configure each one of them in turn.
-We will start the same why by pressenting the various modules you can use and covering how to configure some of them.
+We will start the same why by presenting the various modules you can use and covering how to configure some of them.
 
 ## Modules
 
 Here are the available modules. Each module get loaded if enabled. You can enable all and use only one, but that may open doors for nothing and add load on your systems.
-There are a few ways you can enable modules, setting the value to 1, true and enabled are all correct but enabled is preferd like so:
+There are a few ways you can enable modules, setting the value to 1, true and enabled are all correct but enabled is preferred like so:
 
 ```
 [/modules]
@@ -136,7 +132,7 @@ NRPEServer = enabled
 ```
 
 There is an advanced topic when it comes to modules and that is loading the same module multiple times.
-This is not common but since it changes the syntax we mention it for compleation.
+This is not common but since it changes the syntax we mention it for completion.
 When a module is loaded multiple times it is given an alias as a key (since key names have to be unique) and thus the syntax changes into this:
 
 ```ini
@@ -147,11 +143,10 @@ nrpe3 = NRPEServer
 ```
 
 !!! note
-    Moules in bold below are commonly used with nagios Nagios.
+    Modules in bold below are commonly used with Nagios Nagios.
 
 | Module               | Has Config | Requires Config | Comment                                                                                                                                                |
 |----------------------|------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CauseCrashes         |            |                 | Dont use this unless you want to tes the crash restart/submission tool. It will crash NSClient++                                                       |
 | *CheckDisk*          |            |                 | Can check various file and disk related things. The current version has commands to check Size of hard drives and directories                          |
 | *CheckEventLog*      | X          |                 | Check for errors and warnings in the event log. This is only supported through NRPE so if you plan to use only NSClient this won’t help you at all     |
 |*CheckExternalScripts*| X          | X               | A simple wrapper to run external scripts and batch files                                                                                               |
@@ -175,7 +170,7 @@ nrpe3 = NRPEServer
 | SimpleFileWriter     |            |                 | Write results to a file or pipe similar to NSCA                                                                                                        |
 
 !!! note
-    This is the only difficult part. You must tell nsclient++ how to behave for the modules you want it to run.
+    This is the only difficult part. You must tell NSClient++ how to behave for the modules you want it to run.
     We will cover here the most needed modules, which are in bold in previous chapter.
 
 ## Default settings
@@ -197,11 +192,11 @@ Thus you need to enable some form of communication with your central server.
 
 ## Choosing a transport/protocol
 
-NSClient++ supports several transports and you can use either one or several of these or you can create your own cusom transport.
+NSClient++ supports several transports and you can use either one or several of these or you can create your own custom transport.
 Transports are methods which facilitates communication between Monitoring server and your server.
 You can look at this much like for instance HTTP (which you are using now) and FTP.
 They both support transferring files but they have slightly different approaches so things work differently but the end result is the same.
-A file gets transfered. In our case the end result is that a monitoring result gets submitted to Monitoring server.
+A file gets transferred. In our case the end result is that a monitoring result gets submitted to Monitoring server.
 
 * NSClient (check_nt)
   Old legacy protocol which only has some basic checks and is intended for backwards compatibility.
@@ -214,8 +209,8 @@ A file gets transfered. In our case the end result is that a monitoring result g
   To enable passive monitoring you would use either NSCA or NRDP to have NSClient++ submit home monitoring results.
 
 * REST
-  The preferd and best way to communicate with NSClient++ as it is firewall and security fiendly.
-  This is a new protocol and can thus some times be a bit akward to get on your monitoring server.
+  The preferred and best way to communicate with NSClient++ as it is firewall and security friendly.
+  This is a new protocol and can thus some times be a bit awkward to get on your monitoring server.
 
 * Make your own
   The spirit of NSClient++ is to allow you do decide what you want to do so you can make any combination of the above and even use some other third party protocols or what not...
@@ -258,9 +253,9 @@ TODO: Add information about secure mode!
 !!! note
     This is used by NSCA server on Nagios.
 
-Another way to configure monitoring is to use what is commonly referd to as *passive monitoring*.
+Another way to configure monitoring is to use what is commonly referred to as *passive monitoring*.
 This means that NSClient++ will periodically phone home when it has something to report much like SNMP traps.
-The main difference is that Nagios is just waiting for these informations and so doesn't poll for them.
+The main difference is that Nagios is just waiting for this information and so doesn't poll for them.
 This can avoid a lot of load by not polling for nothing. Load is also distributed on all hosts and not Nagios centric.
 
 For a detailed guide on how to setup NSCA with NSClient++ step by step including debugging and testing see [NSCA](../howto/nsca.md).
@@ -279,7 +274,7 @@ timeout = 90
 
 # Checking things
 
-TODO Add informationa bout basic checks here!
+TODO: Add information about basic checks here!
 
 ## External scripts
 
@@ -321,7 +316,7 @@ check_updates=check_updates.vbs $ARG1$ $ARG2$
 ## Eventlogs
 
 !!! note
-    Eventlogs are a great source of informations for monitoring. Allow real-time monitoring and extended filtering.
+    Event-logs are a great source of information for monitoring. Allow real-time monitoring and extended filtering.
     As the subject itself is a bit complicated, start basic by grabbing all and exclude after.
 
 ```
@@ -332,15 +327,15 @@ TODO: Extend this section
 
 # Installation
 
-TODO: Add section about automating installas and central config
+TODO: Add section about automating installs and central config
 
 # Security
 
 ## Account running nsclient++
 
 By default, the Windows service run as Local System.
-This is simple (no access denied issue), but may lead to security issue if a breach appears (in nsclient++ or in your scripts).
-As with others solutions, like Microsoft SCOM, you can restrict nsclient++ power by using a Windows account.
+This is simple (no access denied issue), but may lead to security issue if a breach appears (in NSClient++ or in your scripts).
+As with others solutions, like Microsoft SCOM, you can restrict NSClient++ power by using a Windows account.
 
 Needed right will depend on what you want to monitor, but as a basis, you will need an account:
 - Member of the local Windows group Performance Monitor Users. Needed to collect performance counters
@@ -357,7 +352,7 @@ You can use `Process monitor <http://technet.microsoft.com/en-us/sysinternals/bb
 
 Encryption depend heavily on which communication protocol you need. For NSCA, you will need a shared passphrase and a common encryption protocol (AES in our examples).
 
-You can restrict hosts allowed to speak to nsclient++ from the config file. This add security to firewall rules, by also restricting access within the same network.
+You can restrict hosts allowed to speak to NSClient++ from the config file. This add security to firewall rules, by also restricting access within the same network.
 
 # Other topics
 

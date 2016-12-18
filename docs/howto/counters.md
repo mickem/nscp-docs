@@ -1,12 +1,12 @@
 # Introduction
 
 What are counter? Counters or PDH is short for Performance Data Helper and is an old performance library which was added as an addon in NT4.
-It has since been replaced by WMI but dont count it out since there are still a lot of useful metrics which can only be fetched from PDH.
+It has since been replaced by WMI but don't count it out since there are still a lot of useful metrics which can only be fetched from PDH.
 It is also pretty simple and straight forward to use (which WMI can sometimes not be). The main drawback to counters is that you cannot (easily) correlate different metrics.
 
 # What's all the fuss
 
-Counters is old as I said but more importantly it is crappily implemented and has a lot of headaches and pains which will hit most users at some point.
+Counters is old as I said but more importantly it is badly implemented and has a lot of headaches and pains which will hit most users at some point.
 Knowing about them though will help you navigate them and your experience will be greatly enhanced.
 
 # Problems and workarounds
@@ -25,7 +25,7 @@ The work around is to use the lodctr tool to restore them.
 
 Now you have found this French counter which you just love to check and you have managed to find the command and you enter it in Nagios and voila: You get errors.
 This is due to NRPE/check_nt not having proper encoding support.
-The work around for this is to configure the NSCLient++ encoding to be the same as the unix encoding (probably UTF8).
+The work around for this is to configure the NSClient++ encoding to be the same as the unix encoding (probably UTF8).
 
 I don’t know what my counters are called in The workaround here is to use the built-in test client to list all counters
 
@@ -182,4 +182,3 @@ To utilize this we add the :option:`CheckSystem.check_pdh.time` option to our ch
 ```
 check_pdh counter=foo time=30s
 ```
-

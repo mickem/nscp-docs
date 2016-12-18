@@ -1,7 +1,7 @@
 # Checking things
 
 This page will tell you how to check your computer using NSClient++.
-This information in only valid for 0.4.2 and beyond sicne this is based off the new check syntax.
+This information in only valid for 0.4.2 and beyond since this is based off the new check syntax.
 
 ## Getting started
 
@@ -10,7 +10,7 @@ To start NSClient++ in test mode you need top open the NSClient++ test shell.
 
 ![test-client](images/test-client.png)
 
-Once you have started the shell it will tell you it is loading some modules and so on during startup and finnish with:
+Once you have started the shell it will tell you it is loading some modules and so on during startup and finish with:
 ```
 nscp test
 ...
@@ -18,19 +18,19 @@ L     client Enter command to inject or exit to terminate...
 ```
 
 Once you see this you can either execute commands or exit the client.
-Lets start out by exiting the client which you do by typoing "exit" and then pressing enter.
+Lets start out by exiting the client which you do by typing "exit" and then pressing enter.
 
 !!! danger
     The "test mode" will start NSClient++ in the same way as when you run the service.
     This means that if the service is running it will not be able to open the ports and start the sockets.
 
 !!! note
-    Since NSClient++ in test mode is the same as NSClient++ as a service it is very usefull to use even when debbuging checks from Nagios as you can see all debug information in real time.
+    Since NSClient++ in test mode is the same as NSClient++ as a service it is very useful to use even when debugging checks from Nagios as you can see all debug information in real time.
     Just remember to stop the service before you start NSClient++ in test mode.
 
 ## Getting started again
 
-Now we are going to start nsclient++ without a settings file to make sure you dont have any strange settings lurking around.
+Now we are going to start NSClient++ without a settings file to make sure you don't have any strange settings lurking around.
 To do that we add the option --settings dummy. This tells NSClient++ to use a "dummy" settings store:
 ```
 nscp test --settings dummy
@@ -46,7 +46,7 @@ D:\source\nscp\master\nscp\service\NSClient++.cpp:1010
 L     client UNKNOWN: Unknown command(s): check_cpu
 ```
 
-The reason we get an error is that we have not loaded the CheckSystem module yet. 
+The reason we get an error is that we have not loaded the CheckSystem module yet.
 To load modules from the "test client" you issue the load <module> command:
 
 ```
@@ -66,10 +66,10 @@ L     client  Performance data: 'total 5m'=0%;80;90 'total 1m'=1%;80;90 'total 5
 
 So what have learned so far?
 Well, we need to load a module before we can execute its command.
-And if we look at the output we can decern that we get various messages. Many of them marked D for debug.. 
-These message will only be avalible if log level is set to debug.
+And if we look at the output we can discern that we get various messages. Many of them marked D for debug..
+These message will only be available if log level is set to debug.
 
-This can be achived in two ways:
+This can be achieved in two ways:
 
 1. the --log debug command line options
 2. Configuring the log level in the config file:
@@ -78,18 +78,18 @@ This can be achived in two ways:
 level = debug
 ```
 
-The main benefit of debug messages are that they can help you find issues and why things are wrong. 
-In addition to debug log messages many commands have a debug option to print extra information when they execute. 
-This can be usefull when you run into problems and things does not work as you expect.
+The main benefit of debug messages are that they can help you find issues and why things are wrong.
+In addition to debug log messages many commands have a debug option to print extra information when they execute.
+This can be useful when you run into problems and things does not work as you expect.
 
-We have also learned that we can specify which settings tore to use and that NSClient++ has an empty settings tore called dummy which can be usefull if you want to get around the current configuration.
+We have also learned that we can specify which settings tore to use and that NSClient++ has an empty settings tore called dummy which can be useful if you want to get around the current configuration.
 
 # Getting help
 
 Since you have found your way to this document it is safe to assume that you are aware that all commands are described here in the help.
-In addition to this all comamnds also feature built-in command line help. Since this is extensive it can not really be used remotely via for instance check_nrpe since it has a limited payload (out of the box).
+In addition to this all commands also feature built-in command line help. Since this is extensive it can not really be used remotely via for instance check_nrpe since it has a limited payload (out of the box).
 
-Thus the "test mode client" which we are using here is a great place to run your commands. 
+Thus the "test mode client" which we are using here is a great place to run your commands.
 To get help you run the command with the help option:
 
 ```
@@ -99,7 +99,7 @@ check_cpu help
 
 As you can see the help is rather extensive and comprehensive.
 
-All commands are added on the form of `*keyword*=*value*`. Or in some instance *keyword* only when a value is not nessecary. 
+All commands are added on the form of `*keyword*=*value*`. Or in some instance *keyword* only when a value is not nessecary.
 For instance help like so: `check_cpu help`
 
 Using the normal form *keyword*=*value* it looks like this: `check_cpu filter=none`
@@ -108,7 +108,7 @@ Using the normal form *keyword*=*value* it looks like this: `check_cpu filter=no
 
 The next thing we need to understand is the basics for configuring checks.
 NSClient++ uses something called "filters" filters are the basis for everything and very important to understand.
-The idea is dervived from the SQL Where clause. And the idea is that you define a natural language expression which either match something or not.
+The idea is derived from the SQL Where clause. And the idea is that you define a natural language expression which either match something or not.
 Thus you can think of a filter as an expression which either return true (and marks the item in question) or false.
 
 For instance:
@@ -120,17 +120,17 @@ L     client  Performance data: 'core 0 5m'=5%;80;90 'core 0 1m'=32%;80;90 'core
 ```
 
 Lets for the moment ignore the "top-syntax=${list}" option and instead focus on the filter part: "filter=core = 'core 0'"
-Lets disect this:
+Lets dissect this:
 
 1. *filter* Is the keyword
 2. *core = 'core 0'* is the expression
-   
-Disecting this expression further we get:
+
+Dissecting this expression further we get:
 
 1. *core* is a variable representing the name of the core
 2. *'core 0'* is the name of the first core.
 
-To get a list of all keyword we can use the help option as shown above. Here is the avalivle variables for check_cpu filter keyword.
+To get a list of all keyword we can use the help option as shown above. Here is the available variables for check_cpu filter keyword.
 
 | Key            | Value                                                                                                          |
 | -------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -156,7 +156,7 @@ To get a list of all keyword we can use the help option as shown above. Here is 
 
 
 
-In our example we used the core to limit the output to only show core 0. 
+In our example we used the core to limit the output to only show core 0.
 Now if you run this without a filter using the extended isplay as before we get:
 
 ```
@@ -165,10 +165,10 @@ L     client OK: total>8%, total>8%, total>8%
 L     client  Performance data: 'total 5m'=8%;80;90 'total 1m'=8%;80;90 'total 5s'=8%;80;90
 ```
 
-Now you might be wondering why we dont get any information about the cores here? 
+Now you might be wondering why we don't get any information about the cores here?
 Without a filter a default filter is used which means that if we do not specify one we get "some filter".
 
-If we do not like this behaviour we can enforce an empty filter by specify filter=none:
+If we do not like this behavior we can enforce an empty filter by specify filter=none:
 
 ```
 check_cpu filter=none "top-syntax=${list}"
@@ -179,7 +179,7 @@ L     client  Performance data: 'core 0 5m'=19%;80;90 'core 1 5m'=1%;80;90 'core
 !!! note
     Your list might differ depending on how many cores you have.
 
-Now we get the full list of cores but since this output is not very usefull (since most people are only interested in the total load thatis the default:
+Now we get the full list of cores but since this output is not very useful (since most people are only interested in the total load that is the default:
 
 ```
 check_cpu "filter=core = 'total'" "top-syntax=${list}"
@@ -187,7 +187,7 @@ L     client OK: total>8%, total>8%, total>8%
 L     client  Performance data: 'total 5m'=8%;80;90 'total 1m'=8%;80;90 'total 5s'=8%;80;90
 ```
 
-Next up is altering our filter a bit. 
+Next up is altering our filter a bit.
 Lets instead of getting core 2 get any core with is doing actual work. Lets say where the load (in percentages) is greater then 5:
 
 ```
@@ -206,26 +206,26 @@ L     client OK: core 0>11%, core 2>8%, core 4>11%, core 6>8%, total>5%, core 0>
 L     client  Performance data: 'core 0 5m'=11%;80;90 'core 2 5m'=8%;80;90 'core 4 5m'=11%;80;90 'core 6 5m'=8%;80;90 'total 5m'=5%;80;90 'core 0 1m'=19%;80;90 'core 2 1m'=13%;80;90 'core 4 1m'=18%;80;90 'core 6 1m'=13%;80;90 'total 1m'=8%;80;90 'core 0 5s'=18%;80;90 'core 2 5s'=15%;80;90 'core 4 5s'=19%;80;90 'core 6 5s'=17%;80;90 'total 5s'=9%;80;90
 ```
 
-In this way we can keep adding more and more expressions togeterh to form any filter we want.
+In this way we can keep adding more and more expressions together to form any filter we want.
 
 ## Beyond filters
 
-Now Nagios doe not care about the message nor the performance data. What nagios cares about is the return status.
-The return status in the nagios context can be:
+Now Nagios doe not care about the message nor the performance data. What Nagios cares about is the return status.
+The return status in the Nagios context can be:
 
 - ok
 - warning
 - critical
 - unknown
 
-The way this work in NSClient++ is that besids the filter kwyrod there are other similar filters which define the various states.
+The way this work in NSClient++ is that besides the filter keyword there are other similar filters which define the various states.
 - *warning* Define the warning state
 - *critical* Defines the critical state
-  
 
-The actual expressions work exactly the same it is only the outcome which differs. 
+
+The actual expressions work exactly the same it is only the outcome which differs.
 When the expression for the filter keyword is matched the information is returned in the performance and message.
-But the return core to Nagios is always ok regardless of what matches. 
+But the return core to Nagios is always ok regardless of what matches.
 And when the expression for warning matches instead of changing the message a warning state is returned to Nagios.
 The same goes for the critical keyword which in turn return a critical status to Nagios.
 
@@ -238,7 +238,7 @@ L     client OK: total>9%, total>8%, total>8%
 L     client  Performance data: 'total 5m'=9%;80;90 'total 1m'=8%;80;90 'total 5s'=8%;80;90
 ```
 
-Now if you observe the performance data containes the warning and critical thresholds. Since my CPU load is so low I keep getting n ok threshold.
+Now if you observe the performance data contains the warning and critical thresholds. Since my CPU load is so low I keep getting n ok threshold.
 
 To change this we can set the warning threshold to be 2 which will generate a warning status:
 
@@ -256,4 +256,3 @@ The last thing we are going to explore is the syntax keywords.
 
 - *top-syntax* Defines the over all message
 - *detail-syntax* Defines the rendering of each item.
-

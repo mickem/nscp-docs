@@ -11,7 +11,7 @@ Your migration strategy is also affected by the fact that in the next 6-to-12 mo
 
 ## Background (Whats has changed) ##
 
-In 0.4.0 a new format for the configuration was introduced. In addition to this some modules were renamed, some were changed from an architectural perspective and some were deprecated. The reason for this is that the "old" NSCient++ was approaching 10 years and was simply not designed for the flexibility which it offers today.
+In 0.4.0 a new format for the configuration was introduced. In addition to this some modules were renamed, some were changed from an architectural perspective and some were deprecated. The reason for this is that the "old" NSClient++ was approaching 10 years and was simply not designed for the flexibility which it offers today.
 I will readily admit that NSClient++ is the most flexible and powerful monitoring agent available in the open source space (and this is not PR speak it is the truth).
 To accommodate this flexibility the format **had to change**, it would have been impossible to keep backwards compatibility.
 But the changes are mainly structural and designed to make things look more similar so from a human perspective the change is minor.
@@ -55,7 +55,7 @@ This is pretty much it in terms of structural changes. Some modules were changed
 ## Future (What's to come) ##
 
 So what will happen in the future?
-Well, two tings. 
+Well, two tings.
 
 - Next version will support Lua configuration (i.e. scripts) which will handle all migration so hopefully this is the last change.
 - Next version will feature a new command check subsystem
@@ -110,8 +110,8 @@ It is important to understand the limitations by doing this:
 - No new things: None of the new keys will be available to you unless you "include" a new syntax file.
 - No automatic process: You cannot use the "nscp settings" command line for managing your configuration.
 - No remote configuration (in 0.4.2): since the remote configuration tools will work using nscp settings they will not work either.
-- No registry support: Old settings file ONLY work with the old ini file not the old registry concept. 
-  
+- No registry support: Old settings file ONLY work with the old ini file not the old registry concept.
+
 
 It is simple to keep the old format. When you upgrade you select "Old configuration" in the installer UI. And afterwards you can at any time run the following command to change the configuration file:
 
@@ -141,7 +141,7 @@ In the mean time the following commands might be a pointer:
 
 ```
 nscp settings --help
-  
+
 nscp settings --help
 nscp settings --validate
 nscp settings --generate ini --add-defaults

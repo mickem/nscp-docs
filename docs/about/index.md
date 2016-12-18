@@ -1,7 +1,6 @@
 # About these documents #
 
-These documents are generated from `markdown`_ sources by `mkdocs`_, a
-document processor written in Python.
+These documents are generated from `markdown` sources by `mkdocs`, a document processor written in Python.
 
 * [markdown](http://daringfireball.net/projects/markdown/syntax)
 * [mkdocs](http://www.mkdocs.org/)
