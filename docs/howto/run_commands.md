@@ -1,9 +1,9 @@
-# Running commands #
+# Running commands
 
 The normal use of NSClient++ is to request information via queries (or check commands) for example check_cpu.
 Sometimes you want to do other things like run a command or script without involvement of a check command or based on some other stimuli.
 
-## Adding custom Scripts ##
+## Adding custom Scripts
 
 Adding script are detailed in the CheckExternalScripts module documentation as well as the howto.
 So here I will only give one example and point out some key points.
@@ -25,16 +25,16 @@ command = scripts\check_ok.bat
 Lastly we need to decide how the script should run.
 To do that there are a set of options we can set.
 
-* session
-  Should the command be attached to a users session
-* display
-  Should the command be visible to users or not?
-* timeout
-  How long is the command allowed to run?
-* capture output
-  Should we monitor and kill the program or not?
-* user/password
-  Does the script require to run as a special user?
+*   session
+    Should the command be attached to a users session
+*   display
+    Should the command be visible to users or not?
+*   timeout
+    How long is the command allowed to run?
+*   capture output
+    Should we monitor and kill the program or not?
+*   user/password
+    Does the script require to run as a special user?
 
 ## Scheduling commands
 
@@ -70,12 +70,12 @@ This means we normally send the result to the NSCA client but here we need to re
 A few options comes to mind.
 
 
-* noop
-  Send the result nowhere (discard it)
-* file
-  Use the SimpleFileWriter to write the result to a file somewhere.
-* script
-  We could create a script which intercepts the result and do whatever we want with it.
+*   noop
+    Send the result nowhere (discard it)
+*   file
+    Use the SimpleFileWriter to write the result to a file somewhere.
+*   script
+    We could create a script which intercepts the result and do whatever we want with it.
 
 ### Noop
 

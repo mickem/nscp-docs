@@ -1,14 +1,14 @@
-# Building NSClient++ #
+# Building NSClient++
 
-NSclient++ is fairly simple to build and setup. It requires python and cmake for the build process as well as a number of external libraries.
+NSClient++ is fairly simple to build and setup. It requires python and cmake for the build process as well as a number of external libraries.
 This document is split between "Linux" and "Windows" since there is a substantial difference in how to build them.
-For people wanting a Apple osx version it can be built similrily to the Linux machines on that platform as well.
+For people wanting a Apple osx version it can be built similarly to the Linux machines on that platform as well.
 
-## Linux ##
+## Linux
 
 The dependencies are different on different Linux systems so we will start with a section on installing dependencies on various platforms.
 
-### Dependencies on Ubuntu ###
+### Dependencies on Ubuntu
 
 First we need to install a set of packages:
 
@@ -26,11 +26,11 @@ sudo apt-get install -y liblua5.1-0-dev
 sudo apt-get install -y libgtest-dev
 ```
 
-### Getting the code from github ###
+### Getting the code from github
 
 Next up we download the source code from github: `git clone --recursive https://github.com/mickem/nscp.git`
 
-### Building NSClient++ ###
+### Building NSClient++
 
 Create a folder in which we will build the code:
 ```
@@ -55,7 +55,7 @@ make test
 
 ## Windows ##
 
-Dependencies is a bit of a bother to manage on Windows since there is no general package mechanism for libraries. 
+Dependencies is a bit of a bother to manage on Windows since there is no general package mechanism for libraries.
 To help with the there is a script called fetch-deps.py which will help download and build all dependencies required.
 
 ### Tools ###
@@ -103,12 +103,12 @@ cmake -D TARGET=dist -D SOURCE=nscp -P nscp\check_deps.cmake
 Build NSClient++ (If you don't know you your visual studio version name you can run cmake --help to list all available profiles):
 
 ```
-<p>cd dist</p>
-<p>cmake -G "VISUAL STUDIO GNERATOR STRING" ../nscp</p>
-<p>msbuild /p:Configuration=RelWithDebInfo NSCP.sln</p>
+cd dist
+cmake -G "VISUAL STUDIO GNERATOR STRING" ../nscp
+msbuild /p:Configuration=RelWithDebInfo NSCP.sln
 ```
 
-## Vagrant ##
+## Vagrant
 
 We provide a number of vagrant profiles which will built NSClient++ as well:
 
@@ -123,4 +123,3 @@ vagrant up -- provision
 ```
 
 The resultiung packages will be found under packages
-

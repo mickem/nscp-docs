@@ -1,8 +1,8 @@
 # Checking things
 
-Using NSClient++ is checks is also pretty straight forward in modern NSClient++ versions. 
-With version 0.4.3 we switched all old checks for a new check subsystem which is more uniform as well as more powerfull then the old.
-Thanks to a compatiblity layer most old command should still work (but there are some snags so be ware when uppgrading).
+Using NSClient++ is checks is also pretty straight forward in modern NSClient++ versions.
+With version 0.4.3 we switched all old checks for a new check subsystem which is more uniform as well as more powerful then the old.
+Thanks to a compatibility layer most old command should still work (but there are some snags so be ware when upgrading).
 
 Most check have what is refereed to as sensible defaults this means without arguments most checks will do "something sensible".
 This means that to get you started check_cpu will just work as-is. But when you need to do something slightly different you have to start to use the check expressions.
@@ -98,9 +98,9 @@ L        cli OK: OK: CPU load is ok.
 L        cli  Performance data: 'total 5m'=0%;30;90 'total 1m'=2%;30;90 'total 5s'=18%;30;90
 ```
 
-But we are not limited to such simple expressions. 
+But we are not limited to such simple expressions.
 Expressions are written in what I would call natural language form: This means you write the left and on the left hand side then an operator followed by a right hand side of the operator.
-For instance `foo = bar` means _foo is equal to bar_.
+For instance `foo = bar` means `foo is equal to bar`.
 All expressions define the outcome in other words warn=1=1 means we always have a warning (as 1=1) thus whenever an expression is true the state the expression is used for is also true.
 
 The operators available are:
@@ -128,30 +128,28 @@ For instance for check_cpu we have.
 
 Check related keywords:
 
-- core
-- core_id
-- idle
-- kernel
-- load
-- time
-  
+-   core
+-   core_id
+-   idle
+-   kernel
+-   load
+-   time
 
 Generic keywords:
 
-- count
-- total
-- ok_count
-- warn_count
-- crit_count
-- problem_count
-- list
-- ok_list
-- warn_list
-- crit_list
-- problem_list
-- detail_list
-- status
-  
+-   count
+-   total
+-   ok_count
+-   warn_count
+-   crit_count
+-   problem_count
+-   list
+-   ok_list
+-   warn_list
+-   crit_list
+-   problem_list
+-   detail_list
+-   status
 
 The check related keywords are always unique where as the generic ones are there for all checks and usually work on the data set (aggregation).
 One other thing to know about keywords are that they are typed and there is coercion.
@@ -179,11 +177,11 @@ The last common topic we will discuss is syntax.
 Syntax is responsible for the message which is used in the check result. Thus it has no effect at all on the actual check result but nice messages makes problem easier to understand.
 The syntax configuration is split up into three main keywords:
 
-- top-syntax
-- detail-syntax
-- ok-syntax
+-   top-syntax
+-   detail-syntax
+-   ok-syntax
 
-The top-syntax defines the overall message whereas the detail-syntax defines how each entry is formatted. 
+The top-syntax defines the overall message whereas the detail-syntax defines how each entry is formatted.
 The actual values are similar to what we saw before in the filter and warnign/critical thresholds.
 
 Looking at check_cpu the default syntaxes (as we have already seen) are:
@@ -193,7 +191,7 @@ ok-syntax=%(status): CPU load is ok.
 detail-syntax=${time}: ${load}%
 ```
 
-The strings are text strings with keywords surrounded by either ${} or %(). 
+The strings are text strings with keywords surrounded by either ${} or %().
 The reason for having two different ways are that ${} can be problematic to escape from a Unix shell (which is how most Nagios command are executed).
 
 So the following are identical from NSClient++ perspective: `top-syntax=${problem_list}` and `top-syntax=%(problem_list)`.
@@ -223,7 +221,7 @@ check_cpu show-all
 OK: 5m: 0%, 1m: 4%, 5s: 11%
 ```
 
-The difference is that with show-all all the values are shown. 
+The difference is that with show-all all the values are shown.
 By default when we run a check only values which are bad are included in the message but if we always want to see the values we can specify show-all.
 For instance if the CPU load had been above the warning threshold we would have seen the value included in the message.
 Now show-all is not magical it only modifies the top-syntax replacing %(problem_list) with %(list).
@@ -316,12 +314,12 @@ Now this is not what we expected: right?
 Why did the 5:ages get back? End even worse why were they renamed "c:".
 The reason for this is simple. Selection is done on multiple levels. We match (in the following order)
 
-1. &lt;prefix>.&lt;object>.&lt;suffix>
-2. &lt;prefix>.&lt;object>
-3. &lt;object>.&lt;suffix>
-4. &lt;prefix>
-5. &lt;suffix>
-6. &lt;object>
+1.  &lt;prefix>.&lt;object>.&lt;suffix>
+2.  &lt;prefix>.&lt;object>
+3.  &lt;object>.&lt;suffix>
+4.  &lt;prefix>
+5.  &lt;suffix>
+6.  &lt;object>
 
 So what are the various suffixes and prefixes?
 Well in the case of check_drivesize they are:

@@ -1,6 +1,6 @@
 # Introduction
 
-What are counter? Counters or PDH is short for Performance Data Helper and is an old performance library which was added as an addon in NT4.
+What are counter? Counters or PDH is short for Performance Data Helper and is an old performance library which was added as an add-on in NT4.
 It has since been replaced by WMI but don't count it out since there are still a lot of useful metrics which can only be fetched from PDH.
 It is also pretty simple and straight forward to use (which WMI can sometimes not be). The main drawback to counters is that you cannot (easily) correlate different metrics.
 
@@ -56,34 +56,34 @@ To get help you can run: `nscp sys -- --help`
 
 ## Allowed options:
 
-| Option | Description |
-|--------|-------------|
-| -h [ --help ] | Show help screen |
-| --porcelain | Computer parsable format |
-| --computer arg | The computer to fetch values from |
-| --user arg | The username to login with (only meaningful if computer is specified) |
-| --password arg | The password to login with (only meaningful if computer is specified) |
-| --lookup-index arg | Lookup a numeric value in the PDH index table |
-| --lookup-name arg | Lookup a string value in the PDH index table |
-| --expand-path arg | Expand a counter path contaning wildcards into corresponding objects (for instance --expand-path \System\*) |
-| --check | Check that performance counters are working |
-| --list arg | List counters and/or instances |
-| --validate arg | List counters and/or instances |
-| --all | List/check all counters not configured counter |
-| --no-counters | Do not recurse and list/validate counters for any matching items |
-| --no-instances | Do not recurse and list/validate instances for any matching items |
-| --counter arg | Specify which counter to work with |
-| --filter arg | Specify a filter to match (substring matching)
+| Option             | Description                                                                                                 |
+|--------------------|-------------------------------------------------------------------------------------------------------------|
+| -h [ --help ]      | Show help screen                                                                                            |
+| --porcelain        | Computer parsable format                                                                                    |
+| --computer arg     | The computer to fetch values from                                                                           |
+| --user arg         | The username to login with (only meaningful if computer is specified)                                       |
+| --password arg     | The password to login with (only meaningful if computer is specified)                                       |
+| --lookup-index arg | Lookup a numeric value in the PDH index table                                                               |
+| --lookup-name arg  | Lookup a string value in the PDH index table                                                                |
+| --expand-path arg  | Expand a counter path contaning wildcards into corresponding objects (for instance --expand-path \System\*) |
+| --check            | Check that performance counters are working                                                                 |
+| --list arg         | List counters and/or instances                                                                              |
+| --validate arg     | List counters and/or instances                                                                              |
+| --all              | List/check all counters not configured counter                                                              |
+| --no-counters      | Do not recurse and list/validate counters for any matching items                                            |
+| --no-instances     | Do not recurse and list/validate instances for any matching items                                           |
+| --counter arg      | Specify which counter to work with                                                                          |
+| --filter arg       | Specify a filter to match (substring matching)                                                              |
 
 
 This tool can do:
 
-- List default/configured counters
-- List other counters
-- Validate the default/configured counters
-- Validate other counters
-- Convert names to indexes and vice versa
-- List instance, and what not for a given counter.
+-   List default/configured counters
+-   List other counters
+-   Validate the default/configured counters
+-   Validate other counters
+-   Convert names to indexes and vice versa
+-   List instance, and what not for a given counter.
 
 The first thing to do when you run into issues is to validate the default counters:
 

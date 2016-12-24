@@ -1,4 +1,4 @@
-# Using NSClient++ with NSCA #
+# Using NSClient++ with NSCA
 
 NSCA (Nagios Service Check Acceptor) is a protocol which is used in reveres of the other common Nagios protocol NRPE.
 The idea is that you can submit passive check results to a Nagios server instead of having the Nagios server actively polling.
@@ -14,10 +14,10 @@ If you compare the above image with the one used with NRPE you will notice that 
 
 As I stated initially NSCA is "sort of the reverse" of NRPE and the diagram above illustrates the process by which Nagios receives the check results.
 
-1. NSClient++ decides it is time to run checks
-2. NSClient++ gathers all results
-3. NSClient++ connect to NSCA (server) and sends all results
-4. NSClient++ goes back to sleep
+1.  NSClient++ decides it is time to run checks
+2.  NSClient++ gathers all results
+3.  NSClient++ connect to NSCA (server) and sends all results
+4.  NSClient++ goes back to sleep
 
 For regular checks this might seem like a firewall versus configuration question but when it comes to **real time monitoring** it have a bigger impact as you can get the error much quicker since there is no polling interval involved hence you gain the ability to react to problems faster.
 
@@ -30,9 +30,9 @@ We need (in the regular check case) a scheduler who runs the checks as well as t
 Depending on your scenario you can replace (or extend) the `Scheduler` with various real-time able modules such as `CheckLogFile` and `CheckEventLog`.
 The internals of NSClient++ when it comes to passive checks is depicted here.
 
-1. The normal process is for the scheduler to execute the commands (using the normal check modules).
-2. Send the results to NSCA channel (NSCAClient)
-3. Send the message to the central NSCA server
+1.  The normal process is for the scheduler to execute the commands (using the normal check modules).
+2.  Send the results to NSCA channel (NSCAClient)
+3.  Send the message to the central NSCA server
 
 The channel sits in between the sender (Scheduler) and the recipient (NSCAClient).
 You can think of the channel as a queue or mail box.
@@ -119,19 +119,19 @@ From NSClient++ perspective they will get treated the same.
 The simple way to add schedules (which we will use) is to add a default template where you configure all options and then use the short format where you only specify the command.
 For each command you can configure a number of options such as
 
-* interval
-  Perhaps the most important option. It controls the interval which NSClient++ will use when it runs the checks in essence this is the amount of time between a check will be submitted to Nagios (via NSCA). Since there is only one of these it will not be possible to have individual intervals for various checks instead all checks will be submitted using this interval.
-  It is a good idea to set this **LOW** when you are debugging things as you will have to wit for this to fire before anything happens.
-* alias
-  The name of the check to report this is defaulted to the key/section name.  *Since we use the short hand format we set this via the key*.
-* channel
-  The target channel to report result to (defaults to NSCA)
-* report
-  A filter if you only want to report errors and not ok statuses for instance.
-* command
-  The command to execute and report back the result from. *Since we use the short hand format we set this via the value*.
+*   interval
+    Perhaps the most important option. It controls the interval which NSClient++ will use when it runs the checks in   essence this is the amount of time between a check will be submitted to Nagios (via NSCA). Since there is only one of   these it will not be possible to have individual intervals for various checks instead all checks will be submitted   using this interval.
+    It is a good idea to set this **LOW** when you are debugging things as you will have to wit for this to fire before   anything happens.
+*   alias
+    The name of the check to report this is defaulted to the key/section name.  *Since we use the short hand format we   set this via the key*.
+*   channel
+    The target channel to report result to (defaults to NSCA)
+*   report
+    A filter if you only want to report errors and not ok statuses for instance.
+*   command
+    The command to execute and report back the result from. *Since we use the short hand format we set this via the   value*.
 
-In our example we will be using the various aliases exposed by [`CheckExternalScripts <CheckExternalScripts>`_] so we wont have to add so many arguments in the configuration. Thus we end up with the following:
+In our example we will be using the various aliases exposed by [`CheckExternalScripts <CheckExternalScripts>`] so we wont have to add so many arguments in the configuration. Thus we end up with the following:
 
 ```
 [/settings/scheduler/schedules/default]
@@ -150,23 +150,21 @@ Now we have a scheduler running our checks every 5 minutes but this means every 
 To do this we need to load the NSCAClient module and configure it to successfully connect to our central NSCA server.
 When it comes to servers we again have the same container concept as before only this time the normal thing to do is to skip it entirely and just use the "default target" since most people only require a single NSCA server setup. But it is entirely possible to use templates, short hands and what not but if you want to make your life complicated.
 
-* encryption
-  The encryption algorithm to use. It is often a good idea to set this to 0 (None) when you try this out as it will reduce the number things which might be broken. If you have the incorrect one it will be hard to know what is wrong. For production I would recommend against using xor or none and the various weak algorithms such as des/3des.
-  I myself tend to opt for using 14 (AES) at is a common enough algorithm.
-* password
-  The password is the "secret" you share with NSCA it has to be the same on both ends (or again like with encryption) nothing will work.
-* address
-  This is the IP address (and port) of the NSCA server (often the same as the Nagios server).
-  This will **not** default to the allowed_hosts directive so you HAVE to specify this option.
-
-In addition to configuring the connection details for the central NSCA server we can also configure which channel to listen on as well as the rather important hostname property.
-
-* hostname
-  The hostname is the name your machine has.
-  This has to match the name used in Nagios for this thus often (unless hostnames match) you might have to tweak this.
-  The default hostname is *auto* which will be replaced with the host name of the machine.
-  You can also use ''auto-lc'' to use the lower case version of the host name.
-  In addition to these hard coded values you can also use an expression where you can use ${host} and ${domain} to create a custom name such as ''win_${host}'' if you have a prefix suffix in use.
+*   encryption
+    The encryption algorithm to use. It is often a good idea to set this to 0 (None) when you try this out as it will   reduce the number things which might be broken. If you have the incorrect one it will be hard to know what is wrong.   For production I would recommend against using xor or none and the various weak algorithms such as des/3des.
+    I myself tend to opt for using 14 (AES) at is a common enough algorithm.
+*   password
+    The password is the "secret" you share with NSCA it has to be the same on both ends (or again like with encryption)   nothing will work.
+*   address
+    This is the IP address (and port) of the NSCA server (often the same as the Nagios server).
+    This will **not** default to the allowed_hosts directive so you HAVE to specify this option.
+    In addition to configuring the connection details for the central NSCA server we can also configure which channel to   listen on as well as the rather important hostname property.
+*   hostname
+    The hostname is the name your machine has.
+    This has to match the name used in Nagios for this thus often (unless hostnames match) you might have to tweak this.
+    The default hostname is *auto* which will be replaced with the host name of the machine.
+    You can also use ''auto-lc'' to use the lower case version of the host name.
+    In addition to these hard coded values you can also use an expression where you can use ${host} and ${domain} to   create a custom name such as ''win_${host}'' if you have a prefix suffix in use.
 
 The resulting configuration will look something like this:
 
@@ -209,7 +207,7 @@ Jul 12 19:35:20 localhost nsca: Handling the connection...
 Jul 12 19:35:21 localhost nsca: Received invalid packet type/version from client
 ```
 
-* possibly due to client using wrong password or crypto algorithm?
+*   possibly due to client using wrong password or crypto algorithm?
 
 And this is clue that we have indeed miss configured NSCA. Most often it is either invalid password or the wrong encryption.
 
@@ -233,10 +231,10 @@ Jul 12 19:47:02 localhost nsca: End of connection...
 Nagios configuration is in itself a whole chapter and this is just a quick peek on how you can do things.
 First off there are a few concepts to understand:
 
-* templates are the same as the corresponding item but they have a flag register = 0 which makes them "unlistable items"
-* services are essentially checks (is check CPU)
-* hosts are essentially computers
-* groups are an important concept which I ignore here for simplicity (I recommend you use it)
+*   templates are the same as the corresponding item but they have a flag register = 0 which makes them "unlistable items"
+*   services are essentially checks (is check CPU)
+*   hosts are essentially computers
+*   groups are an important concept which I ignore here for simplicity (I recommend you use it)
 
 The configuration is at the end layer quite simple you have a "check" and a "host" and you connect them with a service.
 Like I show at the bottom line in the diagram above.
@@ -246,10 +244,10 @@ Which is what I show with arrows (bottom to top) above. The templates with dashe
 ## Passive Checks
 
 The main difference between passive checks and active checks are the following two flags:
-* active_checks_enabled
-  Active service checks are enabled
-* passive_checks_enabled
-  Passive service checks are enabled/accepted
+*   active_checks_enabled
+    Active service checks are enabled
+*   passive_checks_enabled
+    Passive service checks are enabled/accepted
 
 So adding the following will "change" an active check to a passive check.
 

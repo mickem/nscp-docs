@@ -7,9 +7,9 @@ You can also find scripts in many other place such as your monitoring providers 
 
 Writing scripts is easy and works exactly like writing script on Linux. And if you install an common language runtime such as perl or python you can even re-use your scripts across platform. In essence the communication between a script and NSClient++ consists of three things:
 
-- Arguments passed **to** script to control execution
-- Exit status passed **from** to define status (critical, error, warning and so on)
-- Any message on standard out to define the message
+-   Arguments passed **to** script to control execution
+-   Exit status passed **from** to define status (critical, error, warning and so on)
+-   Any message on standard out to define the message
 
 A simple script in batch (.bat) looks like this:
 
@@ -21,10 +21,10 @@ A simple script in batch (.bat) looks like this:
 This prints a message "OK ..." and return status 0 which equates to ok or good.
 Exit codes are the same as Nagios use:
 
-1. OK
-2. WARNING
-3. CRITICAL
-4. UNKNOWN
+1.  OK
+2.  WARNING
+3.  CRITICAL
+4.  UNKNOWN
 
 
 The message can be anything and is passed along as text. Notice you require Nagios 3 if you want to use multiple lines in the message. And please notice that most protocol and transports have hard coded payload lengths such as NRPE (1024) NSCA (512) etc etc.
@@ -56,7 +56,7 @@ This means that if you want to run a Perl script you need to have a perl interpr
 
 # Adding scripts
 
-For scripts to work we need at least the `CheckExternalScripts <CheckExternalScripts>`_ module but in reality most likely `NRPEServer <NRPEServer>`_ or `Scheduler <Scheduler>`_ as well.
+For scripts to work we need at least the [CheckExternalScripts](../reference/check/CheckExternalScripts.md) module but in reality most likely `NRPEServer <NRPEServer>`_ or `Scheduler <Scheduler>`_ as well.
 We will initially focus on just check external scripts before introducing executing them remotely via NRPE for how to configure them via NSCA please check the NSCA guide in conjunction with the setup for this page.
 
 ### Load the CheckExternalScripts module
@@ -136,9 +136,9 @@ To access scripts remotely you need a server module. There is no configuration r
 This usually includes a allowed hosts directive as well as passwords and encryption settings. Since this is detailed in various other section I will only briefly touch the the subject here.
 For details on various protocols go to their individual guides:
 
-- `check_nt <wiki/doc/usage/nagios/nsclient>`_
-- `NRPE <wiki/doc/usage/nagios/nrpe>`_
-- `NSCA <wiki/doc/usage/nagios/nsca>`_
+-   `check_nt <wiki/doc/usage/nagios/nsclient>`_
+-   `NRPE <wiki/doc/usage/nagios/nrpe>`_
+-   `NSCA <wiki/doc/usage/nagios/nsca>`_
 
 
 We will assume we are using NRPE here which means we will run the check_nrpe command from our monitoring server (Nagios).
@@ -292,10 +292,9 @@ If we want to use arguments we add them before the semi colon like so:
 test_ps1 = cmd /c echo scripts\check_test.ps1 "--argument" "$ARG1$" --foo --bar; exit($lastexitcode) | powershell.exe -command -
 ```
 
-
 There are also some things to remember when writing script:
 
-- For instance some powershell "print" methods will wrap (whilst other wont)
+-   For instance some powershell "print" methods will wrap (whilst other wont)
 
 
 # Advanced topics

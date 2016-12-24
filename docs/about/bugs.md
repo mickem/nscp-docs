@@ -1,9 +1,9 @@
-# Reporting Bugs #
+# Reporting Bugs
 
 NSClient++ is a mature monitoring agent which has established a reputation for stability.
 In order to maintain this reputation, the developers would like to know of any deficiencies you find in NSClient++.
 
-## Documentation bugs ##
+## Documentation bugs
 
 If you find a bug in this documentation or would like to propose an improvement,
 please send an e-mail to docs@nsclient.org describing the bug and where you found
@@ -15,9 +15,9 @@ noticed, even if it takes a while to be processed.
 Of course, if you want a more persistent record of your issue, you can use the
 issue tracker for documentation bugs as well.
 
-## Using the NSClient++ issue tracker ##
+## Using the NSClient++ issue tracker
 
-Bug reports for NSClient++ itself should be submitted via the NSClient++ Bug Tracker on github (https://github.com/mickem/nscp/issues). 
+Bug reports for NSClient++ itself should be submitted via the NSClient++ Bug Tracker on github [here](https://github.com/mickem/nscp/issues).
 The bug tracker offers a Web form
 which allows pertinent information to be entered and submitted to the developers.
 
@@ -47,5 +47,5 @@ Each bug report will be assigned to a developer who will determine what needs to
 be done to correct the problem.  You will receive an update each time action is
 taken on the bug.
 
-* [How to Report Bugs Effectively](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html)
-* [Bug Writing Guidelines](http://developer.mozilla.org/en/docs/Bug_writing_guidelines)
+*   [How to Report Bugs Effectively](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html)
+*   [Bug Writing Guidelines](http://developer.mozilla.org/en/docs/Bug_writing_guidelines)

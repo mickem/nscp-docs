@@ -27,18 +27,18 @@ If you have other protocols or monitoring solutions the general concepts can be 
 
 NSClient++ allows many ways to check your system:
 
-* Get System health (cpu, disks...)
-* Get performances counters
-* Get WMI query
-* Check Log file
-* Check scheduled task
+*   Get System health (cpu, disks...)
+*   Get performances counters
+*   Get WMI query
+*   Check Log file
+*   Check scheduled task
 
 But you can also extend it with custom scripts:
 
-* powershell scripts
-* VB Scripts (.VBS)
-* Executable files
-* Batch (.BAT) files
+*   powershell scripts
+*   VB Scripts (.VBS)
+*   Executable files
+*   Batch (.BAT) files
 
 ## Requirements
 
@@ -51,17 +51,17 @@ But currently most modules are Windows only thus the benefit on other operating 
 
 NSClient++ should run on the following operating systems:
 
-* Windows: From NT4 SP5 up to Windows 2008 and Windows 7 and 2012
-* Linux: Debian, Centos and Ubuntu (and possibly others as well)
-* Win32, x64 as well as various Linux hardware as well.
+*   Windows: From NT4 SP5 up to Windows 2008 and Windows 7 and 2012
+*   Linux: Debian, Centos and Ubuntu (and possibly others as well)
+*   Win32, x64 as well as various Linux hardware as well.
 
 
 ### Linux:
 
 NSClient++ has official packages for:
 
-- Debian
-- Centos/Redhat
+-   Debian
+-   Centos/Redhat
 
 # Configuration
 
@@ -86,12 +86,12 @@ Also note that on Windows (after Vista) the ini file is residing in a protected 
 
 Sections
 
-Like in all INI, section start with a name between "[]". The first section is [/modules].
+Like in all INI, section start with a name between "[]". The first section is `[/modules]`.
 In general NSClient++ has a hierarchical settings structure much like a file-system. This means that everything under /settings is related to settings and so on and so forth.
 
-- Sections do not have an explicit end. When a new section start, the previous one end.
-- Sections can be empty
-- Sections generally starts with either (if they don't, you probably have an older version): `/modules` or `/settings/`
+-   Sections do not have an explicit end. When a new section start, the previous one end.
+-   Sections can be empty
+-   Sections generally starts with either (if they don't, you probably have an older version): `/modules` or `/settings/`
 
 ```
 [/modules]
@@ -106,7 +106,7 @@ In general NSClient++ has a hierarchical settings structure much like a file-sys
 
 Comments are line starting by a semi-colon ";"
 
-- This is a comment, which appears in green on notepad++. Colors helps me a lot!
+-   This is a comment, which appears in green on notepad++. Colors helps me a lot!
 
 ### Values
 
@@ -145,30 +145,29 @@ nrpe3 = NRPEServer
 !!! note
     Modules in bold below are commonly used with Nagios Nagios.
 
-| Module               | Has Config | Requires Config | Comment                                                                                                                                                |
-|----------------------|------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *CheckDisk*          |            |                 | Can check various file and disk related things. The current version has commands to check Size of hard drives and directories                          |
-| *CheckEventLog*      | X          |                 | Check for errors and warnings in the event log. This is only supported through NRPE so if you plan to use only NSClient this won’t help you at all     |
-|*CheckExternalScripts*| X          | X               | A simple wrapper to run external scripts and batch files                                                                                               |
-| *CheckHelpers*       |            |                 | Various helper function to extend other checks. This is also only supported through NRPE                                                               |
-| *CheckLogFile*       | X          |                 | Check text files (usually log files) for patterns.                                                                                                     |
-| *CheckNSCP*          |            |                 | Check the state of the agent                                                                                                                           |
-| *CheckSystem*        | X          |                 | Various system related checks, such as CPU load, process state, service state memory usage and PDH counters                                            |
-| *CheckTaskSched*     |            |                 | Check states of scheduled tasks. Both module are exclusive (must choose one or the other). The second is only for Vista and upper (new task scheduler) |
-| *CheckWMI*           |            |                 | Make WMI Query                                                                                                                                         |
-| DotnetPlugins        | X          | X               | Plugin to load and manage plugins written in dot net                                                                                                   |
-| GraphiteClient       | X          | X               | Act as a Graphite Client over Graphite protocol                                                                                                        |
-| LUAScript            | X          | X               | Extend NSClient++ with internal Lua scripts.                                                                                                           |
-| NRDPClient           | X          | X               | Act as a NRDP Client over NRDP protocol                                                                                                                |
-| NRPEClient           | X          | X               | Act as a NRPE Client over NRPE protocol                                                                                                                |
-| *NRPEServer*         | X          | X               | A simple server that listens for incoming NRPE connection and handles them.                                                                            |
-| NSCAClient           | X          | X               | Passive check support over NSCA protocol                                                                                                               |
-| NSClientServer       | X          | X               | A simple server that listens for incoming NSClient (check_nt) connection and handles them                                                              |
-| PythonScript         | X          | X               | Execute internal script written in Python (requires python 2.7 to be installed)                                                                        |
-| Scheduler            | X          | X               | A scheduler which schedules checks at regular intervals                                                                                                |
-| SimpleCache          |            |                 | Caches results for later checking                                                                                                                      |
-| SimpleFileWriter     |            |                 | Write results to a file or pipe similar to NSCA                                                                                                        |
-
+| Module                 | Has Config | Requires Config | Comment                                                                                                                                                |
+|------------------------|------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *CheckDisk*            |            |                 | Can check various file and disk related things. The current version has commands to check Size of hard drives and directories                          |
+| *CheckEventLog*        | X          |                 | Check for errors and warnings in the event log. This is only supported through NRPE so if you plan to use only NSClient this won’t help you at all     |
+| *CheckExternalScripts* | X          | X               | A simple wrapper to run external scripts and batch files                                                                                               |
+| *CheckHelpers*         |            |                 | Various helper function to extend other checks. This is also only supported through NRPE                                                               |
+| *CheckLogFile*         | X          |                 | Check text files (usually log files) for patterns.                                                                                                     |
+| *CheckNSCP*            |            |                 | Check the state of the agent                                                                                                                           |
+| *CheckSystem*          | X          |                 | Various system related checks, such as CPU load, process state, service state memory usage and PDH counters                                            |
+| *CheckTaskSched*       |            |                 | Check states of scheduled tasks. Both module are exclusive (must choose one or the other). The second is only for Vista and upper (new task scheduler) |
+| *CheckWMI*             |            |                 | Make WMI Query                                                                                                                                         |
+| DotnetPlugins          | X          | X               | Plugin to load and manage plugins written in dot net                                                                                                   |
+| GraphiteClient         | X          | X               | Act as a Graphite Client over Graphite protocol                                                                                                        |
+| LUAScript              | X          | X               | Extend NSClient++ with internal Lua scripts.                                                                                                           |
+| NRDPClient             | X          | X               | Act as a NRDP Client over NRDP protocol                                                                                                                |
+| NRPEClient             | X          | X               | Act as a NRPE Client over NRPE protocol                                                                                                                |
+| *NRPEServer*           | X          | X               | A simple server that listens for incoming NRPE connection and handles them.                                                                            |
+| NSCAClient             | X          | X               | Passive check support over NSCA protocol                                                                                                               |
+| NSClientServer         | X          | X               | A simple server that listens for incoming NSClient (check_nt) connection and handles them                                                              |
+| PythonScript           | X          | X               | Execute internal script written in Python (requires python 2.7 to be installed)                                                                        |
+| Scheduler              | X          | X               | A scheduler which schedules checks at regular intervals                                                                                                |
+| SimpleCache            |            |                 | Caches results for later checking                                                                                                                      |
+| SimpleFileWriter       |            |                 | Write results to a file or pipe similar to NSCA                                                                                                        |
 !!! note
     This is the only difficult part. You must tell NSClient++ how to behave for the modules you want it to run.
     We will cover here the most needed modules, which are in bold in previous chapter.
@@ -198,22 +197,18 @@ You can look at this much like for instance HTTP (which you are using now) and F
 They both support transferring files but they have slightly different approaches so things work differently but the end result is the same.
 A file gets transferred. In our case the end result is that a monitoring result gets submitted to Monitoring server.
 
-* NSClient (check_nt)
-  Old legacy protocol which only has some basic checks and is intended for backwards compatibility.
-
-* NRPE (check_nrpe)
-  The most commonly used way to use NSClient++. Most examples are intended to be used in this mode.
-  Has some security and payload length issues.
-
-* NSCA (nsca server)/NRDP (NRDP server)
-  To enable passive monitoring you would use either NSCA or NRDP to have NSClient++ submit home monitoring results.
-
-* REST
-  The preferred and best way to communicate with NSClient++ as it is firewall and security friendly.
-  This is a new protocol and can thus some times be a bit awkward to get on your monitoring server.
-
-* Make your own
-  The spirit of NSClient++ is to allow you do decide what you want to do so you can make any combination of the above and even use some other third party protocols or what not...
+*   NSClient (check_nt)
+    Old legacy protocol which only has some basic checks and is intended for backwards compatibility.
+*   NRPE (check_nrpe)
+    The most commonly used way to use NSClient++. Most examples are intended to be used in this mode.
+    Has some security and payload length issues.
+*   NSCA (nsca server)/NRDP (NRDP server)
+    To enable passive monitoring you would use either NSCA or NRDP to have NSClient++ submit home monitoring results.
+*   REST
+    The preferred and best way to communicate with NSClient++ as it is firewall and security friendly.
+    This is a new protocol and can thus some times be a bit awkward to get on your monitoring server.
+*   Make your own
+    The spirit of NSClient++ is to allow you do decide what you want to do so you can make any combination of the above   and even use some other third party protocols or what not...
 
 ## NRPE Server
 
@@ -338,8 +333,8 @@ This is simple (no access denied issue), but may lead to security issue if a bre
 As with others solutions, like Microsoft SCOM, you can restrict NSClient++ power by using a Windows account.
 
 Needed right will depend on what you want to monitor, but as a basis, you will need an account:
-- Member of the local Windows group Performance Monitor Users. Needed to collect performance counters
-- Log on as a service grant. Granted when you set the account, but should be applied through GPO to remain consistent.
+-   Member of the local Windows group Performance Monitor Users. Needed to collect performance counters
+-   Log on as a service grant. Granted when you set the account, but should be applied through GPO to remain consistent.
 
 
 Power users group is a no go, it still there but does nothing on vista and upper. On XP and 2003, it nearly means admin right, which is contrary to the target.
@@ -360,11 +355,13 @@ You can restrict hosts allowed to speak to NSClient++ from the config file. This
 
 NSClient++ is designed to be open ended and allow you to customize it in any way you design thus extensibility is a core feature.
 
-- ExternalScripts responds to queries and are executed by the operating system and the results are returned as-is.
-  This is generally the simplest way to extend NSClient++ as you can utilize whatever infrastructure or skill set you already have.
-- LuaScripts are internal scripts which runs inside NSClient++ and performs various tasks and/or responds to queries.
-  This is the best option if you want to allow the script to run on any platform with as little infrastructure as possible.
-- PythonScripts are internal scripts which runs inside NSClient++ and performs various tasks and/or responds to queries.
-  Python is an easy and powerful language but it requires you to also install python which is often not possible on server hardware.
-- .Net modules similar to Native modules below but written on the dot-net platform. This allows you to write components on top of the large dot-net ecosystem.
-- Modules are native plugins which can extend NSClient++ in pretty much any way possible. This is probably the most complicated way but gives you the most power and control.
+-   ExternalScripts responds to queries and are executed by the operating system and the results are returned as-is.
+    This is generally the simplest way to extend NSClient++ as you can utilize whatever infrastructure or skill set you already have.
+-   LuaScripts are internal scripts which runs inside NSClient++ and performs various tasks and/or responds to queries.
+    This is the best option if you want to allow the script to run on any platform with as little infrastructure as possible.
+-   PythonScripts are internal scripts which runs inside NSClient++ and performs various tasks and/or responds to queries.
+    Python is an easy and powerful language but it requires you to also install python which is often not possible on server hardware.
+-   .Net modules similar to Native modules below but written on the dot-net platform.
+    This allows you to write components on top of the large dot-net ecosystem.
+-   Modules are native plugins which can extend NSClient++ in pretty much any way possible.
+    This is probably the most complicated way but gives you the most power and control.

@@ -16,11 +16,11 @@ For those not familiar with NRPE (Nagios Remote Plugin Execution) here is a quic
 
 NRPE works much like SSH or telnet etc. It relays a command and awaits the result. In the above diagram what happens is:
 
-1. Nagios executes check_nrpe with the proper arguments.
-2. NSClient++ receives the command to be executed
-3. NSClient++ will execute the command and get a result on the form of <status>, <message> and optionally <performance data>
-4. NSClient++ sends the result back to Nagios
-5. Nagios gets the result from check_nrpe (and uses it much like any other plugin)
+1.  Nagios executes check_nrpe with the proper arguments.
+2.  NSClient++ receives the command to be executed
+3.  NSClient++ will execute the command and get a result on the form of <status>, <message> and optionally <performance data>
+4.  NSClient++ sends the result back to Nagios
+5.  Nagios gets the result from check_nrpe (and uses it much like any other plugin)
 
 So in essence NRPE is merely a transport mechanism to send the result of a check command over the network.
 
@@ -37,8 +37,8 @@ The client is (generally) called check_nrpe and works like so:
 ./check_nrpe -H <nsclient++ server ip> -c <command> [-a <a> <list> <of> <arguments>]
 ```
 
-* `command` = The command (script) you want to run (often this is a pre-built command from within NSClient++)
-* `a` `list` `of` `arguments` = a list of arguments for the command.
+*   `command` = The command (script) you want to run (often this is a pre-built command from within NSClient++)
+*   `a` `list` `of` `arguments` = a list of arguments for the command.
 
 So the simplest way to see if things are a-working just run it without a command and you should get a response specifying the version of "NRPE" (in this case NSClient++) like so:
 
@@ -68,7 +68,7 @@ This is set either under the `/settings/default` section (globally) or under the
 If you when you configured NSClient above set this globally you are already set to go. If not the key you need to change is the `allowed hosts`.
 There is no password for NRPE.
 
-- `allowed hosts` = A list of addresses that is allowed to ask questions (i.e. your Nagios ip).
+-   `allowed hosts` = A list of addresses that is allowed to ask questions (i.e. your Nagios ip).
   The result should look like this (assuming your Nagios server ip address is 10.0.0.2):
 
 ```
@@ -163,19 +163,17 @@ So in this section we shall cover the basics and first off are some of the confi
 
 ### NRPE specific setting in NSClient++
 
-* `ssl`
-  If this is true we will use SSL encryption on the transport. **Notice** this flag has to be the same on both ends or you will end up with strange errors. The flag is set on check_nrpe with the -n option (if you use -n no SSL will be used).
-* `allow arguments`
-  Since arguments can be potentially dangerous (it allows your users to control the execution) there is a flag (which defaults to off) to enable arguments. So if you plan on configure NSClient++ from the Nagios end you need to enable this. **But be warned this is a security issue you need to think about**. If you do not want to allow arguments you can instead configure all checks in the nsclient.ini file and just execute the aliases from Nagios.
-  One important issue with the `allow arguments` is that there are more then one! *Yes, more then one!*
-  The reason for this is that you can allow arguments from NRPE and you can allow arguments for external scripts (it is not the same option) which might seem a bit confusing at first.
-  But actually quite nice. Using arguments for external scripts can potentially be more dangerous than allowing them from NRPE (internal commands).
-
-* `allow nasty characters`
-  This flag allows arguments to contain "dangerous" characters such as redirection and pipe (<>|) and makes things a tad more dangerous. But if you decide to use arguments you most likely want to use this flag as well. **But again this is a security risk**. Please also note this is also available for both NRPE and external scripts.
-
-* `insecure`
-  Allow legacy `check_nrpe` to connect.
+*   `ssl`
+    If this is true we will use SSL encryption on the transport. **Notice** this flag has to be the same on both ends or   you will end up with strange errors. The flag is set on check_nrpe with the -n option (if you use -n no SSL will be   used).
+*   `allow arguments`
+    Since arguments can be potentially dangerous (it allows your users to control the execution) there is a flag (which   defaults to off) to enable arguments. So if you plan on configure NSClient++ from the Nagios end you need to enable   this. **But be warned this is a security issue you need to think about**. If you do not want to allow arguments you   can instead configure all checks in the nsclient.ini file and just execute the aliases from Nagios.
+    One important issue with the `allow arguments` is that there are more then one! *Yes, more then one!*
+    The reason for this is that you can allow arguments from NRPE and you can allow arguments for external scripts (it is   not the same option) which might seem a bit confusing at first.
+    But actually quite nice. Using arguments for external scripts can potentially be more dangerous than allowing them   from NRPE (internal commands).
+*   `allow nasty characters`
+    This flag allows arguments to contain "dangerous" characters such as redirection and pipe (<>|) and makes things a   tad more dangerous. But if you decide to use arguments you most likely want to use this flag as well. **But again   this is a security risk**. Please also note this is also available for both NRPE and external scripts.S
+*   `insecure`
+    Allow legacy `check_nrpe` to connect.
 
 So this if you enable this in the INI file you will end up with something like this (extract):
 
@@ -253,10 +251,10 @@ And that is as hard as it gets all you need to do is figure out which arguments 
 
 Nagios configuration is in itself a whole chapter and this is just a quick peek on how you can do things. First off there are a few concepts to understand:
 
-* templates are the same as the corresponding item but they have a flag register = 0 which prevents them from being listed
-* services are essentially checks (is check CPU)
-* hosts are essentially computers
-* groups are an important concept which I ignore here for simplicity (I recommend you use it)
+*   templates are the same as the corresponding item but they have a flag register = 0 which prevents them from being listed
+*   services are essentially checks (is check CPU)
+*   hosts are essentially computers
+*   groups are an important concept which I ignore here for simplicity (I recommend you use it)
 
 The configuration is at the end layer quite simple you have a "check" and a "host" and you connect them with a service. Like I show at the bottom line in the diagram above. Whats makes this a tad more complicated is that you can inherit things from a "parent" definition. Which is what I show with arrows (bottom to top) above. The templates with dashed lines are the base templates which all services and hosts inherit.
 

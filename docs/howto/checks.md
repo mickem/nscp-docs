@@ -71,8 +71,8 @@ These message will only be available if log level is set to debug.
 
 This can be achieved in two ways:
 
-1. the --log debug command line options
-2. Configuring the log level in the config file:
+1.  the --log debug command line options
+2.  Configuring the log level in the config file:
 ```
 [/settings/log]
 level = debug
@@ -122,13 +122,13 @@ L     client  Performance data: 'core 0 5m'=5%;80;90 'core 0 1m'=32%;80;90 'core
 Lets for the moment ignore the "top-syntax=${list}" option and instead focus on the filter part: "filter=core = 'core 0'"
 Lets dissect this:
 
-1. *filter* Is the keyword
-2. *core = 'core 0'* is the expression
+1.  *filter* Is the keyword
+2.  *core = 'core 0'* is the expression
 
 Dissecting this expression further we get:
 
-1. *core* is a variable representing the name of the core
-2. *'core 0'* is the name of the first core.
+1.  *core* is a variable representing the name of the core
+2.  *'core 0'* is the name of the first core.
 
 To get a list of all keyword we can use the help option as shown above. Here is the available variables for check_cpu filter keyword.
 
@@ -213,14 +213,14 @@ In this way we can keep adding more and more expressions together to form any fi
 Now Nagios doe not care about the message nor the performance data. What Nagios cares about is the return status.
 The return status in the Nagios context can be:
 
-- ok
-- warning
-- critical
-- unknown
+-   ok
+-   warning
+-   critical
+-   unknown
 
 The way this work in NSClient++ is that besides the filter keyword there are other similar filters which define the various states.
-- *warning* Define the warning state
-- *critical* Defines the critical state
+-   *warning* Define the warning state
+-   *critical* Defines the critical state
 
 
 The actual expressions work exactly the same it is only the outcome which differs.
@@ -254,5 +254,5 @@ The flexibility of the filter keyword is also the same for the warning and criti
 
 The last thing we are going to explore is the syntax keywords.
 
-- *top-syntax* Defines the over all message
-- *detail-syntax* Defines the rendering of each item.
+-   *top-syntax* Defines the over all message
+-   *detail-syntax* Defines the rendering of each item.
