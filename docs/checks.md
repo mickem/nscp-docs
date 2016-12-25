@@ -1,11 +1,11 @@
-# Checking things
+S# Checking things
 
 Using NSClient++ is checks is also pretty straight forward in modern NSClient++ versions.
 With version 0.4.3 we switched all old checks for a new check subsystem which is more uniform as well as more powerful then the old.
 Thanks to a compatibility layer most old command should still work (but there are some snags so be ware when upgrading).
 
 Most check have what is refereed to as sensible defaults this means without arguments most checks will do "something sensible".
-This means that to get you started check_cpu will just work as-is. But when you need to do something slightly different you have to start to use the check expressions.
+This means that to get you started `check_cpu` will just work as-is. But when you need to do something slightly different you have to start to use the check expressions.
 
 It is important to note that NSClient++ has been around for a long time and the syntax for the checks has changed over time.
 There is a lot of old out dated information about there about the various old syntaxes which is: plain wrong so if you find something about max-warn, filter+ or such: just forget all about it.
@@ -34,7 +34,7 @@ check_cpu show-default
 L        cli OK: "filter=core = 'total'" "warning=load > 80" "critical=load > 90" "empty-state=ignored" "top-syntax=${status}: ${problem_list}" "ok-syntax=%(status): CPU load is ok." "detail-syntax=${time}: ${load}%" "perf-syntax=${core} ${time}"
 ```
 Now changing the default value is as simple as adding the ones you do not like with a changed option.
-Lets say you want to change warning threshold from 80 to 30 you can do so simply by taking *warn=used > 80%* changing it to the threshold you want *warn=used > 30%*.
+Lets say you want to change warning threshold from 80 to 30 you can do so simply by taking `warn=used > 80%` changing it to the threshold you want `warn=used > 30%`.
 Now add this to the command line of the old command and run that.
 
 Modified thresholds:
@@ -51,7 +51,7 @@ Just add the ones you need. On the other hand if you want to keep using an "old"
 ### What about removing default values?
 
 Sometimes you want to negate the default value by leaving it empty. This might seem impossible at first glance but you can always specify "none" for a given parameter to override the default value and revert back to an empty string.
-For instance to remove the default filter in check_cpu you would use the following command:
+For instance to remove the default filter in `check_cpu` you would use the following command:
 
 Remove filters:
 ```
@@ -62,13 +62,13 @@ L        cli  Performance data: 'total 5m'=0%;80;90 'core 0 1m'=0%;80;90 'core 1
 
 ### Implicit defaults
 
-The last thing we shall discuss here is a slight snag and this will hopefullt be made better in future version of NSClient++.
+The last thing we shall discuss here is a slight snag and this will hopefully be made better in future version of NSClient++.
 Some default values are not "default value" they are "implicit values". Now this is technically a "bug" but one which might not be fixed any time soon.
 So what does this mean?
 Well in the above command line there was *NO* option for the default times. The check returns the values for 5 seconds, 1 minute and 5 minutes.
 But where did they come from?
 Well, they are so called "implicit values" if a check does not have a given value might be used. These options are almost always related to the data set used such as time or drives or similar.
-So for instance check_drivesize will not have a default option for what to check.
+So for instance `check_drivesize` will not have a default option for what to check.
 To get around this we need simply check the key in the documentation and add it:
 
 Different timings:
@@ -84,7 +84,7 @@ And in the next few chapters we will add some deeper understanding on how the fi
 
 ## Expressions
 
-The core feature of the NSCLient++ filter and check language is an expression.
+The core feature of the NSClient++ filter and check language is an expression.
 This expression is modelled after SQL Where clauses and in essence you write an expression which is what will be used by the checks.
 
 To look at this we will start with the basics modifying warn/crit threshold checks.
@@ -124,7 +124,7 @@ The safe version of an operator is only to allow expression to be used even when
 The are identical to their unsafe versions apart from the characters used to type them.
 
 The keywords available are different for each check and you can always check the various documentation to see a list of available expression for a given check.
-For instance for check_cpu we have.
+For instance for `check_cpu` we have.
 
 Check related keywords:
 
@@ -161,12 +161,12 @@ Thus writing 5k is equal to writing 5120 but only for size expressions.
 
 Filtering works much like expression above except that filters define what to include in a check.
 While there are multiple filters the most common one to use is filter which defined the objects you are interested in.
-We already saw a quick example in the check_cpu command above. The default filter was:
+We already saw a quick example in the `check_cpu` command above. The default filter was:
 
-The default check_cpu filter: `"filter=core = 'total'"`
+The default `check_cpu` filter: `"filter=core = 'total'"`
 
 What this does is exclude any items which des not evaluate to false. n other words any items which does not have a core value equal to total.
-In the check_cpu command there are values for each core as well as an aggregated total value.
+In the `check_cpu` command there are values for each core as well as an aggregated total value.
 This the above only shows us the total load and the load for each individual core is never used in the check command.
 
 Writing filters work exactly like the warning and critical expression we have seen before so we wont cover that again here.
@@ -182,9 +182,9 @@ The syntax configuration is split up into three main keywords:
 -   ok-syntax
 
 The top-syntax defines the overall message whereas the detail-syntax defines how each entry is formatted.
-The actual values are similar to what we saw before in the filter and warnign/critical thresholds.
+The actual values are similar to what we saw before in the filter and warning/critical thresholds.
 
-Looking at check_cpu the default syntaxes (as we have already seen) are:
+Looking at `check_cpu` the default syntaxes (as we have already seen) are:
 ```
 top-syntax=${status}: ${problem_list}
 ok-syntax=%(status): CPU load is ok.
@@ -224,7 +224,7 @@ OK: 5m: 0%, 1m: 4%, 5s: 11%
 The difference is that with show-all all the values are shown.
 By default when we run a check only values which are bad are included in the message but if we always want to see the values we can specify show-all.
 For instance if the CPU load had been above the warning threshold we would have seen the value included in the message.
-Now show-all is not magical it only modifies the top-syntax replacing %(problem_list) with %(list).
+Now show-all is not magical it only modifies the top-syntax replacing `%(problem_list)` with `%(list)`.
 This is something you could have achieved yourself but show-all makes it simpler as well as makes intent much clearer.
 
 ## Advanced options
@@ -232,7 +232,7 @@ This is something you could have achieved yourself but show-all makes it simpler
 ### Performance data configuration
 
 Performance data is something which a lot of people want to tweak and customize.
-And the simplest way to do so is using the perf-config command line options.
+And the simplest way to do so is using the `perf-config` command line options.
 This command line option is  a bit more complicated then changing filters as it is very free form.
 It works a bit like CSS style sheets where you have selectors and lists of keys and values.
 If you are not familiar with CSS it does not matter as the similarity is very brief and we will explain how they work.
@@ -245,8 +245,8 @@ L        cli CRITICAL: CRITICAL ...
 L        cli  Performance data: 'C:\ used'=213.75593GB;178.77655;201.12362;0;223.47069 'C:\ used %'=95%;79;89;0;100 'D:\ used'=400.62005GB;372.60702;419.1829;0;465.75878 'D:\ used %79;89;0;100 'E:\ used'=0B;0;0;0;0
 ```
 
-The performance data here is quite long so lets break it up into a table. To do this we can use a built in helper function in NSCLient++.
-The function format_perf will execute another command and render the performance data as the return message.
+The performance data here is quite long so lets break it up into a table. To do this we can use a built in helper function in NSClient++.
+The function `format_perf` will execute another command and render the performance data as the return message.
 
 Formatted performance data:
 ```
@@ -259,8 +259,8 @@ C:\ used      213.605 GB      178.777 201.124 223.471 0
 , E:\ used      0       B       0       0       0       0
 ```
 
-Now we can see we have several types of performance data for each drive. We have "used" and we have "used %".
-Both of these can be configured individually and the way to access them is by their "suffix" which is "used" and "used %".
+Now we can see we have several types of performance data for each drive. We have `used` and we have `used %`.
+Both of these can be configured individually and the way to access them is by their "suffix" which is `used` and `used %`.
 
 selecting based on suffix: `"perf-config=used(...) used %(...)"`
 
@@ -314,15 +314,15 @@ Now this is not what we expected: right?
 Why did the 5:ages get back? End even worse why were they renamed "c:".
 The reason for this is simple. Selection is done on multiple levels. We match (in the following order)
 
-1.  &lt;prefix>.&lt;object>.&lt;suffix>
-2.  &lt;prefix>.&lt;object>
-3.  &lt;object>.&lt;suffix>
-4.  &lt;prefix>
-5.  &lt;suffix>
-6.  &lt;object>
+1.  `prefix.object.suffix`
+2.  `prefix.object`
+3.  `object.suffix`
+4.  `prefix`
+5.  `suffix`
+6.  `object`
 
 So what are the various suffixes and prefixes?
-Well in the case of check_drivesize they are:
+Well in the case of `check_drivesize` they are:
 
 | Value    | Prefix | Object | Suffix |
 |----------|--------|--------|--------|
@@ -333,7 +333,7 @@ Well in the case of check_drivesize they are:
 
 So using "used" as a stand along selector is a bit bad since we match BOTH used and used %.
 And usually this is fine, setting the unit for %:s does not change anything and thus "it works".
-If we want to differentiate between them we need to use a dot notation syntax which looks like this: <prefix>.<object>.<suffix>.
+If we want to differentiate between them we need to use a dot notation syntax which looks like this: `<prefix>.<object>.<suffix>`.
 As we saw above they are tried in various combination so leaving out something should get us a broader selection.
 
 Correct selection:

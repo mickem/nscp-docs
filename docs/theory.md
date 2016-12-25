@@ -12,8 +12,6 @@ The key decisions you have to make are related to (in no particular order):
     Which protocols do you need
 -   Commands
     Which are right for you?
-asd dasdasdd
-
 
 This section will go through the various categories one by one and give you some hints and ideas on how to proceed.
 It is important to understand that these are examples and thus there are many reasons not to do what I suggest here but if you are new to NSClient++ you probably want to start out in the normal way.
@@ -85,6 +83,7 @@ A quick comparison of the protocols:
 | Graphite | Graphing          | Not secure               | Only for graphing                                    |
 | SMTP     | Passive (pushing) | Not secure in NSClient++ | Mainly a toy                                         |
 | Syslog   | Passive (logs)    | Not secure               | Mainly for sending logs                              |
+
 
 !!! note
     * By somewhat secure I mean that you can configure it to be fairly secure

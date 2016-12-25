@@ -6,9 +6,9 @@ NSCP has a built-in "test and debug" mode that you can activate with the followi
 
 What this does is two things.
 
-1. it starts the daemon as "usual" with the same configuration and such.
-2. it enables debug logging and logs to the console.
-   This makes it quite easy to see what is going on and why things go wrong.
+1.  it starts the daemon as "usual" with the same configuration and such.
+2.  it enables debug logging and logs to the console.
+    This makes it quite easy to see what is going on and why things go wrong.
 
 
 ## 1.2 MSI or ZIP installation?
@@ -23,19 +23,19 @@ The MSI is the preferred way to install NSClient++ and will work much better the
 - Second thing to check is whether the servers' performance counters working?
   Sometimes the performance counters end up broken and need to be rebuilt there is a command to validate performance counters: `nscp sys --validate`
 
-For details: Microsoft KB: http://support.microsoft.com/kb/300956 essentially you need to use the `lodctr /R` command.
+For details: Microsoft KB: [http://support.microsoft.com/kb/300956](http://support.microsoft.com/kb/300956) essentially you need to use the `lodctr /R` command.
 
 ## 1.4 Bind failed
 
 Usually this is due to running more then once instance of NSClient++ or possibly running another program that uses the same port.
 
-- Make sure you don't have any other instance NSClient++ started.
-- Check if the port is in use (`netstat -a` look for LISTENING)
+-   Make sure you don't have any other instance NSClient++ started.
+-   Check if the port is in use (`netstat -a` look for LISTENING)
 
 ## 1.5 EventlogBuffer is too small
 
 !!! note
-    This has been fixed in 0.4.3 and is no longer required
+    This has been changed in 0.4.3 and is no longer required
 
 This is because you have one or more entries in your event-log which are larger then the "default buffer size of 64k". The best way to fix this is to increase the buffer used.
 
@@ -47,7 +47,7 @@ buffer_size=128000
 ## 1.6 System Tray does not work
 
 !!! note
-    System tray is currently disabled and will be added back at some point
+    System tray was removed in 0.4.0.
 
 ## 1.7 I get <insert random error from Nagios here>
 
@@ -65,11 +65,11 @@ net start nscp
 
 Please check and include this information before you submit questions and/or bug reports.
 
-## 1.8 High CPU load and check_eventlog
+## 1.8 High CPU load and `check_eventlog`
 
 Some people experience high CPU load when checking the event log this can usually be resolved using the new command line option scan-range setting it to the time region you want to check
 
-`CheckEventLog ... scan-range=12h ...`
+`check_eventlog ... scan-range=12h ...`
 
 ## 1.9 Return code of 139 is out of bounds
 
@@ -145,12 +145,12 @@ allow nasty characters=true
 
 To not use nasty characters you can replace man y of them in built-in commands:
 
-|Expression|Replacement|
-|----------|-----------|
-|    >     |    gt     |
-|   <      |    lt     |
-|   '      |  str(...) |
-|  ${..}   |    %(..)  |
+| Expression | Replacement |
+|------------|-------------|
+| >          | gt          |
+| <          | lt          |
+| '          | str(...)    |
+| ${..}      | %(..)       |
 
 
 # 3. Versions
@@ -166,7 +166,7 @@ In generally do NOT fix issues in several years old versions.
 
 # 4. Network
 
-## 4.1 Rejected connection from: <ip address here>
+## 4.1 Rejected connection from: your IP address here
 
 This is due to invalid configuration.
 One important thing you '''NEED''' to configure is which hosts are allowed to connect. If this configuration is missing or invalid you will get the following error:
@@ -193,34 +193,34 @@ The Nagios server timeout will fire after exactly 60 seconds but the script time
 
 If your command takes 60 seconds you need to set the timeouts like this:
 
-**1. Script timeout: 60s**
+### 1. Script timeout: 60s
 
 ```
 [/settings/external scripts/wrappings]
 vbs = cscript.exe //T:120 //NoLogo scripts\\lib\\wrapper.vbs %SCRIPT% %ARGS%
 ```   
 
-**2. External script timeout: 65 seconds**
+### 2. External script timeout: 65 seconds
 
 ```
 [/settings/external scripts]
 timeout = 65
 ```
 
-**3. NRPE/server timeout: 70s**
+### 3. NRPE/server timeout: 70s
 
 ```
 [settings/NPRE/server]
 timeout = 70
 ```
 
-**4. check_nrpe timeout: 75s**
+### 4. check_nrpe timeout: 75s
 
 ```
 check_nrpe -t 75
 ```
 
-**5. Nagios service check timeout: 80s**
+### 5. Nagios service check timeout: 80s
 
 ```
 service_check_timeout=80
@@ -239,10 +239,10 @@ level = info
 max size = 2048000
 ```
 
-## 5.2 What's the difference between CheckFoo and check_foo
+## 5.2 What's the difference between `CheckFoo` and `check_foo`
 
-In older version of NSClient++ (pre 0.4.1) there were only CheckFoo type commands so they where called CheckCPU CheckMem CheckProcess etc etc...
-In 0.4.2 we introduced a new set of commands which were more generic and similar and they are called check_cpu check_memory check_process etc etc..
+In older version of NSClient++ (pre 0.4.1) there were only `CheckFoo` type commands so they where called `CheckCPU` `CheckMem` `CheckProcess` etc etc...
+In 0.4.2 we introduced a new set of commands which were more generic and similar and they are called `check_cpu` `check_memory` `check_process` etc etc..
 The previous ones are only for compatibility and will eventually be removed from NSClient++.
 Currently they are about 90% compatible which means some things will not work as before and some commands are not even present anymore.
 
@@ -252,7 +252,7 @@ Currently they are about 90% compatible which means some things will not work as
 ## 5.3 I use check_nt and...
 
 Check_nt is NOT a good protocol and is considered abandon-ware as noone updates the check_nt command any longer. NSClient++ supports it only for legacy reasons.
-There is generally no reason to use check_nt as check_nrpe and check_nscp can achieve the same thing.
+There is generally no reason to use `check_nt` as `check_nrpe` and `check_nscp` can achieve the same thing.
 
 ## 5.4 MEMUSE reports the wrong value
 
@@ -296,7 +296,7 @@ ssl = true
 insecure = true
 ```
 
-If you instead opt to use the more secure standard SSL approach used in NSClient++ you can easily install NSClient++ on a linux system as well.
+If you instead opt to use the more secure standard SSL approach used in NSClient++ you can easily install NSClient++ on a Linux system as well.
 
 
 # 8. My question is not here?

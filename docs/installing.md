@@ -4,10 +4,10 @@ This is a grooving process before it was all manual but slowly we are getting a 
 
 ## Installation (Simple)
 
-NSClient++ comes with an interactive installer (MSI) which is the prefered method of installation.
-There is also a command line option for registering (and de-registering) the service but as the Installer works pretty well it is the prefered way.
+NSClient++ comes with an interactive installer (MSI) which is the preferred method of installation.
+There is also a command line option for registering (and de-registering) the service but as the Installer works pretty well it is the preferred way.
 
-More detailed information on how to do silent installs and automated installs in large enviornments can be found below.
+More detailed information on how to do silent installs and automated installs in large environments can be found below.
 For most people installing NSClient++ is simply running the MSI entering some options and clicking next.
 **BUT** this is only where the fun begins. After installing NSClient++ you need to configure it.
 
@@ -23,11 +23,12 @@ INI settings: (ini://${shared-path}/nsclient.ini, C:\source\build\x64\dev/nsclie
 ```
 
 Now this configuration can include other configuration files so you need to check that as well. So it is possible to include the registry from the ini file and vice versa.
-For details on the configuration options check the [the refernce documentation](reference)
+For details on the configuration options check the [the reference documentation](reference)
 
 ## Windows Firewall
 
-1.  windows firewall exception for NRPE and check_nt is installed (optional) if you have another firewall then the built-in one you might have to manually add exceptions to all incoming traffic if you which to use check_nrpe and/or check_nt.
+1.  Windows firewall exception for NRPE and check_nt is installed (optionally) by the installer.
+    If you have another firewall then the built-in one you might have to manually add exceptions to all incoming traffic if you which to use check_nrpe and/or check_nt.
 2.  External Firewall (optional)
 
 
@@ -48,9 +49,9 @@ Firewall configuration should be pretty straight forward:
 | NSCA       | client | <all>       | Nagios        | 5667             | The client initiates a call to the Nagios server on port 5667  |
 | NRPE-proxy | client | <all>       | remote-client | 5666             | The client initiates a call to the remote client on port 5666  |
 
-- **Nagios** is the IP/host of the main monitoring server
-- client is the Windows computer where you have installed NSClient++
-- remote-client is the "other" client you want to check from NSClient++ (using NSClient++ as a proxy)
+-   **Nagios** is the IP/host of the main monitoring server
+-   client is the Windows computer where you have installed NSClient++
+-   remote-client is the "other" client you want to check from NSClient++ (using NSClient++ as a proxy)
 
 All these ports can be changed so be sure to check your nsclient.ini for your ports.
 
