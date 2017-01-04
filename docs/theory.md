@@ -84,11 +84,6 @@ A quick comparison of the protocols:
 | SMTP     | Passive (pushing) | Not secure in NSClient++ | Mainly a toy                                         |
 | Syslog   | Passive (logs)    | Not secure               | Mainly for sending logs                              |
 
-
-!!! note
-    * By somewhat secure I mean that you can configure it to be fairly secure
-    ** By  
-
 The common protocols (for checks) are NRPE, NSCA and Graphite.
 
 From an NSClient++ and configuration point of view most of these protocols will appear very similar.

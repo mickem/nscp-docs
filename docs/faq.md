@@ -112,11 +112,10 @@ Dollar signs are "strange" in Nagios and has to be escaped using double $$s. Thu
 
 Backslashes and some other control characters are handled by the shell in Nagios and thus escaped as such.
 
-From:
--   Nagios:
-    "...\\..."
--   from NSClient++
-    "...\\..."
+| Location   | Escape character |
+| ---------- | ---------------- |
+| Nagios     | ...\\...         |
+| NSClient++ | ...\\...         |
 
 ## 2.4 Arguments via NRPE
 
@@ -146,7 +145,7 @@ allow nasty characters=true
 To not use nasty characters you can replace man y of them in built-in commands:
 
 | Expression | Replacement |
-|------------|-------------|
+| ---------- | ----------- |
 | >          | gt          |
 | <          | lt          |
 | '          | str(...)    |
