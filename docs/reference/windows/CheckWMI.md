@@ -2,31 +2,28 @@
 
 Check status via WMI
 
-## Query list
+
+
+## List of commands
 
 A list of all available queries (check commands)
 
-| Command | Description|
-| ------- | -----------|
-| [check_wmi](#check_wmi) | Check a set of WMI values and return rows which are matching criteria.|
+| Command                 | Description                                                            |
+|-------------------------|------------------------------------------------------------------------|
+| [check_wmi](#check_wmi) | Check a set of WMI values and return rows which are matching criteria. |
 
 
-## Alias list
+## List of command aliases
 
 A list of all short hand aliases for queries (check commands)
 
 
+| Command  | Description                   |
+|----------|-------------------------------|
+| checkwmi | Alias for: :query:`check_wmi` |
 
-| Command | Description|
-| ------- | -----------|
-| checkwmi | Alias for: :query:`check_wmi`|
 
-
-## Command list
-
-**TODO:** Add a list of all external commands (this is not check commands)
-
-## Configuration list
+## List of Configuration
 
 
 
@@ -42,7 +39,7 @@ A quick reference for all available queries (check commands) in the CheckWMI mod
 
 Check a set of WMI values and return rows which are matching criteria.
 
-### Samples
+### Usage
 
 _To edit these sample please edit [this page](https://github.com/mickem/nscp-docs/blob/master/samples/CheckWMI_check_wmi_samples.md)_
 
@@ -95,34 +92,33 @@ L        cli  Performance data: 'BuildNumber'=10240;9600;8000
 ### Usage
 
 
-
-| Option | Default Value | Description|
-| ------ | ------------- | -----------|
-| [filter](#check_wmi_filter) |  | Filter which marks interesting items.|
-| [warning](#check_wmi_warning) |  | Filter which marks items which generates a warning state.|
-| [warn](#check_wmi_warn) |  | Short alias for warning|
-| [critical](#check_wmi_critical) |  | Filter which marks items which generates a critical state.|
-| [crit](#check_wmi_crit) |  | Short alias for critical.|
-| [ok](#check_wmi_ok) |  | Filter which marks items which generates an ok state.|
-| [debug](#check_wmi_debug) | N/A | Show debugging information in the log|
-| [show-all](#check_wmi_show-all) | N/A | Show details for all matches regardless of status (normally details are only showed for warnings and criticals).|
-| [empty-state](#check_wmi_empty-state) | ignored | Return status to use when nothing matched filter.|
-| [perf-config](#check_wmi_perf-config) |  | Performance data generation configuration|
-| [escape-html](#check_wmi_escape-html) | N/A | Escape any < and > characters to prevent HTML encoding|
-| [help](#check_wmi_help) | N/A | Show help screen (this screen)|
-| [help-pb](#check_wmi_help-pb) | N/A | Show help screen as a protocol buffer payload|
-| [show-default](#check_wmi_show-default) | N/A | Show default values for a given command|
-| [help-short](#check_wmi_help-short) | N/A | Show help screen (short format).|
-| [top-syntax](#check_wmi_top-syntax) | ${list} | Top level syntax.|
-| [ok-syntax](#check_wmi_ok-syntax) |  | ok syntax.|
-| [empty-syntax](#check_wmi_empty-syntax) |  | Empty syntax.|
-| [detail-syntax](#check_wmi_detail-syntax) | %(line) | Detail level syntax.|
-| [perf-syntax](#check_wmi_perf-syntax) |  | Performance alias syntax.|
-| [target](#check_wmi_target) |  | The target to check (for checking remote machines).|
-| [user](#check_wmi_user) |  | Remote username when checking remote machines.|
-| [password](#check_wmi_password) |  | Remote password when checking remote machines.|
-| [namespace](#check_wmi_namespace) | root\cimv2 | The WMI root namespace to bind to.|
-| [query](#check_wmi_query) |  | The WMI query to execute.|
+| Option                                    | Default Value | Description                                                                                                      |
+|-------------------------------------------|---------------|------------------------------------------------------------------------------------------------------------------|
+| [filter](#check_wmi_filter)               |               | Filter which marks interesting items.                                                                            |
+| [warning](#check_wmi_warning)             |               | Filter which marks items which generates a warning state.                                                        |
+| [warn](#check_wmi_warn)                   |               | Short alias for warning                                                                                          |
+| [critical](#check_wmi_critical)           |               | Filter which marks items which generates a critical state.                                                       |
+| [crit](#check_wmi_crit)                   |               | Short alias for critical.                                                                                        |
+| [ok](#check_wmi_ok)                       |               | Filter which marks items which generates an ok state.                                                            |
+| [debug](#check_wmi_debug)                 | N/A           | Show debugging information in the log                                                                            |
+| [show-all](#check_wmi_show-all)           | N/A           | Show details for all matches regardless of status (normally details are only showed for warnings and criticals). |
+| [empty-state](#check_wmi_empty-state)     | ignored       | Return status to use when nothing matched filter.                                                                |
+| [perf-config](#check_wmi_perf-config)     |               | Performance data generation configuration                                                                        |
+| [escape-html](#check_wmi_escape-html)     | N/A           | Escape any < and > characters to prevent HTML encoding                                                           |
+| [help](#check_wmi_help)                   | N/A           | Show help screen (this screen)                                                                                   |
+| [help-pb](#check_wmi_help-pb)             | N/A           | Show help screen as a protocol buffer payload                                                                    |
+| [show-default](#check_wmi_show-default)   | N/A           | Show default values for a given command                                                                          |
+| [help-short](#check_wmi_help-short)       | N/A           | Show help screen (short format).                                                                                 |
+| [top-syntax](#check_wmi_top-syntax)       | ${list}       | Top level syntax.                                                                                                |
+| [ok-syntax](#check_wmi_ok-syntax)         |               | ok syntax.                                                                                                       |
+| [empty-syntax](#check_wmi_empty-syntax)   |               | Empty syntax.                                                                                                    |
+| [detail-syntax](#check_wmi_detail-syntax) | %(line)       | Detail level syntax.                                                                                             |
+| [perf-syntax](#check_wmi_perf-syntax)     |               | Performance alias syntax.                                                                                        |
+| [target](#check_wmi_target)               |               | The target to check (for checking remote machines).                                                              |
+| [user](#check_wmi_user)                   |               | Remote username when checking remote machines.                                                                   |
+| [password](#check_wmi_password)           |               | Remote password when checking remote machines.                                                                   |
+| [namespace](#check_wmi_namespace)         | root\cimv2    | The WMI root namespace to bind to.                                                                               |
+| [query](#check_wmi_query)                 |               | The WMI query to execute.                                                                                        |
 
 
 <a name="check_wmi_filter"/>
@@ -136,21 +132,21 @@ Interesting items are items which will be included in the check.
 They do not denote warning or critical state instead it defines which items are relevant and you can remove unwanted items.
 Available options : 
 
-| Key            | Value                                                                                                          | |
-| -------------- | -------------------------------------------------------------------------------------------------------------- | |
-| count          | Number of items matching the filter. Common option for all checks.                                             | |
-| total          |  Total number of items. Common option for all checks.                                                          | |
-| ok_count       |  Number of items matched the ok criteria. Common option for all checks.                                        | |
-| warn_count     |  Number of items matched the warning criteria. Common option for all checks.                                   | |
-| crit_count     |  Number of items matched the critical criteria. Common option for all checks.                                  | |
-| problem_count  |  Number of items matched either warning or critical criteria. Common option for all checks.                    | |
-| list           |  A list of all items which matched the filter. Common option for all checks.                                   | |
-| ok_list        |  A list of all items which matched the ok criteria. Common option for all checks.                              | |
-| warn_list      |  A list of all items which matched the warning criteria. Common option for all checks.                         | |
-| crit_list      |  A list of all items which matched the critical criteria. Common option for all checks.                        | |
-| problem_list   |  A list of all items which matched either the critical or the warning criteria. Common option for all checks.  | |
-| detail_list    |  A special list with critical, then warning and finally ok. Common option for all checks.                      | |
-| status         |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     | |
+| Key           | Value                                                                                                         |
+|---------------|---------------------------------------------------------------------------------------------------------------|
+| count         | Number of items matching the filter. Common option for all checks.                                            |
+| total         |  Total number of items. Common option for all checks.                                                         |
+| ok_count      |  Number of items matched the ok criteria. Common option for all checks.                                       |
+| warn_count    |  Number of items matched the warning criteria. Common option for all checks.                                  |
+| crit_count    |  Number of items matched the critical criteria. Common option for all checks.                                 |
+| problem_count |  Number of items matched either warning or critical criteria. Common option for all checks.                   |
+| list          |  A list of all items which matched the filter. Common option for all checks.                                  |
+| ok_list       |  A list of all items which matched the ok criteria. Common option for all checks.                             |
+| warn_list     |  A list of all items which matched the warning criteria. Common option for all checks.                        |
+| crit_list     |  A list of all items which matched the critical criteria. Common option for all checks.                       |
+| problem_list  |  A list of all items which matched either the critical or the warning criteria. Common option for all checks. |
+| detail_list   |  A special list with critical, then warning and finally ok. Common option for all checks.                     |
+| status        |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                    |
 
 
 
@@ -168,21 +164,21 @@ Filter which marks items which generates a warning state.
 If anything matches this filter the return status will be escalated to warning.
 Available options : 
 
-| Key            | Value                                                                                                          | |
-| -------------- | -------------------------------------------------------------------------------------------------------------- | |
-| count          | Number of items matching the filter. Common option for all checks.                                             | |
-| total          |  Total number of items. Common option for all checks.                                                          | |
-| ok_count       |  Number of items matched the ok criteria. Common option for all checks.                                        | |
-| warn_count     |  Number of items matched the warning criteria. Common option for all checks.                                   | |
-| crit_count     |  Number of items matched the critical criteria. Common option for all checks.                                  | |
-| problem_count  |  Number of items matched either warning or critical criteria. Common option for all checks.                    | |
-| list           |  A list of all items which matched the filter. Common option for all checks.                                   | |
-| ok_list        |  A list of all items which matched the ok criteria. Common option for all checks.                              | |
-| warn_list      |  A list of all items which matched the warning criteria. Common option for all checks.                         | |
-| crit_list      |  A list of all items which matched the critical criteria. Common option for all checks.                        | |
-| problem_list   |  A list of all items which matched either the critical or the warning criteria. Common option for all checks.  | |
-| detail_list    |  A special list with critical, then warning and finally ok. Common option for all checks.                      | |
-| status         |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     | |
+| Key           | Value                                                                                                         |
+|---------------|---------------------------------------------------------------------------------------------------------------|
+| count         | Number of items matching the filter. Common option for all checks.                                            |
+| total         |  Total number of items. Common option for all checks.                                                         |
+| ok_count      |  Number of items matched the ok criteria. Common option for all checks.                                       |
+| warn_count    |  Number of items matched the warning criteria. Common option for all checks.                                  |
+| crit_count    |  Number of items matched the critical criteria. Common option for all checks.                                 |
+| problem_count |  Number of items matched either warning or critical criteria. Common option for all checks.                   |
+| list          |  A list of all items which matched the filter. Common option for all checks.                                  |
+| ok_list       |  A list of all items which matched the ok criteria. Common option for all checks.                             |
+| warn_list     |  A list of all items which matched the warning criteria. Common option for all checks.                        |
+| crit_list     |  A list of all items which matched the critical criteria. Common option for all checks.                       |
+| problem_list  |  A list of all items which matched either the critical or the warning criteria. Common option for all checks. |
+| detail_list   |  A special list with critical, then warning and finally ok. Common option for all checks.                     |
+| status        |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                    |
 
 
 
@@ -208,21 +204,21 @@ Filter which marks items which generates a critical state.
 If anything matches this filter the return status will be escalated to critical.
 Available options : 
 
-| Key            | Value                                                                                                          | |
-| -------------- | -------------------------------------------------------------------------------------------------------------- | |
-| count          | Number of items matching the filter. Common option for all checks.                                             | |
-| total          |  Total number of items. Common option for all checks.                                                          | |
-| ok_count       |  Number of items matched the ok criteria. Common option for all checks.                                        | |
-| warn_count     |  Number of items matched the warning criteria. Common option for all checks.                                   | |
-| crit_count     |  Number of items matched the critical criteria. Common option for all checks.                                  | |
-| problem_count  |  Number of items matched either warning or critical criteria. Common option for all checks.                    | |
-| list           |  A list of all items which matched the filter. Common option for all checks.                                   | |
-| ok_list        |  A list of all items which matched the ok criteria. Common option for all checks.                              | |
-| warn_list      |  A list of all items which matched the warning criteria. Common option for all checks.                         | |
-| crit_list      |  A list of all items which matched the critical criteria. Common option for all checks.                        | |
-| problem_list   |  A list of all items which matched either the critical or the warning criteria. Common option for all checks.  | |
-| detail_list    |  A special list with critical, then warning and finally ok. Common option for all checks.                      | |
-| status         |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     | |
+| Key           | Value                                                                                                         |
+|---------------|---------------------------------------------------------------------------------------------------------------|
+| count         | Number of items matching the filter. Common option for all checks.                                            |
+| total         |  Total number of items. Common option for all checks.                                                         |
+| ok_count      |  Number of items matched the ok criteria. Common option for all checks.                                       |
+| warn_count    |  Number of items matched the warning criteria. Common option for all checks.                                  |
+| crit_count    |  Number of items matched the critical criteria. Common option for all checks.                                 |
+| problem_count |  Number of items matched either warning or critical criteria. Common option for all checks.                   |
+| list          |  A list of all items which matched the filter. Common option for all checks.                                  |
+| ok_list       |  A list of all items which matched the ok criteria. Common option for all checks.                             |
+| warn_list     |  A list of all items which matched the warning criteria. Common option for all checks.                        |
+| crit_list     |  A list of all items which matched the critical criteria. Common option for all checks.                       |
+| problem_list  |  A list of all items which matched either the critical or the warning criteria. Common option for all checks. |
+| detail_list   |  A special list with critical, then warning and finally ok. Common option for all checks.                     |
+| status        |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                    |
 
 
 
@@ -248,21 +244,21 @@ Filter which marks items which generates an ok state.
 If anything matches this any previous state for this item will be reset to ok.
 Available options : 
 
-| Key            | Value                                                                                                          | |
-| -------------- | -------------------------------------------------------------------------------------------------------------- | |
-| count          | Number of items matching the filter. Common option for all checks.                                             | |
-| total          |  Total number of items. Common option for all checks.                                                          | |
-| ok_count       |  Number of items matched the ok criteria. Common option for all checks.                                        | |
-| warn_count     |  Number of items matched the warning criteria. Common option for all checks.                                   | |
-| crit_count     |  Number of items matched the critical criteria. Common option for all checks.                                  | |
-| problem_count  |  Number of items matched either warning or critical criteria. Common option for all checks.                    | |
-| list           |  A list of all items which matched the filter. Common option for all checks.                                   | |
-| ok_list        |  A list of all items which matched the ok criteria. Common option for all checks.                              | |
-| warn_list      |  A list of all items which matched the warning criteria. Common option for all checks.                         | |
-| crit_list      |  A list of all items which matched the critical criteria. Common option for all checks.                        | |
-| problem_list   |  A list of all items which matched either the critical or the warning criteria. Common option for all checks.  | |
-| detail_list    |  A special list with critical, then warning and finally ok. Common option for all checks.                      | |
-| status         |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     | |
+| Key           | Value                                                                                                         |
+|---------------|---------------------------------------------------------------------------------------------------------------|
+| count         | Number of items matching the filter. Common option for all checks.                                            |
+| total         |  Total number of items. Common option for all checks.                                                         |
+| ok_count      |  Number of items matched the ok criteria. Common option for all checks.                                       |
+| warn_count    |  Number of items matched the warning criteria. Common option for all checks.                                  |
+| crit_count    |  Number of items matched the critical criteria. Common option for all checks.                                 |
+| problem_count |  Number of items matched either warning or critical criteria. Common option for all checks.                   |
+| list          |  A list of all items which matched the filter. Common option for all checks.                                  |
+| ok_list       |  A list of all items which matched the ok criteria. Common option for all checks.                             |
+| warn_list     |  A list of all items which matched the warning criteria. Common option for all checks.                        |
+| crit_list     |  A list of all items which matched the critical criteria. Common option for all checks.                       |
+| problem_list  |  A list of all items which matched either the critical or the warning criteria. Common option for all checks. |
+| detail_list   |  A special list with critical, then warning and finally ok. Common option for all checks.                     |
+| status        |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                    |
 
 
 
@@ -357,21 +353,21 @@ Used to format the message to return can include text as well as special keyword
 To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
 The available keywords are: 
 
-| Key            | Value                                                                                                          | |
-| -------------- | -------------------------------------------------------------------------------------------------------------- | |
-| count          | Number of items matching the filter. Common option for all checks.                                             | |
-| total          |  Total number of items. Common option for all checks.                                                          | |
-| ok_count       |  Number of items matched the ok criteria. Common option for all checks.                                        | |
-| warn_count     |  Number of items matched the warning criteria. Common option for all checks.                                   | |
-| crit_count     |  Number of items matched the critical criteria. Common option for all checks.                                  | |
-| problem_count  |  Number of items matched either warning or critical criteria. Common option for all checks.                    | |
-| list           |  A list of all items which matched the filter. Common option for all checks.                                   | |
-| ok_list        |  A list of all items which matched the ok criteria. Common option for all checks.                              | |
-| warn_list      |  A list of all items which matched the warning criteria. Common option for all checks.                         | |
-| crit_list      |  A list of all items which matched the critical criteria. Common option for all checks.                        | |
-| problem_list   |  A list of all items which matched either the critical or the warning criteria. Common option for all checks.  | |
-| detail_list    |  A special list with critical, then warning and finally ok. Common option for all checks.                      | |
-| status         |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     | |
+| Key           | Value                                                                                                         |
+|---------------|---------------------------------------------------------------------------------------------------------------|
+| count         | Number of items matching the filter. Common option for all checks.                                            |
+| total         |  Total number of items. Common option for all checks.                                                         |
+| ok_count      |  Number of items matched the ok criteria. Common option for all checks.                                       |
+| warn_count    |  Number of items matched the warning criteria. Common option for all checks.                                  |
+| crit_count    |  Number of items matched the critical criteria. Common option for all checks.                                 |
+| problem_count |  Number of items matched either warning or critical criteria. Common option for all checks.                   |
+| list          |  A list of all items which matched the filter. Common option for all checks.                                  |
+| ok_list       |  A list of all items which matched the ok criteria. Common option for all checks.                             |
+| warn_list     |  A list of all items which matched the warning criteria. Common option for all checks.                        |
+| crit_list     |  A list of all items which matched the critical criteria. Common option for all checks.                       |
+| problem_list  |  A list of all items which matched either the critical or the warning criteria. Common option for all checks. |
+| detail_list   |  A special list with critical, then warning and finally ok. Common option for all checks.                     |
+| status        |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                    |
 
 
 
@@ -398,21 +394,21 @@ Empty syntax.
 DEPRECATED! This is the syntax for when nothing matches the filter.
 Possible values are: 
 
-| Key            | Value                                                                                                          | |
-| -------------- | -------------------------------------------------------------------------------------------------------------- | |
-| count          | Number of items matching the filter. Common option for all checks.                                             | |
-| total          |  Total number of items. Common option for all checks.                                                          | |
-| ok_count       |  Number of items matched the ok criteria. Common option for all checks.                                        | |
-| warn_count     |  Number of items matched the warning criteria. Common option for all checks.                                   | |
-| crit_count     |  Number of items matched the critical criteria. Common option for all checks.                                  | |
-| problem_count  |  Number of items matched either warning or critical criteria. Common option for all checks.                    | |
-| list           |  A list of all items which matched the filter. Common option for all checks.                                   | |
-| ok_list        |  A list of all items which matched the ok criteria. Common option for all checks.                              | |
-| warn_list      |  A list of all items which matched the warning criteria. Common option for all checks.                         | |
-| crit_list      |  A list of all items which matched the critical criteria. Common option for all checks.                        | |
-| problem_list   |  A list of all items which matched either the critical or the warning criteria. Common option for all checks.  | |
-| detail_list    |  A special list with critical, then warning and finally ok. Common option for all checks.                      | |
-| status         |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                     | |
+| Key           | Value                                                                                                         |
+|---------------|---------------------------------------------------------------------------------------------------------------|
+| count         | Number of items matching the filter. Common option for all checks.                                            |
+| total         |  Total number of items. Common option for all checks.                                                         |
+| ok_count      |  Number of items matched the ok criteria. Common option for all checks.                                       |
+| warn_count    |  Number of items matched the warning criteria. Common option for all checks.                                  |
+| crit_count    |  Number of items matched the critical criteria. Common option for all checks.                                 |
+| problem_count |  Number of items matched either warning or critical criteria. Common option for all checks.                   |
+| list          |  A list of all items which matched the filter. Common option for all checks.                                  |
+| ok_list       |  A list of all items which matched the ok criteria. Common option for all checks.                             |
+| warn_list     |  A list of all items which matched the warning criteria. Common option for all checks.                        |
+| crit_list     |  A list of all items which matched the critical criteria. Common option for all checks.                       |
+| problem_list  |  A list of all items which matched either the critical or the warning criteria. Common option for all checks. |
+| detail_list   |  A special list with critical, then warning and finally ok. Common option for all checks.                     |
+| status        |  The returned status (OK/WARN/CRIT/UNKNOWN). Common option for all checks.                                    |
 
 
 
@@ -432,8 +428,8 @@ Used to format each resulting item in the message.
 To add a keyword to the message you can use two syntaxes either ${keyword} or %(keyword) (there is no difference between them apart from ${} can be difficult to excpae on linux).
 The available keywords are: 
 
-| Key  | Value  | |
-| ---- | ------ | |
+| Key | Value |
+|-----|-------|
 
 
 
@@ -450,8 +446,8 @@ Performance alias syntax.
 This is the syntax for the base names of the performance data.
 Possible values are: 
 
-| Key  | Value  | |
-| ---- | ------ | |
+| Key | Value |
+|-----|-------|
 
 
 
@@ -503,26 +499,19 @@ The WMI query to execute.
 
 # Configuration
 
-
-
-## /settings/targets
-
-`/settings/targets`
-
-**TARGET LIST SECTION**
+<a name="/settings/targets"/>
+## TARGET LIST SECTION
 
 A list of available remote target systems
 
-
-
-
-**Sample**::
-
-```
-# TARGET LIST SECTION
+```ini
 # A list of available remote target systems
 [/settings/targets]
 
 ```
+
+
+
+
 
 

@@ -2,20 +2,18 @@
 
 This is a sample plugin used to demonstrate how to make plugins
 
-## Query list
+
+
+## List of commands
 
 A list of all available queries (check commands)
 
-| Command | Description|
-| ------- | -----------|
-| [sample_raw_command](#sample_raw_command) | This is a sample hello world command.|
+| Command                                   | Description                           |
+|-------------------------------------------|---------------------------------------|
+| [sample_raw_command](#sample_raw_command) | This is a sample hello world command. |
 
 
 
-
-## Command list
-
-**TODO:** Add a list of all external commands (this is not check commands)
 
 
 
@@ -35,7 +33,4 @@ This is a sample hello world command.
 
 
 
-
-
-# Configuration
 

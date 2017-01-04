@@ -2,58 +2,56 @@
 
 Graphite client can be used to submit graph data to a graphite graphing system
 
-## Query list
+
+
+## List of commands
 
 A list of all available queries (check commands)
 
-| Command | Description|
-| ------- | -----------|
-| [submit_graphite](#submit_graphite) | Submit information to the remote Graphite server.|
+| Command                             | Description                                       |
+|-------------------------------------|---------------------------------------------------|
+| [submit_graphite](#submit_graphite) | Submit information to the remote Graphite server. |
 
 
 
 
-## Command list
-
-**TODO:** Add a list of all external commands (this is not check commands)
-
-## Configuration list
+## List of Configuration
 
 
-Common Keys:
+### Common Keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/graphite/client](#/settings/graphite/client) | [channel](#/settings/graphite/client_channel) | CHANNEL|
-| [/settings/graphite/client](#/settings/graphite/client) | [hostname](#/settings/graphite/client_hostname) | HOSTNAME|
-| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [address](#/settings/graphite/client/targets/default_address) | TARGET ADDRESS|
-| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [path](#/settings/graphite/client/targets/default_path) | PATH FOR METRICS|
-| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [retries](#/settings/graphite/client/targets/default_retries) | RETRIES|
-| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [send perfdata](#/settings/graphite/client/targets/default_send perfdata) | SEND PERF DATA|
-| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [send status](#/settings/graphite/client/targets/default_send status) | SEND STATUS|
-| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [status path](#/settings/graphite/client/targets/default_status path) | PATH FOR STATUS|
-| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [timeout](#/settings/graphite/client/targets/default_timeout) | TIMEOUT|
+| Path / Section                                                                          | Key                                                                       | Description      |
+|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------|------------------|
+| [/settings/graphite/client](#/settings/graphite/client)                                 | [channel](#/settings/graphite/client_channel)                             | CHANNEL          |
+| [/settings/graphite/client](#/settings/graphite/client)                                 | [hostname](#/settings/graphite/client_hostname)                           | HOSTNAME         |
+| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [address](#/settings/graphite/client/targets/default_address)             | TARGET ADDRESS   |
+| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [path](#/settings/graphite/client/targets/default_path)                   | PATH FOR METRICS |
+| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [retries](#/settings/graphite/client/targets/default_retries)             | RETRIES          |
+| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [send perfdata](#/settings/graphite/client/targets/default_send perfdata) | SEND PERF DATA   |
+| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [send status](#/settings/graphite/client/targets/default_send status)     | SEND STATUS      |
+| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [status path](#/settings/graphite/client/targets/default_status path)     | PATH FOR STATUS  |
+| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [timeout](#/settings/graphite/client/targets/default_timeout)             | TIMEOUT          |
 
-Advanced keys:
+### Advanced keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [host](#/settings/graphite/client/targets/default_host) | TARGET HOST|
-| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [port](#/settings/graphite/client/targets/default_port) | TARGET PORT|
+| Path / Section                                                                          | Key                                                     | Description |
+|-----------------------------------------------------------------------------------------|---------------------------------------------------------|-------------|
+| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [host](#/settings/graphite/client/targets/default_host) | TARGET HOST |
+| [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) | [port](#/settings/graphite/client/targets/default_port) | TARGET PORT |
 
-Sample keys:
+### Sample keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [address](#/settings/graphite/client/targets/sample_address) | TARGET ADDRESS|
-| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [host](#/settings/graphite/client/targets/sample_host) | TARGET HOST|
-| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [path](#/settings/graphite/client/targets/sample_path) | PATH FOR METRICS|
-| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [port](#/settings/graphite/client/targets/sample_port) | TARGET PORT|
-| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [retries](#/settings/graphite/client/targets/sample_retries) | RETRIES|
-| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [send perfdata](#/settings/graphite/client/targets/sample_send perfdata) | SEND PERF DATA|
-| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [send status](#/settings/graphite/client/targets/sample_send status) | SEND STATUS|
-| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [status path](#/settings/graphite/client/targets/sample_status path) | PATH FOR STATUS|
-| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [timeout](#/settings/graphite/client/targets/sample_timeout) | TIMEOUT|
+| Path / Section                                                                        | Key                                                                      | Description      |
+|---------------------------------------------------------------------------------------|--------------------------------------------------------------------------|------------------|
+| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [address](#/settings/graphite/client/targets/sample_address)             | TARGET ADDRESS   |
+| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [host](#/settings/graphite/client/targets/sample_host)                   | TARGET HOST      |
+| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [path](#/settings/graphite/client/targets/sample_path)                   | PATH FOR METRICS |
+| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [port](#/settings/graphite/client/targets/sample_port)                   | TARGET PORT      |
+| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [retries](#/settings/graphite/client/targets/sample_retries)             | RETRIES          |
+| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [send perfdata](#/settings/graphite/client/targets/sample_send perfdata) | SEND PERF DATA   |
+| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [send status](#/settings/graphite/client/targets/sample_send status)     | SEND STATUS      |
+| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [status path](#/settings/graphite/client/targets/sample_status path)     | PATH FOR STATUS  |
+| [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) | [timeout](#/settings/graphite/client/targets/sample_timeout)             | TIMEOUT          |
 
 
 
@@ -69,29 +67,28 @@ Submit information to the remote Graphite server.
 ### Usage
 
 
-
-| Option | Default Value | Description|
-| ------ | ------------- | -----------|
-| [help](#submit_graphite_help) | N/A | Show help screen (this screen)|
-| [help-pb](#submit_graphite_help-pb) | N/A | Show help screen as a protocol buffer payload|
-| [show-default](#submit_graphite_show-default) | N/A | Show default values for a given command|
-| [help-short](#submit_graphite_help-short) | N/A | Show help screen (short format).|
-| [host](#submit_graphite_host) |  | The host of the host running the server|
-| [port](#submit_graphite_port) |  | The port of the host running the server|
-| [address](#submit_graphite_address) |  | The address (host:port) of the host running the server|
-| [timeout](#submit_graphite_timeout) |  | Number of seconds before connection times out (default=10)|
-| [target](#submit_graphite_target) |  | Target to use (lookup connection info from config)|
-| [retry](#submit_graphite_retry) |  | Number of times ti retry a failed connection attempt (default=2)|
-| [retries](#submit_graphite_retries) |  | legacy version of retry|
-| [source-host](#submit_graphite_source-host) |  | Source/sender host name (default is auto which means use the name of the actual host)|
-| [sender-host](#submit_graphite_sender-host) |  | Source/sender host name (default is auto which means use the name of the actual host)|
-| [command](#submit_graphite_command) |  | The name of the command that the remote daemon should run|
-| [alias](#submit_graphite_alias) |  | Same as command|
-| [message](#submit_graphite_message) |  | Message|
-| [result](#submit_graphite_result) |  | Result code either a number or OK, WARN, CRIT, UNKNOWN|
-| [separator](#submit_graphite_separator) |  | Separator to use for the batch command (default is |)|
-| [batch](#submit_graphite_batch) |  | Add multiple records using the separator format is: command|result|message|
-| [path](#submit_graphite_path) |  | |
+| Option                                        | Default Value | Description                                                                           |
+|-----------------------------------------------|---------------|---------------------------------------------------------------------------------------|
+| [help](#submit_graphite_help)                 | N/A           | Show help screen (this screen)                                                        |
+| [help-pb](#submit_graphite_help-pb)           | N/A           | Show help screen as a protocol buffer payload                                         |
+| [show-default](#submit_graphite_show-default) | N/A           | Show default values for a given command                                               |
+| [help-short](#submit_graphite_help-short)     | N/A           | Show help screen (short format).                                                      |
+| [host](#submit_graphite_host)                 |               | The host of the host running the server                                               |
+| [port](#submit_graphite_port)                 |               | The port of the host running the server                                               |
+| [address](#submit_graphite_address)           |               | The address (host:port) of the host running the server                                |
+| [timeout](#submit_graphite_timeout)           |               | Number of seconds before connection times out (default=10)                            |
+| [target](#submit_graphite_target)             |               | Target to use (lookup connection info from config)                                    |
+| [retry](#submit_graphite_retry)               |               | Number of times ti retry a failed connection attempt (default=2)                      |
+| [retries](#submit_graphite_retries)           |               | legacy version of retry                                                               |
+| [source-host](#submit_graphite_source-host)   |               | Source/sender host name (default is auto which means use the name of the actual host) |
+| [sender-host](#submit_graphite_sender-host)   |               | Source/sender host name (default is auto which means use the name of the actual host) |
+| [command](#submit_graphite_command)           |               | The name of the command that the remote daemon should run                             |
+| [alias](#submit_graphite_alias)               |               | Same as command                                                                       |
+| [message](#submit_graphite_message)           |               | Message                                                                               |
+| [result](#submit_graphite_result)             |               | Result code either a number or OK, WARN, CRIT, UNKNOWN                                |
+| [separator](#submit_graphite_separator)       |               | Separator to use for the batch command (default is |)                                 |
+| [batch](#submit_graphite_batch)               |               | Add multiple records using the separator format is: command|result|message            |
+| [path](#submit_graphite_path)                 |               |                                                                                       |
 
 
 <a name="submit_graphite_help"/>
@@ -258,33 +255,26 @@ Add multiple records using the separator format is: command|result|message
 
 # Configuration
 
-
-
-## /settings/graphite/client
-
-`/settings/graphite/client`
-
-**GRAPHITE CLIENT SECTION**
+<a name="/settings/graphite/client"/>
+## GRAPHITE CLIENT SECTION
 
 Section for graphite passive check module.
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [channel](#/settings/graphite/client_channel) | GRAPHITE | CHANNEL|
-| [hostname](#/settings/graphite/client_hostname) | auto | HOSTNAME|
-
-
-**Sample**::
-
-```
-# GRAPHITE CLIENT SECTION
+```ini
 # Section for graphite passive check module.
 [/settings/graphite/client]
 channel=GRAPHITE
 hostname=auto
 
 ```
+
+
+| Key                                             | Default Value | Description |
+|-------------------------------------------------|---------------|-------------|
+| [channel](#/settings/graphite/client_channel)   | GRAPHITE      | CHANNEL     |
+| [hostname](#/settings/graphite/client_hostname) | auto          | HOSTNAME    |
+
+
 
 
 <a name="/settings/graphite/client_channel"/>
@@ -294,15 +284,18 @@ hostname=auto
 
 The channel to listen to.
 
-**Path**: /settings/graphite/client
 
-**Key**: channel
 
-**Default value**: GRAPHITE
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                             |
+|----------------|---------------------------------------------------------|
+| Path:          | [/settings/graphite/client](#/settings/graphite/client) |
+| Key:           | channel                                                 |
+| Default value: | `GRAPHITE`                                              |
+| Used by:       | GraphiteClient                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client]
@@ -329,15 +322,18 @@ ${domain_lc}	Domainname in lowercase
 ${domain_uc}	Domainname in uppercase
 
 
-**Path**: /settings/graphite/client
 
-**Key**: hostname
 
-**Default value**: auto
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                             |
+|----------------|---------------------------------------------------------|
+| Path:          | [/settings/graphite/client](#/settings/graphite/client) |
+| Key:           | hostname                                                |
+| Default value: | `auto`                                                  |
+| Used by:       | GraphiteClient                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client]
@@ -346,23 +342,12 @@ hostname=auto
 ```
 
 
-
-
-## /settings/graphite/client/handlers
-
-`/settings/graphite/client/handlers`
-
-**CLIENT HANDLER SECTION**
+<a name="/settings/graphite/client/handlers"/>
+## CLIENT HANDLER SECTION
 
 
 
-
-
-
-**Sample**::
-
-```
-# CLIENT HANDLER SECTION
+```ini
 # 
 [/settings/graphite/client/handlers]
 
@@ -371,21 +356,14 @@ hostname=auto
 
 
 
-## /settings/graphite/client/targets
 
-`/settings/graphite/client/targets`
 
-**REMOTE TARGET DEFINITIONS**
-
+<a name="/settings/graphite/client/targets"/>
+## REMOTE TARGET DEFINITIONS
 
 
 
-
-
-**Sample**::
-
-```
-# REMOTE TARGET DEFINITIONS
+```ini
 # 
 [/settings/graphite/client/targets]
 
@@ -394,45 +372,39 @@ hostname=auto
 
 
 
-## /settings/graphite/client/targets/default
 
-`/settings/graphite/client/targets/default`
 
-**TARGET**
+<a name="/settings/graphite/client/targets/default"/>
+## TARGET
 
 Target definition for: default
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [address](#/settings/graphite/client/targets/default_address) |  | TARGET ADDRESS|
-| [host](#/settings/graphite/client/targets/default_host) |  | TARGET HOST|
-| [path](#/settings/graphite/client/targets/default_path) | system.${hostname}.${check_alias}.${perf_alias} | PATH FOR METRICS|
-| [port](#/settings/graphite/client/targets/default_port) |  | TARGET PORT|
-| [retries](#/settings/graphite/client/targets/default_retries) | 3 | RETRIES|
-| [send perfdata](#/settings/graphite/client/targets/default_send perfdata) | 1 | SEND PERF DATA|
-| [send status](#/settings/graphite/client/targets/default_send status) | 1 | SEND STATUS|
-| [status path](#/settings/graphite/client/targets/default_status path) | system.${hostname}.${check_alias}.status | PATH FOR STATUS|
-| [timeout](#/settings/graphite/client/targets/default_timeout) | 30 | TIMEOUT|
-
-
-**Sample**::
-
-```
-# TARGET
+```ini
 # Target definition for: default
 [/settings/graphite/client/targets/default]
-address=
-host=
 path=system.${hostname}.${check_alias}.${perf_alias}
-port=
 retries=3
-send perfdata=1
-send status=1
+send perfdata=true
+send status=true
 status path=system.${hostname}.${check_alias}.status
 timeout=30
 
 ```
+
+
+| Key                                                                       | Default Value                                   | Description      |
+|---------------------------------------------------------------------------|-------------------------------------------------|------------------|
+| [address](#/settings/graphite/client/targets/default_address)             |                                                 | TARGET ADDRESS   |
+| [host](#/settings/graphite/client/targets/default_host)                   |                                                 | TARGET HOST      |
+| [path](#/settings/graphite/client/targets/default_path)                   | system.${hostname}.${check_alias}.${perf_alias} | PATH FOR METRICS |
+| [port](#/settings/graphite/client/targets/default_port)                   |                                                 | TARGET PORT      |
+| [retries](#/settings/graphite/client/targets/default_retries)             | 3                                               | RETRIES          |
+| [send perfdata](#/settings/graphite/client/targets/default_send perfdata) | true                                            | SEND PERF DATA   |
+| [send status](#/settings/graphite/client/targets/default_send status)     | true                                            | SEND STATUS      |
+| [status path](#/settings/graphite/client/targets/default_status path)     | system.${hostname}.${check_alias}.status        | PATH FOR STATUS  |
+| [timeout](#/settings/graphite/client/targets/default_timeout)             | 30                                              | TIMEOUT          |
+
+
 
 
 <a name="/settings/graphite/client/targets/default_address"/>
@@ -442,15 +414,19 @@ timeout=30
 
 Target host address
 
-**Path**: /settings/graphite/client/targets/default
 
-**Key**: address
 
-**Default value**: 
 
-**Used by**: :module:`GraphiteClient`
 
-**Sample**::
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) |
+| Key:           | address                                                                                 |
+| Default value: | _N/A_                                                                                   |
+| Used by:       | GraphiteClient                                                                          |
+
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/default]
@@ -466,17 +442,20 @@ address=
 
 The target server to report results to.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/graphite/client/targets/default
 
-**Key**: host
 
-**Default value**: 
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) |
+| Key:           | host                                                                                    |
+| Advanced:      | Yes (means it is not commonly used)                                                     |
+| Default value: | _N/A_                                                                                   |
+| Used by:       | GraphiteClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/default]
@@ -492,15 +471,18 @@ host=
 
 Path mapping for metrics
 
-**Path**: /settings/graphite/client/targets/default
 
-**Key**: path
 
-**Default value**: system.${hostname}.${check_alias}.${perf_alias}
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) |
+| Key:           | path                                                                                    |
+| Default value: | `system.${hostname}.${check_alias}.${perf_alias}`                                       |
+| Used by:       | GraphiteClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/default]
@@ -516,17 +498,20 @@ path=system.${hostname}.${check_alias}.${perf_alias}
 
 The target server port
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/graphite/client/targets/default
 
-**Key**: port
 
-**Default value**: 
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) |
+| Key:           | port                                                                                    |
+| Advanced:      | Yes (means it is not commonly used)                                                     |
+| Default value: | _N/A_                                                                                   |
+| Used by:       | GraphiteClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/default]
@@ -542,15 +527,18 @@ port=
 
 Number of times to retry sending.
 
-**Path**: /settings/graphite/client/targets/default
 
-**Key**: retries
 
-**Default value**: 3
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) |
+| Key:           | retries                                                                                 |
+| Default value: | `3`                                                                                     |
+| Used by:       | GraphiteClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/default]
@@ -566,20 +554,23 @@ retries=3
 
 Send performance data to this server
 
-**Path**: /settings/graphite/client/targets/default
 
-**Key**: send perfdata
 
-**Default value**: 1
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) |
+| Key:           | send perfdata                                                                           |
+| Default value: | `true`                                                                                  |
+| Used by:       | GraphiteClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/default]
 # SEND PERF DATA
-send perfdata=1
+send perfdata=true
 ```
 
 
@@ -590,20 +581,23 @@ send perfdata=1
 
 Send status data to this server
 
-**Path**: /settings/graphite/client/targets/default
 
-**Key**: send status
 
-**Default value**: 1
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) |
+| Key:           | send status                                                                             |
+| Default value: | `true`                                                                                  |
+| Used by:       | GraphiteClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/default]
 # SEND STATUS
-send status=1
+send status=true
 ```
 
 
@@ -614,15 +608,18 @@ send status=1
 
 Path mapping for status
 
-**Path**: /settings/graphite/client/targets/default
 
-**Key**: status path
 
-**Default value**: system.${hostname}.${check_alias}.status
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) |
+| Key:           | status path                                                                             |
+| Default value: | `system.${hostname}.${check_alias}.status`                                              |
+| Used by:       | GraphiteClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/default]
@@ -638,15 +635,18 @@ status path=system.${hostname}.${check_alias}.status
 
 Timeout when reading/writing packets to/from sockets.
 
-**Path**: /settings/graphite/client/targets/default
 
-**Key**: timeout
 
-**Default value**: 30
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/default](#/settings/graphite/client/targets/default) |
+| Key:           | timeout                                                                                 |
+| Default value: | `30`                                                                                    |
+| Used by:       | GraphiteClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/default]
@@ -655,47 +655,33 @@ timeout=30
 ```
 
 
-
-
-## /settings/graphite/client/targets/sample
-
-`/settings/graphite/client/targets/sample`
-
-**TARGET**
+<a name="/settings/graphite/client/targets/sample"/>
+## TARGET
 
 Target definition for: sample
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [address](#/settings/graphite/client/targets/sample_address) |  | TARGET ADDRESS|
-| [host](#/settings/graphite/client/targets/sample_host) |  | TARGET HOST|
-| [path](#/settings/graphite/client/targets/sample_path) |  | PATH FOR METRICS|
-| [port](#/settings/graphite/client/targets/sample_port) |  | TARGET PORT|
-| [retries](#/settings/graphite/client/targets/sample_retries) | 3 | RETRIES|
-| [send perfdata](#/settings/graphite/client/targets/sample_send perfdata) | 0 | SEND PERF DATA|
-| [send status](#/settings/graphite/client/targets/sample_send status) | 0 | SEND STATUS|
-| [status path](#/settings/graphite/client/targets/sample_status path) |  | PATH FOR STATUS|
-| [timeout](#/settings/graphite/client/targets/sample_timeout) | 30 | TIMEOUT|
-
-
-**Sample**::
-
-```
-# TARGET
+```ini
 # Target definition for: sample
 [/settings/graphite/client/targets/sample]
-address=
-host=
-path=
-port=
 retries=3
-send perfdata=0
-send status=0
-status path=
 timeout=30
 
 ```
+
+
+| Key                                                                      | Default Value | Description      |
+|--------------------------------------------------------------------------|---------------|------------------|
+| [address](#/settings/graphite/client/targets/sample_address)             |               | TARGET ADDRESS   |
+| [host](#/settings/graphite/client/targets/sample_host)                   |               | TARGET HOST      |
+| [path](#/settings/graphite/client/targets/sample_path)                   |               | PATH FOR METRICS |
+| [port](#/settings/graphite/client/targets/sample_port)                   |               | TARGET PORT      |
+| [retries](#/settings/graphite/client/targets/sample_retries)             | 3             | RETRIES          |
+| [send perfdata](#/settings/graphite/client/targets/sample_send perfdata) |               | SEND PERF DATA   |
+| [send status](#/settings/graphite/client/targets/sample_send status)     |               | SEND STATUS      |
+| [status path](#/settings/graphite/client/targets/sample_status path)     |               | PATH FOR STATUS  |
+| [timeout](#/settings/graphite/client/targets/sample_timeout)             | 30            | TIMEOUT          |
+
+
 
 
 <a name="/settings/graphite/client/targets/sample_address"/>
@@ -705,17 +691,20 @@ timeout=30
 
 Target host address
 
-**Path**: /settings/graphite/client/targets/sample
 
-**Key**: address
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) |
+| Key:           | address                                                                               |
+| Default value: | _N/A_                                                                                 |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | GraphiteClient                                                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/sample]
@@ -731,19 +720,21 @@ address=
 
 The target server to report results to.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/graphite/client/targets/sample
 
-**Key**: host
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) |
+| Key:           | host                                                                                  |
+| Advanced:      | Yes (means it is not commonly used)                                                   |
+| Default value: | _N/A_                                                                                 |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | GraphiteClient                                                                        |
 
-**Used by**: :module:`GraphiteClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/graphite/client/targets/sample]
@@ -759,17 +750,20 @@ host=
 
 Path mapping for metrics
 
-**Path**: /settings/graphite/client/targets/sample
 
-**Key**: path
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) |
+| Key:           | path                                                                                  |
+| Default value: | _N/A_                                                                                 |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | GraphiteClient                                                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/sample]
@@ -785,19 +779,21 @@ path=
 
 The target server port
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/graphite/client/targets/sample
 
-**Key**: port
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) |
+| Key:           | port                                                                                  |
+| Advanced:      | Yes (means it is not commonly used)                                                   |
+| Default value: | _N/A_                                                                                 |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | GraphiteClient                                                                        |
 
-**Used by**: :module:`GraphiteClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/graphite/client/targets/sample]
@@ -813,17 +809,19 @@ port=
 
 Number of times to retry sending.
 
-**Path**: /settings/graphite/client/targets/sample
 
-**Key**: retries
 
-**Default value**: 3
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) |
+| Key:           | retries                                                                               |
+| Default value: | `3`                                                                                   |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | GraphiteClient                                                                        |
 
-**Used by**: :module:`GraphiteClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/graphite/client/targets/sample]
@@ -839,22 +837,25 @@ retries=3
 
 Send performance data to this server
 
-**Path**: /settings/graphite/client/targets/sample
 
-**Key**: send perfdata
 
-**Default value**: 0
 
-**Sample key**: This key is provided as a sample to show how to configure objects
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) |
+| Key:           | send perfdata                                                                         |
+| Default value: | _N/A_                                                                                 |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | GraphiteClient                                                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/sample]
 # SEND PERF DATA
-send perfdata=0
+send perfdata=
 ```
 
 
@@ -865,22 +866,25 @@ send perfdata=0
 
 Send status data to this server
 
-**Path**: /settings/graphite/client/targets/sample
 
-**Key**: send status
 
-**Default value**: 0
 
-**Sample key**: This key is provided as a sample to show how to configure objects
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) |
+| Key:           | send status                                                                           |
+| Default value: | _N/A_                                                                                 |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | GraphiteClient                                                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/sample]
 # SEND STATUS
-send status=0
+send status=
 ```
 
 
@@ -891,17 +895,20 @@ send status=0
 
 Path mapping for status
 
-**Path**: /settings/graphite/client/targets/sample
 
-**Key**: status path
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
 
-**Used by**: :module:`GraphiteClient`
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) |
+| Key:           | status path                                                                           |
+| Default value: | _N/A_                                                                                 |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | GraphiteClient                                                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/graphite/client/targets/sample]
@@ -917,17 +924,19 @@ status path=
 
 Timeout when reading/writing packets to/from sockets.
 
-**Path**: /settings/graphite/client/targets/sample
 
-**Key**: timeout
 
-**Default value**: 30
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/graphite/client/targets/sample](#/settings/graphite/client/targets/sample) |
+| Key:           | timeout                                                                               |
+| Default value: | `30`                                                                                  |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | GraphiteClient                                                                        |
 
-**Used by**: :module:`GraphiteClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/graphite/client/targets/sample]

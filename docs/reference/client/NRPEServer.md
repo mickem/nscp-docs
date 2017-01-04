@@ -6,54 +6,52 @@ A server that listens for incoming NRPE connection and processes incoming reques
 
 
 
-## Command list
-
-**TODO:** Add a list of all external commands (this is not check commands)
-
-## Configuration list
 
 
-Common Keys:
+## List of Configuration
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/default](#/settings/default) | [allowed hosts](#/settings/default_allowed hosts) | ALLOWED HOSTS|
-| [/settings/default](#/settings/default) | [bind to](#/settings/default_bind to) | BIND TO ADDRESS|
-| [/settings/default](#/settings/default) | [cache allowed hosts](#/settings/default_cache allowed hosts) | CACHE ALLOWED HOSTS|
-| [/settings/default](#/settings/default) | [inbox](#/settings/default_inbox) | INBOX|
-| [/settings/default](#/settings/default) | [password](#/settings/default_password) | PASSWORD|
-| [/settings/default](#/settings/default) | [timeout](#/settings/default_timeout) | TIMEOUT|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [allow arguments](#/settings/NRPE/server_allow arguments) | COMMAND ARGUMENT PROCESSING|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [allow nasty characters](#/settings/NRPE/server_allow nasty characters) | COMMAND ALLOW NASTY META CHARS|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [extended response](#/settings/NRPE/server_extended response) | EXTENDED RESPONSE|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [insecure](#/settings/NRPE/server_insecure) | ALLOW INSECURE CHIPHERS and ENCRYPTION|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [port](#/settings/NRPE/server_port) | PORT NUMBER|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [use ssl](#/settings/NRPE/server_use ssl) | ENABLE SSL ENCRYPTION|
 
-Advanced keys:
+### Common Keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/default](#/settings/default) | [encoding](#/settings/default_encoding) | NRPE PAYLOAD ENCODING|
-| [/settings/default](#/settings/default) | [socket queue size](#/settings/default_socket queue size) | LISTEN QUEUE|
-| [/settings/default](#/settings/default) | [thread pool](#/settings/default_thread pool) | THREAD POOL|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [allowed ciphers](#/settings/NRPE/server_allowed ciphers) | ALLOWED CIPHERS|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [allowed hosts](#/settings/NRPE/server_allowed hosts) | ALLOWED HOSTS|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [bind to](#/settings/NRPE/server_bind to) | BIND TO ADDRESS|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [ca](#/settings/NRPE/server_ca) | CA|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [cache allowed hosts](#/settings/NRPE/server_cache allowed hosts) | CACHE ALLOWED HOSTS|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [certificate](#/settings/NRPE/server_certificate) | SSL CERTIFICATE|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [certificate format](#/settings/NRPE/server_certificate format) | CERTIFICATE FORMAT|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [certificate key](#/settings/NRPE/server_certificate key) | SSL CERTIFICATE|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [dh](#/settings/NRPE/server_dh) | DH KEY|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [encoding](#/settings/NRPE/server_encoding) | NRPE PAYLOAD ENCODING|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [payload length](#/settings/NRPE/server_payload length) | PAYLOAD LENGTH|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [performance data](#/settings/NRPE/server_performance data) | PERFORMANCE DATA|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [socket queue size](#/settings/NRPE/server_socket queue size) | LISTEN QUEUE|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [ssl options](#/settings/NRPE/server_ssl options) | VERIFY MODE|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [thread pool](#/settings/NRPE/server_thread pool) | THREAD POOL|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [timeout](#/settings/NRPE/server_timeout) | TIMEOUT|
-| [/settings/NRPE/server](#/settings/NRPE/server) | [verify mode](#/settings/NRPE/server_verify mode) | VERIFY MODE|
+| Path / Section                                  | Key                                                                     | Description                            |
+|-------------------------------------------------|-------------------------------------------------------------------------|----------------------------------------|
+| [/settings/default](#/settings/default)         | [allowed hosts](#/settings/default_allowed hosts)                       | ALLOWED HOSTS                          |
+| [/settings/default](#/settings/default)         | [bind to](#/settings/default_bind to)                                   | BIND TO ADDRESS                        |
+| [/settings/default](#/settings/default)         | [cache allowed hosts](#/settings/default_cache allowed hosts)           | CACHE ALLOWED HOSTS                    |
+| [/settings/default](#/settings/default)         | [inbox](#/settings/default_inbox)                                       | INBOX                                  |
+| [/settings/default](#/settings/default)         | [password](#/settings/default_password)                                 | PASSWORD                               |
+| [/settings/default](#/settings/default)         | [timeout](#/settings/default_timeout)                                   | TIMEOUT                                |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [allow arguments](#/settings/NRPE/server_allow arguments)               | COMMAND ARGUMENT PROCESSING            |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [allow nasty characters](#/settings/NRPE/server_allow nasty characters) | COMMAND ALLOW NASTY META CHARS         |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [extended response](#/settings/NRPE/server_extended response)           | EXTENDED RESPONSE                      |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [insecure](#/settings/NRPE/server_insecure)                             | ALLOW INSECURE CHIPHERS and ENCRYPTION |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [port](#/settings/NRPE/server_port)                                     | PORT NUMBER                            |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [use ssl](#/settings/NRPE/server_use ssl)                               | ENABLE SSL ENCRYPTION                  |
+
+### Advanced keys
+
+| Path / Section                                  | Key                                                               | Description           |
+|-------------------------------------------------|-------------------------------------------------------------------|-----------------------|
+| [/settings/default](#/settings/default)         | [encoding](#/settings/default_encoding)                           | NRPE PAYLOAD ENCODING |
+| [/settings/default](#/settings/default)         | [socket queue size](#/settings/default_socket queue size)         | LISTEN QUEUE          |
+| [/settings/default](#/settings/default)         | [thread pool](#/settings/default_thread pool)                     | THREAD POOL           |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [allowed ciphers](#/settings/NRPE/server_allowed ciphers)         | ALLOWED CIPHERS       |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [allowed hosts](#/settings/NRPE/server_allowed hosts)             | ALLOWED HOSTS         |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [bind to](#/settings/NRPE/server_bind to)                         | BIND TO ADDRESS       |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [ca](#/settings/NRPE/server_ca)                                   | CA                    |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [cache allowed hosts](#/settings/NRPE/server_cache allowed hosts) | CACHE ALLOWED HOSTS   |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [certificate](#/settings/NRPE/server_certificate)                 | SSL CERTIFICATE       |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [certificate format](#/settings/NRPE/server_certificate format)   | CERTIFICATE FORMAT    |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [certificate key](#/settings/NRPE/server_certificate key)         | SSL CERTIFICATE       |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [dh](#/settings/NRPE/server_dh)                                   | DH KEY                |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [encoding](#/settings/NRPE/server_encoding)                       | NRPE PAYLOAD ENCODING |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [payload length](#/settings/NRPE/server_payload length)           | PAYLOAD LENGTH        |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [performance data](#/settings/NRPE/server_performance data)       | PERFORMANCE DATA      |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [socket queue size](#/settings/NRPE/server_socket queue size)     | LISTEN QUEUE          |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [ssl options](#/settings/NRPE/server_ssl options)                 | VERIFY MODE           |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [thread pool](#/settings/NRPE/server_thread pool)                 | THREAD POOL           |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [timeout](#/settings/NRPE/server_timeout)                         | TIMEOUT               |
+| [/settings/NRPE/server](#/settings/NRPE/server) | [verify mode](#/settings/NRPE/server_verify mode)                 | VERIFY MODE           |
 
 
 
@@ -62,47 +60,37 @@ Advanced keys:
 
 # Configuration
 
-
-
-## /settings/default
-
-`/settings/default`
+<a name="/settings/default"/>
+## 
 
 
 
-
-
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [allowed hosts](#/settings/default_allowed hosts) | 127.0.0.1 | ALLOWED HOSTS|
-| [bind to](#/settings/default_bind to) |  | BIND TO ADDRESS|
-| [cache allowed hosts](#/settings/default_cache allowed hosts) | 1 | CACHE ALLOWED HOSTS|
-| [encoding](#/settings/default_encoding) |  | NRPE PAYLOAD ENCODING|
-| [inbox](#/settings/default_inbox) | inbox | INBOX|
-| [password](#/settings/default_password) |  | PASSWORD|
-| [socket queue size](#/settings/default_socket queue size) | 0 | LISTEN QUEUE|
-| [thread pool](#/settings/default_thread pool) | 10 | THREAD POOL|
-| [timeout](#/settings/default_timeout) | 30 | TIMEOUT|
-
-
-**Sample**::
-
-```
-# 
+```ini
 # 
 [/settings/default]
 allowed hosts=127.0.0.1
-bind to=
-cache allowed hosts=1
-encoding=
+cache allowed hosts=true
 inbox=inbox
-password=
 socket queue size=0
 thread pool=10
 timeout=30
 
 ```
+
+
+| Key                                                           | Default Value | Description           |
+|---------------------------------------------------------------|---------------|-----------------------|
+| [allowed hosts](#/settings/default_allowed hosts)             | 127.0.0.1     | ALLOWED HOSTS         |
+| [bind to](#/settings/default_bind to)                         |               | BIND TO ADDRESS       |
+| [cache allowed hosts](#/settings/default_cache allowed hosts) | true          | CACHE ALLOWED HOSTS   |
+| [encoding](#/settings/default_encoding)                       |               | NRPE PAYLOAD ENCODING |
+| [inbox](#/settings/default_inbox)                             | inbox         | INBOX                 |
+| [password](#/settings/default_password)                       |               | PASSWORD              |
+| [socket queue size](#/settings/default_socket queue size)     | 0             | LISTEN QUEUE          |
+| [thread pool](#/settings/default_thread pool)                 | 10            | THREAD POOL           |
+| [timeout](#/settings/default_timeout)                         | 30            | TIMEOUT               |
+
+
 
 
 <a name="/settings/default_allowed hosts"/>
@@ -112,15 +100,18 @@ timeout=30
 
 A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges.
 
-**Path**: /settings/default
 
-**Key**: allowed hosts
 
-**Default value**: 127.0.0.1
 
-**Used by**: :module:`CheckMKServer`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
+| Key            | Description                                                      |
+|----------------|------------------------------------------------------------------|
+| Path:          | [/settings/default](#/settings/default)                          |
+| Key:           | allowed hosts                                                    |
+| Default value: | `127.0.0.1`                                                      |
+| Used by:       | CheckMKServer, NRPEServer, NSCAServer, NSClientServer, WEBServer |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/default]
@@ -136,15 +127,19 @@ allowed hosts=127.0.0.1
 
 Allows you to bind server to a specific local address. This has to be a dotted ip address not a host name. Leaving this blank will bind to all available IP addresses.
 
-**Path**: /settings/default
 
-**Key**: bind to
 
-**Default value**: 
 
-**Used by**: :module:`CheckMKServer`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
-**Sample**::
+| Key            | Description                                                      |
+|----------------|------------------------------------------------------------------|
+| Path:          | [/settings/default](#/settings/default)                          |
+| Key:           | bind to                                                          |
+| Default value: | _N/A_                                                            |
+| Used by:       | CheckMKServer, NRPEServer, NSCAServer, NSClientServer, WEBServer |
+
+
+#### Sample
 
 ```
 [/settings/default]
@@ -160,20 +155,23 @@ bind to=
 
 If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server.
 
-**Path**: /settings/default
 
-**Key**: cache allowed hosts
 
-**Default value**: 1
 
-**Used by**: :module:`CheckMKServer`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
+| Key            | Description                                                      |
+|----------------|------------------------------------------------------------------|
+| Path:          | [/settings/default](#/settings/default)                          |
+| Key:           | cache allowed hosts                                              |
+| Default value: | `true`                                                           |
+| Used by:       | CheckMKServer, NRPEServer, NSCAServer, NSClientServer, WEBServer |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/default]
 # CACHE ALLOWED HOSTS
-cache allowed hosts=1
+cache allowed hosts=true
 ```
 
 
@@ -184,17 +182,20 @@ cache allowed hosts=1
 
 
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/default
 
-**Key**: encoding
 
-**Default value**: 
 
-**Used by**: :module:`CheckMKServer`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
+| Key            | Description                                                      |
+|----------------|------------------------------------------------------------------|
+| Path:          | [/settings/default](#/settings/default)                          |
+| Key:           | encoding                                                         |
+| Advanced:      | Yes (means it is not commonly used)                              |
+| Default value: | _N/A_                                                            |
+| Used by:       | CheckMKServer, NRPEServer, NSCAServer, NSClientServer, WEBServer |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/default]
@@ -210,15 +211,18 @@ encoding=
 
 The default channel to post incoming messages on
 
-**Path**: /settings/default
 
-**Key**: inbox
 
-**Default value**: inbox
 
-**Used by**: :module:`CheckMKServer`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
+| Key            | Description                                                      |
+|----------------|------------------------------------------------------------------|
+| Path:          | [/settings/default](#/settings/default)                          |
+| Key:           | inbox                                                            |
+| Default value: | `inbox`                                                          |
+| Used by:       | CheckMKServer, NRPEServer, NSCAServer, NSClientServer, WEBServer |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/default]
@@ -234,15 +238,19 @@ inbox=inbox
 
 Password used to authenticate against server
 
-**Path**: /settings/default
 
-**Key**: password
 
-**Default value**: 
 
-**Used by**: :module:`CheckMKServer`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
-**Sample**::
+| Key            | Description                                                      |
+|----------------|------------------------------------------------------------------|
+| Path:          | [/settings/default](#/settings/default)                          |
+| Key:           | password                                                         |
+| Default value: | _N/A_                                                            |
+| Used by:       | CheckMKServer, NRPEServer, NSCAServer, NSClientServer, WEBServer |
+
+
+#### Sample
 
 ```
 [/settings/default]
@@ -258,17 +266,19 @@ password=
 
 Number of sockets to queue before starting to refuse new incoming connections. This can be used to tweak the amount of simultaneous sockets that the server accepts.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/default
 
-**Key**: socket queue size
 
-**Default value**: 0
+| Key            | Description                                                      |
+|----------------|------------------------------------------------------------------|
+| Path:          | [/settings/default](#/settings/default)                          |
+| Key:           | socket queue size                                                |
+| Advanced:      | Yes (means it is not commonly used)                              |
+| Default value: | `0`                                                              |
+| Used by:       | CheckMKServer, NRPEServer, NSCAServer, NSClientServer, WEBServer |
 
-**Used by**: :module:`CheckMKServer`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/default]
@@ -284,17 +294,19 @@ socket queue size=0
 
 
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/default
 
-**Key**: thread pool
 
-**Default value**: 10
+| Key            | Description                                                      |
+|----------------|------------------------------------------------------------------|
+| Path:          | [/settings/default](#/settings/default)                          |
+| Key:           | thread pool                                                      |
+| Advanced:      | Yes (means it is not commonly used)                              |
+| Default value: | `10`                                                             |
+| Used by:       | CheckMKServer, NRPEServer, NSCAServer, NSClientServer, WEBServer |
 
-**Used by**: :module:`CheckMKServer`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/default]
@@ -310,15 +322,18 @@ thread pool=10
 
 Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out.
 
-**Path**: /settings/default
 
-**Key**: timeout
 
-**Default value**: 30
 
-**Used by**: :module:`CheckMKServer`,  :module:`NRPEServer`,  :module:`NSCAServer`,  :module:`NSClientServer`,  :module:`WEBServer`
+| Key            | Description                                                      |
+|----------------|------------------------------------------------------------------|
+| Path:          | [/settings/default](#/settings/default)                          |
+| Key:           | timeout                                                          |
+| Default value: | `30`                                                             |
+| Used by:       | CheckMKServer, NRPEServer, NSCAServer, NSClientServer, WEBServer |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/default]
@@ -327,75 +342,64 @@ timeout=30
 ```
 
 
-
-
-## /settings/NRPE/server
-
-`/settings/NRPE/server`
-
-**NRPE SERVER SECTION**
+<a name="/settings/NRPE/server"/>
+## NRPE SERVER SECTION
 
 Section for NRPE (NRPEServer.dll) (check_nrpe) protocol options.
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [allow arguments](#/settings/NRPE/server_allow arguments) | 0 | COMMAND ARGUMENT PROCESSING|
-| [allow nasty characters](#/settings/NRPE/server_allow nasty characters) | 0 | COMMAND ALLOW NASTY META CHARS|
-| [allowed ciphers](#/settings/NRPE/server_allowed ciphers) | ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH | ALLOWED CIPHERS|
-| [allowed hosts](#/settings/NRPE/server_allowed hosts) | 127.0.0.1 | ALLOWED HOSTS|
-| [bind to](#/settings/NRPE/server_bind to) |  | BIND TO ADDRESS|
-| [ca](#/settings/NRPE/server_ca) | ${certificate-path}/ca.pem | CA|
-| [cache allowed hosts](#/settings/NRPE/server_cache allowed hosts) | 1 | CACHE ALLOWED HOSTS|
-| [certificate](#/settings/NRPE/server_certificate) | ${certificate-path}/certificate.pem | SSL CERTIFICATE|
-| [certificate format](#/settings/NRPE/server_certificate format) | PEM | CERTIFICATE FORMAT|
-| [certificate key](#/settings/NRPE/server_certificate key) |  | SSL CERTIFICATE|
-| [dh](#/settings/NRPE/server_dh) | ${certificate-path}/nrpe_dh_512.pem | DH KEY|
-| [encoding](#/settings/NRPE/server_encoding) |  | NRPE PAYLOAD ENCODING|
-| [extended response](#/settings/NRPE/server_extended response) | 1 | EXTENDED RESPONSE|
-| [insecure](#/settings/NRPE/server_insecure) | 0 | ALLOW INSECURE CHIPHERS and ENCRYPTION|
-| [payload length](#/settings/NRPE/server_payload length) | 1024 | PAYLOAD LENGTH|
-| [performance data](#/settings/NRPE/server_performance data) | 1 | PERFORMANCE DATA|
-| [port](#/settings/NRPE/server_port) | 5666 | PORT NUMBER|
-| [socket queue size](#/settings/NRPE/server_socket queue size) | 0 | LISTEN QUEUE|
-| [ssl options](#/settings/NRPE/server_ssl options) |  | VERIFY MODE|
-| [thread pool](#/settings/NRPE/server_thread pool) | 10 | THREAD POOL|
-| [timeout](#/settings/NRPE/server_timeout) | 30 | TIMEOUT|
-| [use ssl](#/settings/NRPE/server_use ssl) | 1 | ENABLE SSL ENCRYPTION|
-| [verify mode](#/settings/NRPE/server_verify mode) | none | VERIFY MODE|
-
-
-**Sample**::
-
-```
-# NRPE SERVER SECTION
+```ini
 # Section for NRPE (NRPEServer.dll) (check_nrpe) protocol options.
 [/settings/NRPE/server]
-allow arguments=0
-allow nasty characters=0
+allow arguments=false
+allow nasty characters=false
 allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 allowed hosts=127.0.0.1
-bind to=
 ca=${certificate-path}/ca.pem
-cache allowed hosts=1
+cache allowed hosts=true
 certificate=${certificate-path}/certificate.pem
 certificate format=PEM
-certificate key=
 dh=${certificate-path}/nrpe_dh_512.pem
-encoding=
-extended response=1
-insecure=0
+extended response=true
+insecure=false
 payload length=1024
-performance data=1
+performance data=true
 port=5666
 socket queue size=0
-ssl options=
 thread pool=10
 timeout=30
-use ssl=1
+use ssl=true
 verify mode=none
 
 ```
+
+
+| Key                                                                     | Default Value                       | Description                            |
+|-------------------------------------------------------------------------|-------------------------------------|----------------------------------------|
+| [allow arguments](#/settings/NRPE/server_allow arguments)               | false                               | COMMAND ARGUMENT PROCESSING            |
+| [allow nasty characters](#/settings/NRPE/server_allow nasty characters) | false                               | COMMAND ALLOW NASTY META CHARS         |
+| [allowed ciphers](#/settings/NRPE/server_allowed ciphers)               | ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH   | ALLOWED CIPHERS                        |
+| [allowed hosts](#/settings/NRPE/server_allowed hosts)                   | 127.0.0.1                           | ALLOWED HOSTS                          |
+| [bind to](#/settings/NRPE/server_bind to)                               |                                     | BIND TO ADDRESS                        |
+| [ca](#/settings/NRPE/server_ca)                                         | ${certificate-path}/ca.pem          | CA                                     |
+| [cache allowed hosts](#/settings/NRPE/server_cache allowed hosts)       | true                                | CACHE ALLOWED HOSTS                    |
+| [certificate](#/settings/NRPE/server_certificate)                       | ${certificate-path}/certificate.pem | SSL CERTIFICATE                        |
+| [certificate format](#/settings/NRPE/server_certificate format)         | PEM                                 | CERTIFICATE FORMAT                     |
+| [certificate key](#/settings/NRPE/server_certificate key)               |                                     | SSL CERTIFICATE                        |
+| [dh](#/settings/NRPE/server_dh)                                         | ${certificate-path}/nrpe_dh_512.pem | DH KEY                                 |
+| [encoding](#/settings/NRPE/server_encoding)                             |                                     | NRPE PAYLOAD ENCODING                  |
+| [extended response](#/settings/NRPE/server_extended response)           | true                                | EXTENDED RESPONSE                      |
+| [insecure](#/settings/NRPE/server_insecure)                             | false                               | ALLOW INSECURE CHIPHERS and ENCRYPTION |
+| [payload length](#/settings/NRPE/server_payload length)                 | 1024                                | PAYLOAD LENGTH                         |
+| [performance data](#/settings/NRPE/server_performance data)             | true                                | PERFORMANCE DATA                       |
+| [port](#/settings/NRPE/server_port)                                     | 5666                                | PORT NUMBER                            |
+| [socket queue size](#/settings/NRPE/server_socket queue size)           | 0                                   | LISTEN QUEUE                           |
+| [ssl options](#/settings/NRPE/server_ssl options)                       |                                     | VERIFY MODE                            |
+| [thread pool](#/settings/NRPE/server_thread pool)                       | 10                                  | THREAD POOL                            |
+| [timeout](#/settings/NRPE/server_timeout)                               | 30                                  | TIMEOUT                                |
+| [use ssl](#/settings/NRPE/server_use ssl)                               | true                                | ENABLE SSL ENCRYPTION                  |
+| [verify mode](#/settings/NRPE/server_verify mode)                       | none                                | VERIFY MODE                            |
+
+
 
 
 <a name="/settings/NRPE/server_allow arguments"/>
@@ -405,20 +409,23 @@ verify mode=none
 
 This option determines whether or not the we will allow clients to specify arguments to commands that are executed.
 
-**Path**: /settings/NRPE/server
 
-**Key**: allow arguments
 
-**Default value**: 0
 
-**Used by**: :module:`NRPEServer`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | allow arguments                                 |
+| Default value: | `false`                                         |
+| Used by:       | NRPEServer                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/NRPE/server]
 # COMMAND ARGUMENT PROCESSING
-allow arguments=0
+allow arguments=false
 ```
 
 
@@ -429,20 +436,23 @@ allow arguments=0
 
 This option determines whether or not the we will allow clients to specify nasty (as in \|\`&><'"\\[]{}) characters in arguments.
 
-**Path**: /settings/NRPE/server
 
-**Key**: allow nasty characters
 
-**Default value**: 0
 
-**Used by**: :module:`NRPEServer`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | allow nasty characters                          |
+| Default value: | `false`                                         |
+| Used by:       | NRPEServer                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/NRPE/server]
 # COMMAND ALLOW NASTY META CHARS
-allow nasty characters=0
+allow nasty characters=false
 ```
 
 
@@ -454,17 +464,19 @@ allow nasty characters=0
 The chipers which are allowed to be used.
 The default here will differ is used in "insecure" mode or not. check_nrpe uses a very old chipers and should preferably not be used. For details of chipers please see the OPEN ssl documentation: https://www.openssl.org/docs/apps/ciphers.html
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: allowed ciphers
 
-**Default value**: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | allowed ciphers                                 |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH`             |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -480,17 +492,19 @@ allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
 A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: allowed hosts
 
-**Default value**: 127.0.0.1
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | allowed hosts                                   |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `127.0.0.1`                                     |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -506,17 +520,20 @@ allowed hosts=127.0.0.1
 
 Allows you to bind server to a specific local address. This has to be a dotted ip address not a host name. Leaving this blank will bind to all available IP addresses. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: bind to
 
-**Default value**: 
 
-**Used by**: :module:`NRPEServer`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | bind to                                         |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | _N/A_                                           |
+| Used by:       | NRPEServer                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -532,17 +549,19 @@ bind to=
 
 
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: ca
 
-**Default value**: ${certificate-path}/ca.pem
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | ca                                              |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `${certificate-path}/ca.pem`                    |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -558,22 +577,24 @@ ca=${certificate-path}/ca.pem
 
 If host names (DNS entries) should be cached, improves speed and security somewhat but won't allow you to have dynamic IPs for your Nagios server. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: cache allowed hosts
 
-**Default value**: 1
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | cache allowed hosts                             |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `true`                                          |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
 # CACHE ALLOWED HOSTS
-cache allowed hosts=1
+cache allowed hosts=true
 ```
 
 
@@ -584,17 +605,19 @@ cache allowed hosts=1
 
 
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: certificate
 
-**Default value**: ${certificate-path}/certificate.pem
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | certificate                                     |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `${certificate-path}/certificate.pem`           |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -610,17 +633,19 @@ certificate=${certificate-path}/certificate.pem
 
 
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: certificate format
 
-**Default value**: PEM
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | certificate format                              |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `PEM`                                           |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -636,17 +661,20 @@ certificate format=PEM
 
 
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: certificate key
 
-**Default value**: 
 
-**Used by**: :module:`NRPEServer`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | certificate key                                 |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | _N/A_                                           |
+| Used by:       | NRPEServer                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -662,17 +690,19 @@ certificate key=
 
 
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: dh
 
-**Default value**: ${certificate-path}/nrpe_dh_512.pem
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | dh                                              |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `${certificate-path}/nrpe_dh_512.pem`           |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -688,17 +718,20 @@ dh=${certificate-path}/nrpe_dh_512.pem
 
  parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: encoding
 
-**Default value**: 
 
-**Used by**: :module:`NRPEServer`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | encoding                                        |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | _N/A_                                           |
+| Used by:       | NRPEServer                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -714,20 +747,23 @@ encoding=
 
 Send more then 1 return packet to allow response to go beyond payload size (requires modified client if legacy is true this defaults to false).
 
-**Path**: /settings/NRPE/server
 
-**Key**: extended response
 
-**Default value**: 1
 
-**Used by**: :module:`NRPEServer`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | extended response                               |
+| Default value: | `true`                                          |
+| Used by:       | NRPEServer                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/NRPE/server]
 # EXTENDED RESPONSE
-extended response=1
+extended response=true
 ```
 
 
@@ -738,20 +774,23 @@ extended response=1
 
 Only enable this if you are using legacy check_nrpe client.
 
-**Path**: /settings/NRPE/server
 
-**Key**: insecure
 
-**Default value**: 0
 
-**Used by**: :module:`NRPEServer`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | insecure                                        |
+| Default value: | `false`                                         |
+| Used by:       | NRPEServer                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/NRPE/server]
 # ALLOW INSECURE CHIPHERS and ENCRYPTION
-insecure=0
+insecure=false
 ```
 
 
@@ -762,17 +801,19 @@ insecure=0
 
 Length of payload to/from the NRPE agent. This is a hard specific value so you have to "configure" (read recompile) your NRPE agent to use the same value for it to work.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: payload length
 
-**Default value**: 1024
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | payload length                                  |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `1024`                                          |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -788,22 +829,24 @@ payload length=1024
 
 Send performance data back to nagios (set this to 0 to remove all performance data).
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: performance data
 
-**Default value**: 1
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | performance data                                |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `true`                                          |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
 # PERFORMANCE DATA
-performance data=1
+performance data=true
 ```
 
 
@@ -814,15 +857,18 @@ performance data=1
 
 Port to use for NRPE.
 
-**Path**: /settings/NRPE/server
 
-**Key**: port
 
-**Default value**: 5666
 
-**Used by**: :module:`NRPEServer`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | port                                            |
+| Default value: | `5666`                                          |
+| Used by:       | NRPEServer                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -838,17 +884,19 @@ port=5666
 
 Number of sockets to queue before starting to refuse new incoming connections. This can be used to tweak the amount of simultaneous sockets that the server accepts. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: socket queue size
 
-**Default value**: 0
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | socket queue size                               |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `0`                                             |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -864,12 +912,12 @@ socket queue size=0
 
 Comma separated list of verification flags to set on the SSL socket.
 
-| default-workarounds  | Various workarounds for what I understand to be broken ssl implementations                                                                                                                                                           | |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | |
-| no-sslv2             | Do not use the SSLv2 protocol.                                                                                                                                                                                                       | |
-| no-sslv3             | Do not use the SSLv3 protocol.                                                                                                                                                                                                       | |
-| no-tlsv1             | Do not use the TLSv1 protocol.                                                                                                                                                                                                       | |
-| single-dh-use        | Always create a new key when using temporary/ephemeral DH parameters. This option must be used to prevent small subgroup attacks, when the DH parameters were not generated using "strong" primes (e.g. when using DSA-parameters).  | |
+| default-workarounds | Various workarounds for what I understand to be broken ssl implementations                                                                                                                                                          |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| no-sslv2            | Do not use the SSLv2 protocol.                                                                                                                                                                                                      |
+| no-sslv3            | Do not use the SSLv3 protocol.                                                                                                                                                                                                      |
+| no-tlsv1            | Do not use the TLSv1 protocol.                                                                                                                                                                                                      |
+| single-dh-use       | Always create a new key when using temporary/ephemeral DH parameters. This option must be used to prevent small subgroup attacks, when the DH parameters were not generated using "strong" primes (e.g. when using DSA-parameters). |
 
 
 
@@ -877,17 +925,20 @@ Comma separated list of verification flags to set on the SSL socket.
 
 
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: ssl options
 
-**Default value**: 
 
-**Used by**: :module:`NRPEServer`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | ssl options                                     |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | _N/A_                                           |
+| Used by:       | NRPEServer                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -903,17 +954,19 @@ ssl options=
 
  parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: thread pool
 
-**Default value**: 10
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | thread pool                                     |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `10`                                            |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -929,17 +982,19 @@ thread pool=10
 
 Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: timeout
 
-**Default value**: 30
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | timeout                                         |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `30`                                            |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]
@@ -955,20 +1010,23 @@ timeout=30
 
 This option controls if SSL should be enabled.
 
-**Path**: /settings/NRPE/server
 
-**Key**: use ssl
 
-**Default value**: 1
 
-**Used by**: :module:`NRPEServer`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | use ssl                                         |
+| Default value: | `true`                                          |
+| Used by:       | NRPEServer                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/NRPE/server]
 # ENABLE SSL ENCRYPTION
-use ssl=1
+use ssl=true
 ```
 
 
@@ -979,14 +1037,14 @@ use ssl=1
 
 Comma separated list of verification flags to set on the SSL socket.
 
-| none             | The server will not send a client certificate request to the client, so the client will not send a certificate.                          | |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | |
-| peer             | The server sends a client certificate request to the client and the certificate returned (if any) is checked.                            | |
-| fail-if-no-cert  | if the client did not return a certificate, the TLS/SSL handshake is immediately terminated. This flag must be used together with peer.  | |
-| peer-cert        | Alias for peer and fail-if-no-cert.                                                                                                      | |
-| workarounds      | Various bug workarounds.                                                                                                                 | |
-| single           | Always create a new key when using tmp_dh parameters.                                                                                    | |
-| client-once      | Only request a client certificate on the initial TLS/SSL handshake. This flag must be used together with verify-peer                     | |
+| none            | The server will not send a client certificate request to the client, so the client will not send a certificate.                         |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| peer            | The server sends a client certificate request to the client and the certificate returned (if any) is checked.                           |
+| fail-if-no-cert | if the client did not return a certificate, the TLS/SSL handshake is immediately terminated. This flag must be used together with peer. |
+| peer-cert       | Alias for peer and fail-if-no-cert.                                                                                                     |
+| workarounds     | Various bug workarounds.                                                                                                                |
+| single          | Always create a new key when using tmp_dh parameters.                                                                                   |
+| client-once     | Only request a client certificate on the initial TLS/SSL handshake. This flag must be used together with verify-peer                    |
 
 
 
@@ -994,17 +1052,19 @@ Comma separated list of verification flags to set on the SSL socket.
 
 
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/NRPE/server
 
-**Key**: verify mode
 
-**Default value**: none
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/NRPE/server](#/settings/NRPE/server) |
+| Key:           | verify mode                                     |
+| Advanced:      | Yes (means it is not commonly used)             |
+| Default value: | `none`                                          |
+| Used by:       | NRPEServer                                      |
 
-**Used by**: :module:`NRPEServer`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/NRPE/server]

@@ -2,49 +2,47 @@
 
 SMTP client can be used both from command line and from queries to check remote systes via SMTP
 
-## Query list
+
+
+## List of commands
 
 A list of all available queries (check commands)
 
-| Command | Description|
-| ------- | -----------|
-| [submit_smtp](#submit_smtp) | Submit information to the remote SMTP server.|
+| Command                     | Description                                   |
+|-----------------------------|-----------------------------------------------|
+| [submit_smtp](#submit_smtp) | Submit information to the remote SMTP server. |
 
 
 
 
-## Command list
-
-**TODO:** Add a list of all external commands (this is not check commands)
-
-## Configuration list
+## List of Configuration
 
 
-Common Keys:
+### Common Keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/SMTP/client](#/settings/SMTP/client) | [channel](#/settings/SMTP/client_channel) | CHANNEL|
-| [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) | [address](#/settings/SMTP/client/targets/default_address) | TARGET ADDRESS|
-| [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) | [retries](#/settings/SMTP/client/targets/default_retries) | RETRIES|
-| [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) | [timeout](#/settings/SMTP/client/targets/default_timeout) | TIMEOUT|
+| Path / Section                                                                  | Key                                                       | Description    |
+|---------------------------------------------------------------------------------|-----------------------------------------------------------|----------------|
+| [/settings/SMTP/client](#/settings/SMTP/client)                                 | [channel](#/settings/SMTP/client_channel)                 | CHANNEL        |
+| [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) | [address](#/settings/SMTP/client/targets/default_address) | TARGET ADDRESS |
+| [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) | [retries](#/settings/SMTP/client/targets/default_retries) | RETRIES        |
+| [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) | [timeout](#/settings/SMTP/client/targets/default_timeout) | TIMEOUT        |
 
-Advanced keys:
+### Advanced keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) | [host](#/settings/SMTP/client/targets/default_host) | TARGET HOST|
-| [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) | [port](#/settings/SMTP/client/targets/default_port) | TARGET PORT|
+| Path / Section                                                                  | Key                                                 | Description |
+|---------------------------------------------------------------------------------|-----------------------------------------------------|-------------|
+| [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) | [host](#/settings/SMTP/client/targets/default_host) | TARGET HOST |
+| [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) | [port](#/settings/SMTP/client/targets/default_port) | TARGET PORT |
 
-Sample keys:
+### Sample keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) | [address](#/settings/SMTP/client/targets/sample_address) | TARGET ADDRESS|
-| [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) | [host](#/settings/SMTP/client/targets/sample_host) | TARGET HOST|
-| [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) | [port](#/settings/SMTP/client/targets/sample_port) | TARGET PORT|
-| [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) | [retries](#/settings/SMTP/client/targets/sample_retries) | RETRIES|
-| [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) | [timeout](#/settings/SMTP/client/targets/sample_timeout) | TIMEOUT|
+| Path / Section                                                                | Key                                                      | Description    |
+|-------------------------------------------------------------------------------|----------------------------------------------------------|----------------|
+| [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) | [address](#/settings/SMTP/client/targets/sample_address) | TARGET ADDRESS |
+| [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) | [host](#/settings/SMTP/client/targets/sample_host)       | TARGET HOST    |
+| [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) | [port](#/settings/SMTP/client/targets/sample_port)       | TARGET PORT    |
+| [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) | [retries](#/settings/SMTP/client/targets/sample_retries) | RETRIES        |
+| [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) | [timeout](#/settings/SMTP/client/targets/sample_timeout) | TIMEOUT        |
 
 
 
@@ -60,33 +58,32 @@ Submit information to the remote SMTP server.
 ### Usage
 
 
-
-| Option | Default Value | Description|
-| ------ | ------------- | -----------|
-| [help](#submit_smtp_help) | N/A | Show help screen (this screen)|
-| [help-pb](#submit_smtp_help-pb) | N/A | Show help screen as a protocol buffer payload|
-| [show-default](#submit_smtp_show-default) | N/A | Show default values for a given command|
-| [help-short](#submit_smtp_help-short) | N/A | Show help screen (short format).|
-| [host](#submit_smtp_host) |  | The host of the host running the server|
-| [port](#submit_smtp_port) |  | The port of the host running the server|
-| [address](#submit_smtp_address) |  | The address (host:port) of the host running the server|
-| [timeout](#submit_smtp_timeout) |  | Number of seconds before connection times out (default=10)|
-| [target](#submit_smtp_target) |  | Target to use (lookup connection info from config)|
-| [retry](#submit_smtp_retry) |  | Number of times ti retry a failed connection attempt (default=2)|
-| [retries](#submit_smtp_retries) |  | legacy version of retry|
-| [source-host](#submit_smtp_source-host) |  | Source/sender host name (default is auto which means use the name of the actual host)|
-| [sender-host](#submit_smtp_sender-host) |  | Source/sender host name (default is auto which means use the name of the actual host)|
-| [command](#submit_smtp_command) |  | The name of the command that the remote daemon should run|
-| [alias](#submit_smtp_alias) |  | Same as command|
-| [message](#submit_smtp_message) |  | Message|
-| [result](#submit_smtp_result) |  | Result code either a number or OK, WARN, CRIT, UNKNOWN|
-| [separator](#submit_smtp_separator) |  | Separator to use for the batch command (default is |)|
-| [batch](#submit_smtp_batch) |  | Add multiple records using the separator format is: command|result|message|
-| [sender](#submit_smtp_sender) |  | Length of payload (has to be same as on the server)|
-| [recipient](#submit_smtp_recipient) |  | Length of payload (has to be same as on the server)|
-| [template](#submit_smtp_template) |  | Do not initial an ssl handshake with the server, talk in plain text.|
-| [source-host](#submit_smtp_source-host) |  | Source/sender host name (default is auto which means use the name of the actual host)|
-| [sender-host](#submit_smtp_sender-host) |  | Source/sender host name (default is auto which means use the name of the actual host)|
+| Option                                    | Default Value | Description                                                                           |
+|-------------------------------------------|---------------|---------------------------------------------------------------------------------------|
+| [help](#submit_smtp_help)                 | N/A           | Show help screen (this screen)                                                        |
+| [help-pb](#submit_smtp_help-pb)           | N/A           | Show help screen as a protocol buffer payload                                         |
+| [show-default](#submit_smtp_show-default) | N/A           | Show default values for a given command                                               |
+| [help-short](#submit_smtp_help-short)     | N/A           | Show help screen (short format).                                                      |
+| [host](#submit_smtp_host)                 |               | The host of the host running the server                                               |
+| [port](#submit_smtp_port)                 |               | The port of the host running the server                                               |
+| [address](#submit_smtp_address)           |               | The address (host:port) of the host running the server                                |
+| [timeout](#submit_smtp_timeout)           |               | Number of seconds before connection times out (default=10)                            |
+| [target](#submit_smtp_target)             |               | Target to use (lookup connection info from config)                                    |
+| [retry](#submit_smtp_retry)               |               | Number of times ti retry a failed connection attempt (default=2)                      |
+| [retries](#submit_smtp_retries)           |               | legacy version of retry                                                               |
+| [source-host](#submit_smtp_source-host)   |               | Source/sender host name (default is auto which means use the name of the actual host) |
+| [sender-host](#submit_smtp_sender-host)   |               | Source/sender host name (default is auto which means use the name of the actual host) |
+| [command](#submit_smtp_command)           |               | The name of the command that the remote daemon should run                             |
+| [alias](#submit_smtp_alias)               |               | Same as command                                                                       |
+| [message](#submit_smtp_message)           |               | Message                                                                               |
+| [result](#submit_smtp_result)             |               | Result code either a number or OK, WARN, CRIT, UNKNOWN                                |
+| [separator](#submit_smtp_separator)       |               | Separator to use for the batch command (default is |)                                 |
+| [batch](#submit_smtp_batch)               |               | Add multiple records using the separator format is: command|result|message            |
+| [sender](#submit_smtp_sender)             |               | Length of payload (has to be same as on the server)                                   |
+| [recipient](#submit_smtp_recipient)       |               | Length of payload (has to be same as on the server)                                   |
+| [template](#submit_smtp_template)         |               | Do not initial an ssl handshake with the server, talk in plain text.                  |
+| [source-host](#submit_smtp_source-host)   |               | Source/sender host name (default is auto which means use the name of the actual host) |
+| [sender-host](#submit_smtp_sender-host)   |               | Source/sender host name (default is auto which means use the name of the actual host) |
 
 
 <a name="submit_smtp_help"/>
@@ -285,31 +282,24 @@ Source/sender host name (default is auto which means use the name of the actual 
 
 # Configuration
 
-
-
-## /settings/SMTP/client
-
-`/settings/SMTP/client`
-
-**SMTP CLIENT SECTION**
+<a name="/settings/SMTP/client"/>
+## SMTP CLIENT SECTION
 
 Section for SMTP passive check module.
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [channel](#/settings/SMTP/client_channel) | SMTP | CHANNEL|
-
-
-**Sample**::
-
-```
-# SMTP CLIENT SECTION
+```ini
 # Section for SMTP passive check module.
 [/settings/SMTP/client]
 channel=SMTP
 
 ```
+
+
+| Key                                       | Default Value | Description |
+|-------------------------------------------|---------------|-------------|
+| [channel](#/settings/SMTP/client_channel) | SMTP          | CHANNEL     |
+
+
 
 
 <a name="/settings/SMTP/client_channel"/>
@@ -319,15 +309,18 @@ channel=SMTP
 
 The channel to listen to.
 
-**Path**: /settings/SMTP/client
 
-**Key**: channel
 
-**Default value**: SMTP
 
-**Used by**: :module:`SMTPClient`
+| Key            | Description                                     |
+|----------------|-------------------------------------------------|
+| Path:          | [/settings/SMTP/client](#/settings/SMTP/client) |
+| Key:           | channel                                         |
+| Default value: | `SMTP`                                          |
+| Used by:       | SMTPClient                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/SMTP/client]
@@ -336,23 +329,12 @@ channel=SMTP
 ```
 
 
-
-
-## /settings/SMTP/client/handlers
-
-`/settings/SMTP/client/handlers`
-
-**CLIENT HANDLER SECTION**
+<a name="/settings/SMTP/client/handlers"/>
+## CLIENT HANDLER SECTION
 
 
 
-
-
-
-**Sample**::
-
-```
-# CLIENT HANDLER SECTION
+```ini
 # 
 [/settings/SMTP/client/handlers]
 
@@ -361,21 +343,14 @@ channel=SMTP
 
 
 
-## /settings/SMTP/client/targets
 
-`/settings/SMTP/client/targets`
 
-**REMOTE TARGET DEFINITIONS**
-
+<a name="/settings/SMTP/client/targets"/>
+## REMOTE TARGET DEFINITIONS
 
 
 
-
-
-**Sample**::
-
-```
-# REMOTE TARGET DEFINITIONS
+```ini
 # 
 [/settings/SMTP/client/targets]
 
@@ -384,37 +359,31 @@ channel=SMTP
 
 
 
-## /settings/SMTP/client/targets/default
 
-`/settings/SMTP/client/targets/default`
 
-**TARGET**
+<a name="/settings/SMTP/client/targets/default"/>
+## TARGET
 
 Target definition for: default
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [address](#/settings/SMTP/client/targets/default_address) |  | TARGET ADDRESS|
-| [host](#/settings/SMTP/client/targets/default_host) |  | TARGET HOST|
-| [port](#/settings/SMTP/client/targets/default_port) |  | TARGET PORT|
-| [retries](#/settings/SMTP/client/targets/default_retries) | 3 | RETRIES|
-| [timeout](#/settings/SMTP/client/targets/default_timeout) | 30 | TIMEOUT|
-
-
-**Sample**::
-
-```
-# TARGET
+```ini
 # Target definition for: default
 [/settings/SMTP/client/targets/default]
-address=
-host=
-port=
 retries=3
 timeout=30
 
 ```
+
+
+| Key                                                       | Default Value | Description    |
+|-----------------------------------------------------------|---------------|----------------|
+| [address](#/settings/SMTP/client/targets/default_address) |               | TARGET ADDRESS |
+| [host](#/settings/SMTP/client/targets/default_host)       |               | TARGET HOST    |
+| [port](#/settings/SMTP/client/targets/default_port)       |               | TARGET PORT    |
+| [retries](#/settings/SMTP/client/targets/default_retries) | 3             | RETRIES        |
+| [timeout](#/settings/SMTP/client/targets/default_timeout) | 30            | TIMEOUT        |
+
+
 
 
 <a name="/settings/SMTP/client/targets/default_address"/>
@@ -424,15 +393,19 @@ timeout=30
 
 Target host address
 
-**Path**: /settings/SMTP/client/targets/default
 
-**Key**: address
 
-**Default value**: 
 
-**Used by**: :module:`SMTPClient`
 
-**Sample**::
+| Key            | Description                                                                     |
+|----------------|---------------------------------------------------------------------------------|
+| Path:          | [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) |
+| Key:           | address                                                                         |
+| Default value: | _N/A_                                                                           |
+| Used by:       | SMTPClient                                                                      |
+
+
+#### Sample
 
 ```
 [/settings/SMTP/client/targets/default]
@@ -448,17 +421,20 @@ address=
 
 The target server to report results to.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/SMTP/client/targets/default
 
-**Key**: host
 
-**Default value**: 
 
-**Used by**: :module:`SMTPClient`
+| Key            | Description                                                                     |
+|----------------|---------------------------------------------------------------------------------|
+| Path:          | [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) |
+| Key:           | host                                                                            |
+| Advanced:      | Yes (means it is not commonly used)                                             |
+| Default value: | _N/A_                                                                           |
+| Used by:       | SMTPClient                                                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/SMTP/client/targets/default]
@@ -474,17 +450,20 @@ host=
 
 The target server port
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/SMTP/client/targets/default
 
-**Key**: port
 
-**Default value**: 
 
-**Used by**: :module:`SMTPClient`
+| Key            | Description                                                                     |
+|----------------|---------------------------------------------------------------------------------|
+| Path:          | [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) |
+| Key:           | port                                                                            |
+| Advanced:      | Yes (means it is not commonly used)                                             |
+| Default value: | _N/A_                                                                           |
+| Used by:       | SMTPClient                                                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/SMTP/client/targets/default]
@@ -500,15 +479,18 @@ port=
 
 Number of times to retry sending.
 
-**Path**: /settings/SMTP/client/targets/default
 
-**Key**: retries
 
-**Default value**: 3
 
-**Used by**: :module:`SMTPClient`
+| Key            | Description                                                                     |
+|----------------|---------------------------------------------------------------------------------|
+| Path:          | [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) |
+| Key:           | retries                                                                         |
+| Default value: | `3`                                                                             |
+| Used by:       | SMTPClient                                                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/SMTP/client/targets/default]
@@ -524,15 +506,18 @@ retries=3
 
 Timeout when reading/writing packets to/from sockets.
 
-**Path**: /settings/SMTP/client/targets/default
 
-**Key**: timeout
 
-**Default value**: 30
 
-**Used by**: :module:`SMTPClient`
+| Key            | Description                                                                     |
+|----------------|---------------------------------------------------------------------------------|
+| Path:          | [/settings/SMTP/client/targets/default](#/settings/SMTP/client/targets/default) |
+| Key:           | timeout                                                                         |
+| Default value: | `30`                                                                            |
+| Used by:       | SMTPClient                                                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/SMTP/client/targets/default]
@@ -541,39 +526,29 @@ timeout=30
 ```
 
 
-
-
-## /settings/SMTP/client/targets/sample
-
-`/settings/SMTP/client/targets/sample`
-
-**TARGET**
+<a name="/settings/SMTP/client/targets/sample"/>
+## TARGET
 
 Target definition for: sample
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [address](#/settings/SMTP/client/targets/sample_address) |  | TARGET ADDRESS|
-| [host](#/settings/SMTP/client/targets/sample_host) |  | TARGET HOST|
-| [port](#/settings/SMTP/client/targets/sample_port) |  | TARGET PORT|
-| [retries](#/settings/SMTP/client/targets/sample_retries) | 3 | RETRIES|
-| [timeout](#/settings/SMTP/client/targets/sample_timeout) | 30 | TIMEOUT|
-
-
-**Sample**::
-
-```
-# TARGET
+```ini
 # Target definition for: sample
 [/settings/SMTP/client/targets/sample]
-address=
-host=
-port=
 retries=3
 timeout=30
 
 ```
+
+
+| Key                                                      | Default Value | Description    |
+|----------------------------------------------------------|---------------|----------------|
+| [address](#/settings/SMTP/client/targets/sample_address) |               | TARGET ADDRESS |
+| [host](#/settings/SMTP/client/targets/sample_host)       |               | TARGET HOST    |
+| [port](#/settings/SMTP/client/targets/sample_port)       |               | TARGET PORT    |
+| [retries](#/settings/SMTP/client/targets/sample_retries) | 3             | RETRIES        |
+| [timeout](#/settings/SMTP/client/targets/sample_timeout) | 30            | TIMEOUT        |
+
+
 
 
 <a name="/settings/SMTP/client/targets/sample_address"/>
@@ -583,17 +558,20 @@ timeout=30
 
 Target host address
 
-**Path**: /settings/SMTP/client/targets/sample
 
-**Key**: address
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
 
-**Used by**: :module:`SMTPClient`
+| Key            | Description                                                                   |
+|----------------|-------------------------------------------------------------------------------|
+| Path:          | [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) |
+| Key:           | address                                                                       |
+| Default value: | _N/A_                                                                         |
+| Sample key:    | Yes (This section is only to show how this key is used)                       |
+| Used by:       | SMTPClient                                                                    |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/SMTP/client/targets/sample]
@@ -609,19 +587,21 @@ address=
 
 The target server to report results to.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/SMTP/client/targets/sample
 
-**Key**: host
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                   |
+|----------------|-------------------------------------------------------------------------------|
+| Path:          | [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) |
+| Key:           | host                                                                          |
+| Advanced:      | Yes (means it is not commonly used)                                           |
+| Default value: | _N/A_                                                                         |
+| Sample key:    | Yes (This section is only to show how this key is used)                       |
+| Used by:       | SMTPClient                                                                    |
 
-**Used by**: :module:`SMTPClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/SMTP/client/targets/sample]
@@ -637,19 +617,21 @@ host=
 
 The target server port
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/SMTP/client/targets/sample
 
-**Key**: port
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                   |
+|----------------|-------------------------------------------------------------------------------|
+| Path:          | [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) |
+| Key:           | port                                                                          |
+| Advanced:      | Yes (means it is not commonly used)                                           |
+| Default value: | _N/A_                                                                         |
+| Sample key:    | Yes (This section is only to show how this key is used)                       |
+| Used by:       | SMTPClient                                                                    |
 
-**Used by**: :module:`SMTPClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/SMTP/client/targets/sample]
@@ -665,17 +647,19 @@ port=
 
 Number of times to retry sending.
 
-**Path**: /settings/SMTP/client/targets/sample
 
-**Key**: retries
 
-**Default value**: 3
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                   |
+|----------------|-------------------------------------------------------------------------------|
+| Path:          | [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) |
+| Key:           | retries                                                                       |
+| Default value: | `3`                                                                           |
+| Sample key:    | Yes (This section is only to show how this key is used)                       |
+| Used by:       | SMTPClient                                                                    |
 
-**Used by**: :module:`SMTPClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/SMTP/client/targets/sample]
@@ -691,17 +675,19 @@ retries=3
 
 Timeout when reading/writing packets to/from sockets.
 
-**Path**: /settings/SMTP/client/targets/sample
 
-**Key**: timeout
 
-**Default value**: 30
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                   |
+|----------------|-------------------------------------------------------------------------------|
+| Path:          | [/settings/SMTP/client/targets/sample](#/settings/SMTP/client/targets/sample) |
+| Key:           | timeout                                                                       |
+| Default value: | `30`                                                                          |
+| Sample key:    | Yes (This section is only to show how this key is used)                       |
+| Used by:       | SMTPClient                                                                    |
 
-**Used by**: :module:`SMTPClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/SMTP/client/targets/sample]

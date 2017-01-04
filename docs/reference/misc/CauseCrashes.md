@@ -2,29 +2,26 @@
 
 *DO NOT USE* This module is usefull except for debugging purpouses and outright dangerous as it allows someone remotley to crash your client!
 
-## Query list
+
+
+## List of commands
 
 A list of all available queries (check commands)
 
-| Command | Description|
-| ------- | -----------|
-| [crash_client](#crash_client) | Raise a fatal exception (zero pointer reference) and cause NSClient++ crash.|
+| Command                       | Description                                                                  |
+|-------------------------------|------------------------------------------------------------------------------|
+| [crash_client](#crash_client) | Raise a fatal exception (zero pointer reference) and cause NSClient++ crash. |
 
 
-## Alias list
+## List of command aliases
 
 A list of all short hand aliases for queries (check commands)
 
 
+| Command     | Description                      |
+|-------------|----------------------------------|
+| crashclient | Alias for: :query:`crash_client` |
 
-| Command | Description|
-| ------- | -----------|
-| crashclient | Alias for: :query:`crash_client`|
-
-
-## Command list
-
-**TODO:** Add a list of all external commands (this is not check commands)
 
 
 
@@ -37,7 +34,7 @@ A quick reference for all available queries (check commands) in the CauseCrashes
 
 Raise a fatal exception (zero pointer reference) and cause NSClient++ crash.
 
-### Samples
+### Usage
 
 _To edit these sample please edit [this page](https://github.com/mickem/nscp-docs/blob/master/samples/CauseCrashes_crash_client_samples.md)_
 
@@ -70,13 +67,12 @@ This will cause NSClient++ to crash so please dont do this.
 ### Usage
 
 
-
-| Option | Default Value | Description|
-| ------ | ------------- | -----------|
-| [help](#crash_client_help) | N/A | Show help screen (this screen)|
-| [help-pb](#crash_client_help-pb) | N/A | Show help screen as a protocol buffer payload|
-| [show-default](#crash_client_show-default) | N/A | Show default values for a given command|
-| [help-short](#crash_client_help-short) | N/A | Show help screen (short format).|
+| Option                                     | Default Value | Description                                   |
+|--------------------------------------------|---------------|-----------------------------------------------|
+| [help](#crash_client_help)                 | N/A           | Show help screen (this screen)                |
+| [help-pb](#crash_client_help-pb)           | N/A           | Show help screen as a protocol buffer payload |
+| [show-default](#crash_client_show-default) | N/A           | Show default values for a given command       |
+| [help-short](#crash_client_help-short)     | N/A           | Show help screen (short format).              |
 
 
 <a name="crash_client_help"/>
@@ -112,6 +108,4 @@ Show default values for a given command
 Show help screen (short format).
 
 
-
-# Configuration
 

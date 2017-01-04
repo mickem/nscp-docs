@@ -6,11 +6,9 @@ Loads and processes internal Python scripts
 
 
 
-## Command list
 
-**TODO:** Add a list of all external commands (this is not check commands)
 
-## Configuration list
+## List of Configuration
 
 
 
@@ -22,23 +20,12 @@ Loads and processes internal Python scripts
 
 # Configuration
 
-
-
-## /settings/python
-
-`/settings/python`
-
-**LUA SCRIPT SECTION**
+<a name="/settings/python"/>
+## LUA SCRIPT SECTION
 
 Section for the PythonScripts module.
 
-
-
-
-**Sample**::
-
-```
-# LUA SCRIPT SECTION
+```ini
 # Section for the PythonScripts module.
 [/settings/python]
 
@@ -47,24 +34,21 @@ Section for the PythonScripts module.
 
 
 
-## /settings/python/scripts
 
-`/settings/python/scripts`
 
-**PYTHON SCRIPTS SECTION**
+<a name="/settings/python/scripts"/>
+## PYTHON SCRIPTS SECTION
 
 A list of scripts available to run from the PythonScript module.
 
-
-
-
-**Sample**::
-
-```
-# PYTHON SCRIPTS SECTION
+```ini
 # A list of scripts available to run from the PythonScript module.
 [/settings/python/scripts]
 
 ```
+
+
+
+
 
 

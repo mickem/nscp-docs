@@ -2,39 +2,36 @@
 
 Stores status updates and allows for active checks to retrieve them
 
-## Query list
+
+
+## List of commands
 
 A list of all available queries (check commands)
 
-| Command | Description|
-| ------- | -----------|
-| [check_cache](#check_cache) | Fetch results from the cache.|
+| Command                     | Description                   |
+|-----------------------------|-------------------------------|
+| [check_cache](#check_cache) | Fetch results from the cache. |
 
 
-## Alias list
+## List of command aliases
 
 A list of all short hand aliases for queries (check commands)
 
 
-
-| Command | Description|
-| ------- | -----------|
-| checkcache | Alias for: :query:`check_cache`|
-
-
-## Command list
-
-**TODO:** Add a list of all external commands (this is not check commands)
-
-## Configuration list
+| Command    | Description                     |
+|------------|---------------------------------|
+| checkcache | Alias for: :query:`check_cache` |
 
 
-Common Keys:
+## List of Configuration
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/cache](#/settings/cache) | [channel](#/settings/cache_channel) | CHANNEL|
-| [/settings/cache](#/settings/cache) | [primary index](#/settings/cache_primary index) | PRIMARY CACHE INDEX|
+
+### Common Keys
+
+| Path / Section                      | Key                                             | Description         |
+|-------------------------------------|-------------------------------------------------|---------------------|
+| [/settings/cache](#/settings/cache) | [channel](#/settings/cache_channel)             | CHANNEL             |
+| [/settings/cache](#/settings/cache) | [primary index](#/settings/cache_primary index) | PRIMARY CACHE INDEX |
 
 
 
@@ -52,20 +49,19 @@ Fetch results from the cache.
 ### Usage
 
 
-
-| Option | Default Value | Description|
-| ------ | ------------- | -----------|
-| [help](#check_cache_help) | N/A | Show help screen (this screen)|
-| [help-pb](#check_cache_help-pb) | N/A | Show help screen as a protocol buffer payload|
-| [show-default](#check_cache_show-default) | N/A | Show default values for a given command|
-| [help-short](#check_cache_help-short) | N/A | Show help screen (short format).|
-| [key](#check_cache_key) |  | The key (will not be parsed)|
-| [host](#check_cache_host) |  | The host to look for (translates into the key)|
-| [command](#check_cache_command) |  | The command to look for (translates into the key)|
-| [channel](#check_cache_channel) |  | The channel to look for (translates into the key)|
-| [alias](#check_cache_alias) |  | The alias to look for (translates into the key)|
-| [not-found-msg](#check_cache_not-found-msg) | Entry not found | The message to display when a message is not found|
-| [not-found-code](#check_cache_not-found-code) | unknown | The return status to return when a message is not found|
+| Option                                        | Default Value   | Description                                             |
+|-----------------------------------------------|-----------------|---------------------------------------------------------|
+| [help](#check_cache_help)                     | N/A             | Show help screen (this screen)                          |
+| [help-pb](#check_cache_help-pb)               | N/A             | Show help screen as a protocol buffer payload           |
+| [show-default](#check_cache_show-default)     | N/A             | Show default values for a given command                 |
+| [help-short](#check_cache_help-short)         | N/A             | Show help screen (short format).                        |
+| [key](#check_cache_key)                       |                 | The key (will not be parsed)                            |
+| [host](#check_cache_host)                     |                 | The host to look for (translates into the key)          |
+| [command](#check_cache_command)               |                 | The command to look for (translates into the key)       |
+| [channel](#check_cache_channel)               |                 | The channel to look for (translates into the key)       |
+| [alias](#check_cache_alias)                   |                 | The alias to look for (translates into the key)         |
+| [not-found-msg](#check_cache_not-found-msg)   | Entry not found | The message to display when a message is not found      |
+| [not-found-code](#check_cache_not-found-code) | unknown         | The return status to return when a message is not found |
 
 
 <a name="check_cache_help"/>
@@ -162,33 +158,26 @@ The return status to return when a message is not found
 
 # Configuration
 
-
-
-## /settings/cache
-
-`/settings/cache`
-
-**CACHE**
+<a name="/settings/cache"/>
+## CACHE
 
 Section for simple cache module (SimpleCache.dll).
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [channel](#/settings/cache_channel) | CACHE | CHANNEL|
-| [primary index](#/settings/cache_primary index) | ${alias-or-command} | PRIMARY CACHE INDEX|
-
-
-**Sample**::
-
-```
-# CACHE
+```ini
 # Section for simple cache module (SimpleCache.dll).
 [/settings/cache]
 channel=CACHE
 primary index=${alias-or-command}
 
 ```
+
+
+| Key                                             | Default Value       | Description         |
+|-------------------------------------------------|---------------------|---------------------|
+| [channel](#/settings/cache_channel)             | CACHE               | CHANNEL             |
+| [primary index](#/settings/cache_primary index) | ${alias-or-command} | PRIMARY CACHE INDEX |
+
+
 
 
 <a name="/settings/cache_channel"/>
@@ -198,15 +187,18 @@ primary index=${alias-or-command}
 
 The channel to listen to.
 
-**Path**: /settings/cache
 
-**Key**: channel
 
-**Default value**: CACHE
 
-**Used by**: :module:`SimpleCache`
+| Key            | Description                         |
+|----------------|-------------------------------------|
+| Path:          | [/settings/cache](#/settings/cache) |
+| Key:           | channel                             |
+| Default value: | `CACHE`                             |
+| Used by:       | SimpleCache                         |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/cache]
@@ -223,15 +215,18 @@ channel=CACHE
 Set this to the value you want to use as unique key for the cache.
 Can be any arbitrary string as well as include any of the following special keywords:${command} = The command name, ${host} the host, ${channel} the recieving channel, ${alias} the alias for the command, ${alias-or-command} = alias if set otherweise command, ${message} = the message data (no escape), ${result} = The result status (number).
 
-**Path**: /settings/cache
 
-**Key**: primary index
 
-**Default value**: ${alias-or-command}
 
-**Used by**: :module:`SimpleCache`
+| Key            | Description                         |
+|----------------|-------------------------------------|
+| Path:          | [/settings/cache](#/settings/cache) |
+| Key:           | primary index                       |
+| Default value: | `${alias-or-command}`               |
+| Used by:       | SimpleCache                         |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/cache]

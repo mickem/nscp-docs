@@ -2,50 +2,48 @@
 
 Forward information as syslog messages to a syslog server
 
-## Query list
+
+
+## List of commands
 
 A list of all available queries (check commands)
 
-| Command | Description|
-| ------- | -----------|
-| [submit_syslog](#submit_syslog) | Submit information to the remote syslog server.|
+| Command                         | Description                                     |
+|---------------------------------|-------------------------------------------------|
+| [submit_syslog](#submit_syslog) | Submit information to the remote syslog server. |
 
 
 
 
-## Command list
-
-**TODO:** Add a list of all external commands (this is not check commands)
-
-## Configuration list
+## List of Configuration
 
 
-Common Keys:
+### Common Keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/syslog/client](#/settings/syslog/client) | [channel](#/settings/syslog/client_channel) | CHANNEL|
-| [/settings/syslog/client](#/settings/syslog/client) | [hostname](#/settings/syslog/client_hostname) | HOSTNAME|
-| [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) | [address](#/settings/syslog/client/targets/default_address) | TARGET ADDRESS|
-| [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) | [retries](#/settings/syslog/client/targets/default_retries) | RETRIES|
-| [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) | [timeout](#/settings/syslog/client/targets/default_timeout) | TIMEOUT|
+| Path / Section                                                                      | Key                                                         | Description    |
+|-------------------------------------------------------------------------------------|-------------------------------------------------------------|----------------|
+| [/settings/syslog/client](#/settings/syslog/client)                                 | [channel](#/settings/syslog/client_channel)                 | CHANNEL        |
+| [/settings/syslog/client](#/settings/syslog/client)                                 | [hostname](#/settings/syslog/client_hostname)               | HOSTNAME       |
+| [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) | [address](#/settings/syslog/client/targets/default_address) | TARGET ADDRESS |
+| [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) | [retries](#/settings/syslog/client/targets/default_retries) | RETRIES        |
+| [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) | [timeout](#/settings/syslog/client/targets/default_timeout) | TIMEOUT        |
 
-Advanced keys:
+### Advanced keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) | [host](#/settings/syslog/client/targets/default_host) | TARGET HOST|
-| [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) | [port](#/settings/syslog/client/targets/default_port) | TARGET PORT|
+| Path / Section                                                                      | Key                                                   | Description |
+|-------------------------------------------------------------------------------------|-------------------------------------------------------|-------------|
+| [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) | [host](#/settings/syslog/client/targets/default_host) | TARGET HOST |
+| [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) | [port](#/settings/syslog/client/targets/default_port) | TARGET PORT |
 
-Sample keys:
+### Sample keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) | [address](#/settings/syslog/client/targets/sample_address) | TARGET ADDRESS|
-| [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) | [host](#/settings/syslog/client/targets/sample_host) | TARGET HOST|
-| [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) | [port](#/settings/syslog/client/targets/sample_port) | TARGET PORT|
-| [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) | [retries](#/settings/syslog/client/targets/sample_retries) | RETRIES|
-| [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) | [timeout](#/settings/syslog/client/targets/sample_timeout) | TIMEOUT|
+| Path / Section                                                                    | Key                                                        | Description    |
+|-----------------------------------------------------------------------------------|------------------------------------------------------------|----------------|
+| [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) | [address](#/settings/syslog/client/targets/sample_address) | TARGET ADDRESS |
+| [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) | [host](#/settings/syslog/client/targets/sample_host)       | TARGET HOST    |
+| [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) | [port](#/settings/syslog/client/targets/sample_port)       | TARGET PORT    |
+| [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) | [retries](#/settings/syslog/client/targets/sample_retries) | RETRIES        |
+| [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) | [timeout](#/settings/syslog/client/targets/sample_timeout) | TIMEOUT        |
 
 
 
@@ -61,37 +59,36 @@ Submit information to the remote syslog server.
 ### Usage
 
 
-
-| Option | Default Value | Description|
-| ------ | ------------- | -----------|
-| [help](#submit_syslog_help) | N/A | Show help screen (this screen)|
-| [help-pb](#submit_syslog_help-pb) | N/A | Show help screen as a protocol buffer payload|
-| [show-default](#submit_syslog_show-default) | N/A | Show default values for a given command|
-| [help-short](#submit_syslog_help-short) | N/A | Show help screen (short format).|
-| [host](#submit_syslog_host) |  | The host of the host running the server|
-| [port](#submit_syslog_port) |  | The port of the host running the server|
-| [address](#submit_syslog_address) |  | The address (host:port) of the host running the server|
-| [timeout](#submit_syslog_timeout) |  | Number of seconds before connection times out (default=10)|
-| [target](#submit_syslog_target) |  | Target to use (lookup connection info from config)|
-| [retry](#submit_syslog_retry) |  | Number of times ti retry a failed connection attempt (default=2)|
-| [retries](#submit_syslog_retries) |  | legacy version of retry|
-| [source-host](#submit_syslog_source-host) |  | Source/sender host name (default is auto which means use the name of the actual host)|
-| [sender-host](#submit_syslog_sender-host) |  | Source/sender host name (default is auto which means use the name of the actual host)|
-| [command](#submit_syslog_command) |  | The name of the command that the remote daemon should run|
-| [alias](#submit_syslog_alias) |  | Same as command|
-| [message](#submit_syslog_message) |  | Message|
-| [result](#submit_syslog_result) |  | Result code either a number or OK, WARN, CRIT, UNKNOWN|
-| [separator](#submit_syslog_separator) |  | Separator to use for the batch command (default is |)|
-| [batch](#submit_syslog_batch) |  | Add multiple records using the separator format is: command|result|message|
-| [path](#submit_syslog_path) |  | |
-| [severity](#submit_syslog_severity) |  | Severity of error message|
-| [unknown-severity](#submit_syslog_unknown-severity) |  | Severity of error message|
-| [ok-severity](#submit_syslog_ok-severity) |  | Severity of error message|
-| [warning-severity](#submit_syslog_warning-severity) |  | Severity of error message|
-| [critical-severity](#submit_syslog_critical-severity) |  | Severity of error message|
-| [facility](#submit_syslog_facility) |  | Facility of error message|
-| [tag template](#submit_syslog_tag template) |  | Tag template (TODO)|
-| [message template](#submit_syslog_message template) |  | Message template (TODO)|
+| Option                                                | Default Value | Description                                                                           |
+|-------------------------------------------------------|---------------|---------------------------------------------------------------------------------------|
+| [help](#submit_syslog_help)                           | N/A           | Show help screen (this screen)                                                        |
+| [help-pb](#submit_syslog_help-pb)                     | N/A           | Show help screen as a protocol buffer payload                                         |
+| [show-default](#submit_syslog_show-default)           | N/A           | Show default values for a given command                                               |
+| [help-short](#submit_syslog_help-short)               | N/A           | Show help screen (short format).                                                      |
+| [host](#submit_syslog_host)                           |               | The host of the host running the server                                               |
+| [port](#submit_syslog_port)                           |               | The port of the host running the server                                               |
+| [address](#submit_syslog_address)                     |               | The address (host:port) of the host running the server                                |
+| [timeout](#submit_syslog_timeout)                     |               | Number of seconds before connection times out (default=10)                            |
+| [target](#submit_syslog_target)                       |               | Target to use (lookup connection info from config)                                    |
+| [retry](#submit_syslog_retry)                         |               | Number of times ti retry a failed connection attempt (default=2)                      |
+| [retries](#submit_syslog_retries)                     |               | legacy version of retry                                                               |
+| [source-host](#submit_syslog_source-host)             |               | Source/sender host name (default is auto which means use the name of the actual host) |
+| [sender-host](#submit_syslog_sender-host)             |               | Source/sender host name (default is auto which means use the name of the actual host) |
+| [command](#submit_syslog_command)                     |               | The name of the command that the remote daemon should run                             |
+| [alias](#submit_syslog_alias)                         |               | Same as command                                                                       |
+| [message](#submit_syslog_message)                     |               | Message                                                                               |
+| [result](#submit_syslog_result)                       |               | Result code either a number or OK, WARN, CRIT, UNKNOWN                                |
+| [separator](#submit_syslog_separator)                 |               | Separator to use for the batch command (default is |)                                 |
+| [batch](#submit_syslog_batch)                         |               | Add multiple records using the separator format is: command|result|message            |
+| [path](#submit_syslog_path)                           |               |                                                                                       |
+| [severity](#submit_syslog_severity)                   |               | Severity of error message                                                             |
+| [unknown-severity](#submit_syslog_unknown-severity)   |               | Severity of error message                                                             |
+| [ok-severity](#submit_syslog_ok-severity)             |               | Severity of error message                                                             |
+| [warning-severity](#submit_syslog_warning-severity)   |               | Severity of error message                                                             |
+| [critical-severity](#submit_syslog_critical-severity) |               | Severity of error message                                                             |
+| [facility](#submit_syslog_facility)                   |               | Facility of error message                                                             |
+| [tag template](#submit_syslog_tag template)           |               | Tag template (TODO)                                                                   |
+| [message template](#submit_syslog_message template)   |               | Message template (TODO)                                                               |
 
 
 <a name="submit_syslog_help"/>
@@ -322,33 +319,26 @@ Message template (TODO)
 
 # Configuration
 
-
-
-## /settings/syslog/client
-
-`/settings/syslog/client`
-
-**SYSLOG CLIENT SECTION**
+<a name="/settings/syslog/client"/>
+## SYSLOG CLIENT SECTION
 
 Section for SYSLOG passive check module.
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [channel](#/settings/syslog/client_channel) | syslog | CHANNEL|
-| [hostname](#/settings/syslog/client_hostname) | auto | HOSTNAME|
-
-
-**Sample**::
-
-```
-# SYSLOG CLIENT SECTION
+```ini
 # Section for SYSLOG passive check module.
 [/settings/syslog/client]
 channel=syslog
 hostname=auto
 
 ```
+
+
+| Key                                           | Default Value | Description |
+|-----------------------------------------------|---------------|-------------|
+| [channel](#/settings/syslog/client_channel)   | syslog        | CHANNEL     |
+| [hostname](#/settings/syslog/client_hostname) | auto          | HOSTNAME    |
+
+
 
 
 <a name="/settings/syslog/client_channel"/>
@@ -358,15 +348,18 @@ hostname=auto
 
 The channel to listen to.
 
-**Path**: /settings/syslog/client
 
-**Key**: channel
 
-**Default value**: syslog
 
-**Used by**: :module:`SyslogClient`
+| Key            | Description                                         |
+|----------------|-----------------------------------------------------|
+| Path:          | [/settings/syslog/client](#/settings/syslog/client) |
+| Key:           | channel                                             |
+| Default value: | `syslog`                                            |
+| Used by:       | SyslogClient                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/syslog/client]
@@ -393,15 +386,18 @@ ${domain_lc}	Domainname in lowercase
 ${domain_uc}	Domainname in uppercase
 
 
-**Path**: /settings/syslog/client
 
-**Key**: hostname
 
-**Default value**: auto
 
-**Used by**: :module:`SyslogClient`
+| Key            | Description                                         |
+|----------------|-----------------------------------------------------|
+| Path:          | [/settings/syslog/client](#/settings/syslog/client) |
+| Key:           | hostname                                            |
+| Default value: | `auto`                                              |
+| Used by:       | SyslogClient                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/syslog/client]
@@ -410,23 +406,12 @@ hostname=auto
 ```
 
 
-
-
-## /settings/syslog/client/handlers
-
-`/settings/syslog/client/handlers`
-
-**CLIENT HANDLER SECTION**
+<a name="/settings/syslog/client/handlers"/>
+## CLIENT HANDLER SECTION
 
 
 
-
-
-
-**Sample**::
-
-```
-# CLIENT HANDLER SECTION
+```ini
 # 
 [/settings/syslog/client/handlers]
 
@@ -435,21 +420,14 @@ hostname=auto
 
 
 
-## /settings/syslog/client/targets
 
-`/settings/syslog/client/targets`
 
-**REMOTE TARGET DEFINITIONS**
-
+<a name="/settings/syslog/client/targets"/>
+## REMOTE TARGET DEFINITIONS
 
 
 
-
-
-**Sample**::
-
-```
-# REMOTE TARGET DEFINITIONS
+```ini
 # 
 [/settings/syslog/client/targets]
 
@@ -458,37 +436,31 @@ hostname=auto
 
 
 
-## /settings/syslog/client/targets/default
 
-`/settings/syslog/client/targets/default`
 
-**TARGET**
+<a name="/settings/syslog/client/targets/default"/>
+## TARGET
 
 Target definition for: default
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [address](#/settings/syslog/client/targets/default_address) |  | TARGET ADDRESS|
-| [host](#/settings/syslog/client/targets/default_host) |  | TARGET HOST|
-| [port](#/settings/syslog/client/targets/default_port) |  | TARGET PORT|
-| [retries](#/settings/syslog/client/targets/default_retries) | 3 | RETRIES|
-| [timeout](#/settings/syslog/client/targets/default_timeout) | 30 | TIMEOUT|
-
-
-**Sample**::
-
-```
-# TARGET
+```ini
 # Target definition for: default
 [/settings/syslog/client/targets/default]
-address=
-host=
-port=
 retries=3
 timeout=30
 
 ```
+
+
+| Key                                                         | Default Value | Description    |
+|-------------------------------------------------------------|---------------|----------------|
+| [address](#/settings/syslog/client/targets/default_address) |               | TARGET ADDRESS |
+| [host](#/settings/syslog/client/targets/default_host)       |               | TARGET HOST    |
+| [port](#/settings/syslog/client/targets/default_port)       |               | TARGET PORT    |
+| [retries](#/settings/syslog/client/targets/default_retries) | 3             | RETRIES        |
+| [timeout](#/settings/syslog/client/targets/default_timeout) | 30            | TIMEOUT        |
+
+
 
 
 <a name="/settings/syslog/client/targets/default_address"/>
@@ -498,15 +470,19 @@ timeout=30
 
 Target host address
 
-**Path**: /settings/syslog/client/targets/default
 
-**Key**: address
 
-**Default value**: 
 
-**Used by**: :module:`SyslogClient`
 
-**Sample**::
+| Key            | Description                                                                         |
+|----------------|-------------------------------------------------------------------------------------|
+| Path:          | [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) |
+| Key:           | address                                                                             |
+| Default value: | _N/A_                                                                               |
+| Used by:       | SyslogClient                                                                        |
+
+
+#### Sample
 
 ```
 [/settings/syslog/client/targets/default]
@@ -522,17 +498,20 @@ address=
 
 The target server to report results to.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/syslog/client/targets/default
 
-**Key**: host
 
-**Default value**: 
 
-**Used by**: :module:`SyslogClient`
+| Key            | Description                                                                         |
+|----------------|-------------------------------------------------------------------------------------|
+| Path:          | [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) |
+| Key:           | host                                                                                |
+| Advanced:      | Yes (means it is not commonly used)                                                 |
+| Default value: | _N/A_                                                                               |
+| Used by:       | SyslogClient                                                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/syslog/client/targets/default]
@@ -548,17 +527,20 @@ host=
 
 The target server port
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/syslog/client/targets/default
 
-**Key**: port
 
-**Default value**: 
 
-**Used by**: :module:`SyslogClient`
+| Key            | Description                                                                         |
+|----------------|-------------------------------------------------------------------------------------|
+| Path:          | [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) |
+| Key:           | port                                                                                |
+| Advanced:      | Yes (means it is not commonly used)                                                 |
+| Default value: | _N/A_                                                                               |
+| Used by:       | SyslogClient                                                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/syslog/client/targets/default]
@@ -574,15 +556,18 @@ port=
 
 Number of times to retry sending.
 
-**Path**: /settings/syslog/client/targets/default
 
-**Key**: retries
 
-**Default value**: 3
 
-**Used by**: :module:`SyslogClient`
+| Key            | Description                                                                         |
+|----------------|-------------------------------------------------------------------------------------|
+| Path:          | [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) |
+| Key:           | retries                                                                             |
+| Default value: | `3`                                                                                 |
+| Used by:       | SyslogClient                                                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/syslog/client/targets/default]
@@ -598,15 +583,18 @@ retries=3
 
 Timeout when reading/writing packets to/from sockets.
 
-**Path**: /settings/syslog/client/targets/default
 
-**Key**: timeout
 
-**Default value**: 30
 
-**Used by**: :module:`SyslogClient`
+| Key            | Description                                                                         |
+|----------------|-------------------------------------------------------------------------------------|
+| Path:          | [/settings/syslog/client/targets/default](#/settings/syslog/client/targets/default) |
+| Key:           | timeout                                                                             |
+| Default value: | `30`                                                                                |
+| Used by:       | SyslogClient                                                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/syslog/client/targets/default]
@@ -615,39 +603,29 @@ timeout=30
 ```
 
 
-
-
-## /settings/syslog/client/targets/sample
-
-`/settings/syslog/client/targets/sample`
-
-**TARGET**
+<a name="/settings/syslog/client/targets/sample"/>
+## TARGET
 
 Target definition for: sample
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [address](#/settings/syslog/client/targets/sample_address) |  | TARGET ADDRESS|
-| [host](#/settings/syslog/client/targets/sample_host) |  | TARGET HOST|
-| [port](#/settings/syslog/client/targets/sample_port) |  | TARGET PORT|
-| [retries](#/settings/syslog/client/targets/sample_retries) | 3 | RETRIES|
-| [timeout](#/settings/syslog/client/targets/sample_timeout) | 30 | TIMEOUT|
-
-
-**Sample**::
-
-```
-# TARGET
+```ini
 # Target definition for: sample
 [/settings/syslog/client/targets/sample]
-address=
-host=
-port=
 retries=3
 timeout=30
 
 ```
+
+
+| Key                                                        | Default Value | Description    |
+|------------------------------------------------------------|---------------|----------------|
+| [address](#/settings/syslog/client/targets/sample_address) |               | TARGET ADDRESS |
+| [host](#/settings/syslog/client/targets/sample_host)       |               | TARGET HOST    |
+| [port](#/settings/syslog/client/targets/sample_port)       |               | TARGET PORT    |
+| [retries](#/settings/syslog/client/targets/sample_retries) | 3             | RETRIES        |
+| [timeout](#/settings/syslog/client/targets/sample_timeout) | 30            | TIMEOUT        |
+
+
 
 
 <a name="/settings/syslog/client/targets/sample_address"/>
@@ -657,17 +635,20 @@ timeout=30
 
 Target host address
 
-**Path**: /settings/syslog/client/targets/sample
 
-**Key**: address
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
 
-**Used by**: :module:`SyslogClient`
+| Key            | Description                                                                       |
+|----------------|-----------------------------------------------------------------------------------|
+| Path:          | [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) |
+| Key:           | address                                                                           |
+| Default value: | _N/A_                                                                             |
+| Sample key:    | Yes (This section is only to show how this key is used)                           |
+| Used by:       | SyslogClient                                                                      |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/syslog/client/targets/sample]
@@ -683,19 +664,21 @@ address=
 
 The target server to report results to.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/syslog/client/targets/sample
 
-**Key**: host
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                       |
+|----------------|-----------------------------------------------------------------------------------|
+| Path:          | [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) |
+| Key:           | host                                                                              |
+| Advanced:      | Yes (means it is not commonly used)                                               |
+| Default value: | _N/A_                                                                             |
+| Sample key:    | Yes (This section is only to show how this key is used)                           |
+| Used by:       | SyslogClient                                                                      |
 
-**Used by**: :module:`SyslogClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/syslog/client/targets/sample]
@@ -711,19 +694,21 @@ host=
 
 The target server port
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/syslog/client/targets/sample
 
-**Key**: port
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                       |
+|----------------|-----------------------------------------------------------------------------------|
+| Path:          | [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) |
+| Key:           | port                                                                              |
+| Advanced:      | Yes (means it is not commonly used)                                               |
+| Default value: | _N/A_                                                                             |
+| Sample key:    | Yes (This section is only to show how this key is used)                           |
+| Used by:       | SyslogClient                                                                      |
 
-**Used by**: :module:`SyslogClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/syslog/client/targets/sample]
@@ -739,17 +724,19 @@ port=
 
 Number of times to retry sending.
 
-**Path**: /settings/syslog/client/targets/sample
 
-**Key**: retries
 
-**Default value**: 3
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                       |
+|----------------|-----------------------------------------------------------------------------------|
+| Path:          | [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) |
+| Key:           | retries                                                                           |
+| Default value: | `3`                                                                               |
+| Sample key:    | Yes (This section is only to show how this key is used)                           |
+| Used by:       | SyslogClient                                                                      |
 
-**Used by**: :module:`SyslogClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/syslog/client/targets/sample]
@@ -765,17 +752,19 @@ retries=3
 
 Timeout when reading/writing packets to/from sockets.
 
-**Path**: /settings/syslog/client/targets/sample
 
-**Key**: timeout
 
-**Default value**: 30
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                       |
+|----------------|-----------------------------------------------------------------------------------|
+| Path:          | [/settings/syslog/client/targets/sample](#/settings/syslog/client/targets/sample) |
+| Key:           | timeout                                                                           |
+| Default value: | `30`                                                                              |
+| Sample key:    | Yes (This section is only to show how this key is used)                           |
+| Used by:       | SyslogClient                                                                      |
 
-**Used by**: :module:`SyslogClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/syslog/client/targets/sample]

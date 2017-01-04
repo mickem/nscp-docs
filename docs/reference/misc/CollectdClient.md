@@ -6,38 +6,36 @@ CollectD client can be used to submit metrics to a collectd server
 
 
 
-## Command list
-
-**TODO:** Add a list of all external commands (this is not check commands)
-
-## Configuration list
 
 
-Common Keys:
+## List of Configuration
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/collectd/client](#/settings/collectd/client) | [hostname](#/settings/collectd/client_hostname) | HOSTNAME|
-| [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) | [address](#/settings/collectd/client/targets/default_address) | TARGET ADDRESS|
-| [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) | [retries](#/settings/collectd/client/targets/default_retries) | RETRIES|
-| [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) | [timeout](#/settings/collectd/client/targets/default_timeout) | TIMEOUT|
 
-Advanced keys:
+### Common Keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) | [host](#/settings/collectd/client/targets/default_host) | TARGET HOST|
-| [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) | [port](#/settings/collectd/client/targets/default_port) | TARGET PORT|
+| Path / Section                                                                          | Key                                                           | Description    |
+|-----------------------------------------------------------------------------------------|---------------------------------------------------------------|----------------|
+| [/settings/collectd/client](#/settings/collectd/client)                                 | [hostname](#/settings/collectd/client_hostname)               | HOSTNAME       |
+| [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) | [address](#/settings/collectd/client/targets/default_address) | TARGET ADDRESS |
+| [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) | [retries](#/settings/collectd/client/targets/default_retries) | RETRIES        |
+| [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) | [timeout](#/settings/collectd/client/targets/default_timeout) | TIMEOUT        |
 
-Sample keys:
+### Advanced keys
 
-| Path / Section | Key | Description|
-| -------------- | --- | -----------|
-| [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) | [address](#/settings/collectd/client/targets/sample_address) | TARGET ADDRESS|
-| [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) | [host](#/settings/collectd/client/targets/sample_host) | TARGET HOST|
-| [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) | [port](#/settings/collectd/client/targets/sample_port) | TARGET PORT|
-| [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) | [retries](#/settings/collectd/client/targets/sample_retries) | RETRIES|
-| [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) | [timeout](#/settings/collectd/client/targets/sample_timeout) | TIMEOUT|
+| Path / Section                                                                          | Key                                                     | Description |
+|-----------------------------------------------------------------------------------------|---------------------------------------------------------|-------------|
+| [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) | [host](#/settings/collectd/client/targets/default_host) | TARGET HOST |
+| [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) | [port](#/settings/collectd/client/targets/default_port) | TARGET PORT |
+
+### Sample keys
+
+| Path / Section                                                                        | Key                                                          | Description    |
+|---------------------------------------------------------------------------------------|--------------------------------------------------------------|----------------|
+| [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) | [address](#/settings/collectd/client/targets/sample_address) | TARGET ADDRESS |
+| [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) | [host](#/settings/collectd/client/targets/sample_host)       | TARGET HOST    |
+| [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) | [port](#/settings/collectd/client/targets/sample_port)       | TARGET PORT    |
+| [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) | [retries](#/settings/collectd/client/targets/sample_retries) | RETRIES        |
+| [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) | [timeout](#/settings/collectd/client/targets/sample_timeout) | TIMEOUT        |
 
 
 
@@ -45,31 +43,24 @@ Sample keys:
 
 # Configuration
 
-
-
-## /settings/collectd/client
-
-`/settings/collectd/client`
-
-**COLLECTD CLIENT SECTION**
+<a name="/settings/collectd/client"/>
+## COLLECTD CLIENT SECTION
 
 Section for NSCA passive check module.
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [hostname](#/settings/collectd/client_hostname) | auto | HOSTNAME|
-
-
-**Sample**::
-
-```
-# COLLECTD CLIENT SECTION
+```ini
 # Section for NSCA passive check module.
 [/settings/collectd/client]
 hostname=auto
 
 ```
+
+
+| Key                                             | Default Value | Description |
+|-------------------------------------------------|---------------|-------------|
+| [hostname](#/settings/collectd/client_hostname) | auto          | HOSTNAME    |
+
+
 
 
 <a name="/settings/collectd/client_hostname"/>
@@ -90,15 +81,18 @@ ${domain_lc}	Domainname in lowercase
 ${domain_uc}	Domainname in uppercase
 
 
-**Path**: /settings/collectd/client
 
-**Key**: hostname
 
-**Default value**: auto
 
-**Used by**: :module:`CollectdClient`
+| Key            | Description                                             |
+|----------------|---------------------------------------------------------|
+| Path:          | [/settings/collectd/client](#/settings/collectd/client) |
+| Key:           | hostname                                                |
+| Default value: | `auto`                                                  |
+| Used by:       | CollectdClient                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/collectd/client]
@@ -107,23 +101,12 @@ hostname=auto
 ```
 
 
-
-
-## /settings/collectd/client/targets
-
-`/settings/collectd/client/targets`
-
-**REMOTE TARGET DEFINITIONS**
+<a name="/settings/collectd/client/targets"/>
+## REMOTE TARGET DEFINITIONS
 
 
 
-
-
-
-**Sample**::
-
-```
-# REMOTE TARGET DEFINITIONS
+```ini
 # 
 [/settings/collectd/client/targets]
 
@@ -132,37 +115,31 @@ hostname=auto
 
 
 
-## /settings/collectd/client/targets/default
 
-`/settings/collectd/client/targets/default`
 
-**TARGET**
+<a name="/settings/collectd/client/targets/default"/>
+## TARGET
 
 Target definition for: default
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [address](#/settings/collectd/client/targets/default_address) |  | TARGET ADDRESS|
-| [host](#/settings/collectd/client/targets/default_host) |  | TARGET HOST|
-| [port](#/settings/collectd/client/targets/default_port) |  | TARGET PORT|
-| [retries](#/settings/collectd/client/targets/default_retries) | 3 | RETRIES|
-| [timeout](#/settings/collectd/client/targets/default_timeout) | 30 | TIMEOUT|
-
-
-**Sample**::
-
-```
-# TARGET
+```ini
 # Target definition for: default
 [/settings/collectd/client/targets/default]
-address=
-host=
-port=
 retries=3
 timeout=30
 
 ```
+
+
+| Key                                                           | Default Value | Description    |
+|---------------------------------------------------------------|---------------|----------------|
+| [address](#/settings/collectd/client/targets/default_address) |               | TARGET ADDRESS |
+| [host](#/settings/collectd/client/targets/default_host)       |               | TARGET HOST    |
+| [port](#/settings/collectd/client/targets/default_port)       |               | TARGET PORT    |
+| [retries](#/settings/collectd/client/targets/default_retries) | 3             | RETRIES        |
+| [timeout](#/settings/collectd/client/targets/default_timeout) | 30            | TIMEOUT        |
+
+
 
 
 <a name="/settings/collectd/client/targets/default_address"/>
@@ -172,15 +149,19 @@ timeout=30
 
 Target host address
 
-**Path**: /settings/collectd/client/targets/default
 
-**Key**: address
 
-**Default value**: 
 
-**Used by**: :module:`CollectdClient`
 
-**Sample**::
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) |
+| Key:           | address                                                                                 |
+| Default value: | _N/A_                                                                                   |
+| Used by:       | CollectdClient                                                                          |
+
+
+#### Sample
 
 ```
 [/settings/collectd/client/targets/default]
@@ -196,17 +177,20 @@ address=
 
 The target server to report results to.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/collectd/client/targets/default
 
-**Key**: host
 
-**Default value**: 
 
-**Used by**: :module:`CollectdClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) |
+| Key:           | host                                                                                    |
+| Advanced:      | Yes (means it is not commonly used)                                                     |
+| Default value: | _N/A_                                                                                   |
+| Used by:       | CollectdClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/collectd/client/targets/default]
@@ -222,17 +206,20 @@ host=
 
 The target server port
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/collectd/client/targets/default
 
-**Key**: port
 
-**Default value**: 
 
-**Used by**: :module:`CollectdClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) |
+| Key:           | port                                                                                    |
+| Advanced:      | Yes (means it is not commonly used)                                                     |
+| Default value: | _N/A_                                                                                   |
+| Used by:       | CollectdClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/collectd/client/targets/default]
@@ -248,15 +235,18 @@ port=
 
 Number of times to retry sending.
 
-**Path**: /settings/collectd/client/targets/default
 
-**Key**: retries
 
-**Default value**: 3
 
-**Used by**: :module:`CollectdClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) |
+| Key:           | retries                                                                                 |
+| Default value: | `3`                                                                                     |
+| Used by:       | CollectdClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/collectd/client/targets/default]
@@ -272,15 +262,18 @@ retries=3
 
 Timeout when reading/writing packets to/from sockets.
 
-**Path**: /settings/collectd/client/targets/default
 
-**Key**: timeout
 
-**Default value**: 30
 
-**Used by**: :module:`CollectdClient`
+| Key            | Description                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| Path:          | [/settings/collectd/client/targets/default](#/settings/collectd/client/targets/default) |
+| Key:           | timeout                                                                                 |
+| Default value: | `30`                                                                                    |
+| Used by:       | CollectdClient                                                                          |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/collectd/client/targets/default]
@@ -289,39 +282,29 @@ timeout=30
 ```
 
 
-
-
-## /settings/collectd/client/targets/sample
-
-`/settings/collectd/client/targets/sample`
-
-**TARGET**
+<a name="/settings/collectd/client/targets/sample"/>
+## TARGET
 
 Target definition for: sample
 
-
-| Key | Default Value | Description|
-| --- | ------------- | -----------|
-| [address](#/settings/collectd/client/targets/sample_address) |  | TARGET ADDRESS|
-| [host](#/settings/collectd/client/targets/sample_host) |  | TARGET HOST|
-| [port](#/settings/collectd/client/targets/sample_port) |  | TARGET PORT|
-| [retries](#/settings/collectd/client/targets/sample_retries) | 3 | RETRIES|
-| [timeout](#/settings/collectd/client/targets/sample_timeout) | 30 | TIMEOUT|
-
-
-**Sample**::
-
-```
-# TARGET
+```ini
 # Target definition for: sample
 [/settings/collectd/client/targets/sample]
-address=
-host=
-port=
 retries=3
 timeout=30
 
 ```
+
+
+| Key                                                          | Default Value | Description    |
+|--------------------------------------------------------------|---------------|----------------|
+| [address](#/settings/collectd/client/targets/sample_address) |               | TARGET ADDRESS |
+| [host](#/settings/collectd/client/targets/sample_host)       |               | TARGET HOST    |
+| [port](#/settings/collectd/client/targets/sample_port)       |               | TARGET PORT    |
+| [retries](#/settings/collectd/client/targets/sample_retries) | 3             | RETRIES        |
+| [timeout](#/settings/collectd/client/targets/sample_timeout) | 30            | TIMEOUT        |
+
+
 
 
 <a name="/settings/collectd/client/targets/sample_address"/>
@@ -331,17 +314,20 @@ timeout=30
 
 Target host address
 
-**Path**: /settings/collectd/client/targets/sample
 
-**Key**: address
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
 
-**Used by**: :module:`CollectdClient`
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) |
+| Key:           | address                                                                               |
+| Default value: | _N/A_                                                                                 |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | CollectdClient                                                                        |
 
-**Sample**::
+
+#### Sample
 
 ```
 [/settings/collectd/client/targets/sample]
@@ -357,19 +343,21 @@ address=
 
 The target server to report results to.
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/collectd/client/targets/sample
 
-**Key**: host
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) |
+| Key:           | host                                                                                  |
+| Advanced:      | Yes (means it is not commonly used)                                                   |
+| Default value: | _N/A_                                                                                 |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | CollectdClient                                                                        |
 
-**Used by**: :module:`CollectdClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/collectd/client/targets/sample]
@@ -385,19 +373,21 @@ host=
 
 The target server port
 
-**Advanced** (means it is not commonly used)
 
-**Path**: /settings/collectd/client/targets/sample
 
-**Key**: port
 
-**Default value**: 
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) |
+| Key:           | port                                                                                  |
+| Advanced:      | Yes (means it is not commonly used)                                                   |
+| Default value: | _N/A_                                                                                 |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | CollectdClient                                                                        |
 
-**Used by**: :module:`CollectdClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/collectd/client/targets/sample]
@@ -413,17 +403,19 @@ port=
 
 Number of times to retry sending.
 
-**Path**: /settings/collectd/client/targets/sample
 
-**Key**: retries
 
-**Default value**: 3
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) |
+| Key:           | retries                                                                               |
+| Default value: | `3`                                                                                   |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | CollectdClient                                                                        |
 
-**Used by**: :module:`CollectdClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/collectd/client/targets/sample]
@@ -439,17 +431,19 @@ retries=3
 
 Timeout when reading/writing packets to/from sockets.
 
-**Path**: /settings/collectd/client/targets/sample
 
-**Key**: timeout
 
-**Default value**: 30
 
-**Sample key**: This key is provided as a sample to show how to configure objects
+| Key            | Description                                                                           |
+|----------------|---------------------------------------------------------------------------------------|
+| Path:          | [/settings/collectd/client/targets/sample](#/settings/collectd/client/targets/sample) |
+| Key:           | timeout                                                                               |
+| Default value: | `30`                                                                                  |
+| Sample key:    | Yes (This section is only to show how this key is used)                               |
+| Used by:       | CollectdClient                                                                        |
 
-**Used by**: :module:`CollectdClient`
 
-**Sample**::
+#### Sample
 
 ```
 [/settings/collectd/client/targets/sample]
