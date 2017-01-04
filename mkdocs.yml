@@ -1,6 +1,6 @@
 site_name: NSClient++
 site_url: https://nsclient.org
-repo_url: https://github.com/mickem/nscp-docs/
+repo_url: https://github.com/mickem/nscp-docs
 repo_name: GitHub
 edit_uri: /
 theme: mkdocs
@@ -9,12 +9,13 @@ copyright: "NSClient++ is released under a GPLv2 license"
 extra_css: 
   - pygments.css
   - custom.css
-nscp_versions:
-  - 0.5.1
-  - 0.5.0
-  - 0.4.4
-  - 0.4.3
-  - 0.4.2
+extra:
+  versions:
+    - 0.5.1
+    - 0.5.0
+    - 0.4.4
+    - 0.4.3
+    - 0.4.2
 pages:
   - Manual:
     - NSClient++: index.md
@@ -24,8 +25,8 @@ pages:
     - Installing NSClient++: installing.md
     - Configuration: settings.md
     - FAQ: faq.md
-  - About NSClient++:
-    - About: about/index.md
+  - About:
+    - Documentation: about/index.md
     - Whats New: 
       - 0.4.0: about/whatsnew/0.4.0.md
       - 0.4.1: about/whatsnew/0.4.1.md
@@ -37,7 +38,7 @@ pages:
     - Reporting Bugs: about/bugs.md
     - Copyright: about/copyright.md
     - License: about/license.md
-  - NSClient++ Tutorial: tutorial/index.md
+  - Tutorial: tutorial/index.md
   - Howto:
     - Checking things: howto/checks.md
     - Performance Counters: howto/counters.md

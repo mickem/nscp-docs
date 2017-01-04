@@ -14,14 +14,14 @@
             {%- endif %}
 
           {%- block site_name %}
-            <a class="navbar-brand" href="{{ nav.homepage.url }}">{{ config.site_name }}</a>
+            <a class="navbar-brand" href="{{ config.site_url }}">{{ config.site_name }}</a>
           {%- endblock %}
         </div>
         
         
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            {%- if config.nscp_versions %}
+            {%- if config.extra.versions %}
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b></a>
@@ -29,7 +29,7 @@
                             <li>
                                 <a href="/">Latest documentation</a>
                             </li>
-                            {%- for v in config.nscp_versions %}
+                            {%- for v in config.extra.versions %}
                                 <li>
                                     <a href="/{{v}}">{{ v }} documentation</a>
                                 </li>
