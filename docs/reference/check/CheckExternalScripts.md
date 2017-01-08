@@ -212,7 +212,8 @@ Another use case of external scripts is to have event handlers which starts prog
 This is trickier then it sounds because all commands have a timeout and once that is reach they are killed.
 NSClient++ exits it also terminates all running script thus your "fix" will not be very long.
 
-To work around this you need to start the program without the control of NSClient++ (fork). To do this you need to set capture output to false like so:
+To work around this you need to start the program without the control of NSClient++ (fork). 
+To do this you need to set capture output to false like so:
 
 ```
 [/settings/external scripts/scripts/fix_problem]
@@ -222,8 +223,10 @@ capture output = false
 
 The draw back to this is that the script cannot return any output neither message nor status code.
 
-A word of warning using "start" or other similar measure to try to start a program in a regular script will cause unexpected issue with NSClient++ due to how handles are inherited in Windows.
-This will end up blocking the port and forcing a restart of the server. Thus `capture output = false` method is preferred.
+!!! danger
+    A word of warning using "start" or other similar measure to try to start a program in a regular script will cause a rather nasty unexpected issue with NSClient++ due to how handles are inherited in Windows.
+    Starting a background process in a script will end up blocking the port and forcing a restart of the server. 
+    Thus `capture output = false` method is preferred.
 
 
 

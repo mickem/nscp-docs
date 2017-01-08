@@ -1,1868 +1,1649 @@
-######
-# Plugin #
-
-## Common ##
-
-<dl>
-  <dt>    Common utility types (re-used in various messages below)</dt>
-  <dd>
-    <p>Common utility types (re-used in various messages below)</p>
-    <p>.. py:attribute:: ResultCode</p>
-    <p></p>
-    <p>A "nagios" status result.</p>
-    <p>========================= =====</p>
-    <p>Possible values           Id</p>
-    <p>========================= =====</p>
-    <p>OK                        0</p>
-    <p>WARNING                   1</p>
-    <p>CRITICAL                  2</p>
-    <p>UNKNOWN                   3</p>
-    <p>========================= =====</p>
-    <p>.. py:attribute:: DataType</p>
-    <p></p>
-    <p>Type of data fields.</p>
-    <p>@deprecated in favour of checking which field is available.</p>
-    <p>========================= =====</p>
-    <p>Possible values           Id</p>
-    <p>========================= =====</p>
-    <p>INT                       1</p>
-    <p>STRING                    2</p>
-    <p>FLOAT                     3</p>
-    <p>BOOL                      4</p>
-    <p>LIST                      5</p>
-    <p>========================= =====</p>
-    <p>.. py:attribute:: Version</p>
-    <p></p>
-    <p>Main protocol version used</p>
-    <p>@deprecated Makes very little sense and should be removed</p>
-    <p>========================= =====</p>
-    <p>Possible values           Id</p>
-    <p>========================= =====</p>
-    <p>VERSION_1                 1</p>
-    <p>========================= =====</p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.Common.AnyDataType`</p>
-    <p>* :py:class:`Plugin.Common.KeyValue`</p>
-    <p>* :py:class:`Plugin.Common.Host`</p>
-    <p>* :py:class:`Plugin.Common.Header`</p>
-    <p>* :py:class:`Plugin.Common.Attachment`</p>
-    <p>* :py:class:`Plugin.Common.PerformanceData`</p>
-    <p>* :py:class:`Plugin.Common.Status`</p>
-  </dd>
-</dl>
-### AnyDataType ###
-
-<dl>
-  <dt>    Data type used to wrap "any" primitive type.</dt>
-  <dd>
-    <p>Data type used to wrap "any" primitive type.</p>
-    <p>Used whenever the type can change.</p>
-    <p>.. py:attribute:: string_data</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p>String payload</p>
-    <p></p>
-    <p>.. py:attribute:: int_data</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p>Numeric integer payload</p>
-    <p></p>
-    <p>.. py:attribute:: float_data</p>
-    <p></p>
-    <p>A **optional** value of type **double**</p>
-    <p></p>
-    <p>Numeric floating point payload</p>
-    <p></p>
-    <p>.. py:attribute:: bool_data</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p>Boolean (true/false) payload</p>
-    <p></p>
-    <p>.. py:attribute:: list_data</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p>A string (multiple lines are separated by list entries</p>
-    <p>@todo: remove repeated modifier from this field.</p>
-    <p></p>
-  </dd>
-</dl>
-### KeyValue ###
-
-<dl>
-  <dt>    Key value pair</dt>
-  <dd>
-    <p>Key value pair</p>
-    <p>.. py:attribute:: key</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p>The key identifying the value</p>
-    <p></p>
-    <p>.. py:attribute:: value</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p>The value</p>
-    <p></p>
-    <p>.. py:attribute:: data</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p>Optional extra fields to store various custom data</p>
-    <p></p>
-  </dd>
-</dl>
-### Host ###
-
-<dl>
-  <dt>    Field identifying a host entry</dt>
-  <dd>
-    <p>Field identifying a host entry</p>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p>A unique identifier representing the host in *this* message</p>
-    <p></p>
-    <p>.. py:attribute:: host</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p>The host name</p>
-    <p></p>
-    <p>.. py:attribute:: address</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p>The address (usually the ip)</p>
-    <p></p>
-    <p>.. py:attribute:: protocol</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p>The protocol used to talk whit this host.</p>
-    <p></p>
-    <p>.. py:attribute:: comment</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p>A comment describing the host</p>
-    <p></p>
-    <p>.. py:attribute:: metadata</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>A key value store with attributes describing this host.</p>
-    <p>The content and use of this attributes are application defined.</p>
-    <p></p>
-    <p>.. py:attribute:: tags</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p>A numer of tags defined for this host (can be used for routing purposes).</p>
-    <p></p>
-  </dd>
-</dl>
-### Header ###
-
-<dl>
-  <dt>    Header used in all messages.</dt>
-  <dd>
-    <p>Header used in all messages.</p>
-    <p>Contains basic information about the message.</p>
-    <p>.. py:attribute:: version</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p>Version of message.</p>
-    <p>@ deprecated Not really useful</p>
-    <p></p>
-    <p>.. py:attribute:: max_supported_version</p>
-    <p></p>
-    <p>A **optional** value of type **enum**</p>
-    <p></p>
-    <p>Maximmu supported version.</p>
-    <p>Was planned to be used to negotiate version but was never used.</p>
-    <p>@deprecated not used.</p>
-    <p></p>
-    <p>.. py:attribute:: source_id</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p>Source (sending) system.</p>
-    <p>This is the system which sends the message (me).</p>
-    <p></p>
-    <p>.. py:attribute:: sender_id</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p>Sender is the original source of the message.</p>
-    <p>THis is same as source unless message has been relayed.</p>
-    <p></p>
-    <p>.. py:attribute:: recipient_id</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p>Recipient is the final destination.</p>
-    <p>This is the same as destination_id unless message is to be relayed.</p>
-    <p></p>
-    <p>.. py:attribute:: destination_id</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p>Destination (target) system.</p>
-    <p>The system which will receive the message.</p>
-    <p></p>
-    <p>.. py:attribute:: message_id</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p>Message identification.</p>
-    <p>Has no meaning apart from identification.</p>
-    <p>Set by source system and retained in any processing system.</p>
-    <p></p>
-    <p>.. py:attribute:: metadata</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>Meta data related to the message.</p>
-    <p></p>
-    <p>.. py:attribute:: tags</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p>A list of tags associated with the message.</p>
-    <p></p>
-    <p>.. py:attribute:: hosts</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>A list of hosts.</p>
-    <p>All recipient/destination ids point to objects in this data set.</p>
-    <p></p>
-  </dd>
-</dl>
-### Attachment ###
-
-<dl>
-  <dt>    Attachment is used to attach information to another request.</dt>
-  <dd>
-    <p>Attachment is used to attach information to another request.</p>
-    <p>This is usually used to send along additional information not directly relatedt to the request.</p>
-    <p>Or send unstructured data which is not supported by the original request.</p>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p>Identifier of attachment (for reference purpouses)</p>
-    <p></p>
-    <p>.. py:attribute:: type</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p>The mime type for this attachment.</p>
-    <p></p>
-    <p>.. py:attribute:: metadata</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>Meta data related to the attachment.</p>
-    <p></p>
-    <p>.. py:attribute:: tags</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p>A list of tags associated with the attachment.</p>
-    <p></p>
-    <p>.. py:attribute:: data</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p>The actual attachment (encoded)</p>
-    <p></p>
-  </dd>
-</dl>
-### PerformanceData ###
-
-<dl>
-  <dt>    .. py : attribute :  : alias</dt>
-  <dd>
-    <p>.. py:attribute:: alias</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: type</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: int_value</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: string_value</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: float_value</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: bool_value</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.Common.PerformanceData.IntValue`</p>
-    <p>* :py:class:`Plugin.Common.PerformanceData.StringValue`</p>
-    <p>* :py:class:`Plugin.Common.PerformanceData.FloatValue`</p>
-    <p>* :py:class:`Plugin.Common.PerformanceData.BoolValue`</p>
-  </dd>
-</dl>
-### IntValue ###
-
-<dl>
-  <dt>    .. py : attribute :  : value</dt>
-  <dd>
-    <p>.. py:attribute:: value</p>
-    <p></p>
-    <p>A **required** value of type **int64**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: unit</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: warning</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: critical</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: minimum</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: maximum</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### StringValue ###
-
-<dl>
-  <dt>    .. py : attribute :  : value</dt>
-  <dd>
-    <p>.. py:attribute:: value</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### FloatValue ###
-
-<dl>
-  <dt>    .. py : attribute :  : value</dt>
-  <dd>
-    <p>.. py:attribute:: value</p>
-    <p></p>
-    <p>A **required** value of type **double**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: unit</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: warning</p>
-    <p></p>
-    <p>A **optional** value of type **double**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: critical</p>
-    <p></p>
-    <p>A **optional** value of type **double**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: minimum</p>
-    <p></p>
-    <p>A **optional** value of type **double**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: maximum</p>
-    <p></p>
-    <p>A **optional** value of type **double**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### BoolValue ###
-
-<dl>
-  <dt>    .. py : attribute :  : value</dt>
-  <dd>
-    <p>.. py:attribute:: value</p>
-    <p></p>
-    <p>A **required** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: unit</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: warning</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: critical</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Status ###
-
-<dl>
-  <dt>    .. py : attribute :  : StatusType</dt>
-  <dd>
-    <p>.. py:attribute:: StatusType</p>
-    <p></p>
-    <p>========================= =====</p>
-    <p>Possible values           Id</p>
-    <p>========================= =====</p>
-    <p>STATUS_OK                 0</p>
-    <p>STATUS_WARNING            1</p>
-    <p>STATUS_ERROR              2</p>
-    <p>STATUS_DELAYED            3</p>
-    <p>========================= =====</p>
-    <p>.. py:attribute:: status</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: message</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: data</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-## QueryRequestMessage ##
-
-<dl>
-  <dt>    Query request</dt>
-  <dd>
-    <p>Query request</p>
-    <p>Used for querying the client this is the "normal" check_nrpe message request.</p>
-    <p>Associated response is :py:class:`Plugin.QueryResponseMessage`</p>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.QueryRequestMessage.Request`</p>
-  </dd>
-</dl>
-### Request ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int32**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: target</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: command</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: alias</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: arguments</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-  </dd>
-</dl>
-## QueryResponseMessage ##
-
-<dl>
-  <dt>    Query response</dt>
-  <dd>
-    <p>Query response</p>
-    <p>Used for querying the client this is the "normal" check_nrpe message request.</p>
-    <p>Associated request is :py:class:`Plugin.QueryRequestMessage`</p>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.QueryResponseMessage.Response`</p>
-  </dd>
-</dl>
-### Response ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int32**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: source</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: command</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: alias</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: arguments</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: result</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: message</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: data</p>
-    <p></p>
-    <p>A **optional** value of type **bytes**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: perf</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-  </dd>
-</dl>
-## ExecuteRequestMessage ##
-
-<dl>
-  <dt>    Execute command request and response.</dt>
-  <dd>
-    <p>Execute command request and response.</p>
-    <p>Used for executing commands on clients similar to :py:class:`Plugin.QueryRequestMessage` but wont return nagios check data</p>
-    <p>Associated response is :py:class:`Plugin.ExecuteResponseMessage`</p>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.ExecuteRequestMessage.Request`</p>
-  </dd>
-</dl>
-### Request ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int32**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: command</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: arguments</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-  </dd>
-</dl>
-## ExecuteResponseMessage ##
-
-<dl>
-  <dt>    .. py : attribute :  : header</dt>
-  <dd>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.ExecuteResponseMessage.Response`</p>
-  </dd>
-</dl>
-### Response ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int32**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: command</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: arguments</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: result</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: message</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: data</p>
-    <p></p>
-    <p>A **optional** value of type **bytes**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-  </dd>
-</dl>
-## SubmitRequestMessage ##
-
-<dl>
-  <dt>    Submit result request message.</dt>
-  <dd>
-    <p>Submit result request message.</p>
-    <p>Used for submitting a passive check results.</p>
-    <p>The actual payload (Request) is a normal :py:class:`Plugin.QueryResponseMessage.Response`.</p>
-    <p>Associated response is :py:class:`Plugin.SubmitResponseMessage`</p>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: channel</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-  </dd>
-</dl>
-## SubmitResponseMessage ##
-
-<dl>
-  <dt>    Submit result response message.</dt>
-  <dd>
-    <p>Submit result response message.</p>
-    <p>Response from submitting a passive check results.</p>
-    <p>Associated request is :py:class:`Plugin.SubmitRequestMessage`</p>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.SubmitResponseMessage.Response`</p>
-  </dd>
-</dl>
-### Response ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int32**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: command</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: status</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: attachments</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p>The attachment is used to attach additional free form information.</p>
-    <p></p>
-  </dd>
-</dl>
-## Registry ##
-
-<dl>
-  <dt>    Registration is an internal message.</dt>
-  <dd>
-    <p>Registration is an internal message.</p>
-    <p>It is not used to submit checks or query status instead it is used so register modules, plug-ins, command.</p>
-    <p>As well as query for them.</p>
-    <p>The registry is a central component inside NSClient++ and this is the way to interact with the registry.</p>
-    <p>.. py:attribute:: ItemType</p>
-    <p></p>
-    <p>========================= =====</p>
-    <p>Possible values           Id</p>
-    <p>========================= =====</p>
-    <p>QUERY                     1</p>
-    <p>COMMAND                   2</p>
-    <p>HANDLER                   3</p>
-    <p>PLUGIN                    4</p>
-    <p>QUERY_ALIAS               5</p>
-    <p>ROUTER                    6</p>
-    <p>MODULE                    7</p>
-    <p>SCHEDULE                  8</p>
-    <p>ALL                       99</p>
-    <p>========================= =====</p>
-    <p>.. py:attribute:: Command</p>
-    <p></p>
-    <p>========================= =====</p>
-    <p>Possible values           Id</p>
-    <p>========================= =====</p>
-    <p>LOAD                      1</p>
-    <p>UNLOAD                    2</p>
-    <p>RELOAD                    3</p>
-    <p>========================= =====</p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.Registry.Query`</p>
-    <p>* :py:class:`Plugin.Registry.Information`</p>
-    <p>* :py:class:`Plugin.Registry.KeyWordDescription`</p>
-    <p>* :py:class:`Plugin.Registry.ParameterDetail`</p>
-    <p>* :py:class:`Plugin.Registry.ParameterDetails`</p>
-    <p>* :py:class:`Plugin.Registry.Schedule`</p>
-  </dd>
-</dl>
-### Query ###
-
-<dl>
-  <dt>    .. py : attribute :  : expression</dt>
-  <dd>
-    <p>.. py:attribute:: expression</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Information ###
-
-<dl>
-  <dt>    .. py : attribute :  : title</dt>
-  <dd>
-    <p>.. py:attribute:: title</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: description</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: metadata</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: min_version</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: max_version</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: advanced</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: plugin</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### KeyWordDescription ###
-
-<dl>
-  <dt>    .. py : attribute :  : parameter</dt>
-  <dd>
-    <p>.. py:attribute:: parameter</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: context</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: key</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: short_description</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: long_description</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### ParameterDetail ###
-
-<dl>
-  <dt>    .. py : attribute :  : name</dt>
-  <dd>
-    <p>.. py:attribute:: name</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: default_value</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: required</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: repeatable</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: content_type</p>
-    <p></p>
-    <p>A **optional** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: short_description</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: long_description</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: keyword</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### ParameterDetails ###
-
-<dl>
-  <dt>    .. py : attribute :  : parameter</dt>
-  <dd>
-    <p>.. py:attribute:: parameter</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Schedule ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: cron</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: interval</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-## RegistryRequestMessage ##
-
-<dl>
-  <dt>    .. py : attribute :  : header</dt>
-  <dd>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.RegistryRequestMessage.Request`</p>
-  </dd>
-</dl>
-### Request ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: registration</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: inventory</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: control</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.RegistryRequestMessage.Request.Registration`</p>
-    <p>* :py:class:`Plugin.RegistryRequestMessage.Request.Inventory`</p>
-    <p>* :py:class:`Plugin.RegistryRequestMessage.Request.Control`</p>
-  </dd>
-</dl>
-### Registration ###
-
-<dl>
-  <dt>    .. py : attribute :  : plugin_id</dt>
-  <dd>
-    <p>.. py:attribute:: plugin_id</p>
-    <p></p>
-    <p>A **optional** value of type **int32**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: type</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: name</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: info</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: unregister</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: alias</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: schedule</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Inventory ###
-
-<dl>
-  <dt>    .. py : attribute :  : plugin</dt>
-  <dd>
-    <p>.. py:attribute:: plugin</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: type</p>
-    <p></p>
-    <p>A **repeated** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: name</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: fetch_all</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: fetch_information</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Control ###
-
-<dl>
-  <dt>    .. py : attribute :  : command</dt>
-  <dd>
-    <p>.. py:attribute:: command</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: type</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: name</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: alias</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-## RegistryResponseMessage ##
-
-<dl>
-  <dt>    .. py : attribute :  : header</dt>
-  <dd>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.RegistryResponseMessage.Response`</p>
-  </dd>
-</dl>
-### Response ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: result</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: registration</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: inventory</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: control</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.RegistryResponseMessage.Response.Registration`</p>
-    <p>* :py:class:`Plugin.RegistryResponseMessage.Response.Inventory`</p>
-    <p>* :py:class:`Plugin.RegistryResponseMessage.Response.Control`</p>
-  </dd>
-</dl>
-### Registration ###
-
-<dl>
-  <dt>    .. py : attribute :  : item_id</dt>
-  <dd>
-    <p>.. py:attribute:: item_id</p>
-    <p></p>
-    <p>A **optional** value of type **int32**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Inventory ###
-
-<dl>
-  <dt>    .. py : attribute :  : plugin</dt>
-  <dd>
-    <p>.. py:attribute:: plugin</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: type</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: name</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: info</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: parameters</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: schedule</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Control ###
-
-***************************
-#### ScheduleNotificationMessage ####
-
-<dl>
-  <dt>    .. py : attribute :  : header</dt>
-  <dd>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.ScheduleNotificationMessage.Request`</p>
-  </dd>
-</dl>
-### Request ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: plugin_id</p>
-    <p></p>
-    <p>A **required** value of type **int32**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: info</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: schedule</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-## Settings ##
-
-<dl>
-  <dt>    Settings is an internal message.</dt>
-  <dd>
-    <p>Settings is an internal message.</p>
-    <p>It is not used to submit checks or query status instead it is used to interact with the settings store.</p>
-    <p>The settings is a central component inside NSClient++ and this is the way to interact with it.</p>
-    <p>.. py:attribute:: Command</p>
-    <p></p>
-    <p>========================= =====</p>
-    <p>Possible values           Id</p>
-    <p>========================= =====</p>
-    <p>LOAD                      1</p>
-    <p>SAVE                      2</p>
-    <p>RELOAD                    3</p>
-    <p>========================= =====</p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.Settings.Node`</p>
-    <p>* :py:class:`Plugin.Settings.Query`</p>
-    <p>* :py:class:`Plugin.Settings.Information`</p>
-  </dd>
-</dl>
-### Node ###
-
-<dl>
-  <dt>    .. py : attribute :  : path</dt>
-  <dd>
-    <p>.. py:attribute:: path</p>
-    <p></p>
-    <p>A **required** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: key</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Query ###
-
-<dl>
-  <dt>    .. py : attribute :  : expression</dt>
-  <dd>
-    <p>.. py:attribute:: expression</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Information ###
-
-<dl>
-  <dt>    .. py : attribute :  : title</dt>
-  <dd>
-    <p>.. py:attribute:: title</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: description</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: default_value</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: min_version</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: max_version</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: advanced</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: sample</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: sample_usage</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: plugin</p>
-    <p></p>
-    <p>A **repeated** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-## SettingsRequestMessage ##
-
-<dl>
-  <dt>    .. py : attribute :  : header</dt>
-  <dd>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.SettingsRequestMessage.Request`</p>
-  </dd>
-</dl>
-### Request ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: plugin_id</p>
-    <p></p>
-    <p>A **required** value of type **int32**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: registration</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: query</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: update</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: inventory</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: control</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: status</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.SettingsRequestMessage.Request.Registration`</p>
-    <p>* :py:class:`Plugin.SettingsRequestMessage.Request.Query`</p>
-    <p>* :py:class:`Plugin.SettingsRequestMessage.Request.Update`</p>
-    <p>* :py:class:`Plugin.SettingsRequestMessage.Request.Inventory`</p>
-    <p>* :py:class:`Plugin.SettingsRequestMessage.Request.Control`</p>
-    <p>* :py:class:`Plugin.SettingsRequestMessage.Request.Status`</p>
-  </dd>
-</dl>
-### Registration ###
-
-<dl>
-  <dt>    .. py : attribute :  : node</dt>
-  <dd>
-    <p>.. py:attribute:: node</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: info</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Query ###
-
-<dl>
-  <dt>    .. py : attribute :  : node</dt>
-  <dd>
-    <p>.. py:attribute:: node</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: query</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: recursive</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: type</p>
-    <p></p>
-    <p>A **optional** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: default_value</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Update ###
-
-<dl>
-  <dt>    .. py : attribute :  : node</dt>
-  <dd>
-    <p>.. py:attribute:: node</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: value</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Inventory ###
-
-<dl>
-  <dt>    .. py : attribute :  : plugin</dt>
-  <dd>
-    <p>.. py:attribute:: plugin</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: node</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: query</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: recursive_fetch</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: fetch_keys</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: fetch_paths</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: fetch_samples</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: descriptions</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Control ###
-
-<dl>
-  <dt>    .. py : attribute :  : command</dt>
-  <dd>
-    <p>.. py:attribute:: command</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: context</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Status ###
-
-***********************
-#### SettingsResponseMessage ####
-
-<dl>
-  <dt>    .. py : attribute :  : header</dt>
-  <dd>
-    <p>.. py:attribute:: header</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: payload</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.SettingsResponseMessage.Response`</p>
-  </dd>
-</dl>
-### Response ###
-
-<dl>
-  <dt>    .. py : attribute :  : id</dt>
-  <dd>
-    <p>.. py:attribute:: id</p>
-    <p></p>
-    <p>A **optional** value of type **int64**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: result</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: registration</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: query</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: update</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: inventory</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: control</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: status</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.SettingsResponseMessage.Response.Registration`</p>
-    <p>* :py:class:`Plugin.SettingsResponseMessage.Response.Query`</p>
-    <p>* :py:class:`Plugin.SettingsResponseMessage.Response.Update`</p>
-    <p>* :py:class:`Plugin.SettingsResponseMessage.Response.Inventory`</p>
-    <p>* :py:class:`Plugin.SettingsResponseMessage.Response.Control`</p>
-    <p>* :py:class:`Plugin.SettingsResponseMessage.Response.Status`</p>
-  </dd>
-</dl>
-### Registration ###
-
-Query
----
-
-<dl>
-  <dt>    .. py : attribute :  : node</dt>
-  <dd>
-    <p>.. py:attribute:: node</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: value</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Update ###
-
-Inventory
----
-
-<dl>
-  <dt>    .. py : attribute :  : node</dt>
-  <dd>
-    <p>.. py:attribute:: node</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: info</p>
-    <p></p>
-    <p>A **required** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: value</p>
-    <p></p>
-    <p>A **optional** value of type **message**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-### Control ###
-
-Status
----
-
-<dl>
-  <dt>    .. py : attribute :  : context</dt>
-  <dd>
-    <p>.. py:attribute:: context</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: type</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: has_changed</p>
-    <p></p>
-    <p>A **optional** value of type **bool**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
-## LogEntry ##
-
-<dl>
-  <dt>    LogEntry is used to log status information.</dt>
-  <dd>
-    <p>LogEntry is used to log status information.</p>
-    <p>.. py:attribute:: entry</p>
-    <p></p>
-    <p>A **repeated** value of type **message**</p>
-    <p></p>
-    <p></p>
-    <p>**Nested messages**</p>
-    <p>* :py:class:`Plugin.LogEntry.Entry`</p>
-  </dd>
-</dl>
-### Entry ###
-
-<dl>
-  <dt>    .. py : attribute :  : Level</dt>
-  <dd>
-    <p>.. py:attribute:: Level</p>
-    <p></p>
-    <p>========================= =====</p>
-    <p>Possible values           Id</p>
-    <p>========================= =====</p>
-    <p>LOG_DEBUG                 500</p>
-    <p>LOG_INFO                  150</p>
-    <p>LOG_WARNING               50</p>
-    <p>LOG_ERROR                 10</p>
-    <p>LOG_CRITICAL              1</p>
-    <p>========================= =====</p>
-    <p>.. py:attribute:: level</p>
-    <p></p>
-    <p>A **required** value of type **enum**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: sender</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: file</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: line</p>
-    <p></p>
-    <p>A **optional** value of type **int32**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: message</p>
-    <p></p>
-    <p>A **optional** value of type **string**</p>
-    <p></p>
-    <p></p>
-    <p>.. py:attribute:: date</p>
-    <p></p>
-    <p>A **optional** value of type **int32**</p>
-    <p></p>
-    <p></p>
-  </dd>
-</dl>
+
+
+
+
+<a name=".Plugin.Common"/>
+
+# Common
+
+
+Full name: `Plugin.Common`
+
+Common utility types (re-used in various messages below)
+
+
+### ResultCode
+
+A "Nagios" status result.
+
+| Possible values           | Value | Description  | 
+| ------------------------- | ----- | ------------ |
+| OK                        | 0    | An ok status in Nagios  |
+| WARNING                   | 1    | A warning status in Nagios  |
+| CRITICAL                  | 2    | A critical status in Nagios  |
+| UNKNOWN                   | 3    | Not able to determine status in Nagios  |
+
+
+
+### DataType
+
+Type of data fields.
+@deprecated in favor of checking which field is available.
+
+| Possible values           | Value | Description  | 
+| ------------------------- | ----- | ------------ |
+| INT                       | 1    | An ok status in Nagios  |
+| STRING                    | 2    | A warning status in Nagios  |
+| FLOAT                     | 3    | A critical status in Nagios  |
+| BOOL                      | 4    | Not able to determine status in Nagios  |
+| LIST                      | 5    |  |
+
+
+
+
+
+
+<a name=".Plugin.Common.AnyDataType"/>
+
+## AnyDataType
+
+
+Full name: `Plugin.Common.AnyDataType`
+
+Data type used to wrap "any" primitive type.
+Used whenever the type can change.
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | string_data | String payload  |
+| optional             | int64 | int_data | Numeric integer payload  |
+| optional             | double | float_data | Numeric floating point payload  |
+| optional             | bool | bool_data | Boolean (true/false) payload  |
+| repeated             | string | list_data | A string (multiple lines are separated by list entries)  |
+
+
+
+
+
+<a name=".Plugin.Common.KeyValue"/>
+
+## KeyValue
+
+
+Full name: `Plugin.Common.KeyValue`
+
+Key value pair
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | string | key | The key identifying the value  |
+| required             | string | value | The value  |
+
+
+
+
+
+<a name=".Plugin.Common.Host"/>
+
+## Host
+
+
+Full name: `Plugin.Common.Host`
+
+Field identifying a host entry
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | id | A unique identifier representing the host in *this* message  |
+| optional             | string | host | The host name  |
+| optional             | string | address | The address  |
+| optional             | string | protocol | The protocol used to talk whit this host.  |
+| optional             | string | comment | A comment describing the host  |
+| repeated             | [KeyValue](#.Plugin.Common.KeyValue) | metadata | A key value store with attributes describing this host.  |
+| repeated             | string | tags | A number of tags defined for this host  |
+
+
+
+
+
+<a name=".Plugin.Common.Header"/>
+
+## Header
+
+
+Full name: `Plugin.Common.Header`
+
+A common header used in all messages.
+Contains basic information about the message.
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | source_id | Source (sending) system.  |
+| optional             | string | sender_id | Sender is the original source of the message.  |
+| optional             | string | recipient_id | Recipient is the final destination.  |
+| optional             | string | destination_id | Destination (target) system.  |
+| optional             | string | message_id | Message identification.  |
+| repeated             | [KeyValue](#.Plugin.Common.KeyValue) | metadata | Meta data related to the message.  |
+| repeated             | string | tags | A list of tags associated with the message.  |
+| repeated             | [Host](#.Plugin.Common.Host) | hosts | A list of hosts.  |
+
+
+
+
+
+<a name=".Plugin.Common.PerformanceData"/>
+
+## PerformanceData
+
+
+Full name: `Plugin.Common.PerformanceData`
+
+How metrics are encoded into check results
+Nagios calls this performance data and we inherited the name.
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | string | alias | The name of the value  |
+| optional             | [IntValue](#.Plugin.Common.PerformanceData.IntValue) | int_value | If the value is an integer (can be only one)  |
+| optional             | [StringValue](#.Plugin.Common.PerformanceData.StringValue) | string_value | If the value is a string (can be only one)  |
+| optional             | [FloatValue](#.Plugin.Common.PerformanceData.FloatValue) | float_value | If the value is a floating point number (can be only one)  |
+| optional             | [BoolValue](#.Plugin.Common.PerformanceData.BoolValue) | bool_value | If the value is a boolean (can be only one)  |
+
+
+
+
+<a name=".Plugin.Common.PerformanceData.IntValue"/>
+
+### IntValue
+
+
+Full name: `Plugin.Common.PerformanceData.IntValue`
+
+Numeric performance data
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | int64 | value | The value we are tracking  |
+| optional             | string | unit | The unit of all the values  |
+| optional             | int64 | warning | The warning threshold (if available)  |
+| optional             | int64 | critical | The warning critical (if available)  |
+| optional             | int64 | minimum | The lowest possible value  |
+| optional             | int64 | maximum | The highest possible value  |
+
+
+
+
+
+<a name=".Plugin.Common.PerformanceData.StringValue"/>
+
+### StringValue
+
+
+Full name: `Plugin.Common.PerformanceData.StringValue`
+
+Textual performance data
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | string | value | The value  |
+
+
+
+
+
+<a name=".Plugin.Common.PerformanceData.FloatValue"/>
+
+### FloatValue
+
+
+Full name: `Plugin.Common.PerformanceData.FloatValue`
+
+Floating point performance data
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | double | value | The value we are tracking  |
+| optional             | string | unit | The unit of all the values  |
+| optional             | double | warning | The warning threshold (if available)  |
+| optional             | double | critical | The warning critical (if available)  |
+| optional             | double | minimum | The lowest possible value  |
+| optional             | double | maximum | The highest possible value  |
+
+
+
+
+
+<a name=".Plugin.Common.PerformanceData.BoolValue"/>
+
+### BoolValue
+
+
+Full name: `Plugin.Common.PerformanceData.BoolValue`
+
+Boolean performance data
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | bool | value | The value we are tracking  |
+| optional             | string | unit | The unit of all the values  |
+| optional             | bool | warning | The warning threshold (if available)  |
+| optional             | bool | critical | The warning critical (if available)  |
+
+
+
+
+
+
+<a name=".Plugin.Common.Metric"/>
+
+## Metric
+
+
+Full name: `Plugin.Common.Metric`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | string | key |  |
+| required             | [AnyDataType](#.Plugin.Common.AnyDataType) | value |  |
+| optional             | string | alias |  |
+| optional             | string | desc |  |
+
+
+
+
+
+<a name=".Plugin.Common.MetricsBundle"/>
+
+## MetricsBundle
+
+
+Full name: `Plugin.Common.MetricsBundle`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | string | key |  |
+| repeated             | [Metric](#.Plugin.Common.Metric) | value |  |
+| repeated             | [MetricsBundle](#.Plugin.Common.MetricsBundle) | children |  |
+| optional             | string | alias |  |
+| optional             | string | desc |  |
+
+
+
+
+
+<a name=".Plugin.Common.Result"/>
+
+## Result
+
+
+Full name: `Plugin.Common.Result`
+
+
+
+
+### StatusCodeType
+
+
+| Possible values           | Value | Description  | 
+| ------------------------- | ----- | ------------ |
+| STATUS_OK                 | 0    |  |
+| STATUS_WARNING            | 1    |  |
+| STATUS_ERROR              | 2    |  |
+| STATUS_DELAYED            | 3    |  |
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | [StatusCodeType](#.Plugin.Common.Result.StatusCodeType) | code |  |
+| optional             | string | message |  |
+| optional             | string | data |  |
+
+
+
+
+
+
+
+<a name=".Plugin.QueryRequestMessage"/>
+
+# QueryRequestMessage
+
+
+Full name: `Plugin.QueryRequestMessage`
+
+Query request
+Used for querying the client this is the "normal" check_nrpe message request.
+Associated response is :py:class:`Plugin.QueryResponseMessage`
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Request](#.Plugin.QueryRequestMessage.Request) | payload |  |
+
+
+
+
+<a name=".Plugin.QueryRequestMessage.Request"/>
+
+## Request
+
+
+Full name: `Plugin.QueryRequestMessage.Request`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int32 | id |  |
+| optional             | string | target |  |
+| required             | string | command |  |
+| optional             | string | alias |  |
+| repeated             | string | arguments |  |
+
+
+
+
+
+
+
+<a name=".Plugin.QueryResponseMessage"/>
+
+# QueryResponseMessage
+
+
+Full name: `Plugin.QueryResponseMessage`
+
+Query response
+Used for querying the client this is the "normal" check_nrpe message request.
+Associated request is `[QueryRequestMessage](#.Plugin.QueryRequestMessage)`
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Response](#.Plugin.QueryResponseMessage.Response) | payload |  |
+
+
+
+
+<a name=".Plugin.QueryResponseMessage.Response"/>
+
+## Response
+
+
+Full name: `Plugin.QueryResponseMessage.Response`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int32 | id |  |
+| optional             | string | source |  |
+| optional             | string | command |  |
+| optional             | string | alias |  |
+| repeated             | string | arguments |  |
+| required             | [ResultCode](#.Plugin.Common.ResultCode) | result |  |
+| repeated             | [Line](#.Plugin.QueryResponseMessage.Response.Line) | lines |  |
+| optional             | bytes | data |  |
+
+
+
+
+<a name=".Plugin.QueryResponseMessage.Response.Line"/>
+
+### Line
+
+
+Full name: `Plugin.QueryResponseMessage.Response.Line`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | string | message |  |
+| repeated             | [PerformanceData](#.Plugin.Common.PerformanceData) | perf |  |
+
+
+
+
+
+
+
+
+<a name=".Plugin.ExecuteRequestMessage"/>
+
+# ExecuteRequestMessage
+
+
+Full name: `Plugin.ExecuteRequestMessage`
+
+Execute command request and response.
+Used for executing commands on clients similar to :py:class:`Plugin.QueryRequestMessage` but wont return nagios check data
+Associated response is :py:class:`Plugin.ExecuteResponseMessage`
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Request](#.Plugin.ExecuteRequestMessage.Request) | payload |  |
+
+
+
+
+<a name=".Plugin.ExecuteRequestMessage.Request"/>
+
+## Request
+
+
+Full name: `Plugin.ExecuteRequestMessage.Request`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int32 | id |  |
+| required             | string | command |  |
+| repeated             | string | arguments |  |
+
+
+
+
+
+
+
+<a name=".Plugin.ExecuteResponseMessage"/>
+
+# ExecuteResponseMessage
+
+
+Full name: `Plugin.ExecuteResponseMessage`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Response](#.Plugin.ExecuteResponseMessage.Response) | payload |  |
+
+
+
+
+<a name=".Plugin.ExecuteResponseMessage.Response"/>
+
+## Response
+
+
+Full name: `Plugin.ExecuteResponseMessage.Response`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int32 | id |  |
+| required             | string | command |  |
+| repeated             | string | arguments |  |
+| required             | [ResultCode](#.Plugin.Common.ResultCode) | result |  |
+| required             | string | message |  |
+| optional             | bytes | data |  |
+
+
+
+
+
+
+
+<a name=".Plugin.SubmitRequestMessage"/>
+
+# SubmitRequestMessage
+
+
+Full name: `Plugin.SubmitRequestMessage`
+
+Submit result request message.
+Used for submitting a passive check results.
+The actual payload (Request) is a normal :py:class:`Plugin.QueryResponseMessage.Response`.
+Associated response is :py:class:`Plugin.SubmitResponseMessage`
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header | The header  |
+| required             | string | channel |  |
+| repeated             | [Response](#.Plugin.QueryResponseMessage.Response) | payload |  |
+
+
+
+
+
+
+<a name=".Plugin.SubmitResponseMessage"/>
+
+# SubmitResponseMessage
+
+
+Full name: `Plugin.SubmitResponseMessage`
+
+Submit result response message.
+Response from submitting a passive check results.
+Associated request is :py:class:`Plugin.SubmitRequestMessage`
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Response](#.Plugin.SubmitResponseMessage.Response) | payload |  |
+
+
+
+
+<a name=".Plugin.SubmitResponseMessage.Response"/>
+
+## Response
+
+
+Full name: `Plugin.SubmitResponseMessage.Response`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int32 | id |  |
+| required             | string | command |  |
+| required             | [Result](#.Plugin.Common.Result) | result |  |
+
+
+
+
+
+
+
+<a name=".Plugin.EventMessage"/>
+
+# EventMessage
+
+
+Full name: `Plugin.EventMessage`
+
+Execute command request and response.
+Used for executing commands on clients similar to :py:class:`Plugin.QueryRequestMessage` but wont return nagios check data
+Associated response is :py:class:`Plugin.ExecuteResponseMessage`
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Request](#.Plugin.EventMessage.Request) | payload |  |
+
+
+
+
+<a name=".Plugin.EventMessage.Request"/>
+
+## Request
+
+
+Full name: `Plugin.EventMessage.Request`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | event |  |
+| repeated             | string | arguments |  |
+| repeated             | [KeyValue](#.Plugin.Common.KeyValue) | data |  |
+
+
+
+
+
+
+
+<a name=".Plugin.Registry"/>
+
+# Registry
+
+
+Full name: `Plugin.Registry`
+
+Registration is an internal message.
+It is not used to submit checks or query status instead it is used so register modules, plug-ins, command.
+As well as query for them.
+The registry is a central component inside NSClient++ and this is the way to interact with the registry.
+
+
+### ItemType
+
+
+| Possible values           | Value | Description  | 
+| ------------------------- | ----- | ------------ |
+| QUERY                     | 1    |  |
+| COMMAND                   | 2    |  |
+| HANDLER                   | 3    |  |
+| PLUGIN                    | 4    |  |
+| QUERY_ALIAS               | 5    |  |
+| ROUTER                    | 6    |  |
+| MODULE                    | 7    |  |
+| SCHEDULE                  | 8    |  |
+| EVENT                     | 9    |  |
+| ALL                       | 99   |  |
+
+
+
+### Command
+
+
+| Possible values           | Value | Description  | 
+| ------------------------- | ----- | ------------ |
+| LOAD                      | 1    |  |
+| UNLOAD                    | 2    |  |
+| RELOAD                    | 3    |  |
+
+
+
+
+
+
+<a name=".Plugin.Registry.Query"/>
+
+## Query
+
+
+Full name: `Plugin.Registry.Query`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | expression |  |
+
+
+
+
+
+<a name=".Plugin.Registry.Information"/>
+
+## Information
+
+
+Full name: `Plugin.Registry.Information`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | title |  |
+| optional             | string | description |  |
+| repeated             | [KeyValue](#.Plugin.Common.KeyValue) | metadata |  |
+| optional             | string | min_version |  |
+| optional             | string | max_version |  |
+| optional             | bool | advanced |  |
+| repeated             | string | plugin |  |
+
+
+
+
+
+<a name=".Plugin.Registry.KeyWordDescription"/>
+
+## KeyWordDescription
+
+
+Full name: `Plugin.Registry.KeyWordDescription`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | string | parameter |  |
+| optional             | string | context |  |
+| required             | string | key |  |
+| optional             | string | short_description |  |
+| optional             | string | long_description |  |
+
+
+
+
+
+<a name=".Plugin.Registry.ParameterDetail"/>
+
+## ParameterDetail
+
+
+Full name: `Plugin.Registry.ParameterDetail`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | name |  |
+| optional             | string | default_value |  |
+| optional             | bool | required |  |
+| optional             | bool | repeatable |  |
+| optional             | [DataType](#.Plugin.Common.DataType) | content_type |  |
+| optional             | string | short_description |  |
+| optional             | string | long_description |  |
+| repeated             | [KeyWordDescription](#.Plugin.Registry.KeyWordDescription) | keyword |  |
+
+
+
+
+
+<a name=".Plugin.Registry.ParameterDetails"/>
+
+## ParameterDetails
+
+
+Full name: `Plugin.Registry.ParameterDetails`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| repeated             | [ParameterDetail](#.Plugin.Registry.ParameterDetail) | parameter |  |
+
+
+
+
+
+<a name=".Plugin.Registry.Schedule"/>
+
+## Schedule
+
+
+Full name: `Plugin.Registry.Schedule`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | id |  |
+| optional             | string | cron |  |
+| optional             | string | interval |  |
+
+
+
+
+
+
+
+<a name=".Plugin.RegistryRequestMessage"/>
+
+# RegistryRequestMessage
+
+
+Full name: `Plugin.RegistryRequestMessage`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Request](#.Plugin.RegistryRequestMessage.Request) | payload |  |
+
+
+
+
+<a name=".Plugin.RegistryRequestMessage.Request"/>
+
+## Request
+
+
+Full name: `Plugin.RegistryRequestMessage.Request`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int64 | id |  |
+| optional             | [Registration](#.Plugin.RegistryRequestMessage.Request.Registration) | registration |  |
+| optional             | [Inventory](#.Plugin.RegistryRequestMessage.Request.Inventory) | inventory |  |
+| optional             | [Control](#.Plugin.RegistryRequestMessage.Request.Control) | control |  |
+
+
+
+
+<a name=".Plugin.RegistryRequestMessage.Request.Registration"/>
+
+### Registration
+
+
+Full name: `Plugin.RegistryRequestMessage.Request.Registration`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int32 | plugin_id |  |
+| required             | [ItemType](#.Plugin.Registry.ItemType) | type |  |
+| required             | string | name |  |
+| optional             | [Information](#.Plugin.Registry.Information) | info |  |
+| optional             | bool | unregister |  |
+| repeated             | string | alias |  |
+| repeated             | [Schedule](#.Plugin.Registry.Schedule) | schedule |  |
+
+
+
+
+
+<a name=".Plugin.RegistryRequestMessage.Request.Inventory"/>
+
+### Inventory
+
+
+Full name: `Plugin.RegistryRequestMessage.Request.Inventory`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | plugin |  |
+| repeated             | [ItemType](#.Plugin.Registry.ItemType) | type |  |
+| optional             | string | name |  |
+| optional             | bool | fetch_all |  |
+| optional             | bool | fetch_information |  |
+
+
+
+
+
+<a name=".Plugin.RegistryRequestMessage.Request.Control"/>
+
+### Control
+
+
+Full name: `Plugin.RegistryRequestMessage.Request.Control`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | [Command](#.Plugin.Registry.Command) | command |  |
+| required             | [ItemType](#.Plugin.Registry.ItemType) | type |  |
+| optional             | string | name |  |
+| optional             | string | alias |  |
+
+
+
+
+
+
+
+
+<a name=".Plugin.RegistryResponseMessage"/>
+
+# RegistryResponseMessage
+
+
+Full name: `Plugin.RegistryResponseMessage`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Response](#.Plugin.RegistryResponseMessage.Response) | payload |  |
+
+
+
+
+<a name=".Plugin.RegistryResponseMessage.Response"/>
+
+## Response
+
+
+Full name: `Plugin.RegistryResponseMessage.Response`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int64 | id |  |
+| required             | [Result](#.Plugin.Common.Result) | result |  |
+| optional             | [Registration](#.Plugin.RegistryResponseMessage.Response.Registration) | registration |  |
+| repeated             | [Inventory](#.Plugin.RegistryResponseMessage.Response.Inventory) | inventory |  |
+| optional             | [Control](#.Plugin.RegistryResponseMessage.Response.Control) | control |  |
+
+
+
+
+<a name=".Plugin.RegistryResponseMessage.Response.Registration"/>
+
+### Registration
+
+
+Full name: `Plugin.RegistryResponseMessage.Response.Registration`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int32 | item_id |  |
+
+
+
+
+
+<a name=".Plugin.RegistryResponseMessage.Response.Inventory"/>
+
+### Inventory
+
+
+Full name: `Plugin.RegistryResponseMessage.Response.Inventory`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| repeated             | string | plugin |  |
+| required             | [ItemType](#.Plugin.Registry.ItemType) | type |  |
+| required             | string | name |  |
+| optional             | string | id |  |
+| optional             | [Information](#.Plugin.Registry.Information) | info |  |
+| optional             | [ParameterDetails](#.Plugin.Registry.ParameterDetails) | parameters |  |
+| repeated             | [Schedule](#.Plugin.Registry.Schedule) | schedule |  |
+
+
+
+
+
+<a name=".Plugin.RegistryResponseMessage.Response.Control"/>
+
+### Control
+
+
+Full name: `Plugin.RegistryResponseMessage.Response.Control`
+
+
+
+
+
+
+
+
+
+
+
+<a name=".Plugin.ScheduleNotificationMessage"/>
+
+# ScheduleNotificationMessage
+
+
+Full name: `Plugin.ScheduleNotificationMessage`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Request](#.Plugin.ScheduleNotificationMessage.Request) | payload |  |
+
+
+
+
+<a name=".Plugin.ScheduleNotificationMessage.Request"/>
+
+## Request
+
+
+Full name: `Plugin.ScheduleNotificationMessage.Request`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int64 | id |  |
+| required             | int32 | plugin_id |  |
+| optional             | [Information](#.Plugin.Registry.Information) | info |  |
+| optional             | [Schedule](#.Plugin.Registry.Schedule) | schedule |  |
+
+
+
+
+
+
+
+<a name=".Plugin.Settings"/>
+
+# Settings
+
+
+Full name: `Plugin.Settings`
+
+Settings is an internal message.
+It is not used to submit checks or query status instead it is used to interact with the settings store.
+The settings is a central component inside NSClient++ and this is the way to interact with it.
+
+
+### Command
+
+
+| Possible values           | Value | Description  | 
+| ------------------------- | ----- | ------------ |
+| LOAD                      | 1    |  |
+| SAVE                      | 2    |  |
+| RELOAD                    | 3    |  |
+
+
+
+
+
+
+<a name=".Plugin.Settings.Node"/>
+
+## Node
+
+
+Full name: `Plugin.Settings.Node`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | string | path |  |
+| optional             | string | key |  |
+
+
+
+
+
+<a name=".Plugin.Settings.Query"/>
+
+## Query
+
+
+Full name: `Plugin.Settings.Query`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | expression |  |
+
+
+
+
+
+<a name=".Plugin.Settings.Information"/>
+
+## Information
+
+
+Full name: `Plugin.Settings.Information`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | title |  |
+| optional             | string | description |  |
+| optional             | string | icon |  |
+| optional             | [AnyDataType](#.Plugin.Common.AnyDataType) | default_value |  |
+| optional             | string | min_version |  |
+| optional             | string | max_version |  |
+| optional             | bool | advanced |  |
+| optional             | bool | sample |  |
+| optional             | bool | is_template |  |
+| optional             | string | sample_usage |  |
+| repeated             | string | plugin |  |
+
+
+
+
+
+
+
+<a name=".Plugin.SettingsRequestMessage"/>
+
+# SettingsRequestMessage
+
+
+Full name: `Plugin.SettingsRequestMessage`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Request](#.Plugin.SettingsRequestMessage.Request) | payload |  |
+
+
+
+
+<a name=".Plugin.SettingsRequestMessage.Request"/>
+
+## Request
+
+
+Full name: `Plugin.SettingsRequestMessage.Request`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int64 | id |  |
+| required             | int32 | plugin_id |  |
+| optional             | [Registration](#.Plugin.SettingsRequestMessage.Request.Registration) | registration |  |
+| optional             | [Query](#.Plugin.SettingsRequestMessage.Request.Query) | query |  |
+| optional             | [Update](#.Plugin.SettingsRequestMessage.Request.Update) | update |  |
+| optional             | [Inventory](#.Plugin.SettingsRequestMessage.Request.Inventory) | inventory |  |
+| optional             | [Control](#.Plugin.SettingsRequestMessage.Request.Control) | control |  |
+| optional             | [Status](#.Plugin.SettingsRequestMessage.Request.Status) | status |  |
+
+
+
+
+<a name=".Plugin.SettingsRequestMessage.Request.Registration"/>
+
+### Registration
+
+
+Full name: `Plugin.SettingsRequestMessage.Request.Registration`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Node](#.Plugin.Settings.Node) | node |  |
+| optional             | [Information](#.Plugin.Settings.Information) | info |  |
+| optional             | string | fields |  |
+
+
+
+
+
+<a name=".Plugin.SettingsRequestMessage.Request.Query"/>
+
+### Query
+
+
+Full name: `Plugin.SettingsRequestMessage.Request.Query`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Node](#.Plugin.Settings.Node) | node |  |
+| optional             | [Query](#.Plugin.Settings.Query) | query |  |
+| optional             | bool | recursive |  |
+| optional             | [DataType](#.Plugin.Common.DataType) | type |  |
+| optional             | [AnyDataType](#.Plugin.Common.AnyDataType) | default_value |  |
+
+
+
+
+
+<a name=".Plugin.SettingsRequestMessage.Request.Update"/>
+
+### Update
+
+
+Full name: `Plugin.SettingsRequestMessage.Request.Update`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Node](#.Plugin.Settings.Node) | node |  |
+| optional             | [AnyDataType](#.Plugin.Common.AnyDataType) | value |  |
+
+
+
+
+
+<a name=".Plugin.SettingsRequestMessage.Request.Inventory"/>
+
+### Inventory
+
+
+Full name: `Plugin.SettingsRequestMessage.Request.Inventory`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | plugin |  |
+| optional             | [Node](#.Plugin.Settings.Node) | node |  |
+| optional             | [Query](#.Plugin.Settings.Query) | query |  |
+| optional             | bool | recursive_fetch |  |
+| optional             | bool | fetch_keys |  |
+| optional             | bool | fetch_paths |  |
+| optional             | bool | fetch_samples |  |
+| optional             | bool | fetch_templates |  |
+| optional             | bool | descriptions |  |
+
+
+
+
+
+<a name=".Plugin.SettingsRequestMessage.Request.Control"/>
+
+### Control
+
+
+Full name: `Plugin.SettingsRequestMessage.Request.Control`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | [Command](#.Plugin.Settings.Command) | command |  |
+| optional             | string | context |  |
+
+
+
+
+
+<a name=".Plugin.SettingsRequestMessage.Request.Status"/>
+
+### Status
+
+
+Full name: `Plugin.SettingsRequestMessage.Request.Status`
+
+
+
+
+
+
+
+
+
+
+
+<a name=".Plugin.SettingsResponseMessage"/>
+
+# SettingsResponseMessage
+
+
+Full name: `Plugin.SettingsResponseMessage`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Response](#.Plugin.SettingsResponseMessage.Response) | payload |  |
+
+
+
+
+<a name=".Plugin.SettingsResponseMessage.Response"/>
+
+## Response
+
+
+Full name: `Plugin.SettingsResponseMessage.Response`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int64 | id |  |
+| required             | [Result](#.Plugin.Common.Result) | result |  |
+| optional             | [Registration](#.Plugin.SettingsResponseMessage.Response.Registration) | registration |  |
+| optional             | [Query](#.Plugin.SettingsResponseMessage.Response.Query) | query |  |
+| optional             | [Update](#.Plugin.SettingsResponseMessage.Response.Update) | update |  |
+| repeated             | [Inventory](#.Plugin.SettingsResponseMessage.Response.Inventory) | inventory |  |
+| optional             | [Control](#.Plugin.SettingsResponseMessage.Response.Control) | control |  |
+| optional             | [Status](#.Plugin.SettingsResponseMessage.Response.Status) | status |  |
+
+
+
+
+<a name=".Plugin.SettingsResponseMessage.Response.Registration"/>
+
+### Registration
+
+
+Full name: `Plugin.SettingsResponseMessage.Response.Registration`
+
+
+
+
+
+
+
+
+<a name=".Plugin.SettingsResponseMessage.Response.Query"/>
+
+### Query
+
+
+Full name: `Plugin.SettingsResponseMessage.Response.Query`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | [Node](#.Plugin.Settings.Node) | node |  |
+| required             | [AnyDataType](#.Plugin.Common.AnyDataType) | value |  |
+
+
+
+
+
+<a name=".Plugin.SettingsResponseMessage.Response.Update"/>
+
+### Update
+
+
+Full name: `Plugin.SettingsResponseMessage.Response.Update`
+
+
+
+
+
+
+
+
+<a name=".Plugin.SettingsResponseMessage.Response.Inventory"/>
+
+### Inventory
+
+
+Full name: `Plugin.SettingsResponseMessage.Response.Inventory`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | [Node](#.Plugin.Settings.Node) | node |  |
+| required             | [Information](#.Plugin.Settings.Information) | info |  |
+| optional             | [AnyDataType](#.Plugin.Common.AnyDataType) | value |  |
+
+
+
+
+
+<a name=".Plugin.SettingsResponseMessage.Response.Control"/>
+
+### Control
+
+
+Full name: `Plugin.SettingsResponseMessage.Response.Control`
+
+
+
+
+
+
+
+
+<a name=".Plugin.SettingsResponseMessage.Response.Status"/>
+
+### Status
+
+
+Full name: `Plugin.SettingsResponseMessage.Response.Status`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | string | context |  |
+| optional             | string | type |  |
+| optional             | bool | has_changed |  |
+
+
+
+
+
+
+
+
+<a name=".Plugin.LogEntry"/>
+
+# LogEntry
+
+
+Full name: `Plugin.LogEntry`
+
+LogEntry is used to log status information.
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| repeated             | [Entry](#.Plugin.LogEntry.Entry) | entry |  |
+
+
+
+
+<a name=".Plugin.LogEntry.Entry"/>
+
+## Entry
+
+
+Full name: `Plugin.LogEntry.Entry`
+
+
+
+
+### Level
+
+
+| Possible values           | Value | Description  | 
+| ------------------------- | ----- | ------------ |
+| LOG_TRACE                 | 1000 |  |
+| LOG_DEBUG                 | 500  |  |
+| LOG_INFO                  | 150  |  |
+| LOG_WARNING               | 50   |  |
+| LOG_ERROR                 | 10   |  |
+| LOG_CRITICAL              | 1    |  |
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| required             | [Level](#.Plugin.LogEntry.Entry.Level) | level |  |
+| optional             | string | sender |  |
+| optional             | string | file |  |
+| optional             | int32 | line |  |
+| optional             | string | message |  |
+| optional             | int32 | date |  |
+
+
+
+
+
+
+
+<a name=".Plugin.MetricsQueryMessage"/>
+
+# MetricsQueryMessage
+
+
+Full name: `Plugin.MetricsQueryMessage`
+
+Metrics message
+Used for fetching and sending metrics.
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Request](#.Plugin.MetricsQueryMessage.Request) | payload |  |
+
+
+
+
+<a name=".Plugin.MetricsQueryMessage.Request"/>
+
+## Request
+
+
+Full name: `Plugin.MetricsQueryMessage.Request`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int64 | id |  |
+| optional             | string | type |  |
+
+
+
+
+
+
+
+<a name=".Plugin.MetricsMessage"/>
+
+# MetricsMessage
+
+
+Full name: `Plugin.MetricsMessage`
+
+Metrics message
+Used for fetching and sending metrics.
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | [Header](#.Plugin.Common.Header) | header |  |
+| repeated             | [Response](#.Plugin.MetricsMessage.Response) | payload |  |
+
+
+
+
+<a name=".Plugin.MetricsMessage.Response"/>
+
+## Response
+
+
+Full name: `Plugin.MetricsMessage.Response`
+
+
+
+
+
+| Modifier | Type | Key    | Description                |
+| -------- | -----| ------ | -------------------- |
+| optional             | int64 | id |  |
+| required             | [Result](#.Plugin.Common.Result) | result |  |
+| repeated             | [MetricsBundle](#.Plugin.Common.MetricsBundle) | bundles |  |
+
+
+
+
+
