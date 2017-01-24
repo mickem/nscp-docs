@@ -1310,17 +1310,17 @@ Run a check and transform the performance data in various (currently one) way.
 ### Usage
 
 
-| Option                                   | Default Value | Description                                           |
-|------------------------------------------|---------------|-------------------------------------------------------|
-| [help](#xform_perf_help)                 | N/A           | Show help screen (this screen)                        |
-| [help-pb](#xform_perf_help-pb)           | N/A           | Show help screen as a protocol buffer payload         |
-| [show-default](#xform_perf_show-default) | N/A           | Show default values for a given command               |
-| [help-short](#xform_perf_help-short)     | N/A           | Show help screen (short format).                      |
-| [command](#xform_perf_command)           |               | Wrapped command to execute                            |
-| [arguments](#xform_perf_arguments)       |               | List of arguments (for wrapped command)               |
-| [mode](#xform_perf_mode)                 |               | Transformation mode (currently only supports extract) |
-| [field](#xform_perf_field)               |               | Field to work with (value, warn, crit, max, min)      |
-| [replace](#xform_perf_replace)           |               | Replace expression for the alias                      |
+| Option                                   | Default Value | Description                                                                 |
+|------------------------------------------|---------------|-----------------------------------------------------------------------------|
+| [help](#xform_perf_help)                 | N/A           | Show help screen (this screen)                                              |
+| [help-pb](#xform_perf_help-pb)           | N/A           | Show help screen as a protocol buffer payload                               |
+| [show-default](#xform_perf_show-default) | N/A           | Show default values for a given command                                     |
+| [help-short](#xform_perf_help-short)     | N/A           | Show help screen (short format).                                            |
+| [command](#xform_perf_command)           |               | Wrapped command to execute                                                  |
+| [arguments](#xform_perf_arguments)       |               | List of arguments (for wrapped command)                                     |
+| [mode](#xform_perf_mode)                 |               | Transformation mode: extract to fetch data or minmax to add missing min/max |
+| [field](#xform_perf_field)               |               | Field to work with (value, warn, crit, max, min)                            |
+| [replace](#xform_perf_replace)           |               | Replace expression for the alias                                            |
 
 
 <a name="xform_perf_help"/>
@@ -1377,7 +1377,7 @@ List of arguments (for wrapped command)
 
 
 **Description:**
-Transformation mode (currently only supports extract)
+Transformation mode: extract to fetch data or minmax to add missing min/max
 
 <a name="xform_perf_field"/>
 ### field

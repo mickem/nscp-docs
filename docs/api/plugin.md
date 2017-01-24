@@ -126,6 +126,7 @@ Contains basic information about the message.
 
 | Modifier | Type | Key    | Description                |
 | -------- | -----| ------ | -------------------- |
+| optional             | string | command | Command.  |
 | optional             | string | source_id | Source (sending) system.  |
 | optional             | string | sender_id | Sender is the original source of the message.  |
 | optional             | string | recipient_id | Recipient is the final destination.  |
@@ -455,7 +456,7 @@ Full name: `Plugin.QueryResponseMessage.Response.Line`
 Full name: `Plugin.ExecuteRequestMessage`
 
 Execute command request and response.
-Used for executing commands on clients similar to :py:class:`Plugin.QueryRequestMessage` but wont return nagios check data
+Used for executing commands on clients similar to :py:class:`Plugin.QueryRequestMessage` but wont return Nagios check data
 Associated response is :py:class:`Plugin.ExecuteResponseMessage`
 
 
@@ -613,7 +614,7 @@ Full name: `Plugin.SubmitResponseMessage.Response`
 Full name: `Plugin.EventMessage`
 
 Execute command request and response.
-Used for executing commands on clients similar to :py:class:`Plugin.QueryRequestMessage` but wont return nagios check data
+Used for executing commands on clients similar to :py:class:`Plugin.QueryRequestMessage` but wont return Nagios check data
 Associated response is :py:class:`Plugin.ExecuteResponseMessage`
 
 
