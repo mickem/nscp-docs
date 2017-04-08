@@ -119,6 +119,17 @@ For instance Installing (with log) NSClient++ into c:\foobar using registry as c
 msiexec /qn /l* log.txt /i NSCP-0.4.3.50-x64.msi INSTALLLOCATION=c:\FooBar CONFIGURATION_TYPE=registry://HKEY_LOCAL_MACHINE/software/NSClient++ ADDDEFAULT=ALL REMOVE=PythonScript
 ```
 
+### Using Silent install in 0.4.4 and 0.5.0
+
+You need to add two options in these version if you plan to update the configuration in a silent install:
+
+```
+msiexec /i NSCP-<version>.msi CONF_CAN_CHANGE=1 MONITORING_TOOL=none
+```
+
+CONF_CAN_CHANGE forces the config to become writable (if you run silently the detection never happens so this flag is never updated).
+MONITORING_TOOL If no monitoring tool is specified it will default to "default" and overwrite various options given on the command line.
+
 ## Multiple NSClient++
 
 As NSClient++ uninstalls it self if you install there are two options for running multiple NSClient++ on a machine.
