@@ -93,7 +93,7 @@ timeout=30
 
 **ALLOWED HOSTS**
 
-A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges.
+A comma separated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges.
 
 
 
@@ -421,7 +421,7 @@ allowed ciphers=ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
 
 **ALLOWED HOSTS**
 
-A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
+A comma separated list of allowed hosts. You can use netmasks (/ syntax) or * to create ranges. parent for this key is found under: /settings/default this is marked as advanced in favor of the parent.
 
 
 

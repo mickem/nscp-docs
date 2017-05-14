@@ -11,6 +11,7 @@ A list of all available queries (check commands)
 | Command                     | Description                   |
 |-----------------------------|-------------------------------|
 | [check_cache](#check_cache) | Fetch results from the cache. |
+| [list_cache](#list_cache)   | List all keys in the cache.   |
 
 
 ## List of command aliases
@@ -153,6 +154,54 @@ The message to display when a message is not found
 
 **Description:**
 The return status to return when a message is not found
+
+## list_cache
+
+List all keys in the cache.
+
+
+### Usage
+
+
+| Option                                   | Default Value | Description                                   |
+|------------------------------------------|---------------|-----------------------------------------------|
+| [help](#list_cache_help)                 | N/A           | Show help screen (this screen)                |
+| [help-pb](#list_cache_help-pb)           | N/A           | Show help screen as a protocol buffer payload |
+| [show-default](#list_cache_show-default) | N/A           | Show default values for a given command       |
+| [help-short](#list_cache_help-short)     | N/A           | Show help screen (short format).              |
+
+
+<a name="list_cache_help"/>
+### help
+
+
+
+**Description:**
+Show help screen (this screen)
+
+<a name="list_cache_help-pb"/>
+### help-pb
+
+
+
+**Description:**
+Show help screen as a protocol buffer payload
+
+<a name="list_cache_show-default"/>
+### show-default
+
+
+
+**Description:**
+Show default values for a given command
+
+<a name="list_cache_help-short"/>
+### help-short
+
+
+
+**Description:**
+Show help screen (short format).
 
 
 

@@ -1428,7 +1428,7 @@ Full name: `Plugin.SettingsResponseMessage.Response.Query`
 | Modifier | Type | Key    | Description                |
 | -------- | -----| ------ | -------------------- |
 | required             | [Node](#.Plugin.Settings.Node) | node |  |
-| required             | [AnyDataType](#.Plugin.Common.AnyDataType) | value |  |
+| optional             | [AnyDataType](#.Plugin.Common.AnyDataType) | value |  |
 
 
 

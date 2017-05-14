@@ -165,6 +165,8 @@
         
         
         
+        
+        
 | Module             | Command                                                                     | Description                                                                         |
 |--------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
 | CauseCrashes       | [crash_client](reference/misc/CauseCrashes#crash_client)                    | Raise a fatal exception (zero pointer reference) and cause NSClient++ crash.        |
@@ -226,5 +228,6 @@
 | NSCPClient         | [submit_remote_nscp](reference/misc/NSCPClient#submit_remote_nscp)          | Submit information to remote host via NSCP.                                         |
 | SamplePluginSimple | [sample_raw_command](reference/misc/SamplePluginSimple#sample_raw_command)  | This is a sample hello world command.                                               |
 | SimpleCache        | [check_cache](reference/generic/SimpleCache#check_cache)                    | Fetch results from the cache.                                                       |
+| SimpleCache        | [list_cache](reference/generic/SimpleCache#list_cache)                      | List all keys in the cache.                                                         |
 | SMTPClient         | [submit_smtp](reference/client/SMTPClient#submit_smtp)                      | Submit information to the remote SMTP server.                                       |
 | SyslogClient       | [submit_syslog](reference/client/SyslogClient#submit_syslog)                | Submit information to the remote syslog server.                                     |

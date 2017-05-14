@@ -179,6 +179,7 @@ Available options :
 | free_pct       | Shorthand for total_free_pct (% free space)                                                                   |
 | hotplug        | 1 (true) if drive is hotplugable                                                                              |
 | id             | Drive or id of drive                                                                                          |
+| letter         | Letter the drive is mountedd on                                                                               |
 | media_type     | Get the media type                                                                                            |
 | mounted        | Check if a drive is mounted                                                                                   |
 | name           | Descriptive name of drive                                                                                     |
@@ -239,6 +240,7 @@ Available options :
 | free_pct       | Shorthand for total_free_pct (% free space)                                                                   |
 | hotplug        | 1 (true) if drive is hotplugable                                                                              |
 | id             | Drive or id of drive                                                                                          |
+| letter         | Letter the drive is mountedd on                                                                               |
 | media_type     | Get the media type                                                                                            |
 | mounted        | Check if a drive is mounted                                                                                   |
 | name           | Descriptive name of drive                                                                                     |
@@ -307,6 +309,7 @@ Available options :
 | free_pct       | Shorthand for total_free_pct (% free space)                                                                   |
 | hotplug        | 1 (true) if drive is hotplugable                                                                              |
 | id             | Drive or id of drive                                                                                          |
+| letter         | Letter the drive is mountedd on                                                                               |
 | media_type     | Get the media type                                                                                            |
 | mounted        | Check if a drive is mounted                                                                                   |
 | name           | Descriptive name of drive                                                                                     |
@@ -374,6 +377,7 @@ Available options :
 | free_pct       | Shorthand for total_free_pct (% free space)                                                                   |
 | hotplug        | 1 (true) if drive is hotplugable                                                                              |
 | id             | Drive or id of drive                                                                                          |
+| letter         | Letter the drive is mountedd on                                                                               |
 | media_type     | Get the media type                                                                                            |
 | mounted        | Check if a drive is mounted                                                                                   |
 | name           | Descriptive name of drive                                                                                     |
@@ -574,6 +578,7 @@ The available keywords are:
 | free_pct       | Shorthand for total_free_pct (% free space)          |
 | hotplug        | 1 (true) if drive is hotplugable                     |
 | id             | Drive or id of drive                                 |
+| letter         | Letter the drive is mountedd on                      |
 | media_type     | Get the media type                                   |
 | mounted        | Check if a drive is mounted                          |
 | name           | Descriptive name of drive                            |
@@ -620,6 +625,7 @@ Possible values are:
 | free_pct       | Shorthand for total_free_pct (% free space)          |
 | hotplug        | 1 (true) if drive is hotplugable                     |
 | id             | Drive or id of drive                                 |
+| letter         | Letter the drive is mountedd on                      |
 | media_type     | Get the media type                                   |
 | mounted        | Check if a drive is mounted                          |
 | name           | Descriptive name of drive                            |
