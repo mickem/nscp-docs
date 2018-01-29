@@ -286,7 +286,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** ignored
+**Default Value:** ignored
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -345,7 +345,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${list}
+**Default Value:** ${list}
 
 **Description:**
 Top level syntax.
@@ -419,7 +419,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** %(line)
+**Default Value:** %(line)
 
 **Description:**
 Detail level syntax.
@@ -482,7 +482,7 @@ Remote password when checking remote machines.
 ### namespace
 
 
-**Deafult Value:** root\cimv2
+**Default Value:** root\cimv2
 
 **Description:**
 The WMI root namespace to bind to.

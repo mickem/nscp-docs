@@ -76,7 +76,7 @@ check_nrpe --host 192.168.56.103 --command check_tasksched
 ### filter
 
 
-**Deafult Value:** enabled = 1
+**Default Value:** enabled = 1
 
 **Description:**
 Filter which marks interesting items.
@@ -124,7 +124,7 @@ Available options :
 ### warning
 
 
-**Deafult Value:** exit_code != 0
+**Default Value:** exit_code != 0
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -179,7 +179,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** exit_code < 0
+**Default Value:** exit_code < 0
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -296,7 +296,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** warning
+**Default Value:** warning
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -355,7 +355,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${problem_list}
+**Default Value:** ${status}: ${problem_list}
 
 **Description:**
 Top level syntax.
@@ -388,7 +388,7 @@ The available keywords are:
 ### ok-syntax
 
 
-**Deafult Value:** %(status): All tasks are ok
+**Default Value:** %(status): All tasks are ok
 
 **Description:**
 ok syntax.
@@ -399,7 +399,7 @@ This value will not be used if your syntax contains %(list) or %(count).
 ### empty-syntax
 
 
-**Deafult Value:** %(status): No tasks found
+**Default Value:** %(status): No tasks found
 
 **Description:**
 Empty syntax.
@@ -431,7 +431,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${folder}/${title}: ${exit_code} != 0
+**Default Value:** ${folder}/${title}: ${exit_code} != 0
 
 **Description:**
 Detail level syntax.
@@ -466,7 +466,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${title}
+**Default Value:** ${title}
 
 **Description:**
 Performance alias syntax.

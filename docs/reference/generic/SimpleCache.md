@@ -141,7 +141,7 @@ The alias to look for (translates into the key)
 ### not-found-msg
 
 
-**Deafult Value:** Entry not found
+**Default Value:** Entry not found
 
 **Description:**
 The message to display when a message is not found
@@ -150,7 +150,7 @@ The message to display when a message is not found
 ### not-found-code
 
 
-**Deafult Value:** unknown
+**Default Value:** unknown
 
 **Description:**
 The return status to return when a message is not found

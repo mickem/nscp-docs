@@ -306,7 +306,7 @@ Client certificate format
 ### ssl
 
 
-**Deafult Value:** 1
+**Default Value:** 1
 
 **Description:**
 Initial an ssl handshake with the server.
@@ -553,7 +553,7 @@ Client certificate format
 ### ssl
 
 
-**Deafult Value:** 1
+**Default Value:** 1
 
 **Description:**
 Initial an ssl handshake with the server.
@@ -800,7 +800,7 @@ Client certificate format
 ### ssl
 
 
-**Deafult Value:** 1
+**Default Value:** 1
 
 **Description:**
 Initial an ssl handshake with the server.
@@ -1075,7 +1075,7 @@ Client certificate format
 ### ssl
 
 
-**Deafult Value:** 1
+**Default Value:** 1
 
 **Description:**
 Initial an ssl handshake with the server.

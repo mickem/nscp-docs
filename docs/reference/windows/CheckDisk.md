@@ -147,7 +147,7 @@ C:\: 205GB/223GB used, D:\: 448GB/466GB used, M:\: 2.6TB/2.68TB used|'C:\ used'=
 ### filter
 
 
-**Deafult Value:** mounted = 1
+**Default Value:** mounted = 1
 
 **Description:**
 Filter which marks interesting items.
@@ -209,7 +209,7 @@ Available options :
 ### warning
 
 
-**Deafult Value:** used > 80%
+**Default Value:** used > 80%
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -278,7 +278,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** used > 90%
+**Default Value:** used > 90%
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -423,7 +423,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** unknown
+**Default Value:** unknown
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -482,7 +482,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status} ${problem_list}
+**Default Value:** ${status} ${problem_list}
 
 **Description:**
 Top level syntax.
@@ -515,7 +515,7 @@ The available keywords are:
 ### ok-syntax
 
 
-**Deafult Value:** %(status) All %(count) drive(s) are ok
+**Default Value:** %(status) All %(count) drive(s) are ok
 
 **Description:**
 ok syntax.
@@ -526,7 +526,7 @@ This value will not be used if your syntax contains %(list) or %(count).
 ### empty-syntax
 
 
-**Deafult Value:** %(status): No drives found
+**Default Value:** %(status): No drives found
 
 **Description:**
 Empty syntax.
@@ -558,7 +558,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${drive_or_name}: ${used}/${size} used
+**Default Value:** ${drive_or_name}: ${used}/${size} used
 
 **Description:**
 Detail level syntax.
@@ -607,7 +607,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${drive_or_id}
+**Default Value:** ${drive_or_id}
 
 **Description:**
 Performance alias syntax.
@@ -1022,7 +1022,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** unknown
+**Default Value:** unknown
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -1081,7 +1081,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${problem_count}/${count} files (${problem_list})
+**Default Value:** ${status}: ${problem_count}/${count} files (${problem_list})
 
 **Description:**
 Top level syntax.
@@ -1114,7 +1114,7 @@ The available keywords are:
 ### ok-syntax
 
 
-**Deafult Value:** %(status): All %(count) files are ok
+**Default Value:** %(status): All %(count) files are ok
 
 **Description:**
 ok syntax.
@@ -1125,7 +1125,7 @@ This value will not be used if your syntax contains %(list) or %(count).
 ### empty-syntax
 
 
-**Deafult Value:** No files found
+**Default Value:** No files found
 
 **Description:**
 Empty syntax.
@@ -1157,7 +1157,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${name}
+**Default Value:** ${name}
 
 **Description:**
 Detail level syntax.
@@ -1198,7 +1198,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${name}
+**Default Value:** ${name}
 
 **Description:**
 Performance alias syntax.
@@ -1262,7 +1262,7 @@ A comma separated list of paths to scan
 ### pattern
 
 
-**Deafult Value:** *.*
+**Default Value:** *.*
 
 **Description:**
 The pattern of files to search for (works like a filter but is faster and can be combined with a filter).
@@ -1279,7 +1279,7 @@ Maximum depth to recurse
 ### total
 
 
-**Deafult Value:** filter
+**Default Value:** filter
 
 **Description:**
 Include the total of either (filter) all files matching the filter or (all) all files regardless of the filter
@@ -1354,7 +1354,7 @@ Show help screen (short format).
 ### CheckAll
 
 
-**Deafult Value:** true
+**Default Value:** true
 
 **Description:**
 Checks all drives.
@@ -1363,7 +1363,7 @@ Checks all drives.
 ### CheckAllOthers
 
 
-**Deafult Value:** true
+**Default Value:** true
 
 **Description:**
 Checks all drives turns the drive option into an exclude option.
@@ -1396,7 +1396,7 @@ Force performance data to use a given unit prevents scaling which can cause prob
 ### ShowAll
 
 
-**Deafult Value:** short
+**Default Value:** short
 
 **Description:**
 Configures display format (if set shows all items not only failures, if set to long shows all cores).

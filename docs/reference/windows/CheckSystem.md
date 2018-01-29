@@ -153,7 +153,7 @@ CPU Load ok|'total 5m'=16%;80;90 'total 1m'=13%;80;90 'total 5s'=13%;80;90
 ### filter
 
 
-**Deafult Value:** core = 'total'
+**Default Value:** core = 'total'
 
 **Description:**
 Filter which marks interesting items.
@@ -193,7 +193,7 @@ Available options :
 ### warning
 
 
-**Deafult Value:** load > 80
+**Default Value:** load > 80
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -240,7 +240,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** load > 90
+**Default Value:** load > 90
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -341,7 +341,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** ignored
+**Default Value:** ignored
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -400,7 +400,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${problem_list}
+**Default Value:** ${status}: ${problem_list}
 
 **Description:**
 Top level syntax.
@@ -433,7 +433,7 @@ The available keywords are:
 ### ok-syntax
 
 
-**Deafult Value:** %(status): CPU load is ok.
+**Default Value:** %(status): CPU load is ok.
 
 **Description:**
 ok syntax.
@@ -475,7 +475,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${time}: ${load}%
+**Default Value:** ${time}: ${load}%
 
 **Description:**
 Detail level syntax.
@@ -502,7 +502,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${core} ${time}
+**Default Value:** ${core} ${time}
 
 **Description:**
 Performance alias syntax.
@@ -641,7 +641,7 @@ Available options :
 ### warning
 
 
-**Deafult Value:** used > 80%
+**Default Value:** used > 80%
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -688,7 +688,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** used > 90%
+**Default Value:** used > 90%
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -789,7 +789,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** ignored
+**Default Value:** ignored
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -848,7 +848,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${list}
+**Default Value:** ${status}: ${list}
 
 **Description:**
 Top level syntax.
@@ -922,7 +922,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${type} = ${used}
+**Default Value:** ${type} = ${used}
 
 **Description:**
 Detail level syntax.
@@ -949,7 +949,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${type}
+**Default Value:** ${type}
 
 **Description:**
 Performance alias syntax.
@@ -1056,7 +1056,7 @@ Available options :
 ### warning
 
 
-**Deafult Value:** total > 10000
+**Default Value:** total > 10000
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -1106,7 +1106,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** total > 100000
+**Default Value:** total > 100000
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -1213,7 +1213,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** critical
+**Default Value:** critical
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -1272,7 +1272,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${list}
+**Default Value:** ${status}: ${list}
 
 **Description:**
 Top level syntax.
@@ -1305,7 +1305,7 @@ The available keywords are:
 ### ok-syntax
 
 
-**Deafult Value:** %(status): Network interfaces seem ok.
+**Default Value:** %(status): Network interfaces seem ok.
 
 **Description:**
 ok syntax.
@@ -1347,7 +1347,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${name} >${sent} <${received} bps
+**Default Value:** ${name} >${sent} <${received} bps
 
 **Description:**
 Detail level syntax.
@@ -1377,7 +1377,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${name}
+**Default Value:** ${name}
 
 **Description:**
 Performance alias syntax.
@@ -1501,7 +1501,7 @@ Available options :
 ### warning
 
 
-**Deafult Value:** version <= 50
+**Default Value:** version <= 50
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -1546,7 +1546,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** version <= 50
+**Default Value:** version <= 50
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -1643,7 +1643,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** ignored
+**Default Value:** ignored
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -1702,7 +1702,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${list}
+**Default Value:** ${status}: ${list}
 
 **Description:**
 Top level syntax.
@@ -1776,7 +1776,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${version} (${major}.${minor}.${build})
+**Default Value:** ${version} (${major}.${minor}.${build})
 
 **Description:**
 Detail level syntax.
@@ -1801,7 +1801,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** version
+**Default Value:** version
 
 **Description:**
 Performance alias syntax.
@@ -1939,7 +1939,7 @@ Available options :
 ### warning
 
 
-**Deafult Value:** used > 60%
+**Default Value:** used > 60%
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -1986,7 +1986,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** used > 80%
+**Default Value:** used > 80%
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -2087,7 +2087,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** ignored
+**Default Value:** ignored
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -2146,7 +2146,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${list}
+**Default Value:** ${status}: ${list}
 
 **Description:**
 Top level syntax.
@@ -2220,7 +2220,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${name} ${used} (${size})
+**Default Value:** ${name} ${used} (${size})
 
 **Description:**
 Detail level syntax.
@@ -2247,7 +2247,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${name}
+**Default Value:** ${name}
 
 **Description:**
 Performance alias syntax.
@@ -2569,7 +2569,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** unknown
+**Default Value:** unknown
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -2628,7 +2628,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${list}
+**Default Value:** ${status}: ${list}
 
 **Description:**
 Top level syntax.
@@ -2702,7 +2702,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${alias} = ${value}
+**Default Value:** ${alias} = ${value}
 
 **Description:**
 Detail level syntax.
@@ -2729,7 +2729,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${alias}
+**Default Value:** ${alias}
 
 **Description:**
 Performance alias syntax.
@@ -2810,7 +2810,7 @@ Extra flags to configure the counter (nocap100, 1000, noscale)
 ### type
 
 
-**Deafult Value:** large
+**Default Value:** large
 
 **Description:**
 Format of value (double, long, large)
@@ -2907,7 +2907,7 @@ OK all processes are ok.|'csrss.exe state'=1;0;0 'svchost.exe state'=1;0;0 'Avas
 ### filter
 
 
-**Deafult Value:** state != 'unreadable'
+**Default Value:** state != 'unreadable'
 
 **Description:**
 Filter which marks interesting items.
@@ -2919,7 +2919,7 @@ They do not denote warning or critical state instead it defines which items are 
 ### warning
 
 
-**Deafult Value:** state not in ('started')
+**Default Value:** state not in ('started')
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -2938,7 +2938,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** state = 'stopped', count = 0
+**Default Value:** state = 'stopped', count = 0
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -3030,7 +3030,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** unknown
+**Default Value:** unknown
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -3089,7 +3089,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${problem_list}
+**Default Value:** ${status}: ${problem_list}
 
 **Description:**
 Top level syntax.
@@ -3122,7 +3122,7 @@ The available keywords are:
 ### ok-syntax
 
 
-**Deafult Value:** %(status): all processes are ok.
+**Default Value:** %(status): all processes are ok.
 
 **Description:**
 ok syntax.
@@ -3133,7 +3133,7 @@ This value will not be used if your syntax contains %(list) or %(count).
 ### empty-syntax
 
 
-**Deafult Value:** %(status): No processes found
+**Default Value:** %(status): No processes found
 
 **Description:**
 Empty syntax.
@@ -3165,7 +3165,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${exe}=${state}
+**Default Value:** ${exe}=${state}
 
 **Description:**
 Detail level syntax.
@@ -3211,7 +3211,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${exe}
+**Default Value:** ${exe}
 
 **Description:**
 Performance alias syntax.
@@ -3436,7 +3436,7 @@ Available options :
 ### warning
 
 
-**Deafult Value:** not state_is_perfect()
+**Default Value:** not state_is_perfect()
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -3489,7 +3489,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** not state_is_ok()
+**Default Value:** not state_is_ok()
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -3602,7 +3602,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** unknown
+**Default Value:** unknown
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -3661,7 +3661,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${crit_list}, delayed (${warn_list})
+**Default Value:** ${status}: ${crit_list}, delayed (${warn_list})
 
 **Description:**
 Top level syntax.
@@ -3694,7 +3694,7 @@ The available keywords are:
 ### ok-syntax
 
 
-**Deafult Value:** %(status): All %(count) service(s) are ok.
+**Default Value:** %(status): All %(count) service(s) are ok.
 
 **Description:**
 ok syntax.
@@ -3705,7 +3705,7 @@ This value will not be used if your syntax contains %(list) or %(count).
 ### empty-syntax
 
 
-**Deafult Value:** %(status): No services found
+**Default Value:** %(status): No services found
 
 **Description:**
 Empty syntax.
@@ -3737,7 +3737,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${name}=${state} (${start_type})
+**Default Value:** ${name}=${state} (${start_type})
 
 **Description:**
 Detail level syntax.
@@ -3770,7 +3770,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${name}
+**Default Value:** ${name}
 
 **Description:**
 Performance alias syntax.
@@ -3825,7 +3825,7 @@ A list of services to ignore (mainly usefull in combination with service=*)
 ### type
 
 
-**Deafult Value:** service
+**Default Value:** service
 
 **Description:**
 The types of services to enumerate available types are driver, file-system-driver, kernel-driver, service, service-own-process, service-share-process
@@ -3834,7 +3834,7 @@ The types of services to enumerate available types are driver, file-system-drive
 ### state
 
 
-**Deafult Value:** all
+**Default Value:** all
 
 **Description:**
 The types of services to enumerate available states are active, inactive or all
@@ -3984,7 +3984,7 @@ Available options :
 ### warning
 
 
-**Deafult Value:** uptime < 2d
+**Default Value:** uptime < 2d
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -4027,7 +4027,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** uptime < 1d
+**Default Value:** uptime < 1d
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -4120,7 +4120,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** ignored
+**Default Value:** ignored
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -4179,7 +4179,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${list}
+**Default Value:** ${status}: ${list}
 
 **Description:**
 Top level syntax.
@@ -4253,7 +4253,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** uptime: ${uptime}h, boot: ${boot} (UTC)
+**Default Value:** uptime: ${uptime}h, boot: ${boot} (UTC)
 
 **Description:**
 Detail level syntax.
@@ -4276,7 +4276,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** uptime
+**Default Value:** uptime
 
 **Description:**
 Performance alias syntax.
@@ -4359,7 +4359,7 @@ The time to check
 ### ShowAll
 
 
-**Deafult Value:** short
+**Default Value:** short
 
 **Description:**
 Configures display format (if set shows all items not only failures, if set to long shows all cores).
@@ -4464,7 +4464,7 @@ The time to check
 ### ShowAll
 
 
-**Deafult Value:** short
+**Default Value:** short
 
 **Description:**
 Configures display format (if set shows all items not only failures, if set to long shows all cores).
@@ -4585,7 +4585,7 @@ The types to check
 ### ShowAll
 
 
-**Deafult Value:** short
+**Default Value:** short
 
 **Description:**
 Configures display format (if set shows all items not only failures, if set to long shows all cores).
@@ -4695,7 +4695,7 @@ Show help screen (short format).
 ### ShowAll
 
 
-**Deafult Value:** short
+**Default Value:** short
 
 **Description:**
 Configures display format (if set shows all items not only failures, if set to long shows all cores).
@@ -4787,7 +4787,7 @@ Show help screen (short format).
 ### CheckAll
 
 
-**Deafult Value:** true
+**Default Value:** true
 
 **Description:**
 Check all services.
@@ -4804,7 +4804,7 @@ Exclude services
 ### ShowAll
 
 
-**Deafult Value:** short
+**Default Value:** short
 
 **Description:**
 Configures display format (if set shows all items not only failures, if set to long shows all cores).
@@ -4868,7 +4868,7 @@ Show help screen (short format).
 ### ShowAll
 
 
-**Deafult Value:** short
+**Default Value:** short
 
 **Description:**
 Configures display format (if set shows all items not only failures, if set to long shows all cores).

@@ -297,7 +297,7 @@ Check for errors in the event log.
 ### filter
 
 
-**Deafult Value:** level in ('warning', 'error', 'critical')
+**Default Value:** level in ('warning', 'error', 'critical')
 
 **Description:**
 Filter which marks interesting items.
@@ -309,7 +309,7 @@ They do not denote warning or critical state instead it defines which items are 
 ### warning
 
 
-**Deafult Value:** level = 'warning', problem_count > 0
+**Default Value:** level = 'warning', problem_count > 0
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -328,7 +328,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** level in ('error', 'critical')
+**Default Value:** level in ('error', 'critical')
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -411,7 +411,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** ok
+**Default Value:** ok
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -421,7 +421,7 @@ If no filter is specified this will never happen unless the file is empty.
 ### perf-config
 
 
-**Deafult Value:** level(ignored:true)
+**Default Value:** level(ignored:true)
 
 **Description:**
 Performance data generation configuration
@@ -504,7 +504,7 @@ Used to filter unique items (counted will still increase but messages will not r
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${count} message(s) ${problem_list}
+**Default Value:** ${status}: ${count} message(s) ${problem_list}
 
 **Description:**
 Top level syntax.
@@ -537,7 +537,7 @@ The available keywords are:
 ### ok-syntax
 
 
-**Deafult Value:** %(status): Event log seems fine
+**Default Value:** %(status): Event log seems fine
 
 **Description:**
 ok syntax.
@@ -548,7 +548,7 @@ This value will not be used if your syntax contains %(list) or %(count).
 ### empty-syntax
 
 
-**Deafult Value:** %(status): No entries found
+**Default Value:** %(status): No entries found
 
 **Description:**
 Empty syntax.
@@ -580,7 +580,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${file} ${source} (${message})
+**Default Value:** ${file} ${source} (${message})
 
 **Description:**
 Detail level syntax.
@@ -617,7 +617,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${file}_${source}
+**Default Value:** ${file}_${source}
 
 **Description:**
 Performance alias syntax.
@@ -686,7 +686,7 @@ Maximum length of message for each event log message text.
 ### unique
 
 
-**Deafult Value:** 1
+**Default Value:** 1
 
 **Description:**
 Shorthand for setting default unique index: ${log}-${source}-${id}.
@@ -822,7 +822,7 @@ The file to check
 ### debug
 
 
-**Deafult Value:** 1
+**Default Value:** 1
 
 **Description:**
 The file to check
@@ -839,7 +839,7 @@ Deprecated and has no meaning
 ### descriptions
 
 
-**Deafult Value:** 1
+**Default Value:** 1
 
 **Description:**
 Deprecated and has no meaning
@@ -848,7 +848,7 @@ Deprecated and has no meaning
 ### unique
 
 
-**Deafult Value:** 1
+**Default Value:** 1
 
 **Description:**
 
@@ -857,7 +857,7 @@ Deprecated and has no meaning
 ### syntax
 
 
-**Deafult Value:** %source%, %strings%
+**Default Value:** %source%, %strings%
 
 **Description:**
 The syntax string
@@ -866,7 +866,7 @@ The syntax string
 ### top-syntax
 
 
-**Deafult Value:** ${list}
+**Default Value:** ${list}
 
 **Description:**
 The top level syntax string
