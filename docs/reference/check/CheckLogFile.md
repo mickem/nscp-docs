@@ -298,7 +298,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** ignored
+**Default Value:** ignored
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -357,7 +357,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${count}/${total} (${problem_list})
+**Default Value:** ${count}/${total} (${problem_list})
 
 **Description:**
 Top level syntax.
@@ -400,7 +400,7 @@ This value will not be used if your syntax contains %(list) or %(count).
 ### empty-syntax
 
 
-**Deafult Value:** %(status): Nothing found
+**Default Value:** %(status): Nothing found
 
 **Description:**
 Empty syntax.
@@ -432,7 +432,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${column1}
+**Default Value:** ${column1}
 
 **Description:**
 Detail level syntax.
@@ -467,7 +467,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${column1}
+**Default Value:** ${column1}
 
 **Description:**
 Performance alias syntax.
@@ -500,7 +500,7 @@ Possible values are:
 ### line-split
 
 
-**Deafult Value:** \n
+**Default Value:** \n
 
 **Description:**
 Character string used to split a file into several lines (default \n)
@@ -509,7 +509,7 @@ Character string used to split a file into several lines (default \n)
 ### column-split
 
 
-**Deafult Value:** \t
+**Default Value:** \t
 
 **Description:**
 Character string to split a line into several columns (default \t)

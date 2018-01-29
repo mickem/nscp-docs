@@ -324,7 +324,7 @@ Show help screen (short format).
 ### message
 
 
-**Deafult Value:** No message
+**Default Value:** No message
 
 **Description:**
 Message to return
@@ -402,7 +402,7 @@ Deprecated alias for command
 ### separator
 
 
-**Deafult Value:** , 
+**Default Value:** , 
 
 **Description:**
 Separator between messages
@@ -578,7 +578,7 @@ Show help screen (short format).
 ### message
 
 
-**Deafult Value:** No message
+**Default Value:** No message
 
 **Description:**
 Message to return
@@ -768,7 +768,7 @@ Show help screen (short format).
 ### message
 
 
-**Deafult Value:** No message
+**Default Value:** No message
 
 **Description:**
 Message to return
@@ -829,7 +829,7 @@ Show help screen (short format).
 ### sort
 
 
-**Deafult Value:** none
+**Default Value:** none
 
 **Description:**
 The sort order to use: none, normal or reversed
@@ -838,7 +838,7 @@ The sort order to use: none, normal or reversed
 ### limit
 
 
-**Deafult Value:** 0
+**Default Value:** 0
 
 **Description:**
 The maximum number of items to return (0 returns all items)
@@ -1092,7 +1092,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** unknown
+**Default Value:** unknown
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -1151,7 +1151,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** %(status): %(message) %(list)
+**Default Value:** %(status): %(message) %(list)
 
 **Description:**
 Top level syntax.
@@ -1225,7 +1225,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** %(key)	%(value)	%(unit)	%(warn)	%(crit)	%(min)	%(max)
+**Default Value:** %(key)	%(value)	%(unit)	%(warn)	%(crit)	%(min)	%(max)
 
 
 **Description:**
@@ -1255,7 +1255,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** %(key)
+**Default Value:** %(key)
 
 **Description:**
 Performance alias syntax.

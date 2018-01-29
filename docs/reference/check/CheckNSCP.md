@@ -292,7 +292,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** ignored
+**Default Value:** ignored
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -351,7 +351,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${list}
+**Default Value:** ${status}: ${list}
 
 **Description:**
 Top level syntax.
@@ -425,7 +425,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${release}.${major}.${minor}.${build} (${date})
+**Default Value:** ${release}.${major}.${minor}.${build} (${date})
 
 **Description:**
 Detail level syntax.
@@ -452,7 +452,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** version
+**Default Value:** version
 
 **Description:**
 Performance alias syntax.

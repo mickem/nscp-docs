@@ -103,7 +103,7 @@ Available options :
 ### warning
 
 
-**Deafult Value:** time > 60 or loss > 5%
+**Default Value:** time > 60 or loss > 5%
 
 **Description:**
 Filter which marks items which generates a warning state.
@@ -151,7 +151,7 @@ Short alias for warning
 ### critical
 
 
-**Deafult Value:** time > 100 or loss > 10%
+**Default Value:** time > 100 or loss > 10%
 
 **Description:**
 Filter which marks items which generates a critical state.
@@ -254,7 +254,7 @@ Show details for all matches regardless of status (normally details are only sho
 ### empty-state
 
 
-**Deafult Value:** unknown
+**Default Value:** unknown
 
 **Description:**
 Return status to use when nothing matched filter.
@@ -313,7 +313,7 @@ Show help screen (short format).
 ### top-syntax
 
 
-**Deafult Value:** ${status}: ${ok_count}/${count} (${problem_list})
+**Default Value:** ${status}: ${ok_count}/${count} (${problem_list})
 
 **Description:**
 Top level syntax.
@@ -346,7 +346,7 @@ The available keywords are:
 ### ok-syntax
 
 
-**Deafult Value:** %(status): All %(count) hosts are ok
+**Default Value:** %(status): All %(count) hosts are ok
 
 **Description:**
 ok syntax.
@@ -357,7 +357,7 @@ This value will not be used if your syntax contains %(list) or %(count).
 ### empty-syntax
 
 
-**Deafult Value:** No hosts found
+**Default Value:** No hosts found
 
 **Description:**
 Empty syntax.
@@ -389,7 +389,7 @@ Possible values are:
 ### detail-syntax
 
 
-**Deafult Value:** ${ip} Packet loss = ${loss}%, RTA = ${time}ms
+**Default Value:** ${ip} Packet loss = ${loss}%, RTA = ${time}ms
 
 **Description:**
 Detail level syntax.
@@ -417,7 +417,7 @@ The available keywords are:
 ### perf-syntax
 
 
-**Deafult Value:** ${host}
+**Default Value:** ${host}
 
 **Description:**
 Performance alias syntax.
@@ -467,7 +467,7 @@ The host to check (or multiple hosts).
 ### count
 
 
-**Deafult Value:** 1
+**Default Value:** 1
 
 **Description:**
 Number of packets to send.
@@ -476,7 +476,7 @@ Number of packets to send.
 ### timeout
 
 
-**Deafult Value:** 500
+**Default Value:** 500
 
 **Description:**
 Timeout in milliseconds.
