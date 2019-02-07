@@ -273,26 +273,30 @@ This makes for less typing if you plan on adding many vbs scripts.
 
 **TODO**
 
-## PS1 --- Power Shell
+## PS1 --- PowerShell
 
-Powershell is probably the strangest beat to tame when it comes to scripting. The main reason for this is that Microsoft went with a non standard console for it. This means that it wont work like normal script languages from a programming perspective.
+PowerShell is probably the strangest beast to tame when it comes to scripting. The main reason for this is that Microsoft went with a non standard console for it. This means that it wont work like normal script languages from a programming perspective.
 The most obvious way this is visible is the extremely arcane syntax for running powershell. The reason behind it is to force powershell to acknowledge the regular stdin/stdout redirection schemes which we need to use to be able to read powershell output.
 
-Adding a powershell will look like this:
+Adding a powershell script will look like this:
 
 ```
 [/settings/external scripts/scripts]
-test_ps1 = cmd /c echo scripts\check_test.ps1; exit($lastexitcode) | powershell.exe -command -
+test_ps1 = cmd /c echo Try {scripts\check_test.ps1; exit($lastexitcode)} Catch {echo "powershell.exe Error running script: $error"; exit 3} | powershell.exe -command -
 ```
+
+What we're doing here is calling powershell via the cmd console. We wrap the execution of the script in a Try/Catch block so that powershell does not fail silently if it cannot run the script.
+($lastexitcode contains 0 if no script has ran)
+
 
 If we want to use arguments we add them before the semi colon like so:
 
 ```
 [/settings/external scripts/scripts]
-test_ps1 = cmd /c echo scripts\check_test.ps1 "--argument" "$ARG1$" --foo --bar; exit($lastexitcode) | powershell.exe -command -
+test_ps1 = cmd /c echo Try {scripts\check_test.ps1 "--argument" "$ARG1$" --foo --bar; exit($lastexitcode)} Catch {echo "powershell.exe Error running script: $error"; exit 3} | powershell.exe -command -
 ```
 
-There are also some things to remember when writing script:
+There are also some things to remember when writing scripts in powershell:
 
 -   For instance some powershell "print" methods will wrap (whilst other wont)
 
@@ -302,8 +306,9 @@ There are also some things to remember when writing script:
 ## Wrapped scripts
 
 Wrapped script really become a necessity when powershell started to become more used.
-As I mentioned in the powershell section above the command line syntax for powershell script is arcane at best.
-TO work around this and try to make it simpler to configure wrapped script help reduce the clutter by creating a template for the command line so only the script and argument has to be configured.
+As I mentioned in the powershell section above, the command line syntax for powershell script is arcane at best.
+To work around this and try to make it simpler, you can use a wrapped script.
+Configuring wrapped scripts help reduce the clutter by creating a template for the command line so only the script and argument has to be configured.
 
 The way this works is that we first define a template using %SCRIPT% and %ARGS% which will be replaced at run-time with the script in question.
 Let take a fictional script language as an example:
@@ -322,13 +327,13 @@ script_foo=test.foo "Hello World"
 
 Will be translated into: `foo.exe test.foo -- "Hello World"`
 
-When the script is executed. The benefit here is negligible for such a simple command line but still if you have 10 script is starts to pay off.
+When the script is executed. The benefit here is negligible for such a simple command line but still, if you have 10 scripts it starts to pay off.
 If we instead look at powershell (for which it was conceived) the benefit becomes much more noticeable
 
 ```
 [/settings/external scripts/wrappings]
 
-ps1=cmd /c echo scripts\\\\%SCRIPT% %ARGS%; exit($lastexitcode) | powershell.exe -command -");
+ps1=cmd /c echo Try {scripts\\\\%SCRIPT% %ARGS%; exit($lastexitcode)} Catch {echo "powershell.exe Error running script: $error"; exit 3} | powershell.exe -command -");
 ```
 
 And when you define the scripts you simply add:
