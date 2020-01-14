@@ -12,7 +12,7 @@ check_wmi "query=Select Version,Caption from win32_OperatingSystem" "warn=Versio
 OK: Microsoft Windows 8.1 Pro, 6.3.9600
 ```
 
-Simple check via **via NRPE**::
+Simple check via **NRPE**::
 
 ```
 check_nrpe --host 192.168.56.103 --command check_wmi -a "query=Select Version,Caption from win32_OperatingSystem" "warn=Version not like '6.3'" "crit=Version not like '6'"
